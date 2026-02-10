@@ -1,8 +1,10 @@
 # Vector Spaces
 
-- When you hear "vector," you probably think of an arrow with a direction and magnitude. That is the most common example, but in a vector space, a "vector" can be anything: an arrow, a function, a polynomial, anything!
+- Think of a Vector Space as a specific kind of playground where mathematical objects live.
 
-- Vector space is just a mathematical "sandbox" with a very specific, unbreakable set of rules:
+- Each object is called a **vector**. 
+
+- The vectors in the vector space live under a very specific, unbreakable set of rules:
 
     - **Vector Addition (Combining)**:
     You can take any two vectors and combine them to create a new one.
@@ -16,23 +18,29 @@
     If vector A is "walk 3 steps forward," scaling it by 2 makes it "walk 6 steps forward."
     Scaling it by -1 flips it entirely to "walk 3 steps backward."
 
-- For geometric intuition in machine learning (ML), we will always think of vectors as coordinates in Euclidean space. 
-the vector $\mathbf{a}$ (denoted mathematically as lowercase letters in bold)
-has $n$ coordinates, each representing a position along an axis.
+- For geometric intuition in machine learning (ML), we will always think of vectors as a point in Euclidean space, represented by it's coordinates. 
 
-$$\mathbf{a} = [a_1, a_2, a_3, \dots, a_n]$$
+- The vector $\mathbf{a}$ (denoted mathematically as lowercase letters in bold) has $n$ coordinates, each representing a position along an axis.
 
-- In ML, vectors are typically high-dimensional, but we can visualise and perform linear algebra on them.
+$$\mathbf{a} = [a_1, a_2, a_3]$$
 
 ![A vector a = (3, 2, 4) plotted in 3D space with x, y, z axes](../images/vector_3d.svg)
+
+- The **dimension** of a vector space is the number of independent directions it contains. $\mathbb{R}^2$ is 2-dimensional (needs 2 coordinates), while $\mathbf{a}$ above lives in $\mathbb{R}^3$.
 
 - We can for instance represent any object, say, a human, as a vector, where $h_1$ = height in cm, $h_2$ = weight in kg, $h_3$ = age, $h_4$ = waist size in cm.
 
 $$\mathbf{h} = [185, 75, 30, 44]$$
 
-- We can add more features, creating a rich representation of a human, often called feature vectors in ML.
+- We have now created a vector space with a vector representing a human, and we can represent multiple humans. 
 
-- Linear algebra is the study of vectors, vector spaces and mappings between vectors.
+- Notice how this becomes hard to visualise at dimension = 4. Well in in ML, it gets a lot bigger...a lot!
+
+- For instance, we can add more features, creating a rich representation of a human, often called feature vectors in ML.
+
+- The more unique and meaningful features you have, the more descriptive the feature vector is, an important factor to remember. 
+
+- Now, **Linear algebra** is the study of vectors, vector spaces and mappings between vectors.
 
 - We represent almost every thing in AI/ML as vectors, making linear algebra the bedrock of the field.
 
@@ -81,3 +89,5 @@ $$\mathbf{h} = [185, 75, 30, 44]$$
 - **Associativity**: For any scalars $c$, $d$ and vector $\mathbf{v}$: $(cd)\mathbf{v} = c(d\mathbf{v})$
 
 - **Identity Element**: For any vector $\mathbf{v}$: $1\mathbf{v} = \mathbf{v}$, where $1$ is the multiplicative identity in the field of scalars.
+
+- **What is NOT a vector space**: The set of all vectors in $\mathbb{R}^2$ where $x_1 > 0$ is not a vector space. It fails closure: scaling $\mathbf{v} = (3, 1)$ by $-1$ gives $(-3, -1)$, which has $x_1 < 0$ and leaves the set. A valid vector space must survive every addition and every scaling without exception.
