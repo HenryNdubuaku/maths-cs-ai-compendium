@@ -1,0 +1,85 @@
+# Basis and Duality
+
+- We have seen that vectors live in spaces with a certain number of dimensions. But what defines those dimensions? This is where **basis vectors** come in.
+
+- A **basis** is a set of vectors that can build every other vector in the space through scaling and adding (linear combination), with no redundancy. They are the building blocks of the space.
+
+- A basis must satisfy two conditions:
+
+    - **Linearly independent**: No basis vector can be built from the others. Each one contributes a genuinely new direction.
+
+    - **Spanning**: Every vector in the space can be expressed as a combination of the basis vectors. Nothing is left out.
+
+- The number of vectors in a basis equals the **dimension** of the space. In $\mathbb{R}^2$ you need 2, in $\mathbb{R}^3$ you need 3, and so on.
+
+- The most natural basis is the **standard basis**, the unit vectors along each axis:
+
+    - In $\mathbb{R}^2$: $\hat{\mathbf{i}} = (1, 0)$ and $\hat{\mathbf{j}} = (0, 1)$
+    - In $\mathbb{R}^3$: $\hat{\mathbf{i}} = (1, 0, 0)$, $\hat{\mathbf{j}} = (0, 1, 0)$, $\hat{\mathbf{k}} = (0, 0, 1)$
+
+- Any vector is just a weighted sum of these basis vectors. The vector $(3, 2)$ is really $3\hat{\mathbf{i}} + 2\hat{\mathbf{j}}$. The weights (3 and 2) are the **coordinates** of the vector in that basis.
+
+- But the standard basis is not the only valid basis. In $\mathbb{R}^2$, the vectors $(1, 1)$ and $(-1, 1)$ also form a basis. They are linearly independent and can reach any point in the plane. The same vector will just have different coordinates in this new basis.
+
+- A **change of basis** re-expresses the same vector using different building blocks. The vector has not moved, we are just describing it from a different perspective.
+
+- This is done by multiplying by a **change of basis matrix** $P$, whose columns are the new basis vectors written in the old coordinates. To go back, multiply by $P^{-1}$.
+
+- In ML, change of basis appears frequently. PCA, for example, finds a new basis (the principal components) where the data is easier to understand, the axes align with the directions of greatest variation.
+
+- Now, there is a deeper idea hiding here. When we write $\mathbf{v} = (3, 2)$, the coordinates 3 and 2 are really the result of "measuring" $\mathbf{v}$ along each basis direction. The first coordinate asks "how much of $\hat{\mathbf{i}}$ is in $\mathbf{v}$?", the second asks "how much of $\hat{\mathbf{j}}$?"
+
+- Each of these measurements is a **linear functional**, a function that takes a vector and returns a single number. The collection of all such linear functionals forms the **dual space** $V^*$.
+
+- Think of it this way: vectors are the objects, and linear functionals are the *rulers* that measure them. The dual space is the set of all possible rulers.
+
+- For every basis $\{\mathbf{e}_1, \mathbf{e}_2, \ldots, \mathbf{e}_n\}$, there is a corresponding **dual basis** $\{\mathbf{e}_1^*, \mathbf{e}_2^*, \ldots, \mathbf{e}_n^*\}$. Each dual basis vector extracts exactly one coordinate:
+
+$$\mathbf{e}_i^*(\mathbf{e}_j) = \delta_{ij} = \begin{cases} 1 & \text{if } i = j \\ 0 & \text{if } i \neq j \end{cases}$$
+
+- $\mathbf{e}_1^*$ returns 1 when applied to $\mathbf{e}_1$ and 0 for everything else. It perfectly isolates the first coordinate.
+
+- The dot product connects these two worlds. When you compute $\mathbf{u} \cdot \mathbf{v}$, you can think of one vector acting as a "ruler" measuring the other. The dot product $\mathbf{u} \cdot \mathbf{v}$ is the same as applying the linear functional defined by $\mathbf{u}$ to the vector $\mathbf{v}$.
+
+- This means every vector secretly defines a linear functional, and every linear functional can be represented by a vector. In finite dimensions, the dual space is essentially a mirror image of the original space.
+
+- Duality may seem abstract now, but it underlies many practical ideas: coordinates are dual basis evaluations, the dot product is a duality pairing, and transformations like attention in neural networks operate by having one set of vectors "query" another, which is duality in action.
+
+## Coding Tasks (use CoLab or notebook)
+
+1. Express a vector in two different bases and verify they represent the same point. Try creating your own basis and see what coordinates the vector gets.
+```python
+import jax.numpy as jnp
+
+v = jnp.array([3.0, 2.0])
+
+# Standard basis: coordinates are just the components
+print(f"Standard basis coords: {v}")
+
+# New basis: (1,1) and (-1,1)
+P = jnp.array([[1.0, -1.0],
+               [1.0,  1.0]])
+new_coords = jnp.linalg.solve(P, v)
+print(f"New basis coords: {new_coords}")
+
+# Verify: reconstruct from new coords
+reconstructed = new_coords[0] * P[:, 0] + new_coords[1] * P[:, 1]
+print(f"Reconstructed: {reconstructed}")
+```
+
+2. Verify the dual basis property: each dual basis vector extracts exactly one coordinate and returns zero for the others.
+```python
+import jax.numpy as jnp
+
+# Standard basis in R3
+e1 = jnp.array([1.0, 0.0, 0.0])
+e2 = jnp.array([0.0, 1.0, 0.0])
+e3 = jnp.array([0.0, 0.0, 1.0])
+
+v = jnp.array([5.0, 3.0, 7.0])
+
+# Each dot product extracts one coordinate
+print(f"e1 · v = {jnp.dot(e1, v)}")
+print(f"e2 · v = {jnp.dot(e2, v)}")
+print(f"e3 · v = {jnp.dot(e3, v)}")
+```
