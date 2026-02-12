@@ -1,0 +1,41 @@
+<svg width="700" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="mdp-arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <path d="M0,0 L10,3.5 L0,7" fill="none" stroke="#555" stroke-width="1.2"/>
+    </marker>
+  </defs>
+  <text x="350" y="25" fill="#333" font-size="14" font-weight="bold" text-anchor="middle">Agent-Environment Interaction Loop</text>
+
+  <!-- Agent box -->
+  <rect x="120" y="60" width="180" height="80" rx="10" fill="#3498db" opacity="0.15" stroke="#3498db" stroke-width="2"/>
+  <text x="210" y="95" fill="#3498db" font-size="14" font-weight="bold" text-anchor="middle">Agent</text>
+  <text x="210" y="115" fill="#3498db" font-size="11" text-anchor="middle">policy: pi(a|s)</text>
+
+  <!-- Environment box -->
+  <rect x="400" y="60" width="180" height="80" rx="10" fill="#e74c3c" opacity="0.15" stroke="#e74c3c" stroke-width="2"/>
+  <text x="490" y="95" fill="#e74c3c" font-size="14" font-weight="bold" text-anchor="middle">Environment</text>
+  <text x="490" y="115" fill="#e74c3c" font-size="11" text-anchor="middle">dynamics: P(s'|s,a)</text>
+
+  <!-- Action arrow (Agent -> Environment, top) -->
+  <path d="M 300,75 C 340,45 370,45 400,75" fill="none" stroke="#27ae60" stroke-width="2" marker-end="url(#mdp-arrow)"/>
+  <text x="350" y="48" fill="#27ae60" font-size="12" font-weight="bold" text-anchor="middle">action a_t</text>
+
+  <!-- State arrow (Environment -> Agent, bottom) -->
+  <path d="M 400,125 C 370,160 340,160 300,125" fill="none" stroke="#9b59b6" stroke-width="2" marker-end="url(#mdp-arrow)"/>
+  <text x="350" y="178" fill="#9b59b6" font-size="12" font-weight="bold" text-anchor="middle">state s_{t+1}</text>
+
+  <!-- Reward arrow -->
+  <line x1="490" y1="140" x2="490" y2="210" stroke="#f39c12" stroke-width="2" marker-end="url(#mdp-arrow)"/>
+  <line x1="490" y1="210" x2="210" y2="210" stroke="#f39c12" stroke-width="2" marker-end="url(#mdp-arrow)"/>
+  <text x="350" y="228" fill="#f39c12" font-size="12" font-weight="bold" text-anchor="middle">reward r_t</text>
+
+  <!-- Timeline at bottom -->
+  <line x1="100" y1="270" x2="600" y2="270" stroke="#999" stroke-width="1"/>
+  <circle cx="170" cy="270" r="3" fill="#999"/>
+  <text x="170" y="262" fill="#666" font-size="10" text-anchor="middle">t</text>
+  <circle cx="350" cy="270" r="3" fill="#999"/>
+  <text x="350" y="262" fill="#666" font-size="10" text-anchor="middle">t+1</text>
+  <circle cx="530" cy="270" r="3" fill="#999"/>
+  <text x="530" y="262" fill="#666" font-size="10" text-anchor="middle">t+2</text>
+  <text x="350" y="295" fill="#666" font-size="10" text-anchor="middle">loop repeats until terminal state or horizon</text>
+</svg>

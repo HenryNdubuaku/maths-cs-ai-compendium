@@ -1,0 +1,72 @@
+<svg width="700" height="320" xmlns="http://www.w3.org/2000/svg">
+  <text x="350" y="22" fill="#333" font-size="14" font-weight="bold" text-anchor="middle">SVM: Maximum-Margin Hyperplane</text>
+
+  <!-- Axes -->
+  <line x1="60" y1="275" x2="640" y2="275" stroke="#333" stroke-width="1.5"/>
+  <line x1="60" y1="275" x2="60" y2="40" stroke="#333" stroke-width="1.5"/>
+  <text x="350" y="298" fill="#666" font-size="11" text-anchor="middle">x₁</text>
+  <text x="35" y="155" fill="#666" font-size="11" text-anchor="middle" transform="rotate(-90,35,155)">x₂</text>
+
+  <!-- Margin band -->
+  <polygon points="235,40 305,40 505,275 435,275" fill="#9b59b6" opacity="0.08"/>
+
+  <!-- Decision boundary (hyperplane) -->
+  <line x1="270" y1="40" x2="470" y2="275" stroke="#9b59b6" stroke-width="2.5"/>
+  <text x="395" y="130" fill="#9b59b6" font-size="11" font-weight="bold" transform="rotate(45,395,130)">w·x + b = 0</text>
+
+  <!-- Positive margin -->
+  <line x1="305" y1="40" x2="505" y2="275" stroke="#9b59b6" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <text x="440" y="108" fill="#9b59b6" font-size="9" transform="rotate(45,440,108)">w·x + b = +1</text>
+
+  <!-- Negative margin -->
+  <line x1="235" y1="40" x2="435" y2="275" stroke="#9b59b6" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <text x="310" y="172" fill="#9b59b6" font-size="9" transform="rotate(45,310,172)">w·x + b = -1</text>
+
+  <!-- Margin width indicator -->
+  <line x1="320" y1="85" x2="285" y2="85" stroke="#9b59b6" stroke-width="1"/>
+  <line x1="320" y1="80" x2="320" y2="90" stroke="#9b59b6" stroke-width="1"/>
+  <line x1="285" y1="80" x2="285" y2="90" stroke="#9b59b6" stroke-width="1"/>
+  <text x="302" y="78" fill="#9b59b6" font-size="9" text-anchor="middle">margin</text>
+
+  <!-- Class +1 points (blue circles, right side) -->
+  <circle cx="380" cy="80" r="5" fill="#3498db" opacity="0.7"/>
+  <circle cx="420" cy="100" r="5" fill="#3498db" opacity="0.7"/>
+  <circle cx="450" cy="65" r="5" fill="#3498db" opacity="0.7"/>
+  <circle cx="480" cy="120" r="5" fill="#3498db" opacity="0.7"/>
+  <circle cx="500" cy="80" r="5" fill="#3498db" opacity="0.7"/>
+  <circle cx="530" cy="140" r="5" fill="#3498db" opacity="0.7"/>
+  <circle cx="550" cy="95" r="5" fill="#3498db" opacity="0.7"/>
+  <circle cx="460" cy="150" r="5" fill="#3498db" opacity="0.7"/>
+  <circle cx="510" cy="55" r="5" fill="#3498db" opacity="0.7"/>
+  <circle cx="580" cy="110" r="5" fill="#3498db" opacity="0.7"/>
+
+  <!-- Class -1 points (red squares, left side) -->
+  <rect x="97" y="145" width="10" height="10" fill="#e74c3c" opacity="0.7"/>
+  <rect x="117" y="175" width="10" height="10" fill="#e74c3c" opacity="0.7"/>
+  <rect x="137" y="120" width="10" height="10" fill="#e74c3c" opacity="0.7"/>
+  <rect x="157" y="200" width="10" height="10" fill="#e74c3c" opacity="0.7"/>
+  <rect x="177" y="160" width="10" height="10" fill="#e74c3c" opacity="0.7"/>
+  <rect x="197" y="230" width="10" height="10" fill="#e74c3c" opacity="0.7"/>
+  <rect x="130" y="215" width="10" height="10" fill="#e74c3c" opacity="0.7"/>
+  <rect x="175" y="245" width="10" height="10" fill="#e74c3c" opacity="0.7"/>
+  <rect x="100" y="195" width="10" height="10" fill="#e74c3c" opacity="0.7"/>
+
+  <!-- Support vectors (highlighted) -->
+  <circle cx="345" cy="115" r="5" fill="#3498db" opacity="0.7"/>
+  <circle cx="345" cy="115" r="9" fill="none" stroke="#3498db" stroke-width="2"/>
+  <circle cx="385" cy="165" r="5" fill="#3498db" opacity="0.7"/>
+  <circle cx="385" cy="165" r="9" fill="none" stroke="#3498db" stroke-width="2"/>
+
+  <rect x="237" y="178" width="10" height="10" fill="#e74c3c" opacity="0.7"/>
+  <rect x="233" y="174" width="18" height="18" fill="none" stroke="#e74c3c" stroke-width="2" rx="2"/>
+  <rect x="257" y="218" width="10" height="10" fill="#e74c3c" opacity="0.7"/>
+  <rect x="253" y="214" width="18" height="18" fill="none" stroke="#e74c3c" stroke-width="2" rx="2"/>
+
+  <!-- Legend -->
+  <circle cx="195" cy="310" r="4" fill="#3498db"/>
+  <text x="210" y="314" fill="#666" font-size="10">Class +1</text>
+  <rect x="270" y="306" width="8" height="8" fill="#e74c3c"/>
+  <text x="288" y="314" fill="#666" font-size="10">Class -1</text>
+  <circle cx="375" cy="310" r="5" fill="none" stroke="#333" stroke-width="1.5"/>
+  <text x="390" y="314" fill="#666" font-size="10">Support vectors (on margin)</text>
+</svg>

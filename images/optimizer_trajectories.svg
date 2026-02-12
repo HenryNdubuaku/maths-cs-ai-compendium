@@ -1,0 +1,45 @@
+<svg width="700" height="320" xmlns="http://www.w3.org/2000/svg">
+  <text x="350" y="22" fill="#333" font-size="14" font-weight="bold" text-anchor="middle">Optimizer Trajectories on a Loss Contour</text>
+
+  <!-- Contour ellipses (loss surface) -->
+  <ellipse cx="400" cy="180" rx="250" ry="120" fill="none" stroke="#ddd" stroke-width="1"/>
+  <ellipse cx="400" cy="180" rx="200" ry="96" fill="none" stroke="#ddd" stroke-width="1"/>
+  <ellipse cx="400" cy="180" rx="150" ry="72" fill="none" stroke="#ddd" stroke-width="1"/>
+  <ellipse cx="400" cy="180" rx="100" ry="48" fill="none" stroke="#ddd" stroke-width="1"/>
+  <ellipse cx="400" cy="180" rx="50" ry="24" fill="none" stroke="#ddd" stroke-width="1"/>
+  <ellipse cx="400" cy="180" rx="15" ry="7" fill="#f5f5f5" stroke="#ddd" stroke-width="1"/>
+
+  <!-- Minimum marker -->
+  <circle cx="400" cy="180" r="4" fill="#333"/>
+  <text x="415" y="178" fill="#333" font-size="10" font-weight="bold">min</text>
+
+  <!-- Axis labels -->
+  <text x="350" y="310" fill="#666" font-size="11" text-anchor="middle">w₁</text>
+  <text x="82" y="180" fill="#666" font-size="11" text-anchor="middle" transform="rotate(-90,82,180)">w₂</text>
+
+  <!-- SGD path (zigzag, blue) -->
+  <path d="M 160,80 L 190,130 L 175,155 L 210,190 L 195,205 L 230,215 L 225,210 L 260,200 L 265,195 L 300,190 L 320,188 L 360,184 L 385,181" fill="none" stroke="#3498db" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="160" cy="80" r="4" fill="#3498db"/>
+  <text x="140" y="72" fill="#3498db" font-size="11" font-weight="bold">SGD</text>
+
+  <!-- Momentum path (smoother curve, green) -->
+  <path d="M 160,80 L 195,120 L 220,155 L 255,175 L 300,185 L 345,183 L 380,181" fill="none" stroke="#27ae60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="160" cy="80" r="4" fill="#27ae60"/>
+  <text x="230" y="148" fill="#27ae60" font-size="11" font-weight="bold">Momentum</text>
+
+  <!-- Adam path (direct, red) -->
+  <path d="M 160,80 L 210,130 L 270,162 L 330,175 L 375,179" fill="none" stroke="#e74c3c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="160" cy="80" r="4" fill="#e74c3c"/>
+  <text x="280" y="155" fill="#e74c3c" font-size="11" font-weight="bold">Adam</text>
+
+  <!-- Start label -->
+  <text x="145" y="72" fill="#666" font-size="9" text-anchor="end">start</text>
+
+  <!-- Legend -->
+  <line x1="150" y1="305" x2="170" y2="305" stroke="#3498db" stroke-width="2"/>
+  <text x="178" y="309" fill="#666" font-size="10">SGD (zigzags)</text>
+  <line x1="290" y1="305" x2="310" y2="305" stroke="#27ae60" stroke-width="2"/>
+  <text x="318" y="309" fill="#666" font-size="10">Momentum (smoother)</text>
+  <line x1="440" y1="305" x2="460" y2="305" stroke="#e74c3c" stroke-width="2"/>
+  <text x="468" y="309" fill="#666" font-size="10">Adam (direct)</text>
+</svg>

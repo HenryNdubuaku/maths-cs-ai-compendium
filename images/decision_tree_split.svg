@@ -1,0 +1,61 @@
+<svg width="700" height="320" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="dt-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="none" stroke="#555" stroke-width="1"/>
+    </marker>
+  </defs>
+  <text x="350" y="22" fill="#333" font-size="14" font-weight="bold" text-anchor="middle">Decision Tree: Splitting on Features</text>
+
+  <!-- Root node -->
+  <rect x="265" y="38" width="170" height="36" rx="6" fill="#3498db" opacity="0.15" stroke="#3498db" stroke-width="1.5"/>
+  <text x="350" y="62" fill="#333" font-size="12" font-weight="bold" text-anchor="middle">age &lt; 30?</text>
+
+  <!-- Left branch -->
+  <line x1="310" y1="74" x2="190" y2="120" stroke="#555" stroke-width="1.2" marker-end="url(#dt-arrow)"/>
+  <text x="238" y="95" fill="#27ae60" font-size="10" text-anchor="middle">yes</text>
+
+  <!-- Right branch -->
+  <line x1="390" y1="74" x2="510" y2="120" stroke="#555" stroke-width="1.2" marker-end="url(#dt-arrow)"/>
+  <text x="462" y="95" fill="#e74c3c" font-size="10" text-anchor="middle">no</text>
+
+  <!-- Left child node -->
+  <rect x="105" y="122" width="170" height="36" rx="6" fill="#27ae60" opacity="0.15" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="190" y="146" fill="#333" font-size="12" font-weight="bold" text-anchor="middle">income &gt; 50k?</text>
+
+  <!-- Right child node -->
+  <rect x="425" y="122" width="170" height="36" rx="6" fill="#e74c3c" opacity="0.15" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="510" y="146" fill="#333" font-size="12" font-weight="bold" text-anchor="middle">student?</text>
+
+  <!-- Left-Left leaf -->
+  <line x1="150" y1="158" x2="95" y2="200" stroke="#555" stroke-width="1.2" marker-end="url(#dt-arrow)"/>
+  <text x="110" y="183" fill="#27ae60" font-size="10" text-anchor="middle">yes</text>
+  <rect x="40" y="202" width="110" height="32" rx="14" fill="#27ae60" opacity="0.2" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="95" y="223" fill="#27ae60" font-size="11" font-weight="bold" text-anchor="middle">Buy (85%)</text>
+
+  <!-- Left-Right leaf -->
+  <line x1="230" y1="158" x2="285" y2="200" stroke="#555" stroke-width="1.2" marker-end="url(#dt-arrow)"/>
+  <text x="270" y="183" fill="#e74c3c" font-size="10" text-anchor="middle">no</text>
+  <rect x="230" y="202" width="110" height="32" rx="14" fill="#e74c3c" opacity="0.2" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="285" y="223" fill="#e74c3c" font-size="11" font-weight="bold" text-anchor="middle">No Buy (70%)</text>
+
+  <!-- Right-Left leaf -->
+  <line x1="470" y1="158" x2="415" y2="200" stroke="#555" stroke-width="1.2" marker-end="url(#dt-arrow)"/>
+  <text x="430" y="183" fill="#27ae60" font-size="10" text-anchor="middle">yes</text>
+  <rect x="360" y="202" width="110" height="32" rx="14" fill="#27ae60" opacity="0.2" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="415" y="223" fill="#27ae60" font-size="11" font-weight="bold" text-anchor="middle">Buy (75%)</text>
+
+  <!-- Right-Right leaf -->
+  <line x1="550" y1="158" x2="605" y2="200" stroke="#555" stroke-width="1.2" marker-end="url(#dt-arrow)"/>
+  <text x="590" y="183" fill="#e74c3c" font-size="10" text-anchor="middle">no</text>
+  <rect x="550" y="202" width="110" height="32" rx="14" fill="#e74c3c" opacity="0.2" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="605" y="223" fill="#e74c3c" font-size="11" font-weight="bold" text-anchor="middle">No Buy (90%)</text>
+
+  <!-- Legend -->
+  <text x="130" y="270" fill="#666" font-size="10" text-anchor="middle">Internal nodes: feature tests</text>
+  <text x="350" y="270" fill="#666" font-size="10" text-anchor="middle">Branches: yes/no answers</text>
+  <text x="565" y="270" fill="#666" font-size="10" text-anchor="middle">Leaves: class predictions</text>
+
+  <!-- Gini note -->
+  <rect x="170" y="285" width="360" height="24" rx="6" fill="#f5f5f5" stroke="#333" stroke-width="1"/>
+  <text x="350" y="302" fill="#333" font-size="11" text-anchor="middle">Each split chosen to maximise information gain (reduce impurity)</text>
+</svg>

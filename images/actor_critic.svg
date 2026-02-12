@@ -1,0 +1,45 @@
+<svg width="700" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="ac-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="none" stroke="#555" stroke-width="1"/>
+    </marker>
+  </defs>
+  <text x="350" y="22" fill="#333" font-size="14" font-weight="bold" text-anchor="middle">Actor-Critic Architecture</text>
+
+  <!-- Shared input -->
+  <rect x="280" y="240" width="140" height="30" rx="6" fill="#f5f5f5" stroke="#333" stroke-width="1.5"/>
+  <text x="350" y="260" fill="#333" font-size="11" font-weight="bold" text-anchor="middle">State s_t</text>
+
+  <!-- Shared backbone (optional) -->
+  <line x1="320" y1="240" x2="200" y2="195" stroke="#555" stroke-width="1.5" marker-end="url(#ac-arrow)"/>
+  <line x1="380" y1="240" x2="500" y2="195" stroke="#555" stroke-width="1.5" marker-end="url(#ac-arrow)"/>
+
+  <!-- Actor head (left) -->
+  <rect x="115" y="140" width="170" height="55" rx="8" fill="#3498db" opacity="0.15" stroke="#3498db" stroke-width="2"/>
+  <text x="200" y="162" fill="#3498db" font-size="13" font-weight="bold" text-anchor="middle">Actor (Policy)</text>
+  <text x="200" y="180" fill="#3498db" font-size="11" text-anchor="middle">pi(a|s; theta)</text>
+
+  <!-- Critic head (right) -->
+  <rect x="415" y="140" width="170" height="55" rx="8" fill="#e74c3c" opacity="0.15" stroke="#e74c3c" stroke-width="2"/>
+  <text x="500" y="162" fill="#e74c3c" font-size="13" font-weight="bold" text-anchor="middle">Critic (Value)</text>
+  <text x="500" y="180" fill="#e74c3c" font-size="11" text-anchor="middle">V(s; phi)</text>
+
+  <!-- Actor output -->
+  <line x1="200" y1="140" x2="200" y2="105" stroke="#3498db" stroke-width="1.5" marker-end="url(#ac-arrow)"/>
+  <rect x="135" y="75" width="130" height="30" rx="14" fill="#3498db" opacity="0.2" stroke="#3498db" stroke-width="1.5"/>
+  <text x="200" y="95" fill="#3498db" font-size="11" font-weight="bold" text-anchor="middle">Action a_t</text>
+
+  <!-- Critic output -->
+  <line x1="500" y1="140" x2="500" y2="105" stroke="#e74c3c" stroke-width="1.5" marker-end="url(#ac-arrow)"/>
+  <rect x="430" y="75" width="140" height="30" rx="14" fill="#e74c3c" opacity="0.2" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="500" y="95" fill="#e74c3c" font-size="11" font-weight="bold" text-anchor="middle">Value estimate</text>
+
+  <!-- Advantage signal from critic to actor -->
+  <path d="M 430,85 C 380,55 320,55 285,75" fill="none" stroke="#9b59b6" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#ac-arrow)"/>
+  <text x="350" y="48" fill="#9b59b6" font-size="11" font-weight="bold" text-anchor="middle">advantage = r + gamma*V(s') - V(s)</text>
+  <text x="350" y="64" fill="#9b59b6" font-size="10" text-anchor="middle">(guides policy update)</text>
+
+  <!-- Summary -->
+  <rect x="120" y="280" width="460" height="18" rx="4" fill="#f5f5f5" stroke="#333" stroke-width="0.8"/>
+  <text x="350" y="293" fill="#333" font-size="10" text-anchor="middle">Actor decides what to do. Critic evaluates how good the decision was.</text>
+</svg>

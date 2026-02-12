@@ -1,0 +1,50 @@
+<svg width="700" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="ring-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="none" stroke="#3498db" stroke-width="1.2"/>
+    </marker>
+  </defs>
+  <text x="350" y="22" fill="#333" font-size="14" font-weight="bold" text-anchor="middle">Ring All-Reduce: Efficient Gradient Synchronisation</text>
+
+  <!-- Four devices in a ring -->
+  <!-- Device 0 (top) -->
+  <rect x="290" y="50" width="120" height="45" rx="8" fill="#3498db" opacity="0.15" stroke="#3498db" stroke-width="2"/>
+  <text x="350" y="70" fill="#3498db" font-size="11" font-weight="bold" text-anchor="middle">GPU 0</text>
+  <text x="350" y="85" fill="#3498db" font-size="9" text-anchor="middle">grads [A, B, C, D]</text>
+
+  <!-- Device 1 (right) -->
+  <rect x="500" y="130" width="120" height="45" rx="8" fill="#e74c3c" opacity="0.15" stroke="#e74c3c" stroke-width="2"/>
+  <text x="560" y="150" fill="#e74c3c" font-size="11" font-weight="bold" text-anchor="middle">GPU 1</text>
+  <text x="560" y="165" fill="#e74c3c" font-size="9" text-anchor="middle">grads [A, B, C, D]</text>
+
+  <!-- Device 2 (bottom) -->
+  <rect x="290" y="210" width="120" height="45" rx="8" fill="#27ae60" opacity="0.15" stroke="#27ae60" stroke-width="2"/>
+  <text x="350" y="230" fill="#27ae60" font-size="11" font-weight="bold" text-anchor="middle">GPU 2</text>
+  <text x="350" y="245" fill="#27ae60" font-size="9" text-anchor="middle">grads [A, B, C, D]</text>
+
+  <!-- Device 3 (left) -->
+  <rect x="80" y="130" width="120" height="45" rx="8" fill="#9b59b6" opacity="0.15" stroke="#9b59b6" stroke-width="2"/>
+  <text x="140" y="150" fill="#9b59b6" font-size="11" font-weight="bold" text-anchor="middle">GPU 3</text>
+  <text x="140" y="165" fill="#9b59b6" font-size="9" text-anchor="middle">grads [A, B, C, D]</text>
+
+  <!-- Ring arrows (clockwise) -->
+  <!-- 0 -> 1 -->
+  <path d="M 410,72 C 440,80 480,105 500,130" fill="none" stroke="#3498db" stroke-width="2" marker-end="url(#ring-arrow)"/>
+  <text x="465" y="95" fill="#3498db" font-size="9" font-weight="bold">chunk</text>
+
+  <!-- 1 -> 2 -->
+  <path d="M 530,175 C 510,195 470,215 410,232" fill="none" stroke="#3498db" stroke-width="2" marker-end="url(#ring-arrow)"/>
+  <text x="485" y="210" fill="#3498db" font-size="9" font-weight="bold">chunk</text>
+
+  <!-- 2 -> 3 -->
+  <path d="M 290,232 C 250,225 215,200 200,175" fill="none" stroke="#3498db" stroke-width="2" marker-end="url(#ring-arrow)"/>
+  <text x="230" y="215" fill="#3498db" font-size="9" font-weight="bold">chunk</text>
+
+  <!-- 3 -> 0 -->
+  <path d="M 170,130 C 195,105 240,80 290,72" fill="none" stroke="#3498db" stroke-width="2" marker-end="url(#ring-arrow)"/>
+  <text x="215" y="95" fill="#3498db" font-size="9" font-weight="bold">chunk</text>
+
+  <!-- Explanation -->
+  <rect x="100" y="270" width="500" height="25" rx="6" fill="#f5f5f5" stroke="#333" stroke-width="1"/>
+  <text x="350" y="287" fill="#333" font-size="10" text-anchor="middle">Each GPU sends 1/N of its gradients to neighbour. After N-1 steps, all have the full sum.</text>
+</svg>

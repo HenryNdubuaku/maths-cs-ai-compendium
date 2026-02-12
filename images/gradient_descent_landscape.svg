@@ -1,0 +1,50 @@
+<svg width="700" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="gd-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="none" stroke="#e74c3c" stroke-width="1.2"/>
+    </marker>
+  </defs>
+  <text x="350" y="22" fill="#333" font-size="14" font-weight="bold" text-anchor="middle">Gradient Descent: Rolling Downhill on the Loss Surface</text>
+
+  <!-- Axes -->
+  <line x1="60" y1="250" x2="640" y2="250" stroke="#333" stroke-width="1.5"/>
+  <line x1="60" y1="250" x2="60" y2="40" stroke="#333" stroke-width="1.5"/>
+  <text x="350" y="275" fill="#666" font-size="11" text-anchor="middle">parameter w</text>
+  <text x="35" y="145" fill="#666" font-size="11" text-anchor="middle" transform="rotate(-90,35,145)">Loss L(w)</text>
+
+  <!-- Loss curve -->
+  <path d="M 80,80 C 110,65 140,55 170,80 C 200,105 220,170 260,200 C 300,230 320,240 360,240 C 400,240 420,230 440,210 C 460,190 480,165 510,155 C 540,150 560,155 580,170 C 600,185 620,200 640,210" fill="none" stroke="#3498db" stroke-width="2.5"/>
+
+  <!-- Global minimum marker -->
+  <circle cx="360" cy="240" r="4" fill="#27ae60"/>
+  <text x="360" y="260" fill="#27ae60" font-size="10" font-weight="bold" text-anchor="middle">global min</text>
+
+  <!-- Local minimum marker -->
+  <circle cx="520" cy="152" r="3" fill="#f39c12"/>
+  <text x="520" y="145" fill="#f39c12" font-size="9" text-anchor="middle">local min</text>
+
+  <!-- Ball 1: large learning rate (overshooting) -->
+  <circle cx="150" cy="68" r="8" fill="#e74c3c" opacity="0.8"/>
+  <line x1="158" y1="72" x2="250" y2="195" stroke="#e74c3c" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#gd-arrow)"/>
+  <text x="148" y="55" fill="#e74c3c" font-size="10" font-weight="bold" text-anchor="middle">large lr</text>
+  <text x="210" y="115" fill="#e74c3c" font-size="9" transform="rotate(55,210,115)">big step</text>
+
+  <!-- Ball 2: good learning rate -->
+  <circle cx="260" cy="200" r="7" fill="#27ae60" opacity="0.8"/>
+  <circle cx="300" cy="228" r="6" fill="#27ae60" opacity="0.6"/>
+  <circle cx="330" cy="237" r="5" fill="#27ae60" opacity="0.5"/>
+  <line x1="267" y1="204" x2="296" y2="225" stroke="#27ae60" stroke-width="1.2" stroke-dasharray="3,2"/>
+  <line x1="306" y1="230" x2="326" y2="236" stroke="#27ae60" stroke-width="1.2" stroke-dasharray="3,2"/>
+  <text x="290" y="195" fill="#27ae60" font-size="10" font-weight="bold" text-anchor="middle">good lr</text>
+
+  <!-- Ball 3: small learning rate -->
+  <circle cx="480" cy="165" r="6" fill="#9b59b6" opacity="0.8"/>
+  <circle cx="488" cy="162" r="5" fill="#9b59b6" opacity="0.6"/>
+  <circle cx="495" cy="159" r="4.5" fill="#9b59b6" opacity="0.5"/>
+  <text x="488" y="183" fill="#9b59b6" font-size="10" font-weight="bold" text-anchor="middle">small lr</text>
+  <text x="488" y="195" fill="#9b59b6" font-size="9" text-anchor="middle">(slow, stuck)</text>
+
+  <!-- Update rule -->
+  <rect x="195" y="280" width="310" height="20" rx="6" fill="#f5f5f5" stroke="#333" stroke-width="1"/>
+  <text x="350" y="294" fill="#333" font-size="11" text-anchor="middle">w ← w - η · dL/dw (η = learning rate)</text>
+</svg>
