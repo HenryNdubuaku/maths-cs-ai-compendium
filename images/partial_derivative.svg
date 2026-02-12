@@ -1,0 +1,40 @@
+<svg width="380" height="200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="pd-arr" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto">
+      <path d="M0,0 L7,2.5 L0,5" fill="#ccc"/>
+    </marker>
+  </defs>
+
+  <text x="190" y="14" text-anchor="middle" fill="#333" font-size="12" font-weight="bold">Partial derivative: slice the surface at fixed y</text>
+
+  <!-- 3D surface suggestion (bowl) -->
+  <ellipse cx="130" cy="110" rx="90" ry="40" fill="none" stroke="#9b59b6" stroke-width="1.5" stroke-dasharray="4"/>
+  <ellipse cx="130" cy="95" rx="70" ry="30" fill="none" stroke="#9b59b6" stroke-width="1" stroke-dasharray="3" opacity="0.5"/>
+  <ellipse cx="130" cy="80" rx="45" ry="18" fill="none" stroke="#9b59b6" stroke-width="1" stroke-dasharray="3" opacity="0.3"/>
+
+  <!-- Bowl bottom point -->
+  <circle cx="130" cy="70" r="3" fill="#9b59b6"/>
+  <text x="138" y="68" fill="#9b59b6" font-size="9">minimum</text>
+
+  <!-- Slice plane -->
+  <line x1="40" y1="95" x2="220" y2="95" stroke="#e74c3c" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="225" y="98" fill="#e74c3c" font-size="10">fixed y</text>
+
+  <!-- Resulting 2D curve from slice -->
+  <!-- Right side: the sliced curve -->
+  <line x1="250" y1="25" x2="250" y2="180" stroke="#ccc" stroke-width="0.8" stroke-dasharray="3"/>
+
+  <line x1="270" y1="170" x2="370" y2="170" stroke="#ccc" stroke-width="1" marker-end="url(#pd-arr)"/>
+  <line x1="270" y1="170" x2="270" y2="30" stroke="#ccc" stroke-width="1" marker-end="url(#pd-arr)"/>
+  <text x="374" y="173" fill="#999" font-size="9">x</text>
+
+  <!-- Parabola slice -->
+  <path d="M 280,155 Q 310,55 355,140" fill="none" stroke="#e74c3c" stroke-width="2.5"/>
+
+  <!-- Tangent at a point -->
+  <circle cx="318" cy="65" r="4" fill="#3498db"/>
+  <line x1="290" y1="90" x2="350" y2="50" stroke="#3498db" stroke-width="1.5" stroke-dasharray="4"/>
+  <text x="352" y="48" fill="#3498db" font-size="9">slope = ∂f/∂x</text>
+
+  <text x="190" y="195" text-anchor="middle" fill="#666" font-size="10">hold y constant, find slope along x</text>
+</svg>

@@ -1,0 +1,47 @@
+<svg width="380" height="200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="lm-r" markerWidth="6" markerHeight="4" refX="6" refY="2" orient="auto">
+      <path d="M0,0 L6,2 L0,4" fill="#e74c3c"/>
+    </marker>
+    <marker id="lm-b" markerWidth="6" markerHeight="4" refX="6" refY="2" orient="auto">
+      <path d="M0,0 L6,2 L0,4" fill="#3498db"/>
+    </marker>
+  </defs>
+
+  <text x="190" y="14" text-anchor="middle" fill="#333" font-size="12" font-weight="bold">Lagrange multipliers: gradients are parallel at optimum</text>
+
+  <!-- Contour lines of f(x,y) -->
+  <ellipse cx="120" cy="100" rx="30" ry="25" fill="none" stroke="#9b59b6" stroke-width="1" stroke-dasharray="3"/>
+  <ellipse cx="120" cy="100" rx="55" ry="45" fill="none" stroke="#9b59b6" stroke-width="1" stroke-dasharray="3"/>
+  <ellipse cx="120" cy="100" rx="80" ry="65" fill="none" stroke="#9b59b6" stroke-width="1" stroke-dasharray="3"/>
+  <ellipse cx="120" cy="100" rx="105" ry="82" fill="none" stroke="#9b59b6" stroke-width="0.8" stroke-dasharray="3"/>
+  <text x="120" y="103" text-anchor="middle" fill="#9b59b6" font-size="9">f = max</text>
+  <text x="75" y="75" fill="#9b59b6" font-size="8">f = c₁</text>
+  <text x="55" y="55" fill="#9b59b6" font-size="8">f = c₂</text>
+
+  <!-- Constraint curve g(x,y) = c (circle) -->
+  <circle cx="190" cy="100" r="70" fill="none" stroke="#3498db" stroke-width="2.5"/>
+  <text x="195" y="35" fill="#3498db" font-size="10" font-weight="bold">g(x,y) = c</text>
+  <text x="195" y="48" fill="#3498db" font-size="9">(constraint)</text>
+
+  <!-- Optimal point (where contour is tangent to constraint) -->
+  <circle cx="155" cy="43" r="6" fill="#e74c3c"/>
+  <text x="140" y="38" fill="#e74c3c" font-size="9" font-weight="bold">optimum</text>
+
+  <!-- Gradient of f at optimal point -->
+  <line x1="155" y1="43" x2="135" y2="18" stroke="#9b59b6" stroke-width="2" marker-end="url(#lm-r)"/>
+  <text x="118" y="15" fill="#9b59b6" font-size="9">∇f</text>
+
+  <!-- Gradient of g at optimal point (parallel to ∇f) -->
+  <line x1="155" y1="43" x2="143" y2="25" stroke="#3498db" stroke-width="2" marker-end="url(#lm-b)"/>
+  <text x="146" y="22" fill="#3498db" font-size="9">∇g</text>
+
+  <!-- Not optimal point -->
+  <circle cx="250" cy="65" r="4" fill="#999"/>
+  <line x1="250" y1="65" x2="225" y2="55" stroke="#9b59b6" stroke-width="1.5" marker-end="url(#lm-r)"/>
+  <line x1="250" y1="65" x2="235" y2="40" stroke="#3498db" stroke-width="1.5" marker-end="url(#lm-b)"/>
+  <text x="272" y="62" fill="#999" font-size="8">not optimal:</text>
+  <text x="272" y="73" fill="#999" font-size="8">gradients not ∥</text>
+
+  <text x="190" y="192" text-anchor="middle" fill="#666" font-size="10">at the constrained optimum, ∇f = λ∇g (parallel gradients)</text>
+</svg>

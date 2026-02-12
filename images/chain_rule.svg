@@ -1,0 +1,32 @@
+<svg width="380" height="120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="cr-arr" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto">
+      <path d="M0,0 L7,2.5 L0,5" fill="#999"/>
+    </marker>
+  </defs>
+
+  <!-- x box -->
+  <rect x="10" y="35" width="60" height="40" rx="6" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <text x="40" y="60" text-anchor="middle" fill="#3498db" font-size="14" font-weight="bold">x</text>
+
+  <!-- arrow x -> g -->
+  <line x1="75" y1="55" x2="108" y2="55" stroke="#999" stroke-width="1.5" marker-end="url(#cr-arr)"/>
+
+  <!-- g(x) box -->
+  <rect x="115" y="35" width="70" height="40" rx="6" fill="#27ae60" fill-opacity="0.12" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="150" y="60" text-anchor="middle" fill="#27ae60" font-size="14" font-weight="bold">g(x)</text>
+
+  <!-- arrow g -> f -->
+  <line x1="190" y1="55" x2="223" y2="55" stroke="#999" stroke-width="1.5" marker-end="url(#cr-arr)"/>
+
+  <!-- f(g(x)) box -->
+  <rect x="230" y="35" width="80" height="40" rx="6" fill="#e74c3c" fill-opacity="0.12" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="270" y="60" text-anchor="middle" fill="#e74c3c" font-size="14" font-weight="bold">f(g(x))</text>
+
+  <!-- Derivative labels below -->
+  <text x="150" y="100" text-anchor="middle" fill="#27ae60" font-size="11">g'(x)</text>
+  <text x="195" y="100" text-anchor="middle" fill="#333" font-size="13">×</text>
+  <text x="270" y="100" text-anchor="middle" fill="#e74c3c" font-size="11">f'(g(x))</text>
+
+  <text x="190" y="115" text-anchor="middle" fill="#666" font-size="10">derivative of outer × derivative of inner</text>
+</svg>

@@ -1,0 +1,51 @@
+<svg width="420" height="180" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="cp-arr" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto">
+      <path d="M0,0 L7,2.5 L0,5" fill="#ccc"/>
+    </marker>
+  </defs>
+
+  <text x="210" y="14" text-anchor="middle" fill="#333" font-size="12" font-weight="bold">Three kinds of critical point (f'(x) = 0)</text>
+
+  <!-- === Local Maximum === -->
+  <line x1="15" y1="140" x2="125" y2="140" stroke="#ccc" stroke-width="0.8" marker-end="url(#cp-arr)"/>
+  <line x1="15" y1="140" x2="15" y2="28" stroke="#ccc" stroke-width="0.8" marker-end="url(#cp-arr)"/>
+
+  <!-- hill curve -->
+  <path d="M 20,120 Q 45,55 70,40 Q 95,55 120,120" fill="none" stroke="#e74c3c" stroke-width="2.5"/>
+
+  <!-- flat tangent -->
+  <line x1="45" y1="40" x2="95" y2="40" stroke="#e74c3c" stroke-width="1.5" stroke-dasharray="4"/>
+  <circle cx="70" cy="40" r="4" fill="#e74c3c"/>
+
+  <text x="70" y="155" text-anchor="middle" fill="#e74c3c" font-size="10" font-weight="bold">local max</text>
+  <text x="70" y="168" text-anchor="middle" fill="#e74c3c" font-size="9">f'' &lt; 0 (curves down)</text>
+
+  <!-- === Local Minimum === -->
+  <line x1="155" y1="140" x2="265" y2="140" stroke="#ccc" stroke-width="0.8" marker-end="url(#cp-arr)"/>
+  <line x1="155" y1="140" x2="155" y2="28" stroke="#ccc" stroke-width="0.8" marker-end="url(#cp-arr)"/>
+
+  <!-- bowl curve -->
+  <path d="M 160,50 Q 185,125 210,130 Q 235,125 260,50" fill="none" stroke="#3498db" stroke-width="2.5"/>
+
+  <!-- flat tangent -->
+  <line x1="185" y1="130" x2="235" y2="130" stroke="#3498db" stroke-width="1.5" stroke-dasharray="4"/>
+  <circle cx="210" cy="130" r="4" fill="#3498db"/>
+
+  <text x="210" y="155" text-anchor="middle" fill="#3498db" font-size="10" font-weight="bold">local min</text>
+  <text x="210" y="168" text-anchor="middle" fill="#3498db" font-size="9">f'' &gt; 0 (curves up)</text>
+
+  <!-- === Inflection Point === -->
+  <line x1="295" y1="140" x2="405" y2="140" stroke="#ccc" stroke-width="0.8" marker-end="url(#cp-arr)"/>
+  <line x1="295" y1="140" x2="295" y2="28" stroke="#ccc" stroke-width="0.8" marker-end="url(#cp-arr)"/>
+
+  <!-- S-curve (x³ shape) -->
+  <path d="M 300,45 Q 325,55 350,85 Q 375,115 400,125" fill="none" stroke="#27ae60" stroke-width="2.5"/>
+
+  <!-- flat tangent at inflection -->
+  <line x1="325" y1="85" x2="375" y2="85" stroke="#27ae60" stroke-width="1.5" stroke-dasharray="4"/>
+  <circle cx="350" cy="85" r="4" fill="#27ae60"/>
+
+  <text x="350" y="155" text-anchor="middle" fill="#27ae60" font-size="10" font-weight="bold">inflection</text>
+  <text x="350" y="168" text-anchor="middle" fill="#27ae60" font-size="9">f'' = 0 (flat but no turn)</text>
+</svg>

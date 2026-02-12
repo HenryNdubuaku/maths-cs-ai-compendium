@@ -1,0 +1,46 @@
+<svg width="380" height="200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="gc-r" markerWidth="6" markerHeight="4" refX="6" refY="2" orient="auto">
+      <path d="M0,0 L6,2 L0,4" fill="#e74c3c"/>
+    </marker>
+  </defs>
+
+  <text x="190" y="14" text-anchor="middle" fill="#333" font-size="12" font-weight="bold">Gradient vectors on contour lines</text>
+
+  <!-- Contour ellipses (representing f(x,y) = x² + y²) -->
+  <ellipse cx="160" cy="105" rx="25" ry="25" fill="none" stroke="#3498db" stroke-width="1.5"/>
+  <text x="188" y="100" fill="#3498db" font-size="9">c=1</text>
+  <ellipse cx="160" cy="105" rx="50" ry="50" fill="none" stroke="#3498db" stroke-width="1.2"/>
+  <text x="214" y="100" fill="#3498db" font-size="9">c=2</text>
+  <ellipse cx="160" cy="105" rx="75" ry="75" fill="none" stroke="#3498db" stroke-width="1"/>
+  <text x="238" y="100" fill="#3498db" font-size="9">c=3</text>
+  <ellipse cx="160" cy="105" rx="95" ry="95" fill="none" stroke="#3498db" stroke-width="0.8" stroke-dasharray="4"/>
+
+  <!-- Gradient arrows (pointing radially outward = uphill) -->
+  <line x1="185" y1="105" x2="210" y2="105" stroke="#e74c3c" stroke-width="2" marker-end="url(#gc-r)"/>
+  <line x1="160" y1="80" x2="160" y2="55" stroke="#e74c3c" stroke-width="2" marker-end="url(#gc-r)"/>
+  <line x1="135" y1="105" x2="110" y2="105" stroke="#e74c3c" stroke-width="2" marker-end="url(#gc-r)"/>
+  <line x1="160" y1="130" x2="160" y2="155" stroke="#e74c3c" stroke-width="2" marker-end="url(#gc-r)"/>
+  <!-- diagonal arrows -->
+  <line x1="178" y1="87" x2="198" y2="67" stroke="#e74c3c" stroke-width="1.8" marker-end="url(#gc-r)"/>
+  <line x1="142" y1="123" x2="122" y2="143" stroke="#e74c3c" stroke-width="1.8" marker-end="url(#gc-r)"/>
+  <line x1="178" y1="123" x2="198" y2="143" stroke="#e74c3c" stroke-width="1.8" marker-end="url(#gc-r)"/>
+  <line x1="142" y1="87" x2="122" y2="67" stroke="#e74c3c" stroke-width="1.8" marker-end="url(#gc-r)"/>
+
+  <!-- Center point -->
+  <circle cx="160" cy="105" r="3" fill="#333"/>
+  <text x="164" y="112" fill="#333" font-size="9">min</text>
+
+  <!-- Legend -->
+  <line x1="280" y1="60" x2="310" y2="60" stroke="#3498db" stroke-width="1.5"/>
+  <text x="315" y="63" fill="#3498db" font-size="10">contour lines</text>
+  <line x1="280" y1="80" x2="305" y2="80" stroke="#e74c3c" stroke-width="2" marker-end="url(#gc-r)"/>
+  <text x="315" y="83" fill="#e74c3c" font-size="10">∇f (gradient)</text>
+
+  <text x="310" y="120" fill="#666" font-size="10">gradient is always</text>
+  <text x="310" y="133" fill="#666" font-size="10">⊥ to contour lines</text>
+  <text x="310" y="150" fill="#27ae60" font-size="10">-∇f = downhill</text>
+  <text x="310" y="163" fill="#27ae60" font-size="10">(gradient descent)</text>
+
+  <text x="190" y="195" text-anchor="middle" fill="#666" font-size="10">for f(x,y) = x² + y², contours are circles, gradients point radially out</text>
+</svg>
