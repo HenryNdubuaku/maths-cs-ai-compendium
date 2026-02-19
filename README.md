@@ -16,7 +16,7 @@ Over the past years working in AI/ML, I filled notebooks with intuition first, r
 | 04 | [Statistics](chapter%2004%3A%20statistics) | Descriptive measures, sampling, central limit theorem, hypothesis testing, confidence intervals | Available |
 | 05 | [Probability](chapter%2005%3A%20probability) | Counting, conditional probability, distributions, Bayesian methods, information theory | Available |
 | 06 | [Machine Learning](chapter%2006%3A%20machine%20learning) | Classical ML, gradient methods, deep learning, reinforcement learning, distributed training | Available |
-| 07 | [Computational Linguistics](chapter%2007%3A%20computational%20linguistics) | syntax, semantics, pragmatics, NLP, language models, RNNs, CNNs, attention, transformers, text diffusion, text OCR, MoE, SSMs, modern LLM architectures, NLP evaluation | Coming |
+| 07 | [Computational Linguistics](chapter%2007%3A%20computational%20linguistics) | syntax, semantics, pragmatics, NLP, language models, RNNs, CNNs, attention, transformers, text diffusion, text OCR, MoE, SSMs, modern LLM architectures, NLP evaluation | Available |
 | 08 | Computer Vision | image processing, object detection, segmentation, video processing, SLAM, CNNs, vision transformers, diffusion, flow matching, VR/AR | Coming |
 | 09 | Audio & Speech | DSP, ASR, TTS, voice & acoustic activity detection, diarization, source separation, active noise cancelation, wavenet, conformer| Coming |
 | 10 | Multimodal Learning | fusion strategies, contrastive learning, VLMs, image tokenizer, video audio co-generation | Coming |
