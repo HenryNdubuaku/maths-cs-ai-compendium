@@ -1,0 +1,8 @@
+[book]
+title = "Maths, CS & AI Compendium"
+authors = ["Henry Ndubuaku"]
+language = "en"
+src = "src"
+
+[output.html]
+mathjax-support = false
