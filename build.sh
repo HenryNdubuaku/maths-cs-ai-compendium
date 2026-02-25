@@ -78,6 +78,26 @@ in_math && /^```$/ { in_math=0; print "$$\n</div>"; next }
   done
 done
 
+# Rewrite README chapter links from GitHub directory URLs to mdBook paths
+# e.g. "chapter%2001%3A%20vectors" -> "ch01-vectors/01-vector-spaces.html"
+for chapter_dir in "chapter "*/; do
+  chapter_dir="${chapter_dir%/}"
+  num="${chapter_dir#chapter }"
+  num="${num%%:*}"
+  name="${chapter_dir#*: }"
+  clean_name="$(echo "$name" | tr '[:upper:]' '[:lower:]' | tr ' ' '-')"
+
+  # URL-encoded form of the directory name (spaces=%20, colon=%3A)
+  encoded="$(echo "$chapter_dir" | sed 's/ /%20/g; s/:/%3A/g')"
+
+  # Find the first .md file in the chapter
+  first_file="$(ls "src/ch${num}-${clean_name}/"*.md 2>/dev/null | head -1)"
+  if [ -n "$first_file" ]; then
+    first_basename="$(basename "$first_file" .md)"
+    sed -i '' "s|${encoded}|ch${num}-${clean_name}/${first_basename}.html|g" src/README.md
+  fi
+done
+
 echo "src/ prepared successfully."
 echo ""
 
