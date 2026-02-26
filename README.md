@@ -19,7 +19,7 @@ Over the past years working in AI/ML, I filled notebooks with intuition first, r
 | 07 | [Computational Linguistics](chapter%2007%3A%20computational%20linguistics) | syntax, semantics, pragmatics, NLP, language models, RNNs, CNNs, attention, transformers, text diffusion, text OCR, MoE, SSMs, modern LLM architectures, NLP evaluation | Available |
 | 08 | [Computer Vision](chapter%2008%3A%20computer%20vision) | image processing, object detection, segmentation, video processing, SLAM, CNNs, vision transformers, diffusion, flow matching, VR/AR | Available |
 | 09 | [Audio & Speech](chapter%2009%3A%20audio%20and%20speech) | DSP, ASR, TTS, voice & acoustic activity detection, diarisation, source separation, active noise cancellation, wavenet, conformer | Available |
-| 10 | Multimodal Learning | fusion strategies, contrastive learning, VLMs, image tokenizer, video audio co-generation | Coming |
+| 10 | [Multimodal Learning](chapter%2010%3A%20multimodal%20learning) | fusion strategies, contrastive learning, CLIP, VLMs, image/video tokenisation, cross-modal generation, unified architectures, world models | Available |
 | 11 | Autonomous Systems | perception, robot learning, VLAs, self-driving cars, space robots | Coming |
 | 12 | Computing & OS | discreet maths, computer architecture, operating systems, RAM, concurrency, parallelism, programming languages | Coming |
 | 13 | Data Structures & Algorithms | arrays, trees, graph, search, sorting, hashmaps | Coming |
