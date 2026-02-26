@@ -45,7 +45,6 @@ Over the past years working in AI/ML, I filled notebooks with intuition first, r
 - Suggest topics via GitHub issues.
 - PR corrections and better intuition.
 - Create SVG images in `../images/` for all diagrams. 
-- For equations, use ` ```math ` fenced code blocks (NOT `$$`)
-- For display math — GitHub escapes `\\` inside `$$`, breaking matrices. 
-- Inline math `$...$` is fine for simple expressions but move anything with `\\` into a ` ```math ` block. 
+- For display math, use `$$...$$` blocks.
+- Inline math `$...$` is fine for simple expressions.
 - Use `\ast` instead of `*` for conjugate/adjoint in inline math.
