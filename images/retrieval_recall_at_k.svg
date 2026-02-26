@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 280" width="650" height="280">
+  <defs>
+    <marker id="rk-gray" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="325" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">Recall@K for Image-Text Retrieval</text>
+
+  <!-- ====== Example 1 (top half) ====== -->
+  <text x="30" y="52" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#333">Example 1</text>
+
+  <!-- Query image box -->
+  <rect x="30" y="60" width="70" height="55" rx="8" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <text x="65" y="82" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#3498db">Query</text>
+  <text x="65" y="97" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3498db">Image</text>
+  <text x="65" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#3498db">&#x1F304;</text>
+
+  <!-- Arrow to ranked list -->
+  <line x1="100" y1="87" x2="140" y2="87" stroke="#666" stroke-width="1.5" marker-end="url(#rk-gray)"/>
+
+  <!-- Ranked list of 5 text candidates -->
+  <!-- #1 (wrong) -->
+  <rect x="148" y="48" width="190" height="22" rx="5" fill="#f0f0f0" stroke="#ccc" stroke-width="1"/>
+  <text x="158" y="63" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#999">#1</text>
+  <text x="178" y="63" font-family="Arial, sans-serif" font-size="9" fill="#666">"a painting of flowers"</text>
+
+  <!-- #2 (wrong) -->
+  <rect x="148" y="74" width="190" height="22" rx="5" fill="#f0f0f0" stroke="#ccc" stroke-width="1"/>
+  <text x="158" y="89" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#999">#2</text>
+  <text x="178" y="89" font-family="Arial, sans-serif" font-size="9" fill="#666">"a photo of a city"</text>
+
+  <!-- #3 (CORRECT — green) -->
+  <rect x="148" y="100" width="190" height="22" rx="5" fill="#27ae60" fill-opacity="0.15" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="158" y="115" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#27ae60">#3</text>
+  <text x="178" y="115" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#27ae60">"a beautiful sunset" &#x2713;</text>
+
+  <!-- #4 -->
+  <rect x="148" y="126" width="190" height="22" rx="5" fill="#f0f0f0" stroke="#ccc" stroke-width="1"/>
+  <text x="158" y="141" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#999">#4</text>
+  <text x="178" y="141" font-family="Arial, sans-serif" font-size="9" fill="#666">"a dog on a beach"</text>
+
+  <!-- #5 -->
+  <rect x="148" y="152" width="190" height="22" rx="5" fill="#f0f0f0" stroke="#ccc" stroke-width="1"/>
+  <text x="158" y="167" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#999">#5</text>
+  <text x="178" y="167" font-family="Arial, sans-serif" font-size="9" fill="#666">"a rainy afternoon"</text>
+
+  <!-- Top-K=3 bracket -->
+  <line x1="345" y1="50" x2="355" y2="50" stroke="#9b59b6" stroke-width="1.5"/>
+  <line x1="355" y1="50" x2="355" y2="120" stroke="#9b59b6" stroke-width="1.5"/>
+  <line x1="345" y1="120" x2="355" y2="120" stroke="#9b59b6" stroke-width="1.5"/>
+  <text x="365" y="90" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#9b59b6">Top-K = 3</text>
+
+  <!-- Result label -->
+  <rect x="460" y="72" width="175" height="32" rx="8" fill="#27ae60" fill-opacity="0.12" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="547" y="86" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#27ae60">Recall@3 = 1</text>
+  <text x="547" y="99" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">correct match found in top 3</text>
+
+  <!-- ====== Example 2 (bottom half) ====== -->
+  <line x1="20" y1="185" x2="640" y2="185" stroke="#ccc" stroke-width="0.8" stroke-dasharray="4,3"/>
+
+  <text x="30" y="202" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#333">Example 2</text>
+
+  <!-- Query image box -->
+  <rect x="30" y="210" width="70" height="55" rx="8" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <text x="65" y="232" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#3498db">Query</text>
+  <text x="65" y="247" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3498db">Image</text>
+  <text x="65" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#3498db">&#x1F431;</text>
+
+  <!-- Arrow to ranked list -->
+  <line x1="100" y1="237" x2="140" y2="237" stroke="#666" stroke-width="1.5" marker-end="url(#rk-gray)"/>
+
+  <!-- Compact ranked list for example 2 -->
+  <!-- #1 -->
+  <rect x="148" y="198" width="190" height="18" rx="4" fill="#f0f0f0" stroke="#ccc" stroke-width="1"/>
+  <text x="158" y="211" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#999">#1</text>
+  <text x="178" y="211" font-family="Arial, sans-serif" font-size="8" fill="#666">"a dog playing fetch"</text>
+
+  <!-- #2 -->
+  <rect x="148" y="219" width="190" height="18" rx="4" fill="#f0f0f0" stroke="#ccc" stroke-width="1"/>
+  <text x="158" y="232" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#999">#2</text>
+  <text x="178" y="232" font-family="Arial, sans-serif" font-size="8" fill="#666">"a mountain landscape"</text>
+
+  <!-- #3 -->
+  <rect x="148" y="240" width="190" height="18" rx="4" fill="#f0f0f0" stroke="#ccc" stroke-width="1"/>
+  <text x="158" y="253" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#999">#3</text>
+  <text x="178" y="253" font-family="Arial, sans-serif" font-size="8" fill="#666">"a flower garden"</text>
+
+  <!-- Top-K=3 bracket (bottom) -->
+  <line x1="345" y1="200" x2="355" y2="200" stroke="#9b59b6" stroke-width="1.5"/>
+  <line x1="355" y1="200" x2="355" y2="256" stroke="#9b59b6" stroke-width="1.5"/>
+  <line x1="345" y1="256" x2="355" y2="256" stroke="#9b59b6" stroke-width="1.5"/>
+  <text x="365" y="232" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#9b59b6">Top-3</text>
+
+  <!-- #4 -->
+  <rect x="148" y="261" width="190" height="18" rx="4" fill="#f0f0f0" stroke="#ccc" stroke-width="1"/>
+  <text x="158" y="274" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#999">#4</text>
+  <text x="178" y="274" font-family="Arial, sans-serif" font-size="8" fill="#666">"a sports car"</text>
+
+  <!-- #5 (CORRECT but outside top 3) -->
+  <rect x="148" y="282" width="190" height="18" rx="4" fill="#e74c3c" fill-opacity="0.12" stroke="#e74c3c" stroke-width="1.2"/>
+  <text x="158" y="295" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#e74c3c">#5</text>
+  <text x="178" y="295" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#e74c3c">"a cute kitten" &#x2713;</text>
+
+  <!-- Result label -->
+  <rect x="460" y="222" width="175" height="32" rx="8" fill="#e74c3c" fill-opacity="0.12" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="547" y="236" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#e74c3c">Recall@3 = 0</text>
+  <text x="547" y="249" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">correct match NOT in top 3</text>
+</svg>

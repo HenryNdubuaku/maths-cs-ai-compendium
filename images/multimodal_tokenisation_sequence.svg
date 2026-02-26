@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" width="800" height="200">
+  <defs>
+    <marker id="arrow-mts" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="8" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,3.5 L0,7z" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="400" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">Interleaved Multimodal Token Sequence</text>
+
+  <!-- Token sequence - horizontal row -->
+  <!-- Text tokens: "The", "dog" -->
+  <rect x="40" y="50" width="36" height="28" rx="4" fill="#e74c3c" fill-opacity="0.15" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="58" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#e74c3c">The</text>
+
+  <rect x="82" y="50" width="36" height="28" rx="4" fill="#e74c3c" fill-opacity="0.15" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="100" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#e74c3c">dog</text>
+
+  <!-- Boundary marker [IMG] -->
+  <rect x="128" y="50" width="42" height="28" rx="4" fill="#333" fill-opacity="0.08" stroke="#333" stroke-width="1.5"/>
+  <text x="149" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#333">[IMG]</text>
+
+  <!-- Image tokens -->
+  <rect x="180" y="50" width="36" height="28" rx="4" fill="#3498db" fill-opacity="0.15" stroke="#3498db" stroke-width="1.5"/>
+  <text x="198" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#3498db">42</text>
+
+  <rect x="222" y="50" width="36" height="28" rx="4" fill="#3498db" fill-opacity="0.15" stroke="#3498db" stroke-width="1.5"/>
+  <text x="240" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#3498db">7</text>
+
+  <rect x="264" y="50" width="36" height="28" rx="4" fill="#3498db" fill-opacity="0.15" stroke="#3498db" stroke-width="1.5"/>
+  <text x="282" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#3498db">156</text>
+
+  <rect x="306" y="50" width="36" height="28" rx="4" fill="#3498db" fill-opacity="0.15" stroke="#3498db" stroke-width="1.5"/>
+  <text x="324" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#3498db">23</text>
+
+  <!-- Boundary marker [AUD] -->
+  <rect x="352" y="50" width="44" height="28" rx="4" fill="#333" fill-opacity="0.08" stroke="#333" stroke-width="1.5"/>
+  <text x="374" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#333">[AUD]</text>
+
+  <!-- Audio tokens -->
+  <rect x="406" y="50" width="36" height="28" rx="4" fill="#27ae60" fill-opacity="0.15" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="424" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#27ae60">A1</text>
+
+  <rect x="448" y="50" width="36" height="28" rx="4" fill="#27ae60" fill-opacity="0.15" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="466" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#27ae60">A2</text>
+
+  <rect x="490" y="50" width="36" height="28" rx="4" fill="#27ae60" fill-opacity="0.15" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="508" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#27ae60">A3</text>
+
+  <!-- More text tokens: "is", "barking" -->
+  <rect x="540" y="50" width="36" height="28" rx="4" fill="#e74c3c" fill-opacity="0.15" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="558" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#e74c3c">is</text>
+
+  <rect x="582" y="50" width="54" height="28" rx="4" fill="#e74c3c" fill-opacity="0.15" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="609" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#e74c3c">barking</text>
+
+  <!-- Group labels below -->
+  <line x1="40" y1="88" x2="118" y2="88" stroke="#e74c3c" stroke-width="1.2"/>
+  <text x="79" y="102" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e74c3c">Text tokens</text>
+
+  <line x1="128" y1="88" x2="170" y2="88" stroke="#333" stroke-width="1.2"/>
+  <text x="149" y="102" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#333">Marker</text>
+
+  <line x1="180" y1="88" x2="342" y2="88" stroke="#3498db" stroke-width="1.2"/>
+  <text x="261" y="102" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3498db">Image tokens (VQ-VAE codes)</text>
+
+  <line x1="352" y1="88" x2="396" y2="88" stroke="#333" stroke-width="1.2"/>
+  <text x="374" y="102" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#333">Marker</text>
+
+  <line x1="406" y1="88" x2="526" y2="88" stroke="#27ae60" stroke-width="1.2"/>
+  <text x="466" y="102" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27ae60">Audio tokens (codec codes)</text>
+
+  <line x1="540" y1="88" x2="636" y2="88" stroke="#e74c3c" stroke-width="1.2"/>
+  <text x="588" y="102" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e74c3c">Text tokens</text>
+
+  <!-- Large arrow into Transformer -->
+  <rect x="660" y="44" width="120" height="40" rx="8" fill="#9b59b6" fill-opacity="0.12" stroke="#9b59b6" stroke-width="1.5"/>
+  <text x="720" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#9b59b6">Transformer</text>
+
+  <line x1="638" y1="64" x2="658" y2="64" stroke="#666" stroke-width="1.5" marker-end="url(#arrow-mts)"/>
+
+  <!-- Explanatory text -->
+  <text x="400" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">All modalities share a single vocabulary and are serialised into one flat sequence.</text>
+  <text x="400" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">Special boundary tokens [IMG], [AUD] mark transitions between modalities.</text>
+
+  <!-- Legend -->
+  <rect x="220" y="168" width="14" height="10" rx="2" fill="#e74c3c" fill-opacity="0.15" stroke="#e74c3c" stroke-width="1"/>
+  <text x="240" y="177" font-family="Arial, sans-serif" font-size="9" fill="#666">Text</text>
+
+  <rect x="280" y="168" width="14" height="10" rx="2" fill="#3498db" fill-opacity="0.15" stroke="#3498db" stroke-width="1"/>
+  <text x="300" y="177" font-family="Arial, sans-serif" font-size="9" fill="#666">Image</text>
+
+  <rect x="348" y="168" width="14" height="10" rx="2" fill="#27ae60" fill-opacity="0.15" stroke="#27ae60" stroke-width="1"/>
+  <text x="368" y="177" font-family="Arial, sans-serif" font-size="9" fill="#666">Audio</text>
+
+  <rect x="420" y="168" width="14" height="10" rx="2" fill="#333" fill-opacity="0.08" stroke="#333" stroke-width="1"/>
+  <text x="440" y="177" font-family="Arial, sans-serif" font-size="9" fill="#666">Boundary</text>
+</svg>

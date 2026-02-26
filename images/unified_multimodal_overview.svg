@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 350" width="750" height="350">
+  <defs>
+    <marker id="arrow-umo" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="8" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,3.5 L0,7z" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="375" y="24" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">Unified Multimodal Architecture: Any Input → Any Output</text>
+
+  <!-- ===== LEFT: Input Modalities ===== -->
+  <!-- Text -->
+  <rect x="30" y="52" width="100" height="36" rx="8" fill="#e74c3c" fill-opacity="0.12" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="55" y="68" font-family="Arial, sans-serif" font-size="11" fill="#333">T</text>
+  <text x="68" y="74" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#e74c3c">Text</text>
+
+  <!-- Image -->
+  <rect x="30" y="112" width="100" height="36" rx="8" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <rect x="45" y="122" width="14" height="12" rx="2" fill="none" stroke="#3498db" stroke-width="1.2"/>
+  <text x="68" y="134" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#3498db">Image</text>
+
+  <!-- Audio -->
+  <rect x="30" y="172" width="100" height="36" rx="8" fill="#27ae60" fill-opacity="0.12" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="68" y="194" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#27ae60">Audio</text>
+  <path d="M45,195 Q50,180 55,192 Q58,198 62,188" fill="none" stroke="#27ae60" stroke-width="1.2"/>
+
+  <!-- Video -->
+  <rect x="30" y="232" width="100" height="36" rx="8" fill="#f39c12" fill-opacity="0.12" stroke="#f39c12" stroke-width="1.5"/>
+  <text x="68" y="254" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#f39c12">Video</text>
+  <polygon points="45,242 45,256 56,249" fill="#f39c12" fill-opacity="0.6"/>
+
+  <!-- ===== Modality Encoders ===== -->
+  <rect x="160" y="55" width="90" height="28" rx="6" fill="#e74c3c" fill-opacity="0.08" stroke="#e74c3c" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="205" y="73" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e74c3c">Text Encoder</text>
+
+  <rect x="160" y="115" width="90" height="28" rx="6" fill="#3498db" fill-opacity="0.08" stroke="#3498db" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="205" y="133" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3498db">Image Encoder</text>
+
+  <rect x="160" y="175" width="90" height="28" rx="6" fill="#27ae60" fill-opacity="0.08" stroke="#27ae60" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="205" y="193" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27ae60">Audio Encoder</text>
+
+  <rect x="160" y="235" width="90" height="28" rx="6" fill="#f39c12" fill-opacity="0.08" stroke="#f39c12" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="205" y="253" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#f39c12">Video Encoder</text>
+
+  <!-- Arrows: inputs → encoders -->
+  <line x1="130" y1="70" x2="158" y2="69" stroke="#666" stroke-width="1.2" marker-end="url(#arrow-umo)"/>
+  <line x1="130" y1="130" x2="158" y2="129" stroke="#666" stroke-width="1.2" marker-end="url(#arrow-umo)"/>
+  <line x1="130" y1="190" x2="158" y2="189" stroke="#666" stroke-width="1.2" marker-end="url(#arrow-umo)"/>
+  <line x1="130" y1="250" x2="158" y2="249" stroke="#666" stroke-width="1.2" marker-end="url(#arrow-umo)"/>
+
+  <!-- ===== Central Backbone ===== -->
+  <rect x="290" y="48" width="170" height="228" rx="10" fill="#9b59b6" fill-opacity="0.12" stroke="#9b59b6" stroke-width="2"/>
+  <text x="375" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#9b59b6">Shared</text>
+  <text x="375" y="156" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#9b59b6">Transformer</text>
+  <text x="375" y="172" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#9b59b6">Backbone</text>
+
+  <!-- Internal transformer layers -->
+  <rect x="310" y="70" width="130" height="18" rx="4" fill="#9b59b6" fill-opacity="0.08" stroke="#9b59b6" stroke-width="0.8"/>
+  <text x="375" y="83" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#9b59b6">Self-Attention</text>
+  <rect x="310" y="94" width="130" height="18" rx="4" fill="#9b59b6" fill-opacity="0.08" stroke="#9b59b6" stroke-width="0.8"/>
+  <text x="375" y="107" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#9b59b6">Feed-Forward</text>
+  <text x="375" y="126" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#9b59b6">...</text>
+
+  <rect x="310" y="192" width="130" height="18" rx="4" fill="#9b59b6" fill-opacity="0.08" stroke="#9b59b6" stroke-width="0.8"/>
+  <text x="375" y="205" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#9b59b6">Self-Attention</text>
+  <rect x="310" y="216" width="130" height="18" rx="4" fill="#9b59b6" fill-opacity="0.08" stroke="#9b59b6" stroke-width="0.8"/>
+  <text x="375" y="229" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#9b59b6">Feed-Forward</text>
+  <text x="375" y="252" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">N layers</text>
+
+  <!-- Arrows: encoders → backbone -->
+  <line x1="250" y1="69" x2="288" y2="100" stroke="#666" stroke-width="1.2" marker-end="url(#arrow-umo)"/>
+  <line x1="250" y1="129" x2="288" y2="135" stroke="#666" stroke-width="1.2" marker-end="url(#arrow-umo)"/>
+  <line x1="250" y1="189" x2="288" y2="175" stroke="#666" stroke-width="1.2" marker-end="url(#arrow-umo)"/>
+  <line x1="250" y1="249" x2="288" y2="215" stroke="#666" stroke-width="1.2" marker-end="url(#arrow-umo)"/>
+
+  <!-- ===== RIGHT: Decoders ===== -->
+  <rect x="500" y="55" width="90" height="28" rx="6" fill="#e74c3c" fill-opacity="0.08" stroke="#e74c3c" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="545" y="73" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e74c3c">Text Decoder</text>
+
+  <rect x="500" y="115" width="90" height="28" rx="6" fill="#3498db" fill-opacity="0.08" stroke="#3498db" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="545" y="133" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3498db">Image Decoder</text>
+
+  <rect x="500" y="175" width="90" height="28" rx="6" fill="#27ae60" fill-opacity="0.08" stroke="#27ae60" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="545" y="193" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27ae60">Audio Decoder</text>
+
+  <rect x="500" y="235" width="90" height="28" rx="6" fill="#f39c12" fill-opacity="0.08" stroke="#f39c12" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="545" y="253" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#f39c12">Video Decoder</text>
+
+  <!-- Arrows: backbone → decoders -->
+  <line x1="460" y1="100" x2="498" y2="69" stroke="#666" stroke-width="1.2" marker-end="url(#arrow-umo)"/>
+  <line x1="460" y1="135" x2="498" y2="129" stroke="#666" stroke-width="1.2" marker-end="url(#arrow-umo)"/>
+  <line x1="460" y1="175" x2="498" y2="189" stroke="#666" stroke-width="1.2" marker-end="url(#arrow-umo)"/>
+  <line x1="460" y1="215" x2="498" y2="249" stroke="#666" stroke-width="1.2" marker-end="url(#arrow-umo)"/>
+
+  <!-- ===== RIGHT: Outputs ===== -->
+  <rect x="620" y="52" width="100" height="36" rx="8" fill="#e74c3c" fill-opacity="0.12" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="670" y="74" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#e74c3c">Text</text>
+
+  <rect x="620" y="112" width="100" height="36" rx="8" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <text x="670" y="134" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#3498db">Image</text>
+
+  <rect x="620" y="172" width="100" height="36" rx="8" fill="#27ae60" fill-opacity="0.12" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="670" y="194" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#27ae60">Audio</text>
+
+  <rect x="620" y="232" width="100" height="36" rx="8" fill="#f39c12" fill-opacity="0.12" stroke="#f39c12" stroke-width="1.5"/>
+  <text x="670" y="254" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#f39c12">Video</text>
+
+  <!-- Arrows: decoders → outputs -->
+  <line x1="590" y1="69" x2="618" y2="70" stroke="#666" stroke-width="1.2" marker-end="url(#arrow-umo)"/>
+  <line x1="590" y1="129" x2="618" y2="130" stroke="#666" stroke-width="1.2" marker-end="url(#arrow-umo)"/>
+  <line x1="590" y1="189" x2="618" y2="190" stroke="#666" stroke-width="1.2" marker-end="url(#arrow-umo)"/>
+  <line x1="590" y1="249" x2="618" y2="250" stroke="#666" stroke-width="1.2" marker-end="url(#arrow-umo)"/>
+
+  <!-- Labels -->
+  <text x="80" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">Input Modalities</text>
+  <text x="205" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">Encoders</text>
+  <text x="545" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">Decoders</text>
+  <text x="670" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">Output Modalities</text>
+
+  <!-- Dashed grouping brackets -->
+  <line x1="30" y1="310" x2="130" y2="310" stroke="#ccc" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="160" y1="310" x2="250" y2="310" stroke="#ccc" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="500" y1="310" x2="590" y2="310" stroke="#ccc" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="620" y1="310" x2="720" y2="310" stroke="#ccc" stroke-width="1" stroke-dasharray="3,3"/>
+</svg>

@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 300" width="750" height="300" font-family="Arial, sans-serif">
+  <defs>
+    <marker id="tax-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="375" y="24" font-size="14" font-weight="bold" fill="#333" text-anchor="middle">Vision-Language Model Taxonomy</text>
+
+  <!-- Column 1: Dual Encoder -->
+  <rect x="20" y="45" width="220" height="245" rx="8" fill="#3498db" fill-opacity="0.05" stroke="#3498db" stroke-width="1.5"/>
+  <text x="130" y="68" font-size="12" font-weight="bold" fill="#3498db" text-anchor="middle">Dual Encoder</text>
+
+  <!-- Image Encoder -->
+  <rect x="45" y="85" width="80" height="40" rx="6" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <text x="85" y="103" font-size="10" fill="#333" text-anchor="middle">Image</text>
+  <text x="85" y="115" font-size="10" fill="#333" text-anchor="middle">Encoder</text>
+
+  <!-- Text Encoder -->
+  <rect x="155" y="85" width="80" height="40" rx="6" fill="#e74c3c" fill-opacity="0.12" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="195" y="103" font-size="10" fill="#333" text-anchor="middle">Text</text>
+  <text x="195" y="115" font-size="10" fill="#333" text-anchor="middle">Encoder</text>
+
+  <!-- Vectors -->
+  <line x1="85" y1="125" x2="85" y2="155" stroke="#3498db" stroke-width="1.2" marker-end="url(#tax-arrow)"/>
+  <line x1="195" y1="125" x2="195" y2="155" stroke="#e74c3c" stroke-width="1.2" marker-end="url(#tax-arrow)"/>
+
+  <rect x="60" y="155" width="50" height="20" rx="4" fill="#3498db" fill-opacity="0.2" stroke="none"/>
+  <text x="85" y="169" font-size="9" fill="#3498db" text-anchor="middle">v_img</text>
+
+  <rect x="170" y="155" width="50" height="20" rx="4" fill="#e74c3c" fill-opacity="0.2" stroke="none"/>
+  <text x="195" y="169" font-size="9" fill="#e74c3c" text-anchor="middle">v_txt</text>
+
+  <!-- Similarity -->
+  <line x1="110" y1="165" x2="170" y2="165" stroke="#666" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="140" y="195" font-size="10" fill="#666" text-anchor="middle">cosine</text>
+  <text x="140" y="207" font-size="10" fill="#666" text-anchor="middle">similarity</text>
+
+  <!-- Example -->
+  <text x="130" y="240" font-size="11" fill="#333" text-anchor="middle" font-weight="bold">CLIP</text>
+  <text x="130" y="255" font-size="9" fill="#666" text-anchor="middle">ALIGN, SigLIP</text>
+  <text x="130" y="270" font-size="9" fill="#999" text-anchor="middle">Fast retrieval</text>
+
+  <!-- Column 2: Fusion Encoder -->
+  <rect x="265" y="45" width="220" height="245" rx="8" fill="#9b59b6" fill-opacity="0.05" stroke="#9b59b6" stroke-width="1.5"/>
+  <text x="375" y="68" font-size="12" font-weight="bold" fill="#9b59b6" text-anchor="middle">Fusion Encoder</text>
+
+  <!-- Image input -->
+  <rect x="280" y="85" width="65" height="30" rx="6" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <text x="312" y="104" font-size="10" fill="#333" text-anchor="middle">Image</text>
+
+  <!-- Text input -->
+  <rect x="405" y="85" width="65" height="30" rx="6" fill="#e74c3c" fill-opacity="0.12" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="437" y="104" font-size="10" fill="#333" text-anchor="middle">Text</text>
+
+  <!-- Arrows merging -->
+  <line x1="312" y1="115" x2="355" y2="145" stroke="#3498db" stroke-width="1.2" marker-end="url(#tax-arrow)"/>
+  <line x1="437" y1="115" x2="395" y2="145" stroke="#e74c3c" stroke-width="1.2" marker-end="url(#tax-arrow)"/>
+
+  <!-- Cross-Attention Encoder -->
+  <rect x="310" y="145" width="130" height="45" rx="6" fill="#9b59b6" fill-opacity="0.12" stroke="#9b59b6" stroke-width="1.5"/>
+  <text x="375" y="164" font-size="10" fill="#333" text-anchor="middle">Cross-Attention</text>
+  <text x="375" y="178" font-size="10" fill="#333" text-anchor="middle">Encoder</text>
+
+  <!-- Output -->
+  <line x1="375" y1="190" x2="375" y2="215" stroke="#9b59b6" stroke-width="1.2" marker-end="url(#tax-arrow)"/>
+  <text x="375" y="230" font-size="10" fill="#666" text-anchor="middle">Fused representation</text>
+
+  <!-- Example -->
+  <text x="375" y="255" font-size="11" fill="#333" text-anchor="middle" font-weight="bold">VisualBERT</text>
+  <text x="375" y="270" font-size="9" fill="#666" text-anchor="middle">UNITER, VilBERT</text>
+
+  <!-- Column 3: Encoder-Decoder -->
+  <rect x="510" y="45" width="220" height="245" rx="8" fill="#27ae60" fill-opacity="0.05" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="620" y="68" font-size="12" font-weight="bold" fill="#27ae60" text-anchor="middle">Encoder-Decoder</text>
+
+  <!-- Encoder -->
+  <rect x="525" y="90" width="80" height="55" rx="6" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <text x="565" y="114" font-size="10" fill="#333" text-anchor="middle">Encoder</text>
+  <text x="565" y="128" font-size="9" fill="#666" text-anchor="middle">(Vision+Text)</text>
+
+  <!-- Arrow -->
+  <line x1="605" y1="117" x2="640" y2="117" stroke="#666" stroke-width="1.2" marker-end="url(#tax-arrow)"/>
+  <text x="623" y="110" font-size="8" fill="#9b59b6" text-anchor="middle">cross</text>
+  <text x="623" y="130" font-size="8" fill="#9b59b6" text-anchor="middle">attn</text>
+
+  <!-- Decoder -->
+  <rect x="645" y="90" width="75" height="55" rx="6" fill="#27ae60" fill-opacity="0.12" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="682" y="114" font-size="10" fill="#333" text-anchor="middle">Decoder</text>
+  <text x="682" y="128" font-size="9" fill="#666" text-anchor="middle">(Generative)</text>
+
+  <!-- Output arrow -->
+  <line x1="682" y1="145" x2="682" y2="170" stroke="#27ae60" stroke-width="1.2" marker-end="url(#tax-arrow)"/>
+  <text x="682" y="185" font-size="10" fill="#666" text-anchor="middle">Generated text</text>
+
+  <!-- Example -->
+  <text x="620" y="240" font-size="11" fill="#333" text-anchor="middle" font-weight="bold">GIT</text>
+  <text x="620" y="255" font-size="9" fill="#666" text-anchor="middle">SimVLM, CoCa</text>
+  <text x="620" y="270" font-size="9" fill="#999" text-anchor="middle">Captioning / Generation</text>
+</svg>

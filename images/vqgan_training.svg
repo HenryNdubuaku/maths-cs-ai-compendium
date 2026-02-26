@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="800" height="300" font-family="Arial, sans-serif">
+  <!-- Title -->
+  <text x="400" y="22" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">VQ-GAN Training</text>
+
+  <defs>
+    <marker id="a1" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#666"/>
+    </marker>
+    <marker id="aRed" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#e74c3c"/>
+    </marker>
+    <marker id="aGreen" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#27ae60"/>
+    </marker>
+  </defs>
+
+  <!-- Top Path: Image -> Encoder -> Quantise -> Decoder -> Reconstructed -->
+
+  <!-- Input Image -->
+  <rect x="15" y="60" width="60" height="60" rx="4" fill="#3498db" opacity="0.5" stroke="#3498db" stroke-width="1"/>
+  <rect x="22" y="67" width="22" height="22" rx="2" fill="#e74c3c" opacity="0.4"/>
+  <rect x="35" y="82" width="28" height="28" rx="2" fill="#27ae60" opacity="0.4"/>
+  <text x="45" y="136" text-anchor="middle" font-size="10" fill="#333">Input x</text>
+
+  <!-- Arrow -->
+  <line x1="82" y1="90" x2="112" y2="90" stroke="#666" stroke-width="1.5" marker-end="url(#a1)"/>
+
+  <!-- Encoder -->
+  <rect x="120" y="62" width="80" height="56" rx="8" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <text x="160" y="94" text-anchor="middle" font-size="11" font-weight="bold" fill="#3498db">Encoder</text>
+
+  <!-- Arrow -->
+  <line x1="208" y1="90" x2="238" y2="90" stroke="#666" stroke-width="1.5" marker-end="url(#a1)"/>
+
+  <!-- Quantise + Codebook -->
+  <rect x="246" y="52" width="100" height="76" rx="8" fill="#f39c12" fill-opacity="0.12" stroke="#f39c12" stroke-width="1.5"/>
+  <text x="296" y="78" text-anchor="middle" font-size="11" font-weight="bold" fill="#f39c12">Quantise</text>
+  <!-- Mini codebook -->
+  <rect x="265" y="86" width="62" height="32" rx="3" fill="white" stroke="#f39c12" stroke-width="0.8"/>
+  <line x1="265" y1="94" x2="327" y2="94" stroke="#f39c12" stroke-width="0.5"/>
+  <line x1="265" y1="102" x2="327" y2="102" stroke="#f39c12" stroke-width="0.5"/>
+  <line x1="265" y1="110" x2="327" y2="110" stroke="#f39c12" stroke-width="0.5"/>
+  <text x="296" y="100" text-anchor="middle" font-size="7" fill="#f39c12">codebook</text>
+
+  <!-- Arrow -->
+  <line x1="354" y1="90" x2="384" y2="90" stroke="#666" stroke-width="1.5" marker-end="url(#a1)"/>
+
+  <!-- Decoder -->
+  <rect x="392" y="62" width="80" height="56" rx="8" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <text x="432" y="94" text-anchor="middle" font-size="11" font-weight="bold" fill="#3498db">Decoder</text>
+
+  <!-- Arrow -->
+  <line x1="480" y1="90" x2="510" y2="90" stroke="#666" stroke-width="1.5" marker-end="url(#a1)"/>
+
+  <!-- Reconstructed Image -->
+  <rect x="518" y="60" width="60" height="60" rx="4" fill="#3498db" opacity="0.3" stroke="#3498db" stroke-width="1" stroke-dasharray="3,2"/>
+  <rect x="525" y="67" width="22" height="22" rx="2" fill="#e74c3c" opacity="0.3"/>
+  <rect x="538" y="82" width="28" height="28" rx="2" fill="#27ae60" opacity="0.3"/>
+  <text x="548" y="136" text-anchor="middle" font-size="10" fill="#333">Recon. x̂</text>
+
+  <!-- ========= Discriminator Section ========= -->
+
+  <!-- Patch Discriminator box -->
+  <rect x="480" y="180" width="130" height="56" rx="8" fill="#e74c3c" fill-opacity="0.12" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="545" y="204" text-anchor="middle" font-size="10" font-weight="bold" fill="#e74c3c">Patch</text>
+  <text x="545" y="218" text-anchor="middle" font-size="10" font-weight="bold" fill="#e74c3c">Discriminator</text>
+
+  <!-- Arrow from reconstructed to discriminator (fake) -->
+  <path d="M548,125 L548,172" fill="none" stroke="#e74c3c" stroke-width="1.5" marker-end="url(#aRed)"/>
+  <text x="560" y="155" font-size="8" fill="#e74c3c">fake?</text>
+
+  <!-- Arrow from real image to discriminator -->
+  <path d="M45,125 L45,208 L472,208" fill="none" stroke="#27ae60" stroke-width="1.5" marker-end="url(#aGreen)"/>
+  <text x="240" y="202" text-anchor="middle" font-size="8" fill="#27ae60">real</text>
+
+  <!-- Discriminator output -->
+  <text x="545" y="252" text-anchor="middle" font-size="9" fill="#e74c3c">real vs fake</text>
+
+  <!-- Adversarial Loss label -->
+  <rect x="630" y="188" width="90" height="38" rx="6" fill="#e74c3c" fill-opacity="0.08" stroke="#e74c3c" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="675" y="207" text-anchor="middle" font-size="9" font-weight="bold" fill="#e74c3c">Adversarial</text>
+  <text x="675" y="219" text-anchor="middle" font-size="9" font-weight="bold" fill="#e74c3c">Loss</text>
+  <line x1="618" y1="208" x2="625" y2="208" stroke="#e74c3c" stroke-width="1" marker-end="url(#aRed)"/>
+
+  <!-- ========= Perceptual Loss Section ========= -->
+
+  <!-- Perceptual loss (LPIPS) -->
+  <rect x="590" y="52" width="110" height="66" rx="8" fill="#9b59b6" fill-opacity="0.1" stroke="#9b59b6" stroke-width="1.5"/>
+  <text x="645" y="74" text-anchor="middle" font-size="10" font-weight="bold" fill="#9b59b6">Perceptual Loss</text>
+  <text x="645" y="88" text-anchor="middle" font-size="9" fill="#9b59b6">(LPIPS)</text>
+  <text x="645" y="106" text-anchor="middle" font-size="8" fill="#666">compare features</text>
+
+  <!-- Arrow from real to perceptual -->
+  <path d="M45,55 L45,42 L620,42 L620,48" fill="none" stroke="#9b59b6" stroke-width="1.2" stroke-dasharray="4,2"/>
+  <text x="330" y="38" text-anchor="middle" font-size="8" fill="#9b59b6">real features</text>
+
+  <!-- Arrow from reconstructed to perceptual -->
+  <line x1="583" y1="82" x2="585" y2="82" stroke="#9b59b6" stroke-width="1.2" stroke-dasharray="4,2"/>
+  <path d="M548,55 L548,42 L585,42 L585,48" fill="none" stroke="#9b59b6" stroke-width="1.2" stroke-dasharray="4,2"/>
+
+  <!-- Total loss annotation -->
+  <rect x="660" y="134" width="110" height="38" rx="6" fill="#333" fill-opacity="0.05" stroke="#666" stroke-width="1"/>
+  <text x="715" y="151" text-anchor="middle" font-size="8" font-weight="bold" fill="#333">L = L_recon + L_adv</text>
+  <text x="715" y="164" text-anchor="middle" font-size="8" fill="#333">    + L_percep + L_commit</text>
+
+  <!-- Bottom note -->
+  <text x="400" y="290" text-anchor="middle" font-size="9" fill="#999">The discriminator encourages perceptually sharp reconstructions beyond pixel-level loss</text>
+</svg>

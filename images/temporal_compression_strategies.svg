@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 280" width="750" height="280" font-family="Arial, sans-serif">
+  <!-- Title -->
+  <text x="375" y="22" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">Temporal Compression Strategies</text>
+
+  <defs>
+    <marker id="tArr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!-- ========= Row 1: Factorised ========= -->
+  <rect x="10" y="40" width="730" height="100" rx="8" fill="#3498db" fill-opacity="0.03" stroke="#3498db" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="50" y="58" font-size="11" font-weight="bold" fill="#3498db">Factorised</text>
+
+  <!-- Frames -->
+  <g transform="translate(25, 66)">
+    <rect x="0" y="0" width="32" height="24" rx="2" fill="#3498db" opacity="0.5" stroke="#3498db" stroke-width="0.8"/>
+    <rect x="36" y="0" width="32" height="24" rx="2" fill="#3498db" opacity="0.5" stroke="#3498db" stroke-width="0.8"/>
+    <rect x="72" y="0" width="32" height="24" rx="2" fill="#3498db" opacity="0.5" stroke="#3498db" stroke-width="0.8"/>
+    <rect x="108" y="0" width="32" height="24" rx="2" fill="#3498db" opacity="0.5" stroke="#3498db" stroke-width="0.8"/>
+    <text x="4" y="16" font-size="7" fill="white">F₁</text>
+    <text x="40" y="16" font-size="7" fill="white">F₂</text>
+    <text x="76" y="16" font-size="7" fill="white">F₃</text>
+    <text x="112" y="16" font-size="7" fill="white">F₄</text>
+  </g>
+  <text x="96" y="106" text-anchor="middle" font-size="8" fill="#666">Frames</text>
+
+  <!-- Arrow -->
+  <line x1="168" y1="80" x2="198" y2="80" stroke="#666" stroke-width="1.5" marker-end="url(#tArr)"/>
+
+  <!-- Spatial Encoder -->
+  <rect x="206" y="60" width="120" height="48" rx="8" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <text x="266" y="80" text-anchor="middle" font-size="10" font-weight="bold" fill="#3498db">Spatial Encoder</text>
+  <text x="266" y="94" text-anchor="middle" font-size="8" fill="#666">(each frame independently)</text>
+
+  <!-- Arrow -->
+  <line x1="334" y1="80" x2="360" y2="80" stroke="#666" stroke-width="1.5" marker-end="url(#tArr)"/>
+
+  <!-- Spatial tokens per frame -->
+  <g transform="translate(368, 65)">
+    <rect x="0" y="0" width="24" height="30" rx="2" fill="#9b59b6" fill-opacity="0.2" stroke="#9b59b6" stroke-width="0.8"/>
+    <rect x="28" y="0" width="24" height="30" rx="2" fill="#9b59b6" fill-opacity="0.2" stroke="#9b59b6" stroke-width="0.8"/>
+    <rect x="56" y="0" width="24" height="30" rx="2" fill="#9b59b6" fill-opacity="0.2" stroke="#9b59b6" stroke-width="0.8"/>
+    <rect x="84" y="0" width="24" height="30" rx="2" fill="#9b59b6" fill-opacity="0.2" stroke="#9b59b6" stroke-width="0.8"/>
+    <text x="12" y="19" text-anchor="middle" font-size="6" fill="#9b59b6">s₁</text>
+    <text x="40" y="19" text-anchor="middle" font-size="6" fill="#9b59b6">s₂</text>
+    <text x="68" y="19" text-anchor="middle" font-size="6" fill="#9b59b6">s₃</text>
+    <text x="96" y="19" text-anchor="middle" font-size="6" fill="#9b59b6">s₄</text>
+  </g>
+  <text x="423" y="110" text-anchor="middle" font-size="8" fill="#9b59b6">spatial tokens/frame</text>
+
+  <!-- Arrow -->
+  <line x1="480" y1="80" x2="510" y2="80" stroke="#666" stroke-width="1.5" marker-end="url(#tArr)"/>
+
+  <!-- Temporal Encoder -->
+  <rect x="518" y="60" width="120" height="48" rx="8" fill="#f39c12" fill-opacity="0.12" stroke="#f39c12" stroke-width="1.5"/>
+  <text x="578" y="78" text-anchor="middle" font-size="10" font-weight="bold" fill="#f39c12">Temporal Encoder</text>
+  <text x="578" y="94" text-anchor="middle" font-size="8" fill="#666">(compress across time)</text>
+
+  <!-- Arrow -->
+  <line x1="646" y1="80" x2="672" y2="80" stroke="#666" stroke-width="1.5" marker-end="url(#tArr)"/>
+
+  <!-- Compressed tokens -->
+  <rect x="680" y="66" width="46" height="30" rx="4" fill="#27ae60" fill-opacity="0.15" stroke="#27ae60" stroke-width="1.2"/>
+  <text x="703" y="78" text-anchor="middle" font-size="7" fill="#27ae60" font-weight="bold">compressed</text>
+  <text x="703" y="88" text-anchor="middle" font-size="7" fill="#27ae60" font-weight="bold">tokens</text>
+
+  <!-- ========= Row 2: Joint ========= -->
+  <rect x="10" y="150" width="730" height="90" rx="8" fill="#e74c3c" fill-opacity="0.03" stroke="#e74c3c" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="50" y="170" font-size="11" font-weight="bold" fill="#e74c3c">Joint</text>
+
+  <!-- Frames -->
+  <g transform="translate(25, 178)">
+    <rect x="0" y="0" width="32" height="24" rx="2" fill="#e74c3c" opacity="0.4" stroke="#e74c3c" stroke-width="0.8"/>
+    <rect x="36" y="0" width="32" height="24" rx="2" fill="#e74c3c" opacity="0.4" stroke="#e74c3c" stroke-width="0.8"/>
+    <rect x="72" y="0" width="32" height="24" rx="2" fill="#e74c3c" opacity="0.4" stroke="#e74c3c" stroke-width="0.8"/>
+    <rect x="108" y="0" width="32" height="24" rx="2" fill="#e74c3c" opacity="0.4" stroke="#e74c3c" stroke-width="0.8"/>
+    <text x="4" y="16" font-size="7" fill="white">F₁</text>
+    <text x="40" y="16" font-size="7" fill="white">F₂</text>
+    <text x="76" y="16" font-size="7" fill="white">F₃</text>
+    <text x="112" y="16" font-size="7" fill="white">F₄</text>
+  </g>
+  <text x="96" y="218" text-anchor="middle" font-size="8" fill="#666">Frames</text>
+
+  <!-- Arrow -->
+  <line x1="168" y1="192" x2="256" y2="192" stroke="#666" stroke-width="1.5" marker-end="url(#tArr)"/>
+
+  <!-- 3D Spatiotemporal Encoder -->
+  <rect x="264" y="170" width="190" height="48" rx="8" fill="#e74c3c" fill-opacity="0.12" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="359" y="190" text-anchor="middle" font-size="10" font-weight="bold" fill="#e74c3c">3D Spatiotemporal Encoder</text>
+  <text x="359" y="206" text-anchor="middle" font-size="8" fill="#666">(single pass, space + time jointly)</text>
+
+  <!-- Arrow -->
+  <line x1="462" y1="192" x2="672" y2="192" stroke="#666" stroke-width="1.5" marker-end="url(#tArr)"/>
+
+  <!-- Compressed tokens -->
+  <rect x="680" y="178" width="46" height="30" rx="4" fill="#27ae60" fill-opacity="0.15" stroke="#27ae60" stroke-width="1.2"/>
+  <text x="703" y="190" text-anchor="middle" font-size="7" fill="#27ae60" font-weight="bold">compressed</text>
+  <text x="703" y="200" text-anchor="middle" font-size="7" fill="#27ae60" font-weight="bold">tokens</text>
+
+  <!-- Trade-off annotations -->
+  <g transform="translate(80, 250)">
+    <rect x="0" y="0" width="250" height="22" rx="4" fill="#3498db" fill-opacity="0.06" stroke="#3498db" stroke-width="0.6"/>
+    <text x="125" y="14" text-anchor="middle" font-size="9" fill="#3498db">Factorised: simpler, reuses 2D encoders</text>
+  </g>
+  <g transform="translate(380, 250)">
+    <rect x="0" y="0" width="250" height="22" rx="4" fill="#e74c3c" fill-opacity="0.06" stroke="#e74c3c" stroke-width="0.6"/>
+    <text x="125" y="14" text-anchor="middle" font-size="9" fill="#e74c3c">Joint: more efficient, captures motion better</text>
+  </g>
+</svg>

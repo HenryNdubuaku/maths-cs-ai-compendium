@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" width="600" height="300">
+  <defs>
+    <marker id="ja-blue" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#3498db"/>
+    </marker>
+    <marker id="ja-red" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#e74c3c"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="300" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">Joint Embedding Space</text>
+
+  <!-- Image Encoder (left) -->
+  <rect x="20" y="110" width="110" height="55" rx="8" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <text x="75" y="134" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#3498db">Image</text>
+  <text x="75" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#3498db">Encoder</text>
+
+  <!-- Image input icon -->
+  <rect x="42" y="78" width="30" height="24" rx="3" fill="#3498db" fill-opacity="0.2" stroke="#3498db" stroke-width="1"/>
+  <text x="57" y="94" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#3498db">IMG</text>
+  <line x1="57" y1="102" x2="57" y2="110" stroke="#3498db" stroke-width="1.2"/>
+
+  <!-- Text Encoder (left, below) -->
+  <rect x="20" y="200" width="110" height="55" rx="8" fill="#e74c3c" fill-opacity="0.12" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="75" y="224" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#e74c3c">Text</text>
+  <text x="75" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#e74c3c">Encoder</text>
+
+  <!-- Text input icon -->
+  <rect x="42" y="264" width="30" height="18" rx="3" fill="#e74c3c" fill-opacity="0.2" stroke="#e74c3c" stroke-width="1"/>
+  <text x="57" y="277" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#e74c3c">"text"</text>
+  <line x1="57" y1="264" x2="57" y2="255" stroke="#e74c3c" stroke-width="1.2"/>
+
+  <!-- Arrows from encoders to scatter area -->
+  <line x1="130" y1="135" x2="208" y2="135" stroke="#3498db" stroke-width="1.5" marker-end="url(#ja-blue)"/>
+  <line x1="130" y1="228" x2="208" y2="228" stroke="#e74c3c" stroke-width="1.5" marker-end="url(#ja-red)"/>
+
+  <!-- Scatter plot area -->
+  <rect x="220" y="50" width="360" height="220" rx="8" fill="#f8f8f8" stroke="#ccc" stroke-width="1"/>
+
+  <!-- Axes -->
+  <line x1="240" y1="250" x2="560" y2="250" stroke="#999" stroke-width="1"/>
+  <line x1="240" y1="250" x2="240" y2="65" stroke="#999" stroke-width="1"/>
+  <text x="400" y="268" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#999">Dimension 1</text>
+  <text x="232" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#999" transform="rotate(-90, 232, 160)">Dimension 2</text>
+
+  <!-- Matched pair 1 (close together) -->
+  <circle cx="310" cy="120" r="6" fill="#3498db" opacity="0.85"/>
+  <circle cx="322" cy="115" r="6" fill="#e74c3c" opacity="0.85"/>
+  <line x1="311" y1="119" x2="321" y2="116" stroke="#27ae60" stroke-width="1" stroke-dasharray="3,2"/>
+
+  <!-- Matched pair 2 (close together) -->
+  <circle cx="420" cy="180" r="6" fill="#3498db" opacity="0.85"/>
+  <circle cx="430" cy="172" r="6" fill="#e74c3c" opacity="0.85"/>
+  <line x1="421" y1="179" x2="429" y2="173" stroke="#27ae60" stroke-width="1" stroke-dasharray="3,2"/>
+
+  <!-- Matched pair 3 (close together) -->
+  <circle cx="490" cy="100" r="6" fill="#3498db" opacity="0.85"/>
+  <circle cx="500" cy="108" r="6" fill="#e74c3c" opacity="0.85"/>
+  <line x1="491" y1="101" x2="499" y2="107" stroke="#27ae60" stroke-width="1" stroke-dasharray="3,2"/>
+
+  <!-- Unmatched pair (far apart) -->
+  <circle cx="280" cy="200" r="6" fill="#3498db" opacity="0.5"/>
+  <circle cx="520" cy="220" r="6" fill="#e74c3c" opacity="0.5"/>
+  <line x1="286" y1="202" x2="514" y2="218" stroke="#e74c3c" stroke-width="0.8" stroke-dasharray="4,3" opacity="0.5"/>
+
+  <!-- High similarity label -->
+  <text x="365" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#27ae60">high similarity</text>
+  <line x1="340" y1="104" x2="316" y2="114" stroke="#27ae60" stroke-width="0.8"/>
+
+  <!-- Low similarity label -->
+  <text x="400" y="235" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#e74c3c">low similarity</text>
+  <line x1="360" y1="230" x2="286" y2="204" stroke="#e74c3c" stroke-width="0.6" opacity="0.5"/>
+  <line x1="440" y1="230" x2="514" y2="222" stroke="#e74c3c" stroke-width="0.6" opacity="0.5"/>
+
+  <!-- Legend -->
+  <circle cx="250" cy="285" r="5" fill="#3498db"/>
+  <text x="260" y="289" font-family="Arial, sans-serif" font-size="9" fill="#666">Image embedding</text>
+  <circle cx="370" cy="285" r="5" fill="#e74c3c"/>
+  <text x="380" y="289" font-family="Arial, sans-serif" font-size="9" fill="#666">Text embedding</text>
+</svg>

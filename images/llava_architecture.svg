@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 300" width="750" height="300" font-family="Arial, sans-serif">
+  <defs>
+    <marker id="ll-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="375" y="24" font-size="14" font-weight="bold" fill="#333" text-anchor="middle">LLaVA Architecture</text>
+
+  <!-- Image input -->
+  <rect x="20" y="90" width="70" height="70" rx="4" fill="#eee" stroke="#ccc" stroke-width="1"/>
+  <rect x="28" y="98" width="20" height="16" rx="2" fill="#3498db" fill-opacity="0.3"/>
+  <rect x="52" y="102" width="16" height="12" rx="2" fill="#27ae60" fill-opacity="0.3"/>
+  <rect x="30" y="120" width="30" height="20" rx="2" fill="#e74c3c" fill-opacity="0.2"/>
+  <rect x="64" y="118" width="14" height="16" rx="2" fill="#f39c12" fill-opacity="0.3"/>
+  <text x="55" y="178" font-size="9" fill="#666" text-anchor="middle">Input Image</text>
+
+  <!-- Arrow to CLIP ViT -->
+  <line x1="90" y1="125" x2="115" y2="125" stroke="#3498db" stroke-width="1.5" marker-end="url(#ll-arrow)"/>
+
+  <!-- CLIP ViT -->
+  <rect x="120" y="85" width="110" height="55" rx="8" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <text x="175" y="108" font-size="11" fill="#333" text-anchor="middle">CLIP ViT</text>
+  <text x="175" y="124" font-size="9" fill="#666" text-anchor="middle">(Vision Encoder)</text>
+
+  <!-- Arrow out of ViT -->
+  <line x1="230" y1="112" x2="255" y2="112" stroke="#3498db" stroke-width="1.5" marker-end="url(#ll-arrow)"/>
+
+  <!-- Patch features (row of small squares - image tokens) -->
+  <rect x="260" y="95" width="12" height="12" rx="2" fill="#3498db" fill-opacity="0.5" stroke="none"/>
+  <rect x="274" y="95" width="12" height="12" rx="2" fill="#3498db" fill-opacity="0.5" stroke="none"/>
+  <rect x="288" y="95" width="12" height="12" rx="2" fill="#3498db" fill-opacity="0.5" stroke="none"/>
+  <rect x="302" y="95" width="12" height="12" rx="2" fill="#3498db" fill-opacity="0.5" stroke="none"/>
+  <rect x="316" y="95" width="12" height="12" rx="2" fill="#3498db" fill-opacity="0.5" stroke="none"/>
+  <rect x="330" y="95" width="12" height="12" rx="2" fill="#3498db" fill-opacity="0.5" stroke="none"/>
+  <text x="300" y="85" font-size="8" fill="#3498db" text-anchor="middle">patch features (N tokens)</text>
+
+  <!-- Arrow to Linear Projection -->
+  <line x1="300" y1="107" x2="300" y2="132" stroke="#f39c12" stroke-width="1.5" marker-end="url(#ll-arrow)"/>
+
+  <!-- Linear Projection -->
+  <rect x="260" y="135" width="80" height="30" rx="6" fill="#f39c12" fill-opacity="0.12" stroke="#f39c12" stroke-width="1.5"/>
+  <text x="300" y="152" font-size="9" fill="#333" text-anchor="middle">Linear Proj.</text>
+  <text x="300" y="180" font-size="8" fill="#f39c12" text-anchor="middle">map to LLM dim</text>
+
+  <!-- Arrow from projection to combined sequence -->
+  <line x1="300" y1="165" x2="300" y2="195" stroke="#f39c12" stroke-width="1.2"/>
+  <line x1="300" y1="195" x2="430" y2="195" stroke="#666" stroke-width="1.2" marker-end="url(#ll-arrow)"/>
+
+  <!-- Text input -->
+  <text x="175" y="215" font-size="9" fill="#666" text-anchor="middle">"Describe this image"</text>
+  <text x="175" y="230" font-size="8" fill="#999" text-anchor="middle">Text prompt</text>
+
+  <!-- Text tokenization -->
+  <line x1="230" y1="220" x2="430" y2="220" stroke="#666" stroke-width="1.2" marker-end="url(#ll-arrow)"/>
+
+  <!-- Combined token sequence going into LLM -->
+  <text x="470" y="160" font-size="8" fill="#666" text-anchor="middle">Combined sequence</text>
+
+  <!-- Visual tokens (orange) -->
+  <rect x="435" y="170" width="10" height="10" rx="2" fill="#f39c12" fill-opacity="0.6" stroke="none"/>
+  <rect x="447" y="170" width="10" height="10" rx="2" fill="#f39c12" fill-opacity="0.6" stroke="none"/>
+  <rect x="459" y="170" width="10" height="10" rx="2" fill="#f39c12" fill-opacity="0.6" stroke="none"/>
+  <rect x="471" y="170" width="10" height="10" rx="2" fill="#f39c12" fill-opacity="0.6" stroke="none"/>
+  <rect x="483" y="170" width="10" height="10" rx="2" fill="#f39c12" fill-opacity="0.6" stroke="none"/>
+
+  <!-- Separator -->
+  <text x="498" y="180" font-size="10" fill="#ccc">|</text>
+
+  <!-- Text tokens (red) -->
+  <rect x="505" y="170" width="10" height="10" rx="2" fill="#e74c3c" fill-opacity="0.5" stroke="none"/>
+  <rect x="517" y="170" width="10" height="10" rx="2" fill="#e74c3c" fill-opacity="0.5" stroke="none"/>
+  <rect x="529" y="170" width="10" height="10" rx="2" fill="#e74c3c" fill-opacity="0.5" stroke="none"/>
+
+  <!-- Labels -->
+  <text x="461" y="194" font-size="7" fill="#f39c12" text-anchor="middle">visual</text>
+  <text x="517" y="194" font-size="7" fill="#e74c3c" text-anchor="middle">text</text>
+
+  <!-- Arrow into LLM -->
+  <line x1="480" y1="198" x2="480" y2="215" stroke="#666" stroke-width="1.2" marker-end="url(#ll-arrow)"/>
+
+  <!-- LLM box -->
+  <rect x="420" y="218" width="170" height="50" rx="8" fill="#9b59b6" fill-opacity="0.12" stroke="#9b59b6" stroke-width="1.5"/>
+  <text x="505" y="240" font-size="12" fill="#333" text-anchor="middle" font-weight="bold">LLM</text>
+  <text x="505" y="256" font-size="9" fill="#666" text-anchor="middle">(Vicuna / LLaMA)</text>
+
+  <!-- Output -->
+  <line x1="590" y1="243" x2="630" y2="243" stroke="#9b59b6" stroke-width="1.5" marker-end="url(#ll-arrow)"/>
+
+  <rect x="635" y="228" width="95" height="30" rx="6" fill="#27ae60" fill-opacity="0.12" stroke="#27ae60" stroke-width="1.2"/>
+  <text x="682" y="247" font-size="10" fill="#27ae60" text-anchor="middle" font-weight="bold">Response</text>
+
+  <!-- Bottom note -->
+  <text x="375" y="290" font-size="9" fill="#999" text-anchor="middle">Visual tokens are prepended to text tokens and processed jointly by the LLM</text>
+</svg>

@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 250" width="700" height="250" font-family="Arial, sans-serif">
+  <defs>
+    <marker id="gc-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#666"/>
+    </marker>
+    <marker id="gc-arrow-green" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#27ae60"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="350" y="24" font-size="14" font-weight="bold" fill="#333" text-anchor="middle">Grounding via Coordinate Tokenisation</text>
+
+  <!-- Image with bounding boxes -->
+  <rect x="20" y="45" width="160" height="130" rx="4" fill="#f5f5f5" stroke="#ccc" stroke-width="1"/>
+
+  <!-- Sky region -->
+  <rect x="22" y="47" width="156" height="40" rx="2" fill="#3498db" fill-opacity="0.15"/>
+
+  <!-- Ground / grass -->
+  <rect x="22" y="87" width="156" height="86" rx="2" fill="#27ae60" fill-opacity="0.1"/>
+
+  <!-- Dog bounding box -->
+  <rect x="45" y="65" width="60" height="70" rx="2" fill="none" stroke="#e74c3c" stroke-width="2" stroke-dasharray="4,2"/>
+  <text x="75" y="108" font-size="10" fill="#e74c3c" text-anchor="middle" font-weight="bold">dog</text>
+
+  <!-- Bench bounding box -->
+  <rect x="115" y="90" width="55" height="40" rx="2" fill="none" stroke="#3498db" stroke-width="2" stroke-dasharray="4,2"/>
+  <text x="142" y="114" font-size="9" fill="#3498db" text-anchor="middle" font-weight="bold">bench</text>
+
+  <!-- Coordinate labels on dog box -->
+  <text x="38" y="62" font-size="7" fill="#e74c3c">(x1,y1)</text>
+  <text x="88" y="143" font-size="7" fill="#e74c3c">(x2,y2)</text>
+
+  <text x="100" y="192" font-size="9" fill="#666" text-anchor="middle">Image with detected objects</text>
+
+  <!-- Arrow from image to token sequence -->
+  <line x1="180" y1="110" x2="210" y2="110" stroke="#666" stroke-width="1.5" marker-end="url(#gc-arrow)"/>
+
+  <!-- Generated text with coordinate tokens -->
+  <text x="430" y="52" font-size="11" fill="#666" text-anchor="middle">Generated Token Sequence</text>
+
+  <!-- Row 1: "A [dog] <coords>" -->
+  <rect x="220" y="68" width="24" height="22" rx="4" fill="#999" fill-opacity="0.12" stroke="#999" stroke-width="1"/>
+  <text x="232" y="83" font-size="9" fill="#333" text-anchor="middle">A</text>
+
+  <rect x="250" y="68" width="38" height="22" rx="4" fill="#e74c3c" fill-opacity="0.15" stroke="#e74c3c" stroke-width="1.2"/>
+  <text x="269" y="83" font-size="9" fill="#e74c3c" text-anchor="middle" font-weight="bold">dog</text>
+
+  <rect x="295" y="68" width="32" height="22" rx="4" fill="#27ae60" fill-opacity="0.2" stroke="#27ae60" stroke-width="1.2"/>
+  <text x="311" y="83" font-size="8" fill="#27ae60" text-anchor="middle" font-weight="bold">&lt;x1&gt;</text>
+
+  <rect x="332" y="68" width="32" height="22" rx="4" fill="#27ae60" fill-opacity="0.2" stroke="#27ae60" stroke-width="1.2"/>
+  <text x="348" y="83" font-size="8" fill="#27ae60" text-anchor="middle" font-weight="bold">&lt;y1&gt;</text>
+
+  <rect x="369" y="68" width="32" height="22" rx="4" fill="#27ae60" fill-opacity="0.2" stroke="#27ae60" stroke-width="1.2"/>
+  <text x="385" y="83" font-size="8" fill="#27ae60" text-anchor="middle" font-weight="bold">&lt;x2&gt;</text>
+
+  <rect x="406" y="68" width="32" height="22" rx="4" fill="#27ae60" fill-opacity="0.2" stroke="#27ae60" stroke-width="1.2"/>
+  <text x="422" y="83" font-size="8" fill="#27ae60" text-anchor="middle" font-weight="bold">&lt;y2&gt;</text>
+
+  <!-- Row 2: "sitting on a [bench] <coords>" -->
+  <rect x="220" y="100" width="50" height="22" rx="4" fill="#999" fill-opacity="0.12" stroke="#999" stroke-width="1"/>
+  <text x="245" y="115" font-size="9" fill="#333" text-anchor="middle">sitting</text>
+
+  <rect x="276" y="100" width="28" height="22" rx="4" fill="#999" fill-opacity="0.12" stroke="#999" stroke-width="1"/>
+  <text x="290" y="115" font-size="9" fill="#333" text-anchor="middle">on</text>
+
+  <rect x="310" y="100" width="20" height="22" rx="4" fill="#999" fill-opacity="0.12" stroke="#999" stroke-width="1"/>
+  <text x="320" y="115" font-size="9" fill="#333" text-anchor="middle">a</text>
+
+  <rect x="336" y="100" width="50" height="22" rx="4" fill="#3498db" fill-opacity="0.15" stroke="#3498db" stroke-width="1.2"/>
+  <text x="361" y="115" font-size="9" fill="#3498db" text-anchor="middle" font-weight="bold">bench</text>
+
+  <rect x="392" y="100" width="32" height="22" rx="4" fill="#27ae60" fill-opacity="0.2" stroke="#27ae60" stroke-width="1.2"/>
+  <text x="408" y="115" font-size="8" fill="#27ae60" text-anchor="middle" font-weight="bold">&lt;x1&gt;</text>
+
+  <rect x="429" y="100" width="32" height="22" rx="4" fill="#27ae60" fill-opacity="0.2" stroke="#27ae60" stroke-width="1.2"/>
+  <text x="445" y="115" font-size="8" fill="#27ae60" text-anchor="middle" font-weight="bold">&lt;y1&gt;</text>
+
+  <rect x="466" y="100" width="32" height="22" rx="4" fill="#27ae60" fill-opacity="0.2" stroke="#27ae60" stroke-width="1.2"/>
+  <text x="482" y="115" font-size="8" fill="#27ae60" text-anchor="middle" font-weight="bold">&lt;x2&gt;</text>
+
+  <rect x="503" y="100" width="32" height="22" rx="4" fill="#27ae60" fill-opacity="0.2" stroke="#27ae60" stroke-width="1.2"/>
+  <text x="519" y="115" font-size="8" fill="#27ae60" text-anchor="middle" font-weight="bold">&lt;y2&gt;</text>
+
+  <!-- Arrow from dog bbox to dog coord tokens -->
+  <path d="M 105 100 C 160 70, 220 55, 311 68" fill="none" stroke="#e74c3c" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#gc-arrow)"/>
+
+  <!-- Arrow from bench bbox to bench coord tokens -->
+  <path d="M 170 110 C 220 130, 330 130, 408 122" fill="none" stroke="#3498db" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#gc-arrow)"/>
+
+  <!-- Legend -->
+  <rect x="220" y="150" width="14" height="14" rx="3" fill="#999" fill-opacity="0.12" stroke="#999" stroke-width="1"/>
+  <text x="240" y="162" font-size="9" fill="#666">Text tokens</text>
+
+  <rect x="310" y="150" width="14" height="14" rx="3" fill="#27ae60" fill-opacity="0.2" stroke="#27ae60" stroke-width="1.2"/>
+  <text x="330" y="162" font-size="9" fill="#666">Coordinate tokens</text>
+
+  <rect x="440" y="150" width="14" height="14" rx="3" fill="#e74c3c" fill-opacity="0.15" stroke="#e74c3c" stroke-width="1.2"/>
+  <text x="460" y="162" font-size="9" fill="#666">Entity tokens</text>
+
+  <!-- Bottom description -->
+  <text x="350" y="195" font-size="9" fill="#999" text-anchor="middle">Coordinates are discretised into special vocabulary tokens (e.g., bins of 0-999)</text>
+  <text x="350" y="210" font-size="9" fill="#999" text-anchor="middle">enabling grounding as a natural text generation task</text>
+
+  <!-- Example models -->
+  <text x="350" y="238" font-size="9" fill="#666" text-anchor="middle">Models: Kosmos-2, Shikra, Qwen-VL, Ferret</text>
+</svg>

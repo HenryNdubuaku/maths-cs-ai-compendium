@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 250" width="800" height="250" font-family="Arial, sans-serif">
+  <defs>
+    <marker id="vt-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="400" y="24" font-size="14" font-weight="bold" fill="#333" text-anchor="middle">The Visual Token Pipeline</text>
+
+  <!-- Step 1: Image -->
+  <rect x="10" y="65" width="58" height="58" rx="4" fill="#eee" stroke="#ccc" stroke-width="1"/>
+  <rect x="15" y="70" width="18" height="14" rx="1" fill="#3498db" fill-opacity="0.3"/>
+  <rect x="36" y="73" width="14" height="11" rx="1" fill="#27ae60" fill-opacity="0.3"/>
+  <rect x="18" y="90" width="22" height="16" rx="1" fill="#e74c3c" fill-opacity="0.2"/>
+  <rect x="44" y="88" width="14" height="14" rx="1" fill="#f39c12" fill-opacity="0.3"/>
+  <text x="39" y="140" font-size="9" fill="#666" text-anchor="middle">Image</text>
+
+  <!-- Arrow 1 -->
+  <line x1="68" y1="94" x2="88" y2="94" stroke="#666" stroke-width="1.5" marker-end="url(#vt-arrow)"/>
+
+  <!-- Step 2: Patchify -->
+  <rect x="93" y="60" width="72" height="68" rx="6" fill="#f5f5f5" stroke="#ccc" stroke-width="1.2"/>
+  <!-- Patch grid 4x4 -->
+  <rect x="98" y="65" width="14" height="14" rx="1" fill="#3498db" fill-opacity="0.15" stroke="#bbb" stroke-width="0.5"/>
+  <rect x="114" y="65" width="14" height="14" rx="1" fill="#3498db" fill-opacity="0.15" stroke="#bbb" stroke-width="0.5"/>
+  <rect x="130" y="65" width="14" height="14" rx="1" fill="#3498db" fill-opacity="0.15" stroke="#bbb" stroke-width="0.5"/>
+  <rect x="146" y="65" width="14" height="14" rx="1" fill="#3498db" fill-opacity="0.15" stroke="#bbb" stroke-width="0.5"/>
+
+  <rect x="98" y="81" width="14" height="14" rx="1" fill="#3498db" fill-opacity="0.15" stroke="#bbb" stroke-width="0.5"/>
+  <rect x="114" y="81" width="14" height="14" rx="1" fill="#e74c3c" fill-opacity="0.15" stroke="#bbb" stroke-width="0.5"/>
+  <rect x="130" y="81" width="14" height="14" rx="1" fill="#27ae60" fill-opacity="0.15" stroke="#bbb" stroke-width="0.5"/>
+  <rect x="146" y="81" width="14" height="14" rx="1" fill="#3498db" fill-opacity="0.15" stroke="#bbb" stroke-width="0.5"/>
+
+  <rect x="98" y="97" width="14" height="14" rx="1" fill="#f39c12" fill-opacity="0.15" stroke="#bbb" stroke-width="0.5"/>
+  <rect x="114" y="97" width="14" height="14" rx="1" fill="#3498db" fill-opacity="0.15" stroke="#bbb" stroke-width="0.5"/>
+  <rect x="130" y="97" width="14" height="14" rx="1" fill="#3498db" fill-opacity="0.15" stroke="#bbb" stroke-width="0.5"/>
+  <rect x="146" y="97" width="14" height="14" rx="1" fill="#9b59b6" fill-opacity="0.15" stroke="#bbb" stroke-width="0.5"/>
+
+  <text x="129" y="140" font-size="9" fill="#666" text-anchor="middle">Patchify</text>
+  <text x="129" y="152" font-size="8" fill="#999" text-anchor="middle">N = 16 patches</text>
+
+  <!-- Arrow 2 -->
+  <line x1="165" y1="94" x2="185" y2="94" stroke="#666" stroke-width="1.5" marker-end="url(#vt-arrow)"/>
+
+  <!-- Step 3: ViT Encoder -->
+  <rect x="190" y="62" width="100" height="55" rx="8" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <text x="240" y="86" font-size="10" fill="#333" text-anchor="middle">ViT Encoder</text>
+  <text x="240" y="101" font-size="9" fill="#666" text-anchor="middle">(Transformer)</text>
+  <text x="240" y="140" font-size="8" fill="#3498db" text-anchor="middle">N patch embeddings</text>
+
+  <!-- Arrow 3 -->
+  <line x1="290" y1="90" x2="315" y2="90" stroke="#666" stroke-width="1.5" marker-end="url(#vt-arrow)"/>
+
+  <!-- Token count indicator: many tokens -->
+  <rect x="295" y="72" width="5" height="5" rx="1" fill="#3498db" fill-opacity="0.5"/>
+  <rect x="295" y="79" width="5" height="5" rx="1" fill="#3498db" fill-opacity="0.5"/>
+  <rect x="295" y="86" width="5" height="5" rx="1" fill="#3498db" fill-opacity="0.5"/>
+  <rect x="295" y="93" width="5" height="5" rx="1" fill="#3498db" fill-opacity="0.5"/>
+  <rect x="295" y="100" width="5" height="5" rx="1" fill="#3498db" fill-opacity="0.5"/>
+  <rect x="295" y="107" width="5" height="5" rx="1" fill="#3498db" fill-opacity="0.5"/>
+  <rect x="302" y="72" width="5" height="5" rx="1" fill="#3498db" fill-opacity="0.5"/>
+  <rect x="302" y="79" width="5" height="5" rx="1" fill="#3498db" fill-opacity="0.5"/>
+  <rect x="302" y="86" width="5" height="5" rx="1" fill="#3498db" fill-opacity="0.5"/>
+  <rect x="302" y="93" width="5" height="5" rx="1" fill="#3498db" fill-opacity="0.5"/>
+
+  <!-- Step 4: Optional Compressor (dashed border) -->
+  <rect x="320" y="55" width="135" height="68" rx="8" fill="#27ae60" fill-opacity="0.08" stroke="#27ae60" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <text x="387" y="78" font-size="9" fill="#333" text-anchor="middle">Compressor</text>
+  <text x="387" y="92" font-size="8" fill="#27ae60" text-anchor="middle">(Perceiver / Q-Former)</text>
+  <text x="387" y="108" font-size="8" fill="#999" text-anchor="middle" font-style="italic">optional</text>
+  <text x="387" y="140" font-size="8" fill="#27ae60" text-anchor="middle">N tokens -> M tokens</text>
+  <text x="387" y="152" font-size="8" fill="#27ae60" text-anchor="middle">(M &lt;&lt; N)</text>
+
+  <!-- Arrow 4 with shrinking indicator -->
+  <line x1="455" y1="90" x2="480" y2="90" stroke="#666" stroke-width="1.5" marker-end="url(#vt-arrow)"/>
+
+  <!-- Fewer token squares after compressor -->
+  <rect x="462" y="80" width="5" height="5" rx="1" fill="#27ae60" fill-opacity="0.6"/>
+  <rect x="462" y="87" width="5" height="5" rx="1" fill="#27ae60" fill-opacity="0.6"/>
+  <rect x="462" y="94" width="5" height="5" rx="1" fill="#27ae60" fill-opacity="0.6"/>
+  <rect x="469" y="83" width="5" height="5" rx="1" fill="#27ae60" fill-opacity="0.6"/>
+  <rect x="469" y="90" width="5" height="5" rx="1" fill="#27ae60" fill-opacity="0.6"/>
+
+  <!-- Step 5: Linear Projection -->
+  <rect x="485" y="68" width="80" height="44" rx="6" fill="#f39c12" fill-opacity="0.12" stroke="#f39c12" stroke-width="1.5"/>
+  <text x="525" y="88" font-size="9" fill="#333" text-anchor="middle">Linear</text>
+  <text x="525" y="101" font-size="9" fill="#333" text-anchor="middle">Projection</text>
+  <text x="525" y="140" font-size="8" fill="#f39c12" text-anchor="middle">align to LLM dim</text>
+
+  <!-- Arrow 5 -->
+  <line x1="565" y1="90" x2="585" y2="90" stroke="#666" stroke-width="1.5" marker-end="url(#vt-arrow)"/>
+
+  <!-- Combined tokens: visual + text -->
+  <rect x="590" y="73" width="10" height="10" rx="2" fill="#f39c12" fill-opacity="0.6" stroke="none"/>
+  <rect x="602" y="73" width="10" height="10" rx="2" fill="#f39c12" fill-opacity="0.6" stroke="none"/>
+  <rect x="614" y="73" width="10" height="10" rx="2" fill="#f39c12" fill-opacity="0.6" stroke="none"/>
+  <text x="608" y="69" font-size="7" fill="#f39c12" text-anchor="middle">visual</text>
+
+  <text x="629" y="82" font-size="10" fill="#ccc">+</text>
+
+  <rect x="638" y="73" width="10" height="10" rx="2" fill="#e74c3c" fill-opacity="0.5" stroke="none"/>
+  <rect x="650" y="73" width="10" height="10" rx="2" fill="#e74c3c" fill-opacity="0.5" stroke="none"/>
+  <text x="649" y="69" font-size="7" fill="#e74c3c" text-anchor="middle">text</text>
+
+  <!-- Arrow to LLM -->
+  <line x1="630" y1="95" x2="630" y2="120" stroke="#666" stroke-width="1.2"/>
+  <line x1="630" y1="120" x2="690" y2="120" stroke="#666" stroke-width="1.2" marker-end="url(#vt-arrow)"/>
+
+  <!-- Step 6: LLM -->
+  <rect x="695" y="100" width="90" height="48" rx="8" fill="#9b59b6" fill-opacity="0.12" stroke="#9b59b6" stroke-width="1.5"/>
+  <text x="740" y="122" font-size="11" fill="#333" text-anchor="middle" font-weight="bold">LLM</text>
+  <text x="740" y="137" font-size="9" fill="#666" text-anchor="middle">(Decoder)</text>
+
+  <!-- Output -->
+  <text x="740" y="166" font-size="9" fill="#27ae60" text-anchor="middle" font-weight="bold">Generated text</text>
+
+  <!-- Bottom flow description -->
+  <text x="400" y="195" font-size="9" fill="#999" text-anchor="middle">Image -> Patches -> Embeddings -> (Compressed) -> Projected -> LLM input</text>
+
+  <!-- Token count shrinking annotation -->
+  <path d="M 298 160 L 298 175 L 470 175 L 470 160" fill="none" stroke="#ccc" stroke-width="1"/>
+  <text x="384" y="188" font-size="8" fill="#27ae60" text-anchor="middle">Token count reduced (e.g., 576 -> 64)</text>
+
+  <!-- Step numbers -->
+  <circle cx="39" cy="55" r="8" fill="#333"/>
+  <text x="39" y="59" font-size="8" fill="white" text-anchor="middle">1</text>
+
+  <circle cx="129" cy="55" r="8" fill="#333"/>
+  <text x="129" y="59" font-size="8" fill="white" text-anchor="middle">2</text>
+
+  <circle cx="240" cy="55" r="8" fill="#333"/>
+  <text x="240" y="59" font-size="8" fill="white" text-anchor="middle">3</text>
+
+  <circle cx="387" cy="48" r="8" fill="#333"/>
+  <text x="387" y="52" font-size="8" fill="white" text-anchor="middle">4</text>
+
+  <circle cx="525" cy="60" r="8" fill="#333"/>
+  <text x="525" y="64" font-size="8" fill="white" text-anchor="middle">5</text>
+
+  <circle cx="740" cy="93" r="8" fill="#333"/>
+  <text x="740" y="97" font-size="8" fill="white" text-anchor="middle">6</text>
+</svg>

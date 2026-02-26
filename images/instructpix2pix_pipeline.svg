@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 280" width="750" height="280">
+  <defs>
+    <marker id="ip-arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#333"/>
+    </marker>
+    <marker id="ip-arr-red" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#e74c3c"/>
+    </marker>
+    <marker id="ip-arr-blue" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#3498db"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="375" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">InstructPix2Pix: Instruction-Following Image Editing</text>
+
+  <!-- Input Image -->
+  <rect x="20" y="65" width="90" height="75" rx="8" fill="#3498db" fill-opacity="0.08" stroke="#3498db" stroke-width="1.5"/>
+  <!-- Simple scene: horizon line, sun circle -->
+  <line x1="30" y1="110" x2="100" y2="110" stroke="#3498db" stroke-width="0.8" opacity="0.4"/>
+  <circle cx="65" cy="90" r="10" fill="#3498db" fill-opacity="0.15" stroke="#3498db" stroke-width="0.8"/>
+  <rect x="45" y="110" width="15" height="20" rx="2" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="0.5"/>
+  <rect x="70" y="105" width="12" height="25" rx="2" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="0.5"/>
+  <text x="65" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#3498db">Input Image</text>
+  <text x="65" y="167" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#999">(daytime scene)</text>
+
+  <!-- Text Instruction -->
+  <rect x="20" y="185" width="105" height="35" rx="8" fill="#e74c3c" fill-opacity="0.08" stroke="#e74c3c" stroke-width="1.2" stroke-dasharray="4,2"/>
+  <text x="72" y="202" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e74c3c">"Make it sunset"</text>
+  <text x="72" y="214" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">Text Instruction</text>
+
+  <!-- Arrows from inputs to model -->
+  <line x1="110" y1="102" x2="195" y2="115" stroke="#3498db" stroke-width="1.2" marker-end="url(#ip-arr-blue)"/>
+  <line x1="125" y1="202" x2="195" y2="145" stroke="#e74c3c" stroke-width="1.2" marker-end="url(#ip-arr-red)"/>
+
+  <!-- Modified Diffusion Model (large purple box) -->
+  <rect x="200" y="70" width="250" height="110" rx="8" fill="#9b59b6" fill-opacity="0.12" stroke="#9b59b6" stroke-width="1.5"/>
+  <text x="325" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#9b59b6">Modified Diffusion Model</text>
+  <text x="325" y="112" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">Conditioned on both image + text</text>
+
+  <!-- Inside the model: dual conditioning -->
+  <rect x="215" y="120" width="90" height="22" rx="4" fill="#3498db" fill-opacity="0.1" stroke="#3498db" stroke-width="0.8"/>
+  <text x="260" y="134" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#3498db">Image concat</text>
+
+  <rect x="320" y="120" width="115" height="22" rx="4" fill="#e74c3c" fill-opacity="0.1" stroke="#e74c3c" stroke-width="0.8"/>
+  <text x="377" y="134" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#e74c3c">Text cross-attention</text>
+
+  <!-- CFG formula -->
+  <text x="325" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">CFG: e = e_u + s_i(e_i - e_u) + s_t(e_it - e_i)</text>
+
+  <!-- Guidance scales (sliders) -->
+  <text x="260" y="197" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#333">Guidance Scales</text>
+
+  <!-- Image guidance slider -->
+  <text x="218" y="218" text-anchor="start" font-family="Arial, sans-serif" font-size="8" fill="#3498db">Image s_i</text>
+  <rect x="270" y="210" width="80" height="8" rx="4" fill="#ccc" fill-opacity="0.4" stroke="#ccc" stroke-width="0.5"/>
+  <rect x="270" y="210" width="50" height="8" rx="4" fill="#3498db" fill-opacity="0.4"/>
+  <circle cx="320" cy="214" r="5" fill="#3498db" stroke="white" stroke-width="1"/>
+  <text x="355" y="218" text-anchor="start" font-family="Arial, sans-serif" font-size="7" fill="#999">1.5</text>
+
+  <!-- Text guidance slider -->
+  <text x="218" y="240" text-anchor="start" font-family="Arial, sans-serif" font-size="8" fill="#e74c3c">Text s_t</text>
+  <rect x="270" y="232" width="80" height="8" rx="4" fill="#ccc" fill-opacity="0.4" stroke="#ccc" stroke-width="0.5"/>
+  <rect x="270" y="232" width="60" height="8" rx="4" fill="#e74c3c" fill-opacity="0.4"/>
+  <circle cx="330" cy="236" r="5" fill="#e74c3c" stroke="white" stroke-width="1"/>
+  <text x="355" y="240" text-anchor="start" font-family="Arial, sans-serif" font-size="7" fill="#999">7.5</text>
+
+  <!-- Arrow from model to output -->
+  <line x1="450" y1="125" x2="510" y2="125" stroke="#333" stroke-width="1.2" marker-end="url(#ip-arr)"/>
+
+  <!-- Output Image -->
+  <rect x="520" y="65" width="90" height="75" rx="8" fill="#f39c12" fill-opacity="0.08" stroke="#f39c12" stroke-width="1.5"/>
+  <!-- Same scene but sunset colors -->
+  <line x1="530" y1="110" x2="600" y2="110" stroke="#f39c12" stroke-width="0.8" opacity="0.4"/>
+  <circle cx="565" cy="90" r="10" fill="#f39c12" fill-opacity="0.2" stroke="#f39c12" stroke-width="0.8"/>
+  <!-- Sunset gradient hint -->
+  <rect x="525" y="70" width="80" height="40" rx="4" fill="#e74c3c" fill-opacity="0.05"/>
+  <rect x="545" y="110" width="15" height="20" rx="2" fill="#f39c12" fill-opacity="0.12" stroke="#f39c12" stroke-width="0.5"/>
+  <rect x="570" y="105" width="12" height="25" rx="2" fill="#f39c12" fill-opacity="0.12" stroke="#f39c12" stroke-width="0.5"/>
+  <text x="565" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#f39c12">Edited Image</text>
+  <text x="565" y="167" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#999">(sunset scene)</text>
+
+  <!-- Preservation note -->
+  <rect x="520" y="185" width="200" height="45" rx="6" fill="#27ae60" fill-opacity="0.06" stroke="#27ae60" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="620" y="202" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#27ae60">Structure Preserved</text>
+  <text x="620" y="216" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">Same layout, buildings, composition</text>
+  <text x="620" y="228" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">Only lighting/color changed per instruction</text>
+
+  <!-- Connecting arrow from output to preservation note -->
+  <line x1="565" y1="167" x2="580" y2="185" stroke="#27ae60" stroke-width="0.8" stroke-dasharray="3,2"/>
+
+  <!-- Bottom annotation -->
+  <text x="375" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#999">No per-example fine-tuning required -- single forward pass at inference</text>
+</svg>

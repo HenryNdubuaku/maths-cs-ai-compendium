@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 320" width="750" height="320">
+  <defs>
+    <marker id="arrow-sbm" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="8" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,3.5 L0,7z" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="375" y="24" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">Modality-Specific Encoders with Shared Backbone</text>
+
+  <!-- ===== LEFT: Modality Encoders ===== -->
+  <!-- Image Encoder -->
+  <rect x="20" y="52" width="120" height="50" rx="8" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <text x="80" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#3498db">Image Encoder</text>
+  <text x="80" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">(ViT / CNN)</text>
+
+  <!-- Text Encoder -->
+  <rect x="20" y="122" width="120" height="50" rx="8" fill="#e74c3c" fill-opacity="0.12" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="80" y="142" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#e74c3c">Text Encoder</text>
+  <text x="80" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">(Tokenizer + Emb)</text>
+
+  <!-- Audio Encoder -->
+  <rect x="20" y="192" width="120" height="50" rx="8" fill="#27ae60" fill-opacity="0.12" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="80" y="212" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#27ae60">Audio Encoder</text>
+  <text x="80" y="230" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">(Mel + Encoder)</text>
+
+  <!-- Token sequences emerging from encoders -->
+  <!-- Image tokens -->
+  <rect x="160" y="58" width="16" height="14" rx="2" fill="#3498db" fill-opacity="0.3" stroke="#3498db" stroke-width="0.8"/>
+  <rect x="180" y="58" width="16" height="14" rx="2" fill="#3498db" fill-opacity="0.3" stroke="#3498db" stroke-width="0.8"/>
+  <rect x="200" y="58" width="16" height="14" rx="2" fill="#3498db" fill-opacity="0.3" stroke="#3498db" stroke-width="0.8"/>
+  <rect x="220" y="58" width="16" height="14" rx="2" fill="#3498db" fill-opacity="0.3" stroke="#3498db" stroke-width="0.8"/>
+  <text x="198" y="88" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#3498db">image tokens</text>
+
+  <!-- Text tokens -->
+  <rect x="160" y="128" width="16" height="14" rx="2" fill="#e74c3c" fill-opacity="0.3" stroke="#e74c3c" stroke-width="0.8"/>
+  <rect x="180" y="128" width="16" height="14" rx="2" fill="#e74c3c" fill-opacity="0.3" stroke="#e74c3c" stroke-width="0.8"/>
+  <rect x="200" y="128" width="16" height="14" rx="2" fill="#e74c3c" fill-opacity="0.3" stroke="#e74c3c" stroke-width="0.8"/>
+  <text x="188" y="158" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#e74c3c">text tokens</text>
+
+  <!-- Audio tokens -->
+  <rect x="160" y="198" width="16" height="14" rx="2" fill="#27ae60" fill-opacity="0.3" stroke="#27ae60" stroke-width="0.8"/>
+  <rect x="180" y="198" width="16" height="14" rx="2" fill="#27ae60" fill-opacity="0.3" stroke="#27ae60" stroke-width="0.8"/>
+  <rect x="200" y="198" width="16" height="14" rx="2" fill="#27ae60" fill-opacity="0.3" stroke="#27ae60" stroke-width="0.8"/>
+  <rect x="220" y="198" width="16" height="14" rx="2" fill="#27ae60" fill-opacity="0.3" stroke="#27ae60" stroke-width="0.8"/>
+  <rect x="240" y="198" width="16" height="14" rx="2" fill="#27ae60" fill-opacity="0.3" stroke="#27ae60" stroke-width="0.8"/>
+  <text x="208" y="228" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#27ae60">audio tokens</text>
+
+  <!-- Modality embedding tags -->
+  <rect x="163" y="45" width="30" height="11" rx="3" fill="#3498db" fill-opacity="0.6"/>
+  <text x="178" y="53" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="white">+M_img</text>
+
+  <rect x="163" y="115" width="30" height="11" rx="3" fill="#e74c3c" fill-opacity="0.6"/>
+  <text x="178" y="123" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="white">+M_txt</text>
+
+  <rect x="163" y="185" width="30" height="11" rx="3" fill="#27ae60" fill-opacity="0.6"/>
+  <text x="178" y="193" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="white">+M_aud</text>
+
+  <!-- Arrows: encoders → token sequences -->
+  <line x1="140" y1="77" x2="158" y2="65" stroke="#666" stroke-width="1.2" marker-end="url(#arrow-sbm)"/>
+  <line x1="140" y1="147" x2="158" y2="135" stroke="#666" stroke-width="1.2" marker-end="url(#arrow-sbm)"/>
+  <line x1="140" y1="217" x2="158" y2="205" stroke="#666" stroke-width="1.2" marker-end="url(#arrow-sbm)"/>
+
+  <!-- ===== MIDDLE: Shared Transformer ===== -->
+  <rect x="280" y="42" width="190" height="230" rx="10" fill="#9b59b6" fill-opacity="0.10" stroke="#9b59b6" stroke-width="2"/>
+  <text x="375" y="62" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#9b59b6">Shared Transformer</text>
+
+  <!-- Concatenated token row inside -->
+  <rect x="296" y="76" width="12" height="12" rx="2" fill="#3498db" fill-opacity="0.4" stroke="#3498db" stroke-width="0.6"/>
+  <rect x="312" y="76" width="12" height="12" rx="2" fill="#3498db" fill-opacity="0.4" stroke="#3498db" stroke-width="0.6"/>
+  <rect x="328" y="76" width="12" height="12" rx="2" fill="#3498db" fill-opacity="0.4" stroke="#3498db" stroke-width="0.6"/>
+  <rect x="344" y="76" width="12" height="12" rx="2" fill="#3498db" fill-opacity="0.4" stroke="#3498db" stroke-width="0.6"/>
+  <rect x="364" y="76" width="12" height="12" rx="2" fill="#e74c3c" fill-opacity="0.4" stroke="#e74c3c" stroke-width="0.6"/>
+  <rect x="380" y="76" width="12" height="12" rx="2" fill="#e74c3c" fill-opacity="0.4" stroke="#e74c3c" stroke-width="0.6"/>
+  <rect x="396" y="76" width="12" height="12" rx="2" fill="#e74c3c" fill-opacity="0.4" stroke="#e74c3c" stroke-width="0.6"/>
+  <rect x="416" y="76" width="12" height="12" rx="2" fill="#27ae60" fill-opacity="0.4" stroke="#27ae60" stroke-width="0.6"/>
+  <rect x="432" y="76" width="12" height="12" rx="2" fill="#27ae60" fill-opacity="0.4" stroke="#27ae60" stroke-width="0.6"/>
+  <rect x="448" y="76" width="12" height="12" rx="2" fill="#27ae60" fill-opacity="0.4" stroke="#27ae60" stroke-width="0.6"/>
+
+  <!-- Self-attention layer -->
+  <rect x="296" y="100" width="164" height="30" rx="6" fill="#9b59b6" fill-opacity="0.12" stroke="#9b59b6" stroke-width="1"/>
+  <text x="378" y="119" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#9b59b6">Multi-Head Self-Attention</text>
+
+  <!-- Attention arcs showing cross-modal attention -->
+  <path d="M310,100 Q335,92 370,100" fill="none" stroke="#9b59b6" stroke-width="0.8" stroke-dasharray="2,2"/>
+  <path d="M370,100 Q400,92 440,100" fill="none" stroke="#9b59b6" stroke-width="0.8" stroke-dasharray="2,2"/>
+  <path d="M310,100 Q370,88 440,100" fill="none" stroke="#9b59b6" stroke-width="0.8" stroke-dasharray="2,2"/>
+
+  <!-- FFN layer -->
+  <rect x="296" y="138" width="164" height="24" rx="6" fill="#9b59b6" fill-opacity="0.08" stroke="#9b59b6" stroke-width="1"/>
+  <text x="378" y="154" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#9b59b6">Feed-Forward Network</text>
+
+  <!-- More layers indicator -->
+  <text x="375" y="178" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#9b59b6">...</text>
+
+  <!-- Another attention+FFN -->
+  <rect x="296" y="188" width="164" height="24" rx="6" fill="#9b59b6" fill-opacity="0.12" stroke="#9b59b6" stroke-width="1"/>
+  <text x="378" y="204" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#9b59b6">Self-Attention + FFN</text>
+
+  <!-- Cross-modal label -->
+  <text x="375" y="235" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">All tokens attend to each other</text>
+  <text x="375" y="246" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">across modalities</text>
+
+  <!-- Arrows: tokens → transformer -->
+  <line x1="238" y1="65" x2="278" y2="82" stroke="#666" stroke-width="1.2" marker-end="url(#arrow-sbm)"/>
+  <line x1="218" y1="135" x2="278" y2="120" stroke="#666" stroke-width="1.2" marker-end="url(#arrow-sbm)"/>
+  <line x1="258" y1="205" x2="278" y2="200" stroke="#666" stroke-width="1.2" marker-end="url(#arrow-sbm)"/>
+
+  <!-- ===== RIGHT: Decoder Heads ===== -->
+  <rect x="510" y="52" width="120" height="50" rx="8" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <text x="570" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#3498db">Image Decoder</text>
+  <text x="570" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">(Diffusion / dVAE)</text>
+
+  <rect x="510" y="122" width="120" height="50" rx="8" fill="#e74c3c" fill-opacity="0.12" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="570" y="142" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#e74c3c">Text Decoder</text>
+  <text x="570" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">(LM Head)</text>
+
+  <rect x="510" y="192" width="120" height="50" rx="8" fill="#27ae60" fill-opacity="0.12" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="570" y="212" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#27ae60">Audio Decoder</text>
+  <text x="570" y="230" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">(Vocoder)</text>
+
+  <!-- Arrows: transformer → decoders -->
+  <line x1="470" y1="82" x2="508" y2="77" stroke="#666" stroke-width="1.2" marker-end="url(#arrow-sbm)"/>
+  <line x1="470" y1="120" x2="508" y2="147" stroke="#666" stroke-width="1.2" marker-end="url(#arrow-sbm)"/>
+  <line x1="470" y1="200" x2="508" y2="217" stroke="#666" stroke-width="1.2" marker-end="url(#arrow-sbm)"/>
+
+  <!-- Output icons -->
+  <rect x="656" y="64" width="30" height="24" rx="3" fill="#3498db" fill-opacity="0.2" stroke="#3498db" stroke-width="0.8"/>
+  <line x1="662" y1="75" x2="680" y2="75" stroke="#3498db" stroke-width="1"/>
+  <line x1="662" y1="80" x2="674" y2="80" stroke="#3498db" stroke-width="1"/>
+
+  <text x="671" y="152" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e74c3c">Generated</text>
+  <text x="671" y="162" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e74c3c">text...</text>
+
+  <path d="M656,217 Q664,207 672,217 Q680,227 688,217" fill="none" stroke="#27ae60" stroke-width="1.5"/>
+
+  <!-- Arrows decoders → outputs -->
+  <line x1="630" y1="77" x2="654" y2="77" stroke="#666" stroke-width="1" marker-end="url(#arrow-sbm)"/>
+  <line x1="630" y1="147" x2="648" y2="147" stroke="#666" stroke-width="1" marker-end="url(#arrow-sbm)"/>
+  <line x1="630" y1="217" x2="654" y2="217" stroke="#666" stroke-width="1" marker-end="url(#arrow-sbm)"/>
+
+  <!-- Bottom labels -->
+  <text x="80" y="300" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#999">Modality Encoders</text>
+  <text x="375" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#999">Shared Parameters</text>
+  <text x="570" y="300" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#999">Modality Decoders</text>
+</svg>

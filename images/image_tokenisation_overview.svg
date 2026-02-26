@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 280" width="750" height="280" font-family="Arial, sans-serif">
+  <!-- Title -->
+  <text x="375" y="24" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">Image Tokenisation: From Pixels to Discrete Tokens</text>
+
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrow1" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!-- Continuous Image (coloured rectangle) -->
+  <rect x="20" y="85" width="100" height="100" rx="4" fill="#3498db" opacity="0.7" stroke="#3498db" stroke-width="1.5"/>
+  <rect x="30" y="95" width="40" height="40" rx="2" fill="#e74c3c" opacity="0.6"/>
+  <rect x="55" y="110" width="50" height="55" rx="2" fill="#27ae60" opacity="0.5"/>
+  <rect x="25" y="140" width="60" height="35" rx="2" fill="#f39c12" opacity="0.5"/>
+  <text x="70" y="210" text-anchor="middle" font-size="11" fill="#333" font-weight="bold">Input Image</text>
+  <text x="70" y="224" text-anchor="middle" font-size="9" fill="#666">(continuous pixels)</text>
+
+  <!-- Arrow 1 -->
+  <line x1="130" y1="135" x2="170" y2="135" stroke="#666" stroke-width="1.5" marker-end="url(#arrow1)"/>
+
+  <!-- Encoder box -->
+  <rect x="178" y="100" width="90" height="70" rx="8" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <text x="223" y="140" text-anchor="middle" font-size="12" font-weight="bold" fill="#3498db">Encoder</text>
+
+  <!-- Arrow 2 -->
+  <line x1="276" y1="135" x2="316" y2="135" stroke="#666" stroke-width="1.5" marker-end="url(#arrow1)"/>
+
+  <!-- Latent vectors grid -->
+  <g transform="translate(324, 80)">
+    <rect x="0" y="0" width="90" height="110" rx="6" fill="#9b59b6" fill-opacity="0.08" stroke="#9b59b6" stroke-width="1" stroke-dasharray="4,2"/>
+    <!-- Grid cells with continuous values -->
+    <rect x="6" y="6" width="24" height="24" rx="3" fill="#9b59b6" fill-opacity="0.15" stroke="#9b59b6" stroke-width="0.5"/>
+    <text x="18" y="22" text-anchor="middle" font-size="7" fill="#9b59b6">0.73</text>
+    <rect x="33" y="6" width="24" height="24" rx="3" fill="#9b59b6" fill-opacity="0.15" stroke="#9b59b6" stroke-width="0.5"/>
+    <text x="45" y="22" text-anchor="middle" font-size="7" fill="#9b59b6">-0.21</text>
+    <rect x="60" y="6" width="24" height="24" rx="3" fill="#9b59b6" fill-opacity="0.15" stroke="#9b59b6" stroke-width="0.5"/>
+    <text x="72" y="22" text-anchor="middle" font-size="7" fill="#9b59b6">0.45</text>
+    <rect x="6" y="33" width="24" height="24" rx="3" fill="#9b59b6" fill-opacity="0.15" stroke="#9b59b6" stroke-width="0.5"/>
+    <text x="18" y="49" text-anchor="middle" font-size="7" fill="#9b59b6">1.12</text>
+    <rect x="33" y="33" width="24" height="24" rx="3" fill="#9b59b6" fill-opacity="0.15" stroke="#9b59b6" stroke-width="0.5"/>
+    <text x="45" y="49" text-anchor="middle" font-size="7" fill="#9b59b6">-0.58</text>
+    <rect x="60" y="33" width="24" height="24" rx="3" fill="#9b59b6" fill-opacity="0.15" stroke="#9b59b6" stroke-width="0.5"/>
+    <text x="72" y="49" text-anchor="middle" font-size="7" fill="#9b59b6">0.89</text>
+    <rect x="6" y="60" width="24" height="24" rx="3" fill="#9b59b6" fill-opacity="0.15" stroke="#9b59b6" stroke-width="0.5"/>
+    <text x="18" y="76" text-anchor="middle" font-size="7" fill="#9b59b6">-0.34</text>
+    <rect x="33" y="60" width="24" height="24" rx="3" fill="#9b59b6" fill-opacity="0.15" stroke="#9b59b6" stroke-width="0.5"/>
+    <text x="45" y="76" text-anchor="middle" font-size="7" fill="#9b59b6">0.67</text>
+    <rect x="60" y="60" width="24" height="24" rx="3" fill="#9b59b6" fill-opacity="0.15" stroke="#9b59b6" stroke-width="0.5"/>
+    <text x="72" y="76" text-anchor="middle" font-size="7" fill="#9b59b6">-0.91</text>
+  </g>
+  <text x="369" y="210" text-anchor="middle" font-size="10" fill="#9b59b6">Latent Vectors</text>
+  <text x="369" y="224" text-anchor="middle" font-size="9" fill="#666">(continuous)</text>
+
+  <!-- Arrow 3 -->
+  <line x1="422" y1="135" x2="462" y2="135" stroke="#666" stroke-width="1.5" marker-end="url(#arrow1)"/>
+
+  <!-- Quantise box -->
+  <rect x="470" y="90" width="100" height="90" rx="8" fill="#f39c12" fill-opacity="0.12" stroke="#f39c12" stroke-width="1.5"/>
+  <text x="520" y="125" text-anchor="middle" font-size="12" font-weight="bold" fill="#f39c12">Quantise</text>
+  <!-- Codebook icon -->
+  <rect x="497" y="135" width="46" height="34" rx="3" fill="white" stroke="#f39c12" stroke-width="1"/>
+  <line x1="497" y1="143" x2="543" y2="143" stroke="#f39c12" stroke-width="0.5"/>
+  <line x1="497" y1="151" x2="543" y2="151" stroke="#f39c12" stroke-width="0.5"/>
+  <line x1="497" y1="159" x2="543" y2="159" stroke="#f39c12" stroke-width="0.5"/>
+  <text x="520" y="148" text-anchor="middle" font-size="6" fill="#f39c12">codebook</text>
+
+  <!-- Arrow 4 -->
+  <line x1="578" y1="135" x2="618" y2="135" stroke="#666" stroke-width="1.5" marker-end="url(#arrow1)"/>
+
+  <!-- Discrete token grid -->
+  <g transform="translate(624, 80)">
+    <rect x="0" y="0" width="100" height="110" rx="6" fill="#27ae60" fill-opacity="0.08" stroke="#27ae60" stroke-width="1"/>
+    <!-- Token cells with integer indices -->
+    <rect x="6" y="6" width="26" height="24" rx="3" fill="#27ae60" fill-opacity="0.18" stroke="#27ae60" stroke-width="0.5"/>
+    <text x="19" y="22" text-anchor="middle" font-size="9" font-weight="bold" fill="#27ae60">42</text>
+    <rect x="36" y="6" width="26" height="24" rx="3" fill="#27ae60" fill-opacity="0.18" stroke="#27ae60" stroke-width="0.5"/>
+    <text x="49" y="22" text-anchor="middle" font-size="9" font-weight="bold" fill="#27ae60">7</text>
+    <rect x="66" y="6" width="26" height="24" rx="3" fill="#27ae60" fill-opacity="0.18" stroke="#27ae60" stroke-width="0.5"/>
+    <text x="79" y="22" text-anchor="middle" font-size="9" font-weight="bold" fill="#27ae60">156</text>
+    <rect x="6" y="34" width="26" height="24" rx="3" fill="#27ae60" fill-opacity="0.18" stroke="#27ae60" stroke-width="0.5"/>
+    <text x="19" y="50" text-anchor="middle" font-size="9" font-weight="bold" fill="#27ae60">89</text>
+    <rect x="36" y="34" width="26" height="24" rx="3" fill="#27ae60" fill-opacity="0.18" stroke="#27ae60" stroke-width="0.5"/>
+    <text x="49" y="50" text-anchor="middle" font-size="9" font-weight="bold" fill="#27ae60">3</text>
+    <rect x="66" y="34" width="26" height="24" rx="3" fill="#27ae60" fill-opacity="0.18" stroke="#27ae60" stroke-width="0.5"/>
+    <text x="79" y="50" text-anchor="middle" font-size="9" font-weight="bold" fill="#27ae60">211</text>
+    <rect x="6" y="62" width="26" height="24" rx="3" fill="#27ae60" fill-opacity="0.18" stroke="#27ae60" stroke-width="0.5"/>
+    <text x="19" y="78" text-anchor="middle" font-size="9" font-weight="bold" fill="#27ae60">64</text>
+    <rect x="36" y="62" width="26" height="24" rx="3" fill="#27ae60" fill-opacity="0.18" stroke="#27ae60" stroke-width="0.5"/>
+    <text x="49" y="78" text-anchor="middle" font-size="9" font-weight="bold" fill="#27ae60">501</text>
+    <rect x="66" y="62" width="26" height="24" rx="3" fill="#27ae60" fill-opacity="0.18" stroke="#27ae60" stroke-width="0.5"/>
+    <text x="79" y="78" text-anchor="middle" font-size="9" font-weight="bold" fill="#27ae60">18</text>
+  </g>
+  <text x="674" y="210" text-anchor="middle" font-size="10" fill="#27ae60" font-weight="bold">Discrete Tokens</text>
+  <text x="674" y="224" text-anchor="middle" font-size="9" fill="#666">(integer indices)</text>
+
+  <!-- Bottom annotation -->
+  <text x="375" y="260" text-anchor="middle" font-size="9" fill="#999">Each token index maps to a learned codebook vector</text>
+</svg>

@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 300" width="700" height="300">
+  <defs>
+    <marker id="dit-arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#333"/>
+    </marker>
+    <marker id="dit-arr-orange" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#f39c12"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="350" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">Diffusion Transformer (DiT)</text>
+
+  <!-- Noisy image input -->
+  <rect x="20" y="100" width="65" height="65" rx="6" fill="#3498db" fill-opacity="0.08" stroke="#3498db" stroke-width="1.2"/>
+  <circle cx="38" cy="118" r="2" fill="#3498db" opacity="0.4"/>
+  <circle cx="55" cy="125" r="1.5" fill="#3498db" opacity="0.5"/>
+  <circle cx="45" cy="140" r="2" fill="#3498db" opacity="0.3"/>
+  <circle cx="65" cy="115" r="1.5" fill="#3498db" opacity="0.6"/>
+  <circle cx="60" cy="148" r="1.8" fill="#3498db" opacity="0.35"/>
+  <circle cx="35" cy="152" r="1.5" fill="#3498db" opacity="0.45"/>
+  <text x="52" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">Noisy</text>
+  <text x="52" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">Image</text>
+
+  <!-- Arrow to Patchify -->
+  <line x1="85" y1="132" x2="110" y2="132" stroke="#333" stroke-width="1.2" marker-end="url(#dit-arr)"/>
+
+  <!-- Patchify box -->
+  <rect x="118" y="108" width="72" height="48" rx="8" fill="#1abc9c" fill-opacity="0.12" stroke="#1abc9c" stroke-width="1.5"/>
+  <text x="154" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#1abc9c">Patchify</text>
+  <text x="154" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">+ pos embed</text>
+
+  <!-- Patches illustration (small squares going down) -->
+  <line x1="190" y1="132" x2="215" y2="132" stroke="#333" stroke-width="1.2" marker-end="url(#dit-arr)"/>
+
+  <!-- Patch tokens flowing into transformer blocks -->
+  <rect x="220" y="42" width="14" height="14" rx="2" fill="#3498db" fill-opacity="0.2" stroke="#3498db" stroke-width="0.8"/>
+  <rect x="220" y="60" width="14" height="14" rx="2" fill="#3498db" fill-opacity="0.2" stroke="#3498db" stroke-width="0.8"/>
+  <rect x="220" y="78" width="14" height="14" rx="2" fill="#3498db" fill-opacity="0.2" stroke="#3498db" stroke-width="0.8"/>
+  <rect x="220" y="96" width="14" height="14" rx="2" fill="#3498db" fill-opacity="0.2" stroke="#3498db" stroke-width="0.8"/>
+  <rect x="220" y="114" width="14" height="14" rx="2" fill="#3498db" fill-opacity="0.2" stroke="#3498db" stroke-width="0.8"/>
+  <rect x="220" y="132" width="14" height="14" rx="2" fill="#3498db" fill-opacity="0.2" stroke="#3498db" stroke-width="0.8"/>
+  <rect x="220" y="150" width="14" height="14" rx="2" fill="#3498db" fill-opacity="0.2" stroke="#3498db" stroke-width="0.8"/>
+  <rect x="220" y="168" width="14" height="14" rx="2" fill="#3498db" fill-opacity="0.2" stroke="#3498db" stroke-width="0.8"/>
+  <rect x="220" y="186" width="14" height="14" rx="2" fill="#3498db" fill-opacity="0.2" stroke="#3498db" stroke-width="0.8"/>
+  <rect x="220" y="204" width="14" height="14" rx="2" fill="#3498db" fill-opacity="0.2" stroke="#3498db" stroke-width="0.8"/>
+
+  <!-- Transformer Block 1 -->
+  <rect x="252" y="42" width="130" height="50" rx="8" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <text x="317" y="62" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#3498db">Transformer Block</text>
+  <text x="317" y="78" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">MHSA + FFN</text>
+
+  <!-- Transformer Block 2 -->
+  <rect x="252" y="105" width="130" height="50" rx="8" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <text x="317" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#3498db">Transformer Block</text>
+  <text x="317" y="141" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">MHSA + FFN</text>
+
+  <!-- Dots between blocks -->
+  <circle cx="317" cy="168" r="1.5" fill="#333"/>
+  <circle cx="317" cy="178" r="1.5" fill="#333"/>
+  <circle cx="317" cy="188" r="1.5" fill="#333"/>
+
+  <!-- Transformer Block N -->
+  <rect x="252" y="198" width="130" height="50" rx="8" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <text x="317" y="218" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#3498db">Transformer Block</text>
+  <text x="317" y="234" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">MHSA + FFN</text>
+
+  <!-- Connecting lines between blocks -->
+  <line x1="317" y1="92" x2="317" y2="105" stroke="#333" stroke-width="1"/>
+  <line x1="317" y1="155" x2="317" y2="163" stroke="#333" stroke-width="1"/>
+  <line x1="317" y1="193" x2="317" y2="198" stroke="#333" stroke-width="1"/>
+
+  <!-- adaLN conditioning (side) -->
+  <!-- Timestep t -->
+  <rect x="420" y="85" width="55" height="28" rx="6" fill="#f39c12" fill-opacity="0.15" stroke="#f39c12" stroke-width="1.2"/>
+  <text x="447" y="103" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#f39c12">t</text>
+
+  <!-- Class label c -->
+  <rect x="420" y="125" width="55" height="28" rx="6" fill="#9b59b6" fill-opacity="0.15" stroke="#9b59b6" stroke-width="1.2"/>
+  <text x="447" y="143" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#9b59b6">c</text>
+
+  <!-- Labels -->
+  <text x="447" y="78" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#f39c12">timestep</text>
+  <text x="447" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#9b59b6">class label</text>
+
+  <!-- adaLN arrows to blocks -->
+  <line x1="420" y1="99" x2="382" y2="67" stroke="#f39c12" stroke-width="1.2" stroke-dasharray="4,2" marker-end="url(#dit-arr-orange)"/>
+  <line x1="420" y1="105" x2="382" y2="125" stroke="#f39c12" stroke-width="1.2" stroke-dasharray="4,2" marker-end="url(#dit-arr-orange)"/>
+  <line x1="430" y1="153" x2="382" y2="218" stroke="#f39c12" stroke-width="1.2" stroke-dasharray="4,2" marker-end="url(#dit-arr-orange)"/>
+
+  <!-- adaLN label -->
+  <rect x="410" y="175" width="80" height="24" rx="6" fill="#f39c12" fill-opacity="0.08" stroke="#f39c12" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="450" y="191" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#f39c12">adaLN-Zero</text>
+
+  <!-- Arrow from last block to output -->
+  <line x1="382" y1="223" x2="515" y2="223" stroke="#333" stroke-width="1.2" marker-end="url(#dit-arr)"/>
+
+  <!-- Unpatchify -->
+  <rect x="523" y="200" width="72" height="48" rx="8" fill="#1abc9c" fill-opacity="0.12" stroke="#1abc9c" stroke-width="1.5"/>
+  <text x="559" y="220" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#1abc9c">Unpatchify</text>
+  <text x="559" y="235" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">reassemble</text>
+
+  <!-- Arrow to output -->
+  <line x1="595" y1="224" x2="620" y2="224" stroke="#333" stroke-width="1.2" marker-end="url(#dit-arr)"/>
+
+  <!-- Denoised image output -->
+  <rect x="628" y="192" width="55" height="55" rx="6" fill="#27ae60" fill-opacity="0.08" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="655" y="216" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27ae60">Denoised</text>
+  <text x="655" y="228" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27ae60">Image</text>
+
+  <!-- Key insight annotation -->
+  <rect x="505" y="42" width="180" height="48" rx="6" fill="#e74c3c" fill-opacity="0.06" stroke="#e74c3c" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="595" y="58" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#e74c3c">Replaces U-Net</text>
+  <text x="595" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">Pure transformer backbone</text>
+  <text x="595" y="82" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">scales with compute (Chinchilla-optimal)</text>
+
+  <!-- Bottom note -->
+  <text x="350" y="288" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#999">adaLN conditions each block on timestep and class via learned scale/shift parameters</text>
+</svg>

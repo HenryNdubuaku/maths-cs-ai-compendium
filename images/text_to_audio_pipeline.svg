@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 280" width="800" height="280">
+  <defs>
+    <marker id="ta-arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#333"/>
+    </marker>
+    <marker id="ta-arr-red" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#e74c3c"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="400" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">Text-to-Audio Generation (MusicGen-style)</text>
+
+  <!-- Text Prompt -->
+  <rect x="15" y="75" width="100" height="36" rx="8" fill="#e74c3c" fill-opacity="0.08" stroke="#e74c3c" stroke-width="1.2" stroke-dasharray="4,2"/>
+  <text x="65" y="93" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e74c3c">"upbeat jazz</text>
+  <text x="65" y="104" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e74c3c">piano melody"</text>
+
+  <!-- Arrow -->
+  <line x1="115" y1="93" x2="135" y2="93" stroke="#333" stroke-width="1.2" marker-end="url(#ta-arr)"/>
+
+  <!-- Text Encoder (T5) -->
+  <rect x="142" y="72" width="100" height="42" rx="8" fill="#e74c3c" fill-opacity="0.12" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="192" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#e74c3c">Text Encoder</text>
+  <text x="192" y="104" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">(T5-large)</text>
+
+  <!-- Arrow from encoder down to cross-attention -->
+  <line x1="192" y1="114" x2="192" y2="140" stroke="#e74c3c" stroke-width="1.2" stroke-dasharray="4,2" marker-end="url(#ta-arr-red)"/>
+  <text x="192" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#e74c3c">cross-attn</text>
+
+  <!-- Transformer Decoder -->
+  <rect x="142" y="145" width="155" height="50" rx="8" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <text x="219" y="167" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#3498db">Transformer Decoder</text>
+  <text x="219" y="183" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">Autoregressive, causal</text>
+
+  <!-- Arrow from decoder to codebook grid -->
+  <line x1="297" y1="170" x2="325" y2="170" stroke="#333" stroke-width="1.2" marker-end="url(#ta-arr)"/>
+
+  <!-- Codebook grid (interleaved pattern) -->
+  <!-- Grid label -->
+  <text x="435" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#333">Discrete Audio Tokens</text>
+
+  <!-- Column headers (time steps) -->
+  <text x="348" y="78" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#999">t1</text>
+  <text x="372" y="78" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#999">t2</text>
+  <text x="396" y="78" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#999">t3</text>
+  <text x="420" y="78" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#999">t4</text>
+  <text x="444" y="78" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#999">t5</text>
+  <text x="468" y="78" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#999">t6</text>
+  <text x="492" y="78" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#999">t7</text>
+  <text x="516" y="78" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#999">t8</text>
+
+  <!-- Row labels (codebook levels) -->
+  <text x="326" y="96" text-anchor="end" font-family="Arial, sans-serif" font-size="7" fill="#9b59b6">CB 1</text>
+  <text x="326" y="116" text-anchor="end" font-family="Arial, sans-serif" font-size="7" fill="#3498db">CB 2</text>
+  <text x="326" y="136" text-anchor="end" font-family="Arial, sans-serif" font-size="7" fill="#27ae60">CB 3</text>
+  <text x="326" y="156" text-anchor="end" font-family="Arial, sans-serif" font-size="7" fill="#f39c12">CB 4</text>
+
+  <!-- Grid cells - interleaved delay pattern -->
+  <!-- Row 1 (CB1) - purple, starts at t1 -->
+  <rect x="335" y="84" width="20" height="16" rx="2" fill="#9b59b6" fill-opacity="0.25" stroke="#9b59b6" stroke-width="0.8"/>
+  <text x="345" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#9b59b6">12</text>
+  <rect x="359" y="84" width="20" height="16" rx="2" fill="#9b59b6" fill-opacity="0.25" stroke="#9b59b6" stroke-width="0.8"/>
+  <text x="369" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#9b59b6">45</text>
+  <rect x="383" y="84" width="20" height="16" rx="2" fill="#9b59b6" fill-opacity="0.25" stroke="#9b59b6" stroke-width="0.8"/>
+  <text x="393" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#9b59b6">7</text>
+  <rect x="407" y="84" width="20" height="16" rx="2" fill="#9b59b6" fill-opacity="0.25" stroke="#9b59b6" stroke-width="0.8"/>
+  <text x="417" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#9b59b6">89</text>
+  <rect x="431" y="84" width="20" height="16" rx="2" fill="#9b59b6" fill-opacity="0.25" stroke="#9b59b6" stroke-width="0.8"/>
+  <text x="441" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#9b59b6">23</text>
+  <rect x="455" y="84" width="20" height="16" rx="2" fill="#9b59b6" fill-opacity="0.25" stroke="#9b59b6" stroke-width="0.8"/>
+  <text x="465" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#9b59b6">56</text>
+  <rect x="479" y="84" width="20" height="16" rx="2" fill="#9b59b6" fill-opacity="0.25" stroke="#9b59b6" stroke-width="0.8"/>
+  <text x="489" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#9b59b6">31</text>
+  <rect x="503" y="84" width="20" height="16" rx="2" fill="#9b59b6" fill-opacity="0.25" stroke="#9b59b6" stroke-width="0.8"/>
+  <text x="513" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#9b59b6">78</text>
+
+  <!-- Row 2 (CB2) - blue, delayed by 1 step -->
+  <rect x="335" y="104" width="20" height="16" rx="2" fill="#ccc" fill-opacity="0.3" stroke="#ccc" stroke-width="0.5"/>
+  <rect x="359" y="104" width="20" height="16" rx="2" fill="#3498db" fill-opacity="0.25" stroke="#3498db" stroke-width="0.8"/>
+  <text x="369" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#3498db">88</text>
+  <rect x="383" y="104" width="20" height="16" rx="2" fill="#3498db" fill-opacity="0.25" stroke="#3498db" stroke-width="0.8"/>
+  <text x="393" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#3498db">14</text>
+  <rect x="407" y="104" width="20" height="16" rx="2" fill="#3498db" fill-opacity="0.25" stroke="#3498db" stroke-width="0.8"/>
+  <text x="417" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#3498db">52</text>
+  <rect x="431" y="104" width="20" height="16" rx="2" fill="#3498db" fill-opacity="0.25" stroke="#3498db" stroke-width="0.8"/>
+  <text x="441" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#3498db">63</text>
+  <rect x="455" y="104" width="20" height="16" rx="2" fill="#3498db" fill-opacity="0.25" stroke="#3498db" stroke-width="0.8"/>
+  <text x="465" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#3498db">9</text>
+  <rect x="479" y="104" width="20" height="16" rx="2" fill="#3498db" fill-opacity="0.25" stroke="#3498db" stroke-width="0.8"/>
+  <text x="489" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#3498db">41</text>
+  <rect x="503" y="104" width="20" height="16" rx="2" fill="#3498db" fill-opacity="0.25" stroke="#3498db" stroke-width="0.8"/>
+  <text x="513" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#3498db">27</text>
+
+  <!-- Row 3 (CB3) - green, delayed by 2 -->
+  <rect x="335" y="124" width="20" height="16" rx="2" fill="#ccc" fill-opacity="0.3" stroke="#ccc" stroke-width="0.5"/>
+  <rect x="359" y="124" width="20" height="16" rx="2" fill="#ccc" fill-opacity="0.3" stroke="#ccc" stroke-width="0.5"/>
+  <rect x="383" y="124" width="20" height="16" rx="2" fill="#27ae60" fill-opacity="0.25" stroke="#27ae60" stroke-width="0.8"/>
+  <text x="393" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#27ae60">33</text>
+  <rect x="407" y="124" width="20" height="16" rx="2" fill="#27ae60" fill-opacity="0.25" stroke="#27ae60" stroke-width="0.8"/>
+  <text x="417" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#27ae60">71</text>
+  <rect x="431" y="124" width="20" height="16" rx="2" fill="#27ae60" fill-opacity="0.25" stroke="#27ae60" stroke-width="0.8"/>
+  <text x="441" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#27ae60">5</text>
+  <rect x="455" y="124" width="20" height="16" rx="2" fill="#27ae60" fill-opacity="0.25" stroke="#27ae60" stroke-width="0.8"/>
+  <text x="465" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#27ae60">92</text>
+  <rect x="479" y="124" width="20" height="16" rx="2" fill="#27ae60" fill-opacity="0.25" stroke="#27ae60" stroke-width="0.8"/>
+  <text x="489" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#27ae60">18</text>
+  <rect x="503" y="124" width="20" height="16" rx="2" fill="#27ae60" fill-opacity="0.25" stroke="#27ae60" stroke-width="0.8"/>
+  <text x="513" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#27ae60">60</text>
+
+  <!-- Row 4 (CB4) - orange, delayed by 3 -->
+  <rect x="335" y="144" width="20" height="16" rx="2" fill="#ccc" fill-opacity="0.3" stroke="#ccc" stroke-width="0.5"/>
+  <rect x="359" y="144" width="20" height="16" rx="2" fill="#ccc" fill-opacity="0.3" stroke="#ccc" stroke-width="0.5"/>
+  <rect x="383" y="144" width="20" height="16" rx="2" fill="#ccc" fill-opacity="0.3" stroke="#ccc" stroke-width="0.5"/>
+  <rect x="407" y="144" width="20" height="16" rx="2" fill="#f39c12" fill-opacity="0.25" stroke="#f39c12" stroke-width="0.8"/>
+  <text x="417" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#f39c12">44</text>
+  <rect x="431" y="144" width="20" height="16" rx="2" fill="#f39c12" fill-opacity="0.25" stroke="#f39c12" stroke-width="0.8"/>
+  <text x="441" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#f39c12">16</text>
+  <rect x="455" y="144" width="20" height="16" rx="2" fill="#f39c12" fill-opacity="0.25" stroke="#f39c12" stroke-width="0.8"/>
+  <text x="465" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#f39c12">83</text>
+  <rect x="479" y="144" width="20" height="16" rx="2" fill="#f39c12" fill-opacity="0.25" stroke="#f39c12" stroke-width="0.8"/>
+  <text x="489" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#f39c12">37</text>
+  <rect x="503" y="144" width="20" height="16" rx="2" fill="#f39c12" fill-opacity="0.25" stroke="#f39c12" stroke-width="0.8"/>
+  <text x="513" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#f39c12">55</text>
+
+  <!-- Delay pattern label -->
+  <text x="435" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">Interleaved delay pattern (parallel codebook prediction)</text>
+
+  <!-- Arrow label: time direction -->
+  <line x1="335" y1="72" x2="525" y2="72" stroke="#ccc" stroke-width="0.8" marker-end="url(#ta-arr)"/>
+  <text x="530" y="75" text-anchor="start" font-family="Arial, sans-serif" font-size="7" fill="#999">time</text>
+
+  <!-- Arrow from codebook grid to decoder -->
+  <line x1="530" y1="125" x2="570" y2="125" stroke="#333" stroke-width="1.2" marker-end="url(#ta-arr)"/>
+
+  <!-- Audio Codec Decoder -->
+  <rect x="578" y="100" width="110" height="50" rx="8" fill="#27ae60" fill-opacity="0.12" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="633" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#27ae60">Audio Codec</text>
+  <text x="633" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#27ae60">Decoder</text>
+  <text x="633" y="148" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#666">(EnCodec)</text>
+
+  <!-- Arrow to waveform -->
+  <line x1="688" y1="125" x2="710" y2="125" stroke="#333" stroke-width="1.2" marker-end="url(#ta-arr)"/>
+
+  <!-- Waveform output -->
+  <path d="M718,125 Q722,110 726,125 Q730,140 734,125 Q738,108 742,125 Q746,142 750,125 Q754,110 758,125 Q762,138 766,125 Q770,112 774,125" fill="none" stroke="#27ae60" stroke-width="1.8"/>
+  <text x="746" y="152" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27ae60">Waveform</text>
+  <text x="746" y="164" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#999">24kHz audio</text>
+
+  <!-- Autoregressive arrow on transformer -->
+  <path d="M185,195 C165,210 165,230 185,235 C200,238 230,235 245,225" fill="none" stroke="#3498db" stroke-width="1.2" stroke-dasharray="4,2"/>
+  <text x="140" y="228" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#3498db">auto-</text>
+  <text x="140" y="237" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#3498db">regressive</text>
+
+  <!-- Bottom annotation -->
+  <text x="400" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#999">Grey cells = delay padding | Each codebook level captures progressively finer audio detail</text>
+</svg>
