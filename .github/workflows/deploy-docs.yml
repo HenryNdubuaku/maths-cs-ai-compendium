@@ -18,6 +18,17 @@ jobs:
         with:
           python-version: "3.x"
 
-      - run: pip install "mkdocs-material[imaging]"
+      - run: pip install "mkdocs<2" "mkdocs-material[imaging]"
+
+      - name: Create docs directory with symlinks
+        run: |
+          mkdir -p docs
+          cp README.md docs/index.md
+          ln -s ../images docs/images
+          ln -s ../javascripts docs/javascripts
+          find . -maxdepth 1 -type d -name 'chapter *' | while IFS= read -r dir; do
+            dir="${dir#./}"
+            ln -s "../$dir" "docs/$dir"
+          done
 
       - run: mkdocs gh-deploy --force
