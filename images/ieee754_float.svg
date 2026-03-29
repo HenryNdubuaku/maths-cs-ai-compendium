@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 180" width="700" height="180">
+  <text x="350" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">IEEE 754 Float32 Bit Layout</text>
+
+  <!-- Bit field boxes -->
+  <!-- Sign (1 bit) -->
+  <rect x="40" y="50" width="40" height="45" rx="4" fill="#e74c3c" fill-opacity="0.2" stroke="#e74c3c" stroke-width="2"/>
+  <text x="60" y="78" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#e74c3c">S</text>
+  <text x="60" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e74c3c">1 bit</text>
+  <text x="60" y="124" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#e74c3c">sign</text>
+
+  <!-- Exponent (8 bits) -->
+  <rect x="85" y="50" width="200" height="45" rx="4" fill="#3498db" fill-opacity="0.2" stroke="#3498db" stroke-width="2"/>
+  <text x="185" y="78" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#3498db">Exponent</text>
+  <text x="185" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3498db">8 bits</text>
+  <text x="185" y="124" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#3498db">biased by 127</text>
+
+  <!-- Mantissa (23 bits) -->
+  <rect x="290" y="50" width="370" height="45" rx="4" fill="#27ae60" fill-opacity="0.2" stroke="#27ae60" stroke-width="2"/>
+  <text x="475" y="78" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#27ae60">Mantissa (fraction)</text>
+  <text x="475" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27ae60">23 bits</text>
+  <text x="475" y="124" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#27ae60">implicit leading 1</text>
+
+  <!-- Bit positions -->
+  <text x="40" y="46" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#999">31</text>
+  <text x="85" y="46" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#999">30</text>
+  <text x="285" y="46" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#999">23</text>
+  <text x="290" y="46" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#999">22</text>
+  <text x="660" y="46" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#999">0</text>
+
+  <!-- Formula -->
+  <text x="350" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#333">value = (−1)^S × 1.mantissa × 2^(exponent − 127)</text>
+
+  <!-- Variants -->
+  <text x="350" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">float16: 1+5+10 = 16 bits | bfloat16: 1+8+7 = 16 bits | float64: 1+11+52 = 64 bits</text>
+</svg>

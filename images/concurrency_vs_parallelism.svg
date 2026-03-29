@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 220" width="700" height="220">
+  <text x="350" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">Concurrency vs Parallelism</text>
+
+  <line x1="350" y1="35" x2="350" y2="210" stroke="#ccc" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- Concurrency (left) - one core, interleaved -->
+  <text x="175" y="52" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#3498db">Concurrency (1 core)</text>
+  <text x="175" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3498db">interleaved execution</text>
+
+  <text x="40" y="100" text-anchor="start" font-family="Arial, sans-serif" font-size="10" fill="#666">Core:</text>
+
+  <!-- Time blocks interleaved -->
+  <rect x="80" y="85" width="40" height="24" rx="3" fill="#e74c3c" fill-opacity="0.4" stroke="#e74c3c" stroke-width="1"/>
+  <text x="100" y="101" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#e74c3c">A</text>
+
+  <rect x="122" y="85" width="30" height="24" rx="3" fill="#3498db" fill-opacity="0.4" stroke="#3498db" stroke-width="1"/>
+  <text x="137" y="101" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#3498db">B</text>
+
+  <rect x="154" y="85" width="35" height="24" rx="3" fill="#e74c3c" fill-opacity="0.4" stroke="#e74c3c" stroke-width="1"/>
+  <text x="171" y="101" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#e74c3c">A</text>
+
+  <rect x="191" y="85" width="25" height="24" rx="3" fill="#27ae60" fill-opacity="0.4" stroke="#27ae60" stroke-width="1"/>
+  <text x="203" y="101" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#27ae60">C</text>
+
+  <rect x="218" y="85" width="30" height="24" rx="3" fill="#3498db" fill-opacity="0.4" stroke="#3498db" stroke-width="1"/>
+  <text x="233" y="101" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#3498db">B</text>
+
+  <rect x="250" y="85" width="40" height="24" rx="3" fill="#27ae60" fill-opacity="0.4" stroke="#27ae60" stroke-width="1"/>
+  <text x="270" y="101" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#27ae60">C</text>
+
+  <!-- Time arrow -->
+  <line x1="80" y1="125" x2="300" y2="125" stroke="#999" stroke-width="1"/>
+  <text x="310" y="129" text-anchor="start" font-family="Arial, sans-serif" font-size="8" fill="#999">time →</text>
+
+  <text x="175" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">tasks take turns on one core</text>
+  <text x="175" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">not truly simultaneous</text>
+
+  <!-- Parallelism (right) - multiple cores, simultaneous -->
+  <text x="525" y="52" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#27ae60">Parallelism (4 cores)</text>
+  <text x="525" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27ae60">simultaneous execution</text>
+
+  <text x="380" y="93" text-anchor="start" font-family="Arial, sans-serif" font-size="9" fill="#666">Core 1:</text>
+  <text x="380" y="113" text-anchor="start" font-family="Arial, sans-serif" font-size="9" fill="#666">Core 2:</text>
+  <text x="380" y="133" text-anchor="start" font-family="Arial, sans-serif" font-size="9" fill="#666">Core 3:</text>
+  <text x="380" y="153" text-anchor="start" font-family="Arial, sans-serif" font-size="9" fill="#666">Core 4:</text>
+
+  <!-- Simultaneous blocks -->
+  <rect x="440" y="80" width="200" height="18" rx="3" fill="#e74c3c" fill-opacity="0.4" stroke="#e74c3c" stroke-width="1"/>
+  <text x="540" y="93" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#e74c3c">Task A</text>
+
+  <rect x="440" y="100" width="200" height="18" rx="3" fill="#3498db" fill-opacity="0.4" stroke="#3498db" stroke-width="1"/>
+  <text x="540" y="113" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#3498db">Task B</text>
+
+  <rect x="440" y="120" width="200" height="18" rx="3" fill="#27ae60" fill-opacity="0.4" stroke="#27ae60" stroke-width="1"/>
+  <text x="540" y="133" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#27ae60">Task C</text>
+
+  <rect x="440" y="140" width="200" height="18" rx="3" fill="#f39c12" fill-opacity="0.4" stroke="#f39c12" stroke-width="1"/>
+  <text x="540" y="153" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#f39c12">Task D</text>
+
+  <text x="525" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">all tasks run at the same time</text>
+  <text x="525" y="195" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">requires multiple cores</text>
+</svg>

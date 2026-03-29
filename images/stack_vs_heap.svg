@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 280" width="600" height="280">
+  <text x="300" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">Memory Layout: Stack vs Heap</text>
+
+  <!-- Address space box -->
+  <rect x="150" y="40" width="300" height="210" rx="4" fill="#f5f5f5" stroke="#999" stroke-width="1"/>
+
+  <!-- High address label -->
+  <text x="140" y="50" text-anchor="end" font-family="Arial, sans-serif" font-size="8" fill="#999">high addr</text>
+
+  <!-- Stack (top, grows down) -->
+  <rect x="155" y="45" width="290" height="60" rx="3" fill="#3498db" fill-opacity="0.15" stroke="#3498db" stroke-width="1.5"/>
+  <text x="300" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#3498db">Stack</text>
+  <text x="300" y="84" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3498db">local vars, call frames, return addrs</text>
+
+  <!-- Stack grows down arrow -->
+  <text x="460" y="90" text-anchor="start" font-family="Arial, sans-serif" font-size="9" fill="#3498db">↓ grows down</text>
+
+  <!-- Free space -->
+  <rect x="155" y="110" width="290" height="40" rx="0" fill="white" stroke="none"/>
+  <text x="300" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#ccc">← free space →</text>
+
+  <!-- Heap (bottom area, grows up) -->
+  <rect x="155" y="155" width="290" height="55" rx="3" fill="#27ae60" fill-opacity="0.15" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="300" y="178" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#27ae60">Heap</text>
+  <text x="300" y="195" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27ae60">malloc, new, dynamic objects</text>
+
+  <!-- Heap grows up arrow -->
+  <text x="460" y="168" text-anchor="start" font-family="Arial, sans-serif" font-size="9" fill="#27ae60">↑ grows up</text>
+
+  <!-- Data + Code (bottom) -->
+  <rect x="155" y="215" width="145" height="30" rx="3" fill="#f39c12" fill-opacity="0.15" stroke="#f39c12" stroke-width="1"/>
+  <text x="227" y="235" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#f39c12">Data (globals)</text>
+
+  <rect x="305" y="215" width="140" height="30" rx="3" fill="#9b59b6" fill-opacity="0.15" stroke="#9b59b6" stroke-width="1"/>
+  <text x="375" y="235" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#9b59b6">Code (text)</text>
+
+  <!-- Low address label -->
+  <text x="140" y="248" text-anchor="end" font-family="Arial, sans-serif" font-size="8" fill="#999">low addr</text>
+
+  <!-- Comparison table -->
+  <text x="80" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3498db">Stack: fast, auto-freed, fixed size</text>
+  <text x="420" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27ae60">Heap: slower, manual/GC, flexible size</text>
+</svg>

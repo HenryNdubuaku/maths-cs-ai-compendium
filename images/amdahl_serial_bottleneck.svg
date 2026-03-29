@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 220" width="650" height="220">
+  <text x="325" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">Amdahl's Law: The Serial Bottleneck</text>
+
+  <!-- 1 processor -->
+  <text x="30" y="62" text-anchor="start" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#666">1 core:</text>
+  <rect x="100" y="48" width="100" height="24" rx="3" fill="#e74c3c" fill-opacity="0.3" stroke="#e74c3c" stroke-width="1"/>
+  <text x="150" y="64" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#e74c3c">serial (10%)</text>
+  <rect x="200" y="48" width="400" height="24" rx="3" fill="#3498db" fill-opacity="0.3" stroke="#3498db" stroke-width="1"/>
+  <text x="400" y="64" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#3498db">parallel (90%)</text>
+
+  <!-- 4 processors -->
+  <text x="30" y="107" text-anchor="start" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#666">4 cores:</text>
+  <rect x="100" y="93" width="100" height="24" rx="3" fill="#e74c3c" fill-opacity="0.3" stroke="#e74c3c" stroke-width="1"/>
+  <text x="150" y="109" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#e74c3c">serial (10%)</text>
+  <rect x="200" y="93" width="100" height="24" rx="3" fill="#3498db" fill-opacity="0.3" stroke="#3498db" stroke-width="1"/>
+  <text x="250" y="109" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#3498db">90% ÷ 4</text>
+  <text x="320" y="109" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#27ae60">→ 3.1x speedup</text>
+
+  <!-- 16 processors -->
+  <text x="30" y="147" text-anchor="start" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#666">16 cores:</text>
+  <rect x="100" y="133" width="100" height="24" rx="3" fill="#e74c3c" fill-opacity="0.3" stroke="#e74c3c" stroke-width="1"/>
+  <text x="150" y="149" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#e74c3c">serial (10%)</text>
+  <rect x="200" y="133" width="25" height="24" rx="3" fill="#3498db" fill-opacity="0.3" stroke="#3498db" stroke-width="1"/>
+  <text x="253" y="149" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#27ae60">→ 6.4x speedup</text>
+
+  <!-- Infinite processors -->
+  <text x="30" y="187" text-anchor="start" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#666">∞ cores:</text>
+  <rect x="100" y="173" width="100" height="24" rx="3" fill="#e74c3c" fill-opacity="0.3" stroke="#e74c3c" stroke-width="1"/>
+  <text x="150" y="189" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#e74c3c">serial (10%)</text>
+  <text x="220" y="189" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#e74c3c">→ 10x max!</text>
+
+  <text x="325" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">The serial fraction (red) cannot be parallelised — it limits the maximum speedup to 1/(1−p)</text>
+</svg>

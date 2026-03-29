@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 240" width="750" height="240">
+  <text x="375" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">CPU Pipeline: Overlapping Instruction Execution</text>
+
+  <!-- Time axis -->
+  <text x="130" y="48" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#666">Cycle 1</text>
+  <text x="240" y="48" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#666">Cycle 2</text>
+  <text x="350" y="48" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#666">Cycle 3</text>
+  <text x="460" y="48" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#666">Cycle 4</text>
+  <text x="570" y="48" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#666">Cycle 5</text>
+  <text x="680" y="48" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#666">Cycle 6</text>
+
+  <!-- Instruction labels -->
+  <text x="30" y="80" text-anchor="start" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#333">Instr 1</text>
+  <text x="30" y="115" text-anchor="start" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#333">Instr 2</text>
+  <text x="30" y="150" text-anchor="start" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#333">Instr 3</text>
+  <text x="30" y="185" text-anchor="start" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#333">Instr 4</text>
+
+  <!-- Pipeline stages: F=Fetch D=Decode E=Execute M=Memory W=Writeback -->
+  <!-- Instruction 1 -->
+  <rect x="85" y="62" width="90" height="26" rx="4" fill="#e74c3c" fill-opacity="0.25" stroke="#e74c3c" stroke-width="1"/>
+  <text x="130" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#e74c3c">Fetch</text>
+  <rect x="195" y="62" width="90" height="26" rx="4" fill="#f39c12" fill-opacity="0.25" stroke="#f39c12" stroke-width="1"/>
+  <text x="240" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#f39c12">Decode</text>
+  <rect x="305" y="62" width="90" height="26" rx="4" fill="#27ae60" fill-opacity="0.25" stroke="#27ae60" stroke-width="1"/>
+  <text x="350" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#27ae60">Execute</text>
+  <rect x="415" y="62" width="90" height="26" rx="4" fill="#3498db" fill-opacity="0.25" stroke="#3498db" stroke-width="1"/>
+  <text x="460" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#3498db">Memory</text>
+  <rect x="525" y="62" width="90" height="26" rx="4" fill="#9b59b6" fill-opacity="0.25" stroke="#9b59b6" stroke-width="1"/>
+  <text x="570" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#9b59b6">Write</text>
+
+  <!-- Instruction 2 (shifted by 1 cycle) -->
+  <rect x="195" y="97" width="90" height="26" rx="4" fill="#e74c3c" fill-opacity="0.25" stroke="#e74c3c" stroke-width="1"/>
+  <text x="240" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#e74c3c">Fetch</text>
+  <rect x="305" y="97" width="90" height="26" rx="4" fill="#f39c12" fill-opacity="0.25" stroke="#f39c12" stroke-width="1"/>
+  <text x="350" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#f39c12">Decode</text>
+  <rect x="415" y="97" width="90" height="26" rx="4" fill="#27ae60" fill-opacity="0.25" stroke="#27ae60" stroke-width="1"/>
+  <text x="460" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#27ae60">Execute</text>
+  <rect x="525" y="97" width="90" height="26" rx="4" fill="#3498db" fill-opacity="0.25" stroke="#3498db" stroke-width="1"/>
+  <text x="570" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#3498db">Memory</text>
+  <rect x="635" y="97" width="90" height="26" rx="4" fill="#9b59b6" fill-opacity="0.25" stroke="#9b59b6" stroke-width="1"/>
+  <text x="680" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#9b59b6">Write</text>
+
+  <!-- Instruction 3 -->
+  <rect x="305" y="132" width="90" height="26" rx="4" fill="#e74c3c" fill-opacity="0.25" stroke="#e74c3c" stroke-width="1"/>
+  <text x="350" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#e74c3c">Fetch</text>
+  <rect x="415" y="132" width="90" height="26" rx="4" fill="#f39c12" fill-opacity="0.25" stroke="#f39c12" stroke-width="1"/>
+  <text x="460" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#f39c12">Decode</text>
+  <rect x="525" y="132" width="90" height="26" rx="4" fill="#27ae60" fill-opacity="0.25" stroke="#27ae60" stroke-width="1"/>
+  <text x="570" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#27ae60">Execute</text>
+  <rect x="635" y="132" width="90" height="26" rx="4" fill="#3498db" fill-opacity="0.25" stroke="#3498db" stroke-width="1"/>
+  <text x="680" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#3498db">Memory</text>
+
+  <!-- Instruction 4 -->
+  <rect x="415" y="167" width="90" height="26" rx="4" fill="#e74c3c" fill-opacity="0.25" stroke="#e74c3c" stroke-width="1"/>
+  <text x="460" y="185" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#e74c3c">Fetch</text>
+  <rect x="525" y="167" width="90" height="26" rx="4" fill="#f39c12" fill-opacity="0.25" stroke="#f39c12" stroke-width="1"/>
+  <text x="570" y="185" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#f39c12">Decode</text>
+  <rect x="635" y="167" width="90" height="26" rx="4" fill="#27ae60" fill-opacity="0.25" stroke="#27ae60" stroke-width="1"/>
+  <text x="680" y="185" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#27ae60">Execute</text>
+
+  <text x="375" y="225" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">Each cycle, a new instruction enters the pipeline — throughput approaches 1 instruction/cycle</text>
+</svg>
