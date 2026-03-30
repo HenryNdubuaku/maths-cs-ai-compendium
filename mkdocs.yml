@@ -5,7 +5,7 @@ site_author: "Henry Ndubuaku"
 repo_url: "https://github.com/HenryNdubuaku/maths-cs-ai-compendium"
 repo_name: "HenryNdubuaku/maths-cs-ai-compendium"
 
-docs_dir: docs
+docs_dir: .
 
 theme:
   name: material
