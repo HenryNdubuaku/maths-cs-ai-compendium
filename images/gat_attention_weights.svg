@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 230" width="700" height="230">
+  <defs>
+    <marker id="gat-arr" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto">
+      <path d="M0,0 L7,2.5 L0,5 Z" fill="#666"/>
+    </marker>
+  </defs>
+  <text x="350" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">GCN (Fixed Weights) vs GAT (Learned Attention)</text>
+
+  <line x1="350" y1="35" x2="350" y2="220" stroke="#ccc" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- GCN (left) -->
+  <text x="175" y="52" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#3498db">GCN: Fixed by Degree</text>
+
+  <circle cx="175" cy="130" r="22" fill="#e74c3c" fill-opacity="0.2" stroke="#e74c3c" stroke-width="2"/>
+  <text x="175" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#e74c3c">i</text>
+
+  <circle cx="80" cy="80" r="15" fill="#3498db" fill-opacity="0.2" stroke="#3498db" stroke-width="1.5"/>
+  <circle cx="270" cy="80" r="15" fill="#3498db" fill-opacity="0.2" stroke="#3498db" stroke-width="1.5"/>
+  <circle cx="80" cy="180" r="15" fill="#3498db" fill-opacity="0.2" stroke="#3498db" stroke-width="1.5"/>
+
+  <!-- Equal-width arrows (uniform weight) -->
+  <line x1="93" y1="90" x2="155" y2="118" stroke="#3498db" stroke-width="3" marker-end="url(#gat-arr)"/>
+  <line x1="257" y1="90" x2="195" y2="118" stroke="#3498db" stroke-width="3" marker-end="url(#gat-arr)"/>
+  <line x1="93" y1="172" x2="155" y2="142" stroke="#3498db" stroke-width="3" marker-end="url(#gat-arr)"/>
+
+  <text x="100" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3498db">⅓</text>
+  <text x="250" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3498db">⅓</text>
+  <text x="100" y="158" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3498db">⅓</text>
+
+  <text x="175" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">all neighbours contribute equally</text>
+
+  <!-- GAT (right) -->
+  <text x="525" y="52" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#f39c12">GAT: Learned Attention</text>
+
+  <circle cx="525" cy="130" r="22" fill="#e74c3c" fill-opacity="0.2" stroke="#e74c3c" stroke-width="2"/>
+  <text x="525" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#e74c3c">i</text>
+
+  <circle cx="430" cy="80" r="15" fill="#f39c12" fill-opacity="0.2" stroke="#f39c12" stroke-width="1.5"/>
+  <circle cx="620" cy="80" r="15" fill="#f39c12" fill-opacity="0.2" stroke="#f39c12" stroke-width="1.5"/>
+  <circle cx="430" cy="180" r="15" fill="#f39c12" fill-opacity="0.2" stroke="#f39c12" stroke-width="1.5"/>
+
+  <!-- Variable-width arrows -->
+  <line x1="443" y1="90" x2="505" y2="118" stroke="#f39c12" stroke-width="6" stroke-opacity="0.7" marker-end="url(#gat-arr)"/>
+  <line x1="607" y1="90" x2="545" y2="118" stroke="#f39c12" stroke-width="2" stroke-opacity="0.5" marker-end="url(#gat-arr)"/>
+  <line x1="443" y1="172" x2="505" y2="142" stroke="#f39c12" stroke-width="3.5" stroke-opacity="0.6" marker-end="url(#gat-arr)"/>
+
+  <text x="450" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#f39c12">0.6</text>
+  <text x="600" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#f39c12">0.1</text>
+  <text x="450" y="158" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#f39c12">0.3</text>
+
+  <text x="525" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">important neighbours get more weight</text>
+</svg>

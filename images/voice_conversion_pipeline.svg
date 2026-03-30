@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="290">
+  <defs>
+    <marker id="arr4" viewBox="0 0 10 6" refX="10" refY="3" markerWidth="8" markerHeight="6" orient="auto">
+      <polygon points="0,0 10,3 0,6" fill="#666"/>
+    </marker>
+    <marker id="arr4r" viewBox="0 0 10 6" refX="10" refY="3" markerWidth="8" markerHeight="6" orient="auto">
+      <polygon points="0,0 10,3 0,6" fill="#e74c3c"/>
+    </marker>
+    <marker id="arr4g" viewBox="0 0 10 6" refX="10" refY="3" markerWidth="8" markerHeight="6" orient="auto">
+      <polygon points="0,0 10,3 0,6" fill="#27ae60"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="350" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">Voice Conversion with Speaker Disentanglement</text>
+
+  <!-- ===== TOP PATH: Source Speaker ===== -->
+
+  <!-- Source Audio -->
+  <rect x="20" y="50" width="95" height="50" rx="8" fill="#3498db" fill-opacity="0.15" stroke="#3498db" stroke-width="1.5"/>
+  <text x="67" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#3498db">Source Audio</text>
+  <text x="67" y="82" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">Speaker A</text>
+  <!-- Small waveform -->
+  <polyline points="30,90 38,86 46,94 54,84 62,93 70,85 78,92 86,87 94,91 102,88" fill="none" stroke="#3498db" stroke-width="0.7" stroke-opacity="0.4"/>
+
+  <!-- Arrow to encoder -->
+  <line x1="115" y1="75" x2="142" y2="75" stroke="#666" stroke-width="1.2" marker-end="url(#arr4)"/>
+
+  <!-- Content Encoder -->
+  <rect x="144" y="45" width="110" height="60" rx="8" fill="#9b59b6" fill-opacity="0.12" stroke="#9b59b6" stroke-width="1.5"/>
+  <text x="199" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#9b59b6">Content Encoder</text>
+  <text x="199" y="78" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">Extract linguistic</text>
+  <text x="199" y="89" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">content features</text>
+
+  <!-- Arrow to content representation -->
+  <line x1="254" y1="75" x2="278" y2="75" stroke="#666" stroke-width="1.2" marker-end="url(#arr4)"/>
+
+  <!-- Content Representation (speaker-independent) -->
+  <rect x="280" y="45" width="120" height="60" rx="8" fill="#27ae60" fill-opacity="0.12" stroke="#27ae60" stroke-width="2"/>
+  <text x="340" y="63" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#27ae60">Content</text>
+  <text x="340" y="76" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#27ae60">Representation</text>
+  <text x="340" y="92" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">(speaker-independent)</text>
+
+  <!-- Disentanglement visual: dashed line separating content from identity -->
+  <line x1="270" y1="120" x2="410" y2="120" stroke="#e74c3c" stroke-width="1.2" stroke-dasharray="6,3"/>
+  <text x="340" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#e74c3c" font-style="italic">disentanglement boundary</text>
+
+  <!-- Content label above -->
+  <text x="310" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#27ae60">WHAT is said</text>
+  <!-- Identity label below -->
+  <text x="370" y="148" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#e74c3c">WHO says it</text>
+
+  <!-- ===== BOTTOM PATH: Target Speaker ===== -->
+
+  <!-- Target Speaker Audio -->
+  <rect x="20" y="158" width="95" height="50" rx="8" fill="#e74c3c" fill-opacity="0.15" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="67" y="176" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#e74c3c">Target Audio</text>
+  <text x="67" y="188" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">Speaker B</text>
+  <text x="67" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#666">(reference)</text>
+
+  <!-- Arrow to speaker encoder -->
+  <line x1="115" y1="183" x2="142" y2="183" stroke="#666" stroke-width="1.2" marker-end="url(#arr4)"/>
+
+  <!-- Speaker Encoder -->
+  <rect x="144" y="153" width="110" height="60" rx="8" fill="#f39c12" fill-opacity="0.12" stroke="#f39c12" stroke-width="1.5"/>
+  <text x="199" y="173" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#f39c12">Speaker Encoder</text>
+  <text x="199" y="186" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">Extract speaker</text>
+  <text x="199" y="197" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">identity embedding</text>
+
+  <!-- Arrow to speaker embedding -->
+  <line x1="254" y1="183" x2="278" y2="183" stroke="#666" stroke-width="1.2" marker-end="url(#arr4)"/>
+
+  <!-- Speaker Embedding -->
+  <rect x="280" y="158" width="120" height="50" rx="8" fill="#e74c3c" fill-opacity="0.12" stroke="#e74c3c" stroke-width="2"/>
+  <text x="340" y="178" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#e74c3c">Speaker</text>
+  <text x="340" y="191" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#e74c3c">Embedding</text>
+  <text x="340" y="203" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#666">d-vector / x-vector</text>
+
+  <!-- ===== MERGE: Both paths into Decoder ===== -->
+
+  <!-- Arrow from content to decoder -->
+  <path d="M400,75 Q430,75 445,100 L460,115" fill="none" stroke="#27ae60" stroke-width="1.5" marker-end="url(#arr4g)"/>
+  <text x="418" y="86" font-family="Arial, sans-serif" font-size="7" fill="#27ae60">content</text>
+
+  <!-- Arrow from speaker embedding to decoder -->
+  <path d="M400,183 Q430,183 445,158 L460,143" fill="none" stroke="#e74c3c" stroke-width="1.5" marker-end="url(#arr4r)"/>
+  <text x="418" y="176" font-family="Arial, sans-serif" font-size="7" fill="#e74c3c">identity</text>
+
+  <!-- Decoder -->
+  <rect x="462" y="100" width="100" height="60" rx="8" fill="#9b59b6" fill-opacity="0.15" stroke="#9b59b6" stroke-width="1.5"/>
+  <text x="512" y="122" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#9b59b6">Decoder</text>
+  <text x="512" y="136" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">Synthesise mel /</text>
+  <text x="512" y="148" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">waveform</text>
+
+  <!-- Arrow to output -->
+  <line x1="562" y1="130" x2="590" y2="130" stroke="#666" stroke-width="1.2" marker-end="url(#arr4)"/>
+
+  <!-- Converted Speech Output -->
+  <rect x="592" y="95" width="90" height="70" rx="8" fill="#27ae60" fill-opacity="0.18" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="637" y="118" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#27ae60">Converted</text>
+  <text x="637" y="131" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#27ae60">Speech</text>
+  <text x="637" y="147" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">Target voice</text>
+  <text x="637" y="158" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">Source content</text>
+
+  <!-- Waveform squiggle on output -->
+  <polyline points="600,110 608,105 616,115 624,103 632,113 640,104 648,112 656,106 664,111 672,107" fill="none" stroke="#27ae60" stroke-width="0.7" stroke-opacity="0.4"/>
+
+  <!-- ===== NOTE BOX ===== -->
+  <rect x="20" y="230" width="660" height="45" rx="6" fill="#f5f5f5" stroke="#333" stroke-width="1"/>
+  <text x="35" y="247" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#333">Note:</text>
+  <text x="70" y="247" font-family="Arial, sans-serif" font-size="9" fill="#666">Key challenge: separate what is said (content) from who says it (identity). Approaches include information</text>
+  <text x="35" y="262" font-family="Arial, sans-serif" font-size="9" fill="#666">bottlenecks, instance normalisation, vector quantisation (VQ-VAE), and adversarial training to strip speaker</text>
+  <text x="35" y="275" font-family="Arial, sans-serif" font-size="9" fill="#666">information from the content encoder. Zero-shot VC uses a single reference utterance for unseen target speakers.</text>
+</svg>

@@ -1,0 +1,38 @@
+<svg width="360" height="220" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow-du" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#e74c3c"/>
+    </marker>
+    <marker id="arrow-dv" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#3498db"/>
+    </marker>
+    <marker id="arrow-ds" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#2ecc71"/>
+    </marker>
+    <marker id="arrow-dc" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#f39c12"/>
+    </marker>
+  </defs>
+  <!-- original u (short) -->
+  <line x1="30" y1="190" x2="98" y2="190" stroke="#e74c3c" stroke-width="2" marker-end="url(#arrow-du)"/>
+  <text x="60" y="208" fill="#e74c3c" font-size="12" font-weight="bold" text-anchor="middle">u</text>
+  <!-- original v from tip of u (short) -->
+  <line x1="106" y1="190" x2="146" y2="140" stroke="#3498db" stroke-width="2" marker-end="url(#arrow-dv)"/>
+  <text x="137" y="172" fill="#3498db" font-size="12" font-weight="bold">v</text>
+  <!-- u+v resultant (short) -->
+  <line x1="30" y1="190" x2="146" y2="140" stroke="#2ecc71" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow-ds)"/>
+  <text x="72" y="155" fill="#2ecc71" font-size="11">u+v</text>
+  <!-- scaled: cu (long) -->
+  <line x1="30" y1="190" x2="166" y2="190" stroke="#e74c3c" stroke-width="2.5" marker-end="url(#arrow-du)"/>
+  <!-- scaled: cv from tip of cu -->
+  <line x1="174" y1="190" x2="254" y2="90" stroke="#3498db" stroke-width="2.5" marker-end="url(#arrow-dv)"/>
+  <!-- c(u+v) resultant (long, gold) -->
+  <line x1="30" y1="190" x2="254" y2="90" stroke="#f39c12" stroke-width="2.5" stroke-dasharray="6,3" marker-end="url(#arrow-dc)"/>
+  <text x="160" y="115" fill="#f39c12" font-size="14" font-weight="bold">c(u + v)</text>
+  <!-- labels -->
+  <text x="95" y="185" fill="#e74c3c" font-size="12" font-weight="bold">cu</text>
+  <text x="225" y="130" fill="#3498db" font-size="12" font-weight="bold">cv</text>
+  <!-- origin -->
+  <circle cx="30" cy="190" r="3" fill="#333"/>
+  <text x="18" y="208" fill="#333" font-size="12">O</text>
+</svg>

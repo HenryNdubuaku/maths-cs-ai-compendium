@@ -1,0 +1,36 @@
+<svg width="380" height="200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr-a" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#e74c3c"/>
+    </marker>
+    <marker id="arr-b" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#3498db"/>
+    </marker>
+  </defs>
+
+  <!-- vector b (horizontal) -->
+  <circle cx="40" cy="150" r="3" fill="#333"/>
+  <line x1="40" y1="150" x2="338" y2="150" stroke="#3498db" stroke-width="2.5" marker-end="url(#arr-b)"/>
+  <text x="340" y="145" fill="#3498db" font-size="14" font-weight="bold">b</text>
+
+  <!-- vector a (angled up) -->
+  <line x1="40" y1="150" x2="228" y2="42" stroke="#e74c3c" stroke-width="2.5" marker-end="url(#arr-a)"/>
+  <text x="232" y="40" fill="#e74c3c" font-size="14" font-weight="bold">a</text>
+
+  <!-- dashed projection line from tip of a down to b -->
+  <line x1="228" y1="42" x2="228" y2="150" stroke="#999" stroke-width="1.5" stroke-dasharray="5"/>
+
+  <!-- projection segment on b -->
+  <line x1="40" y1="155" x2="228" y2="155" stroke="#27ae60" stroke-width="3"/>
+  <text x="110" y="180" fill="#27ae60" font-size="12" font-weight="bold">proj_b(a)</text>
+
+  <!-- right angle mark at projection foot -->
+  <rect x="216" y="138" width="12" height="12" fill="none" stroke="#999" stroke-width="1.2"/>
+
+  <!-- angle arc -->
+  <path d="M 80,150 A 40,40 0 0,0 66,126" fill="none" stroke="#333" stroke-width="1.5"/>
+  <text x="78" y="132" fill="#333" font-size="13">θ</text>
+
+  <!-- label -->
+  <text x="40" y="15" fill="#666" font-size="12">a · b = ‖a‖ ‖b‖ cos(θ)</text>
+</svg>

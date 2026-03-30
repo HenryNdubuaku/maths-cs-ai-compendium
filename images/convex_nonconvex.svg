@@ -1,0 +1,76 @@
+<svg width="440" height="190" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="cn-arr" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto">
+      <path d="M0,0 L7,2.5 L0,5" fill="#ccc"/>
+    </marker>
+  </defs>
+
+  <!-- === Convex (bowl) === -->
+  <text x="70" y="14" text-anchor="middle" fill="#333" font-size="10" font-weight="bold">Convex (f'' &gt; 0)</text>
+
+  <line x1="10" y1="145" x2="135" y2="145" stroke="#ccc" stroke-width="0.8" marker-end="url(#cn-arr)"/>
+  <line x1="10" y1="145" x2="10" y2="22" stroke="#ccc" stroke-width="0.8" marker-end="url(#cn-arr)"/>
+
+  <!-- Bowl curve -->
+  <path d="M 15,40 Q 45,125 70,140 Q 95,125 125,40" fill="none" stroke="#27ae60" stroke-width="2.5"/>
+
+  <!-- Line segment above curve -->
+  <line x1="30" y1="95" x2="112" y2="95" stroke="#27ae60" stroke-width="1" stroke-dasharray="3"/>
+  <circle cx="30" cy="95" r="2.5" fill="#27ae60" fill-opacity="0.5"/>
+  <circle cx="112" cy="95" r="2.5" fill="#27ae60" fill-opacity="0.5"/>
+  <text x="71" y="88" text-anchor="middle" fill="#27ae60" font-size="8">line above curve</text>
+
+  <!-- Min point -->
+  <circle cx="70" cy="141" r="4" fill="#27ae60"/>
+  <text x="70" y="160" text-anchor="middle" fill="#27ae60" font-size="9" font-weight="bold">minimum</text>
+  <text x="70" y="172" text-anchor="middle" fill="#27ae60" font-size="8">curves upward</text>
+
+  <!-- Divider 1 -->
+  <line x1="148" y1="10" x2="148" y2="175" stroke="#ddd" stroke-width="1" stroke-dasharray="4"/>
+
+  <!-- === Concave (hill) === -->
+  <text x="220" y="14" text-anchor="middle" fill="#333" font-size="10" font-weight="bold">Concave (f'' &lt; 0)</text>
+
+  <line x1="160" y1="145" x2="285" y2="145" stroke="#ccc" stroke-width="0.8" marker-end="url(#cn-arr)"/>
+  <line x1="160" y1="145" x2="160" y2="22" stroke="#ccc" stroke-width="0.8" marker-end="url(#cn-arr)"/>
+
+  <!-- Hill curve -->
+  <path d="M 165,135 Q 195,45 220,30 Q 245,45 275,135" fill="none" stroke="#e74c3c" stroke-width="2.5"/>
+
+  <!-- Line segment below curve -->
+  <line x1="182" y1="85" x2="260" y2="85" stroke="#e74c3c" stroke-width="1" stroke-dasharray="3"/>
+  <circle cx="182" cy="85" r="2.5" fill="#e74c3c" fill-opacity="0.5"/>
+  <circle cx="260" cy="85" r="2.5" fill="#e74c3c" fill-opacity="0.5"/>
+  <text x="221" y="100" text-anchor="middle" fill="#e74c3c" font-size="8">line below curve</text>
+
+  <!-- Max point -->
+  <circle cx="220" cy="30" r="4" fill="#e74c3c"/>
+  <text x="220" y="160" text-anchor="middle" fill="#e74c3c" font-size="9" font-weight="bold">maximum</text>
+  <text x="220" y="172" text-anchor="middle" fill="#e74c3c" font-size="8">curves downward</text>
+
+  <!-- Divider 2 -->
+  <line x1="298" y1="10" x2="298" y2="175" stroke="#ddd" stroke-width="1" stroke-dasharray="4"/>
+
+  <!-- === Inflection point === -->
+  <text x="370" y="14" text-anchor="middle" fill="#333" font-size="10" font-weight="bold">Inflection (f'' = 0)</text>
+
+  <line x1="310" y1="145" x2="435" y2="145" stroke="#ccc" stroke-width="0.8" marker-end="url(#cn-arr)"/>
+  <line x1="310" y1="145" x2="310" y2="22" stroke="#ccc" stroke-width="0.8" marker-end="url(#cn-arr)"/>
+
+  <!-- S-curve transitioning concave to convex -->
+  <path d="M 315,30 Q 340,40 355,65 Q 370,90 370,90 Q 370,90 385,115 Q 400,135 430,140" fill="none" stroke="#9b59b6" stroke-width="2.5"/>
+
+  <!-- Inflection point -->
+  <circle cx="370" cy="90" r="4" fill="#9b59b6"/>
+
+  <!-- Tangent at inflection -->
+  <line x1="340" y1="110" x2="400" y2="70" stroke="#9b59b6" stroke-width="1.2" stroke-dasharray="4"/>
+
+  <!-- Labels for concave/convex regions -->
+  <text x="340" y="45" fill="#e74c3c" font-size="8">concave</text>
+  <text x="400" y="138" fill="#27ae60" font-size="8">convex</text>
+  <text x="370" y="160" text-anchor="middle" fill="#9b59b6" font-size="9" font-weight="bold">switches here</text>
+  <text x="370" y="172" text-anchor="middle" fill="#9b59b6" font-size="8">curvature changes sign</text>
+
+  <text x="220" y="187" text-anchor="middle" fill="#666" font-size="10">convex: bowl (unique min) | concave: hill (unique max) | inflection: curvature flips</text>
+</svg>

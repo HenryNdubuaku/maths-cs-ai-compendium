@@ -1,0 +1,21 @@
+<svg width="200" height="180" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr-u" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#e74c3c"/>
+    </marker>
+    <marker id="arr-v" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#3498db"/>
+    </marker>
+  </defs>
+  <!-- right angle mark -->
+  <rect x="50" y="85" width="12" height="12" fill="none" stroke="#999" stroke-width="1.2"/>
+  <circle cx="50" cy="97" r="3" fill="#333"/>
+  <!-- u horizontal -->
+  <line x1="50" y1="97" x2="168" y2="97" stroke="#e74c3c" stroke-width="2.5" marker-end="url(#arr-u)"/>
+  <text x="170" y="102" fill="#e74c3c" font-size="13" font-weight="bold">u</text>
+  <!-- v vertical -->
+  <line x1="50" y1="97" x2="50" y2="22" stroke="#3498db" stroke-width="2.5" marker-end="url(#arr-v)"/>
+  <text x="36" y="20" fill="#3498db" font-size="13" font-weight="bold">v</text>
+  <!-- label -->
+  <text x="30" y="160" fill="#666" font-size="11">90°, completely independent</text>
+</svg>

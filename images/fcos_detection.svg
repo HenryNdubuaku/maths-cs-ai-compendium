@@ -1,0 +1,78 @@
+<svg width="700" height="270" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="fcos-arrow" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#555"/>
+    </marker>
+  </defs>
+  <text x="350" y="22" fill="#333" font-size="14" font-weight="bold" text-anchor="middle">FCOS: Anchor-Free Per-Pixel Detection</text>
+
+  <!-- Feature map grid -->
+  <text x="130" y="48" fill="#666" font-size="11" text-anchor="middle">Feature Map</text>
+  <rect x="30" y="55" width="200" height="160" rx="4" fill="#ecf0f1" stroke="#999" stroke-width="1.5"/>
+
+  <!-- Grid lines -->
+  <line x1="70" y1="55" x2="70" y2="215" stroke="#ddd" stroke-width="0.5"/>
+  <line x1="110" y1="55" x2="110" y2="215" stroke="#ddd" stroke-width="0.5"/>
+  <line x1="150" y1="55" x2="150" y2="215" stroke="#ddd" stroke-width="0.5"/>
+  <line x1="190" y1="55" x2="190" y2="215" stroke="#ddd" stroke-width="0.5"/>
+  <line x1="30" y1="95" x2="230" y2="95" stroke="#ddd" stroke-width="0.5"/>
+  <line x1="30" y1="135" x2="230" y2="135" stroke="#ddd" stroke-width="0.5"/>
+  <line x1="30" y1="175" x2="230" y2="175" stroke="#ddd" stroke-width="0.5"/>
+
+  <!-- Ground truth bounding box -->
+  <rect x="55" y="80" width="120" height="90" rx="2" fill="none" stroke="#3498db" stroke-width="2"/>
+  <text x="115" y="72" fill="#3498db" font-size="8" text-anchor="middle" font-weight="bold">Ground Truth Box</text>
+
+  <!-- A point inside the box with distances shown -->
+  <circle cx="90" cy="115" r="5" fill="#e74c3c"/>
+
+  <!-- Distance arrows from point to box edges -->
+  <!-- Left (l) -->
+  <line x1="88" y1="115" x2="57" y2="115" stroke="#e74c3c" stroke-width="1.5" marker-end="url(#fcos-arrow)"/>
+  <text x="68" y="110" fill="#e74c3c" font-size="8" text-anchor="middle" font-weight="bold">l</text>
+  <!-- Top (t) -->
+  <line x1="90" y1="113" x2="90" y2="82" stroke="#27ae60" stroke-width="1.5" marker-end="url(#fcos-arrow)"/>
+  <text x="97" y="95" fill="#27ae60" font-size="8" text-anchor="start" font-weight="bold">t</text>
+  <!-- Right (r) -->
+  <line x1="92" y1="115" x2="173" y2="115" stroke="#f39c12" stroke-width="1.5" marker-end="url(#fcos-arrow)"/>
+  <text x="140" y="110" fill="#f39c12" font-size="8" text-anchor="middle" font-weight="bold">r</text>
+  <!-- Bottom (b) -->
+  <line x1="90" y1="117" x2="90" y2="168" stroke="#9b59b6" stroke-width="1.5" marker-end="url(#fcos-arrow)"/>
+  <text x="97" y="148" fill="#9b59b6" font-size="8" text-anchor="start" font-weight="bold">b</text>
+
+  <!-- Arrow to outputs -->
+  <line x1="240" y1="135" x2="280" y2="135" stroke="#555" stroke-width="1.5" marker-end="url(#fcos-arrow)"/>
+
+  <!-- Output heads -->
+  <!-- Classification -->
+  <rect x="290" y="55" width="170" height="40" rx="6" fill="#3498db" opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <text x="375" y="73" fill="#3498db" font-size="10" text-anchor="middle" font-weight="bold">Classification Head</text>
+  <text x="375" y="88" fill="#3498db" font-size="8" text-anchor="middle">C class scores per pixel</text>
+
+  <!-- Regression -->
+  <rect x="290" y="105" width="170" height="40" rx="6" fill="#e74c3c" opacity="0.12" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="375" y="123" fill="#e74c3c" font-size="10" text-anchor="middle" font-weight="bold">Regression Head</text>
+  <text x="375" y="138" fill="#e74c3c" font-size="8" text-anchor="middle">(l, t, r, b) distances per pixel</text>
+
+  <!-- Centerness -->
+  <rect x="290" y="155" width="170" height="40" rx="6" fill="#27ae60" opacity="0.12" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="375" y="173" fill="#27ae60" font-size="10" text-anchor="middle" font-weight="bold">Centerness Head</text>
+  <text x="375" y="188" fill="#27ae60" font-size="8" text-anchor="middle">suppresses low-quality detections</text>
+
+  <!-- Centerness formula -->
+  <rect x="485" y="55" width="200" height="65" rx="6" fill="#f5f5f5" stroke="#333" stroke-width="1"/>
+  <text x="585" y="75" fill="#333" font-size="9" text-anchor="middle" font-weight="bold">Centerness score:</text>
+  <text x="585" y="92" fill="#333" font-size="9" text-anchor="middle">√(min(l,r)/max(l,r))</text>
+  <text x="585" y="108" fill="#333" font-size="9" text-anchor="middle">× √(min(t,b)/max(t,b))</text>
+
+  <!-- FPN note -->
+  <rect x="485" y="130" width="200" height="65" rx="6" fill="#f5f5f5" stroke="#9b59b6" stroke-width="1"/>
+  <text x="585" y="150" fill="#9b59b6" font-size="9" text-anchor="middle" font-weight="bold">Multi-scale with FPN:</text>
+  <text x="585" y="168" fill="#666" font-size="9" text-anchor="middle">Small objects → high-res levels</text>
+  <text x="585" y="183" fill="#666" font-size="9" text-anchor="middle">Large objects → low-res levels</text>
+
+  <!-- Bottom note -->
+  <rect x="60" y="218" width="580" height="40" rx="6" fill="#f5f5f5" stroke="#333" stroke-width="1"/>
+  <text x="350" y="235" fill="#333" font-size="9" text-anchor="middle">No anchors needed. Every feature map location inside a ground truth box is a positive training sample.</text>
+  <text x="350" y="250" fill="#666" font-size="9" text-anchor="middle">Centerness down-weights predictions far from object centres, improving precision without NMS changes.</text>
+</svg>

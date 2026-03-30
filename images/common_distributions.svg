@@ -1,0 +1,66 @@
+<svg width="700" height="460" xmlns="http://www.w3.org/2000/svg">
+  <text x="350" y="22" fill="#333" font-size="14" font-weight="bold" text-anchor="middle">Common Distribution Shapes</text>
+
+  <!-- Top-left: Uniform -->
+  <text x="175" y="50" fill="#3498db" font-size="12" font-weight="bold" text-anchor="middle">Uniform(0, 1)</text>
+  <line x1="50" y1="195" x2="300" y2="195" stroke="#333" stroke-width="1.2"/>
+  <line x1="50" y1="195" x2="50" y2="60" stroke="#333" stroke-width="1.2"/>
+  <rect x="80" y="80" width="190" height="115" fill="#3498db" opacity="0.25" stroke="#3498db" stroke-width="1.5"/>
+  <text x="175" y="143" fill="#3498db" font-size="11" text-anchor="middle">height = 1</text>
+  <text x="80" y="210" fill="#666" font-size="9" text-anchor="middle">0</text>
+  <text x="270" y="210" fill="#666" font-size="9" text-anchor="middle">1</text>
+
+  <!-- Top-right: Exponential -->
+  <text x="525" y="50" fill="#e74c3c" font-size="12" font-weight="bold" text-anchor="middle">Exponential(λ=1.5)</text>
+  <line x1="380" y1="195" x2="660" y2="195" stroke="#333" stroke-width="1.2"/>
+  <line x1="380" y1="195" x2="380" y2="60" stroke="#333" stroke-width="1.2"/>
+  <path d="M 400,70 C 420,100 440,130 460,155 C 480,170 510,182 540,188 C 570,192 610,194 650,194" fill="none" stroke="#e74c3c" stroke-width="2"/>
+  <path d="M 400,70 C 420,100 440,130 460,155 C 480,170 510,182 540,188 C 570,192 610,194 650,194 L 650,195 L 400,195 Z" fill="#e74c3c" opacity="0.15"/>
+  <text x="420" y="90" fill="#e74c3c" font-size="10">steep decay</text>
+  <text x="400" y="210" fill="#666" font-size="9" text-anchor="middle">0</text>
+
+  <!-- Bottom-left: Beta -->
+  <text x="175" y="255" fill="#9b59b6" font-size="12" font-weight="bold" text-anchor="middle">Beta(α=2, β=5)</text>
+  <line x1="50" y1="410" x2="300" y2="410" stroke="#333" stroke-width="1.2"/>
+  <line x1="50" y1="410" x2="50" y2="270" stroke="#333" stroke-width="1.2"/>
+  <path d="M 70,408 C 80,400 100,370 120,320 C 135,290 145,280 155,275 C 170,280 190,310 210,350 C 230,375 250,395 270,405 C 280,408 285,409 290,409" fill="none" stroke="#9b59b6" stroke-width="2"/>
+  <path d="M 70,408 C 80,400 100,370 120,320 C 135,290 145,280 155,275 C 170,280 190,310 210,350 C 230,375 250,395 270,405 C 280,408 285,409 290,409 L 290,410 L 70,410 Z" fill="#9b59b6" opacity="0.15"/>
+  <text x="155" y="268" fill="#9b59b6" font-size="10">skewed right</text>
+  <text x="70" y="425" fill="#666" font-size="9" text-anchor="middle">0</text>
+  <text x="290" y="425" fill="#666" font-size="9" text-anchor="middle">1</text>
+
+  <!-- Bottom-right: Poisson -->
+  <text x="525" y="255" fill="#27ae60" font-size="12" font-weight="bold" text-anchor="middle">Poisson(λ=4)</text>
+  <line x1="380" y1="410" x2="660" y2="410" stroke="#333" stroke-width="1.2"/>
+  <line x1="380" y1="410" x2="380" y2="270" stroke="#333" stroke-width="1.2"/>
+
+  <!-- Poisson(4) PMF bars -->
+  <rect x="398" y="395" width="20" height="15" fill="#27ae60" opacity="0.7" rx="1"/>
+  <text x="408" y="425" fill="#333" font-size="8" text-anchor="middle">0</text>
+
+  <rect x="425" y="368" width="20" height="42" fill="#27ae60" opacity="0.7" rx="1"/>
+  <text x="435" y="425" fill="#333" font-size="8" text-anchor="middle">1</text>
+
+  <rect x="452" y="335" width="20" height="75" fill="#27ae60" opacity="0.7" rx="1"/>
+  <text x="462" y="425" fill="#333" font-size="8" text-anchor="middle">2</text>
+
+  <rect x="479" y="310" width="20" height="100" fill="#27ae60" opacity="0.7" rx="1"/>
+  <text x="489" y="425" fill="#333" font-size="8" text-anchor="middle">3</text>
+
+  <rect x="506" y="298" width="20" height="112" fill="#27ae60" opacity="0.9" rx="1"/>
+  <text x="516" y="425" fill="#333" font-size="8" text-anchor="middle">4</text>
+
+  <rect x="533" y="316" width="20" height="94" fill="#27ae60" opacity="0.7" rx="1"/>
+  <text x="543" y="425" fill="#333" font-size="8" text-anchor="middle">5</text>
+
+  <rect x="560" y="347" width="20" height="63" fill="#27ae60" opacity="0.7" rx="1"/>
+  <text x="570" y="425" fill="#333" font-size="8" text-anchor="middle">6</text>
+
+  <rect x="587" y="374" width="20" height="36" fill="#27ae60" opacity="0.7" rx="1"/>
+  <text x="597" y="425" fill="#333" font-size="8" text-anchor="middle">7</text>
+
+  <rect x="614" y="392" width="20" height="18" fill="#27ae60" opacity="0.7" rx="1"/>
+  <text x="624" y="425" fill="#333" font-size="8" text-anchor="middle">8</text>
+
+  <text x="525" y="445" fill="#666" font-size="10" text-anchor="middle">discrete counts of events</text>
+</svg>

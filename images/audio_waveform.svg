@@ -1,0 +1,68 @@
+<svg width="700" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="aw-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0,0 8,3 0,6" fill="#666"/>
+    </marker>
+    <marker id="aw-arrow-blue" markerWidth="6" markerHeight="4" refX="0" refY="2" orient="auto">
+      <polygon points="0,0 6,2 0,4" fill="#3498db"/>
+    </marker>
+    <marker id="aw-arrow-blue-rev" markerWidth="6" markerHeight="4" refX="6" refY="2" orient="auto">
+      <polygon points="6,0 0,2 6,4" fill="#3498db"/>
+    </marker>
+    <marker id="aw-arrow-red" markerWidth="6" markerHeight="4" refX="0" refY="2" orient="auto">
+      <polygon points="0,0 6,2 0,4" fill="#e74c3c"/>
+    </marker>
+    <marker id="aw-arrow-red-rev" markerWidth="6" markerHeight="4" refX="6" refY="2" orient="auto">
+      <polygon points="6,0 0,2 6,4" fill="#e74c3c"/>
+    </marker>
+  </defs>
+
+  <text x="350" y="22" fill="#333" font-size="14" font-weight="bold" text-anchor="middle">Audio Waveform: Anatomy of a Sine Wave</text>
+
+  <!-- Axes -->
+  <line x1="60" y1="150" x2="480" y2="150" stroke="#666" stroke-width="1" marker-end="url(#aw-arrow)"/>
+  <line x1="60" y1="250" x2="60" y2="45" stroke="#666" stroke-width="1" marker-end="url(#aw-arrow)"/>
+  <text x="485" y="155" fill="#666" font-size="10">Time (t)</text>
+  <text x="40" y="50" fill="#666" font-size="10">Amplitude</text>
+
+  <!-- Primary sine wave (blue) -->
+  <path d="M 60,150 C 75,150 80,80 100,80 C 120,80 125,150 140,150 C 155,150 160,220 180,220 C 200,220 205,150 220,150 C 235,150 240,80 260,80 C 280,80 285,150 300,150 C 315,150 320,220 340,220 C 360,220 365,150 380,150 C 395,150 400,80 420,80 C 440,80 445,150 460,150" fill="none" stroke="#3498db" stroke-width="2.2"/>
+
+  <!-- Second sine wave (red, phase shifted) -->
+  <path d="M 60,150 C 68,150 72,105 85,95 C 100,82 108,120 120,150 C 132,180 140,218 155,225 C 170,230 178,195 190,165 C 200,140 210,105 225,95 C 240,82 248,120 260,150 C 272,180 280,218 295,225 C 310,230 318,195 330,165 C 340,140 350,105 365,95 C 380,82 388,120 400,150 C 412,180 420,218 435,225 C 450,230 455,200 460,180" fill="none" stroke="#e74c3c" stroke-width="1.8" stroke-dasharray="6,3" opacity="0.8"/>
+
+  <!-- Amplitude label (blue, left side) -->
+  <line x1="100" y1="80" x2="100" y2="150" stroke="#3498db" stroke-width="1.2" stroke-dasharray="3,2"/>
+  <line x1="93" y1="80" x2="107" y2="80" stroke="#3498db" stroke-width="1"/>
+  <line x1="93" y1="150" x2="107" y2="150" stroke="#3498db" stroke-width="1"/>
+  <line x1="48" y1="80" x2="48" y2="150" stroke="#3498db" stroke-width="1.2" marker-start="url(#aw-arrow-blue-rev)" marker-end="url(#aw-arrow-blue)"/>
+  <text x="35" y="120" fill="#3498db" font-size="10" font-weight="bold" text-anchor="middle" transform="rotate(-90, 35, 120)">A</text>
+
+  <!-- Period T label -->
+  <line x1="60" y1="235" x2="220" y2="235" stroke="#27ae60" stroke-width="1.5" marker-start="url(#aw-arrow-blue-rev)" marker-end="url(#aw-arrow-blue)"/>
+  <line x1="60" y1="230" x2="60" y2="240" stroke="#27ae60" stroke-width="1"/>
+  <line x1="220" y1="230" x2="220" y2="240" stroke="#27ae60" stroke-width="1"/>
+  <text x="140" y="248" fill="#27ae60" font-size="10" font-weight="bold" text-anchor="middle">T = 1/f</text>
+
+  <!-- Phase shift label -->
+  <line x1="100" y1="72" x2="85" y2="72" stroke="#f39c12" stroke-width="1.2" marker-start="url(#aw-arrow-blue-rev)" marker-end="url(#aw-arrow-blue)"/>
+  <text x="93" y="65" fill="#f39c12" font-size="9" font-weight="bold" text-anchor="middle">phi</text>
+
+  <!-- Legend -->
+  <line x1="500" y1="70" x2="530" y2="70" stroke="#3498db" stroke-width="2.2"/>
+  <text x="535" y="74" fill="#3498db" font-size="10">sin(2pi f t)</text>
+  <line x1="500" y1="90" x2="530" y2="90" stroke="#e74c3c" stroke-width="1.8" stroke-dasharray="6,3"/>
+  <text x="535" y="94" fill="#e74c3c" font-size="10">sin(2pi f t + phi)</text>
+
+  <!-- Labels -->
+  <rect x="495" y="110" width="185" height="85" rx="6" fill="#f5f5f5" stroke="#ddd" stroke-width="1"/>
+  <text x="587" y="128" fill="#333" font-size="11" font-weight="bold" text-anchor="middle">Key Parameters</text>
+  <text x="505" y="145" fill="#3498db" font-size="9">A = amplitude (peak height)</text>
+  <text x="505" y="160" fill="#27ae60" font-size="9">T = period (seconds/cycle)</text>
+  <text x="505" y="175" fill="#f39c12" font-size="9">phi = phase offset (radians)</text>
+  <text x="505" y="190" fill="#666" font-size="9">f = 1/T = frequency (Hz)</text>
+
+  <!-- Bottom note -->
+  <rect x="100" y="272" width="500" height="20" rx="4" fill="#f5f5f5" stroke="#333" stroke-width="0.8"/>
+  <text x="350" y="286" fill="#333" font-size="10" text-anchor="middle">Frequency f = cycles per second (Hz). A 440 Hz wave = concert A</text>
+</svg>

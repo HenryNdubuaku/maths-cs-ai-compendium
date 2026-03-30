@@ -1,0 +1,56 @@
+<svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Title -->
+  <text x="200" y="25" fill="#333" font-size="14" font-weight="bold" text-anchor="middle">Estimating π with Monte Carlo</text>
+
+  <!-- Square boundary -->
+  <rect x="50" y="40" width="300" height="300" fill="#f9f9f9" stroke="#333" stroke-width="2" rx="2"/>
+
+  <!-- Inscribed circle -->
+  <circle cx="200" cy="190" r="150" fill="none" stroke="#3498db" stroke-width="2" stroke-dasharray="6,3"/>
+
+  <!-- Random points inside circle (blue) -->
+  <circle cx="180" cy="120" r="3" fill="#3498db" opacity="0.7"/>
+  <circle cx="220" cy="200" r="3" fill="#3498db" opacity="0.7"/>
+  <circle cx="150" cy="180" r="3" fill="#3498db" opacity="0.7"/>
+  <circle cx="260" cy="160" r="3" fill="#3498db" opacity="0.7"/>
+  <circle cx="200" cy="250" r="3" fill="#3498db" opacity="0.7"/>
+  <circle cx="170" cy="140" r="3" fill="#3498db" opacity="0.7"/>
+  <circle cx="230" cy="230" r="3" fill="#3498db" opacity="0.7"/>
+  <circle cx="190" cy="170" r="3" fill="#3498db" opacity="0.7"/>
+  <circle cx="140" cy="210" r="3" fill="#3498db" opacity="0.7"/>
+  <circle cx="280" cy="200" r="3" fill="#3498db" opacity="0.7"/>
+  <circle cx="210" cy="100" r="3" fill="#3498db" opacity="0.7"/>
+  <circle cx="160" cy="260" r="3" fill="#3498db" opacity="0.7"/>
+  <circle cx="240" cy="280" r="3" fill="#3498db" opacity="0.7"/>
+  <circle cx="200" cy="310" r="3" fill="#3498db" opacity="0.7"/>
+  <circle cx="120" cy="170" r="3" fill="#3498db" opacity="0.7"/>
+  <circle cx="300" cy="190" r="3" fill="#3498db" opacity="0.7"/>
+  <circle cx="250" cy="130" r="3" fill="#3498db" opacity="0.7"/>
+  <circle cx="175" cy="300" r="3" fill="#3498db" opacity="0.7"/>
+  <circle cx="225" cy="80" r="3" fill="#3498db" opacity="0.7"/>
+  <circle cx="130" cy="230" r="3" fill="#3498db" opacity="0.7"/>
+
+  <!-- Random points outside circle (red) -->
+  <circle cx="80" cy="70" r="3" fill="#e74c3c" opacity="0.7"/>
+  <circle cx="320" cy="80" r="3" fill="#e74c3c" opacity="0.7"/>
+  <circle cx="70" cy="300" r="3" fill="#e74c3c" opacity="0.7"/>
+  <circle cx="330" cy="310" r="3" fill="#e74c3c" opacity="0.7"/>
+  <circle cx="90" cy="55" r="3" fill="#e74c3c" opacity="0.7"/>
+  <circle cx="310" cy="60" r="3" fill="#e74c3c" opacity="0.7"/>
+  <circle cx="60" cy="120" r="3" fill="#e74c3c" opacity="0.7"/>
+  <circle cx="340" cy="280" r="3" fill="#e74c3c" opacity="0.7"/>
+
+  <!-- Labels -->
+  <rect x="60" y="355" width="280" height="35" rx="4" fill="#3498db" opacity="0.1"/>
+  <text x="200" y="375" fill="#333" font-size="12" text-anchor="middle">π ≈ 4 × (blue points) / (total points)</text>
+
+  <!-- Radius label -->
+  <line x1="200" y1="190" x2="350" y2="190" stroke="#27ae60" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <text x="280" y="183" fill="#27ae60" font-size="11" font-weight="bold">r</text>
+
+  <!-- Legend -->
+  <circle cx="75" cy="385" r="4" fill="#3498db"/>
+  <text x="85" y="389" fill="#3498db" font-size="10">inside circle</text>
+  <circle cx="175" cy="385" r="4" fill="#e74c3c"/>
+  <text x="185" y="389" fill="#e74c3c" font-size="10">outside circle</text>
+</svg>

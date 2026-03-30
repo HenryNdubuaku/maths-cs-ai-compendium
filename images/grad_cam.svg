@@ -1,0 +1,79 @@
+<svg width="700" height="230" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="gc-arrow" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#555"/>
+    </marker>
+  </defs>
+  <text x="350" y="22" fill="#333" font-size="14" font-weight="bold" text-anchor="middle">Grad-CAM: Gradient-weighted Class Activation Mapping</text>
+
+  <!-- Input image -->
+  <text x="60" y="48" fill="#666" font-size="10" text-anchor="middle">Input Image</text>
+  <rect x="20" y="55" width="80" height="80" rx="4" fill="#ddd" stroke="#999" stroke-width="1.5"/>
+  <!-- Simple "dog face" representation -->
+  <circle cx="45" cy="85" r="6" fill="#8B4513" opacity="0.6"/>
+  <circle cx="75" cy="85" r="6" fill="#8B4513" opacity="0.6"/>
+  <ellipse cx="60" cy="100" rx="8" ry="5" fill="#333" opacity="0.3"/>
+  <circle cx="60" cy="90" r="20" fill="none" stroke="#8B4513" stroke-width="1" opacity="0.5"/>
+
+  <!-- Arrow -->
+  <line x1="105" y1="95" x2="135" y2="95" stroke="#555" stroke-width="1.2" marker-end="url(#gc-arrow)"/>
+
+  <!-- CNN backbone -->
+  <rect x="140" y="55" width="80" height="80" rx="6" fill="#3498db" opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <text x="180" y="92" fill="#3498db" font-size="10" text-anchor="middle" font-weight="bold">CNN</text>
+  <text x="180" y="106" fill="#3498db" font-size="9" text-anchor="middle">backbone</text>
+
+  <!-- Arrow to feature maps -->
+  <line x1="220" y1="95" x2="250" y2="95" stroke="#555" stroke-width="1.2" marker-end="url(#gc-arrow)"/>
+
+  <!-- Last conv feature maps (stack) -->
+  <text x="300" y="48" fill="#666" font-size="10" text-anchor="middle">Last Conv Maps</text>
+  <rect x="258" y="70" width="40" height="40" rx="3" fill="#f39c12" opacity="0.15" stroke="#f39c12" stroke-width="1"/>
+  <rect x="265" y="63" width="40" height="40" rx="3" fill="#f39c12" opacity="0.2" stroke="#f39c12" stroke-width="1"/>
+  <rect x="272" y="56" width="40" height="40" rx="3" fill="#f39c12" opacity="0.25" stroke="#f39c12" stroke-width="1.5"/>
+  <text x="292" y="80" fill="#f39c12" font-size="8" text-anchor="middle">A^k</text>
+
+  <!-- Gradient arrow (from class score) -->
+  <text x="355" y="155" fill="#e74c3c" font-size="9" text-anchor="middle" font-weight="bold">∂y^c / ∂A^k</text>
+  <line x1="355" y1="142" x2="355" y2="115" stroke="#e74c3c" stroke-width="1.2" stroke-dasharray="4,2" marker-end="url(#gc-arrow)"/>
+
+  <!-- Class score -->
+  <rect x="330" y="55" width="50" height="40" rx="4" fill="#e74c3c" opacity="0.12" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="355" y="72" fill="#e74c3c" font-size="9" text-anchor="middle" font-weight="bold">y^c</text>
+  <text x="355" y="85" fill="#e74c3c" font-size="8" text-anchor="middle">= "dog"</text>
+
+  <!-- GAP + weight arrow -->
+  <line x1="312" y1="95" x2="330" y2="75" stroke="#555" stroke-width="1" marker-end="url(#gc-arrow)"/>
+
+  <!-- Weights alpha_k -->
+  <text x="420" y="48" fill="#666" font-size="10" text-anchor="middle">Weights</text>
+  <rect x="395" y="55" width="50" height="40" rx="4" fill="#9b59b6" opacity="0.12" stroke="#9b59b6" stroke-width="1.5"/>
+  <text x="420" y="73" fill="#9b59b6" font-size="9" text-anchor="middle" font-weight="bold">α_k</text>
+  <text x="420" y="86" fill="#9b59b6" font-size="8" text-anchor="middle">GAP(∇)</text>
+
+  <!-- Arrow: weighted combination -->
+  <line x1="445" y1="75" x2="478" y2="85" stroke="#555" stroke-width="1.2" marker-end="url(#gc-arrow)"/>
+
+  <!-- Weighted sum + ReLU -->
+  <rect x="483" y="55" width="80" height="80" rx="6" fill="#27ae60" opacity="0.12" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="523" y="85" fill="#27ae60" font-size="9" text-anchor="middle" font-weight="bold">ReLU(Σ α_k A^k)</text>
+  <text x="523" y="100" fill="#27ae60" font-size="8" text-anchor="middle">Grad-CAM</text>
+  <text x="523" y="112" fill="#27ae60" font-size="8" text-anchor="middle">heatmap</text>
+
+  <!-- Arrow to overlay -->
+  <line x1="563" y1="95" x2="590" y2="95" stroke="#555" stroke-width="1.2" marker-end="url(#gc-arrow)"/>
+
+  <!-- Final overlay -->
+  <text x="645" y="48" fill="#666" font-size="10" text-anchor="middle">Overlay</text>
+  <rect x="600" y="55" width="80" height="80" rx="4" fill="#ddd" stroke="#999" stroke-width="1.5"/>
+  <!-- Heatmap overlay (warm region on the dog face) -->
+  <rect x="604" y="59" width="72" height="72" fill="#ddd"/>
+  <circle cx="640" cy="85" r="25" fill="#e74c3c" opacity="0.3"/>
+  <circle cx="640" cy="85" r="15" fill="#f39c12" opacity="0.4"/>
+  <circle cx="640" cy="85" r="8" fill="#f1c40f" opacity="0.5"/>
+
+  <!-- Bottom note -->
+  <rect x="100" y="175" width="500" height="45" rx="6" fill="#f5f5f5" stroke="#333" stroke-width="1"/>
+  <text x="350" y="192" fill="#333" font-size="10" text-anchor="middle">Grad-CAM backpropagates the class score to the last conv layer,</text>
+  <text x="350" y="207" fill="#333" font-size="10" text-anchor="middle">computes per-channel importance (α_k), and highlights the most relevant image regions.</text>
+</svg>

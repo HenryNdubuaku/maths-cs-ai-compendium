@@ -1,0 +1,63 @@
+<svg width="700" height="230" xmlns="http://www.w3.org/2000/svg">
+  <!-- Positive Correlation -->
+  <text x="110" y="20" fill="#27ae60" font-size="13" font-weight="bold" text-anchor="middle">Positive (r ≈ +0.9)</text>
+  <rect x="20" y="30" width="180" height="180" fill="none" stroke="#ccc" stroke-width="1" rx="3"/>
+  <!-- axes -->
+  <line x1="30" y1="200" x2="190" y2="200" stroke="#999" stroke-width="1"/>
+  <line x1="30" y1="200" x2="30" y2="40" stroke="#999" stroke-width="1"/>
+  <!-- points trending up -->
+  <circle cx="45" cy="185" r="3.5" fill="#27ae60" opacity="0.7"/>
+  <circle cx="55" cy="175" r="3.5" fill="#27ae60" opacity="0.7"/>
+  <circle cx="70" cy="162" r="3.5" fill="#27ae60" opacity="0.7"/>
+  <circle cx="80" cy="148" r="3.5" fill="#27ae60" opacity="0.7"/>
+  <circle cx="95" cy="135" r="3.5" fill="#27ae60" opacity="0.7"/>
+  <circle cx="105" cy="120" r="3.5" fill="#27ae60" opacity="0.7"/>
+  <circle cx="115" cy="112" r="3.5" fill="#27ae60" opacity="0.7"/>
+  <circle cx="130" cy="95" r="3.5" fill="#27ae60" opacity="0.7"/>
+  <circle cx="145" cy="80" r="3.5" fill="#27ae60" opacity="0.7"/>
+  <circle cx="155" cy="68" r="3.5" fill="#27ae60" opacity="0.7"/>
+  <circle cx="170" cy="55" r="3.5" fill="#27ae60" opacity="0.7"/>
+  <circle cx="180" cy="48" r="3.5" fill="#27ae60" opacity="0.7"/>
+  <!-- trend line -->
+  <line x1="40" y1="190" x2="185" y2="45" stroke="#27ae60" stroke-width="1.5" stroke-dasharray="4,2"/>
+
+  <!-- No Correlation -->
+  <text x="350" y="20" fill="#9b59b6" font-size="13" font-weight="bold" text-anchor="middle">No correlation (r ≈ 0)</text>
+  <rect x="260" y="30" width="180" height="180" fill="none" stroke="#ccc" stroke-width="1" rx="3"/>
+  <line x1="270" y1="200" x2="430" y2="200" stroke="#999" stroke-width="1"/>
+  <line x1="270" y1="200" x2="270" y2="40" stroke="#999" stroke-width="1"/>
+  <!-- scattered points -->
+  <circle cx="290" cy="80" r="3.5" fill="#9b59b6" opacity="0.7"/>
+  <circle cx="305" cy="170" r="3.5" fill="#9b59b6" opacity="0.7"/>
+  <circle cx="320" cy="55" r="3.5" fill="#9b59b6" opacity="0.7"/>
+  <circle cx="330" cy="145" r="3.5" fill="#9b59b6" opacity="0.7"/>
+  <circle cx="345" cy="100" r="3.5" fill="#9b59b6" opacity="0.7"/>
+  <circle cx="355" cy="180" r="3.5" fill="#9b59b6" opacity="0.7"/>
+  <circle cx="370" cy="60" r="3.5" fill="#9b59b6" opacity="0.7"/>
+  <circle cx="380" cy="130" r="3.5" fill="#9b59b6" opacity="0.7"/>
+  <circle cx="395" cy="90" r="3.5" fill="#9b59b6" opacity="0.7"/>
+  <circle cx="405" cy="160" r="3.5" fill="#9b59b6" opacity="0.7"/>
+  <circle cx="415" cy="70" r="3.5" fill="#9b59b6" opacity="0.7"/>
+  <circle cx="425" cy="120" r="3.5" fill="#9b59b6" opacity="0.7"/>
+
+  <!-- Negative Correlation -->
+  <text x="590" y="20" fill="#e74c3c" font-size="13" font-weight="bold" text-anchor="middle">Negative (r ≈ -0.9)</text>
+  <rect x="500" y="30" width="180" height="180" fill="none" stroke="#ccc" stroke-width="1" rx="3"/>
+  <line x1="510" y1="200" x2="670" y2="200" stroke="#999" stroke-width="1"/>
+  <line x1="510" y1="200" x2="510" y2="40" stroke="#999" stroke-width="1"/>
+  <!-- points trending down -->
+  <circle cx="525" cy="50" r="3.5" fill="#e74c3c" opacity="0.7"/>
+  <circle cx="535" cy="60" r="3.5" fill="#e74c3c" opacity="0.7"/>
+  <circle cx="550" cy="75" r="3.5" fill="#e74c3c" opacity="0.7"/>
+  <circle cx="565" cy="90" r="3.5" fill="#e74c3c" opacity="0.7"/>
+  <circle cx="575" cy="105" r="3.5" fill="#e74c3c" opacity="0.7"/>
+  <circle cx="590" cy="118" r="3.5" fill="#e74c3c" opacity="0.7"/>
+  <circle cx="605" cy="130" r="3.5" fill="#e74c3c" opacity="0.7"/>
+  <circle cx="615" cy="145" r="3.5" fill="#e74c3c" opacity="0.7"/>
+  <circle cx="630" cy="158" r="3.5" fill="#e74c3c" opacity="0.7"/>
+  <circle cx="645" cy="172" r="3.5" fill="#e74c3c" opacity="0.7"/>
+  <circle cx="655" cy="180" r="3.5" fill="#e74c3c" opacity="0.7"/>
+  <circle cx="665" cy="190" r="3.5" fill="#e74c3c" opacity="0.7"/>
+  <!-- trend line -->
+  <line x1="520" y1="45" x2="670" y2="195" stroke="#e74c3c" stroke-width="1.5" stroke-dasharray="4,2"/>
+</svg>

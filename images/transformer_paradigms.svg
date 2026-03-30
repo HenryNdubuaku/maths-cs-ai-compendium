@@ -1,0 +1,117 @@
+<svg width="720" height="340" xmlns="http://www.w3.org/2000/svg">
+  <text x="360" y="22" fill="#333" font-size="14" font-weight="bold" text-anchor="middle">Three Transformer Paradigms</text>
+
+  <!-- === Encoder-only (BERT) === -->
+  <rect x="15" y="38" width="220" height="290" rx="10" fill="#3498db" opacity="0.05" stroke="#3498db" stroke-width="1.5"/>
+  <text x="125" y="58" fill="#3498db" font-size="12" font-weight="bold" text-anchor="middle">Encoder-only (BERT)</text>
+
+  <!-- Attention matrix: full bidirectional -->
+  <text x="125" y="78" fill="#666" font-size="9" text-anchor="middle">Attention mask</text>
+  <rect x="60" y="85" width="130" height="80" rx="4" fill="#3498db" opacity="0.2" stroke="#3498db" stroke-width="1"/>
+  <text x="125" y="130" fill="#3498db" font-size="10" text-anchor="middle" font-weight="bold">All-to-all</text>
+  <!-- Fill squares to show full attention -->
+  <g opacity="0.4">
+    <rect x="65" y="90" width="20" height="14" rx="2" fill="#3498db"/>
+    <rect x="87" y="90" width="20" height="14" rx="2" fill="#3498db"/>
+    <rect x="109" y="90" width="20" height="14" rx="2" fill="#3498db"/>
+    <rect x="131" y="90" width="20" height="14" rx="2" fill="#3498db"/>
+    <rect x="153" y="90" width="20" height="14" rx="2" fill="#3498db"/>
+    <rect x="65" y="106" width="20" height="14" rx="2" fill="#3498db"/>
+    <rect x="87" y="106" width="20" height="14" rx="2" fill="#3498db"/>
+    <rect x="109" y="106" width="20" height="14" rx="2" fill="#3498db"/>
+    <rect x="131" y="106" width="20" height="14" rx="2" fill="#3498db"/>
+    <rect x="153" y="106" width="20" height="14" rx="2" fill="#3498db"/>
+    <rect x="65" y="143" width="20" height="14" rx="2" fill="#3498db"/>
+    <rect x="87" y="143" width="20" height="14" rx="2" fill="#3498db"/>
+    <rect x="109" y="143" width="20" height="14" rx="2" fill="#3498db"/>
+    <rect x="131" y="143" width="20" height="14" rx="2" fill="#3498db"/>
+    <rect x="153" y="143" width="20" height="14" rx="2" fill="#3498db"/>
+  </g>
+
+  <!-- Training -->
+  <text x="125" y="185" fill="#333" font-size="10" text-anchor="middle" font-weight="bold">Training: Masked LM</text>
+  <text x="125" y="200" fill="#666" font-size="9" text-anchor="middle">Predict [MASK] tokens</text>
+
+  <!-- Use case -->
+  <text x="125" y="225" fill="#333" font-size="10" text-anchor="middle" font-weight="bold">Best for:</text>
+  <text x="125" y="240" fill="#666" font-size="9" text-anchor="middle">Classification, NER,</text>
+  <text x="125" y="253" fill="#666" font-size="9" text-anchor="middle">QA, retrieval</text>
+
+  <!-- Example -->
+  <rect x="30" y="265" width="190" height="30" rx="5" fill="#3498db" opacity="0.1" stroke="#3498db" stroke-width="1"/>
+  <text x="125" y="277" fill="#3498db" font-size="9" text-anchor="middle">The [MASK] sat on the mat</text>
+  <text x="125" y="290" fill="#3498db" font-size="8" text-anchor="middle">→ predict "cat"</text>
+
+  <!-- Models -->
+  <text x="125" y="318" fill="#3498db" font-size="9" text-anchor="middle" font-weight="bold">BERT, RoBERTa, DeBERTa</text>
+
+  <!-- === Decoder-only (GPT) === -->
+  <rect x="250" y="38" width="220" height="290" rx="10" fill="#e74c3c" opacity="0.05" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="360" y="58" fill="#e74c3c" font-size="12" font-weight="bold" text-anchor="middle">Decoder-only (GPT)</text>
+
+  <!-- Attention matrix: causal (lower triangle) -->
+  <text x="360" y="78" fill="#666" font-size="9" text-anchor="middle">Attention mask</text>
+  <rect x="295" y="85" width="130" height="80" rx="4" fill="#fff" stroke="#e74c3c" stroke-width="1"/>
+  <!-- Lower triangle filled -->
+  <g opacity="0.4">
+    <rect x="300" y="90" width="20" height="14" rx="2" fill="#e74c3c"/>
+    <rect x="300" y="106" width="20" height="14" rx="2" fill="#e74c3c"/>
+    <rect x="322" y="106" width="20" height="14" rx="2" fill="#e74c3c"/>
+    <rect x="300" y="122" width="20" height="14" rx="2" fill="#e74c3c"/>
+    <rect x="322" y="122" width="20" height="14" rx="2" fill="#e74c3c"/>
+    <rect x="344" y="122" width="20" height="14" rx="2" fill="#e74c3c"/>
+    <rect x="300" y="143" width="20" height="14" rx="2" fill="#e74c3c"/>
+    <rect x="322" y="143" width="20" height="14" rx="2" fill="#e74c3c"/>
+    <rect x="344" y="143" width="20" height="14" rx="2" fill="#e74c3c"/>
+    <rect x="366" y="143" width="20" height="14" rx="2" fill="#e74c3c"/>
+  </g>
+  <text x="360" y="130" fill="#e74c3c" font-size="10" text-anchor="middle" font-weight="bold">Causal</text>
+
+  <!-- Training -->
+  <text x="360" y="185" fill="#333" font-size="10" text-anchor="middle" font-weight="bold">Training: Next token</text>
+  <text x="360" y="200" fill="#666" font-size="9" text-anchor="middle">Predict w_t from w_&lt;t</text>
+
+  <!-- Use case -->
+  <text x="360" y="225" fill="#333" font-size="10" text-anchor="middle" font-weight="bold">Best for:</text>
+  <text x="360" y="240" fill="#666" font-size="9" text-anchor="middle">Text generation,</text>
+  <text x="360" y="253" fill="#666" font-size="9" text-anchor="middle">chat, code, reasoning</text>
+
+  <!-- Example -->
+  <rect x="265" y="265" width="190" height="30" rx="5" fill="#e74c3c" opacity="0.1" stroke="#e74c3c" stroke-width="1"/>
+  <text x="360" y="277" fill="#e74c3c" font-size="9" text-anchor="middle">The cat sat on the</text>
+  <text x="360" y="290" fill="#e74c3c" font-size="8" text-anchor="middle">→ predict "mat"</text>
+
+  <!-- Models -->
+  <text x="360" y="318" fill="#e74c3c" font-size="9" text-anchor="middle" font-weight="bold">GPT, LLaMA, Claude</text>
+
+  <!-- === Encoder-Decoder (T5) === -->
+  <rect x="485" y="38" width="220" height="290" rx="10" fill="#27ae60" opacity="0.05" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="595" y="58" fill="#27ae60" font-size="12" font-weight="bold" text-anchor="middle">Encoder-Decoder (T5)</text>
+
+  <!-- Attention: split view -->
+  <text x="595" y="78" fill="#666" font-size="9" text-anchor="middle">Attention mask</text>
+  <rect x="500" y="85" width="60" height="35" rx="4" fill="#3498db" opacity="0.15" stroke="#3498db" stroke-width="1"/>
+  <text x="530" y="107" fill="#3498db" font-size="8" text-anchor="middle">bidir</text>
+  <text x="565" y="107" fill="#666" font-size="8" text-anchor="middle">+</text>
+  <rect x="575" y="85" width="60" height="35" rx="4" fill="#e74c3c" opacity="0.15" stroke="#e74c3c" stroke-width="1"/>
+  <text x="605" y="107" fill="#e74c3c" font-size="8" text-anchor="middle">causal</text>
+  <rect x="500" y="125" width="135" height="25" rx="4" fill="#27ae60" opacity="0.15" stroke="#27ae60" stroke-width="1"/>
+  <text x="567" y="142" fill="#27ae60" font-size="8" text-anchor="middle">cross-attention</text>
+
+  <!-- Training -->
+  <text x="595" y="172" fill="#333" font-size="10" text-anchor="middle" font-weight="bold">Training: Span corrupt</text>
+  <text x="595" y="187" fill="#666" font-size="9" text-anchor="middle">Reconstruct masked spans</text>
+
+  <!-- Use case -->
+  <text x="595" y="212" fill="#333" font-size="10" text-anchor="middle" font-weight="bold">Best for:</text>
+  <text x="595" y="227" fill="#666" font-size="9" text-anchor="middle">Translation, summarisation,</text>
+  <text x="595" y="240" fill="#666" font-size="9" text-anchor="middle">text-to-text tasks</text>
+
+  <!-- Example -->
+  <rect x="500" y="252" width="190" height="43" rx="5" fill="#27ae60" opacity="0.1" stroke="#27ae60" stroke-width="1"/>
+  <text x="595" y="267" fill="#27ae60" font-size="9" text-anchor="middle">In: "The [X] on [Y]"</text>
+  <text x="595" y="282" fill="#27ae60" font-size="9" text-anchor="middle">Out: "[X] cat sat [Y] the mat"</text>
+
+  <!-- Models -->
+  <text x="595" y="318" fill="#27ae60" font-size="9" text-anchor="middle" font-weight="bold">T5, BART, mBART</text>
+</svg>

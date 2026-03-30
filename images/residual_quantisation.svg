@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 250" width="750" height="250" font-family="Arial, sans-serif">
+  <!-- Title -->
+  <text x="375" y="22" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">Residual Quantisation</text>
+
+  <defs>
+    <marker id="rqArr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!-- Stage 0: Original Vector z -->
+  <circle cx="40" cy="100" r="14" fill="#3498db" fill-opacity="0.25" stroke="#3498db" stroke-width="1.5"/>
+  <text x="40" y="104" text-anchor="middle" font-size="10" font-weight="bold" fill="#3498db">z</text>
+  <text x="40" y="130" text-anchor="middle" font-size="9" fill="#333">Original</text>
+  <text x="40" y="141" text-anchor="middle" font-size="9" fill="#333">Vector</text>
+
+  <!-- Arrow -->
+  <line x1="58" y1="100" x2="88" y2="100" stroke="#666" stroke-width="1.5" marker-end="url(#rqArr)"/>
+
+  <!-- Stage 1 box -->
+  <rect x="96" y="56" width="140" height="108" rx="8" fill="#f39c12" fill-opacity="0.08" stroke="#f39c12" stroke-width="1.2"/>
+  <text x="166" y="72" text-anchor="middle" font-size="10" font-weight="bold" fill="#f39c12">Stage 1</text>
+
+  <!-- Quantise to q1 -->
+  <rect x="108" y="80" width="56" height="28" rx="5" fill="#f39c12" fill-opacity="0.15" stroke="#f39c12" stroke-width="1"/>
+  <text x="136" y="98" text-anchor="middle" font-size="9" fill="#f39c12">Quantise</text>
+  <!-- Arrow to q1 -->
+  <line x1="168" y1="94" x2="186" y2="94" stroke="#666" stroke-width="1" marker-end="url(#rqArr)"/>
+  <!-- q1 -->
+  <circle cx="198" cy="94" r="12" fill="#27ae60" fill-opacity="0.25" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="198" y="98" text-anchor="middle" font-size="9" font-weight="bold" fill="#27ae60">q₁</text>
+
+  <!-- Residual r1 -->
+  <text x="166" y="136" text-anchor="middle" font-size="9" fill="#e74c3c">r₁ = z - q₁</text>
+
+  <!-- Error bar stage 1 -->
+  <rect x="110" y="148" width="112" height="6" rx="2" fill="#e74c3c" fill-opacity="0.3" stroke="#e74c3c" stroke-width="0.5"/>
+  <text x="166" y="166" text-anchor="middle" font-size="7" fill="#e74c3c">error: large</text>
+
+  <!-- Arrow -->
+  <line x1="244" y1="100" x2="274" y2="100" stroke="#666" stroke-width="1.5" marker-end="url(#rqArr)"/>
+
+  <!-- Stage 2 box -->
+  <rect x="282" y="56" width="140" height="108" rx="8" fill="#f39c12" fill-opacity="0.08" stroke="#f39c12" stroke-width="1.2"/>
+  <text x="352" y="72" text-anchor="middle" font-size="10" font-weight="bold" fill="#f39c12">Stage 2</text>
+
+  <!-- Quantise r1 to q2 -->
+  <rect x="294" y="80" width="56" height="28" rx="5" fill="#f39c12" fill-opacity="0.15" stroke="#f39c12" stroke-width="1"/>
+  <text x="322" y="93" text-anchor="middle" font-size="8" fill="#f39c12">Quantise</text>
+  <text x="322" y="102" text-anchor="middle" font-size="7" fill="#f39c12">r₁</text>
+  <!-- Arrow to q2 -->
+  <line x1="354" y1="94" x2="372" y2="94" stroke="#666" stroke-width="1" marker-end="url(#rqArr)"/>
+  <!-- q2 -->
+  <circle cx="384" cy="94" r="12" fill="#27ae60" fill-opacity="0.25" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="384" y="98" text-anchor="middle" font-size="9" font-weight="bold" fill="#27ae60">q₂</text>
+
+  <!-- Residual r2 -->
+  <text x="352" y="136" text-anchor="middle" font-size="9" fill="#e74c3c">r₂ = r₁ - q₂</text>
+
+  <!-- Error bar stage 2 (smaller) -->
+  <rect x="130" y="148" width="72" height="6" rx="2" fill="#e74c3c" fill-opacity="0.3" stroke="#e74c3c" stroke-width="0.5" transform="translate(172,0)"/>
+  <text x="352" y="166" text-anchor="middle" font-size="7" fill="#e74c3c">error: medium</text>
+
+  <!-- Arrow -->
+  <line x1="430" y1="100" x2="460" y2="100" stroke="#666" stroke-width="1.5" marker-end="url(#rqArr)"/>
+
+  <!-- Stage 3 box -->
+  <rect x="468" y="56" width="140" height="108" rx="8" fill="#f39c12" fill-opacity="0.08" stroke="#f39c12" stroke-width="1.2"/>
+  <text x="538" y="72" text-anchor="middle" font-size="10" font-weight="bold" fill="#f39c12">Stage 3</text>
+
+  <!-- Quantise r2 to q3 -->
+  <rect x="480" y="80" width="56" height="28" rx="5" fill="#f39c12" fill-opacity="0.15" stroke="#f39c12" stroke-width="1"/>
+  <text x="508" y="93" text-anchor="middle" font-size="8" fill="#f39c12">Quantise</text>
+  <text x="508" y="102" text-anchor="middle" font-size="7" fill="#f39c12">r₂</text>
+  <!-- Arrow to q3 -->
+  <line x1="540" y1="94" x2="558" y2="94" stroke="#666" stroke-width="1" marker-end="url(#rqArr)"/>
+  <!-- q3 -->
+  <circle cx="570" cy="94" r="12" fill="#27ae60" fill-opacity="0.25" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="570" y="98" text-anchor="middle" font-size="9" font-weight="bold" fill="#27ae60">q₃</text>
+
+  <!-- Error bar stage 3 (smallest) -->
+  <rect x="510" y="148" width="36" height="6" rx="2" fill="#e74c3c" fill-opacity="0.3" stroke="#e74c3c" stroke-width="0.5"/>
+  <text x="538" y="166" text-anchor="middle" font-size="7" fill="#e74c3c">error: small</text>
+
+  <!-- Arrow to final -->
+  <line x1="616" y1="100" x2="640" y2="100" stroke="#666" stroke-width="1.5" marker-end="url(#rqArr)"/>
+
+  <!-- Final approximation box -->
+  <rect x="648" y="68" width="90" height="64" rx="8" fill="#27ae60" fill-opacity="0.1" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="693" y="92" text-anchor="middle" font-size="10" font-weight="bold" fill="#27ae60">z ≈</text>
+  <text x="693" y="108" text-anchor="middle" font-size="10" fill="#27ae60">q₁ + q₂ + q₃</text>
+  <text x="693" y="122" text-anchor="middle" font-size="8" fill="#666">refined approx.</text>
+
+  <!-- Bottom annotation -->
+  <text x="375" y="200" text-anchor="middle" font-size="9" fill="#999">Each stage quantises the residual error from the previous stage, progressively refining the approximation</text>
+
+  <!-- Diminishing error visual -->
+  <g transform="translate(150, 212)">
+    <text x="0" y="0" font-size="8" fill="#e74c3c">Error magnitude:</text>
+    <rect x="95" y="-8" width="70" height="10" rx="2" fill="#e74c3c" fill-opacity="0.35"/>
+    <text x="170" y="0" font-size="7" fill="#666">Stage 1</text>
+    <rect x="200" y="-8" width="44" height="10" rx="2" fill="#e74c3c" fill-opacity="0.25"/>
+    <text x="250" y="0" font-size="7" fill="#666">Stage 2</text>
+    <rect x="280" y="-8" width="22" height="10" rx="2" fill="#e74c3c" fill-opacity="0.15"/>
+    <text x="308" y="0" font-size="7" fill="#666">Stage 3</text>
+  </g>
+</svg>

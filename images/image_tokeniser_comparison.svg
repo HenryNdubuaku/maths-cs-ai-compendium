@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 280" width="800" height="280" font-family="Arial, sans-serif">
+  <!-- Title -->
+  <text x="400" y="22" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">Image Tokeniser Architectures</text>
+
+  <defs>
+    <marker id="cArr" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto">
+      <path d="M0,0 L7,2.5 L0,5 Z" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!-- ========= Column 1: dVAE (DALL-E) ========= -->
+  <rect x="15" y="36" width="240" height="236" rx="8" fill="#e74c3c" fill-opacity="0.04" stroke="#e74c3c" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="135" y="54" text-anchor="middle" font-size="12" font-weight="bold" fill="#e74c3c">dVAE (DALL-E)</text>
+
+  <!-- Input -->
+  <rect x="50" y="66" width="44" height="32" rx="4" fill="#3498db" opacity="0.4" stroke="#3498db" stroke-width="1"/>
+  <text x="72" y="86" text-anchor="middle" font-size="8" fill="#333">Input</text>
+  <!-- Arrow -->
+  <line x1="98" y1="82" x2="118" y2="82" stroke="#666" stroke-width="1" marker-end="url(#cArr)"/>
+  <!-- Encoder -->
+  <rect x="124" y="66" width="56" height="32" rx="6" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="1.2"/>
+  <text x="152" y="86" text-anchor="middle" font-size="9" font-weight="bold" fill="#3498db">Encoder</text>
+  <!-- Arrow down -->
+  <line x1="152" y1="102" x2="152" y2="118" stroke="#666" stroke-width="1" marker-end="url(#cArr)"/>
+
+  <!-- Gumbel-Softmax -->
+  <rect x="88" y="124" width="128" height="36" rx="6" fill="#f39c12" fill-opacity="0.12" stroke="#f39c12" stroke-width="1.5"/>
+  <text x="152" y="140" text-anchor="middle" font-size="9" font-weight="bold" fill="#f39c12">Gumbel-Softmax</text>
+  <text x="152" y="152" text-anchor="middle" font-size="7" fill="#f39c12">(differentiable sampling)</text>
+  <!-- Arrow down -->
+  <line x1="152" y1="164" x2="152" y2="178" stroke="#666" stroke-width="1" marker-end="url(#cArr)"/>
+
+  <!-- Soft tokens -->
+  <rect x="104" y="184" width="96" height="26" rx="5" fill="#f39c12" fill-opacity="0.1" stroke="#f39c12" stroke-width="1"/>
+  <text x="152" y="200" text-anchor="middle" font-size="9" fill="#f39c12">Soft token probs</text>
+  <!-- Arrow down -->
+  <line x1="152" y1="214" x2="152" y2="228" stroke="#666" stroke-width="1" marker-end="url(#cArr)"/>
+
+  <!-- Decoder -->
+  <rect x="124" y="234" width="56" height="26" rx="6" fill="#e74c3c" fill-opacity="0.12" stroke="#e74c3c" stroke-width="1.2"/>
+  <text x="152" y="251" text-anchor="middle" font-size="9" font-weight="bold" fill="#e74c3c">Decoder</text>
+
+  <!-- Highlight -->
+  <text x="135" y="274" text-anchor="middle" font-size="8" fill="#f39c12" font-style="italic">soft / differentiable</text>
+
+  <!-- ========= Column 2: VQ-GAN ========= -->
+  <rect x="280" y="36" width="240" height="236" rx="8" fill="#3498db" fill-opacity="0.04" stroke="#3498db" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="400" y="54" text-anchor="middle" font-size="12" font-weight="bold" fill="#3498db">VQ-GAN</text>
+
+  <!-- Input -->
+  <rect x="316" y="66" width="44" height="32" rx="4" fill="#3498db" opacity="0.4" stroke="#3498db" stroke-width="1"/>
+  <text x="338" y="86" text-anchor="middle" font-size="8" fill="#333">Input</text>
+  <!-- Arrow -->
+  <line x1="364" y1="82" x2="384" y2="82" stroke="#666" stroke-width="1" marker-end="url(#cArr)"/>
+  <!-- Encoder -->
+  <rect x="390" y="66" width="56" height="32" rx="6" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="1.2"/>
+  <text x="418" y="86" text-anchor="middle" font-size="9" font-weight="bold" fill="#3498db">Encoder</text>
+  <!-- Arrow down -->
+  <line x1="418" y1="102" x2="418" y2="118" stroke="#666" stroke-width="1" marker-end="url(#cArr)"/>
+
+  <!-- NN Codebook Lookup -->
+  <rect x="340" y="124" width="156" height="36" rx="6" fill="#f39c12" fill-opacity="0.12" stroke="#f39c12" stroke-width="1.5"/>
+  <text x="418" y="140" text-anchor="middle" font-size="9" font-weight="bold" fill="#f39c12">NN Codebook Lookup</text>
+  <text x="418" y="152" text-anchor="middle" font-size="7" fill="#f39c12">(nearest-neighbour, hard)</text>
+  <!-- Arrow down -->
+  <line x1="418" y1="164" x2="418" y2="178" stroke="#666" stroke-width="1" marker-end="url(#cArr)"/>
+
+  <!-- Discrete tokens -->
+  <rect x="362" y="184" width="112" height="26" rx="5" fill="#27ae60" fill-opacity="0.12" stroke="#27ae60" stroke-width="1"/>
+  <text x="418" y="200" text-anchor="middle" font-size="9" fill="#27ae60" font-weight="bold">Discrete tokens</text>
+  <!-- Arrow down -->
+  <line x1="418" y1="214" x2="418" y2="228" stroke="#666" stroke-width="1" marker-end="url(#cArr)"/>
+
+  <!-- Decoder + Discriminator -->
+  <rect x="370" y="234" width="96" height="26" rx="6" fill="#e74c3c" fill-opacity="0.12" stroke="#e74c3c" stroke-width="1.2"/>
+  <text x="418" y="248" text-anchor="middle" font-size="8" font-weight="bold" fill="#e74c3c">Decoder + Discrim.</text>
+
+  <!-- Highlight -->
+  <text x="400" y="274" text-anchor="middle" font-size="8" fill="#3498db" font-style="italic">hard quantisation + adversarial</text>
+
+  <!-- ========= Column 3: FSQ ========= -->
+  <rect x="545" y="36" width="240" height="236" rx="8" fill="#27ae60" fill-opacity="0.04" stroke="#27ae60" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="665" y="54" text-anchor="middle" font-size="12" font-weight="bold" fill="#27ae60">FSQ</text>
+
+  <!-- Input -->
+  <rect x="580" y="66" width="44" height="32" rx="4" fill="#3498db" opacity="0.4" stroke="#3498db" stroke-width="1"/>
+  <text x="602" y="86" text-anchor="middle" font-size="8" fill="#333">Input</text>
+  <!-- Arrow -->
+  <line x1="628" y1="82" x2="648" y2="82" stroke="#666" stroke-width="1" marker-end="url(#cArr)"/>
+  <!-- Encoder -->
+  <rect x="654" y="66" width="56" height="32" rx="6" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="1.2"/>
+  <text x="682" y="86" text-anchor="middle" font-size="9" font-weight="bold" fill="#3498db">Encoder</text>
+  <!-- Arrow down -->
+  <line x1="682" y1="102" x2="682" y2="118" stroke="#666" stroke-width="1" marker-end="url(#cArr)"/>
+
+  <!-- Round to fixed levels -->
+  <rect x="610" y="124" width="144" height="36" rx="6" fill="#27ae60" fill-opacity="0.12" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="682" y="140" text-anchor="middle" font-size="9" font-weight="bold" fill="#27ae60">Round to Fixed Levels</text>
+  <text x="682" y="152" text-anchor="middle" font-size="7" fill="#27ae60">(e.g. [-2, -1, 0, 1, 2] per dim)</text>
+  <!-- Arrow down -->
+  <line x1="682" y1="164" x2="682" y2="178" stroke="#666" stroke-width="1" marker-end="url(#cArr)"/>
+
+  <!-- Discrete tokens -->
+  <rect x="626" y="184" width="112" height="26" rx="5" fill="#27ae60" fill-opacity="0.12" stroke="#27ae60" stroke-width="1"/>
+  <text x="682" y="200" text-anchor="middle" font-size="9" fill="#27ae60" font-weight="bold">Discrete tokens</text>
+  <!-- Arrow down -->
+  <line x1="682" y1="214" x2="682" y2="228" stroke="#666" stroke-width="1" marker-end="url(#cArr)"/>
+
+  <!-- Decoder -->
+  <rect x="654" y="234" width="56" height="26" rx="6" fill="#e74c3c" fill-opacity="0.12" stroke="#e74c3c" stroke-width="1.2"/>
+  <text x="682" y="251" text-anchor="middle" font-size="9" font-weight="bold" fill="#e74c3c">Decoder</text>
+
+  <!-- Highlight -->
+  <text x="665" y="274" text-anchor="middle" font-size="8" fill="#27ae60" font-style="italic">no codebook needed</text>
+</svg>

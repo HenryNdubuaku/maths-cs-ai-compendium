@@ -1,0 +1,76 @@
+<svg width="700" height="220" xmlns="http://www.w3.org/2000/svg">
+  <text x="350" y="22" fill="#333" font-size="14" font-weight="bold" text-anchor="middle">Colour Image Decomposed into RGB Channels</text>
+
+  <!-- Original colour image (simplified grid) -->
+  <text x="90" y="48" fill="#666" font-size="11" text-anchor="middle">Colour Image</text>
+  <rect x="30" y="55" width="120" height="120" rx="4" fill="#444" stroke="#333" stroke-width="1.5"/>
+  <!-- Coloured blocks to represent an image -->
+  <rect x="34" y="59" width="28" height="28" fill="#e74c3c" opacity="0.9"/>
+  <rect x="62" y="59" width="28" height="28" fill="#c0392b"/>
+  <rect x="90" y="59" width="28" height="28" fill="#27ae60"/>
+  <rect x="118" y="59" width="28" height="28" fill="#2ecc71"/>
+  <rect x="34" y="87" width="28" height="28" fill="#d35400"/>
+  <rect x="62" y="87" width="28" height="28" fill="#f39c12"/>
+  <rect x="90" y="87" width="28" height="28" fill="#3498db"/>
+  <rect x="118" y="87" width="28" height="28" fill="#2980b9"/>
+  <rect x="34" y="115" width="28" height="28" fill="#9b59b6"/>
+  <rect x="62" y="115" width="28" height="28" fill="#8e44ad"/>
+  <rect x="90" y="115" width="28" height="28" fill="#1abc9c"/>
+  <rect x="118" y="115" width="28" height="28" fill="#16a085"/>
+  <rect x="34" y="143" width="28" height="28" fill="#ecf0f1"/>
+  <rect x="62" y="143" width="28" height="28" fill="#bdc3c7"/>
+  <rect x="90" y="143" width="28" height="28" fill="#7f8c8d"/>
+  <rect x="118" y="143" width="28" height="28" fill="#2c3e50"/>
+
+  <!-- Arrow -->
+  <line x1="160" y1="115" x2="195" y2="75" stroke="#e74c3c" stroke-width="1.5"/>
+  <polygon points="195,72 198,80 191,78" fill="#e74c3c"/>
+  <line x1="160" y1="115" x2="195" y2="115" stroke="#27ae60" stroke-width="1.5"/>
+  <polygon points="195,112 198,115 195,118" fill="#27ae60"/>
+  <line x1="160" y1="115" x2="195" y2="155" stroke="#3498db" stroke-width="1.5"/>
+  <polygon points="195,152 198,158 191,155" fill="#3498db"/>
+
+  <!-- Red channel -->
+  <text x="280" y="48" fill="#e74c3c" font-size="11" font-weight="bold" text-anchor="middle">Red Channel</text>
+  <rect x="220" y="55" width="120" height="55" rx="4" fill="#e74c3c" opacity="0.08" stroke="#e74c3c" stroke-width="1.5"/>
+  <rect x="224" y="59" width="28" height="23" fill="#e74c3c" opacity="0.8"/>
+  <rect x="252" y="59" width="28" height="23" fill="#e74c3c" opacity="0.7"/>
+  <rect x="280" y="59" width="28" height="23" fill="#e74c3c" opacity="0.1"/>
+  <rect x="308" y="59" width="28" height="23" fill="#e74c3c" opacity="0.1"/>
+  <rect x="224" y="82" width="28" height="24" fill="#e74c3c" opacity="0.8"/>
+  <rect x="252" y="82" width="28" height="24" fill="#e74c3c" opacity="0.9"/>
+  <rect x="280" y="82" width="28" height="24" fill="#e74c3c" opacity="0.15"/>
+  <rect x="308" y="82" width="28" height="24" fill="#e74c3c" opacity="0.1"/>
+  <text x="280" y="130" fill="#e74c3c" font-size="10" text-anchor="middle">Bright where red</text>
+
+  <!-- Green channel -->
+  <text x="460" y="48" fill="#27ae60" font-size="11" font-weight="bold" text-anchor="middle">Green Channel</text>
+  <rect x="400" y="55" width="120" height="55" rx="4" fill="#27ae60" opacity="0.08" stroke="#27ae60" stroke-width="1.5"/>
+  <rect x="404" y="59" width="28" height="23" fill="#27ae60" opacity="0.1"/>
+  <rect x="432" y="59" width="28" height="23" fill="#27ae60" opacity="0.1"/>
+  <rect x="460" y="59" width="28" height="23" fill="#27ae60" opacity="0.7"/>
+  <rect x="488" y="59" width="28" height="23" fill="#27ae60" opacity="0.8"/>
+  <rect x="404" y="82" width="28" height="24" fill="#27ae60" opacity="0.4"/>
+  <rect x="432" y="82" width="28" height="24" fill="#27ae60" opacity="0.6"/>
+  <rect x="460" y="82" width="28" height="24" fill="#27ae60" opacity="0.15"/>
+  <rect x="488" y="82" width="28" height="24" fill="#27ae60" opacity="0.1"/>
+  <text x="460" y="130" fill="#27ae60" font-size="10" text-anchor="middle">Bright where green</text>
+
+  <!-- Blue channel -->
+  <text x="640" y="48" fill="#3498db" font-size="11" font-weight="bold" text-anchor="middle">Blue Channel</text>
+  <rect x="580" y="55" width="120" height="55" rx="4" fill="#3498db" opacity="0.08" stroke="#3498db" stroke-width="1.5"/>
+  <rect x="584" y="59" width="28" height="23" fill="#3498db" opacity="0.1"/>
+  <rect x="612" y="59" width="28" height="23" fill="#3498db" opacity="0.05"/>
+  <rect x="640" y="59" width="28" height="23" fill="#3498db" opacity="0.2"/>
+  <rect x="668" y="59" width="28" height="23" fill="#3498db" opacity="0.15"/>
+  <rect x="584" y="82" width="28" height="24" fill="#3498db" opacity="0.05"/>
+  <rect x="612" y="82" width="28" height="24" fill="#3498db" opacity="0.05"/>
+  <rect x="640" y="82" width="28" height="24" fill="#3498db" opacity="0.8"/>
+  <rect x="668" y="82" width="28" height="24" fill="#3498db" opacity="0.7"/>
+  <text x="640" y="130" fill="#3498db" font-size="10" text-anchor="middle">Bright where blue</text>
+
+  <!-- Bottom note -->
+  <rect x="150" y="175" width="400" height="35" rx="6" fill="#f5f5f5" stroke="#333" stroke-width="1"/>
+  <text x="350" y="192" fill="#333" font-size="10" text-anchor="middle">Each channel is a grayscale intensity map for one colour.</text>
+  <text x="350" y="205" fill="#666" font-size="10" text-anchor="middle">Shape: (H, W, 3) — height × width × 3 channels</text>
+</svg>

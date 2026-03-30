@@ -1,0 +1,71 @@
+<svg width="700" height="320" xmlns="http://www.w3.org/2000/svg">
+  <text x="350" y="25" fill="#333" font-size="14" font-weight="bold" text-anchor="middle">Multiplication Rule: 3 shirts × 4 pants = 12 outfits</text>
+
+  <!-- Shirt column -->
+  <text x="100" y="55" fill="#666" font-size="12" text-anchor="middle">Shirts</text>
+  <rect x="60" y="65" width="80" height="30" rx="4" fill="#e74c3c" opacity="0.8"/>
+  <text x="100" y="85" fill="white" font-size="11" text-anchor="middle">S₁ (red)</text>
+  <rect x="60" y="110" width="80" height="30" rx="4" fill="#3498db" opacity="0.8"/>
+  <text x="100" y="130" fill="white" font-size="11" text-anchor="middle">S₂ (blue)</text>
+  <rect x="60" y="155" width="80" height="30" rx="4" fill="#27ae60" opacity="0.8"/>
+  <text x="100" y="175" fill="white" font-size="11" text-anchor="middle">S₃ (green)</text>
+
+  <!-- Pants column -->
+  <text x="300" y="55" fill="#666" font-size="12" text-anchor="middle">Pants</text>
+  <rect x="260" y="65" width="80" height="30" rx="4" fill="#8e44ad" opacity="0.7"/>
+  <text x="300" y="85" fill="white" font-size="11" text-anchor="middle">P₁</text>
+  <rect x="260" y="105" width="80" height="30" rx="4" fill="#8e44ad" opacity="0.7"/>
+  <text x="300" y="125" fill="white" font-size="11" text-anchor="middle">P₂</text>
+  <rect x="260" y="145" width="80" height="30" rx="4" fill="#8e44ad" opacity="0.7"/>
+  <text x="300" y="165" fill="white" font-size="11" text-anchor="middle">P₃</text>
+  <rect x="260" y="185" width="80" height="30" rx="4" fill="#8e44ad" opacity="0.7"/>
+  <text x="300" y="205" fill="white" font-size="11" text-anchor="middle">P₄</text>
+
+  <!-- Branches from S1 -->
+  <line x1="140" y1="80" x2="260" y2="80" stroke="#e74c3c" stroke-width="1.2" opacity="0.5"/>
+  <line x1="140" y1="80" x2="260" y2="120" stroke="#e74c3c" stroke-width="1.2" opacity="0.5"/>
+  <line x1="140" y1="80" x2="260" y2="160" stroke="#e74c3c" stroke-width="1.2" opacity="0.5"/>
+  <line x1="140" y1="80" x2="260" y2="200" stroke="#e74c3c" stroke-width="1.2" opacity="0.5"/>
+
+  <!-- Branches from S2 -->
+  <line x1="140" y1="125" x2="260" y2="80" stroke="#3498db" stroke-width="1.2" opacity="0.5"/>
+  <line x1="140" y1="125" x2="260" y2="120" stroke="#3498db" stroke-width="1.2" opacity="0.5"/>
+  <line x1="140" y1="125" x2="260" y2="160" stroke="#3498db" stroke-width="1.2" opacity="0.5"/>
+  <line x1="140" y1="125" x2="260" y2="200" stroke="#3498db" stroke-width="1.2" opacity="0.5"/>
+
+  <!-- Branches from S3 -->
+  <line x1="140" y1="170" x2="260" y2="80" stroke="#27ae60" stroke-width="1.2" opacity="0.5"/>
+  <line x1="140" y1="170" x2="260" y2="120" stroke="#27ae60" stroke-width="1.2" opacity="0.5"/>
+  <line x1="140" y1="170" x2="260" y2="160" stroke="#27ae60" stroke-width="1.2" opacity="0.5"/>
+  <line x1="140" y1="170" x2="260" y2="200" stroke="#27ae60" stroke-width="1.2" opacity="0.5"/>
+
+  <!-- Outcomes grid -->
+  <text x="530" y="55" fill="#666" font-size="12" text-anchor="middle">All 12 outcomes</text>
+  <text x="460" y="80" fill="#e74c3c" font-size="10">(S₁,P₁)</text>
+  <text x="530" y="80" fill="#e74c3c" font-size="10">(S₁,P₂)</text>
+  <text x="600" y="80" fill="#e74c3c" font-size="10">(S₁,P₃)</text>
+  <text x="460" y="100" fill="#e74c3c" font-size="10">(S₁,P₄)</text>
+
+  <text x="460" y="130" fill="#3498db" font-size="10">(S₂,P₁)</text>
+  <text x="530" y="130" fill="#3498db" font-size="10">(S₂,P₂)</text>
+  <text x="600" y="130" fill="#3498db" font-size="10">(S₂,P₃)</text>
+  <text x="460" y="150" fill="#3498db" font-size="10">(S₂,P₄)</text>
+
+  <text x="460" y="180" fill="#27ae60" font-size="10">(S₃,P₁)</text>
+  <text x="530" y="180" fill="#27ae60" font-size="10">(S₃,P₂)</text>
+  <text x="600" y="180" fill="#27ae60" font-size="10">(S₃,P₃)</text>
+  <text x="460" y="200" fill="#27ae60" font-size="10">(S₃,P₄)</text>
+
+  <!-- Arrow -->
+  <line x1="350" y1="140" x2="430" y2="140" stroke="#333" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+  <defs>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#333"/>
+    </marker>
+  </defs>
+
+  <!-- Bottom note -->
+  <text x="350" y="260" fill="#333" font-size="12" text-anchor="middle">Each shirt pairs with every pant: 3 × 4 = 12 total combinations</text>
+  <text x="350" y="280" fill="#666" font-size="11" text-anchor="middle">This is the multiplication rule: if choice A has m options and choice B has n options,</text>
+  <text x="350" y="298" fill="#666" font-size="11" text-anchor="middle">the total number of combined outcomes is m × n.</text>
+</svg>

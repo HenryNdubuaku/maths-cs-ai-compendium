@@ -1,0 +1,80 @@
+<svg width="680" height="300" xmlns="http://www.w3.org/2000/svg">
+  <text x="340" y="22" fill="#333" font-size="14" font-weight="bold" text-anchor="middle">Scaling Laws: Loss Decreases as a Power Law</text>
+
+  <!-- Axes -->
+  <line x1="80" y1="250" x2="400" y2="250" stroke="#333" stroke-width="1.5"/>
+  <line x1="80" y1="250" x2="80" y2="55" stroke="#333" stroke-width="1.5"/>
+
+  <!-- X axis label -->
+  <text x="240" y="275" fill="#333" font-size="11" text-anchor="middle">Parameters / Data / Compute (log scale)</text>
+
+  <!-- Y axis label -->
+  <text x="35" y="155" fill="#333" font-size="11" text-anchor="middle" transform="rotate(-90, 35, 155)">Loss (log scale)</text>
+
+  <!-- Log-scale tick marks on X -->
+  <line x1="120" y1="250" x2="120" y2="255" stroke="#333" stroke-width="1"/>
+  <text x="120" y="268" fill="#666" font-size="9" text-anchor="middle">10⁷</text>
+  <line x1="200" y1="250" x2="200" y2="255" stroke="#333" stroke-width="1"/>
+  <text x="200" y="268" fill="#666" font-size="9" text-anchor="middle">10⁸</text>
+  <line x1="280" y1="250" x2="280" y2="255" stroke="#333" stroke-width="1"/>
+  <text x="280" y="268" fill="#666" font-size="9" text-anchor="middle">10⁹</text>
+  <line x1="360" y1="250" x2="360" y2="255" stroke="#333" stroke-width="1"/>
+  <text x="360" y="268" fill="#666" font-size="9" text-anchor="middle">10¹⁰</text>
+
+  <!-- Log-scale tick marks on Y -->
+  <line x1="75" y1="230" x2="80" y2="230" stroke="#333" stroke-width="1"/>
+  <text x="68" y="234" fill="#666" font-size="9" text-anchor="end">2.0</text>
+  <line x1="75" y1="190" x2="80" y2="190" stroke="#333" stroke-width="1"/>
+  <text x="68" y="194" fill="#666" font-size="9" text-anchor="end">2.5</text>
+  <line x1="75" y1="150" x2="80" y2="150" stroke="#333" stroke-width="1"/>
+  <text x="68" y="154" fill="#666" font-size="9" text-anchor="end">3.0</text>
+  <line x1="75" y1="110" x2="80" y2="110" stroke="#333" stroke-width="1"/>
+  <text x="68" y="114" fill="#666" font-size="9" text-anchor="end">3.5</text>
+  <line x1="75" y1="70" x2="80" y2="70" stroke="#333" stroke-width="1"/>
+  <text x="68" y="74" fill="#666" font-size="9" text-anchor="end">4.0</text>
+
+  <!-- Grid lines (subtle) -->
+  <line x1="80" y1="230" x2="400" y2="230" stroke="#eee" stroke-width="1"/>
+  <line x1="80" y1="190" x2="400" y2="190" stroke="#eee" stroke-width="1"/>
+  <line x1="80" y1="150" x2="400" y2="150" stroke="#eee" stroke-width="1"/>
+  <line x1="80" y1="110" x2="400" y2="110" stroke="#eee" stroke-width="1"/>
+
+  <!-- Power law curve (smooth decreasing) -->
+  <path d="M 100,95 Q 140,120 180,155 Q 220,180 260,200 Q 310,218 370,232" fill="none" stroke="#3498db" stroke-width="3"/>
+
+  <!-- Data points along the curve -->
+  <circle cx="110" cy="102" r="4" fill="#3498db"/>
+  <circle cx="140" cy="125" r="4" fill="#3498db"/>
+  <circle cx="170" cy="147" r="4" fill="#3498db"/>
+  <circle cx="200" cy="165" r="4" fill="#3498db"/>
+  <circle cx="240" cy="185" r="4" fill="#3498db"/>
+  <circle cx="280" cy="203" r="4" fill="#3498db"/>
+  <circle cx="320" cy="218" r="4" fill="#3498db"/>
+  <circle cx="360" cy="230" r="4" fill="#3498db"/>
+
+  <!-- Label on curve -->
+  <text x="290" y="170" fill="#3498db" font-size="11" font-weight="bold">L(N) ∝ N^{-α}</text>
+
+  <!-- Right side: key findings -->
+  <rect x="430" y="50" width="235" height="235" rx="8" fill="#f5f5f5" stroke="#ddd" stroke-width="1"/>
+
+  <text x="547" y="75" fill="#333" font-size="11" text-anchor="middle" font-weight="bold">Key Findings</text>
+
+  <!-- Kaplan -->
+  <rect x="445" y="85" width="205" height="55" rx="5" fill="#3498db" opacity="0.08" stroke="#3498db" stroke-width="1"/>
+  <text x="547" y="102" fill="#3498db" font-size="10" text-anchor="middle" font-weight="bold">Kaplan et al. (2020)</text>
+  <text x="547" y="117" fill="#555" font-size="9" text-anchor="middle">Loss follows power laws in N, D, C.</text>
+  <text x="547" y="130" fill="#555" font-size="9" text-anchor="middle">Bigger models are more sample-efficient.</text>
+
+  <!-- Chinchilla -->
+  <rect x="445" y="148" width="205" height="55" rx="5" fill="#e74c3c" opacity="0.08" stroke="#e74c3c" stroke-width="1"/>
+  <text x="547" y="165" fill="#e74c3c" font-size="10" text-anchor="middle" font-weight="bold">Chinchilla (Hoffmann, 2022)</text>
+  <text x="547" y="180" fill="#555" font-size="9" text-anchor="middle">Scale params and data equally.</text>
+  <text x="547" y="193" fill="#555" font-size="9" text-anchor="middle">Rule: ~20 tokens per parameter.</text>
+
+  <!-- Implication -->
+  <rect x="445" y="211" width="205" height="55" rx="5" fill="#27ae60" opacity="0.08" stroke="#27ae60" stroke-width="1"/>
+  <text x="547" y="228" fill="#27ae60" font-size="10" text-anchor="middle" font-weight="bold">Implication</text>
+  <text x="547" y="243" fill="#555" font-size="9" text-anchor="middle">Performance is predictable.</text>
+  <text x="547" y="256" fill="#555" font-size="9" text-anchor="middle">Invest more compute → lower loss.</text>
+</svg>

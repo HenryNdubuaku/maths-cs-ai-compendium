@@ -1,0 +1,43 @@
+<svg width="600" height="200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Number line -->
+  <line x1="40" y1="120" x2="560" y2="120" stroke="#ccc" stroke-width="1"/>
+
+  <!-- Whisker left -->
+  <line x1="80" y1="80" x2="80" y2="120" stroke="#333" stroke-width="2"/>
+  <line x1="80" y1="100" x2="180" y2="100" stroke="#333" stroke-width="2"/>
+  <text x="80" y="145" fill="#666" font-size="11" text-anchor="middle">Min</text>
+
+  <!-- Box -->
+  <rect x="180" y="70" width="200" height="60" fill="#3498db" opacity="0.2" stroke="#3498db" stroke-width="2" rx="3"/>
+
+  <!-- Q1 line -->
+  <line x1="180" y1="65" x2="180" y2="135" stroke="#3498db" stroke-width="2"/>
+  <text x="180" y="155" fill="#3498db" font-size="11" font-weight="bold" text-anchor="middle">Q1</text>
+  <text x="180" y="170" fill="#666" font-size="10" text-anchor="middle">(25th)</text>
+
+  <!-- Median line -->
+  <line x1="300" y1="65" x2="300" y2="135" stroke="#e74c3c" stroke-width="3"/>
+  <text x="300" y="155" fill="#e74c3c" font-size="11" font-weight="bold" text-anchor="middle">Median</text>
+  <text x="300" y="170" fill="#666" font-size="10" text-anchor="middle">(50th)</text>
+
+  <!-- Q3 line -->
+  <line x1="380" y1="65" x2="380" y2="135" stroke="#3498db" stroke-width="2"/>
+  <text x="380" y="155" fill="#3498db" font-size="11" font-weight="bold" text-anchor="middle">Q3</text>
+  <text x="380" y="170" fill="#666" font-size="10" text-anchor="middle">(75th)</text>
+
+  <!-- Whisker right -->
+  <line x1="380" y1="100" x2="480" y2="100" stroke="#333" stroke-width="2"/>
+  <line x1="480" y1="80" x2="480" y2="120" stroke="#333" stroke-width="2"/>
+  <text x="480" y="145" fill="#666" font-size="11" text-anchor="middle">Max</text>
+
+  <!-- IQR brace -->
+  <path d="M 185,55 L 185,48 L 375,48 L 375,55" fill="none" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="280" y="44" fill="#27ae60" font-size="11" font-weight="bold" text-anchor="middle">IQR = Q3 - Q1</text>
+
+  <!-- Outlier -->
+  <circle cx="535" cy="100" r="5" fill="none" stroke="#e74c3c" stroke-width="2"/>
+  <text x="535" y="85" fill="#e74c3c" font-size="10" font-weight="bold" text-anchor="middle">outlier</text>
+
+  <!-- Title -->
+  <text x="300" y="20" fill="#333" font-size="14" font-weight="bold" text-anchor="middle">Box Plot Anatomy</text>
+</svg>

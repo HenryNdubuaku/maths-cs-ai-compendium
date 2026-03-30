@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 280" width="750" height="280">
+  <defs>
+    <marker id="ocl-arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#666"/>
+    </marker>
+  </defs>
+  <text x="375" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">Open-Loop vs Closed-Loop Evaluation</text>
+
+  <!-- Open-loop -->
+  <text x="188" y="52" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#3498db">Open-Loop</text>
+
+  <rect x="40" y="65" width="100" height="45" rx="8" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <text x="90" y="84" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#3498db">Recorded</text>
+  <text x="90" y="99" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#3498db">log data</text>
+
+  <line x1="140" y1="87" x2="168" y2="87" stroke="#666" stroke-width="1.5" marker-end="url(#ocl-arr)"/>
+
+  <rect x="176" y="65" width="80" height="45" rx="8" fill="#f39c12" fill-opacity="0.12" stroke="#f39c12" stroke-width="1.5"/>
+  <text x="216" y="84" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#f39c12">Model</text>
+  <text x="216" y="99" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#f39c12">predicts</text>
+
+  <line x1="256" y1="87" x2="284" y2="87" stroke="#666" stroke-width="1.5" marker-end="url(#ocl-arr)"/>
+
+  <rect x="292" y="65" width="80" height="45" rx="8" fill="#27ae60" fill-opacity="0.12" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="332" y="84" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#27ae60">Compare</text>
+  <text x="332" y="99" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#27ae60">to human</text>
+
+  <text x="188" y="133" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#999">replay only — model actions do NOT</text>
+  <text x="188" y="146" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#999">change the scene</text>
+
+  <!-- Divider -->
+  <line x1="375" y1="42" x2="375" y2="270" stroke="#ccc" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- Closed-loop -->
+  <text x="562" y="52" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#e74c3c">Closed-Loop</text>
+
+  <rect x="420" y="65" width="80" height="45" rx="8" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <text x="460" y="84" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#3498db">Simulator</text>
+  <text x="460" y="99" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#3498db">scene</text>
+
+  <line x1="500" y1="87" x2="528" y2="87" stroke="#666" stroke-width="1.5" marker-end="url(#ocl-arr)"/>
+
+  <rect x="536" y="65" width="80" height="45" rx="8" fill="#f39c12" fill-opacity="0.12" stroke="#f39c12" stroke-width="1.5"/>
+  <text x="576" y="84" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#f39c12">Model</text>
+  <text x="576" y="99" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#f39c12">acts</text>
+
+  <line x1="616" y1="87" x2="644" y2="87" stroke="#666" stroke-width="1.5" marker-end="url(#ocl-arr)"/>
+
+  <rect x="652" y="65" width="80" height="45" rx="8" fill="#e74c3c" fill-opacity="0.12" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="692" y="84" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#e74c3c">Evaluate</text>
+  <text x="692" y="99" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#e74c3c">safety</text>
+
+  <!-- Feedback loop -->
+  <path d="M 576,110 L 576,145 L 460,145 L 460,110" fill="none" stroke="#9b59b6" stroke-width="2" marker-end="url(#ocl-arr)"/>
+  <text x="518" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#9b59b6">actions change the scene</text>
+
+  <text x="562" y="192" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#999">model's actions affect simulation state</text>
+  <text x="562" y="205" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#999">→ tests reactive behaviour</text>
+
+  <!-- Verdict -->
+  <rect x="60" y="230" width="260" height="30" rx="6" fill="#f39c12" fill-opacity="0.1" stroke="#f39c12" stroke-width="1"/>
+  <text x="190" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#f39c12">Easy to set up, but misleading</text>
+  <rect x="430" y="230" width="260" height="30" rx="6" fill="#27ae60" fill-opacity="0.1" stroke="#27ae60" stroke-width="1"/>
+  <text x="560" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#27ae60">Expensive, but far more meaningful</text>
+</svg>

@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 300" width="700" height="300">
+  <defs>
+    <marker id="arrow2" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+    </marker>
+    <marker id="arrow2blue" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#3498db"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="350" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">CTC Alignment with Blank Tokens</text>
+
+  <!-- Row label: Input Frames -->
+  <text x="50" y="62" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#333">Input</text>
+  <text x="50" y="74" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#333">Frames</text>
+
+  <!-- Input frame boxes (t1-t8) -->
+  <rect x="110" y="48" width="55" height="32" rx="4" fill="#3498db" fill-opacity="0.10" stroke="#3498db" stroke-width="1.2"/>
+  <text x="137" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3498db">t1</text>
+
+  <rect x="175" y="48" width="55" height="32" rx="4" fill="#3498db" fill-opacity="0.10" stroke="#3498db" stroke-width="1.2"/>
+  <text x="202" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3498db">t2</text>
+
+  <rect x="240" y="48" width="55" height="32" rx="4" fill="#3498db" fill-opacity="0.10" stroke="#3498db" stroke-width="1.2"/>
+  <text x="267" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3498db">t3</text>
+
+  <rect x="305" y="48" width="55" height="32" rx="4" fill="#3498db" fill-opacity="0.10" stroke="#3498db" stroke-width="1.2"/>
+  <text x="332" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3498db">t4</text>
+
+  <rect x="370" y="48" width="55" height="32" rx="4" fill="#3498db" fill-opacity="0.10" stroke="#3498db" stroke-width="1.2"/>
+  <text x="397" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3498db">t5</text>
+
+  <rect x="435" y="48" width="55" height="32" rx="4" fill="#3498db" fill-opacity="0.10" stroke="#3498db" stroke-width="1.2"/>
+  <text x="462" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3498db">t6</text>
+
+  <rect x="500" y="48" width="55" height="32" rx="4" fill="#3498db" fill-opacity="0.10" stroke="#3498db" stroke-width="1.2"/>
+  <text x="527" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3498db">t7</text>
+
+  <rect x="565" y="48" width="55" height="32" rx="4" fill="#3498db" fill-opacity="0.10" stroke="#3498db" stroke-width="1.2"/>
+  <text x="592" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3498db">t8</text>
+
+  <!-- Arrows from input to CTC output -->
+  <line x1="137" y1="82" x2="137" y2="108" stroke="#999" stroke-width="1" marker-end="url(#arrow2)"/>
+  <line x1="202" y1="82" x2="202" y2="108" stroke="#999" stroke-width="1" marker-end="url(#arrow2)"/>
+  <line x1="267" y1="82" x2="267" y2="108" stroke="#999" stroke-width="1" marker-end="url(#arrow2)"/>
+  <line x1="332" y1="82" x2="332" y2="108" stroke="#999" stroke-width="1" marker-end="url(#arrow2)"/>
+  <line x1="397" y1="82" x2="397" y2="108" stroke="#999" stroke-width="1" marker-end="url(#arrow2)"/>
+  <line x1="462" y1="82" x2="462" y2="108" stroke="#999" stroke-width="1" marker-end="url(#arrow2)"/>
+  <line x1="527" y1="82" x2="527" y2="108" stroke="#999" stroke-width="1" marker-end="url(#arrow2)"/>
+  <line x1="592" y1="82" x2="592" y2="108" stroke="#999" stroke-width="1" marker-end="url(#arrow2)"/>
+
+  <!-- Row label: CTC Output -->
+  <text x="50" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#333">CTC</text>
+  <text x="50" y="137" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#333">Output</text>
+
+  <!-- CTC output symbols: blank = grey, real = blue -->
+  <!-- t1: blank -->
+  <rect x="110" y="112" width="55" height="32" rx="4" fill="#999" fill-opacity="0.15" stroke="#999" stroke-width="1.2"/>
+  <text x="137" y="133" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#999">&mdash;</text>
+
+  <!-- t2: h -->
+  <rect x="175" y="112" width="55" height="32" rx="4" fill="#3498db" fill-opacity="0.15" stroke="#3498db" stroke-width="1.2"/>
+  <text x="202" y="133" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#3498db">h</text>
+
+  <!-- t3: h (duplicate) -->
+  <rect x="240" y="112" width="55" height="32" rx="4" fill="#3498db" fill-opacity="0.15" stroke="#3498db" stroke-width="1.2"/>
+  <text x="267" y="133" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#3498db">h</text>
+
+  <!-- t4: blank -->
+  <rect x="305" y="112" width="55" height="32" rx="4" fill="#999" fill-opacity="0.15" stroke="#999" stroke-width="1.2"/>
+  <text x="332" y="133" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#999">&mdash;</text>
+
+  <!-- t5: i -->
+  <rect x="370" y="112" width="55" height="32" rx="4" fill="#3498db" fill-opacity="0.15" stroke="#3498db" stroke-width="1.2"/>
+  <text x="397" y="133" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#3498db">i</text>
+
+  <!-- t6: blank -->
+  <rect x="435" y="112" width="55" height="32" rx="4" fill="#999" fill-opacity="0.15" stroke="#999" stroke-width="1.2"/>
+  <text x="462" y="133" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#999">&mdash;</text>
+
+  <!-- t7: blank -->
+  <rect x="500" y="112" width="55" height="32" rx="4" fill="#999" fill-opacity="0.15" stroke="#999" stroke-width="1.2"/>
+  <text x="527" y="133" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#999">&mdash;</text>
+
+  <!-- t8: ! -->
+  <rect x="565" y="112" width="55" height="32" rx="4" fill="#3498db" fill-opacity="0.15" stroke="#3498db" stroke-width="1.2"/>
+  <text x="592" y="133" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#3498db">!</text>
+
+  <!-- "collapse" label -->
+  <text x="350" y="166" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e74c3c" font-weight="bold">collapse duplicates &amp; remove blanks</text>
+
+  <!-- Arrows converging down to collapsed output -->
+  <line x1="202" y1="146" x2="310" y2="190" stroke="#e74c3c" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="267" y1="146" x2="310" y2="190" stroke="#e74c3c" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="397" y1="146" x2="355" y2="190" stroke="#e74c3c" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="592" y1="146" x2="395" y2="190" stroke="#e74c3c" stroke-width="1" stroke-dasharray="3,2"/>
+
+  <!-- Row label: Final Output -->
+  <text x="50" y="207" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#333">Final</text>
+  <text x="50" y="219" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#333">Output</text>
+
+  <!-- Collapsed output: "hi!" -->
+  <rect x="285" y="188" width="130" height="36" rx="8" fill="#27ae60" fill-opacity="0.15" stroke="#27ae60" stroke-width="2"/>
+  <text x="350" y="212" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#27ae60">h i !</text>
+
+  <!-- Many-to-one annotation -->
+  <text x="530" y="185" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#9b59b6">Many CTC paths</text>
+  <text x="530" y="196" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#9b59b6">map to same output</text>
+  <rect x="470" y="175" width="120" height="28" rx="4" fill="none" stroke="#9b59b6" stroke-width="1" stroke-dasharray="3,2"/>
+
+  <!-- Legend -->
+  <rect x="110" y="232" width="14" height="10" rx="2" fill="#999" fill-opacity="0.2" stroke="#999" stroke-width="1"/>
+  <text x="130" y="241" text-anchor="start" font-family="Arial, sans-serif" font-size="8" fill="#666">= blank token</text>
+  <rect x="200" y="232" width="14" height="10" rx="2" fill="#3498db" fill-opacity="0.2" stroke="#3498db" stroke-width="1"/>
+  <text x="220" y="241" text-anchor="start" font-family="Arial, sans-serif" font-size="8" fill="#666">= real character</text>
+
+  <!-- Note box -->
+  <rect x="40" y="255" width="620" height="32" rx="6" fill="#f5f5f5" stroke="#333" stroke-width="1"/>
+  <text x="350" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#333">CTC allows the model to output 'blank' between characters -- no forced alignment needed.</text>
+</svg>

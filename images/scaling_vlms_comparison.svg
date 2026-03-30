@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="800" height="300" font-family="Arial, sans-serif">
+  <defs>
+    <marker id="sv-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="400" y="24" font-size="14" font-weight="bold" fill="#333" text-anchor="middle">Scaling Vision-Language Models</text>
+
+  <!-- Dividers -->
+  <line x1="267" y1="38" x2="267" y2="280" stroke="#ccc" stroke-width="1" stroke-dasharray="6,4"/>
+  <line x1="534" y1="38" x2="534" y2="280" stroke="#ccc" stroke-width="1" stroke-dasharray="6,4"/>
+
+  <!-- === Column 1: PaLI === -->
+  <text x="133" y="55" font-size="13" font-weight="bold" fill="#333" text-anchor="middle">PaLI</text>
+
+  <!-- ViT-e (large box) -->
+  <rect x="35" y="75" width="90" height="100" rx="8" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <text x="80" y="118" font-size="11" fill="#333" text-anchor="middle">ViT-e</text>
+  <text x="80" y="135" font-size="10" fill="#3498db" text-anchor="middle" font-weight="bold">4B</text>
+  <text x="80" y="150" font-size="8" fill="#666" text-anchor="middle">params</text>
+
+  <!-- Arrow -->
+  <line x1="125" y1="125" x2="148" y2="125" stroke="#666" stroke-width="1.5" marker-end="url(#sv-arrow)"/>
+
+  <!-- mT5 (larger box) -->
+  <rect x="153" y="65" width="100" height="120" rx="8" fill="#e74c3c" fill-opacity="0.12" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="203" y="118" font-size="11" fill="#333" text-anchor="middle">mT5</text>
+  <text x="203" y="135" font-size="10" fill="#e74c3c" text-anchor="middle" font-weight="bold">13B</text>
+  <text x="203" y="150" font-size="8" fill="#666" text-anchor="middle">params</text>
+
+  <!-- PaLI Total -->
+  <text x="133" y="210" font-size="10" fill="#333" text-anchor="middle" font-weight="bold">Total: 17B</text>
+
+  <!-- PaLI note -->
+  <text x="133" y="235" font-size="9" fill="#666" text-anchor="middle">Largest ViT ever trained</text>
+  <text x="133" y="250" font-size="9" fill="#666" text-anchor="middle">100+ languages</text>
+  <text x="133" y="265" font-size="9" fill="#999" text-anchor="middle">Google, 2022</text>
+
+  <!-- === Column 2: Qwen-VL === -->
+  <text x="400" y="55" font-size="13" font-weight="bold" fill="#333" text-anchor="middle">Qwen-VL</text>
+
+  <!-- ViT (medium box) -->
+  <rect x="305" y="85" width="75" height="75" rx="8" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <text x="342" y="118" font-size="11" fill="#333" text-anchor="middle">ViT-G</text>
+  <text x="342" y="135" font-size="10" fill="#3498db" text-anchor="middle" font-weight="bold">1.9B</text>
+
+  <!-- Arrow -->
+  <line x1="380" y1="122" x2="403" y2="122" stroke="#666" stroke-width="1.5" marker-end="url(#sv-arrow)"/>
+
+  <!-- Qwen (larger box) -->
+  <rect x="408" y="75" width="90" height="95" rx="8" fill="#e74c3c" fill-opacity="0.12" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="453" y="115" font-size="11" fill="#333" text-anchor="middle">Qwen</text>
+  <text x="453" y="132" font-size="10" fill="#e74c3c" text-anchor="middle" font-weight="bold">7B</text>
+  <text x="453" y="147" font-size="8" fill="#666" text-anchor="middle">LLM</text>
+
+  <!-- 3-stage training note -->
+  <rect x="335" y="178" width="110" height="20" rx="4" fill="#f39c12" fill-opacity="0.12" stroke="#f39c12" stroke-width="1"/>
+  <text x="390" y="192" font-size="8" fill="#f39c12" text-anchor="middle">3-stage training</text>
+
+  <!-- Qwen-VL Total -->
+  <text x="400" y="225" font-size="10" fill="#333" text-anchor="middle" font-weight="bold">Total: ~9.6B</text>
+
+  <!-- Note -->
+  <text x="400" y="250" font-size="9" fill="#666" text-anchor="middle">Grounding + multilingual</text>
+  <text x="400" y="265" font-size="9" fill="#999" text-anchor="middle">Alibaba, 2023</text>
+
+  <!-- === Column 3: InternVL === -->
+  <text x="667" y="55" font-size="13" font-weight="bold" fill="#333" text-anchor="middle">InternVL</text>
+
+  <!-- InternViT (large box) -->
+  <rect x="570" y="75" width="88" height="105" rx="8" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <text x="614" y="115" font-size="10" fill="#333" text-anchor="middle">InternViT</text>
+  <text x="614" y="132" font-size="10" fill="#3498db" text-anchor="middle" font-weight="bold">6B</text>
+  <text x="614" y="147" font-size="8" fill="#666" text-anchor="middle">params</text>
+
+  <!-- Arrow -->
+  <line x1="658" y1="127" x2="680" y2="127" stroke="#666" stroke-width="1.5" marker-end="url(#sv-arrow)"/>
+
+  <!-- LLM (medium box) -->
+  <rect x="685" y="85" width="80" height="85" rx="8" fill="#e74c3c" fill-opacity="0.12" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="725" y="122" font-size="11" fill="#333" text-anchor="middle">LLM</text>
+  <text x="725" y="139" font-size="10" fill="#e74c3c" text-anchor="middle" font-weight="bold">8B+</text>
+
+  <!-- Dynamic resolution note -->
+  <rect x="600" y="195" width="130" height="20" rx="4" fill="#27ae60" fill-opacity="0.12" stroke="#27ae60" stroke-width="1"/>
+  <text x="665" y="209" font-size="8" fill="#27ae60" text-anchor="middle">dynamic resolution</text>
+
+  <!-- InternVL Total -->
+  <text x="667" y="240" font-size="10" fill="#333" text-anchor="middle" font-weight="bold">Total: ~14B+</text>
+
+  <!-- Note -->
+  <text x="667" y="260" font-size="9" fill="#666" text-anchor="middle">Scales ViT to 6B params</text>
+  <text x="667" y="275" font-size="9" fill="#999" text-anchor="middle">Shanghai AI Lab, 2024</text>
+</svg>

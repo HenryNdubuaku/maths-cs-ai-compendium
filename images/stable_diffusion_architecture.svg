@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" width="800" height="320">
+  <defs>
+    <marker id="sd-arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#333"/>
+    </marker>
+    <marker id="sd-arr-red" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#e74c3c"/>
+    </marker>
+    <marker id="sd-arr-blue" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#3498db"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="400" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">Stable Diffusion: Latent Diffusion Model</text>
+
+  <!-- === TOP ROW: Text Encoder === -->
+  <!-- Text Prompt -->
+  <rect x="30" y="42" width="120" height="36" rx="8" fill="#e74c3c" fill-opacity="0.08" stroke="#e74c3c" stroke-width="1.2" stroke-dasharray="4,2"/>
+  <text x="90" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#e74c3c">"a castle in fog"</text>
+
+  <!-- Arrow -->
+  <line x1="150" y1="60" x2="175" y2="60" stroke="#333" stroke-width="1.2" marker-end="url(#sd-arr)"/>
+
+  <!-- CLIP Text Encoder -->
+  <rect x="185" y="42" width="145" height="36" rx="8" fill="#e74c3c" fill-opacity="0.12" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="257" y="64" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#e74c3c">CLIP Text Encoder</text>
+
+  <!-- Arrow to text embeddings -->
+  <line x1="330" y1="60" x2="360" y2="60" stroke="#333" stroke-width="1.2" marker-end="url(#sd-arr)"/>
+
+  <!-- Text embeddings -->
+  <rect x="370" y="46" width="80" height="28" rx="6" fill="#e74c3c" fill-opacity="0.08" stroke="#e74c3c" stroke-width="1"/>
+  <text x="410" y="64" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e74c3c">Text Embeds</text>
+
+  <!-- Cross-attention arrow down from text embeddings to U-Net -->
+  <line x1="410" y1="74" x2="410" y2="120" stroke="#e74c3c" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#sd-arr-red)"/>
+  <text x="432" y="100" text-anchor="start" font-family="Arial, sans-serif" font-size="8" fill="#e74c3c">cross-attention</text>
+
+  <!-- === MIDDLE ROW: Latent Diffusion === -->
+  <!-- Random noise -->
+  <rect x="30" y="125" width="90" height="55" rx="8" fill="#3498db" fill-opacity="0.08" stroke="#3498db" stroke-width="1.2"/>
+  <!-- Noise dots -->
+  <circle cx="50" cy="142" r="2" fill="#3498db" opacity="0.4"/>
+  <circle cx="68" cy="148" r="1.5" fill="#3498db" opacity="0.5"/>
+  <circle cx="55" cy="157" r="2" fill="#3498db" opacity="0.3"/>
+  <circle cx="80" cy="140" r="1.5" fill="#3498db" opacity="0.6"/>
+  <circle cx="95" cy="155" r="2" fill="#3498db" opacity="0.35"/>
+  <circle cx="72" cy="165" r="1.5" fill="#3498db" opacity="0.45"/>
+  <circle cx="100" cy="145" r="1" fill="#3498db" opacity="0.5"/>
+  <circle cx="60" cy="135" r="1.5" fill="#3498db" opacity="0.4"/>
+  <text x="75" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">Latent Noise</text>
+  <text x="75" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#999">z ~ N(0, I)</text>
+
+  <!-- Arrow to U-Net -->
+  <line x1="120" y1="152" x2="165" y2="152" stroke="#333" stroke-width="1.2" marker-end="url(#sd-arr)"/>
+
+  <!-- U-Net Denoising block -->
+  <rect x="175" y="118" width="280" height="70" rx="8" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <text x="315" y="143" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#3498db">U-Net Denoising</text>
+  <text x="315" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">Predict noise at each timestep</text>
+  <text x="315" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#999">t = T, T-1, ..., 1, 0</text>
+
+  <!-- Iteration circular arrow -->
+  <path d="M455,138 C478,118 485,148 470,162 C460,172 440,175 432,168" fill="none" stroke="#3498db" stroke-width="1.5" marker-end="url(#sd-arr-blue)"/>
+  <text x="495" y="150" text-anchor="start" font-family="Arial, sans-serif" font-size="8" fill="#3498db">iterate</text>
+  <text x="495" y="160" text-anchor="start" font-family="Arial, sans-serif" font-size="8" fill="#3498db">T steps</text>
+
+  <!-- Timestep indicator -->
+  <rect x="180" y="160" width="55" height="22" rx="4" fill="#f39c12" fill-opacity="0.15" stroke="#f39c12" stroke-width="1"/>
+  <text x="207" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#f39c12">t: T → 0</text>
+
+  <!-- Arrow from U-Net to denoised latent -->
+  <line x1="455" y1="152" x2="530" y2="152" stroke="#333" stroke-width="1.2" marker-end="url(#sd-arr)"/>
+
+  <!-- Denoised latent -->
+  <rect x="540" y="130" width="75" height="45" rx="6" fill="#3498db" fill-opacity="0.08" stroke="#3498db" stroke-width="1"/>
+  <text x="577" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3498db">Denoised</text>
+  <text x="577" y="162" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3498db">Latent</text>
+
+  <!-- === BOTTOM ROW: VAE Decoder === -->
+  <!-- Arrow down from denoised latent to VAE -->
+  <line x1="577" y1="175" x2="577" y2="225" stroke="#333" stroke-width="1.2" marker-end="url(#sd-arr)"/>
+
+  <!-- VAE Decoder -->
+  <rect x="520" y="230" width="115" height="42" rx="8" fill="#27ae60" fill-opacity="0.12" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="577" y="255" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#27ae60">VAE Decoder</text>
+
+  <!-- Arrow to final image -->
+  <line x1="635" y1="251" x2="670" y2="251" stroke="#333" stroke-width="1.2" marker-end="url(#sd-arr)"/>
+
+  <!-- Final image -->
+  <rect x="680" y="221" width="85" height="60" rx="8" fill="#27ae60" fill-opacity="0.06" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="722" y="248" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#27ae60">Final</text>
+  <text x="722" y="261" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#27ae60">Image</text>
+  <text x="722" y="274" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#999">512 x 512</text>
+
+  <!-- Annotations -->
+  <rect x="560" y="42" width="200" height="50" rx="6" fill="#f39c12" fill-opacity="0.06" stroke="#f39c12" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="660" y="58" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#f39c12">Key Insight</text>
+  <text x="660" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">Diffusion happens in latent space</text>
+  <text x="660" y="82" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">(64x64) not pixel space (512x512)</text>
+
+  <!-- Bottom label -->
+  <text x="400" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#999">Classifier-free guidance: output = uncond + s * (cond - uncond)</text>
+</svg>

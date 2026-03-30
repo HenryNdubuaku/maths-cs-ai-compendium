@@ -1,0 +1,37 @@
+<svg width="550" height="200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Number line -->
+  <line x1="40" y1="100" x2="510" y2="100" stroke="#ccc" stroke-width="1"/>
+
+  <!-- Confidence interval bar -->
+  <line x1="140" y1="100" x2="410" y2="100" stroke="#3498db" stroke-width="4"/>
+
+  <!-- Left bracket -->
+  <line x1="140" y1="80" x2="140" y2="120" stroke="#3498db" stroke-width="3"/>
+  <text x="140" y="145" fill="#3498db" font-size="11" text-anchor="middle">lower bound</text>
+  <text x="140" y="160" fill="#3498db" font-size="11" text-anchor="middle">(x̄ - ME)</text>
+
+  <!-- Right bracket -->
+  <line x1="410" y1="80" x2="410" y2="120" stroke="#3498db" stroke-width="3"/>
+  <text x="410" y="145" fill="#3498db" font-size="11" text-anchor="middle">upper bound</text>
+  <text x="410" y="160" fill="#3498db" font-size="11" text-anchor="middle">(x̄ + ME)</text>
+
+  <!-- Point estimate -->
+  <circle cx="275" cy="100" r="6" fill="#e74c3c"/>
+  <text x="275" y="85" fill="#e74c3c" font-size="12" font-weight="bold" text-anchor="middle">x̄ (point estimate)</text>
+
+  <!-- Margin of error arrows -->
+  <line x1="275" y1="60" x2="145" y2="60" stroke="#27ae60" stroke-width="1.5"/>
+  <polygon points="145,57 155,60 145,63" fill="#27ae60"/>
+  <line x1="275" y1="60" x2="405" y2="60" stroke="#27ae60" stroke-width="1.5"/>
+  <polygon points="405,57 395,60 405,63" fill="#27ae60"/>
+  <text x="200" y="52" fill="#27ae60" font-size="11" font-weight="bold" text-anchor="middle">ME</text>
+  <text x="350" y="52" fill="#27ae60" font-size="11" font-weight="bold" text-anchor="middle">ME</text>
+
+  <!-- True parameter somewhere in interval -->
+  <line x1="305" y1="90" x2="305" y2="110" stroke="#9b59b6" stroke-width="2" stroke-dasharray="3,2"/>
+  <text x="305" y="180" fill="#9b59b6" font-size="11" text-anchor="middle">μ (true parameter,</text>
+  <text x="305" y="195" fill="#9b59b6" font-size="11" text-anchor="middle">hopefully in here!)</text>
+
+  <!-- Title -->
+  <text x="275" y="25" fill="#333" font-size="14" font-weight="bold" text-anchor="middle">Confidence Interval = Point Estimate ± Margin of Error</text>
+</svg>

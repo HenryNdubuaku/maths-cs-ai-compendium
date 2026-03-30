@@ -1,0 +1,61 @@
+<svg width="700" height="300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Title -->
+  <text x="350" y="25" fill="#333" font-size="14" font-weight="bold" text-anchor="middle">Permutations vs Combinations</text>
+
+  <!-- Left: Permutations -->
+  <text x="175" y="55" fill="#e74c3c" font-size="13" font-weight="bold" text-anchor="middle">Permutations (order matters)</text>
+  <text x="175" y="75" fill="#666" font-size="11" text-anchor="middle">Choosing 2 from {A, B, C}</text>
+
+  <!-- Permutation boxes -->
+  <rect x="70" y="90" width="55" height="28" rx="4" fill="#e74c3c" opacity="0.15" stroke="#e74c3c" stroke-width="1"/>
+  <text x="97" y="109" fill="#e74c3c" font-size="12" text-anchor="middle">A B</text>
+
+  <rect x="145" y="90" width="55" height="28" rx="4" fill="#e74c3c" opacity="0.15" stroke="#e74c3c" stroke-width="1"/>
+  <text x="172" y="109" fill="#e74c3c" font-size="12" text-anchor="middle">B A</text>
+
+  <rect x="220" y="90" width="55" height="28" rx="4" fill="#e74c3c" opacity="0.15" stroke="#e74c3c" stroke-width="1"/>
+  <text x="247" y="109" fill="#e74c3c" font-size="12" text-anchor="middle">A C</text>
+
+  <rect x="70" y="128" width="55" height="28" rx="4" fill="#e74c3c" opacity="0.15" stroke="#e74c3c" stroke-width="1"/>
+  <text x="97" y="147" fill="#e74c3c" font-size="12" text-anchor="middle">C A</text>
+
+  <rect x="145" y="128" width="55" height="28" rx="4" fill="#e74c3c" opacity="0.15" stroke="#e74c3c" stroke-width="1"/>
+  <text x="172" y="147" fill="#e74c3c" font-size="12" text-anchor="middle">B C</text>
+
+  <rect x="220" y="128" width="55" height="28" rx="4" fill="#e74c3c" opacity="0.15" stroke="#e74c3c" stroke-width="1"/>
+  <text x="247" y="147" fill="#e74c3c" font-size="12" text-anchor="middle">C B</text>
+
+  <text x="175" y="180" fill="#e74c3c" font-size="12" text-anchor="middle">6 arrangements</text>
+  <text x="175" y="198" fill="#666" font-size="11" text-anchor="middle">P(3,2) = 3!/(3-2)! = 6</text>
+
+  <!-- Divider -->
+  <line x1="350" y1="45" x2="350" y2="280" stroke="#ccc" stroke-width="1" stroke-dasharray="4,4"/>
+
+  <!-- Right: Combinations -->
+  <text x="525" y="55" fill="#3498db" font-size="13" font-weight="bold" text-anchor="middle">Combinations (order ignored)</text>
+  <text x="525" y="75" fill="#666" font-size="11" text-anchor="middle">Choosing 2 from {A, B, C}</text>
+
+  <!-- Combination circles -->
+  <rect x="435" y="95" width="55" height="28" rx="14" fill="#3498db" opacity="0.15" stroke="#3498db" stroke-width="1"/>
+  <text x="462" y="114" fill="#3498db" font-size="12" text-anchor="middle">{A,B}</text>
+
+  <rect x="505" y="95" width="55" height="28" rx="14" fill="#3498db" opacity="0.15" stroke="#3498db" stroke-width="1"/>
+  <text x="532" y="114" fill="#3498db" font-size="12" text-anchor="middle">{A,C}</text>
+
+  <rect x="575" y="95" width="55" height="28" rx="14" fill="#3498db" opacity="0.15" stroke="#3498db" stroke-width="1"/>
+  <text x="602" y="114" fill="#3498db" font-size="12" text-anchor="middle">{B,C}</text>
+
+  <text x="525" y="155" fill="#3498db" font-size="12" text-anchor="middle">3 groups</text>
+  <text x="525" y="173" fill="#666" font-size="11" text-anchor="middle">C(3,2) = 3!/(2!·1!) = 3</text>
+
+  <!-- Connection arrows showing AB=BA merge -->
+  <text x="525" y="210" fill="#666" font-size="11" text-anchor="middle">A B and B A are the same group {A,B}</text>
+  <text x="525" y="228" fill="#666" font-size="11" text-anchor="middle">so we divide by 2! = 2 orderings</text>
+
+  <!-- Bottom summary -->
+  <text x="175" y="250" fill="#e74c3c" font-size="11" text-anchor="middle">Who is 1st vs 2nd matters</text>
+  <text x="175" y="268" fill="#e74c3c" font-size="11" text-anchor="middle">(president vs VP)</text>
+
+  <text x="525" y="250" fill="#3498db" font-size="11" text-anchor="middle">Only membership matters</text>
+  <text x="525" y="268" fill="#3498db" font-size="11" text-anchor="middle">(picking a committee)</text>
+</svg>

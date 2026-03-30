@@ -1,0 +1,47 @@
+<svg width="340" height="160" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dense matrix (left) -->
+  <text x="70" y="14" text-anchor="middle" fill="#333" font-size="12" font-weight="bold">Dense</text>
+  <rect x="10" y="22" width="120" height="120" rx="4" fill="none" stroke="#333" stroke-width="1.5"/>
+  <!-- grid lines -->
+  <line x1="10" y1="52" x2="130" y2="52" stroke="#eee" stroke-width="0.5"/>
+  <line x1="10" y1="82" x2="130" y2="82" stroke="#eee" stroke-width="0.5"/>
+  <line x1="10" y1="112" x2="130" y2="112" stroke="#eee" stroke-width="0.5"/>
+  <line x1="40" y1="22" x2="40" y2="142" stroke="#eee" stroke-width="0.5"/>
+  <line x1="70" y1="22" x2="70" y2="142" stroke="#eee" stroke-width="0.5"/>
+  <line x1="100" y1="22" x2="100" y2="142" stroke="#eee" stroke-width="0.5"/>
+  <!-- filled cells -->
+  <circle cx="25" cy="37" r="5" fill="#3498db" fill-opacity="0.7"/>
+  <circle cx="55" cy="37" r="5" fill="#3498db" fill-opacity="0.7"/>
+  <circle cx="85" cy="37" r="5" fill="#3498db" fill-opacity="0.7"/>
+  <circle cx="115" cy="37" r="5" fill="#3498db" fill-opacity="0.7"/>
+  <circle cx="25" cy="67" r="5" fill="#3498db" fill-opacity="0.7"/>
+  <circle cx="55" cy="67" r="5" fill="#3498db" fill-opacity="0.7"/>
+  <circle cx="85" cy="67" r="5" fill="#3498db" fill-opacity="0.7"/>
+  <circle cx="115" cy="67" r="5" fill="#3498db" fill-opacity="0.7"/>
+  <circle cx="25" cy="97" r="5" fill="#3498db" fill-opacity="0.7"/>
+  <circle cx="55" cy="97" r="5" fill="#3498db" fill-opacity="0.7"/>
+  <circle cx="85" cy="97" r="5" fill="#3498db" fill-opacity="0.7"/>
+  <circle cx="115" cy="97" r="5" fill="#3498db" fill-opacity="0.7"/>
+  <circle cx="25" cy="127" r="5" fill="#3498db" fill-opacity="0.7"/>
+  <circle cx="55" cy="127" r="5" fill="#3498db" fill-opacity="0.7"/>
+  <circle cx="85" cy="127" r="5" fill="#3498db" fill-opacity="0.7"/>
+  <circle cx="115" cy="127" r="5" fill="#3498db" fill-opacity="0.7"/>
+  <text x="70" y="156" text-anchor="middle" fill="#666" font-size="10">most entries nonzero</text>
+
+  <!-- Sparse matrix (right) -->
+  <text x="260" y="14" text-anchor="middle" fill="#333" font-size="12" font-weight="bold">Sparse</text>
+  <rect x="200" y="22" width="120" height="120" rx="4" fill="none" stroke="#333" stroke-width="1.5"/>
+  <line x1="200" y1="52" x2="320" y2="52" stroke="#eee" stroke-width="0.5"/>
+  <line x1="200" y1="82" x2="320" y2="82" stroke="#eee" stroke-width="0.5"/>
+  <line x1="200" y1="112" x2="320" y2="112" stroke="#eee" stroke-width="0.5"/>
+  <line x1="230" y1="22" x2="230" y2="142" stroke="#eee" stroke-width="0.5"/>
+  <line x1="260" y1="22" x2="260" y2="142" stroke="#eee" stroke-width="0.5"/>
+  <line x1="290" y1="22" x2="290" y2="142" stroke="#eee" stroke-width="0.5"/>
+  <!-- scattered dots -->
+  <circle cx="215" cy="37" r="5" fill="#e74c3c" fill-opacity="0.7"/>
+  <circle cx="305" cy="37" r="5" fill="#e74c3c" fill-opacity="0.7"/>
+  <circle cx="275" cy="67" r="5" fill="#e74c3c" fill-opacity="0.7"/>
+  <circle cx="215" cy="97" r="5" fill="#e74c3c" fill-opacity="0.7"/>
+  <circle cx="305" cy="127" r="5" fill="#e74c3c" fill-opacity="0.7"/>
+  <text x="260" y="156" text-anchor="middle" fill="#666" font-size="10">most entries zero</text>
+</svg>

@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="290">
+  <defs>
+    <marker id="arr3" viewBox="0 0 10 6" refX="10" refY="3" markerWidth="8" markerHeight="6" orient="auto">
+      <polygon points="0,0 10,3 0,6" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="350" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">HiFi-GAN Generator Structure</text>
+
+  <!-- ===== INPUT: Mel Spectrogram (narrow, tall) ===== -->
+  <rect x="20" y="55" width="50" height="100" rx="6" fill="#9b59b6" fill-opacity="0.15" stroke="#9b59b6" stroke-width="1.5"/>
+  <text x="45" y="98" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#9b59b6">Mel</text>
+  <text x="45" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#9b59b6">Spec</text>
+  <text x="45" y="122" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#666">80 ch</text>
+
+  <!-- Arrow -->
+  <line x1="70" y1="105" x2="90" y2="105" stroke="#666" stroke-width="1.2" marker-end="url(#arr3)"/>
+
+  <!-- ===== Upsample Block 1 ===== -->
+  <rect x="92" y="60" width="62" height="90" rx="6" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <text x="123" y="82" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#3498db">TransConv</text>
+  <text x="123" y="93" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#3498db">Upsample</text>
+  <text x="123" y="104" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#666">8x</text>
+
+  <!-- MRF block 1 -->
+  <rect x="97" y="109" width="52" height="34" rx="4" fill="#e74c3c" fill-opacity="0.12" stroke="#e74c3c" stroke-width="1"/>
+  <text x="123" y="121" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" font-weight="bold" fill="#e74c3c">MRF</text>
+  <text x="123" y="131" text-anchor="middle" font-family="Arial, sans-serif" font-size="6" fill="#666">k=3,7,11</text>
+
+  <!-- Arrow -->
+  <line x1="154" y1="105" x2="176" y2="105" stroke="#666" stroke-width="1.2" marker-end="url(#arr3)"/>
+
+  <!-- ===== Upsample Block 2 ===== -->
+  <rect x="178" y="55" width="72" height="100" rx="6" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <text x="214" y="78" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#3498db">TransConv</text>
+  <text x="214" y="89" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#3498db">Upsample</text>
+  <text x="214" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#666">8x</text>
+
+  <!-- MRF block 2 -->
+  <rect x="185" y="106" width="58" height="40" rx="4" fill="#e74c3c" fill-opacity="0.12" stroke="#e74c3c" stroke-width="1"/>
+  <text x="214" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" font-weight="bold" fill="#e74c3c">MRF</text>
+  <text x="214" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="6" fill="#666">k=3,7,11</text>
+  <text x="214" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="6" fill="#666">d=1,3,5</text>
+
+  <!-- Arrow -->
+  <line x1="250" y1="105" x2="274" y2="105" stroke="#666" stroke-width="1.2" marker-end="url(#arr3)"/>
+
+  <!-- ===== Upsample Block 3 ===== -->
+  <rect x="276" y="50" width="82" height="110" rx="6" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <text x="317" y="73" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#3498db">TransConv</text>
+  <text x="317" y="84" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#3498db">Upsample</text>
+  <text x="317" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#666">2x</text>
+
+  <!-- MRF block 3 -->
+  <rect x="284" y="101" width="66" height="50" rx="4" fill="#e74c3c" fill-opacity="0.12" stroke="#e74c3c" stroke-width="1"/>
+  <text x="317" y="116" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" font-weight="bold" fill="#e74c3c">MRF</text>
+  <!-- Parallel kernel paths -->
+  <rect x="289" y="121" width="16" height="12" rx="2" fill="#e74c3c" fill-opacity="0.25" stroke="#e74c3c" stroke-width="0.5"/>
+  <text x="297" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="5" fill="#e74c3c">k3</text>
+  <rect x="308" y="121" width="16" height="12" rx="2" fill="#e74c3c" fill-opacity="0.25" stroke="#e74c3c" stroke-width="0.5"/>
+  <text x="316" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="5" fill="#e74c3c">k7</text>
+  <rect x="327" y="121" width="18" height="12" rx="2" fill="#e74c3c" fill-opacity="0.25" stroke="#e74c3c" stroke-width="0.5"/>
+  <text x="336" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="5" fill="#e74c3c">k11</text>
+  <text x="317" y="146" text-anchor="middle" font-family="Arial, sans-serif" font-size="6" fill="#666">sum outputs</text>
+
+  <!-- Arrow -->
+  <line x1="358" y1="105" x2="382" y2="105" stroke="#666" stroke-width="1.2" marker-end="url(#arr3)"/>
+
+  <!-- ===== Upsample Block 4 ===== -->
+  <rect x="384" y="47" width="90" height="116" rx="6" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <text x="429" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#3498db">TransConv</text>
+  <text x="429" y="79" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#3498db">Upsample</text>
+  <text x="429" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#666">2x</text>
+
+  <!-- MRF block 4 -->
+  <rect x="392" y="97" width="74" height="56" rx="4" fill="#e74c3c" fill-opacity="0.12" stroke="#e74c3c" stroke-width="1"/>
+  <text x="429" y="112" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" font-weight="bold" fill="#e74c3c">MRF</text>
+  <rect x="397" y="117" width="18" height="12" rx="2" fill="#e74c3c" fill-opacity="0.25" stroke="#e74c3c" stroke-width="0.5"/>
+  <text x="406" y="126" text-anchor="middle" font-family="Arial, sans-serif" font-size="5" fill="#e74c3c">k3</text>
+  <rect x="419" y="117" width="18" height="12" rx="2" fill="#e74c3c" fill-opacity="0.25" stroke="#e74c3c" stroke-width="0.5"/>
+  <text x="428" y="126" text-anchor="middle" font-family="Arial, sans-serif" font-size="5" fill="#e74c3c">k7</text>
+  <rect x="441" y="117" width="18" height="12" rx="2" fill="#e74c3c" fill-opacity="0.25" stroke="#e74c3c" stroke-width="0.5"/>
+  <text x="450" y="126" text-anchor="middle" font-family="Arial, sans-serif" font-size="5" fill="#e74c3c">k11</text>
+  <text x="429" y="146" text-anchor="middle" font-family="Arial, sans-serif" font-size="6" fill="#666">sum outputs</text>
+
+  <!-- Arrow -->
+  <line x1="474" y1="105" x2="498" y2="105" stroke="#666" stroke-width="1.2" marker-end="url(#arr3)"/>
+
+  <!-- ===== Final Conv ===== -->
+  <rect x="500" y="72" width="65" height="66" rx="6" fill="#27ae60" fill-opacity="0.12" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="532" y="96" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#27ae60">Conv1d</text>
+  <text x="532" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#666">k=7</text>
+  <text x="532" y="119" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#27ae60">+ tanh</text>
+
+  <!-- Arrow -->
+  <line x1="565" y1="105" x2="589" y2="105" stroke="#666" stroke-width="1.2" marker-end="url(#arr3)"/>
+
+  <!-- ===== OUTPUT: Waveform (wide, shorter) ===== -->
+  <rect x="591" y="75" width="90" height="60" rx="6" fill="#27ae60" fill-opacity="0.18" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="636" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#27ae60">Waveform</text>
+  <text x="636" y="113" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#666">24 kHz audio</text>
+  <text x="636" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#666">1-channel</text>
+
+  <!-- Waveform squiggle in output box -->
+  <polyline points="600,95 606,90 612,100 618,88 624,102 630,89 636,98 642,90 648,100 654,92 660,97 666,91 672,96" fill="none" stroke="#27ae60" stroke-width="0.8" stroke-opacity="0.4"/>
+
+  <!-- ===== MRF Explanation ===== -->
+  <rect x="20" y="175" width="310" height="55" rx="6" fill="#e74c3c" fill-opacity="0.06" stroke="#e74c3c" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="30" y="192" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#e74c3c">Multi-Receptive Field Fusion (MRF):</text>
+  <text x="30" y="204" font-family="Arial, sans-serif" font-size="8" fill="#666">Parallel ResBlocks with different kernel sizes (3, 7, 11) and</text>
+  <text x="30" y="216" font-family="Arial, sans-serif" font-size="8" fill="#666">dilation rates (1, 3, 5). Outputs summed to capture patterns at</text>
+  <text x="30" y="228" font-family="Arial, sans-serif" font-size="8" fill="#666">multiple temporal scales simultaneously.</text>
+
+  <!-- Upsample factor label -->
+  <rect x="345" y="175" width="170" height="55" rx="6" fill="#3498db" fill-opacity="0.06" stroke="#3498db" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="355" y="192" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#3498db">Transposed Convolution Upsampling:</text>
+  <text x="355" y="204" font-family="Arial, sans-serif" font-size="8" fill="#666">Total upsample factor = 8 x 8 x 2 x 2 = 256</text>
+  <text x="355" y="216" font-family="Arial, sans-serif" font-size="8" fill="#666">Matches hop_size=256 of mel transform.</text>
+  <text x="355" y="228" font-family="Arial, sans-serif" font-size="8" fill="#666">Each stage: LeakyReLU activation.</text>
+
+  <!-- Note box -->
+  <rect x="20" y="245" width="660" height="35" rx="6" fill="#f5f5f5" stroke="#333" stroke-width="1"/>
+  <text x="35" y="260" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#333">Note:</text>
+  <text x="70" y="260" font-family="Arial, sans-serif" font-size="9" fill="#666">Multi-period + multi-scale discriminators train the generator adversarially. MPD captures periodic structures</text>
+  <text x="35" y="273" font-family="Arial, sans-serif" font-size="9" fill="#666">(pitch harmonics) while MSD evaluates audio quality at different time resolutions. Combined with mel loss for stability.</text>
+</svg>

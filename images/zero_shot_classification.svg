@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 280" width="700" height="280">
+  <defs>
+    <marker id="zs-blue" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#3498db"/>
+    </marker>
+    <marker id="zs-red" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#e74c3c"/>
+    </marker>
+    <marker id="zs-gray" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#666"/>
+    </marker>
+    <marker id="zs-green" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#27ae60"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="350" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">Zero-Shot Classification with CLIP</text>
+
+  <!-- Image input -->
+  <rect x="20" y="100" width="70" height="60" rx="8" fill="#f39c12" fill-opacity="0.15" stroke="#f39c12" stroke-width="1.5"/>
+  <text x="55" y="128" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#f39c12">&#x1F415;</text>
+  <text x="55" y="148" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">Image</text>
+
+  <!-- Image Encoder -->
+  <rect x="118" y="100" width="95" height="60" rx="8" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <text x="165" y="128" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#3498db">Image</text>
+  <text x="165" y="143" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#3498db">Encoder</text>
+
+  <!-- Arrow image to encoder -->
+  <line x1="90" y1="130" x2="110" y2="130" stroke="#3498db" stroke-width="1.5" marker-end="url(#zs-blue)"/>
+
+  <!-- Image embedding vector -->
+  <line x1="213" y1="130" x2="260" y2="130" stroke="#3498db" stroke-width="1.5" marker-end="url(#zs-blue)"/>
+  <text x="237" y="124" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#3498db">embed</text>
+
+  <!-- Text prompts -->
+  <rect x="118" y="42" width="148" height="24" rx="6" fill="#e74c3c" fill-opacity="0.08" stroke="#e74c3c" stroke-width="1"/>
+  <text x="192" y="58" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e74c3c">"a photo of a dog"</text>
+
+  <rect x="118" y="188" width="148" height="24" rx="6" fill="#e74c3c" fill-opacity="0.08" stroke="#e74c3c" stroke-width="1"/>
+  <text x="192" y="204" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e74c3c">"a photo of a cat"</text>
+
+  <rect x="118" y="230" width="148" height="24" rx="6" fill="#e74c3c" fill-opacity="0.08" stroke="#e74c3c" stroke-width="1"/>
+  <text x="192" y="246" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e74c3c">"a photo of a car"</text>
+
+  <!-- Text Encoder box -->
+  <rect x="295" y="42" width="80" height="24" rx="6" fill="#e74c3c" fill-opacity="0.12" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="335" y="58" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#e74c3c">Text Enc.</text>
+
+  <rect x="295" y="188" width="80" height="24" rx="6" fill="#e74c3c" fill-opacity="0.12" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="335" y="204" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#e74c3c">Text Enc.</text>
+
+  <rect x="295" y="230" width="80" height="24" rx="6" fill="#e74c3c" fill-opacity="0.12" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="335" y="246" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#e74c3c">Text Enc.</text>
+
+  <!-- Arrows from prompts to text encoders -->
+  <line x1="266" y1="54" x2="288" y2="54" stroke="#e74c3c" stroke-width="1" marker-end="url(#zs-red)"/>
+  <line x1="266" y1="200" x2="288" y2="200" stroke="#e74c3c" stroke-width="1" marker-end="url(#zs-red)"/>
+  <line x1="266" y1="242" x2="288" y2="242" stroke="#e74c3c" stroke-width="1" marker-end="url(#zs-red)"/>
+
+  <!-- Cosine similarity block -->
+  <rect x="410" y="38" width="110" height="224" rx="8" fill="#f8f8f8" stroke="#ccc" stroke-width="1"/>
+  <text x="465" y="56" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#666">Cosine Sim.</text>
+
+  <!-- Arrows from text encoders to cosine sim -->
+  <line x1="375" y1="54" x2="403" y2="54" stroke="#666" stroke-width="1" marker-end="url(#zs-gray)"/>
+  <line x1="375" y1="200" x2="403" y2="200" stroke="#666" stroke-width="1" marker-end="url(#zs-gray)"/>
+  <line x1="375" y1="242" x2="403" y2="242" stroke="#666" stroke-width="1" marker-end="url(#zs-gray)"/>
+
+  <!-- Arrow from image embedding to cosine sim -->
+  <line x1="268" y1="130" x2="403" y2="130" stroke="#3498db" stroke-width="1.5" stroke-dasharray="5,3"/>
+
+  <!-- Similarity bars -->
+  <!-- Dog — highest (green) -->
+  <text x="428" y="90" font-family="Arial, sans-serif" font-size="9" fill="#333">dog</text>
+  <rect x="450" y="78" width="55" height="16" rx="4" fill="#27ae60" fill-opacity="0.7"/>
+  <text x="510" y="90" text-anchor="start" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#27ae60">0.92</text>
+
+  <!-- Cat — medium (gray) -->
+  <text x="428" y="144" font-family="Arial, sans-serif" font-size="9" fill="#333">cat</text>
+  <rect x="450" y="132" width="22" height="16" rx="4" fill="#999" fill-opacity="0.4"/>
+  <text x="478" y="144" text-anchor="start" font-family="Arial, sans-serif" font-size="9" fill="#999">0.35</text>
+
+  <!-- Car — low (gray) -->
+  <text x="428" y="208" font-family="Arial, sans-serif" font-size="9" fill="#333">car</text>
+  <rect x="450" y="196" width="10" height="16" rx="4" fill="#999" fill-opacity="0.3"/>
+  <text x="466" y="208" text-anchor="start" font-family="Arial, sans-serif" font-size="9" fill="#999">0.08</text>
+
+  <!-- Prediction arrow -->
+  <line x1="540" y1="86" x2="575" y2="86" stroke="#27ae60" stroke-width="1.5" marker-end="url(#zs-green)"/>
+
+  <!-- Prediction label -->
+  <rect x="582" y="70" width="105" height="32" rx="8" fill="#27ae60" fill-opacity="0.15" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="634" y="84" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">Predicted:</text>
+  <text x="634" y="97" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#27ae60">dog</text>
+</svg>

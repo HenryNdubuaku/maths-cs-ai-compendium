@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 260" width="780" height="260">
+  <text x="390" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">SAE Levels of Driving Automation</text>
+
+  <!-- Level boxes -->
+  <rect x="20" y="50" width="110" height="70" rx="8" fill="#e74c3c" fill-opacity="0.10" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="75" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#e74c3c">L0</text>
+  <text x="75" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e74c3c">No Automation</text>
+  <text x="75" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">human does all</text>
+
+  <rect x="145" y="50" width="110" height="70" rx="8" fill="#e67e22" fill-opacity="0.10" stroke="#e67e22" stroke-width="1.5"/>
+  <text x="200" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#e67e22">L1</text>
+  <text x="200" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e67e22">Driver Assist</text>
+  <text x="200" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">steering OR speed</text>
+
+  <rect x="270" y="50" width="110" height="70" rx="8" fill="#f39c12" fill-opacity="0.10" stroke="#f39c12" stroke-width="1.5"/>
+  <text x="325" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#f39c12">L2</text>
+  <text x="325" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#f39c12">Partial</text>
+  <text x="325" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">steering AND speed</text>
+
+  <rect x="395" y="50" width="110" height="70" rx="8" fill="#27ae60" fill-opacity="0.10" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="450" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#27ae60">L3</text>
+  <text x="450" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27ae60">Conditional</text>
+  <text x="450" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">system drives in ODD</text>
+
+  <rect x="520" y="50" width="110" height="70" rx="8" fill="#3498db" fill-opacity="0.10" stroke="#3498db" stroke-width="1.5"/>
+  <text x="575" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#3498db">L4</text>
+  <text x="575" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3498db">High</text>
+  <text x="575" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">no human needed</text>
+
+  <rect x="645" y="50" width="110" height="70" rx="8" fill="#9b59b6" fill-opacity="0.10" stroke="#9b59b6" stroke-width="1.5"/>
+  <text x="700" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#9b59b6">L5</text>
+  <text x="700" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#9b59b6">Full</text>
+  <text x="700" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">anywhere, anytime</text>
+
+  <!-- Responsibility bar -->
+  <rect x="20" y="145" width="345" height="28" rx="6" fill="#e74c3c" fill-opacity="0.12" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="192" y="164" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#e74c3c">Human is responsible for safety</text>
+
+  <rect x="395" y="145" width="360" height="28" rx="6" fill="#27ae60" fill-opacity="0.12" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="575" y="164" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#27ae60">System is responsible for safety (within ODD)</text>
+
+  <!-- Current state -->
+  <text x="200" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#f39c12">Tesla Autopilot,</text>
+  <text x="200" y="213" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#f39c12">GM Super Cruise</text>
+
+  <text x="450" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27ae60">Mercedes</text>
+  <text x="450" y="213" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27ae60">Drive Pilot</text>
+
+  <text x="575" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3498db">Waymo</text>
+  <text x="575" y="213" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3498db">robotaxi</text>
+
+  <text x="700" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#9b59b6">does not</text>
+  <text x="700" y="213" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#9b59b6">exist yet</text>
+
+  <!-- Arrow showing progression -->
+  <line x1="50" y1="240" x2="720" y2="240" stroke="#999" stroke-width="1.5"/>
+  <polygon points="725,240 715,235 715,245" fill="#999"/>
+  <text x="390" y="256" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#999">increasing autonomy →</text>
+</svg>

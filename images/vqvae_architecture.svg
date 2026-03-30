@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="800" height="300" font-family="Arial, sans-serif">
+  <!-- Title -->
+  <text x="400" y="24" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">VQ-VAE Architecture</text>
+
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#666"/>
+    </marker>
+    <marker id="arrDash" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#e74c3c"/>
+    </marker>
+  </defs>
+
+  <!-- Input Image -->
+  <rect x="15" y="95" width="70" height="70" rx="4" fill="#3498db" opacity="0.5" stroke="#3498db" stroke-width="1"/>
+  <rect x="22" y="102" width="28" height="28" rx="2" fill="#e74c3c" opacity="0.4"/>
+  <rect x="38" y="118" width="35" height="35" rx="2" fill="#27ae60" opacity="0.4"/>
+  <text x="50" y="185" text-anchor="middle" font-size="10" fill="#333">Input x</text>
+
+  <!-- Arrow to Encoder -->
+  <line x1="92" y1="130" x2="122" y2="130" stroke="#666" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Encoder -->
+  <rect x="130" y="95" width="80" height="70" rx="8" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <text x="170" y="134" text-anchor="middle" font-size="12" font-weight="bold" fill="#3498db">Encoder</text>
+
+  <!-- Arrow to ze -->
+  <line x1="218" y1="130" x2="248" y2="130" stroke="#666" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ze label -->
+  <text x="258" y="100" text-anchor="middle" font-size="11" fill="#9b59b6" font-weight="bold">z_e</text>
+  <!-- ze dot -->
+  <circle cx="258" cy="130" r="8" fill="#9b59b6" fill-opacity="0.3" stroke="#9b59b6" stroke-width="1.5"/>
+
+  <!-- Arrow to Codebook -->
+  <line x1="270" y1="130" x2="310" y2="130" stroke="#666" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Codebook -->
+  <rect x="318" y="50" width="110" height="180" rx="8" fill="#f39c12" fill-opacity="0.08" stroke="#f39c12" stroke-width="1.5"/>
+  <text x="373" y="70" text-anchor="middle" font-size="11" font-weight="bold" fill="#f39c12">Codebook</text>
+
+  <!-- Codebook entries -->
+  <rect x="335" y="80" width="76" height="20" rx="3" fill="white" stroke="#f39c12" stroke-width="1"/>
+  <text x="373" y="94" text-anchor="middle" font-size="9" fill="#f39c12">e₁  [0.3, -0.1, ...]</text>
+
+  <rect x="335" y="104" width="76" height="20" rx="3" fill="white" stroke="#f39c12" stroke-width="1"/>
+  <text x="373" y="118" text-anchor="middle" font-size="9" fill="#f39c12">e₂  [0.7, 0.4, ...]</text>
+
+  <rect x="335" y="128" width="76" height="20" rx="3" fill="#f39c12" fill-opacity="0.25" stroke="#f39c12" stroke-width="1.5"/>
+  <text x="373" y="142" text-anchor="middle" font-size="9" fill="#f39c12" font-weight="bold">e_q  [0.5, 0.2, ...]</text>
+
+  <rect x="335" y="152" width="76" height="20" rx="3" fill="white" stroke="#f39c12" stroke-width="1"/>
+  <text x="373" y="166" text-anchor="middle" font-size="9" fill="#f39c12">e₄  [-0.2, 0.8, ...]</text>
+
+  <text x="373" y="190" text-anchor="middle" font-size="10" fill="#f39c12">⋮</text>
+
+  <rect x="335" y="196" width="76" height="20" rx="3" fill="white" stroke="#f39c12" stroke-width="1"/>
+  <text x="373" y="210" text-anchor="middle" font-size="9" fill="#f39c12">e_K  [0.1, -0.6, ...]</text>
+
+  <!-- Nearest-neighbour annotation -->
+  <text x="296" y="150" text-anchor="middle" font-size="8" fill="#999" transform="rotate(-90 296 150)">nearest neighbour</text>
+
+  <!-- Arrow from codebook to zq -->
+  <line x1="436" y1="130" x2="476" y2="130" stroke="#666" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- zq label -->
+  <text x="490" y="100" text-anchor="middle" font-size="11" fill="#27ae60" font-weight="bold">z_q</text>
+  <!-- zq dot -->
+  <circle cx="490" cy="130" r="8" fill="#27ae60" fill-opacity="0.3" stroke="#27ae60" stroke-width="1.5"/>
+
+  <!-- Arrow to Decoder -->
+  <line x1="502" y1="130" x2="542" y2="130" stroke="#666" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Decoder -->
+  <rect x="550" y="95" width="80" height="70" rx="8" fill="#e74c3c" fill-opacity="0.12" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="590" y="134" text-anchor="middle" font-size="12" font-weight="bold" fill="#e74c3c">Decoder</text>
+
+  <!-- Arrow to output -->
+  <line x1="638" y1="130" x2="668" y2="130" stroke="#666" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Reconstructed Image -->
+  <rect x="676" y="95" width="70" height="70" rx="4" fill="#3498db" opacity="0.35" stroke="#3498db" stroke-width="1" stroke-dasharray="3,2"/>
+  <rect x="683" y="102" width="28" height="28" rx="2" fill="#e74c3c" opacity="0.3"/>
+  <rect x="699" y="118" width="35" height="35" rx="2" fill="#27ae60" opacity="0.3"/>
+  <text x="711" y="185" text-anchor="middle" font-size="10" fill="#333">Recon. x̂</text>
+
+  <!-- Straight-Through Estimator (dashed backward arrow) -->
+  <path d="M490,170 L490,255 L258,255 L258,170" fill="none" stroke="#e74c3c" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrDash)"/>
+  <text x="374" y="270" text-anchor="middle" font-size="9" fill="#e74c3c" font-weight="bold">Straight-Through Estimator</text>
+  <text x="374" y="282" text-anchor="middle" font-size="8" fill="#e74c3c">(gradients bypass quantisation in backward pass)</text>
+
+  <!-- Copy gradients label -->
+  <text x="490" y="248" text-anchor="middle" font-size="8" fill="#e74c3c">copy gradients</text>
+</svg>

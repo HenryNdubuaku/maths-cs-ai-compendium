@@ -1,0 +1,127 @@
+<svg width="700" height="280" xmlns="http://www.w3.org/2000/svg">
+  <text x="350" y="22" fill="#333" font-size="14" font-weight="bold" text-anchor="middle">Receptive Field Growth Across Layers</text>
+
+  <!-- Input (7x7 grid) -->
+  <text x="100" y="48" fill="#666" font-size="11" text-anchor="middle">Input Image</text>
+  <!-- 7x7 grid -->
+  <g transform="translate(37, 55)">
+    <!-- Row by row -->
+    <rect x="0" y="0" width="18" height="18" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="18" y="0" width="18" height="18" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="36" y="0" width="18" height="18" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="54" y="0" width="18" height="18" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="72" y="0" width="18" height="18" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="90" y="0" width="18" height="18" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="108" y="0" width="18" height="18" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="0" y="18" width="18" height="18" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="18" y="18" width="18" height="18" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="36" y="18" width="18" height="18" fill="#3498db" opacity="0.15" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="54" y="18" width="18" height="18" fill="#3498db" opacity="0.15" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="72" y="18" width="18" height="18" fill="#3498db" opacity="0.15" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="90" y="18" width="18" height="18" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="108" y="18" width="18" height="18" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="0" y="36" width="18" height="18" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="18" y="36" width="18" height="18" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="36" y="36" width="18" height="18" fill="#3498db" opacity="0.15" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="54" y="36" width="18" height="18" fill="#3498db" opacity="0.3" stroke="#3498db" stroke-width="1"/>
+    <rect x="72" y="36" width="18" height="18" fill="#3498db" opacity="0.15" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="90" y="36" width="18" height="18" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="108" y="36" width="18" height="18" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="0" y="54" width="18" height="18" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="18" y="54" width="18" height="18" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="36" y="54" width="18" height="18" fill="#3498db" opacity="0.15" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="54" y="54" width="18" height="18" fill="#3498db" opacity="0.15" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="72" y="54" width="18" height="18" fill="#3498db" opacity="0.15" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="90" y="54" width="18" height="18" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="108" y="54" width="18" height="18" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="0" y="72" width="18" height="18" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="18" y="72" width="18" height="18" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="36" y="72" width="18" height="18" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="54" y="72" width="18" height="18" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="72" y="72" width="18" height="18" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="90" y="72" width="18" height="18" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="108" y="72" width="18" height="18" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="0" y="90" width="18" height="18" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="18" y="90" width="18" height="18" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="36" y="90" width="18" height="18" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="54" y="90" width="18" height="18" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="72" y="90" width="18" height="18" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="90" y="90" width="18" height="18" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="108" y="90" width="18" height="18" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <!-- 3x3 RF outline -->
+    <rect x="36" y="18" width="54" height="54" fill="none" stroke="#3498db" stroke-width="2" rx="2"/>
+  </g>
+  <text x="100" y="180" fill="#3498db" font-size="10" text-anchor="middle" font-weight="bold">3×3 RF</text>
+  <text x="100" y="193" fill="#666" font-size="9" text-anchor="middle">(Layer 1)</text>
+
+  <!-- Arrow -->
+  <text x="210" y="115" fill="#666" font-size="10" text-anchor="middle">3×3 conv</text>
+  <line x1="185" y1="120" x2="235" y2="120" stroke="#666" stroke-width="1.2"/>
+  <polygon points="235,117 242,120 235,123" fill="#666"/>
+
+  <!-- Layer 1 output (5x5 grid) -->
+  <text x="330" y="48" fill="#666" font-size="11" text-anchor="middle">After Layer 1</text>
+  <g transform="translate(267, 55)">
+    <rect x="0" y="0" width="22" height="22" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="22" y="0" width="22" height="22" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="44" y="0" width="22" height="22" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="66" y="0" width="22" height="22" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="88" y="0" width="22" height="22" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="0" y="22" width="22" height="22" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="22" y="22" width="22" height="22" fill="#e74c3c" opacity="0.15" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="44" y="22" width="22" height="22" fill="#e74c3c" opacity="0.15" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="66" y="22" width="22" height="22" fill="#e74c3c" opacity="0.15" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="88" y="22" width="22" height="22" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="0" y="44" width="22" height="22" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="22" y="44" width="22" height="22" fill="#e74c3c" opacity="0.15" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="44" y="44" width="22" height="22" fill="#e74c3c" opacity="0.35" stroke="#e74c3c" stroke-width="1"/>
+    <rect x="66" y="44" width="22" height="22" fill="#e74c3c" opacity="0.15" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="88" y="44" width="22" height="22" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="0" y="66" width="22" height="22" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="22" y="66" width="22" height="22" fill="#e74c3c" opacity="0.15" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="44" y="66" width="22" height="22" fill="#e74c3c" opacity="0.15" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="66" y="66" width="22" height="22" fill="#e74c3c" opacity="0.15" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="88" y="66" width="22" height="22" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="0" y="88" width="22" height="22" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="22" y="88" width="22" height="22" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="44" y="88" width="22" height="22" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="66" y="88" width="22" height="22" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="88" y="88" width="22" height="22" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="22" y="22" width="66" height="66" fill="none" stroke="#e74c3c" stroke-width="2" rx="2"/>
+  </g>
+  <text x="330" y="180" fill="#e74c3c" font-size="10" text-anchor="middle" font-weight="bold">5×5 RF</text>
+  <text x="330" y="193" fill="#666" font-size="9" text-anchor="middle">(Layer 2)</text>
+
+  <!-- Arrow -->
+  <text x="440" y="115" fill="#666" font-size="10" text-anchor="middle">3×3 conv</text>
+  <line x1="415" y1="120" x2="465" y2="120" stroke="#666" stroke-width="1.2"/>
+  <polygon points="465,117 472,120 465,123" fill="#666"/>
+
+  <!-- Layer 2 output (3x3 grid) -->
+  <text x="560" y="48" fill="#666" font-size="11" text-anchor="middle">After Layer 2</text>
+  <g transform="translate(500, 65)">
+    <rect x="0" y="0" width="28" height="28" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="28" y="0" width="28" height="28" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="56" y="0" width="28" height="28" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="84" y="0" width="28" height="28" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="0" y="28" width="28" height="28" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="28" y="28" width="28" height="28" fill="#27ae60" opacity="0.35" stroke="#27ae60" stroke-width="1.5"/>
+    <rect x="56" y="28" width="28" height="28" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="84" y="28" width="28" height="28" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="0" y="56" width="28" height="28" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="28" y="56" width="28" height="28" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="56" y="56" width="28" height="28" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+    <rect x="84" y="56" width="28" height="28" fill="#eee" stroke="#bbb" stroke-width="0.5"/>
+  </g>
+  <text x="560" y="180" fill="#27ae60" font-size="10" text-anchor="middle" font-weight="bold">7×7 RF</text>
+  <text x="560" y="193" fill="#666" font-size="9" text-anchor="middle">(Layer 3)</text>
+
+  <!-- Connecting lines showing RF growth -->
+  <line x1="91" y1="100" x2="311" y2="100" stroke="#999" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.4"/>
+  <line x1="542" y1="93" x2="311" y2="100" stroke="#999" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.4"/>
+
+  <!-- Bottom note -->
+  <rect x="120" y="210" width="460" height="50" rx="6" fill="#f5f5f5" stroke="#333" stroke-width="1"/>
+  <text x="350" y="228" fill="#333" font-size="10" text-anchor="middle">Each 3×3 conv layer expands the receptive field by 2 pixels in each direction.</text>
+  <text x="350" y="244" fill="#666" font-size="10" text-anchor="middle">RF after L layers of k×k conv: RF = 1 + L × (k − 1). Two 3×3 layers = one 5×5 layer.</text>
+</svg>

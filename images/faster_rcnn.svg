@@ -1,0 +1,81 @@
+<svg width="700" height="250" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="frcnn-arrow" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#555"/>
+    </marker>
+  </defs>
+  <text x="350" y="22" fill="#333" font-size="14" font-weight="bold" text-anchor="middle">Faster R-CNN Pipeline</text>
+
+  <!-- Input image -->
+  <rect x="20" y="55" width="75" height="75" rx="4" fill="#ddd" stroke="#999" stroke-width="1.5"/>
+  <rect x="35" y="70" width="30" height="25" fill="#e74c3c" opacity="0.2"/>
+  <rect x="50" y="90" width="20" height="15" fill="#3498db" opacity="0.2"/>
+  <text x="57" y="145" fill="#666" font-size="9" text-anchor="middle">Input</text>
+  <text x="57" y="155" fill="#666" font-size="9" text-anchor="middle">Image</text>
+
+  <!-- Arrow -->
+  <line x1="100" y1="92" x2="130" y2="92" stroke="#555" stroke-width="1.2" marker-end="url(#frcnn-arrow)"/>
+
+  <!-- Backbone CNN -->
+  <rect x="135" y="55" width="85" height="75" rx="6" fill="#3498db" opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <text x="177" y="88" fill="#3498db" font-size="10" text-anchor="middle" font-weight="bold">Backbone</text>
+  <text x="177" y="102" fill="#3498db" font-size="9" text-anchor="middle">(ResNet)</text>
+
+  <!-- Arrow to shared feature map -->
+  <line x1="220" y1="92" x2="250" y2="92" stroke="#555" stroke-width="1.2" marker-end="url(#frcnn-arrow)"/>
+
+  <!-- Shared feature map -->
+  <rect x="255" y="45" width="80" height="95" rx="4" fill="#f39c12" opacity="0.12" stroke="#f39c12" stroke-width="2"/>
+  <text x="295" y="82" fill="#f39c12" font-size="10" text-anchor="middle" font-weight="bold">Shared</text>
+  <text x="295" y="95" fill="#f39c12" font-size="10" text-anchor="middle" font-weight="bold">Feature</text>
+  <text x="295" y="108" fill="#f39c12" font-size="10" text-anchor="middle" font-weight="bold">Map</text>
+
+  <!-- Branch up to RPN -->
+  <line x1="335" y1="72" x2="380" y2="47" stroke="#e74c3c" stroke-width="1.5" marker-end="url(#frcnn-arrow)"/>
+
+  <!-- RPN -->
+  <rect x="385" y="30" width="100" height="40" rx="6" fill="#e74c3c" opacity="0.12" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="435" y="47" fill="#e74c3c" font-size="10" text-anchor="middle" font-weight="bold">RPN</text>
+  <text x="435" y="60" fill="#e74c3c" font-size="8" text-anchor="middle">Region Proposals</text>
+
+  <!-- Proposals arrow down -->
+  <line x1="435" y1="70" x2="435" y2="97" stroke="#e74c3c" stroke-width="1.2" stroke-dasharray="4,2" marker-end="url(#frcnn-arrow)"/>
+  <text x="460" y="88" fill="#e74c3c" font-size="8" text-anchor="start">proposals</text>
+
+  <!-- Branch to RoI pooling -->
+  <line x1="335" y1="100" x2="380" y2="115" stroke="#555" stroke-width="1.5" marker-end="url(#frcnn-arrow)"/>
+
+  <!-- RoI Pooling -->
+  <rect x="385" y="100" width="100" height="36" rx="6" fill="#9b59b6" opacity="0.12" stroke="#9b59b6" stroke-width="1.5"/>
+  <text x="435" y="118" fill="#9b59b6" font-size="10" text-anchor="middle" font-weight="bold">RoI Pooling</text>
+  <text x="435" y="130" fill="#9b59b6" font-size="8" text-anchor="middle">fixed-size features</text>
+
+  <!-- Arrow to heads -->
+  <line x1="485" y1="118" x2="520" y2="95" stroke="#555" stroke-width="1.2" marker-end="url(#frcnn-arrow)"/>
+  <line x1="485" y1="118" x2="520" y2="140" stroke="#555" stroke-width="1.2" marker-end="url(#frcnn-arrow)"/>
+
+  <!-- Classification head -->
+  <rect x="525" y="75" width="80" height="36" rx="6" fill="#27ae60" opacity="0.12" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="565" y="93" fill="#27ae60" font-size="9" text-anchor="middle" font-weight="bold">Classifier</text>
+  <text x="565" y="105" fill="#27ae60" font-size="8" text-anchor="middle">class labels</text>
+
+  <!-- Regression head -->
+  <rect x="525" y="125" width="80" height="36" rx="6" fill="#3498db" opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <text x="565" y="143" fill="#3498db" font-size="9" text-anchor="middle" font-weight="bold">Regressor</text>
+  <text x="565" y="155" fill="#3498db" font-size="8" text-anchor="middle">box offsets</text>
+
+  <!-- Output arrows -->
+  <line x1="605" y1="93" x2="640" y2="93" stroke="#27ae60" stroke-width="1.2" marker-end="url(#frcnn-arrow)"/>
+  <line x1="605" y1="143" x2="640" y2="143" stroke="#3498db" stroke-width="1.2" marker-end="url(#frcnn-arrow)"/>
+
+  <!-- Output -->
+  <rect x="645" y="80" width="45" height="80" rx="4" fill="#ddd" stroke="#999" stroke-width="1"/>
+  <rect x="652" y="95" width="25" height="15" fill="none" stroke="#27ae60" stroke-width="1.5"/>
+  <rect x="655" y="120" width="20" height="12" fill="none" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="667" y="168" fill="#666" font-size="8" text-anchor="middle">detections</text>
+
+  <!-- Bottom note -->
+  <rect x="70" y="190" width="560" height="45" rx="6" fill="#f5f5f5" stroke="#333" stroke-width="1"/>
+  <text x="350" y="207" fill="#333" font-size="10" text-anchor="middle">Two-stage: RPN proposes candidate regions, then each region is classified and refined.</text>
+  <text x="350" y="222" fill="#666" font-size="9" text-anchor="middle">Backbone runs once (shared features). RPN and detection heads run on the shared feature map.</text>
+</svg>

@@ -1,0 +1,67 @@
+<svg width="700" height="320" xmlns="http://www.w3.org/2000/svg">
+  <text x="350" y="22" fill="#333" font-size="14" font-weight="bold" text-anchor="middle">K-Means Clustering (K=3)</text>
+
+  <!-- Axes -->
+  <line x1="60" y1="270" x2="640" y2="270" stroke="#333" stroke-width="1.5"/>
+  <line x1="60" y1="270" x2="60" y2="40" stroke="#333" stroke-width="1.5"/>
+  <text x="350" y="295" fill="#666" font-size="11" text-anchor="middle">Feature 1</text>
+  <text x="35" y="155" fill="#666" font-size="11" text-anchor="middle" transform="rotate(-90,35,155)">Feature 2</text>
+
+  <!-- Cluster boundaries (soft ellipses) -->
+  <ellipse cx="170" cy="100" rx="85" ry="60" fill="#3498db" opacity="0.08" stroke="#3498db" stroke-width="1" stroke-dasharray="4,3"/>
+  <ellipse cx="450" cy="85" rx="90" ry="55" fill="#e74c3c" opacity="0.08" stroke="#e74c3c" stroke-width="1" stroke-dasharray="4,3"/>
+  <ellipse cx="380" cy="210" rx="100" ry="55" fill="#27ae60" opacity="0.08" stroke="#27ae60" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- Cluster 1 points (blue) -->
+  <circle cx="130" cy="85" r="4" fill="#3498db" opacity="0.7"/>
+  <circle cx="155" cy="70" r="4" fill="#3498db" opacity="0.7"/>
+  <circle cx="180" cy="95" r="4" fill="#3498db" opacity="0.7"/>
+  <circle cx="145" cy="110" r="4" fill="#3498db" opacity="0.7"/>
+  <circle cx="200" cy="80" r="4" fill="#3498db" opacity="0.7"/>
+  <circle cx="170" cy="120" r="4" fill="#3498db" opacity="0.7"/>
+  <circle cx="120" cy="105" r="4" fill="#3498db" opacity="0.7"/>
+  <circle cx="190" cy="110" r="4" fill="#3498db" opacity="0.7"/>
+  <circle cx="160" cy="55" r="4" fill="#3498db" opacity="0.7"/>
+  <circle cx="210" cy="100" r="4" fill="#3498db" opacity="0.7"/>
+
+  <!-- Cluster 2 points (red) -->
+  <circle cx="420" cy="70" r="4" fill="#e74c3c" opacity="0.7"/>
+  <circle cx="450" cy="60" r="4" fill="#e74c3c" opacity="0.7"/>
+  <circle cx="470" cy="85" r="4" fill="#e74c3c" opacity="0.7"/>
+  <circle cx="440" cy="100" r="4" fill="#e74c3c" opacity="0.7"/>
+  <circle cx="490" cy="75" r="4" fill="#e74c3c" opacity="0.7"/>
+  <circle cx="430" cy="110" r="4" fill="#e74c3c" opacity="0.7"/>
+  <circle cx="510" cy="90" r="4" fill="#e74c3c" opacity="0.7"/>
+  <circle cx="460" cy="50" r="4" fill="#e74c3c" opacity="0.7"/>
+  <circle cx="480" cy="105" r="4" fill="#e74c3c" opacity="0.7"/>
+
+  <!-- Cluster 3 points (green) -->
+  <circle cx="350" cy="195" r="4" fill="#27ae60" opacity="0.7"/>
+  <circle cx="380" cy="210" r="4" fill="#27ae60" opacity="0.7"/>
+  <circle cx="400" cy="195" r="4" fill="#27ae60" opacity="0.7"/>
+  <circle cx="360" cy="225" r="4" fill="#27ae60" opacity="0.7"/>
+  <circle cx="420" cy="220" r="4" fill="#27ae60" opacity="0.7"/>
+  <circle cx="340" cy="215" r="4" fill="#27ae60" opacity="0.7"/>
+  <circle cx="390" cy="240" r="4" fill="#27ae60" opacity="0.7"/>
+  <circle cx="310" cy="200" r="4" fill="#27ae60" opacity="0.7"/>
+  <circle cx="430" cy="200" r="4" fill="#27ae60" opacity="0.7"/>
+  <circle cx="370" cy="180" r="4" fill="#27ae60" opacity="0.7"/>
+
+  <!-- Centroids (stars / larger circles with outline) -->
+  <circle cx="170" cy="93" r="8" fill="white" stroke="#3498db" stroke-width="2.5"/>
+  <text x="170" y="97" fill="#3498db" font-size="10" font-weight="bold" text-anchor="middle">C</text>
+
+  <circle cx="455" cy="83" r="8" fill="white" stroke="#e74c3c" stroke-width="2.5"/>
+  <text x="455" y="87" fill="#e74c3c" font-size="10" font-weight="bold" text-anchor="middle">C</text>
+
+  <circle cx="375" cy="208" r="8" fill="white" stroke="#27ae60" stroke-width="2.5"/>
+  <text x="375" y="212" fill="#27ae60" font-size="10" font-weight="bold" text-anchor="middle">C</text>
+
+  <!-- Legend -->
+  <circle cx="160" cy="303" r="4" fill="#666" opacity="0.7"/>
+  <text x="175" y="307" fill="#666" font-size="10">= data point</text>
+  <circle cx="280" cy="303" r="6" fill="white" stroke="#666" stroke-width="2"/>
+  <text x="292" y="307" fill="#666" font-size="9" font-weight="bold">C</text>
+  <text x="310" y="307" fill="#666" font-size="10">= centroid</text>
+  <text x="460" y="307" fill="#666" font-size="10">dashed = cluster boundary</text>
+</svg>

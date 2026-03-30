@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 180" width="700" height="180">
+  <text x="350" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">Shared Autonomy: Blending Human and Robot Control</text>
+
+  <!-- Spectrum bar -->
+  <defs>
+    <linearGradient id="specGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#e74c3c;stop-opacity:0.3"/>
+      <stop offset="50%" style="stop-color:#f39c12;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#3498db;stop-opacity:0.3"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="80" y="55" width="540" height="40" rx="8" fill="url(#specGrad)" stroke="#999" stroke-width="1"/>
+
+  <!-- Labels -->
+  <text x="80" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#e74c3c">α = 1</text>
+  <text x="350" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#f39c12">α = 0.5</text>
+  <text x="620" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#3498db">α = 0</text>
+
+  <text x="80" y="112" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#e74c3c">Teleoperation</text>
+  <text x="80" y="126" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e74c3c">human controls all</text>
+
+  <text x="350" y="112" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#f39c12">Shared Control</text>
+  <text x="350" y="126" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#f39c12">blended input</text>
+
+  <text x="620" y="112" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#3498db">Full Autonomy</text>
+  <text x="620" y="126" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3498db">robot controls all</text>
+
+  <!-- Formula -->
+  <text x="350" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#333">u = α · u_human + (1 − α) · u_robot</text>
+
+  <text x="350" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">Adaptive systems adjust α based on the robot's confidence and situation complexity</text>
+</svg>

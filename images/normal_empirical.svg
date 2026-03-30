@@ -1,0 +1,48 @@
+<svg width="700" height="300" xmlns="http://www.w3.org/2000/svg">
+  <text x="350" y="22" fill="#333" font-size="14" font-weight="bold" text-anchor="middle">Normal Distribution: Empirical Rule (68-95-99.7)</text>
+
+  <!-- Axes -->
+  <line x1="50" y1="240" x2="650" y2="240" stroke="#333" stroke-width="1.5"/>
+
+  <!-- Bell curve -->
+  <path d="M 60,238 C 80,237 110,234 140,225 C 170,210 200,180 230,140 C 260,95 290,60 320,45 C 335,40 345,38 350,37 C 355,38 365,40 380,45 C 410,60 440,95 470,140 C 500,180 530,210 560,225 C 590,234 620,237 640,238" fill="none" stroke="#333" stroke-width="2"/>
+
+  <!-- 99.7% region (3σ) -->
+  <path d="M 110,234 C 130,230 150,222 170,210 C 200,185 230,140 270,95 C 300,60 330,43 350,37 C 370,43 400,60 430,95 C 470,140 500,185 530,210 C 550,222 570,230 590,234 Z" fill="#27ae60" opacity="0.12"/>
+
+  <!-- 95% region (2σ) -->
+  <path d="M 170,210 C 200,185 230,140 270,95 C 300,60 330,43 350,37 C 370,43 400,60 430,95 C 470,140 500,185 530,210 Z" fill="#3498db" opacity="0.15"/>
+
+  <!-- 68% region (1σ) -->
+  <path d="M 260,140 C 280,108 310,65 340,43 C 345,39 350,37 350,37 C 350,37 355,39 360,43 C 390,65 420,108 440,140 Z" fill="#e74c3c" opacity="0.2"/>
+
+  <!-- σ markers -->
+  <line x1="350" y1="240" x2="350" y2="35" stroke="#333" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="350" y="258" fill="#333" font-size="11" text-anchor="middle">μ</text>
+
+  <!-- ±1σ -->
+  <line x1="260" y1="240" x2="260" y2="140" stroke="#e74c3c" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="440" y1="240" x2="440" y2="140" stroke="#e74c3c" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="260" y="258" fill="#e74c3c" font-size="10" text-anchor="middle">μ-σ</text>
+  <text x="440" y="258" fill="#e74c3c" font-size="10" text-anchor="middle">μ+σ</text>
+
+  <!-- ±2σ -->
+  <line x1="170" y1="240" x2="170" y2="210" stroke="#3498db" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="530" y1="240" x2="530" y2="210" stroke="#3498db" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="170" y="258" fill="#3498db" font-size="10" text-anchor="middle">μ-2σ</text>
+  <text x="530" y="258" fill="#3498db" font-size="10" text-anchor="middle">μ+2σ</text>
+
+  <!-- ±3σ -->
+  <line x1="110" y1="240" x2="110" y2="234" stroke="#27ae60" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="590" y1="240" x2="590" y2="234" stroke="#27ae60" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="110" y="258" fill="#27ae60" font-size="10" text-anchor="middle">μ-3σ</text>
+  <text x="590" y="258" fill="#27ae60" font-size="10" text-anchor="middle">μ+3σ</text>
+
+  <!-- Percentage labels -->
+  <text x="350" y="130" fill="#e74c3c" font-size="13" text-anchor="middle" font-weight="bold">68%</text>
+  <text x="350" y="195" fill="#3498db" font-size="12" text-anchor="middle" font-weight="bold">95%</text>
+  <text x="350" y="225" fill="#27ae60" font-size="12" text-anchor="middle" font-weight="bold">99.7%</text>
+
+  <!-- Bottom note -->
+  <text x="350" y="285" fill="#666" font-size="11" text-anchor="middle">Nearly all data (99.7%) falls within 3 standard deviations of the mean.</text>
+</svg>

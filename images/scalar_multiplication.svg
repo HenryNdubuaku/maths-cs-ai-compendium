@@ -1,0 +1,29 @@
+<svg width="420" height="120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow-v" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#e74c3c"/>
+    </marker>
+    <marker id="arrow-2v" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#3498db"/>
+    </marker>
+    <marker id="arrow-neg" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#9b59b6"/>
+    </marker>
+  </defs>
+  <!-- v -->
+  <line x1="20" y1="50" x2="88" y2="50" stroke="#e74c3c" stroke-width="2.5" marker-end="url(#arrow-v)"/>
+  <text x="50" y="40" fill="#e74c3c" font-size="14" font-weight="bold">v</text>
+  <circle cx="20" cy="50" r="3" fill="#333"/>
+  <!-- 2v -->
+  <line x1="140" y1="50" x2="278" y2="50" stroke="#3498db" stroke-width="2.5" marker-end="url(#arrow-2v)"/>
+  <text x="200" y="40" fill="#3498db" font-size="14" font-weight="bold">2v</text>
+  <circle cx="140" cy="50" r="3" fill="#333"/>
+  <!-- -v -->
+  <line x1="380" y1="50" x2="312" y2="50" stroke="#9b59b6" stroke-width="2.5" marker-end="url(#arrow-neg)"/>
+  <text x="340" y="40" fill="#9b59b6" font-size="14" font-weight="bold">-v</text>
+  <circle cx="380" cy="50" r="3" fill="#333"/>
+  <!-- labels -->
+  <text x="20" y="90" fill="#666" font-size="12">original</text>
+  <text x="155" y="90" fill="#666" font-size="12">scaled (2x)</text>
+  <text x="315" y="90" fill="#666" font-size="12">negated</text>
+</svg>

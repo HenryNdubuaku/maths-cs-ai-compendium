@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 260" width="800" height="260">
+  <defs>
+    <marker id="bev-arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#666"/>
+    </marker>
+  </defs>
+  <text x="400" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">BEV Fusion: Projecting Sensors into Bird's-Eye-View</text>
+
+  <!-- Camera branch -->
+  <rect x="30" y="60" width="90" height="40" rx="8" fill="#3498db" fill-opacity="0.15" stroke="#3498db" stroke-width="1.5"/>
+  <text x="75" y="84" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#3498db">Cameras</text>
+
+  <line x1="120" y1="80" x2="155" y2="80" stroke="#666" stroke-width="1.5" marker-end="url(#bev-arr)"/>
+
+  <rect x="163" y="55" width="100" height="50" rx="8" fill="#3498db" fill-opacity="0.10" stroke="#3498db" stroke-width="1.5"/>
+  <text x="213" y="76" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#3498db">2D Image</text>
+  <text x="213" y="92" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#3498db">Encoder</text>
+
+  <line x1="263" y1="80" x2="298" y2="80" stroke="#666" stroke-width="1.5" marker-end="url(#bev-arr)"/>
+
+  <rect x="306" y="55" width="100" height="50" rx="8" fill="#3498db" fill-opacity="0.10" stroke="#3498db" stroke-width="1.5"/>
+  <text x="356" y="73" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#3498db">Lift to 3D</text>
+  <text x="356" y="89" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3498db">(depth pred.)</text>
+
+  <line x1="406" y1="80" x2="448" y2="130" stroke="#3498db" stroke-width="1.5" marker-end="url(#bev-arr)"/>
+
+  <!-- LiDAR branch -->
+  <rect x="30" y="170" width="90" height="40" rx="8" fill="#27ae60" fill-opacity="0.15" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="75" y="194" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#27ae60">LiDAR</text>
+
+  <line x1="120" y1="190" x2="155" y2="190" stroke="#666" stroke-width="1.5" marker-end="url(#bev-arr)"/>
+
+  <rect x="163" y="165" width="100" height="50" rx="8" fill="#27ae60" fill-opacity="0.10" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="213" y="186" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#27ae60">3D Point</text>
+  <text x="213" y="202" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#27ae60">Encoder</text>
+
+  <line x1="263" y1="190" x2="298" y2="190" stroke="#666" stroke-width="1.5" marker-end="url(#bev-arr)"/>
+
+  <rect x="306" y="165" width="100" height="50" rx="8" fill="#27ae60" fill-opacity="0.10" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="356" y="186" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#27ae60">Voxelise</text>
+  <text x="356" y="202" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27ae60">(BEV grid)</text>
+
+  <line x1="406" y1="190" x2="448" y2="155" stroke="#27ae60" stroke-width="1.5" marker-end="url(#bev-arr)"/>
+
+  <!-- BEV Fusion box -->
+  <rect x="456" y="115" width="110" height="55" rx="10" fill="#f39c12" fill-opacity="0.15" stroke="#f39c12" stroke-width="2"/>
+  <text x="511" y="138" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#f39c12">BEV Fusion</text>
+  <text x="511" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#f39c12">concatenate features</text>
+
+  <line x1="566" y1="142" x2="608" y2="142" stroke="#666" stroke-width="1.5" marker-end="url(#bev-arr)"/>
+
+  <!-- Detection head -->
+  <rect x="616" y="115" width="100" height="55" rx="10" fill="#9b59b6" fill-opacity="0.15" stroke="#9b59b6" stroke-width="2"/>
+  <text x="666" y="138" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#9b59b6">Detection</text>
+  <text x="666" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#9b59b6">Head</text>
+
+  <!-- Output -->
+  <text x="666" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">3D boxes, classes, velocities</text>
+
+  <!-- BEV label -->
+  <text x="511" y="245" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#999">Both sensor streams projected into the same bird's-eye-view grid</text>
+</svg>

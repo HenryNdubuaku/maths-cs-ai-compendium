@@ -1,0 +1,49 @@
+<svg width="650" height="320" xmlns="http://www.w3.org/2000/svg">
+  <!-- Main bell curve -->
+  <path d="M 60,260 C 100,258 150,240 200,180 C 230,140 260,70 325,55 C 390,70 420,140 450,180 C 500,240 550,258 590,260" fill="#3498db" opacity="0.12" stroke="#3498db" stroke-width="2.5"/>
+
+  <!-- Baseline -->
+  <line x1="50" y1="260" x2="600" y2="260" stroke="#333" stroke-width="1.5"/>
+
+  <!-- Mean line (1st moment) -->
+  <line x1="325" y1="50" x2="325" y2="260" stroke="#e74c3c" stroke-width="2" stroke-dasharray="6,3"/>
+  <circle cx="325" cy="260" r="4" fill="#e74c3c"/>
+
+  <!-- Mean label -->
+  <rect x="240" y="18" width="170" height="24" rx="4" fill="#e74c3c" opacity="0.15"/>
+  <text x="325" y="35" fill="#e74c3c" font-size="12" font-weight="bold" text-anchor="middle">1st moment: Mean (centre)</text>
+
+  <!-- Variance arrows (2nd moment) -->
+  <line x1="200" y1="200" x2="325" y2="200" stroke="#27ae60" stroke-width="2"/>
+  <line x1="450" y1="200" x2="325" y2="200" stroke="#27ae60" stroke-width="2"/>
+  <polygon points="200,196 210,200 200,204" fill="#27ae60"/>
+  <polygon points="450,196 440,200 450,204" fill="#27ae60"/>
+  <text x="250" y="218" fill="#27ae60" font-size="11" font-weight="bold">spread</text>
+  <text x="390" y="218" fill="#27ae60" font-size="11" font-weight="bold">spread</text>
+
+  <!-- Variance label -->
+  <rect x="420" y="176" width="200" height="24" rx="4" fill="#27ae60" opacity="0.15"/>
+  <text x="520" y="193" fill="#27ae60" font-size="12" font-weight="bold" text-anchor="middle">2nd moment: Variance (spread)</text>
+
+  <!-- Skewness annotation (3rd moment) -->
+  <path d="M 160,255 C 170,250 185,230 195,210" fill="none" stroke="#9b59b6" stroke-width="2"/>
+  <polygon points="195,210 189,218 198,216" fill="#9b59b6"/>
+  <text x="110" y="248" fill="#9b59b6" font-size="11" font-weight="bold">left tail</text>
+
+  <path d="M 490,255 C 480,250 465,230 455,210" fill="none" stroke="#9b59b6" stroke-width="2"/>
+  <polygon points="455,210 461,218 452,216" fill="#9b59b6"/>
+  <text x="492" y="248" fill="#9b59b6" font-size="11" font-weight="bold">right tail</text>
+
+  <!-- Skewness label -->
+  <rect x="20" y="275" width="250" height="24" rx="4" fill="#9b59b6" opacity="0.15"/>
+  <text x="145" y="292" fill="#9b59b6" font-size="12" font-weight="bold" text-anchor="middle">3rd moment: Skewness (asymmetry)</text>
+
+  <!-- Kurtosis annotation (4th moment) -->
+  <path d="M 325,55 L 325,80" fill="none" stroke="#f39c12" stroke-width="2"/>
+  <polygon points="321,55 325,46 329,55" fill="#f39c12"/>
+  <text x="365" y="72" fill="#f39c12" font-size="11" font-weight="bold">peak height</text>
+
+  <!-- Kurtosis label -->
+  <rect x="380" y="275" width="240" height="24" rx="4" fill="#f39c12" opacity="0.15"/>
+  <text x="500" y="292" fill="#f39c12" font-size="12" font-weight="bold" text-anchor="middle">4th moment: Kurtosis (tail weight)</text>
+</svg>

@@ -1,0 +1,95 @@
+<svg width="700" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="mp-arrow" markerWidth="10" markerHeight="8" refX="10" refY="4" orient="auto">
+      <polygon points="0,0 10,4 0,8" fill="#3498db"/>
+    </marker>
+    <marker id="mp-arrow-down" markerWidth="8" markerHeight="10" refX="4" refY="10" orient="auto">
+      <polygon points="0,0 4,10 8,0" fill="#3498db"/>
+    </marker>
+  </defs>
+
+  <text x="350" y="22" fill="#333" font-size="14" font-weight="bold" text-anchor="middle">MFCC Feature Extraction Pipeline</text>
+
+  <!-- ===== Row 1: Signal -> Pre-emphasis -> Framing/Windowing -> FFT ===== -->
+
+  <!-- Box 1: Signal -->
+  <rect x="20" y="50" width="80" height="38" rx="6" fill="#3498db" fill-opacity="0.1" stroke="#3498db" stroke-width="1.5"/>
+  <text x="60" y="73" fill="#3498db" font-size="10" font-weight="bold" text-anchor="middle">Signal</text>
+  <text x="60" y="102" fill="#666" font-size="8" text-anchor="middle">Raw audio x[n]</text>
+
+  <!-- Arrow 1->2 -->
+  <line x1="100" y1="69" x2="130" y2="69" stroke="#3498db" stroke-width="1.5" marker-end="url(#mp-arrow)"/>
+
+  <!-- Box 2: Pre-emphasis -->
+  <rect x="140" y="50" width="95" height="38" rx="6" fill="#e74c3c" fill-opacity="0.1" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="187" y="66" fill="#e74c3c" font-size="9" font-weight="bold" text-anchor="middle">Pre-</text>
+  <text x="187" y="78" fill="#e74c3c" font-size="9" font-weight="bold" text-anchor="middle">emphasis</text>
+  <text x="187" y="102" fill="#666" font-size="8" text-anchor="middle">y[n]=x[n]-ax[n-1]</text>
+
+  <!-- Arrow 2->3 -->
+  <line x1="235" y1="69" x2="265" y2="69" stroke="#3498db" stroke-width="1.5" marker-end="url(#mp-arrow)"/>
+
+  <!-- Box 3: Framing + Windowing -->
+  <rect x="275" y="50" width="95" height="38" rx="6" fill="#27ae60" fill-opacity="0.1" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="322" y="66" fill="#27ae60" font-size="9" font-weight="bold" text-anchor="middle">Framing +</text>
+  <text x="322" y="78" fill="#27ae60" font-size="9" font-weight="bold" text-anchor="middle">Windowing</text>
+  <text x="322" y="102" fill="#666" font-size="8" text-anchor="middle">20-40ms Hamming</text>
+
+  <!-- Arrow 3->4 -->
+  <line x1="370" y1="69" x2="400" y2="69" stroke="#3498db" stroke-width="1.5" marker-end="url(#mp-arrow)"/>
+
+  <!-- Box 4: FFT -->
+  <rect x="410" y="50" width="80" height="38" rx="6" fill="#f39c12" fill-opacity="0.1" stroke="#f39c12" stroke-width="1.5"/>
+  <text x="450" y="73" fill="#f39c12" font-size="10" font-weight="bold" text-anchor="middle">FFT</text>
+  <text x="450" y="102" fill="#666" font-size="8" text-anchor="middle">Power spectrum</text>
+
+  <!-- Turn arrow: from FFT down and back to row 2 -->
+  <path d="M 490,69 L 530,69 L 530,155 L 80,155 L 80,170" fill="none" stroke="#3498db" stroke-width="1.5" marker-end="url(#mp-arrow-down)"/>
+  <text x="305" y="148" fill="#3498db" font-size="8" text-anchor="middle" font-style="italic">apply to each frame</text>
+
+  <!-- ===== Row 2: Mel Filterbank -> Log -> DCT -> MFCCs ===== -->
+
+  <!-- Box 5: Mel Filterbank -->
+  <rect x="30" y="180" width="100" height="38" rx="6" fill="#9b59b6" fill-opacity="0.1" stroke="#9b59b6" stroke-width="1.5"/>
+  <text x="80" y="196" fill="#9b59b6" font-size="9" font-weight="bold" text-anchor="middle">Mel</text>
+  <text x="80" y="208" fill="#9b59b6" font-size="9" font-weight="bold" text-anchor="middle">Filterbank</text>
+  <text x="80" y="232" fill="#666" font-size="8" text-anchor="middle">Triangular filters</text>
+
+  <!-- Arrow 5->6 -->
+  <line x1="130" y1="199" x2="160" y2="199" stroke="#3498db" stroke-width="1.5" marker-end="url(#mp-arrow)"/>
+
+  <!-- Box 6: Log -->
+  <rect x="170" y="180" width="70" height="38" rx="6" fill="#e74c3c" fill-opacity="0.1" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="205" y="203" fill="#e74c3c" font-size="10" font-weight="bold" text-anchor="middle">Log</text>
+  <text x="205" y="232" fill="#666" font-size="8" text-anchor="middle">Compress range</text>
+
+  <!-- Arrow 6->7 -->
+  <line x1="240" y1="199" x2="270" y2="199" stroke="#3498db" stroke-width="1.5" marker-end="url(#mp-arrow)"/>
+
+  <!-- Box 7: DCT -->
+  <rect x="280" y="180" width="70" height="38" rx="6" fill="#27ae60" fill-opacity="0.1" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="315" y="203" fill="#27ae60" font-size="10" font-weight="bold" text-anchor="middle">DCT</text>
+  <text x="315" y="232" fill="#666" font-size="8" text-anchor="middle">Decorrelate</text>
+
+  <!-- Arrow 7->8 -->
+  <line x1="350" y1="199" x2="385" y2="199" stroke="#3498db" stroke-width="1.5" marker-end="url(#mp-arrow)"/>
+
+  <!-- Box 8: MFCCs (output, highlighted) -->
+  <rect x="395" y="174" width="115" height="50" rx="8" fill="#3498db" fill-opacity="0.15" stroke="#3498db" stroke-width="2"/>
+  <text x="452" y="197" fill="#3498db" font-size="12" font-weight="bold" text-anchor="middle">MFCCs</text>
+  <text x="452" y="213" fill="#3498db" font-size="9" text-anchor="middle">12-13 coefficients</text>
+
+  <!-- Dashed arrow to Deltas box -->
+  <line x1="510" y1="199" x2="535" y2="199" stroke="#999" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#mp-arrow)"/>
+
+  <!-- Optional Deltas box -->
+  <rect x="545" y="174" width="130" height="50" rx="6" fill="#f5f5f5" stroke="#ddd" stroke-width="1"/>
+  <text x="610" y="192" fill="#333" font-size="9" font-weight="bold" text-anchor="middle">+ Delta Features</text>
+  <text x="610" y="205" fill="#666" font-size="8" text-anchor="middle">1st derivative (velocity)</text>
+  <text x="610" y="217" fill="#666" font-size="8" text-anchor="middle">2nd derivative (accel.)</text>
+
+  <!-- Bottom note -->
+  <rect x="60" y="255" width="580" height="36" rx="4" fill="#f5f5f5" stroke="#333" stroke-width="0.8"/>
+  <text x="350" y="270" fill="#333" font-size="10" text-anchor="middle">MFCCs: compact representation of spectral shape, standard features for speech</text>
+  <text x="350" y="284" fill="#666" font-size="9" text-anchor="middle">Typical setup: 13 MFCCs + 13 deltas + 13 delta-deltas = 39 features per frame</text>
+</svg>

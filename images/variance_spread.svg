@@ -1,0 +1,19 @@
+<svg width="600" height="240" xmlns="http://www.w3.org/2000/svg">
+  <!-- Shared mean line -->
+  <line x1="300" y1="30" x2="300" y2="210" stroke="#333" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="300" y="230" fill="#333" font-size="12" text-anchor="middle">same mean</text>
+
+  <!-- Baseline -->
+  <line x1="40" y1="200" x2="560" y2="200" stroke="#333" stroke-width="1.5"/>
+
+  <!-- Low variance (tall, narrow) -->
+  <path d="M 180,198 C 210,196 250,160 270,100 C 280,70 290,45 300,38 C 310,45 320,70 330,100 C 350,160 390,196 420,198" fill="#3498db" opacity="0.2" stroke="#3498db" stroke-width="2.5"/>
+  <text x="300" y="22" fill="#3498db" font-size="12" font-weight="bold" text-anchor="middle">Low variance (narrow)</text>
+
+  <!-- High variance (short, wide) -->
+  <path d="M 80,198 C 120,196 170,180 220,155 C 255,138 280,120 300,115 C 320,120 345,138 380,155 C 430,180 480,196 520,198" fill="#e74c3c" opacity="0.2" stroke="#e74c3c" stroke-width="2.5"/>
+  <text x="480" y="150" fill="#e74c3c" font-size="12" font-weight="bold">High variance (wide)</text>
+
+  <!-- Mean dot -->
+  <circle cx="300" cy="200" r="4" fill="#333"/>
+</svg>

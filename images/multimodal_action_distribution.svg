@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 260" width="700" height="260">
+  <text x="350" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">Multimodal Actions: Why Regression Averages Fail</text>
+
+  <!-- Left: true distribution -->
+  <text x="175" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#27ae60">True Action Distribution</text>
+
+  <!-- Mode 1 (go left) -->
+  <ellipse cx="100" cy="140" rx="40" ry="30" fill="#3498db" fill-opacity="0.2" stroke="#3498db" stroke-width="1.5"/>
+  <text x="100" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#3498db">Go left</text>
+
+  <!-- Mode 2 (go right) -->
+  <ellipse cx="250" cy="140" rx="40" ry="30" fill="#9b59b6" fill-opacity="0.2" stroke="#9b59b6" stroke-width="1.5"/>
+  <text x="250" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#9b59b6">Go right</text>
+
+  <!-- Obstacle in middle -->
+  <rect x="155" y="115" width="40" height="50" rx="5" fill="#e74c3c" fill-opacity="0.3" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="175" y="143" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#e74c3c">obstacle</text>
+
+  <text x="175" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">Two valid paths around the obstacle</text>
+
+  <!-- Divider -->
+  <line x1="350" y1="45" x2="350" y2="245" stroke="#ccc" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- Right: regression vs diffusion -->
+  <text x="525" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#e74c3c">Regression Prediction</text>
+
+  <!-- Obstacle in middle -->
+  <rect x="505" y="115" width="40" height="50" rx="5" fill="#e74c3c" fill-opacity="0.3" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="525" y="143" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#e74c3c">obstacle</text>
+
+  <!-- Mean prediction - right in the obstacle! -->
+  <line x1="525" y1="90" x2="525" y2="108" stroke="#e74c3c" stroke-width="3"/>
+  <polygon points="525,115 518,105 532,105" fill="#e74c3c"/>
+  <text x="525" y="83" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#e74c3c">mean = crash!</text>
+
+  <!-- Ghost of the two modes -->
+  <ellipse cx="450" cy="140" rx="25" ry="20" fill="none" stroke="#ccc" stroke-width="1" stroke-dasharray="3,2"/>
+  <ellipse cx="600" cy="140" rx="25" ry="20" fill="none" stroke="#ccc" stroke-width="1" stroke-dasharray="3,2"/>
+
+  <text x="525" y="195" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e74c3c">Regression averages the two modes</text>
+  <text x="525" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e74c3c">→ predicts straight into the obstacle</text>
+
+  <!-- Bottom note -->
+  <text x="350" y="248" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">Diffusion / flow-matching action heads can represent both modes without averaging</text>
+</svg>

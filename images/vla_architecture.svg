@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 260" width="800" height="260">
+  <defs>
+    <marker id="vla-arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#666"/>
+    </marker>
+  </defs>
+  <text x="400" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">Vision-Language-Action Model Architecture</text>
+
+  <!-- Image input -->
+  <rect x="30" y="50" width="90" height="55" rx="8" fill="#3498db" fill-opacity="0.15" stroke="#3498db" stroke-width="1.5"/>
+  <text x="75" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#3498db">Camera</text>
+  <text x="75" y="92" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#3498db">Image</text>
+
+  <line x1="120" y1="77" x2="148" y2="77" stroke="#666" stroke-width="1.5" marker-end="url(#vla-arr)"/>
+
+  <!-- Vision encoder -->
+  <rect x="156" y="45" width="90" height="65" rx="8" fill="#3498db" fill-opacity="0.10" stroke="#3498db" stroke-width="1.5"/>
+  <text x="201" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#3498db">Vision</text>
+  <text x="201" y="88" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#3498db">Encoder</text>
+  <text x="201" y="102" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#3498db">(ViT/SigLIP)</text>
+
+  <line x1="246" y1="77" x2="298" y2="120" stroke="#3498db" stroke-width="1.5" marker-end="url(#vla-arr)"/>
+
+  <!-- Language input -->
+  <rect x="30" y="160" width="90" height="55" rx="8" fill="#e74c3c" fill-opacity="0.15" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="75" y="182" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#e74c3c">Language</text>
+  <text x="75" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e74c3c">"pick up the</text>
+  <text x="75" y="212" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e74c3c">red cup"</text>
+
+  <line x1="120" y1="187" x2="148" y2="187" stroke="#666" stroke-width="1.5" marker-end="url(#vla-arr)"/>
+
+  <!-- Text tokeniser -->
+  <rect x="156" y="155" width="90" height="65" rx="8" fill="#e74c3c" fill-opacity="0.10" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="201" y="182" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#e74c3c">Text</text>
+  <text x="201" y="198" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#e74c3c">Tokeniser</text>
+
+  <line x1="246" y1="187" x2="298" y2="148" stroke="#e74c3c" stroke-width="1.5" marker-end="url(#vla-arr)"/>
+
+  <!-- LLM backbone -->
+  <rect x="306" y="95" width="160" height="75" rx="12" fill="#f39c12" fill-opacity="0.12" stroke="#f39c12" stroke-width="2"/>
+  <text x="386" y="122" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#f39c12">LLM Backbone</text>
+  <text x="386" y="142" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#f39c12">transformer decoder</text>
+  <text x="386" y="158" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#f39c12">[visual tokens] + [language tokens]</text>
+
+  <line x1="466" y1="132" x2="508" y2="132" stroke="#666" stroke-width="1.5" marker-end="url(#vla-arr)"/>
+
+  <!-- Action head -->
+  <rect x="516" y="95" width="110" height="75" rx="12" fill="#27ae60" fill-opacity="0.12" stroke="#27ae60" stroke-width="2"/>
+  <text x="571" y="122" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#27ae60">Action Head</text>
+  <text x="571" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27ae60">MLP / diffusion /</text>
+  <text x="571" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27ae60">flow matching</text>
+
+  <line x1="626" y1="132" x2="658" y2="132" stroke="#666" stroke-width="1.5" marker-end="url(#vla-arr)"/>
+
+  <!-- Action output -->
+  <rect x="666" y="100" width="110" height="65" rx="8" fill="#27ae60" fill-opacity="0.20" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="721" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#27ae60">Robot Actions</text>
+  <text x="721" y="142" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27ae60">Δx, Δy, Δz,</text>
+  <text x="721" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27ae60">Δrx, Δry, Δrz, grip</text>
+
+  <!-- Bottom label -->
+  <text x="400" y="248" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">Image + instruction → visual &amp; language tokens → transformer reasoning → motor commands</text>
+</svg>

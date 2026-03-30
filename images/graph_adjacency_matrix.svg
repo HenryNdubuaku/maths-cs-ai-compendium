@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 200" width="650" height="200">
+  <text x="325" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">A Graph and its Adjacency Matrix</text>
+
+  <!-- Graph drawing -->
+  <circle cx="100" cy="80" r="16" fill="#3498db" fill-opacity="0.2" stroke="#3498db" stroke-width="2"/>
+  <text x="100" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#3498db">1</text>
+
+  <circle cx="190" cy="80" r="16" fill="#e74c3c" fill-opacity="0.2" stroke="#e74c3c" stroke-width="2"/>
+  <text x="190" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#e74c3c">2</text>
+
+  <circle cx="145" cy="160" r="16" fill="#27ae60" fill-opacity="0.2" stroke="#27ae60" stroke-width="2"/>
+  <text x="145" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#27ae60">3</text>
+
+  <!-- Edges -->
+  <line x1="116" y1="80" x2="174" y2="80" stroke="#666" stroke-width="1.5"/>
+  <line x1="107" y1="95" x2="138" y2="145" stroke="#666" stroke-width="1.5"/>
+  <line x1="183" y1="95" x2="152" y2="145" stroke="#666" stroke-width="1.5"/>
+
+  <!-- Equals -->
+  <text x="270" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#666">=</text>
+
+  <!-- Matrix -->
+  <text x="320" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#666">A =</text>
+
+  <!-- Column headers -->
+  <text x="380" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3498db">1</text>
+  <text x="420" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e74c3c">2</text>
+  <text x="460" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27ae60">3</text>
+
+  <!-- Row headers -->
+  <text x="345" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3498db">1</text>
+  <text x="345" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e74c3c">2</text>
+  <text x="345" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27ae60">3</text>
+
+  <!-- Brackets -->
+  <text x="358" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="50" fill="#333" font-weight="100">[</text>
+  <text x="482" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="50" fill="#333" font-weight="100">]</text>
+
+  <!-- Matrix entries -->
+  <text x="380" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#ccc">0</text>
+  <text x="420" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">1</text>
+  <text x="460" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">1</text>
+
+  <text x="380" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">1</text>
+  <text x="420" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#ccc">0</text>
+  <text x="460" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">1</text>
+
+  <text x="380" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">1</text>
+  <text x="420" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">1</text>
+  <text x="460" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#ccc">0</text>
+
+  <!-- Notes -->
+  <text x="540" y="90" text-anchor="start" font-family="Arial, sans-serif" font-size="9" fill="#666">A_ij = 1 if edge</text>
+  <text x="540" y="108" text-anchor="start" font-family="Arial, sans-serif" font-size="9" fill="#666">A_ij = 0 otherwise</text>
+  <text x="540" y="130" text-anchor="start" font-family="Arial, sans-serif" font-size="9" fill="#666">Symmetric (undirected)</text>
+  <text x="540" y="148" text-anchor="start" font-family="Arial, sans-serif" font-size="9" fill="#666">Diagonal = 0 (no self-loops)</text>
+</svg>

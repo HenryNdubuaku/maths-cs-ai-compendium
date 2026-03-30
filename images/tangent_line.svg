@@ -1,0 +1,34 @@
+<svg width="380" height="200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="tl-arr" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto">
+      <path d="M0,0 L7,2.5 L0,5" fill="#ccc"/>
+    </marker>
+  </defs>
+
+  <!-- Axes -->
+  <line x1="40" y1="170" x2="360" y2="170" stroke="#ccc" stroke-width="1" marker-end="url(#tl-arr)"/>
+  <line x1="40" y1="170" x2="40" y2="15" stroke="#ccc" stroke-width="1" marker-end="url(#tl-arr)"/>
+  <text x="365" y="173" fill="#999" font-size="10">x</text>
+  <text x="35" y="12" fill="#999" font-size="10">y</text>
+
+  <!-- Curve f(x) = gentle parabola -->
+  <path d="M 50,150 Q 120,160 170,120 Q 220,80 270,55 Q 320,35 350,30"
+        fill="none" stroke="#9b59b6" stroke-width="2.5"/>
+  <text x="352" y="28" fill="#9b59b6" font-size="11">f(x)</text>
+
+  <!-- Point on curve -->
+  <circle cx="190" cy="105" r="5" fill="#e74c3c"/>
+  <text x="196" y="118" fill="#e74c3c" font-size="11" font-weight="bold">a</text>
+
+  <!-- Tangent line through point -->
+  <line x1="100" y1="160" x2="310" y2="32" stroke="#3498db" stroke-width="2" stroke-dasharray="6,3"/>
+  <text x="312" y="42" fill="#3498db" font-size="11">tangent line</text>
+
+  <!-- Slope annotation -->
+  <line x1="190" y1="105" x2="260" y2="105" stroke="#27ae60" stroke-width="1.5" stroke-dasharray="3"/>
+  <line x1="260" y1="105" x2="260" y2="62" stroke="#27ae60" stroke-width="1.5" stroke-dasharray="3"/>
+  <text x="218" y="100" fill="#27ae60" font-size="10">run</text>
+  <text x="264" y="88" fill="#27ae60" font-size="10">rise</text>
+
+  <text x="190" y="190" text-anchor="middle" fill="#666" font-size="10">slope = rise/run = f'(a) = derivative at a</text>
+</svg>

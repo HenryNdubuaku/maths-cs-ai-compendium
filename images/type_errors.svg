@@ -1,0 +1,43 @@
+<svg width="480" height="260" xmlns="http://www.w3.org/2000/svg">
+  <!-- Title -->
+  <text x="240" y="25" fill="#333" font-size="14" font-weight="bold" text-anchor="middle">Decision vs Reality</text>
+
+  <!-- Column headers -->
+  <text x="300" y="60" fill="#333" font-size="12" font-weight="bold" text-anchor="middle">H₀ is actually TRUE</text>
+  <text x="420" y="60" fill="#333" font-size="12" font-weight="bold" text-anchor="middle">H₀ is actually FALSE</text>
+
+  <!-- Row headers -->
+  <text x="140" y="115" fill="#333" font-size="12" font-weight="bold" text-anchor="middle">Reject H₀</text>
+  <text x="140" y="195" fill="#333" font-size="12" font-weight="bold" text-anchor="middle">Fail to reject H₀</text>
+
+  <!-- Grid lines -->
+  <line x1="220" y1="42" x2="220" y2="240" stroke="#ccc" stroke-width="1.5"/>
+  <line x1="360" y1="42" x2="360" y2="240" stroke="#ccc" stroke-width="1.5"/>
+  <line x1="100" y1="72" x2="480" y2="72" stroke="#ccc" stroke-width="1.5"/>
+  <line x1="100" y1="152" x2="480" y2="152" stroke="#ccc" stroke-width="1.5"/>
+  <line x1="100" y1="240" x2="480" y2="240" stroke="#ccc" stroke-width="1.5"/>
+
+  <!-- Cell: Reject + True = Type I Error -->
+  <rect x="222" y="74" width="136" height="76" fill="#e74c3c" opacity="0.12" rx="4"/>
+  <text x="290" y="105" fill="#e74c3c" font-size="13" font-weight="bold" text-anchor="middle">Type I Error</text>
+  <text x="290" y="122" fill="#e74c3c" font-size="11" text-anchor="middle">(false positive)</text>
+  <text x="290" y="140" fill="#e74c3c" font-size="11" text-anchor="middle">prob = α</text>
+
+  <!-- Cell: Reject + False = Correct (Power) -->
+  <rect x="362" y="74" width="116" height="76" fill="#27ae60" opacity="0.12" rx="4"/>
+  <text x="420" y="105" fill="#27ae60" font-size="13" font-weight="bold" text-anchor="middle">Correct!</text>
+  <text x="420" y="122" fill="#27ae60" font-size="11" text-anchor="middle">(true positive)</text>
+  <text x="420" y="140" fill="#27ae60" font-size="11" text-anchor="middle">prob = 1 - β</text>
+
+  <!-- Cell: Fail to reject + True = Correct -->
+  <rect x="222" y="154" width="136" height="84" fill="#27ae60" opacity="0.12" rx="4"/>
+  <text x="290" y="188" fill="#27ae60" font-size="13" font-weight="bold" text-anchor="middle">Correct!</text>
+  <text x="290" y="205" fill="#27ae60" font-size="11" text-anchor="middle">(true negative)</text>
+  <text x="290" y="223" fill="#27ae60" font-size="11" text-anchor="middle">prob = 1 - α</text>
+
+  <!-- Cell: Fail to reject + False = Type II Error -->
+  <rect x="362" y="154" width="116" height="84" fill="#f39c12" opacity="0.15" rx="4"/>
+  <text x="420" y="188" fill="#f39c12" font-size="13" font-weight="bold" text-anchor="middle">Type II Error</text>
+  <text x="420" y="205" fill="#f39c12" font-size="11" text-anchor="middle">(false negative)</text>
+  <text x="420" y="223" fill="#f39c12" font-size="11" text-anchor="middle">prob = β</text>
+</svg>

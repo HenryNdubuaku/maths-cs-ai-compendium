@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="290" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <marker id="arrow-ct" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0,0 8,3 0,6" fill="#333"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="350" y="22" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">Conv-TasNet Architecture</text>
+
+  <!-- Section labels -->
+  <text x="85" y="42" text-anchor="middle" font-size="9" font-weight="bold" fill="#3498db">Encoder</text>
+  <text x="330" y="42" text-anchor="middle" font-size="9" font-weight="bold" fill="#9b59b6">Separator (TCN)</text>
+  <text x="590" y="42" text-anchor="middle" font-size="9" font-weight="bold" fill="#27ae60">Decoder</text>
+
+  <!-- Mixture waveform -->
+  <rect x="20" y="55" width="80" height="40" rx="4" fill="rgba(102,102,102,0.06)" stroke="#666" stroke-width="1"/>
+  <polyline points="28,75 33,65 38,82 43,60 48,85 53,62 58,78 63,68 68,80 73,63 78,76 83,70 88,75 93,68" fill="none" stroke="#666" stroke-width="1"/>
+  <text x="60" y="105" text-anchor="middle" font-size="8" fill="#333">Mixture x(t)</text>
+
+  <line x1="100" y1="75" x2="118" y2="75" stroke="#333" stroke-width="1.2" marker-end="url(#arrow-ct)"/>
+
+  <!-- Encoder -->
+  <rect x="121" y="52" width="75" height="46" rx="6" fill="rgba(52,152,219,0.12)" stroke="#3498db" stroke-width="1.5"/>
+  <text x="158" y="70" text-anchor="middle" font-size="9" fill="#333">Encoder</text>
+  <text x="158" y="83" text-anchor="middle" font-size="7" fill="#666">1D Conv</text>
+  <text x="158" y="93" text-anchor="middle" font-size="7" fill="#666">+ ReLU</text>
+
+  <line x1="196" y1="75" x2="218" y2="75" stroke="#333" stroke-width="1.2" marker-end="url(#arrow-ct)"/>
+
+  <!-- Encoded mixture representation -->
+  <rect x="221" y="58" width="55" height="34" rx="4" fill="rgba(52,152,219,0.06)" stroke="#3498db" stroke-width="0.8"/>
+  <text x="248" y="72" text-anchor="middle" font-size="7" fill="#333">Encoded</text>
+  <text x="248" y="82" text-anchor="middle" font-size="7" fill="#333">Mixture W</text>
+
+  <line x1="276" y1="75" x2="295" y2="75" stroke="#333" stroke-width="1.2" marker-end="url(#arrow-ct)"/>
+
+  <!-- TCN Separator -->
+  <rect x="298" y="50" width="130" height="120" rx="6" fill="rgba(155,89,182,0.08)" stroke="#9b59b6" stroke-width="1.8"/>
+
+  <!-- TCN blocks with skip connections -->
+  <rect x="313" y="60" width="100" height="22" rx="4" fill="rgba(155,89,182,0.12)" stroke="#9b59b6" stroke-width="1"/>
+  <text x="363" y="75" text-anchor="middle" font-size="7" fill="#333">1x1 Conv + PReLU + Norm</text>
+
+  <rect x="313" y="88" width="100" height="22" rx="4" fill="rgba(155,89,182,0.12)" stroke="#9b59b6" stroke-width="1"/>
+  <text x="363" y="103" text-anchor="middle" font-size="7" fill="#333">D-Conv (dilation 2^k)</text>
+
+  <rect x="313" y="116" width="100" height="22" rx="4" fill="rgba(155,89,182,0.12)" stroke="#9b59b6" stroke-width="1"/>
+  <text x="363" y="131" text-anchor="middle" font-size="7" fill="#333">1x1 Conv (skip + res)</text>
+
+  <!-- Skip connection line -->
+  <line x1="413" y1="127" x2="430" y2="127" stroke="#f39c12" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="430" y1="127" x2="430" y2="60" stroke="#f39c12" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="440" y="95" font-size="6" fill="#f39c12">skip</text>
+
+  <!-- Residual path -->
+  <line x1="305" y1="71" x2="305" y2="127" stroke="#27ae60" stroke-width="0.8" stroke-dasharray="2,2"/>
+  <text x="300" y="100" font-size="6" fill="#27ae60" text-anchor="end">res</text>
+
+  <text x="363" y="150" text-anchor="middle" font-size="7" fill="#9b59b6">x R repeats</text>
+
+  <!-- Mask outputs -->
+  <rect x="313" y="155" width="100" height="18" rx="4" fill="rgba(243,156,18,0.15)" stroke="#f39c12" stroke-width="1"/>
+  <text x="363" y="168" text-anchor="middle" font-size="7" fill="#333">Sigmoid masks (M1, M2)</text>
+
+  <!-- Apply masks -->
+  <line x1="428" y1="75" x2="448" y2="75" stroke="#333" stroke-width="1.2" marker-end="url(#arrow-ct)"/>
+
+  <!-- Mask application -->
+  <rect x="451" y="55" width="60" height="40" rx="6" fill="rgba(243,156,18,0.1)" stroke="#f39c12" stroke-width="1.2"/>
+  <text x="481" y="72" text-anchor="middle" font-size="8" fill="#333">Apply</text>
+  <text x="481" y="83" text-anchor="middle" font-size="8" fill="#333">Masks</text>
+  <text x="481" y="105" text-anchor="middle" font-size="7" fill="#666">W * M_i</text>
+
+  <!-- Mask connection from TCN bottom to Apply -->
+  <line x1="413" y1="164" x2="470" y2="164" stroke="#f39c12" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="470" y1="164" x2="470" y2="95" stroke="#f39c12" stroke-width="1" stroke-dasharray="3,2"/>
+
+  <line x1="511" y1="75" x2="530" y2="75" stroke="#333" stroke-width="1.2" marker-end="url(#arrow-ct)"/>
+
+  <!-- Decoder -->
+  <rect x="533" y="52" width="75" height="46" rx="6" fill="rgba(39,174,96,0.12)" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="570" y="70" text-anchor="middle" font-size="9" fill="#333">Decoder</text>
+  <text x="570" y="83" text-anchor="middle" font-size="7" fill="#666">Transposed</text>
+  <text x="570" y="93" text-anchor="middle" font-size="7" fill="#666">1D Conv</text>
+
+  <line x1="608" y1="68" x2="635" y2="55" stroke="#3498db" stroke-width="1.2" marker-end="url(#arrow-ct)"/>
+  <line x1="608" y1="82" x2="635" y2="95" stroke="#e74c3c" stroke-width="1.2" marker-end="url(#arrow-ct)"/>
+
+  <!-- Output separated waveforms -->
+  <rect x="638" y="38" width="50" height="28" rx="4" fill="rgba(52,152,219,0.08)" stroke="#3498db" stroke-width="1"/>
+  <polyline points="644,52 648,45 652,58 656,42 660,56 664,48 668,54 672,46 676,52 680,48" fill="none" stroke="#3498db" stroke-width="0.8"/>
+  <text x="663" y="75" text-anchor="middle" font-size="7" fill="#3498db">s1(t)</text>
+
+  <rect x="638" y="85" width="50" height="28" rx="4" fill="rgba(231,76,60,0.08)" stroke="#e74c3c" stroke-width="1"/>
+  <polyline points="644,99 648,106 652,92 656,108 660,94 664,102 668,96 672,100 676,95 680,102" fill="none" stroke="#e74c3c" stroke-width="0.8"/>
+  <text x="663" y="122" text-anchor="middle" font-size="7" fill="#e74c3c">s2(t)</text>
+
+  <!-- Encoder-to-Mask connection (skip from encoded to mask apply) -->
+  <path d="M248,92 L248,190 L481,190 L481,105" fill="none" stroke="#3498db" stroke-width="0.8" stroke-dasharray="4,3"/>
+  <text x="360" y="200" text-anchor="middle" font-size="7" fill="#3498db">encoded mixture W passed to mask application</text>
+
+  <!-- Note box -->
+  <rect x="30" y="215" width="640" height="55" rx="6" fill="#f5f5f5" stroke="#333" stroke-width="1"/>
+  <text x="50" y="235" font-size="10" font-weight="bold" fill="#333">Time-domain approach:</text>
+  <text x="197" y="235" font-size="10" fill="#666">works directly on waveforms, no STFT needed.</text>
+  <text x="50" y="252" font-size="9" fill="#666">The encoder learns a task-optimal representation. The TCN separator produces masks in the learned basis,</text>
+  <text x="50" y="264" font-size="9" fill="#666">and the decoder reconstructs the separated waveforms. Achieves strong SI-SDR on speech separation benchmarks.</text>
+</svg>

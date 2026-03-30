@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="280" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <marker id="arrow-sv" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0,0 8,3 0,6" fill="#333"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0,0 8,3 0,6" fill="#27ae60"/>
+    </marker>
+    <marker id="arrow-red" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0,0 8,3 0,6" fill="#e74c3c"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="350" y="22" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">Speaker Verification Pipeline</text>
+
+  <!-- Enrollment path (top) -->
+  <rect x="20" y="45" width="85" height="36" rx="6" fill="rgba(52,152,219,0.1)" stroke="#3498db" stroke-width="1.5"/>
+  <text x="62" y="60" text-anchor="middle" font-size="9" fill="#333">Enrollment</text>
+  <text x="62" y="72" text-anchor="middle" font-size="9" fill="#333">Audio</text>
+
+  <line x1="105" y1="63" x2="135" y2="63" stroke="#333" stroke-width="1.2" marker-end="url(#arrow-sv)"/>
+
+  <rect x="138" y="45" width="100" height="36" rx="6" fill="rgba(52,152,219,0.15)" stroke="#3498db" stroke-width="1.5"/>
+  <text x="188" y="60" text-anchor="middle" font-size="9" fill="#333">Speaker</text>
+  <text x="188" y="72" text-anchor="middle" font-size="9" fill="#333">Encoder</text>
+
+  <line x1="238" y1="63" x2="268" y2="63" stroke="#333" stroke-width="1.2" marker-end="url(#arrow-sv)"/>
+
+  <rect x="271" y="45" width="100" height="36" rx="6" fill="rgba(39,174,96,0.12)" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="321" y="60" text-anchor="middle" font-size="9" fill="#333">Reference</text>
+  <text x="321" y="72" text-anchor="middle" font-size="9" fill="#333">Embedding</text>
+
+  <!-- Stored indicator -->
+  <text x="380" y="58" font-size="8" fill="#666">(stored)</text>
+
+  <!-- Test path (bottom) -->
+  <rect x="20" y="110" width="85" height="36" rx="6" fill="rgba(231,76,60,0.1)" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="62" y="125" text-anchor="middle" font-size="9" fill="#333">Test</text>
+  <text x="62" y="137" text-anchor="middle" font-size="9" fill="#333">Audio</text>
+
+  <line x1="105" y1="128" x2="135" y2="128" stroke="#333" stroke-width="1.2" marker-end="url(#arrow-sv)"/>
+
+  <rect x="138" y="110" width="100" height="36" rx="6" fill="rgba(231,76,60,0.12)" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="188" y="125" text-anchor="middle" font-size="9" fill="#333">Speaker</text>
+  <text x="188" y="137" text-anchor="middle" font-size="9" fill="#333">Encoder</text>
+
+  <line x1="238" y1="128" x2="268" y2="128" stroke="#333" stroke-width="1.2" marker-end="url(#arrow-sv)"/>
+
+  <rect x="271" y="110" width="100" height="36" rx="6" fill="rgba(231,76,60,0.12)" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="321" y="125" text-anchor="middle" font-size="9" fill="#333">Test</text>
+  <text x="321" y="137" text-anchor="middle" font-size="9" fill="#333">Embedding</text>
+
+  <!-- Arrows from both embeddings to cosine similarity -->
+  <line x1="371" y1="68" x2="440" y2="90" stroke="#333" stroke-width="1.2" marker-end="url(#arrow-sv)"/>
+  <line x1="371" y1="123" x2="440" y2="100" stroke="#333" stroke-width="1.2" marker-end="url(#arrow-sv)"/>
+
+  <!-- Cosine Similarity -->
+  <rect x="443" y="78" width="90" height="36" rx="6" fill="rgba(155,89,182,0.12)" stroke="#9b59b6" stroke-width="1.5"/>
+  <text x="488" y="93" text-anchor="middle" font-size="9" fill="#333">Cosine</text>
+  <text x="488" y="105" text-anchor="middle" font-size="9" fill="#333">Similarity</text>
+
+  <line x1="533" y1="96" x2="555" y2="96" stroke="#333" stroke-width="1.2" marker-end="url(#arrow-sv)"/>
+
+  <!-- Score -->
+  <rect x="558" y="82" width="40" height="28" rx="6" fill="rgba(243,156,18,0.12)" stroke="#f39c12" stroke-width="1.5"/>
+  <text x="578" y="100" text-anchor="middle" font-size="9" fill="#333">Score</text>
+
+  <!-- Threshold -->
+  <line x1="598" y1="96" x2="618" y2="96" stroke="#333" stroke-width="1.2" marker-end="url(#arrow-sv)"/>
+  <rect x="621" y="78" width="58" height="36" rx="6" fill="rgba(243,156,18,0.15)" stroke="#f39c12" stroke-width="1.5"/>
+  <text x="650" y="93" text-anchor="middle" font-size="9" fill="#333">Threshold</text>
+  <text x="650" y="105" text-anchor="middle" font-size="8" fill="#666">score &gt; t?</text>
+
+  <!-- Accept / Reject arrows -->
+  <line x1="650" y1="114" x2="650" y2="140" stroke="#27ae60" stroke-width="1.2"/>
+  <line x1="650" y1="140" x2="625" y2="155" stroke="#27ae60" stroke-width="1.2" marker-end="url(#arrow-green)"/>
+  <text x="615" y="165" text-anchor="middle" font-size="10" font-weight="bold" fill="#27ae60">Accept</text>
+
+  <line x1="650" y1="140" x2="675" y2="155" stroke="#e74c3c" stroke-width="1.2" marker-end="url(#arrow-red)"/>
+  <text x="685" y="165" text-anchor="middle" font-size="10" font-weight="bold" fill="#e74c3c">Reject</text>
+
+  <!-- Shared weights indicator -->
+  <line x1="188" y1="81" x2="188" y2="110" stroke="#9b59b6" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="195" y="100" font-size="7" fill="#9b59b6">shared weights</text>
+
+  <!-- Note box -->
+  <rect x="30" y="195" width="640" height="55" rx="6" fill="#f5f5f5" stroke="#333" stroke-width="1"/>
+  <text x="50" y="215" font-size="10" font-weight="bold" fill="#333">Verification:</text>
+  <text x="122" y="215" font-size="10" fill="#666">"Is this person who they claim to be?" One-to-one comparison.</text>
+  <text x="50" y="235" font-size="9" fill="#666">The encoder maps variable-length audio to a fixed-dim embedding. Cosine similarity measures closeness.</text>
+</svg>

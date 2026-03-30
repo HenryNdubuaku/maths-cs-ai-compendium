@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 220" width="750" height="220">
+  <defs>
+    <marker id="se3-arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#666"/>
+    </marker>
+  </defs>
+  <text x="375" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">SE(3)-Equivariance: Rotating Input Rotates Output</text>
+
+  <!-- Original molecule -->
+  <rect x="20" y="45" width="160" height="130" rx="10" fill="#3498db" fill-opacity="0.05" stroke="#3498db" stroke-width="1.5"/>
+  <text x="100" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#3498db">Original molecule</text>
+
+  <!-- Atoms -->
+  <circle cx="70" cy="110" r="10" fill="#e74c3c" fill-opacity="0.5" stroke="#e74c3c" stroke-width="1.5"/>
+  <circle cx="120" cy="90" r="8" fill="#3498db" fill-opacity="0.5" stroke="#3498db" stroke-width="1.5"/>
+  <circle cx="140" cy="140" r="8" fill="#3498db" fill-opacity="0.5" stroke="#3498db" stroke-width="1.5"/>
+  <line x1="78" y1="105" x2="112" y2="94" stroke="#666" stroke-width="1.5"/>
+  <line x1="78" y1="118" x2="132" y2="136" stroke="#666" stroke-width="1.5"/>
+
+  <!-- Force vector -->
+  <line x1="70" y1="110" x2="40" y2="85" stroke="#27ae60" stroke-width="2.5" marker-end="url(#se3-arr)"/>
+  <text x="30" y="78" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#27ae60">F</text>
+
+  <!-- Arrow: predict -->
+  <line x1="180" y1="110" x2="230" y2="110" stroke="#666" stroke-width="1.5" marker-end="url(#se3-arr)"/>
+  <text x="205" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">predict</text>
+
+  <!-- Energy output -->
+  <rect x="238" y="90" width="70" height="40" rx="8" fill="#f39c12" fill-opacity="0.15" stroke="#f39c12" stroke-width="1.5"/>
+  <text x="273" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#f39c12">E = 5.2</text>
+  <text x="273" y="122" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#f39c12">F = (−1, 2, 0)</text>
+
+  <!-- Rotation arrow -->
+  <path d="M 160,185 C 200,200 300,200 340,185" fill="none" stroke="#9b59b6" stroke-width="2" marker-end="url(#se3-arr)"/>
+  <text x="250" y="212" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#9b59b6">rotate by R</text>
+
+  <!-- Rotated molecule -->
+  <rect x="360" y="45" width="160" height="130" rx="10" fill="#9b59b6" fill-opacity="0.05" stroke="#9b59b6" stroke-width="1.5"/>
+  <text x="440" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#9b59b6">Rotated molecule</text>
+
+  <!-- Rotated atoms -->
+  <circle cx="420" cy="130" r="10" fill="#e74c3c" fill-opacity="0.5" stroke="#e74c3c" stroke-width="1.5"/>
+  <circle cx="450" cy="85" r="8" fill="#3498db" fill-opacity="0.5" stroke="#3498db" stroke-width="1.5"/>
+  <circle cx="480" cy="120" r="8" fill="#3498db" fill-opacity="0.5" stroke="#3498db" stroke-width="1.5"/>
+  <line x1="427" y1="122" x2="444" y2="92" stroke="#666" stroke-width="1.5"/>
+  <line x1="430" y1="130" x2="472" y2="123" stroke="#666" stroke-width="1.5"/>
+
+  <!-- Rotated force vector -->
+  <line x1="420" y1="130" x2="405" y2="158" stroke="#27ae60" stroke-width="2.5" marker-end="url(#se3-arr)"/>
+  <text x="395" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#27ae60">RF</text>
+
+  <!-- Arrow: predict -->
+  <line x1="520" y1="110" x2="570" y2="110" stroke="#666" stroke-width="1.5" marker-end="url(#se3-arr)"/>
+  <text x="545" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">predict</text>
+
+  <!-- Rotated output -->
+  <rect x="578" y="90" width="70" height="40" rx="8" fill="#f39c12" fill-opacity="0.15" stroke="#f39c12" stroke-width="1.5"/>
+  <text x="613" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#f39c12">E = 5.2</text>
+  <text x="613" y="122" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#f39c12">F = R(−1, 2, 0)</text>
+
+  <!-- Annotations -->
+  <text x="660" y="80" text-anchor="start" font-family="Arial, sans-serif" font-size="9" fill="#27ae60">scalar: same</text>
+  <text x="660" y="95" text-anchor="start" font-family="Arial, sans-serif" font-size="9" fill="#9b59b6">vector: rotated</text>
+</svg>

@@ -1,0 +1,28 @@
+<svg width="320" height="220" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr-r" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#e74c3c"/>
+    </marker>
+    <marker id="arr-b" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#3498db"/>
+    </marker>
+  </defs>
+  <!-- axes -->
+  <line x1="30" y1="190" x2="300" y2="190" stroke="#ccc" stroke-width="1"/>
+  <line x1="30" y1="190" x2="30" y2="10" stroke="#ccc" stroke-width="1"/>
+  <text x="305" y="193" fill="#999" font-size="11">x</text>
+  <text x="25" y="8" fill="#999" font-size="11">y</text>
+  <!-- grid dots for reference -->
+  <circle cx="30" cy="190" r="2" fill="#999"/>
+  <!-- vector from origin (0,0) to (3,2) -->
+  <line x1="30" y1="190" x2="150" y2="110" stroke="#e74c3c" stroke-width="2.5" marker-end="url(#arr-r)"/>
+  <text x="75" y="140" fill="#e74c3c" font-size="12" font-weight="bold">(3, 2)</text>
+  <circle cx="30" cy="190" r="3" fill="#333"/>
+  <text x="10" y="205" fill="#666" font-size="10">origin</text>
+  <!-- same vector from (2,1) to (5,3) -->
+  <line x1="110" y1="150" x2="230" y2="70" stroke="#3498db" stroke-width="2.5" marker-end="url(#arr-b)"/>
+  <text x="175" y="95" fill="#3498db" font-size="12" font-weight="bold">(3, 2)</text>
+  <circle cx="110" cy="150" r="3" fill="#333"/>
+  <!-- label -->
+  <text x="60" y="215" fill="#666" font-size="11">same displacement, different starting point</text>
+</svg>

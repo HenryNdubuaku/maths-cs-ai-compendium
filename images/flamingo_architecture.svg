@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 350" width="800" height="350" font-family="Arial, sans-serif">
+  <defs>
+    <marker id="fl-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#666"/>
+    </marker>
+    <marker id="fl-arrow-green" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#27ae60"/>
+    </marker>
+    <marker id="fl-arrow-purple" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#9b59b6"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="400" y="24" font-size="14" font-weight="bold" fill="#333" text-anchor="middle">Flamingo Architecture</text>
+
+  <!-- === Input at bottom === -->
+  <text x="400" y="340" font-size="10" fill="#666" text-anchor="middle">Input: Image₁ Text₁ Image₂ Text₂ ... (interleaved sequence)</text>
+
+  <!-- Input tokens -->
+  <rect x="180" y="305" width="44" height="20" rx="3" fill="#3498db" fill-opacity="0.25" stroke="#3498db" stroke-width="1"/>
+  <text x="202" y="319" font-size="8" fill="#3498db" text-anchor="middle">Image₁</text>
+
+  <rect x="230" y="305" width="40" height="20" rx="3" fill="#e74c3c" fill-opacity="0.2" stroke="#e74c3c" stroke-width="1"/>
+  <text x="250" y="319" font-size="8" fill="#e74c3c" text-anchor="middle">Text₁</text>
+
+  <rect x="276" y="305" width="44" height="20" rx="3" fill="#3498db" fill-opacity="0.25" stroke="#3498db" stroke-width="1"/>
+  <text x="298" y="319" font-size="8" fill="#3498db" text-anchor="middle">Image₂</text>
+
+  <rect x="326" y="305" width="40" height="20" rx="3" fill="#e74c3c" fill-opacity="0.2" stroke="#e74c3c" stroke-width="1"/>
+  <text x="346" y="319" font-size="8" fill="#e74c3c" text-anchor="middle">Text₂</text>
+
+  <!-- === Frozen Vision Encoder (left side) === -->
+  <rect x="30" y="180" width="140" height="55" rx="8" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <text x="100" y="202" font-size="11" fill="#333" text-anchor="middle">Vision Encoder</text>
+  <text x="100" y="218" font-size="9" fill="#666" text-anchor="middle">(NFNet / ViT)</text>
+
+  <!-- Snowflake frozen indicator -->
+  <text x="155" y="195" font-size="14" fill="#3498db">&#10052;</text>
+  <text x="50" y="250" font-size="9" fill="#3498db" text-anchor="middle">Frozen</text>
+
+  <!-- Arrow from Vision Encoder to Perceiver Resampler -->
+  <line x1="100" y1="180" x2="100" y2="155" stroke="#3498db" stroke-width="1.5" marker-end="url(#fl-arrow)"/>
+
+  <!-- Perceiver Resampler -->
+  <rect x="30" y="105" width="140" height="48" rx="8" fill="#27ae60" fill-opacity="0.12" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="100" y="125" font-size="10" fill="#333" text-anchor="middle">Perceiver</text>
+  <text x="100" y="139" font-size="10" fill="#333" text-anchor="middle">Resampler</text>
+
+  <!-- Visual tokens output from perceiver -->
+  <line x1="170" y1="128" x2="220" y2="128" stroke="#27ae60" stroke-width="1.5" marker-end="url(#fl-arrow-green)"/>
+
+  <!-- Visual tokens (small squares) -->
+  <rect x="225" y="120" width="10" height="10" rx="2" fill="#27ae60" fill-opacity="0.5" stroke="none"/>
+  <rect x="237" y="120" width="10" height="10" rx="2" fill="#27ae60" fill-opacity="0.5" stroke="none"/>
+  <rect x="249" y="120" width="10" height="10" rx="2" fill="#27ae60" fill-opacity="0.5" stroke="none"/>
+  <rect x="261" y="120" width="10" height="10" rx="2" fill="#27ae60" fill-opacity="0.5" stroke="none"/>
+  <text x="248" y="145" font-size="8" fill="#27ae60" text-anchor="middle">fixed-length</text>
+  <text x="248" y="155" font-size="8" fill="#27ae60" text-anchor="middle">visual tokens</text>
+
+  <!-- === Main LM stack (center-right) === -->
+  <!-- LM Block 1 (bottom) -->
+  <rect x="380" y="265" width="180" height="32" rx="6" fill="#f39c12" fill-opacity="0.12" stroke="#f39c12" stroke-width="1.5"/>
+  <text x="470" y="285" font-size="10" fill="#333" text-anchor="middle">LM Block 1</text>
+  <text x="550" y="285" font-size="10" fill="#f39c12">&#10052;</text>
+
+  <!-- Gated Cross-Attention 1 -->
+  <rect x="395" y="235" width="150" height="24" rx="5" fill="#9b59b6" fill-opacity="0.15" stroke="#9b59b6" stroke-width="1.2"/>
+  <text x="470" y="251" font-size="9" fill="#9b59b6" text-anchor="middle">Gated Cross-Attention</text>
+
+  <!-- Arrow from visual tokens to cross attention 1 -->
+  <line x1="271" y1="125" x2="393" y2="247" stroke="#27ae60" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#fl-arrow-purple)"/>
+
+  <!-- Arrow LM1 to xattn1 -->
+  <line x1="470" y1="265" x2="470" y2="261" stroke="#666" stroke-width="1"/>
+
+  <!-- LM Block 2 -->
+  <rect x="380" y="200" width="180" height="32" rx="6" fill="#f39c12" fill-opacity="0.12" stroke="#f39c12" stroke-width="1.5"/>
+  <text x="470" y="220" font-size="10" fill="#333" text-anchor="middle">LM Block 2</text>
+  <text x="550" y="220" font-size="10" fill="#f39c12">&#10052;</text>
+
+  <!-- Arrow xattn1 to LM2 -->
+  <line x1="470" y1="235" x2="470" y2="234" stroke="#666" stroke-width="1"/>
+
+  <!-- Gated Cross-Attention 2 -->
+  <rect x="395" y="168" width="150" height="24" rx="5" fill="#9b59b6" fill-opacity="0.15" stroke="#9b59b6" stroke-width="1.2"/>
+  <text x="470" y="184" font-size="9" fill="#9b59b6" text-anchor="middle">Gated Cross-Attention</text>
+
+  <!-- Arrow from visual tokens to cross attention 2 -->
+  <line x1="271" y1="125" x2="393" y2="180" stroke="#27ae60" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#fl-arrow-purple)"/>
+
+  <!-- LM Block 3 -->
+  <rect x="380" y="133" width="180" height="32" rx="6" fill="#f39c12" fill-opacity="0.12" stroke="#f39c12" stroke-width="1.5"/>
+  <text x="470" y="153" font-size="10" fill="#333" text-anchor="middle">LM Block 3</text>
+  <text x="550" y="153" font-size="10" fill="#f39c12">&#10052;</text>
+
+  <!-- LM Block 4 -->
+  <rect x="380" y="95" width="180" height="32" rx="6" fill="#f39c12" fill-opacity="0.12" stroke="#f39c12" stroke-width="1.5"/>
+  <text x="470" y="115" font-size="10" fill="#333" text-anchor="middle">LM Block 4</text>
+  <text x="550" y="115" font-size="10" fill="#f39c12">&#10052;</text>
+
+  <!-- Connecting arrows between blocks -->
+  <line x1="470" y1="200" x2="470" y2="194" stroke="#666" stroke-width="1"/>
+  <line x1="470" y1="168" x2="470" y2="167" stroke="#666" stroke-width="1"/>
+  <line x1="470" y1="133" x2="470" y2="129" stroke="#666" stroke-width="1"/>
+
+  <!-- Output arrow -->
+  <line x1="470" y1="95" x2="470" y2="62" stroke="#666" stroke-width="1.5" marker-end="url(#fl-arrow)"/>
+
+  <!-- Output text -->
+  <rect x="420" y="40" width="100" height="22" rx="5" fill="#27ae60" fill-opacity="0.12" stroke="#27ae60" stroke-width="1.2"/>
+  <text x="470" y="55" font-size="10" fill="#27ae60" text-anchor="middle" font-weight="bold">Generated Text</text>
+
+  <!-- Legend -->
+  <rect x="620" y="85" width="12" height="12" rx="2" fill="#f39c12" fill-opacity="0.12" stroke="#f39c12" stroke-width="1"/>
+  <text x="638" y="95" font-size="9" fill="#666">Frozen LM blocks</text>
+
+  <rect x="620" y="105" width="12" height="12" rx="2" fill="#9b59b6" fill-opacity="0.15" stroke="#9b59b6" stroke-width="1"/>
+  <text x="638" y="115" font-size="9" fill="#666">Trained xattn layers</text>
+
+  <rect x="620" y="125" width="12" height="12" rx="2" fill="#27ae60" fill-opacity="0.12" stroke="#27ae60" stroke-width="1"/>
+  <text x="638" y="135" font-size="9" fill="#666">Trained resampler</text>
+
+  <text x="624" y="155" font-size="12" fill="#3498db">&#10052;</text>
+  <text x="638" y="155" font-size="9" fill="#666">= Frozen weights</text>
+</svg>

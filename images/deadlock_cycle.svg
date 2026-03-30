@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 280" width="500" height="280">
+  <defs>
+    <marker id="dl-arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#e74c3c"/>
+    </marker>
+    <marker id="dl-arr2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#3498db"/>
+    </marker>
+  </defs>
+  <text x="250" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">Deadlock: Circular Wait</text>
+
+  <!-- Thread A -->
+  <circle cx="130" cy="100" r="30" fill="#3498db" fill-opacity="0.15" stroke="#3498db" stroke-width="2"/>
+  <text x="130" y="97" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#3498db">Thread</text>
+  <text x="130" y="112" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#3498db">A</text>
+
+  <!-- Thread B -->
+  <circle cx="370" cy="100" r="30" fill="#e74c3c" fill-opacity="0.15" stroke="#e74c3c" stroke-width="2"/>
+  <text x="370" y="97" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#e74c3c">Thread</text>
+  <text x="370" y="112" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#e74c3c">B</text>
+
+  <!-- Lock 1 -->
+  <rect x="105" y="175" width="50" height="35" rx="6" fill="#f39c12" fill-opacity="0.2" stroke="#f39c12" stroke-width="2"/>
+  <text x="130" y="197" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#f39c12">Lock 1</text>
+
+  <!-- Lock 2 -->
+  <rect x="345" y="175" width="50" height="35" rx="6" fill="#9b59b6" fill-opacity="0.2" stroke="#9b59b6" stroke-width="2"/>
+  <text x="370" y="197" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#9b59b6">Lock 2</text>
+
+  <!-- A holds Lock 1 -->
+  <line x1="130" y1="130" x2="130" y2="168" stroke="#3498db" stroke-width="2" marker-end="url(#dl-arr2)"/>
+  <text x="107" y="155" text-anchor="end" font-family="Arial, sans-serif" font-size="8" fill="#3498db">holds</text>
+
+  <!-- B holds Lock 2 -->
+  <line x1="370" y1="130" x2="370" y2="168" stroke="#e74c3c" stroke-width="2" marker-end="url(#dl-arr)"/>
+  <text x="393" y="155" text-anchor="start" font-family="Arial, sans-serif" font-size="8" fill="#e74c3c">holds</text>
+
+  <!-- A wants Lock 2 -->
+  <path d="M 160,100 C 220,70 310,70 340,100" fill="none" stroke="#3498db" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#dl-arr2)"/>
+  <text x="250" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#3498db">A wants Lock 2</text>
+
+  <!-- B wants Lock 1 -->
+  <path d="M 340,110 C 280,140 200,140 160,110" fill="none" stroke="#e74c3c" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#dl-arr)"/>
+  <text x="250" y="148" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#e74c3c">B wants Lock 1</text>
+
+  <!-- Deadlock label -->
+  <rect x="195" y="228" width="110" height="30" rx="8" fill="#e74c3c" fill-opacity="0.1" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="250" y="248" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#e74c3c">DEADLOCK</text>
+
+  <text x="250" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">Neither thread can proceed — each waits for the other's lock</text>
+</svg>

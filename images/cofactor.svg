@@ -1,0 +1,39 @@
+<svg width="320" height="150" xmlns="http://www.w3.org/2000/svg">
+  <!-- 3x3 matrix with row 1 and col 2 crossed out to show minor M_12 -->
+
+  <!-- matrix bracket left -->
+  <path d="M 20,10 L 10,10 L 10,130 L 20,130" fill="none" stroke="#333" stroke-width="2"/>
+  <!-- matrix bracket right -->
+  <path d="M 160,10 L 170,10 L 170,130 L 160,130" fill="none" stroke="#333" stroke-width="2"/>
+
+  <!-- cross-out row 1 -->
+  <line x1="25" y1="35" x2="155" y2="35" stroke="#e74c3c" stroke-width="2" stroke-opacity="0.6"/>
+  <!-- cross-out col 2 -->
+  <line x1="84" y1="15" x2="84" y2="125" stroke="#e74c3c" stroke-width="2" stroke-opacity="0.6"/>
+
+  <!-- entries -->
+  <text x="44" y="38" text-anchor="middle" fill="#ccc" font-size="16">1</text>
+  <text x="84" y="38" text-anchor="middle" fill="#ccc" font-size="16">5</text>
+  <text x="124" y="38" text-anchor="middle" fill="#ccc" font-size="16">3</text>
+  <text x="44" y="72" text-anchor="middle" fill="#333" font-size="16" font-weight="bold">2</text>
+  <text x="84" y="72" text-anchor="middle" fill="#ccc" font-size="16">7</text>
+  <text x="124" y="72" text-anchor="middle" fill="#333" font-size="16" font-weight="bold">4</text>
+  <text x="44" y="108" text-anchor="middle" fill="#333" font-size="16" font-weight="bold">6</text>
+  <text x="84" y="108" text-anchor="middle" fill="#ccc" font-size="16">8</text>
+  <text x="124" y="108" text-anchor="middle" fill="#333" font-size="16" font-weight="bold">9</text>
+
+  <!-- arrow -->
+  <text x="195" y="75" fill="#333" font-size="22">=</text>
+
+  <!-- resulting 2x2 minor -->
+  <path d="M 220,30 L 210,30 L 210,120 L 220,120" fill="none" stroke="#333" stroke-width="2"/>
+  <path d="M 300,30 L 310,30 L 310,120 L 300,120" fill="none" stroke="#333" stroke-width="2"/>
+  <!-- highlight -->
+  <rect x="215" y="35" width="90" height="80" rx="4" fill="#3498db" fill-opacity="0.08"/>
+  <text x="245" y="68" text-anchor="middle" fill="#333" font-size="16" font-weight="bold">2</text>
+  <text x="285" y="68" text-anchor="middle" fill="#333" font-size="16" font-weight="bold">4</text>
+  <text x="245" y="105" text-anchor="middle" fill="#333" font-size="16" font-weight="bold">6</text>
+  <text x="285" y="105" text-anchor="middle" fill="#333" font-size="16" font-weight="bold">9</text>
+
+  <text x="160" y="147" text-anchor="middle" fill="#666" font-size="11">Minor M&#x2081;&#x2082;: delete row 1 and column 2</text>
+</svg>

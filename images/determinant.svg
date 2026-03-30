@@ -1,0 +1,29 @@
+<svg width="440" height="180" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="det-arr" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto">
+      <path d="M0,0 L7,2.5 L0,5" fill="#999"/>
+    </marker>
+  </defs>
+
+  <!-- Left: unit square -->
+  <text x="80" y="14" text-anchor="middle" fill="#333" font-size="12" font-weight="bold">Before (unit square)</text>
+  <!-- axes -->
+  <line x1="20" y1="160" x2="170" y2="160" stroke="#ccc" stroke-width="1" marker-end="url(#det-arr)"/>
+  <line x1="20" y1="160" x2="20" y2="20" stroke="#ccc" stroke-width="1" marker-end="url(#det-arr)"/>
+  <!-- square -->
+  <polygon points="20,160 120,160 120,60 20,60" fill="#3498db" fill-opacity="0.15" stroke="#3498db" stroke-width="2"/>
+  <text x="70" y="118" text-anchor="middle" fill="#3498db" font-size="12">area = 1</text>
+
+  <!-- Arrow -->
+  <text x="220" y="90" text-anchor="middle" fill="#333" font-size="20">→</text>
+  <text x="220" y="110" text-anchor="middle" fill="#666" font-size="11">transform</text>
+
+  <!-- Right: parallelogram -->
+  <text x="340" y="14" text-anchor="middle" fill="#333" font-size="12" font-weight="bold">After (parallelogram)</text>
+  <!-- axes -->
+  <line x1="250" y1="160" x2="420" y2="160" stroke="#ccc" stroke-width="1" marker-end="url(#det-arr)"/>
+  <line x1="250" y1="160" x2="250" y2="20" stroke="#ccc" stroke-width="1" marker-end="url(#det-arr)"/>
+  <!-- parallelogram -->
+  <polygon points="250,160 370,160 410,60 290,60" fill="#e74c3c" fill-opacity="0.15" stroke="#e74c3c" stroke-width="2"/>
+  <text x="330" y="118" text-anchor="middle" fill="#e74c3c" font-size="12">area = |det(A)|</text>
+</svg>

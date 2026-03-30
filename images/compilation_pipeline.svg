@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 180" width="800" height="180">
+  <defs>
+    <marker id="cp-arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#666"/>
+    </marker>
+  </defs>
+  <text x="400" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">Compilation Pipeline: Source Code → Machine Code</text>
+
+  <!-- Source -->
+  <rect x="15" y="55" width="80" height="50" rx="8" fill="#555" fill-opacity="0.1" stroke="#555" stroke-width="1.5"/>
+  <text x="55" y="77" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#555">Source</text>
+  <text x="55" y="92" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#555">x = 3 + y</text>
+
+  <line x1="95" y1="80" x2="118" y2="80" stroke="#666" stroke-width="1.5" marker-end="url(#cp-arr)"/>
+
+  <!-- Lexer -->
+  <rect x="126" y="55" width="75" height="50" rx="8" fill="#e74c3c" fill-opacity="0.12" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="163" y="77" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#e74c3c">Lexer</text>
+  <text x="163" y="92" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#e74c3c">tokens</text>
+
+  <line x1="201" y1="80" x2="224" y2="80" stroke="#666" stroke-width="1.5" marker-end="url(#cp-arr)"/>
+
+  <!-- Parser -->
+  <rect x="232" y="55" width="75" height="50" rx="8" fill="#f39c12" fill-opacity="0.12" stroke="#f39c12" stroke-width="1.5"/>
+  <text x="269" y="77" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#f39c12">Parser</text>
+  <text x="269" y="92" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#f39c12">AST</text>
+
+  <line x1="307" y1="80" x2="330" y2="80" stroke="#666" stroke-width="1.5" marker-end="url(#cp-arr)"/>
+
+  <!-- Semantic -->
+  <rect x="338" y="55" width="85" height="50" rx="8" fill="#27ae60" fill-opacity="0.12" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="380" y="74" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#27ae60">Semantic</text>
+  <text x="380" y="89" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#27ae60">Analysis</text>
+  <text x="380" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#27ae60">type check</text>
+
+  <line x1="423" y1="80" x2="446" y2="80" stroke="#666" stroke-width="1.5" marker-end="url(#cp-arr)"/>
+
+  <!-- Optimiser -->
+  <rect x="454" y="55" width="85" height="50" rx="8" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <text x="496" y="77" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#3498db">Optimiser</text>
+  <text x="496" y="92" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#3498db">IR (LLVM)</text>
+
+  <line x1="539" y1="80" x2="562" y2="80" stroke="#666" stroke-width="1.5" marker-end="url(#cp-arr)"/>
+
+  <!-- Code gen -->
+  <rect x="570" y="55" width="80" height="50" rx="8" fill="#9b59b6" fill-opacity="0.12" stroke="#9b59b6" stroke-width="1.5"/>
+  <text x="610" y="74" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#9b59b6">Code</text>
+  <text x="610" y="89" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#9b59b6">Gen</text>
+
+  <line x1="650" y1="80" x2="673" y2="80" stroke="#666" stroke-width="1.5" marker-end="url(#cp-arr)"/>
+
+  <!-- Machine code -->
+  <rect x="681" y="55" width="95" height="50" rx="8" fill="#555" fill-opacity="0.15" stroke="#555" stroke-width="1.5"/>
+  <text x="728" y="74" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#555">Machine</text>
+  <text x="728" y="89" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#555">Code</text>
+  <text x="728" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#555">x86 / ARM</text>
+
+  <!-- Bottom labels -->
+  <text x="163" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#e74c3c">text → tokens</text>
+  <text x="269" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#f39c12">tokens → tree</text>
+  <text x="380" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#27ae60">types + names</text>
+  <text x="496" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#3498db">fold, inline, elim</text>
+  <text x="610" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#9b59b6">IR → target ISA</text>
+
+  <text x="400" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">Each stage transforms the program into a lower-level representation</text>
+</svg>

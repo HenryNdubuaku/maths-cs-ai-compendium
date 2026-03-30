@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 250" width="700" height="250">
+  <text x="350" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">Bounding Boxes vs Occupancy Grid</text>
+
+  <!-- Left: bounding box scene -->
+  <text x="175" y="48" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#3498db">Object Detection (Boxes)</text>
+
+  <!-- Road -->
+  <rect x="30" y="80" width="290" height="150" rx="4" fill="#eee" stroke="#ccc" stroke-width="1"/>
+
+  <!-- Car bbox -->
+  <rect x="60" y="100" width="80" height="40" rx="2" fill="none" stroke="#3498db" stroke-width="2"/>
+  <text x="100" y="124" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3498db">car</text>
+
+  <!-- Oddly shaped debris - bbox is wasteful -->
+  <polygon points="200,160 240,140 260,155 250,190 210,200 190,180" fill="#e74c3c" fill-opacity="0.2" stroke="#e74c3c" stroke-width="1.5"/>
+  <rect x="185" y="135" width="80" height="70" rx="2" fill="none" stroke="#e74c3c" stroke-width="2" stroke-dasharray="4,3"/>
+  <text x="225" y="225" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e74c3c">debris (box wastes space)</text>
+
+  <!-- Right: occupancy grid -->
+  <text x="525" y="48" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#27ae60">Occupancy Grid (Voxels)</text>
+
+  <!-- Grid -->
+  <g transform="translate(390, 80)">
+    <!-- Draw 12x7 grid -->
+    <rect width="270" height="150" fill="#eee" stroke="#ccc" stroke-width="1" rx="4"/>
+    <!-- Grid lines -->
+    <line x1="0" y1="21.4" x2="270" y2="21.4" stroke="#ddd" stroke-width="0.5"/>
+    <line x1="0" y1="42.8" x2="270" y2="42.8" stroke="#ddd" stroke-width="0.5"/>
+    <line x1="0" y1="64.3" x2="270" y2="64.3" stroke="#ddd" stroke-width="0.5"/>
+    <line x1="0" y1="85.7" x2="270" y2="85.7" stroke="#ddd" stroke-width="0.5"/>
+    <line x1="0" y1="107.1" x2="270" y2="107.1" stroke="#ddd" stroke-width="0.5"/>
+    <line x1="0" y1="128.6" x2="270" y2="128.6" stroke="#ddd" stroke-width="0.5"/>
+
+    <line x1="22.5" y1="0" x2="22.5" y2="150" stroke="#ddd" stroke-width="0.5"/>
+    <line x1="45" y1="0" x2="45" y2="150" stroke="#ddd" stroke-width="0.5"/>
+    <line x1="67.5" y1="0" x2="67.5" y2="150" stroke="#ddd" stroke-width="0.5"/>
+    <line x1="90" y1="0" x2="90" y2="150" stroke="#ddd" stroke-width="0.5"/>
+    <line x1="112.5" y1="0" x2="112.5" y2="150" stroke="#ddd" stroke-width="0.5"/>
+    <line x1="135" y1="0" x2="135" y2="150" stroke="#ddd" stroke-width="0.5"/>
+    <line x1="157.5" y1="0" x2="157.5" y2="150" stroke="#ddd" stroke-width="0.5"/>
+    <line x1="180" y1="0" x2="180" y2="150" stroke="#ddd" stroke-width="0.5"/>
+    <line x1="202.5" y1="0" x2="202.5" y2="150" stroke="#ddd" stroke-width="0.5"/>
+    <line x1="225" y1="0" x2="225" y2="150" stroke="#ddd" stroke-width="0.5"/>
+    <line x1="247.5" y1="0" x2="247.5" y2="150" stroke="#ddd" stroke-width="0.5"/>
+
+    <!-- Car cells (blue) -->
+    <rect x="22.5" y="21.4" width="22.5" height="21.4" fill="#3498db" fill-opacity="0.5"/>
+    <rect x="45" y="21.4" width="22.5" height="21.4" fill="#3498db" fill-opacity="0.5"/>
+    <rect x="67.5" y="21.4" width="22.5" height="21.4" fill="#3498db" fill-opacity="0.5"/>
+    <rect x="22.5" y="42.8" width="22.5" height="21.4" fill="#3498db" fill-opacity="0.5"/>
+    <rect x="45" y="42.8" width="22.5" height="21.4" fill="#3498db" fill-opacity="0.5"/>
+    <rect x="67.5" y="42.8" width="22.5" height="21.4" fill="#3498db" fill-opacity="0.5"/>
+
+    <!-- Debris cells (red) - follows actual shape -->
+    <rect x="157.5" y="64.3" width="22.5" height="21.4" fill="#e74c3c" fill-opacity="0.5"/>
+    <rect x="180" y="42.8" width="22.5" height="21.4" fill="#e74c3c" fill-opacity="0.5"/>
+    <rect x="180" y="64.3" width="22.5" height="21.4" fill="#e74c3c" fill-opacity="0.5"/>
+    <rect x="202.5" y="64.3" width="22.5" height="21.4" fill="#e74c3c" fill-opacity="0.5"/>
+    <rect x="180" y="85.7" width="22.5" height="21.4" fill="#e74c3c" fill-opacity="0.5"/>
+    <rect x="157.5" y="85.7" width="22.5" height="21.4" fill="#e74c3c" fill-opacity="0.5"/>
+  </g>
+  <text x="525" y="248" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">Voxels follow the actual shape -- no wasted space, no predefined categories needed</text>
+</svg>

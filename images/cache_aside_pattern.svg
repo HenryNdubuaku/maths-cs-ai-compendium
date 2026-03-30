@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 250" width="650" height="250">
+  <defs>
+    <marker id="ca-arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#666"/>
+    </marker>
+  </defs>
+  <text x="325" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">Cache-Aside Pattern</text>
+
+  <!-- App -->
+  <rect x="250" y="55" width="100" height="50" rx="10" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="2"/>
+  <text x="300" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#3498db">Application</text>
+
+  <!-- Cache -->
+  <rect x="50" y="150" width="110" height="50" rx="10" fill="#f39c12" fill-opacity="0.12" stroke="#f39c12" stroke-width="2"/>
+  <text x="105" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#f39c12">Cache (Redis)</text>
+
+  <!-- Database -->
+  <rect x="440" y="150" width="110" height="50" rx="10" fill="#27ae60" fill-opacity="0.12" stroke="#27ae60" stroke-width="2"/>
+  <text x="495" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#27ae60">Database</text>
+
+  <!-- Step 1: check cache -->
+  <line x1="260" y1="100" x2="140" y2="150" stroke="#f39c12" stroke-width="1.5" marker-end="url(#ca-arr)"/>
+  <text x="170" y="118" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#f39c12">1. Check cache</text>
+
+  <!-- Step 2: cache miss → query DB -->
+  <line x1="340" y1="100" x2="460" y2="150" stroke="#27ae60" stroke-width="1.5" marker-end="url(#ca-arr)"/>
+  <text x="430" y="118" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#27ae60">2. Miss → query DB</text>
+
+  <!-- Step 3: store in cache -->
+  <line x1="440" y1="180" x2="168" y2="180" stroke="#9b59b6" stroke-width="1.5" marker-end="url(#ca-arr)" stroke-dasharray="5,3"/>
+  <text x="300" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#9b59b6">3. Store result in cache for next time</text>
+
+  <!-- Cache hit path -->
+  <rect x="30" y="70" width="70" height="25" rx="5" fill="#27ae60" fill-opacity="0.15" stroke="#27ae60" stroke-width="1"/>
+  <text x="65" y="87" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#27ae60">HIT: ~1ms</text>
+
+  <rect x="520" y="70" width="80" height="25" rx="5" fill="#e74c3c" fill-opacity="0.15" stroke="#e74c3c" stroke-width="1"/>
+  <text x="560" y="87" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#e74c3c">MISS: ~50ms</text>
+
+  <text x="325" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">Subsequent requests for the same data hit the cache (1ms) instead of the database (50ms)</text>
+</svg>

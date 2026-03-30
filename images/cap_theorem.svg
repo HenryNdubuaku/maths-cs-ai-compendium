@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 300" width="500" height="300">
+  <text x="250" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">CAP Theorem: Pick Two (in practice: CP or AP)</text>
+
+  <!-- Triangle -->
+  <polygon points="250,55 80,250 420,250" fill="none" stroke="#999" stroke-width="1.5"/>
+
+  <!-- C -->
+  <circle cx="250" cy="55" r="35" fill="#3498db" fill-opacity="0.15" stroke="#3498db" stroke-width="2"/>
+  <text x="250" y="52" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#3498db">C</text>
+  <text x="250" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#3498db">Consistency</text>
+
+  <!-- A -->
+  <circle cx="80" cy="250" r="35" fill="#27ae60" fill-opacity="0.15" stroke="#27ae60" stroke-width="2"/>
+  <text x="80" y="247" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#27ae60">A</text>
+  <text x="80" y="263" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#27ae60">Availability</text>
+
+  <!-- P -->
+  <circle cx="420" cy="250" r="35" fill="#e74c3c" fill-opacity="0.15" stroke="#e74c3c" stroke-width="2"/>
+  <text x="420" y="247" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#e74c3c">P</text>
+  <text x="420" y="263" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#e74c3c">Partition Tolerance</text>
+
+  <!-- CP label -->
+  <text x="350" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#9b59b6">CP</text>
+  <text x="350" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#9b59b6">PostgreSQL</text>
+  <text x="350" y="172" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#9b59b6">model registry</text>
+
+  <!-- AP label -->
+  <text x="150" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#f39c12">AP</text>
+  <text x="150" y="195" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#f39c12">Cassandra, DynamoDB</text>
+  <text x="150" y="207" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#f39c12">feature store</text>
+
+  <text x="250" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">Network partitions are inevitable → real choice is CP (consistent) vs AP (available)</text>
+</svg>

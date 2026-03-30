@@ -1,0 +1,68 @@
+<svg width="720" height="220" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="ocr-arrow" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#555"/>
+    </marker>
+  </defs>
+  <text x="360" y="22" fill="#333" font-size="14" font-weight="bold" text-anchor="middle">CRNN Text Recognition Pipeline</text>
+
+  <!-- Input image -->
+  <rect x="20" y="50" width="100" height="50" rx="6" fill="#f5f5f5" stroke="#333" stroke-width="1.5"/>
+  <text x="70" y="70" fill="#333" font-size="14" text-anchor="middle" font-style="italic" font-weight="bold">Hello</text>
+  <text x="70" y="86" fill="#999" font-size="8" text-anchor="middle">(text image)</text>
+  <text x="70" y="118" fill="#666" font-size="9" text-anchor="middle" font-weight="bold">Input</text>
+
+  <line x1="120" y1="75" x2="150" y2="75" stroke="#555" stroke-width="1.5" marker-end="url(#ocr-arrow)"/>
+
+  <!-- CNN feature extractor -->
+  <rect x="155" y="40" width="100" height="70" rx="8" fill="#3498db" opacity="0.12" stroke="#3498db" stroke-width="2"/>
+  <text x="205" y="68" fill="#3498db" font-size="11" text-anchor="middle" font-weight="bold">CNN</text>
+  <text x="205" y="83" fill="#3498db" font-size="9" text-anchor="middle">Extract visual</text>
+  <text x="205" y="95" fill="#3498db" font-size="9" text-anchor="middle">features</text>
+  <text x="205" y="128" fill="#3498db" font-size="9" text-anchor="middle">Spatial features</text>
+
+  <line x1="255" y1="75" x2="285" y2="75" stroke="#555" stroke-width="1.5" marker-end="url(#ocr-arrow)"/>
+
+  <!-- Feature columns -->
+  <g>
+    <rect x="290" y="45" width="8" height="60" rx="2" fill="#f39c12" opacity="0.3" stroke="#f39c12" stroke-width="1"/>
+    <rect x="302" y="45" width="8" height="60" rx="2" fill="#f39c12" opacity="0.3" stroke="#f39c12" stroke-width="1"/>
+    <rect x="314" y="45" width="8" height="60" rx="2" fill="#f39c12" opacity="0.3" stroke="#f39c12" stroke-width="1"/>
+    <rect x="326" y="45" width="8" height="60" rx="2" fill="#f39c12" opacity="0.3" stroke="#f39c12" stroke-width="1"/>
+    <rect x="338" y="45" width="8" height="60" rx="2" fill="#f39c12" opacity="0.3" stroke="#f39c12" stroke-width="1"/>
+    <rect x="350" y="45" width="8" height="60" rx="2" fill="#f39c12" opacity="0.3" stroke="#f39c12" stroke-width="1"/>
+    <rect x="362" y="45" width="8" height="60" rx="2" fill="#f39c12" opacity="0.3" stroke="#f39c12" stroke-width="1"/>
+  </g>
+  <text x="330" y="128" fill="#f39c12" font-size="9" text-anchor="middle">Column slices</text>
+
+  <line x1="375" y1="75" x2="405" y2="75" stroke="#555" stroke-width="1.5" marker-end="url(#ocr-arrow)"/>
+
+  <!-- BiLSTM -->
+  <rect x="410" y="40" width="100" height="70" rx="8" fill="#e74c3c" opacity="0.12" stroke="#e74c3c" stroke-width="2"/>
+  <text x="460" y="65" fill="#e74c3c" font-size="11" text-anchor="middle" font-weight="bold">BiLSTM</text>
+  <text x="460" y="80" fill="#e74c3c" font-size="9" text-anchor="middle">Sequence</text>
+  <text x="460" y="92" fill="#e74c3c" font-size="9" text-anchor="middle">modelling</text>
+  <text x="460" y="128" fill="#e74c3c" font-size="9" text-anchor="middle">Context-aware</text>
+
+  <line x1="510" y1="75" x2="540" y2="75" stroke="#555" stroke-width="1.5" marker-end="url(#ocr-arrow)"/>
+
+  <!-- CTC Decoder -->
+  <rect x="545" y="40" width="80" height="70" rx="8" fill="#9b59b6" opacity="0.12" stroke="#9b59b6" stroke-width="2"/>
+  <text x="585" y="65" fill="#9b59b6" font-size="11" text-anchor="middle" font-weight="bold">CTC</text>
+  <text x="585" y="80" fill="#9b59b6" font-size="9" text-anchor="middle">Decode</text>
+  <text x="585" y="92" fill="#9b59b6" font-size="9" text-anchor="middle">alignment</text>
+  <text x="585" y="128" fill="#9b59b6" font-size="9" text-anchor="middle">No segmentation</text>
+
+  <line x1="625" y1="75" x2="650" y2="75" stroke="#555" stroke-width="1.5" marker-end="url(#ocr-arrow)"/>
+
+  <!-- Output text -->
+  <rect x="655" y="50" width="55" height="50" rx="6" fill="#27ae60" opacity="0.15" stroke="#27ae60" stroke-width="2"/>
+  <text x="682" y="80" fill="#27ae60" font-size="14" text-anchor="middle" font-weight="bold">Hello</text>
+  <text x="682" y="118" fill="#27ae60" font-size="9" text-anchor="middle" font-weight="bold">Output</text>
+
+  <!-- CTC detail -->
+  <rect x="140" y="148" width="440" height="55" rx="8" fill="#f5f5f5" stroke="#ddd" stroke-width="1"/>
+  <text x="360" y="167" fill="#9b59b6" font-size="10" text-anchor="middle" font-weight="bold">CTC: Connectionist Temporal Classification</text>
+  <text x="360" y="183" fill="#555" font-size="10" text-anchor="middle">Handles many-to-one alignment: "HH-ee-ll-ll-oo" → "Hello"</text>
+  <text x="360" y="197" fill="#555" font-size="9" text-anchor="middle">No need for pre-segmented training data. Blank token (–) separates repeated characters.</text>
+</svg>

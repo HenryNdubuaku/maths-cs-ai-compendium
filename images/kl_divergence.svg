@@ -1,0 +1,35 @@
+<svg width="700" height="300" xmlns="http://www.w3.org/2000/svg">
+  <text x="350" y="22" fill="#333" font-size="14" font-weight="bold" text-anchor="middle">KL Divergence: Distance Between Distributions</text>
+
+  <!-- Axes -->
+  <line x1="60" y1="230" x2="640" y2="230" stroke="#333" stroke-width="1.5"/>
+  <line x1="60" y1="230" x2="60" y2="40" stroke="#333" stroke-width="1.5"/>
+  <text x="350" y="255" fill="#666" font-size="11" text-anchor="middle">x</text>
+  <text x="35" y="135" fill="#666" font-size="11" text-anchor="middle" transform="rotate(-90,35,135)">Density</text>
+
+  <!-- Distribution p (true) -->
+  <path d="M 80,228 C 100,225 130,210 170,170 C 200,130 230,75 280,55 C 310,48 320,50 340,60 C 370,80 400,130 430,175 C 460,210 490,225 520,228" fill="none" stroke="#3498db" stroke-width="2.5"/>
+  <path d="M 80,228 C 100,225 130,210 170,170 C 200,130 230,75 280,55 C 310,48 320,50 340,60 C 370,80 400,130 430,175 C 460,210 490,225 520,228 Z" fill="#3498db" opacity="0.1"/>
+
+  <!-- Distribution q (approximation) -->
+  <path d="M 150,228 C 180,225 210,210 250,165 C 280,125 320,70 380,52 C 410,47 430,50 450,60 C 480,80 510,125 540,170 C 560,200 580,220 610,228" fill="none" stroke="#e74c3c" stroke-width="2.5"/>
+  <path d="M 150,228 C 180,225 210,210 250,165 C 280,125 320,70 380,52 C 410,47 430,50 450,60 C 480,80 510,125 540,170 C 560,200 580,220 610,228 Z" fill="#e74c3c" opacity="0.1"/>
+
+  <!-- Shaded gap between distributions -->
+  <text x="330" y="140" fill="#9b59b6" font-size="12" text-anchor="middle" font-weight="bold">gap = KL</text>
+
+  <!-- Labels -->
+  <text x="230" y="85" fill="#3498db" font-size="12" font-weight="bold">p (true)</text>
+  <text x="460" y="85" fill="#e74c3c" font-size="12" font-weight="bold">q (approx)</text>
+
+  <!-- Formula -->
+  <rect x="160" y="263" width="380" height="30" rx="6" fill="#f5f5f5" stroke="#333" stroke-width="1"/>
+  <text x="350" y="284" fill="#333" font-size="12" text-anchor="middle">D_KL(p ∥ q) = Σ p(x) · log( p(x) / q(x) ) ≥ 0</text>
+
+  <!-- Key properties -->
+  <text x="120" y="148" fill="#666" font-size="10" text-anchor="middle">D_KL = 0 only if</text>
+  <text x="120" y="163" fill="#666" font-size="10" text-anchor="middle">p = q exactly</text>
+
+  <text x="580" y="148" fill="#666" font-size="10" text-anchor="middle">Not symmetric:</text>
+  <text x="580" y="163" fill="#666" font-size="10" text-anchor="middle">D_KL(p∥q) ≠ D_KL(q∥p)</text>
+</svg>

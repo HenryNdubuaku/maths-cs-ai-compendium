@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 300" width="750" height="300">
+  <defs>
+    <marker id="sd-arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#666"/>
+    </marker>
+  </defs>
+  <text x="375" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">Speculative Decoding: Draft → Verify → Accept</text>
+
+  <!-- Step 1: Draft model generates candidates -->
+  <rect x="30" y="45" width="200" height="100" rx="10" fill="#3498db" fill-opacity="0.06" stroke="#3498db" stroke-width="1.5"/>
+  <text x="130" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#3498db">1. Draft Model (1B)</text>
+  <text x="130" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3498db">fast, approximate</text>
+
+  <rect x="50" y="92" width="32" height="22" rx="4" fill="#3498db" fill-opacity="0.25" stroke="#3498db" stroke-width="1"/>
+  <text x="66" y="107" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#3498db">The</text>
+  <rect x="86" y="92" width="32" height="22" rx="4" fill="#3498db" fill-opacity="0.25" stroke="#3498db" stroke-width="1"/>
+  <text x="102" y="107" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#3498db">cat</text>
+  <rect x="122" y="92" width="32" height="22" rx="4" fill="#3498db" fill-opacity="0.25" stroke="#3498db" stroke-width="1"/>
+  <text x="138" y="107" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#3498db">sat</text>
+  <rect x="158" y="92" width="32" height="22" rx="4" fill="#3498db" fill-opacity="0.25" stroke="#3498db" stroke-width="1"/>
+  <text x="174" y="107" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#3498db">on</text>
+  <rect x="194" y="92" width="32" height="22" rx="4" fill="#3498db" fill-opacity="0.25" stroke="#3498db" stroke-width="1"/>
+  <text x="210" y="107" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#3498db">a</text>
+
+  <text x="130" y="138" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#3498db">5 tokens in ~5ms (1ms each)</text>
+
+  <line x1="230" y1="95" x2="275" y2="95" stroke="#666" stroke-width="1.5" marker-end="url(#sd-arr)"/>
+
+  <!-- Step 2: Target model verifies ALL at once -->
+  <rect x="283" y="45" width="200" height="100" rx="10" fill="#e74c3c" fill-opacity="0.06" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="383" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#e74c3c">2. Target Model (70B)</text>
+  <text x="383" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e74c3c">slow, accurate — 1 forward pass</text>
+
+  <rect x="303" y="92" width="32" height="22" rx="4" fill="#27ae60" fill-opacity="0.3" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="319" y="107" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#27ae60">The ✓</text>
+  <rect x="339" y="92" width="32" height="22" rx="4" fill="#27ae60" fill-opacity="0.3" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="355" y="107" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#27ae60">cat ✓</text>
+  <rect x="375" y="92" width="32" height="22" rx="4" fill="#27ae60" fill-opacity="0.3" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="391" y="107" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#27ae60">sat ✓</text>
+  <rect x="411" y="92" width="32" height="22" rx="4" fill="#e74c3c" fill-opacity="0.3" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="427" y="107" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#e74c3c">on ✗</text>
+  <rect x="447" y="92" width="32" height="22" rx="4" fill="#ccc" fill-opacity="0.3" stroke="#ccc" stroke-width="1"/>
+  <text x="463" y="107" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#999">skip</text>
+
+  <text x="383" y="138" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#e74c3c">1 forward pass: ~10ms (verifies all 5)</text>
+
+  <line x1="483" y1="95" x2="528" y2="95" stroke="#666" stroke-width="1.5" marker-end="url(#sd-arr)"/>
+
+  <!-- Step 3: Result -->
+  <rect x="536" y="45" width="190" height="100" rx="10" fill="#27ae60" fill-opacity="0.06" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="631" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#27ae60">3. Result</text>
+
+  <rect x="556" y="82" width="32" height="22" rx="4" fill="#27ae60" fill-opacity="0.3" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="572" y="97" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#27ae60">The</text>
+  <rect x="592" y="82" width="32" height="22" rx="4" fill="#27ae60" fill-opacity="0.3" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="608" y="97" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#27ae60">cat</text>
+  <rect x="628" y="82" width="32" height="22" rx="4" fill="#27ae60" fill-opacity="0.3" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="644" y="97" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#27ae60">sat</text>
+  <rect x="664" y="82" width="46" height="22" rx="4" fill="#f39c12" fill-opacity="0.3" stroke="#f39c12" stroke-width="1.5"/>
+  <text x="687" y="97" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#f39c12">upon</text>
+
+  <text x="631" y="118" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#27ae60">3 accepted + 1 resampled</text>
+  <text x="631" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#27ae60">= 4 tokens in ~15ms</text>
+
+  <!-- Comparison -->
+  <rect x="50" y="170" width="650" height="110" rx="10" fill="#f5f5f5" stroke="#ddd" stroke-width="1"/>
+  <text x="375" y="192" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#333">Comparison</text>
+
+  <text x="200" y="218" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#e74c3c">Standard Decoding</text>
+  <text x="200" y="235" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">4 tokens × 10ms each = 40ms</text>
+  <text x="200" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">4 target model calls</text>
+
+  <text x="550" y="218" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#27ae60">Speculative Decoding</text>
+  <text x="550" y="235" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">5ms draft + 10ms verify = 15ms</text>
+  <text x="550" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">1 target model call → 2.7x faster</text>
+
+  <text x="375" y="272" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#27ae60">Output is statistically identical to standard decoding (lossless)</text>
+</svg>

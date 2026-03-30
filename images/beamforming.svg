@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="290" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <marker id="arrow-bf" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0,0 8,3 0,6" fill="#333"/>
+    </marker>
+    <marker id="arrow-blue-bf" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0,0 8,3 0,6" fill="#3498db"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="350" y="22" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">Beamforming with Microphone Array</text>
+
+  <!-- Sound source -->
+  <circle cx="80" cy="50" r="14" fill="rgba(231,76,60,0.15)" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="80" y="53" text-anchor="middle" font-size="8" font-weight="bold" fill="#e74c3c">S</text>
+  <text x="80" y="78" text-anchor="middle" font-size="8" fill="#e74c3c">Sound</text>
+  <text x="80" y="88" text-anchor="middle" font-size="8" fill="#e74c3c">Source</text>
+
+  <!-- Sound waves (arcs) -->
+  <path d="M100,50 Q120,30 130,60" fill="none" stroke="#e74c3c" stroke-width="0.7" opacity="0.4"/>
+  <path d="M108,50 Q132,25 145,65" fill="none" stroke="#e74c3c" stroke-width="0.7" opacity="0.3"/>
+  <path d="M116,50 Q145,20 160,70" fill="none" stroke="#e74c3c" stroke-width="0.7" opacity="0.2"/>
+
+  <!-- Wavefront lines (angled) hitting mics -->
+  <line x1="120" y1="40" x2="240" y2="105" stroke="#e74c3c" stroke-width="0.8" stroke-dasharray="4,3" opacity="0.5"/>
+  <line x1="128" y1="48" x2="240" y2="130" stroke="#e74c3c" stroke-width="0.8" stroke-dasharray="4,3" opacity="0.5"/>
+  <line x1="136" y1="56" x2="240" y2="155" stroke="#e74c3c" stroke-width="0.8" stroke-dasharray="4,3" opacity="0.5"/>
+  <line x1="144" y1="64" x2="240" y2="180" stroke="#e74c3c" stroke-width="0.8" stroke-dasharray="4,3" opacity="0.5"/>
+
+  <!-- Angle theta -->
+  <line x1="210" y1="100" x2="210" y2="190" stroke="#666" stroke-width="0.6" stroke-dasharray="2,2"/>
+  <path d="M210,130 Q195,115 185,105" fill="none" stroke="#f39c12" stroke-width="1"/>
+  <text x="190" y="125" font-size="9" font-weight="bold" fill="#f39c12">theta</text>
+
+  <!-- Microphones (vertical array) -->
+  <rect x="230" y="95" width="24" height="18" rx="4" fill="rgba(52,152,219,0.15)" stroke="#3498db" stroke-width="1.5"/>
+  <text x="242" y="108" text-anchor="middle" font-size="7" fill="#3498db">M1</text>
+
+  <rect x="230" y="120" width="24" height="18" rx="4" fill="rgba(52,152,219,0.15)" stroke="#3498db" stroke-width="1.5"/>
+  <text x="242" y="133" text-anchor="middle" font-size="7" fill="#3498db">M2</text>
+
+  <rect x="230" y="145" width="24" height="18" rx="4" fill="rgba(52,152,219,0.15)" stroke="#3498db" stroke-width="1.5"/>
+  <text x="242" y="158" text-anchor="middle" font-size="7" fill="#3498db">M3</text>
+
+  <rect x="230" y="170" width="24" height="18" rx="4" fill="rgba(52,152,219,0.15)" stroke="#3498db" stroke-width="1.5"/>
+  <text x="242" y="183" text-anchor="middle" font-size="7" fill="#3498db">M4</text>
+
+  <!-- Array spacing label -->
+  <line x1="222" y1="113" x2="222" y2="120" stroke="#666" stroke-width="0.6"/>
+  <text x="216" y="120" text-anchor="end" font-size="6" fill="#666">d</text>
+
+  <!-- Delay lines -->
+  <line x1="254" y1="104" x2="310" y2="104" stroke="#333" stroke-width="1.2" marker-end="url(#arrow-bf)"/>
+  <line x1="254" y1="129" x2="310" y2="129" stroke="#333" stroke-width="1.2" marker-end="url(#arrow-bf)"/>
+  <line x1="254" y1="154" x2="310" y2="154" stroke="#333" stroke-width="1.2" marker-end="url(#arrow-bf)"/>
+  <line x1="254" y1="179" x2="310" y2="179" stroke="#333" stroke-width="1.2" marker-end="url(#arrow-bf)"/>
+
+  <!-- Delay blocks -->
+  <rect x="313" y="92" width="65" height="24" rx="4" fill="rgba(243,156,18,0.12)" stroke="#f39c12" stroke-width="1.2"/>
+  <text x="345" y="108" text-anchor="middle" font-size="7" fill="#333">Delay tau_1</text>
+
+  <rect x="313" y="117" width="65" height="24" rx="4" fill="rgba(243,156,18,0.12)" stroke="#f39c12" stroke-width="1.2"/>
+  <text x="345" y="133" text-anchor="middle" font-size="7" fill="#333">Delay tau_2</text>
+
+  <rect x="313" y="142" width="65" height="24" rx="4" fill="rgba(243,156,18,0.12)" stroke="#f39c12" stroke-width="1.2"/>
+  <text x="345" y="158" text-anchor="middle" font-size="7" fill="#333">Delay tau_3</text>
+
+  <rect x="313" y="167" width="65" height="24" rx="4" fill="rgba(243,156,18,0.12)" stroke="#f39c12" stroke-width="1.2"/>
+  <text x="345" y="183" text-anchor="middle" font-size="7" fill="#333">Delay tau_4</text>
+
+  <!-- Delay formula -->
+  <text x="345" y="202" text-anchor="middle" font-size="7" fill="#666">tau_i = i*d*sin(theta)/c</text>
+
+  <!-- Arrows from delays to sum -->
+  <line x1="378" y1="104" x2="430" y2="135" stroke="#333" stroke-width="1" marker-end="url(#arrow-bf)"/>
+  <line x1="378" y1="129" x2="430" y2="137" stroke="#333" stroke-width="1" marker-end="url(#arrow-bf)"/>
+  <line x1="378" y1="154" x2="430" y2="143" stroke="#333" stroke-width="1" marker-end="url(#arrow-bf)"/>
+  <line x1="378" y1="179" x2="430" y2="148" stroke="#333" stroke-width="1" marker-end="url(#arrow-bf)"/>
+
+  <!-- Sum block -->
+  <circle cx="445" cy="142" r="18" fill="rgba(39,174,96,0.12)" stroke="#27ae60" stroke-width="1.8"/>
+  <text x="445" y="147" text-anchor="middle" font-size="16" font-weight="bold" fill="#27ae60">+</text>
+  <text x="445" y="170" text-anchor="middle" font-size="7" fill="#27ae60">Sum</text>
+
+  <!-- Arrow to output -->
+  <line x1="463" y1="142" x2="498" y2="142" stroke="#333" stroke-width="1.2" marker-end="url(#arrow-bf)"/>
+
+  <!-- 1/N scaling -->
+  <rect x="500" y="130" width="35" height="24" rx="4" fill="rgba(39,174,96,0.08)" stroke="#27ae60" stroke-width="1"/>
+  <text x="517" y="146" text-anchor="middle" font-size="9" fill="#333">1/N</text>
+
+  <line x1="535" y1="142" x2="558" y2="142" stroke="#333" stroke-width="1.2" marker-end="url(#arrow-bf)"/>
+
+  <!-- Enhanced signal -->
+  <rect x="561" y="122" width="110" height="40" rx="6" fill="rgba(27,174,96,0.1)" stroke="#27ae60" stroke-width="1.5"/>
+  <polyline points="571,142 576,132 581,148 586,128 591,150 596,134 601,146 606,136 611,142 616,134 621,148 626,130 631,146 636,138 641,142 646,136 651,144 656,138 661,142" fill="none" stroke="#27ae60" stroke-width="1.2"/>
+  <text x="616" y="170" text-anchor="middle" font-size="8" font-weight="bold" fill="#27ae60">Enhanced Signal</text>
+
+  <!-- Note box -->
+  <rect x="30" y="215" width="640" height="55" rx="6" fill="#f5f5f5" stroke="#333" stroke-width="1"/>
+  <text x="50" y="235" font-size="10" font-weight="bold" fill="#333">Delay-and-sum beamforming:</text>
+  <text x="260" y="235" font-size="10" fill="#666">align signals by compensating for propagation delay, then sum.</text>
+  <text x="50" y="252" font-size="9" fill="#666">Signals from the target direction add constructively; off-axis noise partially cancels. The delay for</text>
+  <text x="50" y="264" font-size="9" fill="#666">each mic depends on the angle of arrival and mic spacing. Neural beamformers learn the combining weights.</text>
+</svg>

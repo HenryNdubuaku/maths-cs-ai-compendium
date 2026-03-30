@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 200" width="750" height="200">
+  <defs>
+    <marker id="rp-arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#666"/>
+    </marker>
+  </defs>
+  <text x="375" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">Recommendation System: Two-Stage Pipeline</text>
+
+  <!-- All items -->
+  <rect x="20" y="55" width="95" height="50" rx="8" fill="#555" fill-opacity="0.1" stroke="#555" stroke-width="1.5"/>
+  <text x="67" y="77" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#555">100M items</text>
+  <text x="67" y="93" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#555">full catalogue</text>
+
+  <line x1="115" y1="80" x2="145" y2="80" stroke="#666" stroke-width="1.5" marker-end="url(#rp-arr)"/>
+
+  <!-- Candidate gen -->
+  <rect x="153" y="45" width="120" height="70" rx="10" fill="#3498db" fill-opacity="0.1" stroke="#3498db" stroke-width="2"/>
+  <text x="213" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#3498db">Candidate</text>
+  <text x="213" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#3498db">Generation</text>
+  <text x="213" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#3498db">two-tower + ANN</text>
+  <text x="213" y="112" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#3498db">~50ms</text>
+
+  <line x1="273" y1="80" x2="303" y2="80" stroke="#666" stroke-width="1.5" marker-end="url(#rp-arr)"/>
+  <text x="288" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">~1000</text>
+
+  <!-- Ranking -->
+  <rect x="311" y="45" width="120" height="70" rx="10" fill="#f39c12" fill-opacity="0.1" stroke="#f39c12" stroke-width="2"/>
+  <text x="371" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#f39c12">Ranking</text>
+  <text x="371" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#f39c12">Model</text>
+  <text x="371" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#f39c12">deep NN, rich features</text>
+  <text x="371" y="112" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#f39c12">~100ms</text>
+
+  <line x1="431" y1="80" x2="461" y2="80" stroke="#666" stroke-width="1.5" marker-end="url(#rp-arr)"/>
+  <text x="446" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">~100</text>
+
+  <!-- Re-ranking -->
+  <rect x="469" y="45" width="120" height="70" rx="10" fill="#27ae60" fill-opacity="0.1" stroke="#27ae60" stroke-width="2"/>
+  <text x="529" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#27ae60">Re-ranking</text>
+  <text x="529" y="88" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#27ae60">diversity, freshness</text>
+  <text x="529" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#27ae60">safety, exploration</text>
+  <text x="529" y="112" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#27ae60">~10ms</text>
+
+  <line x1="589" y1="80" x2="619" y2="80" stroke="#666" stroke-width="1.5" marker-end="url(#rp-arr)"/>
+  <text x="604" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">~20</text>
+
+  <!-- User sees -->
+  <rect x="627" y="55" width="95" height="50" rx="8" fill="#9b59b6" fill-opacity="0.15" stroke="#9b59b6" stroke-width="1.5"/>
+  <text x="674" y="77" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#9b59b6">User sees</text>
+  <text x="674" y="93" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#9b59b6">20 items</text>
+
+  <!-- Funnel labels -->
+  <text x="375" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">100M → 1000 → 100 → 20: each stage narrows with increasing precision</text>
+  <text x="375" y="168" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">Total latency: ~160ms (well within 200ms budget)</text>
+</svg>

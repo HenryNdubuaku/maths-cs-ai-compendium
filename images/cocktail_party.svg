@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="280" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <marker id="arrow-cp" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0,0 8,3 0,6" fill="#333"/>
+    </marker>
+    <marker id="arrow-blue-cp" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0,0 8,3 0,6" fill="#3498db"/>
+    </marker>
+    <marker id="arrow-red-cp" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0,0 8,3 0,6" fill="#e74c3c"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="350" y="22" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">The Cocktail Party Problem</text>
+
+  <!-- Speaker 1 icon -->
+  <circle cx="55" cy="65" r="12" fill="rgba(52,152,219,0.15)" stroke="#3498db" stroke-width="1.5"/>
+  <circle cx="55" cy="60" r="5" fill="none" stroke="#3498db" stroke-width="1.2"/>
+  <path d="M47,72 Q55,80 63,72" fill="none" stroke="#3498db" stroke-width="1.2"/>
+  <text x="55" y="90" text-anchor="middle" font-size="8" fill="#3498db">Speaker 1</text>
+
+  <!-- Speaker 1 waveform -->
+  <polyline points="78,58 85,50 90,66 95,48 100,68 105,52 110,62 115,55 120,65" fill="none" stroke="#3498db" stroke-width="1.2"/>
+
+  <!-- Speaker 2 icon -->
+  <circle cx="55" cy="130" r="12" fill="rgba(231,76,60,0.15)" stroke="#e74c3c" stroke-width="1.5"/>
+  <circle cx="55" cy="125" r="5" fill="none" stroke="#e74c3c" stroke-width="1.2"/>
+  <path d="M47,137 Q55,145 63,137" fill="none" stroke="#e74c3c" stroke-width="1.2"/>
+  <text x="55" y="155" text-anchor="middle" font-size="8" fill="#e74c3c">Speaker 2</text>
+
+  <!-- Speaker 2 waveform -->
+  <polyline points="78,125 83,132 90,118 97,135 102,120 108,130 113,122 118,128 123,124" fill="none" stroke="#e74c3c" stroke-width="1.2"/>
+
+  <!-- Combining arrows to microphone -->
+  <line x1="125" y1="60" x2="165" y2="90" stroke="#3498db" stroke-width="1" marker-end="url(#arrow-blue-cp)"/>
+  <line x1="125" y1="130" x2="165" y2="100" stroke="#e74c3c" stroke-width="1" marker-end="url(#arrow-red-cp)"/>
+
+  <!-- Plus sign -->
+  <text x="145" y="98" text-anchor="middle" font-size="14" font-weight="bold" fill="#666">+</text>
+
+  <!-- Microphone -->
+  <rect x="170" y="82" width="30" height="30" rx="6" fill="rgba(102,102,102,0.1)" stroke="#666" stroke-width="1.5"/>
+  <circle cx="185" cy="92" r="6" fill="none" stroke="#666" stroke-width="1.2"/>
+  <line x1="185" y1="98" x2="185" y2="106" stroke="#666" stroke-width="1.5"/>
+  <line x1="179" y1="106" x2="191" y2="106" stroke="#666" stroke-width="1.2"/>
+  <text x="185" y="125" text-anchor="middle" font-size="7" fill="#666">Mic</text>
+
+  <!-- Mixed signal -->
+  <line x1="200" y1="97" x2="225" y2="97" stroke="#333" stroke-width="1.2" marker-end="url(#arrow-cp)"/>
+
+  <rect x="228" y="72" width="90" height="50" rx="6" fill="rgba(155,89,182,0.08)" stroke="#9b59b6" stroke-width="1.2"/>
+  <text x="273" y="92" text-anchor="middle" font-size="8" fill="#333">Mixed Signal</text>
+  <!-- Mixed waveform -->
+  <polyline points="238,100 243,90 248,108 253,85 258,110 263,88 268,105 273,82 278,112 283,90 288,102 293,88 298,95 303,100 308,92" fill="none" stroke="#9b59b6" stroke-width="1"/>
+
+  <!-- Arrow to separation model -->
+  <line x1="318" y1="97" x2="348" y2="97" stroke="#333" stroke-width="1.2" marker-end="url(#arrow-cp)"/>
+
+  <!-- Separation Model -->
+  <rect x="351" y="62" width="110" height="70" rx="6" fill="rgba(243,156,18,0.12)" stroke="#f39c12" stroke-width="1.8"/>
+  <text x="406" y="85" text-anchor="middle" font-size="10" font-weight="bold" fill="#333">Separation</text>
+  <text x="406" y="100" text-anchor="middle" font-size="10" font-weight="bold" fill="#333">Model</text>
+  <text x="406" y="118" text-anchor="middle" font-size="7" fill="#666">(deep network)</text>
+
+  <!-- Output arrows -->
+  <line x1="461" y1="82" x2="495" y2="65" stroke="#3498db" stroke-width="1.2" marker-end="url(#arrow-blue-cp)"/>
+  <line x1="461" y1="112" x2="495" y2="128" stroke="#e74c3c" stroke-width="1.2" marker-end="url(#arrow-red-cp)"/>
+
+  <!-- Separated signal 1 -->
+  <rect x="498" y="42" width="170" height="40" rx="6" fill="rgba(52,152,219,0.08)" stroke="#3498db" stroke-width="1.2"/>
+  <polyline points="510,62 517,52 522,68 527,50 532,70 537,54 542,64 547,57 552,67 557,55 562,62 567,58 572,65 577,53 582,66 587,58 592,62 597,55 602,65 607,58 612,62 617,55 622,60 627,64 632,58 637,62 642,56 647,60 652,62 657,58" fill="none" stroke="#3498db" stroke-width="1"/>
+  <text x="583" y="90" text-anchor="middle" font-size="8" fill="#3498db">Recovered Source 1</text>
+
+  <!-- Separated signal 2 -->
+  <rect x="498" y="110" width="170" height="40" rx="6" fill="rgba(231,76,60,0.08)" stroke="#e74c3c" stroke-width="1.2"/>
+  <polyline points="510,130 515,138 522,122 529,140 534,125 540,135 545,127 550,133 555,128 560,136 565,124 570,138 575,126 580,132 585,128 590,134 595,122 600,136 605,128 610,130 615,126 620,132 625,122 630,130 635,128 640,134 645,126 650,130 655,128 660,132" fill="none" stroke="#e74c3c" stroke-width="1"/>
+  <text x="583" y="158" text-anchor="middle" font-size="8" fill="#e74c3c">Recovered Source 2</text>
+
+  <!-- Note box -->
+  <rect x="30" y="185" width="640" height="55" rx="6" fill="#f5f5f5" stroke="#333" stroke-width="1"/>
+  <text x="50" y="205" font-size="10" font-weight="bold" fill="#333">The cocktail party problem:</text>
+  <text x="260" y="205" font-size="10" fill="#666">recover individual sources from a mixture.</text>
+  <text x="50" y="225" font-size="9" fill="#666">Humans do this effortlessly via auditory attention. Deep learning approaches learn to separate sources</text>
+  <text x="50" y="237" font-size="9" fill="#666">from mixed signals, even when trained on synthetic mixtures. Key challenge: the permutation problem.</text>
+</svg>

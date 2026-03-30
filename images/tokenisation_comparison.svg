@@ -1,0 +1,50 @@
+<svg width="700" height="260" xmlns="http://www.w3.org/2000/svg">
+  <text x="350" y="22" fill="#333" font-size="14" font-weight="bold" text-anchor="middle">Tokenisation Strategies for "unhappiness"</text>
+
+  <!-- Word-level -->
+  <text x="30" y="72" fill="#e74c3c" font-size="12" font-weight="bold">Word:</text>
+  <rect x="120" y="52" width="150" height="32" rx="6" fill="#e74c3c" opacity="0.12" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="195" y="73" fill="#e74c3c" font-size="13" text-anchor="middle">unhappiness</text>
+  <text x="400" y="72" fill="#666" font-size="10">1 token — compact, but rare words get unknown token</text>
+
+  <!-- Character-level -->
+  <text x="30" y="137" fill="#3498db" font-size="12" font-weight="bold">Character:</text>
+  <g>
+    <rect x="120" y="117" width="28" height="32" rx="4" fill="#3498db" opacity="0.12" stroke="#3498db" stroke-width="1"/>
+    <text x="134" y="138" fill="#3498db" font-size="12" text-anchor="middle">u</text>
+    <rect x="152" y="117" width="28" height="32" rx="4" fill="#3498db" opacity="0.12" stroke="#3498db" stroke-width="1"/>
+    <text x="166" y="138" fill="#3498db" font-size="12" text-anchor="middle">n</text>
+    <rect x="184" y="117" width="28" height="32" rx="4" fill="#3498db" opacity="0.12" stroke="#3498db" stroke-width="1"/>
+    <text x="198" y="138" fill="#3498db" font-size="12" text-anchor="middle">h</text>
+    <rect x="216" y="117" width="28" height="32" rx="4" fill="#3498db" opacity="0.12" stroke="#3498db" stroke-width="1"/>
+    <text x="230" y="138" fill="#3498db" font-size="12" text-anchor="middle">a</text>
+    <rect x="248" y="117" width="28" height="32" rx="4" fill="#3498db" opacity="0.12" stroke="#3498db" stroke-width="1"/>
+    <text x="262" y="138" fill="#3498db" font-size="12" text-anchor="middle">p</text>
+    <rect x="280" y="117" width="28" height="32" rx="4" fill="#3498db" opacity="0.12" stroke="#3498db" stroke-width="1"/>
+    <text x="294" y="138" fill="#3498db" font-size="12" text-anchor="middle">p</text>
+    <rect x="312" y="117" width="28" height="32" rx="4" fill="#3498db" opacity="0.12" stroke="#3498db" stroke-width="1"/>
+    <text x="326" y="138" fill="#3498db" font-size="12" text-anchor="middle">i</text>
+    <rect x="344" y="117" width="28" height="32" rx="4" fill="#3498db" opacity="0.12" stroke="#3498db" stroke-width="1"/>
+    <text x="358" y="138" fill="#3498db" font-size="12" text-anchor="middle">n</text>
+    <rect x="376" y="117" width="28" height="32" rx="4" fill="#3498db" opacity="0.12" stroke="#3498db" stroke-width="1"/>
+    <text x="390" y="138" fill="#3498db" font-size="12" text-anchor="middle">e</text>
+    <rect x="408" y="117" width="28" height="32" rx="4" fill="#3498db" opacity="0.12" stroke="#3498db" stroke-width="1"/>
+    <text x="422" y="138" fill="#3498db" font-size="12" text-anchor="middle">s</text>
+    <rect x="440" y="117" width="28" height="32" rx="4" fill="#3498db" opacity="0.12" stroke="#3498db" stroke-width="1"/>
+    <text x="454" y="138" fill="#3498db" font-size="12" text-anchor="middle">s</text>
+  </g>
+  <text x="510" y="137" fill="#666" font-size="10">11 tokens — no unknowns, but very long</text>
+
+  <!-- Subword (BPE) -->
+  <text x="30" y="207" fill="#27ae60" font-size="12" font-weight="bold">Subword:</text>
+  <rect x="120" y="187" width="55" height="32" rx="6" fill="#27ae60" opacity="0.12" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="147" y="208" fill="#27ae60" font-size="13" text-anchor="middle">un</text>
+  <rect x="185" y="187" width="80" height="32" rx="6" fill="#27ae60" opacity="0.12" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="225" y="208" fill="#27ae60" font-size="13" text-anchor="middle">happi</text>
+  <rect x="275" y="187" width="65" height="32" rx="6" fill="#27ae60" opacity="0.12" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="307" y="208" fill="#27ae60" font-size="13" text-anchor="middle">ness</text>
+  <text x="400" y="207" fill="#666" font-size="10">3 tokens — best of both: compact and open vocab</text>
+
+  <!-- Bottom note -->
+  <text x="350" y="250" fill="#666" font-size="10" text-anchor="middle">Subword tokenisation (BPE) approximates morphological analysis from data</text>
+</svg>

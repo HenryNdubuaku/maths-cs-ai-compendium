@@ -1,0 +1,155 @@
+<svg width="700" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="stft-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0,0 8,3 0,6" fill="#666"/>
+    </marker>
+    <marker id="stft-arrow-big" markerWidth="10" markerHeight="8" refX="10" refY="4" orient="auto">
+      <polygon points="0,0 10,4 0,8" fill="#3498db"/>
+    </marker>
+  </defs>
+
+  <text x="350" y="22" fill="#333" font-size="14" font-weight="bold" text-anchor="middle">Short-Time Fourier Transform (STFT) and Spectrogram</text>
+
+  <!-- ===== LEFT: Time-domain waveform ===== -->
+  <text x="120" y="48" fill="#333" font-size="11" font-weight="bold" text-anchor="middle">Time Domain</text>
+
+  <!-- Waveform axes -->
+  <line x1="25" y1="140" x2="230" y2="140" stroke="#999" stroke-width="0.8"/>
+  <line x1="25" y1="200" x2="25" y2="70" stroke="#999" stroke-width="0.8"/>
+  <text x="235" y="145" fill="#666" font-size="8">t</text>
+
+  <!-- Waveform: varying frequency signal -->
+  <path d="M 25,140 C 30,140 32,110 35,105 C 38,100 40,140 43,140 C 46,140 48,175 51,180 C 54,185 56,140 59,140 C 62,140 63,115 65,110 C 67,105 69,140 72,140 C 75,140 76,165 78,170 C 80,175 82,140 85,140 C 87,140 89,100 92,95 C 95,90 98,140 101,140 C 104,140 106,185 109,190 C 112,195 114,140 117,140 C 119,140 120,108 122,102 C 124,96 126,140 129,140 C 132,140 133,178 135,185 C 137,192 139,140 142,140 C 145,140 146,112 148,106 C 150,100 152,140 155,140 C 158,140 159,170 161,176 C 163,182 165,140 168,140 C 170,140 172,120 174,115 C 176,110 178,140 181,140 C 184,140 186,160 188,165 C 190,170 192,140 195,140 C 198,140 200,125 202,122 C 204,119 206,140 209,140 C 212,140 214,155 216,158 C 218,161 220,140 222,140" fill="none" stroke="#3498db" stroke-width="1.8"/>
+
+  <!-- Overlapping windows (highlighted regions) -->
+  <rect x="35" y="75" width="55" height="130" rx="2" fill="#e74c3c" opacity="0.08" stroke="#e74c3c" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <rect x="60" y="75" width="55" height="130" rx="2" fill="#f39c12" opacity="0.08" stroke="#f39c12" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <rect x="85" y="75" width="55" height="130" rx="2" fill="#27ae60" opacity="0.08" stroke="#27ae60" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <rect x="110" y="75" width="55" height="130" rx="2" fill="#9b59b6" opacity="0.08" stroke="#9b59b6" stroke-width="0.8" stroke-dasharray="3,2"/>
+
+  <text x="62" y="218" fill="#e74c3c" font-size="8">w1</text>
+  <text x="87" y="218" fill="#f39c12" font-size="8">w2</text>
+  <text x="112" y="218" fill="#27ae60" font-size="8">w3</text>
+  <text x="137" y="218" fill="#9b59b6" font-size="8">w4</text>
+  <text x="120" y="232" fill="#666" font-size="8" text-anchor="middle">overlapping windows</text>
+
+  <!-- Arrow from waveform to spectrogram -->
+  <line x1="245" y1="140" x2="300" y2="140" stroke="#3498db" stroke-width="2" marker-end="url(#stft-arrow-big)"/>
+  <text x="273" y="132" fill="#3498db" font-size="9" font-weight="bold" text-anchor="middle">FFT</text>
+  <text x="273" y="152" fill="#3498db" font-size="8" text-anchor="middle">per frame</text>
+
+  <!-- ===== RIGHT: Spectrogram ===== -->
+  <text x="470" y="48" fill="#333" font-size="11" font-weight="bold" text-anchor="middle">Spectrogram</text>
+
+  <!-- Spectrogram axes -->
+  <line x1="320" y1="220" x2="630" y2="220" stroke="#999" stroke-width="0.8" marker-end="url(#stft-arrow)"/>
+  <line x1="320" y1="220" x2="320" y2="58" stroke="#999" stroke-width="0.8" marker-end="url(#stft-arrow)"/>
+  <text x="475" y="238" fill="#666" font-size="9" text-anchor="middle">Time (frames)</text>
+  <text x="310" y="140" fill="#666" font-size="9" text-anchor="middle" transform="rotate(-90, 310, 140)">Frequency</text>
+
+  <!-- Spectrogram grid: coloured rectangles at different opacities -->
+  <!-- Row heights: each ~16px, 10 rows from y=60 to y=220 -->
+  <!-- Columns: ~12 columns from x=320 to x=620, each 25px wide -->
+
+  <!-- Low frequencies (bottom rows) — generally more energy -->
+  <!-- Row 1 (bottom, lowest freq) -->
+  <rect x="320" y="204" width="25" height="16" fill="#3498db" opacity="0.7"/>
+  <rect x="345" y="204" width="25" height="16" fill="#3498db" opacity="0.8"/>
+  <rect x="370" y="204" width="25" height="16" fill="#3498db" opacity="0.6"/>
+  <rect x="395" y="204" width="25" height="16" fill="#3498db" opacity="0.9"/>
+  <rect x="420" y="204" width="25" height="16" fill="#3498db" opacity="0.5"/>
+  <rect x="445" y="204" width="25" height="16" fill="#3498db" opacity="0.7"/>
+  <rect x="470" y="204" width="25" height="16" fill="#3498db" opacity="0.85"/>
+  <rect x="495" y="204" width="25" height="16" fill="#3498db" opacity="0.6"/>
+  <rect x="520" y="204" width="25" height="16" fill="#3498db" opacity="0.75"/>
+  <rect x="545" y="204" width="25" height="16" fill="#3498db" opacity="0.5"/>
+  <rect x="570" y="204" width="25" height="16" fill="#3498db" opacity="0.65"/>
+  <rect x="595" y="204" width="25" height="16" fill="#3498db" opacity="0.4"/>
+
+  <!-- Row 2 -->
+  <rect x="320" y="188" width="25" height="16" fill="#3498db" opacity="0.5"/>
+  <rect x="345" y="188" width="25" height="16" fill="#3498db" opacity="0.6"/>
+  <rect x="370" y="188" width="25" height="16" fill="#3498db" opacity="0.8"/>
+  <rect x="395" y="188" width="25" height="16" fill="#3498db" opacity="0.7"/>
+  <rect x="420" y="188" width="25" height="16" fill="#3498db" opacity="0.4"/>
+  <rect x="445" y="188" width="25" height="16" fill="#9b59b6" opacity="0.6"/>
+  <rect x="470" y="188" width="25" height="16" fill="#9b59b6" opacity="0.7"/>
+  <rect x="495" y="188" width="25" height="16" fill="#3498db" opacity="0.5"/>
+  <rect x="520" y="188" width="25" height="16" fill="#3498db" opacity="0.6"/>
+  <rect x="545" y="188" width="25" height="16" fill="#3498db" opacity="0.35"/>
+  <rect x="570" y="188" width="25" height="16" fill="#9b59b6" opacity="0.5"/>
+  <rect x="595" y="188" width="25" height="16" fill="#3498db" opacity="0.3"/>
+
+  <!-- Row 3 -->
+  <rect x="320" y="172" width="25" height="16" fill="#27ae60" opacity="0.3"/>
+  <rect x="345" y="172" width="25" height="16" fill="#27ae60" opacity="0.5"/>
+  <rect x="370" y="172" width="25" height="16" fill="#27ae60" opacity="0.7"/>
+  <rect x="395" y="172" width="25" height="16" fill="#27ae60" opacity="0.4"/>
+  <rect x="420" y="172" width="25" height="16" fill="#27ae60" opacity="0.3"/>
+  <rect x="445" y="172" width="25" height="16" fill="#e74c3c" opacity="0.5"/>
+  <rect x="470" y="172" width="25" height="16" fill="#e74c3c" opacity="0.6"/>
+  <rect x="495" y="172" width="25" height="16" fill="#27ae60" opacity="0.4"/>
+  <rect x="520" y="172" width="25" height="16" fill="#27ae60" opacity="0.5"/>
+  <rect x="545" y="172" width="25" height="16" fill="#27ae60" opacity="0.25"/>
+  <rect x="570" y="172" width="25" height="16" fill="#e74c3c" opacity="0.4"/>
+  <rect x="595" y="172" width="25" height="16" fill="#27ae60" opacity="0.2"/>
+
+  <!-- Row 4 -->
+  <rect x="320" y="156" width="25" height="16" fill="#f39c12" opacity="0.15"/>
+  <rect x="345" y="156" width="25" height="16" fill="#f39c12" opacity="0.3"/>
+  <rect x="370" y="156" width="25" height="16" fill="#f39c12" opacity="0.5"/>
+  <rect x="395" y="156" width="25" height="16" fill="#e74c3c" opacity="0.6"/>
+  <rect x="420" y="156" width="25" height="16" fill="#f39c12" opacity="0.2"/>
+  <rect x="445" y="156" width="25" height="16" fill="#f39c12" opacity="0.4"/>
+  <rect x="470" y="156" width="25" height="16" fill="#f39c12" opacity="0.5"/>
+  <rect x="495" y="156" width="25" height="16" fill="#f39c12" opacity="0.3"/>
+  <rect x="520" y="156" width="25" height="16" fill="#e74c3c" opacity="0.55"/>
+  <rect x="545" y="156" width="25" height="16" fill="#f39c12" opacity="0.15"/>
+  <rect x="570" y="156" width="25" height="16" fill="#f39c12" opacity="0.35"/>
+  <rect x="595" y="156" width="25" height="16" fill="#f39c12" opacity="0.1"/>
+
+  <!-- Row 5 -->
+  <rect x="320" y="140" width="25" height="16" fill="#f39c12" opacity="0.1"/>
+  <rect x="345" y="140" width="25" height="16" fill="#f39c12" opacity="0.15"/>
+  <rect x="370" y="140" width="25" height="16" fill="#f39c12" opacity="0.25"/>
+  <rect x="395" y="140" width="25" height="16" fill="#e74c3c" opacity="0.4"/>
+  <rect x="420" y="140" width="25" height="16" fill="#f39c12" opacity="0.1"/>
+  <rect x="445" y="140" width="25" height="16" fill="#f39c12" opacity="0.2"/>
+  <rect x="470" y="140" width="25" height="16" fill="#f39c12" opacity="0.3"/>
+  <rect x="495" y="140" width="25" height="16" fill="#f39c12" opacity="0.15"/>
+  <rect x="520" y="140" width="25" height="16" fill="#e74c3c" opacity="0.35"/>
+  <rect x="545" y="140" width="25" height="16" fill="#f39c12" opacity="0.1"/>
+  <rect x="570" y="140" width="25" height="16" fill="#f39c12" opacity="0.18"/>
+  <rect x="595" y="140" width="25" height="16" fill="#f39c12" opacity="0.08"/>
+
+  <!-- Row 6-8 (high freq, sparse energy) -->
+  <rect x="370" y="124" width="25" height="16" fill="#e74c3c" opacity="0.15"/>
+  <rect x="395" y="124" width="25" height="16" fill="#e74c3c" opacity="0.3"/>
+  <rect x="445" y="124" width="25" height="16" fill="#e74c3c" opacity="0.12"/>
+  <rect x="470" y="124" width="25" height="16" fill="#e74c3c" opacity="0.18"/>
+  <rect x="520" y="124" width="25" height="16" fill="#e74c3c" opacity="0.2"/>
+
+  <rect x="395" y="108" width="25" height="16" fill="#e74c3c" opacity="0.12"/>
+  <rect x="520" y="108" width="25" height="16" fill="#e74c3c" opacity="0.1"/>
+
+  <rect x="395" y="92" width="25" height="16" fill="#e74c3c" opacity="0.06"/>
+  <rect x="470" y="92" width="25" height="16" fill="#e74c3c" opacity="0.05"/>
+
+  <!-- Intensity legend -->
+  <text x="640" y="75" fill="#666" font-size="8" text-anchor="middle">Energy</text>
+  <rect x="633" y="80" width="14" height="12" fill="#3498db" opacity="0.9"/>
+  <text x="655" y="90" fill="#666" font-size="7">high</text>
+  <rect x="633" y="95" width="14" height="12" fill="#3498db" opacity="0.5"/>
+  <rect x="633" y="110" width="14" height="12" fill="#3498db" opacity="0.2"/>
+  <text x="655" y="120" fill="#666" font-size="7">low</text>
+
+  <!-- Frequency labels on y-axis -->
+  <text x="316" y="68" fill="#666" font-size="8" text-anchor="end">8 kHz</text>
+  <text x="316" y="140" fill="#666" font-size="8" text-anchor="end">4 kHz</text>
+  <text x="316" y="218" fill="#666" font-size="8" text-anchor="end">0 Hz</text>
+
+  <!-- Bottom note -->
+  <rect x="90" y="260" width="520" height="30" rx="4" fill="#f5f5f5" stroke="#333" stroke-width="0.8"/>
+  <text x="350" y="274" fill="#333" font-size="10" text-anchor="middle">STFT: slide a window along the signal, compute FFT of each frame.</text>
+  <text x="350" y="286" fill="#666" font-size="9" text-anchor="middle">Darker cells = more energy at that time-frequency bin</text>
+</svg>

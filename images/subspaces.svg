@@ -1,0 +1,33 @@
+<svg width="420" height="220" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="ax-arr" markerWidth="6" markerHeight="5" refX="6" refY="2.5" orient="auto">
+      <path d="M0,0 L6,2.5 L0,5" fill="#999"/>
+    </marker>
+  </defs>
+
+  <!-- Left: line through origin in R2 -->
+  <text x="90" y="16" fill="#333" font-size="12" font-weight="bold" text-anchor="middle">Line in R²</text>
+  <!-- axes -->
+  <line x1="20" y1="190" x2="180" y2="190" stroke="#ccc" stroke-width="1" marker-end="url(#ax-arr)"/>
+  <line x1="20" y1="190" x2="20" y2="30" stroke="#ccc" stroke-width="1" marker-end="url(#ax-arr)"/>
+  <!-- subspace line through origin -->
+  <line x1="20" y1="190" x2="170" y2="40" stroke="#e74c3c" stroke-width="2.5"/>
+  <circle cx="20" cy="190" r="4" fill="#333"/>
+  <text x="25" y="205" fill="#666" font-size="10">origin</text>
+  <text x="100" y="90" fill="#e74c3c" font-size="11">1D subspace</text>
+
+  <!-- Divider -->
+  <line x1="210" y1="20" x2="210" y2="210" stroke="#ddd" stroke-width="1" stroke-dasharray="4"/>
+
+  <!-- Right: plane through origin in R3 (drawn as parallelogram in pseudo-3D) -->
+  <text x="320" y="16" fill="#333" font-size="12" font-weight="bold" text-anchor="middle">Plane in R³</text>
+  <!-- pseudo-3D axes -->
+  <line x1="280" y1="180" x2="400" y2="180" stroke="#ccc" stroke-width="1" marker-end="url(#ax-arr)"/>
+  <line x1="280" y1="180" x2="280" y2="40" stroke="#ccc" stroke-width="1" marker-end="url(#ax-arr)"/>
+  <line x1="280" y1="180" x2="235" y2="210" stroke="#ccc" stroke-width="1" marker-end="url(#ax-arr)"/>
+  <!-- plane as filled parallelogram -->
+  <polygon points="280,180 370,130 400,60 310,110" fill="#3498db" fill-opacity="0.2" stroke="#3498db" stroke-width="1.5"/>
+  <circle cx="280" cy="180" r="4" fill="#333"/>
+  <text x="285" y="195" fill="#666" font-size="10">origin</text>
+  <text x="330" y="105" fill="#3498db" font-size="11">2D subspace</text>
+</svg>

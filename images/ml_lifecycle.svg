@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 220" width="750" height="220">
+  <defs>
+    <marker id="ml-arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#666"/>
+    </marker>
+  </defs>
+  <text x="375" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">ML System Lifecycle</text>
+
+  <!-- Stages in a loop -->
+  <rect x="30" y="70" width="85" height="45" rx="8" fill="#e74c3c" fill-opacity="0.12" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="72" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#e74c3c">Problem</text>
+  <text x="72" y="103" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#e74c3c">Framing</text>
+
+  <line x1="115" y1="92" x2="138" y2="92" stroke="#666" stroke-width="1.5" marker-end="url(#ml-arr)"/>
+
+  <rect x="146" y="70" width="72" height="45" rx="8" fill="#f39c12" fill-opacity="0.12" stroke="#f39c12" stroke-width="1.5"/>
+  <text x="182" y="97" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#f39c12">Data</text>
+
+  <line x1="218" y1="92" x2="241" y2="92" stroke="#666" stroke-width="1.5" marker-end="url(#ml-arr)"/>
+
+  <rect x="249" y="70" width="78" height="45" rx="8" fill="#27ae60" fill-opacity="0.12" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="288" y="97" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#27ae60">Features</text>
+
+  <line x1="327" y1="92" x2="350" y2="92" stroke="#666" stroke-width="1.5" marker-end="url(#ml-arr)"/>
+
+  <rect x="358" y="70" width="78" height="45" rx="8" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <text x="397" y="97" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#3498db">Training</text>
+
+  <line x1="436" y1="92" x2="459" y2="92" stroke="#666" stroke-width="1.5" marker-end="url(#ml-arr)"/>
+
+  <rect x="467" y="70" width="72" height="45" rx="8" fill="#9b59b6" fill-opacity="0.12" stroke="#9b59b6" stroke-width="1.5"/>
+  <text x="503" y="97" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#9b59b6">Eval</text>
+
+  <line x1="539" y1="92" x2="562" y2="92" stroke="#666" stroke-width="1.5" marker-end="url(#ml-arr)"/>
+
+  <rect x="570" y="70" width="72" height="45" rx="8" fill="#1abc9c" fill-opacity="0.12" stroke="#1abc9c" stroke-width="1.5"/>
+  <text x="606" y="97" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#1abc9c">Deploy</text>
+
+  <line x1="642" y1="92" x2="665" y2="92" stroke="#666" stroke-width="1.5" marker-end="url(#ml-arr)"/>
+
+  <rect x="673" y="70" width="60" height="45" rx="8" fill="#e67e22" fill-opacity="0.12" stroke="#e67e22" stroke-width="1.5"/>
+  <text x="703" y="97" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#e67e22">Monitor</text>
+
+  <!-- Feedback loop arrow -->
+  <path d="M 703,115 C 703,170 375,185 72,170 L 72,123" fill="none" stroke="#e74c3c" stroke-width="2" marker-end="url(#ml-arr)" stroke-dasharray="6,3"/>
+  <text x="375" y="185" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#e74c3c">iterate: retrain, improve features, fix issues</text>
+
+  <text x="375" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">The loop never ends — production ML is continuous improvement</text>
+</svg>

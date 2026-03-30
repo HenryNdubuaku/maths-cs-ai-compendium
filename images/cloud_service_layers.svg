@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 240" width="650" height="240">
+  <text x="325" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">Cloud Service Models: What You Manage vs Provider Manages</text>
+
+  <!-- Column headers -->
+  <text x="200" y="52" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#e74c3c">IaaS</text>
+  <text x="325" y="52" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#f39c12">PaaS</text>
+  <text x="450" y="52" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#27ae60">SaaS</text>
+  <text x="560" y="52" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#3498db">FaaS</text>
+
+  <!-- Layers (bottom to top): Networking, Storage, Servers, Virtualisation, OS, Runtime, Data, Application -->
+  <!-- Row height = 22, start at y=65 -->
+
+  <!-- Application -->
+  <rect x="140" y="65" width="120" height="20" rx="3" fill="#e74c3c" fill-opacity="0.2" stroke="#e74c3c" stroke-width="1"/>
+  <rect x="265" y="65" width="120" height="20" rx="3" fill="#f39c12" fill-opacity="0.2" stroke="#f39c12" stroke-width="1"/>
+  <rect x="390" y="65" width="120" height="20" rx="3" fill="#ccc" fill-opacity="0.3" stroke="#ccc" stroke-width="1"/>
+  <rect x="500" y="65" width="120" height="20" rx="3" fill="#e74c3c" fill-opacity="0.2" stroke="#e74c3c" stroke-width="1"/>
+  <text x="65" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#333">Application</text>
+
+  <!-- Data -->
+  <rect x="140" y="87" width="120" height="20" rx="3" fill="#e74c3c" fill-opacity="0.2" stroke="#e74c3c" stroke-width="1"/>
+  <rect x="265" y="87" width="120" height="20" rx="3" fill="#f39c12" fill-opacity="0.2" stroke="#f39c12" stroke-width="1"/>
+  <rect x="390" y="87" width="120" height="20" rx="3" fill="#ccc" fill-opacity="0.3" stroke="#ccc" stroke-width="1"/>
+  <rect x="500" y="87" width="120" height="20" rx="3" fill="#ccc" fill-opacity="0.3" stroke="#ccc" stroke-width="1"/>
+  <text x="65" y="102" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#333">Data</text>
+
+  <!-- Runtime -->
+  <rect x="140" y="109" width="120" height="20" rx="3" fill="#e74c3c" fill-opacity="0.2" stroke="#e74c3c" stroke-width="1"/>
+  <rect x="265" y="109" width="120" height="20" rx="3" fill="#ccc" fill-opacity="0.3" stroke="#ccc" stroke-width="1"/>
+  <rect x="390" y="109" width="120" height="20" rx="3" fill="#ccc" fill-opacity="0.3" stroke="#ccc" stroke-width="1"/>
+  <rect x="500" y="109" width="120" height="20" rx="3" fill="#ccc" fill-opacity="0.3" stroke="#ccc" stroke-width="1"/>
+  <text x="65" y="124" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#333">Runtime</text>
+
+  <!-- OS -->
+  <rect x="140" y="131" width="120" height="20" rx="3" fill="#e74c3c" fill-opacity="0.2" stroke="#e74c3c" stroke-width="1"/>
+  <rect x="265" y="131" width="120" height="20" rx="3" fill="#ccc" fill-opacity="0.3" stroke="#ccc" stroke-width="1"/>
+  <rect x="390" y="131" width="120" height="20" rx="3" fill="#ccc" fill-opacity="0.3" stroke="#ccc" stroke-width="1"/>
+  <rect x="500" y="131" width="120" height="20" rx="3" fill="#ccc" fill-opacity="0.3" stroke="#ccc" stroke-width="1"/>
+  <text x="65" y="146" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#333">OS</text>
+
+  <!-- Virtualisation -->
+  <rect x="140" y="153" width="120" height="20" rx="3" fill="#ccc" fill-opacity="0.3" stroke="#ccc" stroke-width="1"/>
+  <rect x="265" y="153" width="120" height="20" rx="3" fill="#ccc" fill-opacity="0.3" stroke="#ccc" stroke-width="1"/>
+  <rect x="390" y="153" width="120" height="20" rx="3" fill="#ccc" fill-opacity="0.3" stroke="#ccc" stroke-width="1"/>
+  <rect x="500" y="153" width="120" height="20" rx="3" fill="#ccc" fill-opacity="0.3" stroke="#ccc" stroke-width="1"/>
+  <text x="65" y="168" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#333">Virtualisation</text>
+
+  <!-- Hardware -->
+  <rect x="140" y="175" width="120" height="20" rx="3" fill="#ccc" fill-opacity="0.3" stroke="#ccc" stroke-width="1"/>
+  <rect x="265" y="175" width="120" height="20" rx="3" fill="#ccc" fill-opacity="0.3" stroke="#ccc" stroke-width="1"/>
+  <rect x="390" y="175" width="120" height="20" rx="3" fill="#ccc" fill-opacity="0.3" stroke="#ccc" stroke-width="1"/>
+  <rect x="500" y="175" width="120" height="20" rx="3" fill="#ccc" fill-opacity="0.3" stroke="#ccc" stroke-width="1"/>
+  <text x="65" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#333">Hardware</text>
+
+  <!-- Legend -->
+  <rect x="200" y="210" width="14" height="14" rx="2" fill="#e74c3c" fill-opacity="0.2" stroke="#e74c3c" stroke-width="1"/>
+  <text x="218" y="222" font-family="Arial, sans-serif" font-size="9" fill="#666">You manage</text>
+  <rect x="320" y="210" width="14" height="14" rx="2" fill="#ccc" fill-opacity="0.3" stroke="#ccc" stroke-width="1"/>
+  <text x="338" y="222" font-family="Arial, sans-serif" font-size="9" fill="#666">Provider manages</text>
+</svg>

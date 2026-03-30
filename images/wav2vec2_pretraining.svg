@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 300" width="700" height="300">
+  <defs>
+    <marker id="arrow4" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+    </marker>
+    <marker id="arrow4red" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e74c3c"/>
+    </marker>
+    <marker id="arrow4purple" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#9b59b6"/>
+    </marker>
+    <!-- Hatching pattern for masked frames -->
+    <pattern id="hatch" patternUnits="userSpaceOnUse" width="4" height="4" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="4" stroke="#999" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- Title -->
+  <text x="350" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">wav2vec 2.0: Self-Supervised Pre-training</text>
+
+  <!-- ========== BOTTOM: Raw Waveform ========== -->
+  <text x="80" y="272" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#333">Raw Waveform</text>
+  <rect x="130" y="256" width="440" height="24" rx="4" fill="#3498db" fill-opacity="0.06" stroke="#3498db" stroke-width="1"/>
+  <polyline points="140,268 155,260 165,275 175,258 185,272 195,262 205,270 215,256 225,274 235,263 245,268 255,258 265,272 275,260 285,270 295,256 305,274 315,260 325,268 335,258 345,274 355,262 365,270 375,256 385,272 395,260 405,268 415,262 425,270 435,258 445,274 455,260 465,268 475,262 485,270 495,258 505,274 515,260 525,268 535,262 545,270 555,264" fill="none" stroke="#3498db" stroke-width="1.2"/>
+
+  <!-- Arrow up from waveform to CNN -->
+  <line x1="350" y1="254" x2="350" y2="236" stroke="#333" stroke-width="1.3" marker-end="url(#arrow4)"/>
+
+  <!-- ========== CNN Feature Encoder ========== -->
+  <rect x="240" y="210" width="220" height="26" rx="6" fill="#27ae60" fill-opacity="0.12" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="350" y="227" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#27ae60">CNN Feature Encoder</text>
+
+  <!-- Arrow up to continuous representations -->
+  <line x1="350" y1="208" x2="350" y2="194" stroke="#333" stroke-width="1.3" marker-end="url(#arrow4)"/>
+
+  <!-- ========== Continuous representations row ========== -->
+  <text x="80" y="186" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">Continuous</text>
+  <text x="80" y="195" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">representations</text>
+
+  <!-- Frame boxes: some normal, some masked -->
+  <!-- f1 normal -->
+  <rect x="145" y="175" width="38" height="22" rx="3" fill="#27ae60" fill-opacity="0.12" stroke="#27ae60" stroke-width="1"/>
+  <text x="164" y="189" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#27ae60">z1</text>
+
+  <!-- f2 normal -->
+  <rect x="190" y="175" width="38" height="22" rx="3" fill="#27ae60" fill-opacity="0.12" stroke="#27ae60" stroke-width="1"/>
+  <text x="209" y="189" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#27ae60">z2</text>
+
+  <!-- f3 MASKED -->
+  <rect x="235" y="175" width="38" height="22" rx="3" fill="url(#hatch)" stroke="#999" stroke-width="1.2"/>
+  <rect x="235" y="175" width="38" height="22" rx="3" fill="#999" fill-opacity="0.15" stroke="#999" stroke-width="1.2"/>
+  <text x="254" y="189" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#666">M</text>
+
+  <!-- f4 MASKED -->
+  <rect x="280" y="175" width="38" height="22" rx="3" fill="url(#hatch)" stroke="#999" stroke-width="1.2"/>
+  <rect x="280" y="175" width="38" height="22" rx="3" fill="#999" fill-opacity="0.15" stroke="#999" stroke-width="1.2"/>
+  <text x="299" y="189" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#666">M</text>
+
+  <!-- f5 normal -->
+  <rect x="325" y="175" width="38" height="22" rx="3" fill="#27ae60" fill-opacity="0.12" stroke="#27ae60" stroke-width="1"/>
+  <text x="344" y="189" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#27ae60">z5</text>
+
+  <!-- f6 MASKED -->
+  <rect x="370" y="175" width="38" height="22" rx="3" fill="url(#hatch)" stroke="#999" stroke-width="1.2"/>
+  <rect x="370" y="175" width="38" height="22" rx="3" fill="#999" fill-opacity="0.15" stroke="#999" stroke-width="1.2"/>
+  <text x="389" y="189" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#666">M</text>
+
+  <!-- f7 normal -->
+  <rect x="415" y="175" width="38" height="22" rx="3" fill="#27ae60" fill-opacity="0.12" stroke="#27ae60" stroke-width="1"/>
+  <text x="434" y="189" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#27ae60">z7</text>
+
+  <!-- f8 normal -->
+  <rect x="460" y="175" width="38" height="22" rx="3" fill="#27ae60" fill-opacity="0.12" stroke="#27ae60" stroke-width="1"/>
+  <text x="479" y="189" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#27ae60">z8</text>
+
+  <!-- Masked label -->
+  <rect x="510" y="176" width="14" height="12" rx="2" fill="url(#hatch)" stroke="#999" stroke-width="0.8"/>
+  <text x="530" y="186" text-anchor="start" font-family="Arial, sans-serif" font-size="7" fill="#666">= masked</text>
+
+  <!-- ========== LEFT BRANCH: Quantiser ========== -->
+  <!-- Arrow from continuous repr down-left to quantiser -->
+  <line x1="210" y1="175" x2="120" y2="138" stroke="#9b59b6" stroke-width="1.3" marker-end="url(#arrow4purple)"/>
+
+  <rect x="50" y="108" width="140" height="28" rx="6" fill="#9b59b6" fill-opacity="0.12" stroke="#9b59b6" stroke-width="1.5"/>
+  <text x="120" y="126" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#9b59b6">Quantiser</text>
+
+  <!-- Arrow up from quantiser to codebook -->
+  <line x1="120" y1="106" x2="120" y2="92" stroke="#9b59b6" stroke-width="1.3" marker-end="url(#arrow4purple)"/>
+
+  <!-- Codebook entries -->
+  <text x="120" y="86" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#9b59b6">Discrete codebook entries</text>
+  <!-- small codebook squares -->
+  <rect x="62" y="65" width="18" height="14" rx="2" fill="#9b59b6" fill-opacity="0.2" stroke="#9b59b6" stroke-width="0.8"/>
+  <text x="71" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="6" fill="#9b59b6">q1</text>
+  <rect x="84" y="65" width="18" height="14" rx="2" fill="#9b59b6" fill-opacity="0.2" stroke="#9b59b6" stroke-width="0.8"/>
+  <text x="93" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="6" fill="#9b59b6">q2</text>
+  <rect x="106" y="65" width="18" height="14" rx="2" fill="#9b59b6" fill-opacity="0.2" stroke="#9b59b6" stroke-width="0.8"/>
+  <text x="115" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="6" fill="#9b59b6">q3</text>
+  <rect x="128" y="65" width="18" height="14" rx="2" fill="#9b59b6" fill-opacity="0.2" stroke="#9b59b6" stroke-width="0.8"/>
+  <text x="137" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="6" fill="#9b59b6">q4</text>
+  <rect x="150" y="65" width="18" height="14" rx="2" fill="#9b59b6" fill-opacity="0.2" stroke="#9b59b6" stroke-width="0.8"/>
+  <text x="159" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="6" fill="#9b59b6">q5</text>
+
+  <!-- ========== RIGHT BRANCH: Transformer ========== -->
+  <!-- Arrow from continuous repr up-right to transformer -->
+  <line x1="400" y1="175" x2="490" y2="138" stroke="#3498db" stroke-width="1.3" marker-end="url(#arrow4)"/>
+
+  <rect x="420" y="108" width="180" height="28" rx="6" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <text x="510" y="126" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#3498db">Transformer Encoder</text>
+
+  <!-- Arrow up from transformer to contextual repr -->
+  <line x1="510" y1="106" x2="510" y2="92" stroke="#3498db" stroke-width="1.3" marker-end="url(#arrow4)"/>
+
+  <text x="510" y="86" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#3498db">Contextualised representations</text>
+  <!-- small context boxes -->
+  <rect x="440" y="65" width="18" height="14" rx="2" fill="#3498db" fill-opacity="0.2" stroke="#3498db" stroke-width="0.8"/>
+  <text x="449" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="6" fill="#3498db">c1</text>
+  <rect x="462" y="65" width="18" height="14" rx="2" fill="#3498db" fill-opacity="0.2" stroke="#3498db" stroke-width="0.8"/>
+  <text x="471" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="6" fill="#3498db">c2</text>
+  <rect x="484" y="65" width="18" height="14" rx="2" fill="#3498db" fill-opacity="0.2" stroke="#3498db" stroke-width="0.8"/>
+  <text x="493" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="6" fill="#3498db">c3</text>
+  <rect x="506" y="65" width="18" height="14" rx="2" fill="#3498db" fill-opacity="0.2" stroke="#3498db" stroke-width="0.8"/>
+  <text x="515" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="6" fill="#3498db">c4</text>
+  <rect x="528" y="65" width="18" height="14" rx="2" fill="#3498db" fill-opacity="0.2" stroke="#3498db" stroke-width="0.8"/>
+  <text x="537" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="6" fill="#3498db">c5</text>
+  <rect x="550" y="65" width="18" height="14" rx="2" fill="#3498db" fill-opacity="0.2" stroke="#3498db" stroke-width="0.8"/>
+  <text x="559" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="6" fill="#3498db">c6</text>
+
+  <!-- ========== CONTRASTIVE LOSS ========== -->
+  <!-- Connecting lines from codebook to contrastive loss -->
+  <line x1="155" y1="65" x2="295" y2="46" stroke="#e74c3c" stroke-width="1.2" stroke-dasharray="4,2" marker-end="url(#arrow4red)"/>
+  <!-- Connecting lines from contextual repr to contrastive loss -->
+  <line x1="450" y1="65" x2="365" y2="46" stroke="#e74c3c" stroke-width="1.2" stroke-dasharray="4,2" marker-end="url(#arrow4red)"/>
+
+  <!-- Contrastive loss box -->
+  <rect x="270" y="30" width="120" height="24" rx="6" fill="#e74c3c" fill-opacity="0.12" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="330" y="46" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#e74c3c">Contrastive Loss</text>
+
+  <!-- "at masked positions" annotation -->
+  <text x="330" y="26" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#e74c3c" font-style="italic">at masked positions only</text>
+
+  <!-- Note box -->
+  <rect x="130" y="290" width="440" height="10" rx="0" fill="none" stroke="none"/>
+  <!-- Move note inside viewBox properly -->
+
+  <!-- Note box at very bottom -->
+  <rect x="90" y="287" width="520" height="10" rx="0" fill="none"/>
+
+  <!-- Adjusted: put note in available space -->
+  <rect x="200" y="256" width="14" height="12" rx="2" fill="none" stroke="none"/>
+
+  <!-- Note box - positioned carefully -->
+  <rect x="580" y="255" width="110" height="38" rx="6" fill="#f5f5f5" stroke="#333" stroke-width="1"/>
+  <text x="635" y="269" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#333">Pre-train on unlabelled</text>
+  <text x="635" y="279" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#333">audio, fine-tune with</text>
+  <text x="635" y="289" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#333">CTC on small labelled set.</text>
+</svg>

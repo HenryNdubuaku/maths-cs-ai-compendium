@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="300">
+  <defs>
+    <marker id="arr2" viewBox="0 0 10 6" refX="10" refY="3" markerWidth="8" markerHeight="6" orient="auto">
+      <polygon points="0,0 10,3 0,6" fill="#666"/>
+    </marker>
+    <marker id="arr2b" viewBox="0 0 10 6" refX="10" refY="3" markerWidth="8" markerHeight="6" orient="auto">
+      <polygon points="0,0 10,3 0,6" fill="#9b59b6"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="350" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">Tacotron 2 Architecture</text>
+
+  <!-- ===== ENCODER (Left) ===== -->
+  <rect x="20" y="62" width="175" height="110" rx="8" fill="#3498db" fill-opacity="0.08" stroke="#3498db" stroke-width="1.5"/>
+  <text x="107" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#3498db">Encoder</text>
+
+  <!-- Character Embeddings -->
+  <rect x="35" y="72" width="145" height="26" rx="5" fill="#3498db" fill-opacity="0.18" stroke="#3498db" stroke-width="1"/>
+  <text x="107" y="89" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#333">Character / Phoneme Embed</text>
+
+  <!-- Arrow down -->
+  <line x1="107" y1="98" x2="107" y2="108" stroke="#666" stroke-width="1" marker-end="url(#arr2)"/>
+
+  <!-- 3 Conv Layers -->
+  <rect x="35" y="110" width="145" height="26" rx="5" fill="#3498db" fill-opacity="0.18" stroke="#3498db" stroke-width="1"/>
+  <text x="107" y="127" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#333">3 Conv Layers + BN + ReLU</text>
+
+  <!-- Arrow down -->
+  <line x1="107" y1="136" x2="107" y2="146" stroke="#666" stroke-width="1" marker-end="url(#arr2)"/>
+
+  <!-- BiLSTM -->
+  <rect x="35" y="148" width="145" height="26" rx="5" fill="#3498db" fill-opacity="0.25" stroke="#3498db" stroke-width="1"/>
+  <text x="107" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#3498db">Bidirectional LSTM</text>
+
+  <!-- Arrow from encoder to attention -->
+  <line x1="195" y1="130" x2="225" y2="130" stroke="#666" stroke-width="1.2" marker-end="url(#arr2)"/>
+
+  <!-- ===== ATTENTION (Centre) ===== -->
+  <rect x="227" y="92" width="120" height="76" rx="8" fill="#9b59b6" fill-opacity="0.10" stroke="#9b59b6" stroke-width="1.5"/>
+  <text x="287" y="118" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#9b59b6">Location-Sensitive</text>
+  <text x="287" y="131" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#9b59b6">Attention</text>
+  <text x="287" y="148" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">context vector +</text>
+  <text x="287" y="158" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">alignment weights</text>
+
+  <!-- Arrow from attention to decoder -->
+  <line x1="347" y1="130" x2="377" y2="130" stroke="#666" stroke-width="1.2" marker-end="url(#arr2)"/>
+
+  <!-- ===== DECODER (Right) ===== -->
+  <rect x="379" y="45" width="175" height="135" rx="8" fill="#e74c3c" fill-opacity="0.08" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="466" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#e74c3c">Decoder (Autoregressive)</text>
+
+  <!-- Pre-Net -->
+  <rect x="394" y="55" width="145" height="24" rx="5" fill="#e74c3c" fill-opacity="0.15" stroke="#e74c3c" stroke-width="1"/>
+  <text x="466" y="71" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#333">Pre-Net (2 FC + dropout)</text>
+
+  <!-- Arrow -->
+  <line x1="466" y1="79" x2="466" y2="89" stroke="#666" stroke-width="1" marker-end="url(#arr2)"/>
+
+  <!-- 2 LSTM Layers -->
+  <rect x="394" y="91" width="145" height="24" rx="5" fill="#e74c3c" fill-opacity="0.22" stroke="#e74c3c" stroke-width="1"/>
+  <text x="466" y="107" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#e74c3c">2 Uni-directional LSTMs</text>
+
+  <!-- Arrow -->
+  <line x1="466" y1="115" x2="466" y2="125" stroke="#666" stroke-width="1" marker-end="url(#arr2)"/>
+
+  <!-- Linear Projection -->
+  <rect x="394" y="127" width="145" height="24" rx="5" fill="#e74c3c" fill-opacity="0.15" stroke="#e74c3c" stroke-width="1"/>
+  <text x="466" y="143" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#333">Linear Projection</text>
+
+  <!-- Stop Token branch -->
+  <rect x="394" y="157" width="68" height="20" rx="4" fill="#f39c12" fill-opacity="0.20" stroke="#f39c12" stroke-width="1"/>
+  <text x="428" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#f39c12">Stop Token</text>
+
+  <!-- Arrow from linear to stop -->
+  <line x1="428" y1="151" x2="428" y2="157" stroke="#f39c12" stroke-width="1"/>
+
+  <!-- ===== MEL OUTPUT ===== -->
+  <!-- Arrow from decoder to mel -->
+  <line x1="554" y1="139" x2="578" y2="139" stroke="#666" stroke-width="1.2" marker-end="url(#arr2)"/>
+
+  <!-- Mel Spectrogram output -->
+  <rect x="580" y="55" width="90" height="52" rx="8" fill="#27ae60" fill-opacity="0.15" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="625" y="76" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#27ae60">Mel</text>
+  <text x="625" y="89" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#27ae60">Spectrogram</text>
+  <text x="625" y="101" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">(80 channels)</text>
+
+  <!-- ===== POST-NET (Below decoder) ===== -->
+  <rect x="379" y="195" width="290" height="42" rx="8" fill="#f39c12" fill-opacity="0.10" stroke="#f39c12" stroke-width="1.5"/>
+  <text x="524" y="212" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#f39c12">Post-Net: 5 Conv Layers (residual refinement)</text>
+  <text x="524" y="226" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">Predicts residual to add to mel spectrogram for finer detail</text>
+
+  <!-- Arrow from mel to post-net -->
+  <line x1="625" y1="107" x2="625" y2="195" stroke="#f39c12" stroke-width="1.2" marker-end="url(#arr2)"/>
+
+  <!-- Arrow from post-net back label -->
+  <text x="640" y="155" text-anchor="start" font-family="Arial, sans-serif" font-size="8" fill="#f39c12" font-style="italic">refine</text>
+
+  <!-- Arrow from linear projection down to post-net -->
+  <line x1="500" y1="151" x2="500" y2="195" stroke="#666" stroke-width="1" stroke-dasharray="3,2"/>
+
+  <!-- Autoregressive feedback loop -->
+  <path d="M580,80 L580,80 Q572,80 572,88 L572,139 Q572,150 560,150 L554,150" fill="none" stroke="#9b59b6" stroke-width="1.2" stroke-dasharray="4,2"/>
+  <text x="575" y="120" text-anchor="start" font-family="Arial, sans-serif" font-size="7" fill="#9b59b6" transform="rotate(90, 575, 120)">prev frame</text>
+
+  <!-- Feedback arrow from mel back to decoder pre-net -->
+  <path d="M580,75 Q570,44 466,44 Q394,44 394,55" fill="none" stroke="#9b59b6" stroke-width="1.2" stroke-dasharray="4,2" marker-end="url(#arr2b)"/>
+  <text x="520" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#9b59b6">previous mel frame (teacher forcing)</text>
+
+  <!-- Note box -->
+  <rect x="20" y="250" width="660" height="35" rx="6" fill="#f5f5f5" stroke="#333" stroke-width="1"/>
+  <text x="35" y="265" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#333">Note:</text>
+  <text x="70" y="265" font-family="Arial, sans-serif" font-size="9" fill="#666">Autoregressive: generates one mel frame at a time, attending to the full encoder output. At inference, each predicted</text>
+  <text x="35" y="278" font-family="Arial, sans-serif" font-size="9" fill="#666">frame is fed back through the Pre-Net as input for the next step. A WaveNet or HiFi-GAN vocoder converts mel to audio.</text>
+</svg>

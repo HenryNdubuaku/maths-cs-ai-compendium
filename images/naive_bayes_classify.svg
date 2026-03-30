@@ -1,0 +1,33 @@
+<svg width="700" height="300" xmlns="http://www.w3.org/2000/svg">
+  <text x="350" y="22" fill="#333" font-size="14" font-weight="bold" text-anchor="middle">Naive Bayes Classification: Two-Class Decision Boundary</text>
+
+  <!-- Axes -->
+  <line x1="60" y1="240" x2="640" y2="240" stroke="#333" stroke-width="1.5"/>
+  <line x1="60" y1="240" x2="60" y2="40" stroke="#333" stroke-width="1.5"/>
+  <text x="350" y="265" fill="#666" font-size="11" text-anchor="middle">Feature x</text>
+  <text x="35" y="140" fill="#666" font-size="11" text-anchor="middle" transform="rotate(-90,35,140)">P(x | class)</text>
+
+  <!-- Class 0 Gaussian (blue, left) -->
+  <path d="M 80,238 C 100,235 130,220 160,185 C 185,150 210,90 250,65 C 270,55 280,54 290,58 C 310,68 330,100 350,140 C 370,180 390,220 420,236" fill="none" stroke="#3498db" stroke-width="2.5"/>
+  <path d="M 80,238 C 100,235 130,220 160,185 C 185,150 210,90 250,65 C 270,55 280,54 290,58 C 310,68 330,100 350,140 C 370,180 390,220 420,236 Z" fill="#3498db" opacity="0.12"/>
+
+  <!-- Class 1 Gaussian (red, right) -->
+  <path d="M 280,238 C 310,235 340,220 370,185 C 395,150 420,95 460,72 C 480,63 490,62 500,65 C 520,75 540,105 560,145 C 575,175 590,210 620,236" fill="none" stroke="#e74c3c" stroke-width="2.5"/>
+  <path d="M 280,238 C 310,235 340,220 370,185 C 395,150 420,95 460,72 C 480,63 490,62 500,65 C 520,75 540,105 560,145 C 575,175 590,210 620,236 Z" fill="#e74c3c" opacity="0.12"/>
+
+  <!-- Decision boundary -->
+  <line x1="370" y1="38" x2="370" y2="240" stroke="#9b59b6" stroke-width="2" stroke-dasharray="6,4"/>
+  <text x="370" y="33" fill="#9b59b6" font-size="11" font-weight="bold" text-anchor="middle">decision boundary</text>
+
+  <!-- Class labels -->
+  <text x="250" y="50" fill="#3498db" font-size="12" font-weight="bold">P(x | C₀)</text>
+  <text x="490" y="55" fill="#e74c3c" font-size="12" font-weight="bold">P(x | C₁)</text>
+
+  <!-- Region labels -->
+  <text x="200" y="215" fill="#3498db" font-size="11" text-anchor="middle">predict C₀</text>
+  <text x="520" y="215" fill="#e74c3c" font-size="11" text-anchor="middle">predict C₁</text>
+
+  <!-- Explanation -->
+  <rect x="140" y="272" width="420" height="24" rx="6" fill="#f5f5f5" stroke="#333" stroke-width="1"/>
+  <text x="350" y="289" fill="#333" font-size="11" text-anchor="middle">Classify x to the class whose posterior P(Cₖ | x) is highest</text>
+</svg>

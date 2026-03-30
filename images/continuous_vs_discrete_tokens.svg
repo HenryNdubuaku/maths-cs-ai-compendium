@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 300" width="650" height="300" font-family="Arial, sans-serif">
+  <!-- Title -->
+  <text x="325" y="22" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">Choosing Between Continuous and Discrete Tokens</text>
+
+  <defs>
+    <marker id="dArr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#666"/>
+    </marker>
+    <marker id="dArrGreen" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#27ae60"/>
+    </marker>
+    <marker id="dArrBlue" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#3498db"/>
+    </marker>
+    <marker id="dArrOrange" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#f39c12"/>
+    </marker>
+  </defs>
+
+  <!-- Start node -->
+  <rect x="220" y="42" width="210" height="40" rx="20" fill="#9b59b6" fill-opacity="0.12" stroke="#9b59b6" stroke-width="1.5"/>
+  <text x="325" y="66" text-anchor="middle" font-size="11" font-weight="bold" fill="#9b59b6">How will you generate?</text>
+
+  <!-- Left branch arrow -->
+  <path d="M260,82 L130,120" fill="none" stroke="#27ae60" stroke-width="1.5" marker-end="url(#dArrGreen)"/>
+  <text x="172" y="96" font-size="9" fill="#27ae60" font-weight="bold">Autoregressive</text>
+  <text x="170" y="108" font-size="8" fill="#666">(next-token)</text>
+
+  <!-- Right branch arrow -->
+  <path d="M390,82 L520,120" fill="none" stroke="#3498db" stroke-width="1.5" marker-end="url(#dArrBlue)"/>
+  <text x="462" y="96" font-size="9" fill="#3498db" font-weight="bold">Diffusion</text>
+  <text x="468" y="108" font-size="8" fill="#666">(iterative denoising)</text>
+
+  <!-- Middle branch arrow -->
+  <path d="M325,82 L325,120" fill="none" stroke="#f39c12" stroke-width="1.5" marker-end="url(#dArrOrange)"/>
+  <text x="358" y="106" font-size="9" fill="#f39c12" font-weight="bold">Hybrid</text>
+
+  <!-- Left: Discrete Tokens box -->
+  <rect x="30" y="128" width="200" height="80" rx="8" fill="#27ae60" fill-opacity="0.1" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="130" y="152" text-anchor="middle" font-size="12" font-weight="bold" fill="#27ae60">Use Discrete Tokens</text>
+  <!-- Token grid illustration -->
+  <g transform="translate(60, 160)">
+    <rect x="0" y="0" width="22" height="18" rx="2" fill="#27ae60" fill-opacity="0.2" stroke="#27ae60" stroke-width="0.8"/>
+    <text x="11" y="12" text-anchor="middle" font-size="7" fill="#27ae60">42</text>
+    <rect x="25" y="0" width="22" height="18" rx="2" fill="#27ae60" fill-opacity="0.2" stroke="#27ae60" stroke-width="0.8"/>
+    <text x="36" y="12" text-anchor="middle" font-size="7" fill="#27ae60">7</text>
+    <rect x="50" y="0" width="22" height="18" rx="2" fill="#27ae60" fill-opacity="0.2" stroke="#27ae60" stroke-width="0.8"/>
+    <text x="61" y="12" text-anchor="middle" font-size="7" fill="#27ae60">156</text>
+    <rect x="75" y="0" width="22" height="18" rx="2" fill="#27ae60" fill-opacity="0.2" stroke="#27ae60" stroke-width="0.8"/>
+    <text x="86" y="12" text-anchor="middle" font-size="7" fill="#27ae60">89</text>
+    <rect x="100" y="0" width="22" height="18" rx="2" fill="#27ae60" fill-opacity="0.2" stroke="#27ae60" stroke-width="0.8"/>
+    <text x="111" y="12" text-anchor="middle" font-size="7" fill="#27ae60">3</text>
+  </g>
+  <text x="130" y="196" text-anchor="middle" font-size="9" fill="#666">VQ-VAE / VQ-GAN</text>
+
+  <!-- Left examples -->
+  <rect x="40" y="216" width="180" height="44" rx="6" fill="#27ae60" fill-opacity="0.05" stroke="#27ae60" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <text x="130" y="232" text-anchor="middle" font-size="8" fill="#27ae60">DALL-E, Parti, LlamaGen,</text>
+  <text x="130" y="244" text-anchor="middle" font-size="8" fill="#27ae60">VideoGPT, MAGVIT</text>
+
+  <!-- Middle: Soft Quantisation -->
+  <rect x="245" y="128" width="160" height="80" rx="8" fill="#f39c12" fill-opacity="0.1" stroke="#f39c12" stroke-width="1.5"/>
+  <text x="325" y="150" text-anchor="middle" font-size="12" font-weight="bold" fill="#f39c12">Soft Quantisation</text>
+  <!-- Soft token illustration -->
+  <g transform="translate(272, 158)">
+    <rect x="0" y="0" width="26" height="18" rx="2" fill="#f39c12" fill-opacity="0.2" stroke="#f39c12" stroke-width="0.8"/>
+    <text x="13" y="12" text-anchor="middle" font-size="6" fill="#f39c12">0.7|0.3</text>
+    <rect x="30" y="0" width="26" height="18" rx="2" fill="#f39c12" fill-opacity="0.2" stroke="#f39c12" stroke-width="0.8"/>
+    <text x="43" y="12" text-anchor="middle" font-size="6" fill="#f39c12">0.9|0.1</text>
+    <rect x="60" y="0" width="26" height="18" rx="2" fill="#f39c12" fill-opacity="0.2" stroke="#f39c12" stroke-width="0.8"/>
+    <text x="73" y="12" text-anchor="middle" font-size="6" fill="#f39c12">0.5|0.5</text>
+  </g>
+  <text x="325" y="196" text-anchor="middle" font-size="9" fill="#666">Gumbel-Softmax / dVAE</text>
+
+  <!-- Middle examples -->
+  <rect x="255" y="216" width="140" height="44" rx="6" fill="#f39c12" fill-opacity="0.05" stroke="#f39c12" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <text x="325" y="232" text-anchor="middle" font-size="8" fill="#f39c12">DALL-E (training),</text>
+  <text x="325" y="244" text-anchor="middle" font-size="8" fill="#f39c12">Maskbit</text>
+
+  <!-- Right: Continuous Tokens box -->
+  <rect x="420" y="128" width="200" height="80" rx="8" fill="#3498db" fill-opacity="0.1" stroke="#3498db" stroke-width="1.5"/>
+  <text x="520" y="150" text-anchor="middle" font-size="12" font-weight="bold" fill="#3498db">Use Continuous Tokens</text>
+  <!-- Continuous latent illustration -->
+  <g transform="translate(454, 158)">
+    <rect x="0" y="0" width="26" height="18" rx="2" fill="#3498db" fill-opacity="0.2" stroke="#3498db" stroke-width="0.8"/>
+    <text x="13" y="12" text-anchor="middle" font-size="6" fill="#3498db">0.73</text>
+    <rect x="30" y="0" width="26" height="18" rx="2" fill="#3498db" fill-opacity="0.2" stroke="#3498db" stroke-width="0.8"/>
+    <text x="43" y="12" text-anchor="middle" font-size="6" fill="#3498db">-0.21</text>
+    <rect x="60" y="0" width="26" height="18" rx="2" fill="#3498db" fill-opacity="0.2" stroke="#3498db" stroke-width="0.8"/>
+    <text x="73" y="12" text-anchor="middle" font-size="6" fill="#3498db">1.45</text>
+    <rect x="90" y="0" width="26" height="18" rx="2" fill="#3498db" fill-opacity="0.2" stroke="#3498db" stroke-width="0.8"/>
+    <text x="103" y="12" text-anchor="middle" font-size="6" fill="#3498db">-0.58</text>
+  </g>
+  <text x="520" y="196" text-anchor="middle" font-size="9" fill="#666">VAE latents (KL-regularised)</text>
+
+  <!-- Right examples -->
+  <rect x="430" y="216" width="180" height="44" rx="6" fill="#3498db" fill-opacity="0.05" stroke="#3498db" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <text x="520" y="232" text-anchor="middle" font-size="8" fill="#3498db">Stable Diffusion, DALL-E 3,</text>
+  <text x="520" y="244" text-anchor="middle" font-size="8" fill="#3498db">Sora, Imagen Video</text>
+
+  <!-- Bottom note -->
+  <text x="325" y="284" text-anchor="middle" font-size="9" fill="#999">The generation method determines whether discrete or continuous tokenisation is most appropriate</text>
+</svg>

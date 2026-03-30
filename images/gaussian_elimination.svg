@@ -1,0 +1,43 @@
+<svg width="420" height="120" xmlns="http://www.w3.org/2000/svg">
+  <!-- Original matrix -->
+  <path d="M 10,10 L 5,10 L 5,110 L 10,110" fill="none" stroke="#333" stroke-width="2"/>
+  <path d="M 100,10 L 105,10 L 105,110 L 100,110" fill="none" stroke="#333" stroke-width="2"/>
+  <text x="30" y="38" fill="#333" font-size="15">2</text>
+  <text x="57" y="38" fill="#333" font-size="15">1</text>
+  <text x="84" y="38" fill="#333" font-size="15">5</text>
+  <text x="30" y="68" fill="#333" font-size="15">4</text>
+  <text x="57" y="68" fill="#333" font-size="15">3</text>
+  <text x="84" y="68" fill="#333" font-size="15">7</text>
+  <text x="30" y="98" fill="#333" font-size="15">6</text>
+  <text x="57" y="98" fill="#333" font-size="15">5</text>
+  <text x="84" y="98" fill="#333" font-size="15">9</text>
+
+  <!-- Arrow 1 -->
+  <text x="130" y="60" fill="#333" font-size="18">→</text>
+  <text x="120" y="80" fill="#666" font-size="9">row ops</text>
+
+  <!-- REF -->
+  <path d="M 155,10 L 150,10 L 150,110 L 155,110" fill="none" stroke="#333" stroke-width="2"/>
+  <path d="M 245,10 L 250,10 L 250,110 L 245,110" fill="none" stroke="#333" stroke-width="2"/>
+  <text x="175" y="38" fill="#e74c3c" font-size="15" font-weight="bold">2</text>
+  <text x="202" y="38" fill="#333" font-size="15">1</text>
+  <text x="229" y="38" fill="#333" font-size="15">5</text>
+  <text x="175" y="68" fill="#ccc" font-size="15">0</text>
+  <text x="202" y="68" fill="#e74c3c" font-size="15" font-weight="bold">1</text>
+  <text x="229" y="68" fill="#333" font-size="15">-3</text>
+  <text x="175" y="98" fill="#ccc" font-size="15">0</text>
+  <text x="202" y="98" fill="#ccc" font-size="15">0</text>
+  <text x="229" y="98" fill="#e74c3c" font-size="15" font-weight="bold">-2</text>
+
+  <!-- Arrow 2 -->
+  <text x="275" y="60" fill="#333" font-size="18">→</text>
+  <text x="268" y="80" fill="#666" font-size="9">solve ↑</text>
+
+  <!-- Solution -->
+  <path d="M 305,10 L 300,10 L 300,110 L 305,110" fill="none" stroke="#333" stroke-width="2"/>
+  <path d="M 375,10 L 380,10 L 380,110 L 375,110" fill="none" stroke="#333" stroke-width="2"/>
+  <text x="320" y="38" fill="#333" font-size="14">x₁ = ?</text>
+  <text x="320" y="68" fill="#333" font-size="14">x₂ = ?</text>
+  <text x="320" y="98" fill="#27ae60" font-size="14" font-weight="bold">x₃ = 1</text>
+  <text x="300" y="118" fill="#666" font-size="9">back substitution: solve from bottom up</text>
+</svg>

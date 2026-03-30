@@ -1,0 +1,46 @@
+<svg width="400" height="200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="ta-arr" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto">
+      <path d="M0,0 L7,2.5 L0,5" fill="#ccc"/>
+    </marker>
+  </defs>
+
+  <text x="200" y="14" text-anchor="middle" fill="#333" font-size="12" font-weight="bold">Taylor approximation of sin(x) near x = 0</text>
+
+  <!-- Axes -->
+  <line x1="30" y1="105" x2="385" y2="105" stroke="#ccc" stroke-width="1" marker-end="url(#ta-arr)"/>
+  <line x1="100" y1="190" x2="100" y2="18" stroke="#ccc" stroke-width="1" marker-end="url(#ta-arr)"/>
+  <text x="388" y="108" fill="#999" font-size="9">x</text>
+
+  <!-- Tick marks -->
+  <line x1="100" y1="103" x2="100" y2="107" stroke="#999" stroke-width="1"/>
+  <text x="100" y="117" text-anchor="middle" fill="#999" font-size="8">0</text>
+  <line x1="180" y1="103" x2="180" y2="107" stroke="#999" stroke-width="1"/>
+  <text x="180" y="117" text-anchor="middle" fill="#999" font-size="8">π</text>
+  <line x1="260" y1="103" x2="260" y2="107" stroke="#999" stroke-width="1"/>
+  <text x="260" y="117" text-anchor="middle" fill="#999" font-size="8">2π</text>
+
+  <!-- True sin(x) - black -->
+  <path d="M 35,130 Q 55,145 75,130 Q 95,105 100,105 Q 120,60 140,40 Q 155,30 170,45 Q 185,65 200,105 Q 215,145 235,170 Q 250,180 265,165 Q 280,145 300,105 Q 315,65 335,40 Q 350,28 365,48"
+        fill="none" stroke="#333" stroke-width="2.5"/>
+  <text x="368" y="40" fill="#333" font-size="9" font-weight="bold">sin(x)</text>
+
+  <!-- 1 term: y = x (linear) - red -->
+  <line x1="35" y1="160" x2="250" y2="0" stroke="#e74c3c" stroke-width="1.5" stroke-dasharray="4"/>
+  <text x="250" y="12" fill="#e74c3c" font-size="9">x</text>
+
+  <!-- 2 terms: y = x - x³/6 - blue -->
+  <path d="M 50,147 Q 80,118 100,105 Q 130,58 155,40 Q 180,50 200,105 Q 220,175 240,195"
+        fill="none" stroke="#3498db" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="242" y="193" fill="#3498db" font-size="9">x - x³/3!</text>
+
+  <!-- 3 terms: x - x³/6 + x⁵/120 - green -->
+  <path d="M 42,137 Q 70,120 100,105 Q 130,55 155,32 Q 175,32 195,75 Q 215,145 240,170 Q 260,175 280,145 Q 300,105 320,65"
+        fill="none" stroke="#27ae60" stroke-width="1.5" stroke-dasharray="6,2"/>
+  <text x="322" y="58" fill="#27ae60" font-size="9">+x⁵/5!</text>
+
+  <!-- Centre point -->
+  <circle cx="100" cy="105" r="3" fill="#e74c3c"/>
+
+  <text x="200" y="195" text-anchor="middle" fill="#666" font-size="10">more terms → accurate over a wider range</text>
+</svg>
