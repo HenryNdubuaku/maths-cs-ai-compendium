@@ -1,0 +1,75 @@
+<svg width="700" height="280" xmlns="http://www.w3.org/2000/svg">
+  <text x="350" y="22" fill="#333" font-size="14" font-weight="bold" text-anchor="middle">Bernoulli (single trial) vs Binomial (n trials)</text>
+
+  <!-- Left: Bernoulli -->
+  <text x="160" y="50" fill="#e74c3c" font-size="13" font-weight="bold" text-anchor="middle">Bernoulli(p=0.7)</text>
+
+  <!-- Axes -->
+  <line x1="60" y1="220" x2="280" y2="220" stroke="#333" stroke-width="1.5"/>
+  <line x1="60" y1="220" x2="60" y2="55" stroke="#333" stroke-width="1.5"/>
+  <text x="170" y="248" fill="#666" font-size="11" text-anchor="middle">Outcome</text>
+  <text x="35" y="140" fill="#666" font-size="11" text-anchor="middle" transform="rotate(-90,35,140)">P(X=x)</text>
+
+  <!-- Bars -->
+  <rect x="100" y="122" width="45" height="98" fill="#e74c3c" opacity="0.7" rx="2"/>
+  <text x="122" y="115" fill="#e74c3c" font-size="11" text-anchor="middle">0.3</text>
+  <text x="122" y="238" fill="#333" font-size="11" text-anchor="middle">0</text>
+
+  <rect x="195" y="78" width="45" height="142" fill="#e74c3c" opacity="0.7" rx="2"/>
+  <text x="217" y="71" fill="#e74c3c" font-size="11" text-anchor="middle">0.7</text>
+  <text x="217" y="238" fill="#333" font-size="11" text-anchor="middle">1</text>
+
+  <text x="160" y="265" fill="#666" font-size="10" text-anchor="middle">One coin flip: fail or success</text>
+
+  <!-- Divider -->
+  <line x1="340" y1="40" x2="340" y2="260" stroke="#ccc" stroke-width="1" stroke-dasharray="4,4"/>
+
+  <!-- Right: Binomial -->
+  <text x="520" y="50" fill="#3498db" font-size="13" font-weight="bold" text-anchor="middle">Binomial(n=8, p=0.7)</text>
+
+  <!-- Axes -->
+  <line x1="370" y1="220" x2="680" y2="220" stroke="#333" stroke-width="1.5"/>
+  <line x1="370" y1="220" x2="370" y2="55" stroke="#333" stroke-width="1.5"/>
+  <text x="525" y="248" fill="#666" font-size="11" text-anchor="middle">Number of successes (k)</text>
+  <text x="350" y="140" fill="#666" font-size="11" text-anchor="middle" transform="rotate(-90,350,140)">P(X=k)</text>
+
+  <!-- Binomial(8,0.7) PMF bars: approximate heights -->
+  <!-- k=0: 0.0001 -->
+  <rect x="385" y="219" width="24" height="1" fill="#3498db" opacity="0.7" rx="1"/>
+  <text x="397" y="238" fill="#333" font-size="8" text-anchor="middle">0</text>
+
+  <!-- k=1: 0.0012 -->
+  <rect x="415" y="218" width="24" height="2" fill="#3498db" opacity="0.7" rx="1"/>
+  <text x="427" y="238" fill="#333" font-size="8" text-anchor="middle">1</text>
+
+  <!-- k=2: 0.0100 -->
+  <rect x="445" y="214" width="24" height="6" fill="#3498db" opacity="0.7" rx="1"/>
+  <text x="457" y="238" fill="#333" font-size="8" text-anchor="middle">2</text>
+
+  <!-- k=3: 0.0467 -->
+  <rect x="475" y="193" width="24" height="27" fill="#3498db" opacity="0.7" rx="1"/>
+  <text x="487" y="238" fill="#333" font-size="8" text-anchor="middle">3</text>
+
+  <!-- k=4: 0.1361 -->
+  <rect x="505" y="141" width="24" height="79" fill="#3498db" opacity="0.7" rx="1"/>
+  <text x="517" y="238" fill="#333" font-size="8" text-anchor="middle">4</text>
+
+  <!-- k=5: 0.2541 -->
+  <rect x="535" y="73" width="24" height="147" fill="#3498db" opacity="0.7" rx="1"/>
+  <text x="547" y="238" fill="#333" font-size="8" text-anchor="middle">5</text>
+
+  <!-- k=6: 0.2965 (mode) -->
+  <rect x="565" y="68" width="24" height="152" fill="#3498db" opacity="0.9" rx="1"/>
+  <text x="577" y="60" fill="#3498db" font-size="9" text-anchor="middle">0.30</text>
+  <text x="577" y="238" fill="#333" font-size="8" text-anchor="middle">6</text>
+
+  <!-- k=7: 0.1977 -->
+  <rect x="595" y="106" width="24" height="114" fill="#3498db" opacity="0.7" rx="1"/>
+  <text x="607" y="238" fill="#333" font-size="8" text-anchor="middle">7</text>
+
+  <!-- k=8: 0.0576 -->
+  <rect x="625" y="187" width="24" height="33" fill="#3498db" opacity="0.7" rx="1"/>
+  <text x="637" y="238" fill="#333" font-size="8" text-anchor="middle">8</text>
+
+  <text x="520" y="265" fill="#666" font-size="10" text-anchor="middle">8 coin flips: how many heads?</text>
+</svg>

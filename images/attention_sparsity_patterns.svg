@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 230" width="700" height="230">
+  <text x="350" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">Attention Patterns: Full vs Sliding Window vs Sparse</text>
+
+  <!-- Full attention -->
+  <text x="120" y="48" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#e74c3c">Full Attention</text>
+  <text x="120" y="62" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e74c3c">O(n²)</text>
+
+  <rect x="40" y="70" width="160" height="120" rx="4" fill="#eee" stroke="#ccc" stroke-width="1"/>
+  <!-- Lower triangle filled (causal mask) -->
+  <polygon points="40,70 200,190 40,190" fill="#e74c3c" fill-opacity="0.25"/>
+  <text x="100" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#e74c3c">every token attends</text>
+  <text x="100" y="172" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#e74c3c">to all previous</text>
+  <text x="40" y="205" font-family="Arial, sans-serif" font-size="8" fill="#666">queries →</text>
+  <text x="35" y="80" font-family="Arial, sans-serif" font-size="8" fill="#666" transform="rotate(-90, 35, 80)">keys →</text>
+
+  <!-- Sliding window -->
+  <text x="350" y="48" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#3498db">Sliding Window</text>
+  <text x="350" y="62" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3498db">O(n·w)</text>
+
+  <rect x="270" y="70" width="160" height="120" rx="4" fill="#eee" stroke="#ccc" stroke-width="1"/>
+  <!-- Diagonal band -->
+  <polygon points="270,70 320,70 430,153 430,190 380,190 270,107" fill="#3498db" fill-opacity="0.25"/>
+  <!-- Clip to box -->
+  <rect x="270" y="70" width="160" height="120" rx="4" fill="none" stroke="#ccc" stroke-width="1"/>
+  <text x="350" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#3498db">each token attends</text>
+  <text x="350" y="172" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#3498db">to w previous only</text>
+
+  <!-- Local + Global -->
+  <text x="580" y="48" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#27ae60">Local + Global</text>
+  <text x="580" y="62" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27ae60">O(n·w + n·g)</text>
+
+  <rect x="500" y="70" width="160" height="120" rx="4" fill="#eee" stroke="#ccc" stroke-width="1"/>
+  <!-- Diagonal band (local) -->
+  <polygon points="500,70 540,70 660,148 660,190 620,190 500,107" fill="#27ae60" fill-opacity="0.2"/>
+  <!-- Global columns (every 4th token attends to all) -->
+  <rect x="530" y="70" width="6" height="120" fill="#f39c12" fill-opacity="0.3"/>
+  <rect x="570" y="70" width="6" height="120" fill="#f39c12" fill-opacity="0.3"/>
+  <rect x="610" y="70" width="6" height="120" fill="#f39c12" fill-opacity="0.3"/>
+  <rect x="650" y="70" width="6" height="120" fill="#f39c12" fill-opacity="0.3"/>
+  <!-- Global rows -->
+  <rect x="500" y="90" width="160" height="5" fill="#f39c12" fill-opacity="0.3"/>
+  <rect x="500" y="120" width="160" height="5" fill="#f39c12" fill-opacity="0.3"/>
+  <rect x="500" y="150" width="160" height="5" fill="#f39c12" fill-opacity="0.3"/>
+  <rect x="500" y="70" width="160" height="120" rx="4" fill="none" stroke="#ccc" stroke-width="1"/>
+
+  <text x="580" y="205" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#27ae60">local window + global tokens</text>
+  <text x="580" y="217" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#f39c12">(yellow = global attention)</text>
+</svg>

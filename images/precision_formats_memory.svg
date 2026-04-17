@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" width="800" height="520">
+  <text x="400" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">Number Formats: Bit Layout in Memory</text>
+
+  <!-- Legend -->
+  <rect x="250" y="35" width="14" height="14" rx="2" fill="#e74c3c" fill-opacity="0.3"/>
+  <text x="268" y="47" font-family="Arial, sans-serif" font-size="9" fill="#666">Sign</text>
+  <rect x="310" y="35" width="14" height="14" rx="2" fill="#3498db" fill-opacity="0.3"/>
+  <text x="328" y="47" font-family="Arial, sans-serif" font-size="9" fill="#666">Exponent</text>
+  <rect x="390" y="35" width="14" height="14" rx="2" fill="#27ae60" fill-opacity="0.3"/>
+  <text x="408" y="47" font-family="Arial, sans-serif" font-size="9" fill="#666">Mantissa</text>
+  <rect x="470" y="35" width="14" height="14" rx="2" fill="#9b59b6" fill-opacity="0.3"/>
+  <text x="488" y="47" font-family="Arial, sans-serif" font-size="9" fill="#666">Integer bits</text>
+
+  <!-- FP32 (32 bits) -->
+  <text x="45" y="82" text-anchor="end" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#333">FP32</text>
+  <text x="45" y="95" text-anchor="end" font-family="Arial, sans-serif" font-size="8" fill="#666">32 bits</text>
+  <rect x="55" y="70" width="18" height="30" rx="2" fill="#e74c3c" fill-opacity="0.3" stroke="#e74c3c" stroke-width="1"/>
+  <text x="64" y="89" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#e74c3c">1</text>
+  <rect x="73" y="70" width="144" height="30" rx="2" fill="#3498db" fill-opacity="0.3" stroke="#3498db" stroke-width="1"/>
+  <text x="145" y="89" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#3498db">8 exp</text>
+  <rect x="217" y="70" width="414" height="30" rx="2" fill="#27ae60" fill-opacity="0.3" stroke="#27ae60" stroke-width="1"/>
+  <text x="424" y="89" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#27ae60">23 mantissa</text>
+  <text x="650" y="89" text-anchor="start" font-family="Arial, sans-serif" font-size="9" fill="#666">range: ±3.4×10³⁸</text>
+
+  <!-- BF16 (16 bits) -->
+  <text x="45" y="132" text-anchor="end" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#333">BF16</text>
+  <text x="45" y="145" text-anchor="end" font-family="Arial, sans-serif" font-size="8" fill="#666">16 bits</text>
+  <rect x="55" y="120" width="18" height="30" rx="2" fill="#e74c3c" fill-opacity="0.3" stroke="#e74c3c" stroke-width="1"/>
+  <text x="64" y="139" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#e74c3c">1</text>
+  <rect x="73" y="120" width="144" height="30" rx="2" fill="#3498db" fill-opacity="0.3" stroke="#3498db" stroke-width="1"/>
+  <text x="145" y="139" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#3498db">8 exp</text>
+  <rect x="217" y="120" width="126" height="30" rx="2" fill="#27ae60" fill-opacity="0.3" stroke="#27ae60" stroke-width="1"/>
+  <text x="280" y="139" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#27ae60">7 mantissa</text>
+  <text x="650" y="139" text-anchor="start" font-family="Arial, sans-serif" font-size="9" fill="#666">same range as FP32!</text>
+  <path d="M 145,100 L 145,120" stroke="#3498db" stroke-width="1" stroke-dasharray="3,2"/>
+
+  <!-- FP16 (16 bits) -->
+  <text x="45" y="182" text-anchor="end" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#333">FP16</text>
+  <text x="45" y="195" text-anchor="end" font-family="Arial, sans-serif" font-size="8" fill="#666">16 bits</text>
+  <rect x="55" y="170" width="18" height="30" rx="2" fill="#e74c3c" fill-opacity="0.3" stroke="#e74c3c" stroke-width="1"/>
+  <text x="64" y="189" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#e74c3c">1</text>
+  <rect x="73" y="170" width="90" height="30" rx="2" fill="#3498db" fill-opacity="0.3" stroke="#3498db" stroke-width="1"/>
+  <text x="118" y="189" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#3498db">5 exp</text>
+  <rect x="163" y="170" width="180" height="30" rx="2" fill="#27ae60" fill-opacity="0.3" stroke="#27ae60" stroke-width="1"/>
+  <text x="253" y="189" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#27ae60">10 mantissa</text>
+  <text x="650" y="189" text-anchor="start" font-family="Arial, sans-serif" font-size="9" fill="#666">more precision, less range</text>
+
+  <!-- FP8 E4M3 -->
+  <text x="45" y="232" text-anchor="end" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#333">FP8</text>
+  <text x="45" y="245" text-anchor="end" font-family="Arial, sans-serif" font-size="8" fill="#666">E4M3</text>
+  <rect x="55" y="220" width="18" height="30" rx="2" fill="#e74c3c" fill-opacity="0.3" stroke="#e74c3c" stroke-width="1"/>
+  <text x="64" y="239" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#e74c3c">1</text>
+  <rect x="73" y="220" width="72" height="30" rx="2" fill="#3498db" fill-opacity="0.3" stroke="#3498db" stroke-width="1"/>
+  <text x="109" y="239" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#3498db">4 exp</text>
+  <rect x="145" y="220" width="54" height="30" rx="2" fill="#27ae60" fill-opacity="0.3" stroke="#27ae60" stroke-width="1"/>
+  <text x="172" y="239" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#27ae60">3 m</text>
+  <text x="650" y="239" text-anchor="start" font-family="Arial, sans-serif" font-size="9" fill="#666">forward pass (weights/acts)</text>
+
+  <!-- FP8 E5M2 -->
+  <text x="45" y="282" text-anchor="end" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#333">FP8</text>
+  <text x="45" y="295" text-anchor="end" font-family="Arial, sans-serif" font-size="8" fill="#666">E5M2</text>
+  <rect x="55" y="270" width="18" height="30" rx="2" fill="#e74c3c" fill-opacity="0.3" stroke="#e74c3c" stroke-width="1"/>
+  <text x="64" y="289" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#e74c3c">1</text>
+  <rect x="73" y="270" width="90" height="30" rx="2" fill="#3498db" fill-opacity="0.3" stroke="#3498db" stroke-width="1"/>
+  <text x="118" y="289" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#3498db">5 exp</text>
+  <rect x="163" y="270" width="36" height="30" rx="2" fill="#27ae60" fill-opacity="0.3" stroke="#27ae60" stroke-width="1"/>
+  <text x="181" y="289" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#27ae60">2m</text>
+  <text x="650" y="289" text-anchor="start" font-family="Arial, sans-serif" font-size="9" fill="#666">backward pass (gradients)</text>
+
+  <!-- Brace linking E4M3 and E5M2 -->
+  <text x="215" y="265" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#f39c12">↑ more precision  ↓ more range</text>
+
+  <!-- INT8 -->
+  <text x="45" y="337" text-anchor="end" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#333">INT8</text>
+  <text x="45" y="350" text-anchor="end" font-family="Arial, sans-serif" font-size="8" fill="#666">8 bits</text>
+  <rect x="55" y="325" width="18" height="30" rx="2" fill="#e74c3c" fill-opacity="0.3" stroke="#e74c3c" stroke-width="1"/>
+  <text x="64" y="344" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#e74c3c">1</text>
+  <rect x="73" y="325" width="126" height="30" rx="2" fill="#9b59b6" fill-opacity="0.3" stroke="#9b59b6" stroke-width="1"/>
+  <text x="136" y="344" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#9b59b6">7 integer bits</text>
+  <text x="650" y="344" text-anchor="start" font-family="Arial, sans-serif" font-size="9" fill="#666">-128 to 127 (fixed-point)</text>
+
+  <!-- INT4 -->
+  <text x="45" y="387" text-anchor="end" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#333">INT4</text>
+  <text x="45" y="400" text-anchor="end" font-family="Arial, sans-serif" font-size="8" fill="#666">4 bits</text>
+  <rect x="55" y="375" width="18" height="30" rx="2" fill="#e74c3c" fill-opacity="0.3" stroke="#e74c3c" stroke-width="1"/>
+  <text x="64" y="394" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#e74c3c">1</text>
+  <rect x="73" y="375" width="54" height="30" rx="2" fill="#9b59b6" fill-opacity="0.3" stroke="#9b59b6" stroke-width="1"/>
+  <text x="100" y="394" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#9b59b6">3 int</text>
+  <text x="650" y="394" text-anchor="start" font-family="Arial, sans-serif" font-size="9" fill="#666">-8 to 7 (needs scale factor)</text>
+
+  <!-- Binary/Ternary -->
+  <text x="45" y="437" text-anchor="end" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#333">1.58-bit</text>
+  <text x="45" y="450" text-anchor="end" font-family="Arial, sans-serif" font-size="8" fill="#666">ternary</text>
+  <rect x="55" y="425" width="36" height="30" rx="2" fill="#f39c12" fill-opacity="0.3" stroke="#f39c12" stroke-width="1"/>
+  <text x="73" y="444" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#f39c12">{-1,0,1}</text>
+  <text x="650" y="444" text-anchor="start" font-family="Arial, sans-serif" font-size="9" fill="#666">BitNet: add/sub only, no multiply</text>
+
+  <!-- Size comparison bar -->
+  <text x="400" y="485" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#333">Memory per parameter</text>
+  <rect x="55" y="495" width="576" height="12" rx="3" fill="#3498db" fill-opacity="0.15" stroke="#3498db" stroke-width="0.5"/>
+  <text x="55" y="518" font-family="Arial, sans-serif" font-size="8" fill="#666">FP32: 4 bytes</text>
+  <rect x="55" y="495" width="288" height="12" rx="3" fill="#3498db" fill-opacity="0.25"/>
+  <text x="199" y="518" font-family="Arial, sans-serif" font-size="8" fill="#666">FP16/BF16: 2B</text>
+  <rect x="55" y="495" width="144" height="12" rx="3" fill="#3498db" fill-opacity="0.35"/>
+  <text x="343" y="518" font-family="Arial, sans-serif" font-size="8" fill="#666">FP8/INT8: 1B</text>
+  <rect x="55" y="495" width="72" height="12" rx="3" fill="#3498db" fill-opacity="0.5"/>
+  <text x="415" y="518" font-family="Arial, sans-serif" font-size="8" fill="#666">INT4: 0.5B</text>
+  <rect x="55" y="495" width="28" height="12" rx="3" fill="#3498db" fill-opacity="0.7"/>
+  <text x="487" y="518" font-family="Arial, sans-serif" font-size="8" fill="#666">1.58b: 0.2B</text>
+</svg>

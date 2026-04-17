@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="280" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <marker id="arrow-lms" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0,0 8,3 0,6" fill="#333"/>
+    </marker>
+    <marker id="arrow-red-lms" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0,0 8,3 0,6" fill="#e74c3c"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="350" y="22" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">LMS Adaptive Filter</text>
+
+  <!-- Input signal -->
+  <rect x="30" y="65" width="80" height="36" rx="6" fill="rgba(52,152,219,0.1)" stroke="#3498db" stroke-width="1.5"/>
+  <text x="70" y="80" text-anchor="middle" font-size="9" fill="#333">Input x[n]</text>
+  <text x="70" y="92" text-anchor="middle" font-size="7" fill="#666">(reference)</text>
+
+  <line x1="110" y1="83" x2="148" y2="83" stroke="#333" stroke-width="1.2" marker-end="url(#arrow-lms)"/>
+
+  <!-- Adaptive Filter -->
+  <rect x="151" y="52" width="140" height="62" rx="6" fill="rgba(155,89,182,0.12)" stroke="#9b59b6" stroke-width="1.8"/>
+  <text x="221" y="72" text-anchor="middle" font-size="10" font-weight="bold" fill="#333">Adaptive Filter</text>
+  <text x="221" y="87" text-anchor="middle" font-size="8" fill="#666">FIR: weights w[n]</text>
+  <text x="221" y="100" text-anchor="middle" font-size="8" fill="#666">y[n] = w^T x[n]</text>
+
+  <!-- Output y[n] -->
+  <line x1="291" y1="83" x2="340" y2="83" stroke="#333" stroke-width="1.2" marker-end="url(#arrow-lms)"/>
+  <text x="315" y="76" font-size="8" fill="#333">y[n]</text>
+
+  <!-- Output label -->
+  <rect x="343" y="65" width="75" height="36" rx="6" fill="rgba(39,174,96,0.1)" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="380" y="80" text-anchor="middle" font-size="9" fill="#333">Output</text>
+  <text x="380" y="92" text-anchor="middle" font-size="9" fill="#333">y[n]</text>
+
+  <!-- Forward to subtractor -->
+  <line x1="418" y1="83" x2="475" y2="83" stroke="#333" stroke-width="1.2"/>
+
+  <!-- Desired signal d[n] coming from top -->
+  <rect x="445" y="25" width="80" height="30" rx="6" fill="rgba(243,156,18,0.12)" stroke="#f39c12" stroke-width="1.5"/>
+  <text x="485" y="44" text-anchor="middle" font-size="9" fill="#333">Desired d[n]</text>
+
+  <line x1="485" y1="55" x2="485" y2="68" stroke="#333" stroke-width="1.2" marker-end="url(#arrow-lms)"/>
+
+  <!-- Subtractor circle -->
+  <circle cx="485" cy="83" r="15" fill="rgba(231,76,60,0.08)" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="485" y="80" text-anchor="middle" font-size="12" fill="#e74c3c">+</text>
+  <text x="485" y="90" text-anchor="middle" font-size="8" fill="#e74c3c">-</text>
+
+  <!-- Minus sign on y[n] input -->
+  <text x="467" y="80" font-size="9" fill="#e74c3c">-</text>
+  <!-- Plus sign on d[n] input -->
+  <text x="490" y="72" font-size="9" fill="#27ae60">+</text>
+
+  <!-- Error output -->
+  <line x1="500" y1="83" x2="555" y2="83" stroke="#e74c3c" stroke-width="1.5" marker-end="url(#arrow-red-lms)"/>
+
+  <rect x="558" y="65" width="80" height="36" rx="6" fill="rgba(231,76,60,0.12)" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="598" y="80" text-anchor="middle" font-size="9" font-weight="bold" fill="#e74c3c">Error e[n]</text>
+  <text x="598" y="93" text-anchor="middle" font-size="7" fill="#666">= d[n] - y[n]</text>
+
+  <!-- Feedback path from error back to adaptive filter -->
+  <line x1="598" y1="101" x2="598" y2="155" stroke="#e74c3c" stroke-width="1.3" stroke-dasharray="5,3"/>
+  <line x1="598" y1="155" x2="221" y2="155" stroke="#e74c3c" stroke-width="1.3" stroke-dasharray="5,3"/>
+  <line x1="221" y1="155" x2="221" y2="117" stroke="#e74c3c" stroke-width="1.3" stroke-dasharray="5,3" marker-end="url(#arrow-red-lms)"/>
+
+  <!-- Feedback label -->
+  <text x="410" y="148" text-anchor="middle" font-size="8" font-weight="bold" fill="#e74c3c">Weight Update Feedback</text>
+
+  <!-- Weight update equation box -->
+  <rect x="140" y="130" width="200" height="42" rx="6" fill="rgba(243,156,18,0.08)" stroke="#f39c12" stroke-width="1.2"/>
+  <text x="240" y="148" text-anchor="middle" font-size="9" font-weight="bold" fill="#333">Weight Update Rule:</text>
+  <text x="240" y="163" text-anchor="middle" font-size="10" fill="#9b59b6">w[n+1] = w[n] + mu * e[n] * x[n]</text>
+
+  <!-- mu label -->
+  <text x="100" y="150" font-size="8" fill="#f39c12">mu = step size</text>
+  <text x="100" y="162" font-size="8" fill="#f39c12">(learning rate)</text>
+
+  <!-- Note box -->
+  <rect x="30" y="195" width="640" height="60" rx="6" fill="#f5f5f5" stroke="#333" stroke-width="1"/>
+  <text x="50" y="215" font-size="10" font-weight="bold" fill="#333">LMS adapts filter weights to minimise error in real time.</text>
+  <text x="50" y="232" font-size="9" fill="#666">Used in echo cancellation (x = far-end signal, d = mic signal) and active noise control. The step size</text>
+  <text x="50" y="244" font-size="9" fill="#666">mu trades convergence speed for stability. Variants: NLMS normalises by input power for robustness.</text>
+</svg>

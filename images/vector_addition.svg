@@ -1,0 +1,25 @@
+<svg width="400" height="200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow-a" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#e74c3c"/>
+    </marker>
+    <marker id="arrow-b" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#3498db"/>
+    </marker>
+    <marker id="arrow-sum" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#2ecc71"/>
+    </marker>
+  </defs>
+  <!-- a vector -->
+  <line x1="40" y1="160" x2="168" y2="160" stroke="#e74c3c" stroke-width="2.5" marker-end="url(#arrow-a)"/>
+  <text x="100" y="180" fill="#e74c3c" font-size="14" font-weight="bold" text-anchor="middle">a</text>
+  <!-- b vector from tip of a -->
+  <line x1="176" y1="160" x2="256" y2="60" stroke="#3498db" stroke-width="2.5" marker-end="url(#arrow-b)"/>
+  <text x="230" y="100" fill="#3498db" font-size="14" font-weight="bold">b</text>
+  <!-- a + b resultant -->
+  <line x1="40" y1="160" x2="256" y2="60" stroke="#2ecc71" stroke-width="2.5" stroke-dasharray="6,3" marker-end="url(#arrow-sum)"/>
+  <text x="130" y="95" fill="#2ecc71" font-size="14" font-weight="bold">a + b</text>
+  <!-- origin label -->
+  <circle cx="40" cy="160" r="3" fill="#333"/>
+  <text x="28" y="178" fill="#333" font-size="12">O</text>
+</svg>

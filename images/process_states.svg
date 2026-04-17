@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 250" width="600" height="250">
+  <defs>
+    <marker id="ps-arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#666"/>
+    </marker>
+  </defs>
+  <text x="300" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">Process State Transitions</text>
+
+  <!-- New -->
+  <rect x="30" y="90" width="70" height="40" rx="8" fill="#9b59b6" fill-opacity="0.15" stroke="#9b59b6" stroke-width="1.5"/>
+  <text x="65" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#9b59b6">New</text>
+
+  <!-- Ready -->
+  <rect x="170" y="90" width="90" height="40" rx="8" fill="#f39c12" fill-opacity="0.15" stroke="#f39c12" stroke-width="2"/>
+  <text x="215" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#f39c12">Ready</text>
+
+  <!-- Running -->
+  <rect x="340" y="90" width="90" height="40" rx="8" fill="#27ae60" fill-opacity="0.15" stroke="#27ae60" stroke-width="2"/>
+  <text x="385" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#27ae60">Running</text>
+
+  <!-- Blocked -->
+  <rect x="250" y="180" width="90" height="40" rx="8" fill="#e74c3c" fill-opacity="0.15" stroke="#e74c3c" stroke-width="2"/>
+  <text x="295" y="205" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#e74c3c">Blocked</text>
+
+  <!-- Terminated -->
+  <rect x="500" y="90" width="80" height="40" rx="8" fill="#555" fill-opacity="0.15" stroke="#555" stroke-width="1.5"/>
+  <text x="540" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#555">Done</text>
+
+  <!-- Arrows -->
+  <!-- New → Ready -->
+  <line x1="100" y1="110" x2="162" y2="110" stroke="#666" stroke-width="1.5" marker-end="url(#ps-arr)"/>
+  <text x="131" y="103" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">admit</text>
+
+  <!-- Ready → Running -->
+  <line x1="260" y1="100" x2="332" y2="100" stroke="#27ae60" stroke-width="1.5" marker-end="url(#ps-arr)"/>
+  <text x="296" y="93" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#27ae60">schedule</text>
+
+  <!-- Running → Ready (preempt) -->
+  <line x1="340" y1="125" x2="268" y2="125" stroke="#f39c12" stroke-width="1.5" marker-end="url(#ps-arr)"/>
+  <text x="304" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#f39c12">preempt</text>
+
+  <!-- Running → Blocked -->
+  <line x1="370" y1="130" x2="335" y2="175" stroke="#e74c3c" stroke-width="1.5" marker-end="url(#ps-arr)"/>
+  <text x="370" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#e74c3c">I/O wait</text>
+
+  <!-- Blocked → Ready -->
+  <line x1="255" y1="185" x2="225" y2="138" stroke="#f39c12" stroke-width="1.5" marker-end="url(#ps-arr)"/>
+  <text x="222" y="168" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#f39c12">I/O done</text>
+
+  <!-- Running → Terminated -->
+  <line x1="430" y1="110" x2="492" y2="110" stroke="#555" stroke-width="1.5" marker-end="url(#ps-arr)"/>
+  <text x="461" y="103" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#555">exit</text>
+</svg>

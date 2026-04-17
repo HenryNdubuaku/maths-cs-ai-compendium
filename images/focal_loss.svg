@@ -1,0 +1,69 @@
+<svg width="700" height="260" xmlns="http://www.w3.org/2000/svg">
+  <text x="350" y="22" fill="#333" font-size="14" font-weight="bold" text-anchor="middle">Focal Loss: Down-Weighting Easy Examples</text>
+
+  <!-- Axes -->
+  <line x1="80" y1="200" x2="400" y2="200" stroke="#333" stroke-width="1.5"/>
+  <line x1="80" y1="200" x2="80" y2="45" stroke="#333" stroke-width="1.5"/>
+
+  <!-- Y axis label -->
+  <text x="40" y="120" fill="#333" font-size="10" text-anchor="middle" transform="rotate(-90, 40, 120)">Loss</text>
+  <!-- X axis label -->
+  <text x="240" y="225" fill="#333" font-size="10" text-anchor="middle">Probability of correct class (p_t)</text>
+
+  <!-- X axis ticks -->
+  <text x="80" y="215" fill="#666" font-size="8" text-anchor="middle">0</text>
+  <text x="160" y="215" fill="#666" font-size="8" text-anchor="middle">0.25</text>
+  <text x="240" y="215" fill="#666" font-size="8" text-anchor="middle">0.5</text>
+  <text x="320" y="215" fill="#666" font-size="8" text-anchor="middle">0.75</text>
+  <text x="400" y="215" fill="#666" font-size="8" text-anchor="middle">1.0</text>
+
+  <!-- Y axis ticks -->
+  <text x="72" y="200" fill="#666" font-size="8" text-anchor="end">0</text>
+  <text x="72" y="122" fill="#666" font-size="8" text-anchor="end">2.5</text>
+  <text x="72" y="50" fill="#666" font-size="8" text-anchor="end">5</text>
+
+  <!-- CE curve (gamma=0): -log(pt) -->
+  <!-- Points: pt=0.05→3.0, pt=0.2→1.6, pt=0.4→0.9, pt=0.6→0.5, pt=0.8→0.22, pt=1.0→0 -->
+  <polyline points="96,55 112,82 128,100 160,120 192,142 224,155 256,165 288,175 320,184 352,190 384,196 400,200"
+            fill="none" stroke="#e74c3c" stroke-width="2.5"/>
+  <text x="110" y="52" fill="#e74c3c" font-size="9" font-weight="bold">γ = 0 (CE)</text>
+
+  <!-- Focal loss gamma=1 -->
+  <polyline points="96,90 112,112 128,128 160,148 192,162 224,172 256,180 288,188 320,193 352,197 384,199 400,200"
+            fill="none" stroke="#f39c12" stroke-width="2"/>
+  <text x="140" y="95" fill="#f39c12" font-size="9" font-weight="bold">γ = 1</text>
+
+  <!-- Focal loss gamma=2 -->
+  <polyline points="96,120 112,138 128,150 160,165 192,176 224,184 256,190 288,194 320,197 352,199 384,200 400,200"
+            fill="none" stroke="#27ae60" stroke-width="2"/>
+  <text x="155" y="140" fill="#27ae60" font-size="9" font-weight="bold">γ = 2</text>
+
+  <!-- Focal loss gamma=5 -->
+  <polyline points="96,155 112,165 128,172 160,182 192,189 224,194 256,197 288,199 320,200 352,200 384,200 400,200"
+            fill="none" stroke="#3498db" stroke-width="2"/>
+  <text x="170" y="168" fill="#3498db" font-size="9" font-weight="bold">γ = 5</text>
+
+  <!-- Annotation: easy examples region -->
+  <rect x="300" y="35" width="110" height="35" rx="4" fill="#27ae60" opacity="0.1" stroke="#27ae60" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="355" y="50" fill="#27ae60" font-size="8" text-anchor="middle">Easy examples</text>
+  <text x="355" y="62" fill="#27ae60" font-size="8" text-anchor="middle">(high p_t): loss → 0</text>
+
+  <!-- Right side explanation -->
+  <rect x="430" y="45" width="255" height="100" rx="6" fill="#f5f5f5" stroke="#333" stroke-width="1"/>
+  <text x="558" y="65" fill="#333" font-size="10" text-anchor="middle" font-weight="bold">FL(p_t) = −α_t(1−p_t)^γ log(p_t)</text>
+
+  <text x="445" y="85" fill="#666" font-size="9" text-anchor="start">• γ = 0: standard cross-entropy</text>
+  <text x="445" y="100" fill="#666" font-size="9" text-anchor="start">• γ = 2: well-classified examples</text>
+  <text x="453" y="113" fill="#666" font-size="9" text-anchor="start">contribute ~100× less loss</text>
+  <text x="445" y="130" fill="#666" font-size="9" text-anchor="start">• Focuses training on hard examples</text>
+
+  <!-- Bottom note -->
+  <rect x="430" y="155" width="255" height="45" rx="6" fill="#f5f5f5" stroke="#e74c3c" stroke-width="1"/>
+  <text x="558" y="172" fill="#333" font-size="9" text-anchor="middle" font-weight="bold">The core one-stage detector problem:</text>
+  <text x="558" y="186" fill="#666" font-size="9" text-anchor="middle">~100,000 anchors, but only ~10 are objects.</text>
+  <text x="558" y="198" fill="#666" font-size="9" text-anchor="middle">Easy negatives overwhelm the loss → focal loss.</text>
+
+  <!-- Formula for bottom -->
+  <rect x="100" y="238" width="500" height="18" rx="4" fill="#f5f5f5" stroke="#333" stroke-width="1"/>
+  <text x="350" y="251" fill="#666" font-size="9" text-anchor="middle">Higher γ → more aggressive down-weighting of easy examples. RetinaNet uses γ=2, α=0.25.</text>
+</svg>

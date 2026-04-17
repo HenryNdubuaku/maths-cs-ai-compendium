@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 220" width="750" height="220">
+  <defs>
+    <marker id="fd-arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#666"/>
+    </marker>
+  </defs>
+  <text x="375" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">Fraud Detection: Real-Time Pipeline</text>
+
+  <!-- Transaction -->
+  <rect x="20" y="55" width="80" height="45" rx="8" fill="#555" fill-opacity="0.1" stroke="#555" stroke-width="1.5"/>
+  <text x="60" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#555">Transaction</text>
+  <text x="60" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#555">$249, NYC</text>
+
+  <line x1="100" y1="77" x2="128" y2="77" stroke="#666" stroke-width="1.5" marker-end="url(#fd-arr)"/>
+
+  <!-- Feature Pipeline -->
+  <rect x="136" y="42" width="120" height="70" rx="10" fill="#3498db" fill-opacity="0.1" stroke="#3498db" stroke-width="1.5"/>
+  <text x="196" y="62" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#3498db">Feature Pipeline</text>
+  <text x="196" y="76" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#3498db">user history</text>
+  <text x="196" y="87" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#3498db">velocity (5 txns/5min)</text>
+  <text x="196" y="98" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#3498db">device, location delta</text>
+  <text x="196" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#3498db">~10ms</text>
+
+  <line x1="256" y1="77" x2="284" y2="77" stroke="#666" stroke-width="1.5" marker-end="url(#fd-arr)"/>
+
+  <!-- ML Model -->
+  <rect x="292" y="50" width="100" height="55" rx="10" fill="#f39c12" fill-opacity="0.1" stroke="#f39c12" stroke-width="1.5"/>
+  <text x="342" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#f39c12">ML Model</text>
+  <text x="342" y="84" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#f39c12">P(fraud) = 0.82</text>
+  <text x="342" y="98" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#f39c12">~5ms</text>
+
+  <line x1="392" y1="77" x2="420" y2="77" stroke="#666" stroke-width="1.5" marker-end="url(#fd-arr)"/>
+
+  <!-- Decision Engine -->
+  <rect x="428" y="42" width="100" height="70" rx="10" fill="#9b59b6" fill-opacity="0.1" stroke="#9b59b6" stroke-width="1.5"/>
+  <text x="478" y="62" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#9b59b6">Decision</text>
+  <text x="478" y="76" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#9b59b6">Engine</text>
+  <text x="478" y="92" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#9b59b6">>0.9: block</text>
+  <text x="478" y="102" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#9b59b6">0.3-0.9: review</text>
+
+  <!-- Three outcomes -->
+  <line x1="528" y1="60" x2="580" y2="50" stroke="#27ae60" stroke-width="1.5" marker-end="url(#fd-arr)"/>
+  <line x1="528" y1="77" x2="580" y2="80" stroke="#f39c12" stroke-width="1.5" marker-end="url(#fd-arr)"/>
+  <line x1="528" y1="95" x2="580" y2="110" stroke="#e74c3c" stroke-width="1.5" marker-end="url(#fd-arr)"/>
+
+  <rect x="588" y="38" width="70" height="25" rx="5" fill="#27ae60" fill-opacity="0.15" stroke="#27ae60" stroke-width="1"/>
+  <text x="623" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#27ae60">Allow</text>
+
+  <rect x="588" y="68" width="70" height="25" rx="5" fill="#f39c12" fill-opacity="0.15" stroke="#f39c12" stroke-width="1"/>
+  <text x="623" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#f39c12">Review</text>
+
+  <rect x="588" y="98" width="70" height="25" rx="5" fill="#e74c3c" fill-opacity="0.15" stroke="#e74c3c" stroke-width="1"/>
+  <text x="623" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#e74c3c">Block</text>
+
+  <!-- Human review feedback loop -->
+  <rect x="665" y="65" width="70" height="30" rx="5" fill="#9b59b6" fill-opacity="0.1" stroke="#9b59b6" stroke-width="1"/>
+  <text x="700" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" font-weight="bold" fill="#9b59b6">Human</text>
+
+  <path d="M 700,95 C 700,170 400,175 196,130" fill="none" stroke="#9b59b6" stroke-width="1.2" marker-end="url(#fd-arr)" stroke-dasharray="4,2"/>
+  <text x="450" y="168" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#9b59b6">labels → retrain</text>
+
+  <text x="375" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">Total latency: ~15ms (well within 100ms payment processing window)</text>
+  <text x="375" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">Human review creates feedback loop for continuous model improvement</text>
+</svg>

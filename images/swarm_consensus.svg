@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 220" width="700" height="220">
+  <text x="350" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">Swarm Consensus: Local Averaging → Global Agreement</text>
+
+  <!-- Divider lines -->
+  <line x1="233" y1="35" x2="233" y2="200" stroke="#ccc" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="466" y1="35" x2="466" y2="200" stroke="#ccc" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- Initial (scattered) -->
+  <text x="117" y="52" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#e74c3c">t = 0 (scattered)</text>
+  <circle cx="50" cy="90" r="6" fill="#3498db" stroke="#2980b9" stroke-width="1"/>
+  <circle cx="170" cy="80" r="6" fill="#3498db" stroke="#2980b9" stroke-width="1"/>
+  <circle cx="90" cy="170" r="6" fill="#3498db" stroke="#2980b9" stroke-width="1"/>
+  <circle cx="200" cy="150" r="6" fill="#3498db" stroke="#2980b9" stroke-width="1"/>
+  <circle cx="130" cy="120" r="6" fill="#3498db" stroke="#2980b9" stroke-width="1"/>
+  <circle cx="60" cy="140" r="6" fill="#3498db" stroke="#2980b9" stroke-width="1"/>
+  <!-- Communication edges -->
+  <line x1="50" y1="90" x2="130" y2="120" stroke="#ccc" stroke-width="0.8"/>
+  <line x1="130" y1="120" x2="170" y2="80" stroke="#ccc" stroke-width="0.8"/>
+  <line x1="130" y1="120" x2="200" y2="150" stroke="#ccc" stroke-width="0.8"/>
+  <line x1="60" y1="140" x2="90" y2="170" stroke="#ccc" stroke-width="0.8"/>
+  <line x1="60" y1="140" x2="130" y2="120" stroke="#ccc" stroke-width="0.8"/>
+
+  <!-- Mid (converging) -->
+  <text x="350" y="52" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#f39c12">t = 5 (converging)</text>
+  <circle cx="310" cy="110" r="6" fill="#3498db" stroke="#2980b9" stroke-width="1"/>
+  <circle cx="370" cy="105" r="6" fill="#3498db" stroke="#2980b9" stroke-width="1"/>
+  <circle cx="330" cy="140" r="6" fill="#3498db" stroke="#2980b9" stroke-width="1"/>
+  <circle cx="380" cy="135" r="6" fill="#3498db" stroke="#2980b9" stroke-width="1"/>
+  <circle cx="350" cy="120" r="6" fill="#3498db" stroke="#2980b9" stroke-width="1"/>
+  <circle cx="320" cy="130" r="6" fill="#3498db" stroke="#2980b9" stroke-width="1"/>
+  <line x1="310" y1="110" x2="350" y2="120" stroke="#ccc" stroke-width="0.8"/>
+  <line x1="350" y1="120" x2="370" y2="105" stroke="#ccc" stroke-width="0.8"/>
+  <line x1="350" y1="120" x2="380" y2="135" stroke="#ccc" stroke-width="0.8"/>
+  <line x1="320" y1="130" x2="330" y2="140" stroke="#ccc" stroke-width="0.8"/>
+  <line x1="320" y1="130" x2="350" y2="120" stroke="#ccc" stroke-width="0.8"/>
+
+  <!-- Final (converged) -->
+  <text x="583" y="52" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#27ae60">t = 20 (agreed)</text>
+  <circle cx="578" cy="122" r="6" fill="#3498db" stroke="#2980b9" stroke-width="1"/>
+  <circle cx="590" cy="118" r="6" fill="#3498db" stroke="#2980b9" stroke-width="1"/>
+  <circle cx="575" cy="130" r="6" fill="#3498db" stroke="#2980b9" stroke-width="1"/>
+  <circle cx="592" cy="128" r="6" fill="#3498db" stroke="#2980b9" stroke-width="1"/>
+  <circle cx="583" cy="124" r="6" fill="#3498db" stroke="#2980b9" stroke-width="1"/>
+  <circle cx="580" cy="120" r="6" fill="#3498db" stroke="#2980b9" stroke-width="1"/>
+
+  <!-- Consensus point -->
+  <circle cx="583" cy="124" r="16" fill="none" stroke="#27ae60" stroke-width="1.5" stroke-dasharray="4,2"/>
+
+  <text x="350" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">Each robot averages its position with neighbours → all converge to a shared location</text>
+</svg>

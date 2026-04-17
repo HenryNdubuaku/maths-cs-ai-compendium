@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 230" width="600" height="230">
+  <defs>
+    <marker id="lb-arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#666"/>
+    </marker>
+  </defs>
+  <text x="300" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">Load Balancer: Distributing Requests Across Servers</text>
+
+  <!-- Clients -->
+  <rect x="30" y="60" width="70" height="30" rx="6" fill="#555" fill-opacity="0.1" stroke="#555" stroke-width="1.5"/>
+  <text x="65" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#555">Clients</text>
+
+  <!-- Arrows to LB -->
+  <line x1="100" y1="70" x2="185" y2="70" stroke="#666" stroke-width="1.2" marker-end="url(#lb-arr)"/>
+  <line x1="100" y1="80" x2="185" y2="80" stroke="#666" stroke-width="1.2" marker-end="url(#lb-arr)"/>
+
+  <!-- Load Balancer -->
+  <rect x="193" y="45" width="110" height="60" rx="10" fill="#f39c12" fill-opacity="0.15" stroke="#f39c12" stroke-width="2"/>
+  <text x="248" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#f39c12">Load</text>
+  <text x="248" y="88" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#f39c12">Balancer</text>
+
+  <!-- Arrows to servers -->
+  <line x1="303" y1="60" x2="388" y2="48" stroke="#27ae60" stroke-width="1.5" marker-end="url(#lb-arr)"/>
+  <line x1="303" y1="75" x2="388" y2="88" stroke="#3498db" stroke-width="1.5" marker-end="url(#lb-arr)"/>
+  <line x1="303" y1="90" x2="388" y2="128" stroke="#9b59b6" stroke-width="1.5" marker-end="url(#lb-arr)"/>
+  <line x1="303" y1="95" x2="388" y2="168" stroke="#e74c3c" stroke-width="1.5" marker-end="url(#lb-arr)"/>
+
+  <!-- Servers -->
+  <rect x="396" y="35" width="90" height="30" rx="6" fill="#27ae60" fill-opacity="0.15" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="441" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#27ae60">Server 1</text>
+
+  <rect x="396" y="75" width="90" height="30" rx="6" fill="#3498db" fill-opacity="0.15" stroke="#3498db" stroke-width="1.5"/>
+  <text x="441" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#3498db">Server 2</text>
+
+  <rect x="396" y="115" width="90" height="30" rx="6" fill="#9b59b6" fill-opacity="0.15" stroke="#9b59b6" stroke-width="1.5"/>
+  <text x="441" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#9b59b6">Server 3</text>
+
+  <rect x="396" y="155" width="90" height="30" rx="6" fill="#e74c3c" fill-opacity="0.15" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="441" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#e74c3c">Server 4</text>
+
+  <!-- GPU labels -->
+  <text x="500" y="55" text-anchor="start" font-family="Arial, sans-serif" font-size="8" fill="#666">GPU 0</text>
+  <text x="500" y="95" text-anchor="start" font-family="Arial, sans-serif" font-size="8" fill="#666">GPU 1</text>
+  <text x="500" y="135" text-anchor="start" font-family="Arial, sans-serif" font-size="8" fill="#666">GPU 2</text>
+  <text x="500" y="175" text-anchor="start" font-family="Arial, sans-serif" font-size="8" fill="#666">GPU 3</text>
+
+  <!-- Algorithms -->
+  <text x="300" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">Algorithms: round robin, least connections, consistent hashing, weighted</text>
+</svg>

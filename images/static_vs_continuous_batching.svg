@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 280" width="750" height="280">
+  <text x="375" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">Static Batching vs Continuous Batching</text>
+
+  <line x1="375" y1="35" x2="375" y2="270" stroke="#ccc" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- Static batching (left) -->
+  <text x="188" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#e74c3c">Static Batching</text>
+
+  <text x="30" y="80" text-anchor="start" font-family="Arial, sans-serif" font-size="9" fill="#666">Slot 1:</text>
+  <text x="30" y="105" text-anchor="start" font-family="Arial, sans-serif" font-size="9" fill="#666">Slot 2:</text>
+  <text x="30" y="130" text-anchor="start" font-family="Arial, sans-serif" font-size="9" fill="#666">Slot 3:</text>
+  <text x="30" y="155" text-anchor="start" font-family="Arial, sans-serif" font-size="9" fill="#666">Slot 4:</text>
+
+  <!-- Batch 1 -->
+  <rect x="75" y="70" width="250" height="18" rx="3" fill="#3498db" fill-opacity="0.4" stroke="#3498db" stroke-width="1"/>
+  <text x="200" y="83" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#3498db">Request A (long)</text>
+
+  <rect x="75" y="95" width="120" height="18" rx="3" fill="#27ae60" fill-opacity="0.4" stroke="#27ae60" stroke-width="1"/>
+  <text x="135" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#27ae60">Req B</text>
+  <rect x="195" y="95" width="130" height="18" rx="3" fill="#ddd" stroke="none"/>
+  <text x="260" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#999">IDLE (waiting for A)</text>
+
+  <rect x="75" y="120" width="80" height="18" rx="3" fill="#f39c12" fill-opacity="0.4" stroke="#f39c12" stroke-width="1"/>
+  <text x="115" y="133" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#f39c12">C</text>
+  <rect x="155" y="120" width="170" height="18" rx="3" fill="#ddd" stroke="none"/>
+  <text x="240" y="133" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#999">IDLE</text>
+
+  <rect x="75" y="145" width="150" height="18" rx="3" fill="#9b59b6" fill-opacity="0.4" stroke="#9b59b6" stroke-width="1"/>
+  <text x="150" y="158" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#9b59b6">Req D</text>
+  <rect x="225" y="145" width="100" height="18" rx="3" fill="#ddd" stroke="none"/>
+  <text x="275" y="158" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#999">IDLE</text>
+
+  <!-- Batch boundary -->
+  <line x1="325" y1="65" x2="325" y2="168" stroke="#e74c3c" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <text x="333" y="76" text-anchor="start" font-family="Arial, sans-serif" font-size="7" fill="#e74c3c">batch ends</text>
+  <text x="333" y="86" text-anchor="start" font-family="Arial, sans-serif" font-size="7" fill="#e74c3c">when A finishes</text>
+
+  <text x="188" y="185" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e74c3c">GPU slots sit idle while waiting</text>
+  <text x="188" y="197" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e74c3c">for the longest request</text>
+
+  <!-- Continuous batching (right) -->
+  <text x="562" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#27ae60">Continuous Batching</text>
+
+  <text x="395" y="80" text-anchor="start" font-family="Arial, sans-serif" font-size="9" fill="#666">Slot 1:</text>
+  <text x="395" y="105" text-anchor="start" font-family="Arial, sans-serif" font-size="9" fill="#666">Slot 2:</text>
+  <text x="395" y="130" text-anchor="start" font-family="Arial, sans-serif" font-size="9" fill="#666">Slot 3:</text>
+  <text x="395" y="155" text-anchor="start" font-family="Arial, sans-serif" font-size="9" fill="#666">Slot 4:</text>
+
+  <rect x="440" y="70" width="250" height="18" rx="3" fill="#3498db" fill-opacity="0.4" stroke="#3498db" stroke-width="1"/>
+  <text x="565" y="83" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#3498db">Request A (long)</text>
+
+  <rect x="440" y="95" width="120" height="18" rx="3" fill="#27ae60" fill-opacity="0.4" stroke="#27ae60" stroke-width="1"/>
+  <text x="500" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#27ae60">Req B</text>
+  <rect x="562" y="95" width="128" height="18" rx="3" fill="#e67e22" fill-opacity="0.4" stroke="#e67e22" stroke-width="1"/>
+  <text x="626" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#e67e22">Req E (new!)</text>
+
+  <rect x="440" y="120" width="80" height="18" rx="3" fill="#f39c12" fill-opacity="0.4" stroke="#f39c12" stroke-width="1"/>
+  <text x="480" y="133" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#f39c12">C</text>
+  <rect x="522" y="120" width="100" height="18" rx="3" fill="#1abc9c" fill-opacity="0.4" stroke="#1abc9c" stroke-width="1"/>
+  <text x="572" y="133" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#1abc9c">Req F (new!)</text>
+  <rect x="624" y="120" width="66" height="18" rx="3" fill="#c0392b" fill-opacity="0.4" stroke="#c0392b" stroke-width="1"/>
+  <text x="657" y="133" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#c0392b">G</text>
+
+  <rect x="440" y="145" width="150" height="18" rx="3" fill="#9b59b6" fill-opacity="0.4" stroke="#9b59b6" stroke-width="1"/>
+  <text x="515" y="158" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#9b59b6">Req D</text>
+  <rect x="592" y="145" width="98" height="18" rx="3" fill="#2980b9" fill-opacity="0.4" stroke="#2980b9" stroke-width="1"/>
+  <text x="641" y="158" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#2980b9">Req H (new!)</text>
+
+  <text x="562" y="185" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27ae60">finished requests replaced immediately</text>
+  <text x="562" y="197" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27ae60">→ GPU always fully utilised</text>
+
+  <!-- Bottom comparison -->
+  <rect x="50" y="215" width="300" height="40" rx="6" fill="#e74c3c" fill-opacity="0.06" stroke="#e74c3c" stroke-width="1"/>
+  <text x="200" y="235" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#e74c3c">~40% GPU utilisation</text>
+  <text x="200" y="249" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e74c3c">(wasted slots while waiting)</text>
+
+  <rect x="400" y="215" width="300" height="40" rx="6" fill="#27ae60" fill-opacity="0.06" stroke="#27ae60" stroke-width="1"/>
+  <text x="550" y="235" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#27ae60">~95% GPU utilisation</text>
+  <text x="550" y="249" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27ae60">(slots filled immediately)</text>
+</svg>

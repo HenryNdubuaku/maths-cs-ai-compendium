@@ -1,0 +1,65 @@
+<svg width="700" height="250" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="dn-arrow" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#555"/>
+    </marker>
+  </defs>
+  <text x="350" y="22" fill="#333" font-size="14" font-weight="bold" text-anchor="middle">DenseNet: Dense Block with Feature Reuse</text>
+
+  <!-- Layer boxes -->
+  <rect x="40" y="60" width="80" height="40" rx="6" fill="#3498db" opacity="0.15" stroke="#3498db" stroke-width="2"/>
+  <text x="80" y="77" fill="#3498db" font-size="10" text-anchor="middle" font-weight="bold">x₀</text>
+  <text x="80" y="91" fill="#3498db" font-size="8" text-anchor="middle">Input</text>
+
+  <rect x="180" y="60" width="80" height="40" rx="6" fill="#27ae60" opacity="0.15" stroke="#27ae60" stroke-width="2"/>
+  <text x="220" y="77" fill="#27ae60" font-size="10" text-anchor="middle" font-weight="bold">H₁</text>
+  <text x="220" y="91" fill="#27ae60" font-size="8" text-anchor="middle">BN→ReLU→Conv</text>
+
+  <rect x="320" y="60" width="80" height="40" rx="6" fill="#e74c3c" opacity="0.15" stroke="#e74c3c" stroke-width="2"/>
+  <text x="360" y="77" fill="#e74c3c" font-size="10" text-anchor="middle" font-weight="bold">H₂</text>
+  <text x="360" y="91" fill="#e74c3c" font-size="8" text-anchor="middle">BN→ReLU→Conv</text>
+
+  <rect x="460" y="60" width="80" height="40" rx="6" fill="#f39c12" opacity="0.15" stroke="#f39c12" stroke-width="2"/>
+  <text x="500" y="77" fill="#f39c12" font-size="10" text-anchor="middle" font-weight="bold">H₃</text>
+  <text x="500" y="91" fill="#f39c12" font-size="8" text-anchor="middle">BN→ReLU→Conv</text>
+
+  <rect x="600" y="60" width="80" height="40" rx="6" fill="#9b59b6" opacity="0.15" stroke="#9b59b6" stroke-width="2"/>
+  <text x="640" y="77" fill="#9b59b6" font-size="10" text-anchor="middle" font-weight="bold">Output</text>
+  <text x="640" y="91" fill="#9b59b6" font-size="8" text-anchor="middle">[x₀,x₁,x₂,x₃]</text>
+
+  <!-- Direct forward arrows -->
+  <line x1="120" y1="80" x2="175" y2="80" stroke="#555" stroke-width="1.2" marker-end="url(#dn-arrow)"/>
+  <line x1="260" y1="80" x2="315" y2="80" stroke="#555" stroke-width="1.2" marker-end="url(#dn-arrow)"/>
+  <line x1="400" y1="80" x2="455" y2="80" stroke="#555" stroke-width="1.2" marker-end="url(#dn-arrow)"/>
+  <line x1="540" y1="80" x2="595" y2="80" stroke="#555" stroke-width="1.2" marker-end="url(#dn-arrow)"/>
+
+  <!-- Dense connections (skip connections) -->
+  <!-- x0 → H2 (skip over H1) -->
+  <path d="M 80 100 Q 80 125, 220 125 Q 360 125, 360 100" fill="none" stroke="#3498db" stroke-width="1.2" stroke-dasharray="4,2"/>
+  <polygon points="360,100 356,108 364,108" fill="#3498db"/>
+
+  <!-- x0 → H3 (skip over H1, H2) -->
+  <path d="M 80 100 Q 80 145, 290 145 Q 500 145, 500 100" fill="none" stroke="#3498db" stroke-width="1" stroke-dasharray="4,2"/>
+  <polygon points="500,100 496,108 504,108" fill="#3498db"/>
+
+  <!-- x0 → Output -->
+  <path d="M 80 100 Q 80 165, 360 165 Q 640 165, 640 100" fill="none" stroke="#3498db" stroke-width="1" stroke-dasharray="4,2"/>
+  <polygon points="640,100 636,108 644,108" fill="#3498db"/>
+
+  <!-- x1 → H3 -->
+  <path d="M 220 100 Q 220 130, 360 130 Q 500 130, 500 100" fill="none" stroke="#27ae60" stroke-width="1.2" stroke-dasharray="4,2"/>
+  <polygon points="500,100 496,108 504,108" fill="#27ae60"/>
+
+  <!-- x1 → Output -->
+  <path d="M 220 100 Q 220 155, 430 155 Q 640 155, 640 100" fill="none" stroke="#27ae60" stroke-width="1" stroke-dasharray="4,2"/>
+  <polygon points="640,100 636,108 644,108" fill="#27ae60"/>
+
+  <!-- x2 → Output -->
+  <path d="M 360 100 Q 360 135, 500 135 Q 640 135, 640 100" fill="none" stroke="#e74c3c" stroke-width="1.2" stroke-dasharray="4,2"/>
+  <polygon points="640,100 636,108 644,108" fill="#e74c3c"/>
+
+  <!-- Bottom note -->
+  <rect x="60" y="190" width="580" height="50" rx="6" fill="#f5f5f5" stroke="#333" stroke-width="1"/>
+  <text x="350" y="210" fill="#333" font-size="10" text-anchor="middle">Layer l receives all preceding feature maps: x_l = H_l([x₀, x₁, ..., x_{l-1}])</text>
+  <text x="350" y="228" fill="#666" font-size="9" text-anchor="middle">Each layer adds k new channels (growth rate k). Concatenation grows channels linearly, encouraging feature reuse.</text>
+</svg>

@@ -1,0 +1,187 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 350" width="800" height="350">
+  <defs>
+    <marker id="arrow-ata" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="8" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,3.5 L0,7z" fill="#666"/>
+    </marker>
+    <marker id="arrow-ata-purple" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="8" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,3.5 L0,7z" fill="#9b59b6"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="400" y="24" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">Any-to-Any Model Architectures</text>
+
+  <!-- ===== Column 1: CoDi ===== -->
+  <text x="135" y="52" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#333">CoDi</text>
+
+  <!-- Diffusion models -->
+  <rect x="35" y="68" width="70" height="30" rx="6" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <text x="70" y="87" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3498db">Image Diff.</text>
+
+  <rect x="115" y="68" width="70" height="30" rx="6" fill="#e74c3c" fill-opacity="0.12" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="150" y="87" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e74c3c">Text Diff.</text>
+
+  <rect x="195" y="68" width="70" height="30" rx="6" fill="#27ae60" fill-opacity="0.12" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="230" y="87" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27ae60">Audio Diff.</text>
+
+  <!-- Arrows down to shared latent -->
+  <line x1="70" y1="98" x2="70" y2="126" stroke="#666" stroke-width="1" marker-end="url(#arrow-ata)"/>
+  <line x1="150" y1="98" x2="150" y2="126" stroke="#666" stroke-width="1" marker-end="url(#arrow-ata)"/>
+  <line x1="230" y1="98" x2="230" y2="126" stroke="#666" stroke-width="1" marker-end="url(#arrow-ata)"/>
+
+  <!-- Aligned Conditioning bridge -->
+  <rect x="30" y="128" width="240" height="34" rx="8" fill="#f39c12" fill-opacity="0.12" stroke="#f39c12" stroke-width="1.5"/>
+  <text x="150" y="149" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#f39c12">Aligned Conditioning (Shared Latent)</text>
+
+  <!-- Arrows down to output diffusion -->
+  <line x1="70" y1="162" x2="70" y2="188" stroke="#666" stroke-width="1" marker-end="url(#arrow-ata)"/>
+  <line x1="150" y1="162" x2="150" y2="188" stroke="#666" stroke-width="1" marker-end="url(#arrow-ata)"/>
+  <line x1="230" y1="162" x2="230" y2="188" stroke="#666" stroke-width="1" marker-end="url(#arrow-ata)"/>
+
+  <!-- Output diffusion models -->
+  <rect x="35" y="190" width="70" height="30" rx="6" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <text x="70" y="209" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3498db">Image Out</text>
+
+  <rect x="115" y="190" width="70" height="30" rx="6" fill="#e74c3c" fill-opacity="0.12" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="150" y="209" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e74c3c">Text Out</text>
+
+  <rect x="195" y="190" width="70" height="30" rx="6" fill="#27ae60" fill-opacity="0.12" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="230" y="209" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27ae60">Audio Out</text>
+
+  <text x="150" y="242" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666" font-style="italic">Composable Diffusion</text>
+
+  <!-- ===== Column 2: NExT-GPT ===== -->
+  <text x="420" y="52" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#333">NExT-GPT</text>
+
+  <!-- Frozen Encoders -->
+  <rect x="310" y="68" width="60" height="28" rx="6" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <text x="340" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#3498db">Img Enc</text>
+  <text x="376" y="78" font-family="Arial, sans-serif" font-size="10" fill="#3498db">*</text>
+
+  <rect x="390" y="68" width="60" height="28" rx="6" fill="#27ae60" fill-opacity="0.12" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="420" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#27ae60">Aud Enc</text>
+  <text x="456" y="78" font-family="Arial, sans-serif" font-size="10" fill="#27ae60">*</text>
+
+  <rect x="460" y="68" width="60" height="28" rx="6" fill="#f39c12" fill-opacity="0.12" stroke="#f39c12" stroke-width="1.5"/>
+  <text x="490" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#f39c12">Vid Enc</text>
+  <text x="526" y="78" font-family="Arial, sans-serif" font-size="10" fill="#f39c12">*</text>
+
+  <text x="312" y="63" font-family="Arial, sans-serif" font-size="9" fill="#999">* = frozen</text>
+
+  <!-- Projection layers (input) -->
+  <rect x="315" y="104" width="50" height="14" rx="3" fill="#f39c12" fill-opacity="0.25" stroke="#f39c12" stroke-width="1"/>
+  <text x="340" y="114" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#f39c12">Proj.</text>
+
+  <rect x="395" y="104" width="50" height="14" rx="3" fill="#f39c12" fill-opacity="0.25" stroke="#f39c12" stroke-width="1"/>
+  <text x="420" y="114" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#f39c12">Proj.</text>
+
+  <rect x="465" y="104" width="50" height="14" rx="3" fill="#f39c12" fill-opacity="0.25" stroke="#f39c12" stroke-width="1"/>
+  <text x="490" y="114" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#f39c12">Proj.</text>
+
+  <!-- Arrows encoder → proj -->
+  <line x1="340" y1="96" x2="340" y2="103" stroke="#666" stroke-width="1" marker-end="url(#arrow-ata)"/>
+  <line x1="420" y1="96" x2="420" y2="103" stroke="#666" stroke-width="1" marker-end="url(#arrow-ata)"/>
+  <line x1="490" y1="96" x2="490" y2="103" stroke="#666" stroke-width="1" marker-end="url(#arrow-ata)"/>
+
+  <!-- LLM Hub -->
+  <rect x="325" y="126" width="190" height="46" rx="8" fill="#9b59b6" fill-opacity="0.12" stroke="#9b59b6" stroke-width="2"/>
+  <text x="420" y="153" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#9b59b6">LLM Hub</text>
+
+  <!-- Arrows proj → LLM -->
+  <line x1="340" y1="118" x2="370" y2="124" stroke="#666" stroke-width="1" marker-end="url(#arrow-ata)"/>
+  <line x1="420" y1="118" x2="420" y2="124" stroke="#666" stroke-width="1" marker-end="url(#arrow-ata)"/>
+  <line x1="490" y1="118" x2="470" y2="124" stroke="#666" stroke-width="1" marker-end="url(#arrow-ata)"/>
+
+  <!-- Projection layers (output) -->
+  <rect x="315" y="180" width="50" height="14" rx="3" fill="#f39c12" fill-opacity="0.25" stroke="#f39c12" stroke-width="1"/>
+  <text x="340" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#f39c12">Proj.</text>
+
+  <rect x="395" y="180" width="50" height="14" rx="3" fill="#f39c12" fill-opacity="0.25" stroke="#f39c12" stroke-width="1"/>
+  <text x="420" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#f39c12">Proj.</text>
+
+  <rect x="465" y="180" width="50" height="14" rx="3" fill="#f39c12" fill-opacity="0.25" stroke="#f39c12" stroke-width="1"/>
+  <text x="490" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#f39c12">Proj.</text>
+
+  <!-- Arrows LLM → proj -->
+  <line x1="370" y1="172" x2="340" y2="179" stroke="#666" stroke-width="1" marker-end="url(#arrow-ata)"/>
+  <line x1="420" y1="172" x2="420" y2="179" stroke="#666" stroke-width="1" marker-end="url(#arrow-ata)"/>
+  <line x1="470" y1="172" x2="490" y2="179" stroke="#666" stroke-width="1" marker-end="url(#arrow-ata)"/>
+
+  <!-- Frozen Decoders -->
+  <rect x="310" y="202" width="60" height="28" rx="6" fill="#e74c3c" fill-opacity="0.12" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="340" y="219" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#e74c3c">Img Dec</text>
+  <text x="376" y="210" font-family="Arial, sans-serif" font-size="10" fill="#e74c3c">*</text>
+
+  <rect x="390" y="202" width="60" height="28" rx="6" fill="#e74c3c" fill-opacity="0.12" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="420" y="219" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#e74c3c">Aud Dec</text>
+  <text x="456" y="210" font-family="Arial, sans-serif" font-size="10" fill="#e74c3c">*</text>
+
+  <rect x="460" y="202" width="60" height="28" rx="6" fill="#e74c3c" fill-opacity="0.12" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="490" y="219" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#e74c3c">Vid Dec</text>
+  <text x="526" y="210" font-family="Arial, sans-serif" font-size="10" fill="#e74c3c">*</text>
+
+  <!-- Arrows proj → decoders -->
+  <line x1="340" y1="194" x2="340" y2="201" stroke="#666" stroke-width="1" marker-end="url(#arrow-ata)"/>
+  <line x1="420" y1="194" x2="420" y2="201" stroke="#666" stroke-width="1" marker-end="url(#arrow-ata)"/>
+  <line x1="490" y1="194" x2="490" y2="201" stroke="#666" stroke-width="1" marker-end="url(#arrow-ata)"/>
+
+  <text x="420" y="248" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666" font-style="italic">LLM as Hub</text>
+
+  <!-- ===== Column 3: Gemini-style ===== -->
+  <text x="670" y="52" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#333">Gemini-style</text>
+
+  <!-- One large encompassing box -->
+  <rect x="595" y="64" width="150" height="170" rx="10" fill="#1abc9c" fill-opacity="0.10" stroke="#1abc9c" stroke-width="2"/>
+  <text x="670" y="84" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#1abc9c">Natively Multimodal</text>
+  <text x="670" y="97" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#1abc9c">Transformer</text>
+
+  <!-- Interleaved tokens inside -->
+  <rect x="615" y="110" width="22" height="16" rx="3" fill="#e74c3c" fill-opacity="0.3" stroke="#e74c3c" stroke-width="0.8"/>
+  <text x="626" y="121" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#e74c3c">T</text>
+
+  <rect x="641" y="110" width="22" height="16" rx="3" fill="#3498db" fill-opacity="0.3" stroke="#3498db" stroke-width="0.8"/>
+  <text x="652" y="121" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#3498db">I</text>
+
+  <rect x="667" y="110" width="22" height="16" rx="3" fill="#e74c3c" fill-opacity="0.3" stroke="#e74c3c" stroke-width="0.8"/>
+  <text x="678" y="121" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#e74c3c">T</text>
+
+  <rect x="693" y="110" width="22" height="16" rx="3" fill="#27ae60" fill-opacity="0.3" stroke="#27ae60" stroke-width="0.8"/>
+  <text x="704" y="121" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#27ae60">A</text>
+
+  <rect x="615" y="132" width="22" height="16" rx="3" fill="#3498db" fill-opacity="0.3" stroke="#3498db" stroke-width="0.8"/>
+  <text x="626" y="143" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#3498db">I</text>
+
+  <rect x="641" y="132" width="22" height="16" rx="3" fill="#f39c12" fill-opacity="0.3" stroke="#f39c12" stroke-width="0.8"/>
+  <text x="652" y="143" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#f39c12">V</text>
+
+  <rect x="667" y="132" width="22" height="16" rx="3" fill="#e74c3c" fill-opacity="0.3" stroke="#e74c3c" stroke-width="0.8"/>
+  <text x="678" y="143" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#e74c3c">T</text>
+
+  <rect x="693" y="132" width="22" height="16" rx="3" fill="#3498db" fill-opacity="0.3" stroke="#3498db" stroke-width="0.8"/>
+  <text x="704" y="143" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#3498db">I</text>
+
+  <!-- Self-attention lines -->
+  <text x="670" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#1abc9c">Cross-modal</text>
+  <text x="670" y="176" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#1abc9c">self-attention</text>
+
+  <!-- Attention arcs -->
+  <path d="M630,155 Q650,185 670,155" fill="none" stroke="#1abc9c" stroke-width="0.8" stroke-dasharray="2,2"/>
+  <path d="M660,155 Q685,190 710,155" fill="none" stroke="#1abc9c" stroke-width="0.8" stroke-dasharray="2,2"/>
+
+  <!-- Output arrow -->
+  <text x="670" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">Any modality in → Any out</text>
+  <text x="670" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">(single model)</text>
+
+  <text x="670" y="248" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666" font-style="italic">Native Integration</text>
+
+  <!-- ===== Spectrum Arrow ===== -->
+  <line x1="60" y1="290" x2="740" y2="290" stroke="#9b59b6" stroke-width="2" marker-end="url(#arrow-ata-purple)"/>
+  <line x1="60" y1="290" x2="740" y2="290" stroke="#9b59b6" stroke-width="2" marker-start="url(#arrow-ata-purple)"/>
+
+  <text x="130" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#9b59b6">Shallow Integration</text>
+  <text x="670" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#9b59b6">Deep Integration</text>
+
+  <!-- Vertical dividers -->
+  <line x1="280" y1="42" x2="280" y2="265" stroke="#ccc" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="560" y1="42" x2="560" y2="265" stroke="#ccc" stroke-width="1" stroke-dasharray="4,3"/>
+</svg>

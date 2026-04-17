@@ -1,0 +1,52 @@
+<svg width="700" height="220" xmlns="http://www.w3.org/2000/svg">
+  <text x="350" y="22" fill="#333" font-size="14" font-weight="bold" text-anchor="middle">Sobel Edge Detection</text>
+
+  <!-- Original image -->
+  <text x="88" y="48" fill="#666" font-size="11" text-anchor="middle">Original</text>
+  <rect x="28" y="55" width="120" height="100" rx="4" fill="#ddd" stroke="#999" stroke-width="1.5"/>
+  <!-- Simulate a simple image: dark left, bright right -->
+  <rect x="32" y="59" width="56" height="92" fill="#555"/>
+  <rect x="88" y="59" width="56" height="92" fill="#ccc"/>
+  <!-- Diagonal edge -->
+  <polygon points="60,59 144,59 144,151 88,151" fill="#aaa"/>
+
+  <!-- Arrow -->
+  <text x="178" y="100" fill="#333" font-size="16" text-anchor="middle">→</text>
+
+  <!-- Gx: horizontal gradient -->
+  <text x="270" y="48" fill="#e74c3c" font-size="11" font-weight="bold" text-anchor="middle">G_x (horizontal)</text>
+  <rect x="210" y="55" width="120" height="100" rx="4" fill="#fff" stroke="#e74c3c" stroke-width="1.5"/>
+  <!-- Vertical edge shows as bright line -->
+  <rect x="214" y="59" width="30" height="92" fill="#e74c3c" opacity="0.05"/>
+  <rect x="244" y="59" width="20" height="92" fill="#e74c3c" opacity="0.1"/>
+  <rect x="264" y="59" width="8" height="92" fill="#e74c3c" opacity="0.6"/>
+  <rect x="272" y="59" width="20" height="92" fill="#e74c3c" opacity="0.1"/>
+  <rect x="292" y="59" width="34" height="92" fill="#e74c3c" opacity="0.05"/>
+  <text x="270" y="175" fill="#e74c3c" font-size="9" text-anchor="middle">Detects vertical edges</text>
+
+  <!-- Gy: vertical gradient -->
+  <text x="430" y="48" fill="#3498db" font-size="11" font-weight="bold" text-anchor="middle">G_y (vertical)</text>
+  <rect x="370" y="55" width="120" height="100" rx="4" fill="#fff" stroke="#3498db" stroke-width="1.5"/>
+  <!-- Horizontal features -->
+  <rect x="374" y="59" width="112" height="20" fill="#3498db" opacity="0.05"/>
+  <rect x="374" y="79" width="112" height="8" fill="#3498db" opacity="0.1"/>
+  <rect x="374" y="87" width="112" height="20" fill="#3498db" opacity="0.05"/>
+  <rect x="374" y="107" width="112" height="20" fill="#3498db" opacity="0.05"/>
+  <text x="430" y="175" fill="#3498db" font-size="9" text-anchor="middle">Detects horizontal edges</text>
+
+  <!-- Edge magnitude -->
+  <text x="600" y="48" fill="#27ae60" font-size="11" font-weight="bold" text-anchor="middle">|G| = √(Gx² + Gy²)</text>
+  <rect x="540" y="55" width="120" height="100" rx="4" fill="#fff" stroke="#27ae60" stroke-width="1.5"/>
+  <!-- Combined edge map -->
+  <rect x="544" y="59" width="30" height="92" fill="#000" opacity="0.02"/>
+  <rect x="574" y="59" width="6" height="92" fill="#27ae60" opacity="0.7"/>
+  <line x1="570" y1="59" x2="656" y2="151" stroke="#27ae60" stroke-width="3" opacity="0.5"/>
+  <rect x="624" y="59" width="32" height="92" fill="#000" opacity="0.02"/>
+  <text x="600" y="175" fill="#27ae60" font-size="9" text-anchor="middle">All edges combined</text>
+
+  <!-- Bottom: Sobel kernels -->
+  <rect x="100" y="190" width="200" height="24" rx="4" fill="#f5f5f5" stroke="#ccc" stroke-width="1"/>
+  <text x="200" y="207" fill="#e74c3c" font-size="9" text-anchor="middle">G_x: [[-1,0,1],[-2,0,2],[-1,0,1]]</text>
+  <rect x="400" y="190" width="200" height="24" rx="4" fill="#f5f5f5" stroke="#ccc" stroke-width="1"/>
+  <text x="500" y="207" fill="#3498db" font-size="9" text-anchor="middle">G_y: [[-1,-2,-1],[0,0,0],[1,2,1]]</text>
+</svg>

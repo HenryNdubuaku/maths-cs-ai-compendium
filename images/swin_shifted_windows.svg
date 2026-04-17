@@ -1,0 +1,87 @@
+<svg width="700" height="260" xmlns="http://www.w3.org/2000/svg">
+  <text x="350" y="22" fill="#333" font-size="14" font-weight="bold" text-anchor="middle">Swin Transformer: Shifted Window Attention</text>
+
+  <!-- Layer l: regular windows -->
+  <text x="170" y="50" fill="#3498db" font-size="12" font-weight="bold" text-anchor="middle">Layer l: Regular Windows</text>
+
+  <!-- 8x8 grid with 4 windows (2x2 arrangement of 4x4 windows) -->
+  <g transform="translate(50, 60)">
+    <!-- Grid cells (8x8) -->
+    <rect x="0" y="0" width="240" height="160" fill="#eee" stroke="#ccc" stroke-width="0.5"/>
+    <!-- Grid lines -->
+    <line x1="30" y1="0" x2="30" y2="160" stroke="#ddd" stroke-width="0.5"/>
+    <line x1="60" y1="0" x2="60" y2="160" stroke="#ddd" stroke-width="0.5"/>
+    <line x1="90" y1="0" x2="90" y2="160" stroke="#ddd" stroke-width="0.5"/>
+    <line x1="120" y1="0" x2="120" y2="160" stroke="#ddd" stroke-width="0.5"/>
+    <line x1="150" y1="0" x2="150" y2="160" stroke="#ddd" stroke-width="0.5"/>
+    <line x1="180" y1="0" x2="180" y2="160" stroke="#ddd" stroke-width="0.5"/>
+    <line x1="210" y1="0" x2="210" y2="160" stroke="#ddd" stroke-width="0.5"/>
+    <line x1="0" y1="20" x2="240" y2="20" stroke="#ddd" stroke-width="0.5"/>
+    <line x1="0" y1="40" x2="240" y2="40" stroke="#ddd" stroke-width="0.5"/>
+    <line x1="0" y1="60" x2="240" y2="60" stroke="#ddd" stroke-width="0.5"/>
+    <line x1="0" y1="80" x2="240" y2="80" stroke="#ddd" stroke-width="0.5"/>
+    <line x1="0" y1="100" x2="240" y2="100" stroke="#ddd" stroke-width="0.5"/>
+    <line x1="0" y1="120" x2="240" y2="120" stroke="#ddd" stroke-width="0.5"/>
+    <line x1="0" y1="140" x2="240" y2="140" stroke="#ddd" stroke-width="0.5"/>
+
+    <!-- Window boundaries (thick) -->
+    <rect x="0" y="0" width="120" height="80" fill="#3498db" opacity="0.08" stroke="#3498db" stroke-width="2.5"/>
+    <rect x="120" y="0" width="120" height="80" fill="#e74c3c" opacity="0.08" stroke="#e74c3c" stroke-width="2.5"/>
+    <rect x="0" y="80" width="120" height="80" fill="#27ae60" opacity="0.08" stroke="#27ae60" stroke-width="2.5"/>
+    <rect x="120" y="80" width="120" height="80" fill="#f39c12" opacity="0.08" stroke="#f39c12" stroke-width="2.5"/>
+
+    <!-- Window labels -->
+    <text x="60" y="45" fill="#3498db" font-size="10" text-anchor="middle" font-weight="bold">W1</text>
+    <text x="180" y="45" fill="#e74c3c" font-size="10" text-anchor="middle" font-weight="bold">W2</text>
+    <text x="60" y="125" fill="#27ae60" font-size="10" text-anchor="middle" font-weight="bold">W3</text>
+    <text x="180" y="125" fill="#f39c12" font-size="10" text-anchor="middle" font-weight="bold">W4</text>
+  </g>
+
+  <text x="170" y="237" fill="#666" font-size="9" text-anchor="middle">Attention within each window only</text>
+  <text x="170" y="250" fill="#666" font-size="9" text-anchor="middle">No cross-window info flow</text>
+
+  <!-- Arrow between -->
+  <text x="350" y="140" fill="#333" font-size="14" text-anchor="middle" font-weight="bold">→</text>
+  <text x="350" y="158" fill="#9b59b6" font-size="9" text-anchor="middle" font-weight="bold">shift by</text>
+  <text x="350" y="170" fill="#9b59b6" font-size="9" text-anchor="middle" font-weight="bold">½ window</text>
+
+  <!-- Layer l+1: shifted windows -->
+  <text x="530" y="50" fill="#e74c3c" font-size="12" font-weight="bold" text-anchor="middle">Layer l+1: Shifted Windows</text>
+
+  <g transform="translate(410, 60)">
+    <!-- Grid cells (8x8) -->
+    <rect x="0" y="0" width="240" height="160" fill="#eee" stroke="#ccc" stroke-width="0.5"/>
+    <!-- Grid lines -->
+    <line x1="30" y1="0" x2="30" y2="160" stroke="#ddd" stroke-width="0.5"/>
+    <line x1="60" y1="0" x2="60" y2="160" stroke="#ddd" stroke-width="0.5"/>
+    <line x1="90" y1="0" x2="90" y2="160" stroke="#ddd" stroke-width="0.5"/>
+    <line x1="120" y1="0" x2="120" y2="160" stroke="#ddd" stroke-width="0.5"/>
+    <line x1="150" y1="0" x2="150" y2="160" stroke="#ddd" stroke-width="0.5"/>
+    <line x1="180" y1="0" x2="180" y2="160" stroke="#ddd" stroke-width="0.5"/>
+    <line x1="210" y1="0" x2="210" y2="160" stroke="#ddd" stroke-width="0.5"/>
+    <line x1="0" y1="20" x2="240" y2="20" stroke="#ddd" stroke-width="0.5"/>
+    <line x1="0" y1="40" x2="240" y2="40" stroke="#ddd" stroke-width="0.5"/>
+    <line x1="0" y1="60" x2="240" y2="60" stroke="#ddd" stroke-width="0.5"/>
+    <line x1="0" y1="80" x2="240" y2="80" stroke="#ddd" stroke-width="0.5"/>
+    <line x1="0" y1="100" x2="240" y2="100" stroke="#ddd" stroke-width="0.5"/>
+    <line x1="0" y1="120" x2="240" y2="120" stroke="#ddd" stroke-width="0.5"/>
+    <line x1="0" y1="140" x2="240" y2="140" stroke="#ddd" stroke-width="0.5"/>
+
+    <!-- Shifted window boundaries (offset by half window = 60px, 40px) -->
+    <rect x="60" y="40" width="120" height="80" fill="#9b59b6" opacity="0.12" stroke="#9b59b6" stroke-width="2.5"/>
+    <text x="120" y="85" fill="#9b59b6" font-size="10" text-anchor="middle" font-weight="bold">W'</text>
+
+    <!-- Edge windows (partial, from wrap-around) -->
+    <rect x="0" y="0" width="60" height="40" fill="#f39c12" opacity="0.08" stroke="#f39c12" stroke-width="1.5" stroke-dasharray="4,2"/>
+    <rect x="60" y="0" width="120" height="40" fill="#27ae60" opacity="0.08" stroke="#27ae60" stroke-width="1.5" stroke-dasharray="4,2"/>
+    <rect x="180" y="0" width="60" height="40" fill="#f39c12" opacity="0.08" stroke="#f39c12" stroke-width="1.5" stroke-dasharray="4,2"/>
+    <rect x="0" y="40" width="60" height="80" fill="#e74c3c" opacity="0.08" stroke="#e74c3c" stroke-width="1.5" stroke-dasharray="4,2"/>
+    <rect x="180" y="40" width="60" height="80" fill="#e74c3c" opacity="0.08" stroke="#e74c3c" stroke-width="1.5" stroke-dasharray="4,2"/>
+    <rect x="0" y="120" width="60" height="40" fill="#f39c12" opacity="0.08" stroke="#f39c12" stroke-width="1.5" stroke-dasharray="4,2"/>
+    <rect x="60" y="120" width="120" height="40" fill="#3498db" opacity="0.08" stroke="#3498db" stroke-width="1.5" stroke-dasharray="4,2"/>
+    <rect x="180" y="120" width="60" height="40" fill="#f39c12" opacity="0.08" stroke="#f39c12" stroke-width="1.5" stroke-dasharray="4,2"/>
+  </g>
+
+  <text x="530" y="237" fill="#666" font-size="9" text-anchor="middle">Cross-window connections created!</text>
+  <text x="530" y="250" fill="#666" font-size="9" text-anchor="middle">Cost: O(N) linear in image size</text>
+</svg>

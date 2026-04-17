@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 240" width="700" height="240">
+  <defs>
+    <marker id="ds-arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#666"/>
+    </marker>
+  </defs>
+  <text x="350" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">Behavioural Cloning: Distribution Shift (Compounding Error)</text>
+
+  <!-- Expert trajectory -->
+  <path d="M 60,180 C 150,180 200,180 280,170 C 360,160 450,140 600,120" fill="none" stroke="#27ae60" stroke-width="3"/>
+  <text x="610" y="115" text-anchor="start" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#27ae60">expert</text>
+
+  <!-- Learned policy trajectory - starts close, drifts -->
+  <path d="M 60,180 C 140,183 190,188 270,185 C 340,182 400,175 460,180 C 520,190 560,210 620,225" fill="none" stroke="#e74c3c" stroke-width="2.5" stroke-dasharray="6,3"/>
+  <text x="625" y="230" text-anchor="start" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#e74c3c">learned</text>
+
+  <!-- Small error annotations -->
+  <line x1="200" y1="180" x2="200" y2="184" stroke="#f39c12" stroke-width="1.5"/>
+  <text x="200" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#f39c12">small error</text>
+
+  <line x1="400" y1="152" x2="400" y2="177" stroke="#f39c12" stroke-width="1.5"/>
+  <text x="400" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#f39c12">error grows</text>
+
+  <line x1="560" y1="127" x2="560" y2="205" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="560" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e74c3c">catastrophic drift</text>
+
+  <!-- Road edges -->
+  <line x1="50" y1="100" x2="640" y2="60" stroke="#ccc" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="50" y1="230" x2="640" y2="230" stroke="#ccc" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <text x="350" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#999">The policy visits states the expert never demonstrated → no training data → errors compound</text>
+</svg>

@@ -1,0 +1,83 @@
+<svg width="700" height="280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="vit-arrow" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#555"/>
+    </marker>
+  </defs>
+  <text x="350" y="22" fill="#333" font-size="14" font-weight="bold" text-anchor="middle">Vision Transformer (ViT) Pipeline</text>
+
+  <!-- Input image with patch grid -->
+  <text x="55" y="48" fill="#666" font-size="10" text-anchor="middle">Image</text>
+  <rect x="15" y="55" width="80" height="80" rx="2" fill="#ddd" stroke="#999" stroke-width="1.5"/>
+  <!-- 4x4 patch grid -->
+  <line x1="35" y1="55" x2="35" y2="135" stroke="#e74c3c" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <line x1="55" y1="55" x2="55" y2="135" stroke="#e74c3c" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <line x1="75" y1="55" x2="75" y2="135" stroke="#e74c3c" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <line x1="15" y1="75" x2="95" y2="75" stroke="#e74c3c" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <line x1="15" y1="95" x2="95" y2="95" stroke="#e74c3c" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <line x1="15" y1="115" x2="95" y2="115" stroke="#e74c3c" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <text x="55" y="150" fill="#e74c3c" font-size="8" text-anchor="middle">16×16 patches</text>
+
+  <!-- Arrow: split into patches -->
+  <line x1="100" y1="95" x2="130" y2="95" stroke="#555" stroke-width="1.2" marker-end="url(#vit-arrow)"/>
+  <text x="115" y="88" fill="#666" font-size="7" text-anchor="middle">flatten</text>
+
+  <!-- Patch tokens (vertical stack) -->
+  <text x="160" y="48" fill="#666" font-size="10" text-anchor="middle">Patches</text>
+  <!-- CLS token -->
+  <rect x="140" y="55" width="40" height="14" rx="3" fill="#9b59b6" opacity="0.3" stroke="#9b59b6" stroke-width="1.5"/>
+  <text x="160" y="65" fill="#9b59b6" font-size="7" text-anchor="middle" font-weight="bold">[CLS]</text>
+  <!-- Patch tokens -->
+  <rect x="140" y="72" width="40" height="10" rx="2" fill="#3498db" opacity="0.2" stroke="#3498db" stroke-width="0.8"/>
+  <rect x="140" y="84" width="40" height="10" rx="2" fill="#3498db" opacity="0.2" stroke="#3498db" stroke-width="0.8"/>
+  <rect x="140" y="96" width="40" height="10" rx="2" fill="#3498db" opacity="0.2" stroke="#3498db" stroke-width="0.8"/>
+  <text x="160" y="116" fill="#666" font-size="7" text-anchor="middle">⋮</text>
+  <rect x="140" y="120" width="40" height="10" rx="2" fill="#3498db" opacity="0.2" stroke="#3498db" stroke-width="0.8"/>
+  <text x="160" y="145" fill="#666" font-size="8" text-anchor="middle">N+1 tokens</text>
+
+  <!-- Arrow: linear projection + position -->
+  <line x1="185" y1="95" x2="215" y2="95" stroke="#555" stroke-width="1.2" marker-end="url(#vit-arrow)"/>
+
+  <!-- Projection + position embeddings -->
+  <rect x="220" y="55" width="65" height="80" rx="4" fill="#f39c12" opacity="0.12" stroke="#f39c12" stroke-width="1.5"/>
+  <text x="252" y="80" fill="#f39c12" font-size="8" text-anchor="middle" font-weight="bold">Linear</text>
+  <text x="252" y="92" fill="#f39c12" font-size="8" text-anchor="middle" font-weight="bold">Proj</text>
+  <text x="252" y="108" fill="#f39c12" font-size="8" text-anchor="middle">+ pos emb</text>
+
+  <!-- Arrow to transformer -->
+  <line x1="290" y1="95" x2="310" y2="95" stroke="#555" stroke-width="1.2" marker-end="url(#vit-arrow)"/>
+
+  <!-- Transformer encoder blocks -->
+  <rect x="315" y="45" width="200" height="110" rx="8" fill="#3498db" opacity="0.08" stroke="#3498db" stroke-width="2"/>
+  <text x="415" y="65" fill="#3498db" font-size="10" text-anchor="middle" font-weight="bold">Transformer Encoder</text>
+
+  <!-- Stacked blocks inside -->
+  <rect x="330" y="75" width="170" height="25" rx="4" fill="#3498db" opacity="0.12" stroke="#3498db" stroke-width="1"/>
+  <text x="415" y="92" fill="#3498db" font-size="8" text-anchor="middle">Multi-Head Self-Attention + FFN</text>
+  <rect x="330" y="105" width="170" height="25" rx="4" fill="#3498db" opacity="0.15" stroke="#3498db" stroke-width="1"/>
+  <text x="415" y="122" fill="#3498db" font-size="8" text-anchor="middle">Multi-Head Self-Attention + FFN</text>
+  <text x="415" y="145" fill="#666" font-size="8" text-anchor="middle">× L layers</text>
+
+  <!-- Arrow to CLS output -->
+  <line x1="520" y1="85" x2="555" y2="85" stroke="#9b59b6" stroke-width="1.5" marker-end="url(#vit-arrow)"/>
+  <text x="538" y="78" fill="#9b59b6" font-size="7" text-anchor="middle">[CLS]</text>
+
+  <!-- Classification head -->
+  <rect x="560" y="65" width="70" height="40" rx="6" fill="#27ae60" opacity="0.12" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="595" y="82" fill="#27ae60" font-size="9" text-anchor="middle" font-weight="bold">MLP</text>
+  <text x="595" y="95" fill="#27ae60" font-size="8" text-anchor="middle">Head</text>
+
+  <!-- Output -->
+  <line x1="630" y1="85" x2="660" y2="85" stroke="#555" stroke-width="1.2" marker-end="url(#vit-arrow)"/>
+  <text x="680" y="82" fill="#333" font-size="9" text-anchor="middle" font-weight="bold">class</text>
+  <text x="680" y="94" fill="#333" font-size="9" text-anchor="middle" font-weight="bold">label</text>
+
+  <!-- Bottom: key details -->
+  <rect x="30" y="175" width="640" height="90" rx="6" fill="#f5f5f5" stroke="#333" stroke-width="1"/>
+  <text x="350" y="195" fill="#333" font-size="10" text-anchor="middle" font-weight="bold">Key Details</text>
+  <text x="170" y="215" fill="#666" font-size="9" text-anchor="middle">Patch embedding ≡ Conv2d(P, P, stride=P)</text>
+  <text x="500" y="215" fill="#666" font-size="9" text-anchor="middle">Position embeddings: learnable or sinusoidal</text>
+  <text x="170" y="235" fill="#666" font-size="9" text-anchor="middle">[CLS] token aggregates global info</text>
+  <text x="500" y="235" fill="#666" font-size="9" text-anchor="middle">Self-attention cost: O(N²) in patches</text>
+  <text x="350" y="255" fill="#666" font-size="9" text-anchor="middle">Less inductive bias than CNNs — needs more data, but scales better</text>
+</svg>

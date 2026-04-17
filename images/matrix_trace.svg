@@ -1,0 +1,20 @@
+<svg width="180" height="140" xmlns="http://www.w3.org/2000/svg">
+  <!-- matrix bracket left -->
+  <path d="M 20,10 L 10,10 L 10,130 L 20,130" fill="none" stroke="#333" stroke-width="2"/>
+  <!-- matrix bracket right -->
+  <path d="M 160,10 L 170,10 L 170,130 L 160,130" fill="none" stroke="#333" stroke-width="2"/>
+  <!-- diagonal highlight -->
+  <rect x="28" y="18" width="32" height="28" rx="4" fill="#e74c3c" fill-opacity="0.2"/>
+  <rect x="68" y="52" width="32" height="28" rx="4" fill="#e74c3c" fill-opacity="0.2"/>
+  <rect x="108" y="88" width="32" height="28" rx="4" fill="#e74c3c" fill-opacity="0.2"/>
+  <!-- entries -->
+  <text x="44" y="38" text-anchor="middle" fill="#e74c3c" font-size="16" font-weight="bold">1</text>
+  <text x="84" y="38" text-anchor="middle" fill="#666" font-size="16">5</text>
+  <text x="124" y="38" text-anchor="middle" fill="#666" font-size="16">3</text>
+  <text x="44" y="72" text-anchor="middle" fill="#666" font-size="16">2</text>
+  <text x="84" y="72" text-anchor="middle" fill="#e74c3c" font-size="16" font-weight="bold">4</text>
+  <text x="124" y="72" text-anchor="middle" fill="#666" font-size="16">7</text>
+  <text x="44" y="108" text-anchor="middle" fill="#666" font-size="16">6</text>
+  <text x="84" y="108" text-anchor="middle" fill="#666" font-size="16">8</text>
+  <text x="124" y="108" text-anchor="middle" fill="#e74c3c" font-size="16" font-weight="bold">9</text>
+</svg>

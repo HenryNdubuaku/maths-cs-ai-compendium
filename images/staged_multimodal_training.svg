@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 280" width="800" height="280">
+  <defs>
+    <marker id="arrow-smt" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="8" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,3.5 L0,7z" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="400" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">Staged Training Pipeline for Unified Models</text>
+
+  <!-- ===== Stage 1: Unimodal Pretraining ===== -->
+  <rect x="15" y="44" width="170" height="185" rx="8" fill="#3498db" fill-opacity="0.08" stroke="#3498db" stroke-width="1.5"/>
+  <text x="100" y="62" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#3498db">Stage 1</text>
+  <text x="100" y="76" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#3498db">Unimodal Pretraining</text>
+
+  <!-- Separate model icons -->
+  <rect x="30" y="92" width="60" height="32" rx="5" fill="#3498db" fill-opacity="0.15" stroke="#3498db" stroke-width="1"/>
+  <text x="60" y="106" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#3498db">Vision</text>
+  <text x="60" y="118" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#3498db">Model</text>
+
+  <rect x="30" y="134" width="60" height="32" rx="5" fill="#e74c3c" fill-opacity="0.15" stroke="#e74c3c" stroke-width="1"/>
+  <text x="60" y="148" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#e74c3c">Language</text>
+  <text x="60" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#e74c3c">Model</text>
+
+  <rect x="30" y="176" width="60" height="32" rx="5" fill="#27ae60" fill-opacity="0.15" stroke="#27ae60" stroke-width="1"/>
+  <text x="60" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#27ae60">Audio</text>
+  <text x="60" y="202" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#27ae60">Model</text>
+
+  <!-- Fire icons (training) -->
+  <text x="100" y="110" font-family="Arial, sans-serif" font-size="14" fill="#f39c12">&#x1F525;</text>
+  <text x="100" y="152" font-family="Arial, sans-serif" font-size="14" fill="#f39c12">&#x1F525;</text>
+  <text x="100" y="194" font-family="Arial, sans-serif" font-size="14" fill="#f39c12">&#x1F525;</text>
+
+  <text x="140" y="112" font-family="Arial, sans-serif" font-size="8" fill="#666">Train</text>
+  <text x="140" y="154" font-family="Arial, sans-serif" font-size="8" fill="#666">Train</text>
+  <text x="140" y="196" font-family="Arial, sans-serif" font-size="8" fill="#666">Train</text>
+
+  <!-- Arrow 1→2 -->
+  <line x1="185" y1="136" x2="210" y2="136" stroke="#666" stroke-width="1.5" marker-end="url(#arrow-smt)"/>
+
+  <!-- ===== Stage 2: Cross-Modal Alignment ===== -->
+  <rect x="212" y="44" width="170" height="185" rx="8" fill="#27ae60" fill-opacity="0.08" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="297" y="62" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#27ae60">Stage 2</text>
+  <text x="297" y="76" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#27ae60">Cross-Modal Alignment</text>
+
+  <!-- Frozen encoders -->
+  <rect x="225" y="92" width="56" height="28" rx="5" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="1"/>
+  <text x="253" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#3498db">Vis Enc</text>
+  <text x="285" y="102" font-family="Arial, sans-serif" font-size="9" fill="#3498db">*</text>
+
+  <rect x="225" y="132" width="56" height="28" rx="5" fill="#e74c3c" fill-opacity="0.12" stroke="#e74c3c" stroke-width="1"/>
+  <text x="253" y="148" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#e74c3c">Txt Enc</text>
+  <text x="285" y="142" font-family="Arial, sans-serif" font-size="9" fill="#e74c3c">*</text>
+
+  <rect x="225" y="172" width="56" height="28" rx="5" fill="#27ae60" fill-opacity="0.12" stroke="#27ae60" stroke-width="1"/>
+  <text x="253" y="188" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#27ae60">Aud Enc</text>
+  <text x="285" y="182" font-family="Arial, sans-serif" font-size="9" fill="#27ae60">*</text>
+
+  <!-- Projection layers (trainable) -->
+  <rect x="300" y="95" width="46" height="22" rx="4" fill="#f39c12" fill-opacity="0.3" stroke="#f39c12" stroke-width="1.2"/>
+  <text x="323" y="109" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#f39c12">Proj</text>
+
+  <rect x="300" y="135" width="46" height="22" rx="4" fill="#f39c12" fill-opacity="0.3" stroke="#f39c12" stroke-width="1.2"/>
+  <text x="323" y="149" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#f39c12">Proj</text>
+
+  <rect x="300" y="175" width="46" height="22" rx="4" fill="#f39c12" fill-opacity="0.3" stroke="#f39c12" stroke-width="1.2"/>
+  <text x="323" y="189" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#f39c12">Proj</text>
+
+  <!-- Fire on projections -->
+  <text x="354" y="112" font-family="Arial, sans-serif" font-size="11" fill="#f39c12">&#x1F525;</text>
+  <text x="354" y="152" font-family="Arial, sans-serif" font-size="11" fill="#f39c12">&#x1F525;</text>
+  <text x="354" y="192" font-family="Arial, sans-serif" font-size="11" fill="#f39c12">&#x1F525;</text>
+
+  <text x="297" y="218" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">* = frozen</text>
+
+  <!-- Arrow 2→3 -->
+  <line x1="382" y1="136" x2="407" y2="136" stroke="#666" stroke-width="1.5" marker-end="url(#arrow-smt)"/>
+
+  <!-- ===== Stage 3: Joint Pretraining ===== -->
+  <rect x="409" y="44" width="170" height="185" rx="8" fill="#f39c12" fill-opacity="0.08" stroke="#f39c12" stroke-width="1.5"/>
+  <text x="494" y="62" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#f39c12">Stage 3</text>
+  <text x="494" y="76" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#f39c12">Joint Pretraining</text>
+
+  <!-- Unified model block (everything unfrozen) -->
+  <rect x="425" y="92" width="140" height="110" rx="6" fill="#f39c12" fill-opacity="0.08" stroke="#f39c12" stroke-width="1" stroke-dasharray="4,2"/>
+
+  <!-- Encoder part -->
+  <rect x="433" y="100" width="50" height="20" rx="3" fill="#3498db" fill-opacity="0.15" stroke="#3498db" stroke-width="0.8"/>
+  <text x="458" y="113" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#3498db">Encoders</text>
+
+  <!-- Backbone part -->
+  <rect x="433" y="128" width="120" height="30" rx="4" fill="#9b59b6" fill-opacity="0.15" stroke="#9b59b6" stroke-width="1"/>
+  <text x="493" y="147" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#9b59b6">Shared Backbone</text>
+
+  <!-- Decoder part -->
+  <rect x="503" y="166" width="50" height="20" rx="3" fill="#e74c3c" fill-opacity="0.15" stroke="#e74c3c" stroke-width="0.8"/>
+  <text x="528" y="179" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#e74c3c">Decoders</text>
+
+  <!-- Fire (all trainable) -->
+  <text x="494" y="108" font-family="Arial, sans-serif" font-size="11" fill="#f39c12">&#x1F525;</text>
+  <text x="560" y="147" font-family="Arial, sans-serif" font-size="11" fill="#f39c12">&#x1F525;</text>
+  <text x="558" y="180" font-family="Arial, sans-serif" font-size="11" fill="#f39c12">&#x1F525;</text>
+
+  <text x="494" y="212" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">Everything unfrozen</text>
+
+  <!-- Arrow 3→4 -->
+  <line x1="579" y1="136" x2="604" y2="136" stroke="#666" stroke-width="1.5" marker-end="url(#arrow-smt)"/>
+
+  <!-- ===== Stage 4: Instruction Tuning ===== -->
+  <rect x="606" y="44" width="180" height="185" rx="8" fill="#9b59b6" fill-opacity="0.08" stroke="#9b59b6" stroke-width="1.5"/>
+  <text x="696" y="62" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#9b59b6">Stage 4</text>
+  <text x="696" y="76" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#9b59b6">Instruction Tuning</text>
+
+  <!-- Dialogue / instruction icons -->
+  <rect x="625" y="92" width="140" height="40" rx="6" fill="#9b59b6" fill-opacity="0.08" stroke="#9b59b6" stroke-width="1"/>
+  <text x="695" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#9b59b6">Instruction-Following Data</text>
+  <text x="695" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#9b59b6">(multimodal conversations)</text>
+
+  <!-- Chat bubbles -->
+  <rect x="636" y="142" width="45" height="18" rx="6" fill="#3498db" fill-opacity="0.15" stroke="#3498db" stroke-width="0.8"/>
+  <text x="659" y="154" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#3498db">User</text>
+
+  <rect x="700" y="142" width="55" height="18" rx="6" fill="#27ae60" fill-opacity="0.15" stroke="#27ae60" stroke-width="0.8"/>
+  <text x="728" y="154" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#27ae60">Assistant</text>
+
+  <!-- RLHF -->
+  <rect x="640" y="172" width="110" height="26" rx="6" fill="#e74c3c" fill-opacity="0.10" stroke="#e74c3c" stroke-width="1"/>
+  <text x="695" y="189" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#e74c3c">RLHF / DPO Alignment</text>
+
+  <text x="696" y="218" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">Align to preferences</text>
+
+  <!-- Bottom timeline arrow -->
+  <line x1="100" y1="250" x2="696" y2="250" stroke="#999" stroke-width="1.5" marker-end="url(#arrow-smt)"/>
+  <text x="400" y="268" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#999">Training Progression</text>
+
+  <!-- Stage dots on timeline -->
+  <circle cx="100" cy="250" r="4" fill="#3498db"/>
+  <circle cx="297" cy="250" r="4" fill="#27ae60"/>
+  <circle cx="494" cy="250" r="4" fill="#f39c12"/>
+  <circle cx="696" cy="250" r="4" fill="#9b59b6"/>
+</svg>

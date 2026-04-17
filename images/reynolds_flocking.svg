@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 220" width="750" height="220">
+  <defs>
+    <marker id="flock-arr" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto">
+      <path d="M0,0 L7,2.5 L0,5 Z" fill="#666"/>
+    </marker>
+  </defs>
+  <text x="375" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">Reynolds' Flocking Rules</text>
+
+  <!-- Divider lines -->
+  <line x1="250" y1="35" x2="250" y2="215" stroke="#ccc" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="500" y1="35" x2="500" y2="215" stroke="#ccc" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- Separation -->
+  <text x="125" y="52" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#e74c3c">Separation</text>
+  <text x="125" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e74c3c">steer away from nearby</text>
+
+  <!-- Central robot -->
+  <circle cx="125" cy="130" r="8" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+  <!-- Nearby robots too close -->
+  <circle cx="105" cy="112" r="6" fill="#e74c3c" fill-opacity="0.3" stroke="#e74c3c" stroke-width="1"/>
+  <circle cx="148" cy="118" r="6" fill="#e74c3c" fill-opacity="0.3" stroke="#e74c3c" stroke-width="1"/>
+  <circle cx="112" cy="150" r="6" fill="#e74c3c" fill-opacity="0.3" stroke="#e74c3c" stroke-width="1"/>
+  <!-- Repulsion arrows -->
+  <line x1="117" y1="125" x2="137" y2="138" stroke="#e74c3c" stroke-width="1.5" marker-end="url(#flock-arr)"/>
+  <line x1="133" y1="126" x2="115" y2="140" stroke="#e74c3c" stroke-width="1.5" marker-end="url(#flock-arr)"/>
+  <line x1="119" y1="137" x2="130" y2="118" stroke="#e74c3c" stroke-width="1.5" marker-end="url(#flock-arr)"/>
+  <text x="125" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">avoid collisions</text>
+
+  <!-- Alignment -->
+  <text x="375" y="52" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#27ae60">Alignment</text>
+  <text x="375" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27ae60">match neighbours' heading</text>
+
+  <!-- Robots with velocity arrows all pointing same way -->
+  <circle cx="340" cy="120" r="6" fill="#27ae60" fill-opacity="0.3" stroke="#27ae60" stroke-width="1"/>
+  <line x1="346" y1="118" x2="366" y2="110" stroke="#27ae60" stroke-width="1.5" marker-end="url(#flock-arr)"/>
+
+  <circle cx="375" cy="130" r="8" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+  <line x1="383" y1="128" x2="403" y2="120" stroke="#27ae60" stroke-width="2" marker-end="url(#flock-arr)"/>
+
+  <circle cx="360" cy="150" r="6" fill="#27ae60" fill-opacity="0.3" stroke="#27ae60" stroke-width="1"/>
+  <line x1="366" y1="148" x2="386" y2="140" stroke="#27ae60" stroke-width="1.5" marker-end="url(#flock-arr)"/>
+
+  <circle cx="400" cy="110" r="6" fill="#27ae60" fill-opacity="0.3" stroke="#27ae60" stroke-width="1"/>
+  <line x1="406" y1="108" x2="426" y2="100" stroke="#27ae60" stroke-width="1.5" marker-end="url(#flock-arr)"/>
+
+  <text x="375" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">move in same direction</text>
+
+  <!-- Cohesion -->
+  <text x="625" y="52" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#3498db">Cohesion</text>
+  <text x="625" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3498db">steer toward centre of group</text>
+
+  <!-- Scattered robots with arrows toward centre -->
+  <circle cx="625" cy="130" r="3" fill="#f39c12" stroke="#f39c12" stroke-width="1"/>
+  <text x="625" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#f39c12">centre</text>
+
+  <circle cx="575" cy="100" r="6" fill="#3498db" fill-opacity="0.3" stroke="#3498db" stroke-width="1"/>
+  <line x1="581" y1="104" x2="615" y2="124" stroke="#3498db" stroke-width="1.5" marker-end="url(#flock-arr)"/>
+
+  <circle cx="670" cy="95" r="6" fill="#3498db" fill-opacity="0.3" stroke="#3498db" stroke-width="1"/>
+  <line x1="665" y1="100" x2="635" y2="124" stroke="#3498db" stroke-width="1.5" marker-end="url(#flock-arr)"/>
+
+  <circle cx="590" cy="165" r="6" fill="#3498db" fill-opacity="0.3" stroke="#3498db" stroke-width="1"/>
+  <line x1="596" y1="160" x2="618" y2="137" stroke="#3498db" stroke-width="1.5" marker-end="url(#flock-arr)"/>
+
+  <circle cx="665" cy="160" r="6" fill="#3498db" fill-opacity="0.3" stroke="#3498db" stroke-width="1"/>
+  <line x1="659" y1="155" x2="633" y2="137" stroke="#3498db" stroke-width="1.5" marker-end="url(#flock-arr)"/>
+
+  <text x="625" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">stay with the group</text>
+
+  <text x="375" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#999">Weighted sum of three vectors per robot → naturalistic flocking emerges</text>
+</svg>

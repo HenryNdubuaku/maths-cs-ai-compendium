@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 280" width="700" height="280">
+  <defs>
+    <marker id="av-blue" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#3498db"/>
+    </marker>
+    <marker id="av-green" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#27ae60"/>
+    </marker>
+    <marker id="av-purple" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#9b59b6"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="350" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">Audio-Visual Correspondence Learning</text>
+
+  <!-- ====== TOP PATH: Video frames → Visual Encoder → embedding ====== -->
+
+  <!-- Video frames (3 small rectangles) -->
+  <rect x="32" y="62" width="36" height="28" rx="3" fill="#3498db" fill-opacity="0.15" stroke="#3498db" stroke-width="1"/>
+  <rect x="52" y="56" width="36" height="28" rx="3" fill="#3498db" fill-opacity="0.20" stroke="#3498db" stroke-width="1"/>
+  <rect x="72" y="50" width="36" height="28" rx="3" fill="#3498db" fill-opacity="0.30" stroke="#3498db" stroke-width="1.2"/>
+  <text x="90" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#3498db">F₃</text>
+  <text x="70" y="74" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#3498db">F₂</text>
+  <text x="50" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#3498db">F₁</text>
+  <text x="62" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">Video frames</text>
+
+  <!-- Arrow frames to encoder -->
+  <line x1="112" y1="68" x2="148" y2="68" stroke="#3498db" stroke-width="1.5" marker-end="url(#av-blue)"/>
+
+  <!-- Visual Encoder -->
+  <rect x="155" y="44" width="120" height="50" rx="8" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <text x="215" y="67" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#3498db">Visual Encoder</text>
+  <text x="215" y="82" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">(CNN / ViT)</text>
+
+  <!-- Arrow encoder to embedding -->
+  <line x1="275" y1="68" x2="328" y2="68" stroke="#3498db" stroke-width="1.5" marker-end="url(#av-blue)"/>
+
+  <!-- Visual embedding vector -->
+  <rect x="335" y="54" width="90" height="28" rx="6" fill="#3498db" fill-opacity="0.18" stroke="#3498db" stroke-width="1.2"/>
+  <text x="380" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#3498db">v_embed</text>
+
+  <!-- ====== BOTTOM PATH: Spectrogram → Audio Encoder → embedding ====== -->
+
+  <!-- Spectrogram (hatched rectangle) -->
+  <rect x="40" y="190" width="60" height="40" rx="3" fill="#27ae60" fill-opacity="0.10" stroke="#27ae60" stroke-width="1.2"/>
+  <!-- Hatching lines for spectrogram look -->
+  <line x1="45" y1="195" x2="55" y2="195" stroke="#27ae60" stroke-width="1" opacity="0.5"/>
+  <line x1="50" y1="200" x2="80" y2="200" stroke="#27ae60" stroke-width="1.5" opacity="0.6"/>
+  <line x1="45" y1="205" x2="90" y2="205" stroke="#27ae60" stroke-width="2" opacity="0.4"/>
+  <line x1="48" y1="210" x2="75" y2="210" stroke="#27ae60" stroke-width="1" opacity="0.5"/>
+  <line x1="52" y1="215" x2="85" y2="215" stroke="#27ae60" stroke-width="1.5" opacity="0.3"/>
+  <line x1="46" y1="220" x2="70" y2="220" stroke="#27ae60" stroke-width="1" opacity="0.6"/>
+  <text x="70" y="245" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">Spectrogram</text>
+
+  <!-- Arrow spectrogram to encoder -->
+  <line x1="104" y1="210" x2="148" y2="210" stroke="#27ae60" stroke-width="1.5" marker-end="url(#av-green)"/>
+
+  <!-- Audio Encoder -->
+  <rect x="155" y="186" width="120" height="50" rx="8" fill="#27ae60" fill-opacity="0.12" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="215" y="209" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#27ae60">Audio Encoder</text>
+  <text x="215" y="224" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">(Wav2Vec)</text>
+
+  <!-- Arrow encoder to embedding -->
+  <line x1="275" y1="210" x2="328" y2="210" stroke="#27ae60" stroke-width="1.5" marker-end="url(#av-green)"/>
+
+  <!-- Audio embedding vector -->
+  <rect x="335" y="196" width="90" height="28" rx="6" fill="#27ae60" fill-opacity="0.18" stroke="#27ae60" stroke-width="1.2"/>
+  <text x="380" y="214" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#27ae60">a_embed</text>
+
+  <!-- ====== Contrastive Loss circle ====== -->
+  <!-- Arrows from embeddings to loss -->
+  <line x1="425" y1="68" x2="480" y2="120" stroke="#9b59b6" stroke-width="1.5" marker-end="url(#av-purple)"/>
+  <line x1="425" y1="210" x2="480" y2="158" stroke="#9b59b6" stroke-width="1.5" marker-end="url(#av-purple)"/>
+
+  <circle cx="510" cy="140" r="35" fill="#9b59b6" fill-opacity="0.10" stroke="#9b59b6" stroke-width="1.5"/>
+  <text x="510" y="136" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#9b59b6">Contrastive</text>
+  <text x="510" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#9b59b6">Loss</text>
+
+  <!-- Matched pair annotation -->
+  <rect x="580" y="70" width="108" height="40" rx="8" fill="#27ae60" fill-opacity="0.08" stroke="#27ae60" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="634" y="86" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#27ae60">matched pair</text>
+  <text x="634" y="101" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#27ae60">&#x2713;</text>
+  <text x="597" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">temporally aligned</text>
+
+  <!-- Unmatched pair annotation -->
+  <rect x="580" y="170" width="108" height="40" rx="8" fill="#e74c3c" fill-opacity="0.08" stroke="#e74c3c" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="634" y="186" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#e74c3c">unmatched pair</text>
+  <text x="634" y="201" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#e74c3c">&#x2717;</text>
+  <text x="597" y="168" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">misaligned</text>
+
+  <!-- Connecting lines from loss to annotations -->
+  <line x1="545" y1="130" x2="575" y2="95" stroke="#27ae60" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="545" y1="150" x2="575" y2="185" stroke="#e74c3c" stroke-width="1" stroke-dasharray="3,2"/>
+</svg>

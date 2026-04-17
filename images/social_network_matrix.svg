@@ -1,0 +1,77 @@
+<svg width="440" height="170" xmlns="http://www.w3.org/2000/svg">
+  <!-- Left: small graph -->
+  <text x="80" y="14" text-anchor="middle" fill="#333" font-size="12" font-weight="bold">Social network</text>
+  <!-- nodes -->
+  <circle cx="80" cy="50" r="14" fill="#3498db" fill-opacity="0.2" stroke="#3498db" stroke-width="1.5"/>
+  <text x="80" y="55" text-anchor="middle" fill="#3498db" font-size="11" font-weight="bold">A</text>
+  <circle cx="30" cy="110" r="14" fill="#e74c3c" fill-opacity="0.2" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="30" y="115" text-anchor="middle" fill="#e74c3c" font-size="11" font-weight="bold">B</text>
+  <circle cx="130" cy="110" r="14" fill="#27ae60" fill-opacity="0.2" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="130" y="115" text-anchor="middle" fill="#27ae60" font-size="11" font-weight="bold">C</text>
+  <circle cx="30" cy="160" r="14" fill="#9b59b6" fill-opacity="0.2" stroke="#9b59b6" stroke-width="1.5"/>
+  <text x="30" y="165" text-anchor="middle" fill="#9b59b6" font-size="11" font-weight="bold">D</text>
+  <circle cx="130" cy="160" r="14" fill="#e67e22" fill-opacity="0.2" stroke="#e67e22" stroke-width="1.5"/>
+  <text x="130" y="165" text-anchor="middle" fill="#e67e22" font-size="11" font-weight="bold">E</text>
+  <!-- edges: A-B, A-C, B-D -->
+  <line x1="70" y1="62" x2="40" y2="98" stroke="#999" stroke-width="1.5"/>
+  <line x1="90" y1="62" x2="120" y2="98" stroke="#999" stroke-width="1.5"/>
+  <line x1="30" y1="124" x2="30" y2="146" stroke="#999" stroke-width="1.5"/>
+
+  <!-- Arrow -->
+  <text x="190" y="105" text-anchor="middle" fill="#333" font-size="20">=</text>
+
+  <!-- Right: adjacency matrix -->
+  <text x="330" y="14" text-anchor="middle" fill="#333" font-size="12" font-weight="bold">Adjacency matrix</text>
+  <!-- column labels -->
+  <text x="268" y="38" text-anchor="middle" fill="#3498db" font-size="10" font-weight="bold">A</text>
+  <text x="298" y="38" text-anchor="middle" fill="#e74c3c" font-size="10" font-weight="bold">B</text>
+  <text x="328" y="38" text-anchor="middle" fill="#27ae60" font-size="10" font-weight="bold">C</text>
+  <text x="358" y="38" text-anchor="middle" fill="#9b59b6" font-size="10" font-weight="bold">D</text>
+  <text x="388" y="38" text-anchor="middle" fill="#e67e22" font-size="10" font-weight="bold">E</text>
+  <!-- row labels -->
+  <text x="242" y="58" text-anchor="middle" fill="#3498db" font-size="10" font-weight="bold">A</text>
+  <text x="242" y="83" text-anchor="middle" fill="#e74c3c" font-size="10" font-weight="bold">B</text>
+  <text x="242" y="108" text-anchor="middle" fill="#27ae60" font-size="10" font-weight="bold">C</text>
+  <text x="242" y="133" text-anchor="middle" fill="#9b59b6" font-size="10" font-weight="bold">D</text>
+  <text x="242" y="158" text-anchor="middle" fill="#e67e22" font-size="10" font-weight="bold">E</text>
+  <!-- grid -->
+  <rect x="253" y="42" width="150" height="125" fill="none" stroke="#333" stroke-width="1.5" rx="2"/>
+  <line x1="253" y1="67" x2="403" y2="67" stroke="#eee" stroke-width="0.5"/>
+  <line x1="253" y1="92" x2="403" y2="92" stroke="#eee" stroke-width="0.5"/>
+  <line x1="253" y1="117" x2="403" y2="117" stroke="#eee" stroke-width="0.5"/>
+  <line x1="253" y1="142" x2="403" y2="142" stroke="#eee" stroke-width="0.5"/>
+  <line x1="283" y1="42" x2="283" y2="167" stroke="#eee" stroke-width="0.5"/>
+  <line x1="313" y1="42" x2="313" y2="167" stroke="#eee" stroke-width="0.5"/>
+  <line x1="343" y1="42" x2="343" y2="167" stroke="#eee" stroke-width="0.5"/>
+  <line x1="373" y1="42" x2="373" y2="167" stroke="#eee" stroke-width="0.5"/>
+  <!-- Row A: 0 1 1 0 0 -->
+  <text x="268" y="58" text-anchor="middle" fill="#ccc" font-size="12">0</text>
+  <text x="298" y="58" text-anchor="middle" fill="#333" font-size="12" font-weight="bold">1</text>
+  <text x="328" y="58" text-anchor="middle" fill="#333" font-size="12" font-weight="bold">1</text>
+  <text x="358" y="58" text-anchor="middle" fill="#ccc" font-size="12">0</text>
+  <text x="388" y="58" text-anchor="middle" fill="#ccc" font-size="12">0</text>
+  <!-- Row B: 1 0 0 1 0 -->
+  <text x="268" y="83" text-anchor="middle" fill="#333" font-size="12" font-weight="bold">1</text>
+  <text x="298" y="83" text-anchor="middle" fill="#ccc" font-size="12">0</text>
+  <text x="328" y="83" text-anchor="middle" fill="#ccc" font-size="12">0</text>
+  <text x="358" y="83" text-anchor="middle" fill="#333" font-size="12" font-weight="bold">1</text>
+  <text x="388" y="83" text-anchor="middle" fill="#ccc" font-size="12">0</text>
+  <!-- Row C: 1 0 0 0 0 -->
+  <text x="268" y="108" text-anchor="middle" fill="#333" font-size="12" font-weight="bold">1</text>
+  <text x="298" y="108" text-anchor="middle" fill="#ccc" font-size="12">0</text>
+  <text x="328" y="108" text-anchor="middle" fill="#ccc" font-size="12">0</text>
+  <text x="358" y="108" text-anchor="middle" fill="#ccc" font-size="12">0</text>
+  <text x="388" y="108" text-anchor="middle" fill="#ccc" font-size="12">0</text>
+  <!-- Row D: 0 1 0 0 0 -->
+  <text x="268" y="133" text-anchor="middle" fill="#ccc" font-size="12">0</text>
+  <text x="298" y="133" text-anchor="middle" fill="#333" font-size="12" font-weight="bold">1</text>
+  <text x="328" y="133" text-anchor="middle" fill="#ccc" font-size="12">0</text>
+  <text x="358" y="133" text-anchor="middle" fill="#ccc" font-size="12">0</text>
+  <text x="388" y="133" text-anchor="middle" fill="#ccc" font-size="12">0</text>
+  <!-- Row E: 0 0 0 0 0 -->
+  <text x="268" y="158" text-anchor="middle" fill="#ccc" font-size="12">0</text>
+  <text x="298" y="158" text-anchor="middle" fill="#ccc" font-size="12">0</text>
+  <text x="328" y="158" text-anchor="middle" fill="#ccc" font-size="12">0</text>
+  <text x="358" y="158" text-anchor="middle" fill="#ccc" font-size="12">0</text>
+  <text x="388" y="158" text-anchor="middle" fill="#ccc" font-size="12">0</text>
+</svg>

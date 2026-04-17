@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 280" width="700" height="280">
+  <text x="350" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">Virtual Machines vs Containers</text>
+
+  <line x1="350" y1="35" x2="350" y2="270" stroke="#ccc" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- VM side -->
+  <text x="175" y="52" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#3498db">Virtual Machines</text>
+
+  <!-- Hardware -->
+  <rect x="30" y="230" width="290" height="30" rx="4" fill="#555" fill-opacity="0.2" stroke="#555" stroke-width="1.5"/>
+  <text x="175" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#555">Hardware</text>
+
+  <!-- Host OS -->
+  <rect x="30" y="195" width="290" height="30" rx="4" fill="#666" fill-opacity="0.15" stroke="#666" stroke-width="1.5"/>
+  <text x="175" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#666">Host OS / Hypervisor</text>
+
+  <!-- VM 1 -->
+  <rect x="40" y="65" width="125" height="125" rx="6" fill="#3498db" fill-opacity="0.06" stroke="#3498db" stroke-width="1.5"/>
+  <rect x="50" y="73" width="105" height="22" rx="3" fill="#e74c3c" fill-opacity="0.15" stroke="#e74c3c" stroke-width="1"/>
+  <text x="102" y="89" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#e74c3c">App A</text>
+  <rect x="50" y="100" width="105" height="22" rx="3" fill="#f39c12" fill-opacity="0.15" stroke="#f39c12" stroke-width="1"/>
+  <text x="102" y="116" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#f39c12">Bins/Libs</text>
+  <rect x="50" y="127" width="105" height="28" rx="3" fill="#9b59b6" fill-opacity="0.15" stroke="#9b59b6" stroke-width="1"/>
+  <text x="102" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#9b59b6">Guest OS</text>
+  <rect x="50" y="160" width="105" height="22" rx="3" fill="#666" fill-opacity="0.1" stroke="#666" stroke-width="1"/>
+  <text x="102" y="176" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">Virtual HW</text>
+
+  <!-- VM 2 -->
+  <rect x="185" y="65" width="125" height="125" rx="6" fill="#3498db" fill-opacity="0.06" stroke="#3498db" stroke-width="1.5"/>
+  <rect x="195" y="73" width="105" height="22" rx="3" fill="#27ae60" fill-opacity="0.15" stroke="#27ae60" stroke-width="1"/>
+  <text x="247" y="89" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#27ae60">App B</text>
+  <rect x="195" y="100" width="105" height="22" rx="3" fill="#f39c12" fill-opacity="0.15" stroke="#f39c12" stroke-width="1"/>
+  <text x="247" y="116" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#f39c12">Bins/Libs</text>
+  <rect x="195" y="127" width="105" height="28" rx="3" fill="#9b59b6" fill-opacity="0.15" stroke="#9b59b6" stroke-width="1"/>
+  <text x="247" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#9b59b6">Guest OS</text>
+  <rect x="195" y="160" width="105" height="22" rx="3" fill="#666" fill-opacity="0.1" stroke="#666" stroke-width="1"/>
+  <text x="247" y="176" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">Virtual HW</text>
+
+  <!-- Container side -->
+  <text x="525" y="52" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#27ae60">Containers</text>
+
+  <!-- Hardware -->
+  <rect x="380" y="230" width="290" height="30" rx="4" fill="#555" fill-opacity="0.2" stroke="#555" stroke-width="1.5"/>
+  <text x="525" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#555">Hardware</text>
+
+  <!-- Host OS (shared) -->
+  <rect x="380" y="165" width="290" height="60" rx="4" fill="#27ae60" fill-opacity="0.1" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="525" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#27ae60">Host OS (shared kernel)</text>
+  <text x="525" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#27ae60">namespaces + cgroups</text>
+
+  <!-- Container 1 -->
+  <rect x="390" y="65" width="85" height="95" rx="6" fill="#3498db" fill-opacity="0.06" stroke="#3498db" stroke-width="1.5"/>
+  <rect x="397" y="73" width="71" height="22" rx="3" fill="#e74c3c" fill-opacity="0.15" stroke="#e74c3c" stroke-width="1"/>
+  <text x="432" y="89" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#e74c3c">App A</text>
+  <rect x="397" y="100" width="71" height="22" rx="3" fill="#f39c12" fill-opacity="0.15" stroke="#f39c12" stroke-width="1"/>
+  <text x="432" y="116" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#f39c12">Bins/Libs</text>
+  <text x="432" y="148" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#999">no guest OS!</text>
+
+  <!-- Container 2 -->
+  <rect x="490" y="65" width="85" height="95" rx="6" fill="#3498db" fill-opacity="0.06" stroke="#3498db" stroke-width="1.5"/>
+  <rect x="497" y="73" width="71" height="22" rx="3" fill="#27ae60" fill-opacity="0.15" stroke="#27ae60" stroke-width="1"/>
+  <text x="532" y="89" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#27ae60">App B</text>
+  <rect x="497" y="100" width="71" height="22" rx="3" fill="#f39c12" fill-opacity="0.15" stroke="#f39c12" stroke-width="1"/>
+  <text x="532" y="116" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#f39c12">Bins/Libs</text>
+
+  <!-- Container 3 -->
+  <rect x="590" y="65" width="70" height="95" rx="6" fill="#3498db" fill-opacity="0.06" stroke="#3498db" stroke-width="1.5"/>
+  <rect x="597" y="73" width="56" height="22" rx="3" fill="#3498db" fill-opacity="0.15" stroke="#3498db" stroke-width="1"/>
+  <text x="625" y="89" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#3498db">App C</text>
+  <rect x="597" y="100" width="56" height="22" rx="3" fill="#f39c12" fill-opacity="0.15" stroke="#f39c12" stroke-width="1"/>
+  <text x="625" y="116" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#f39c12">Libs</text>
+
+  <text x="175" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3498db">heavy: each VM runs full OS</text>
+  <text x="525" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27ae60">light: shared kernel, ms startup</text>
+</svg>

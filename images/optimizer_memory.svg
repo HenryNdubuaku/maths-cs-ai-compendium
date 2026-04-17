@@ -1,0 +1,63 @@
+<svg width="700" height="320" xmlns="http://www.w3.org/2000/svg">
+  <text x="350" y="22" fill="#333" font-size="14" font-weight="bold" text-anchor="middle">Optimizer Memory per Parameter</text>
+
+  <!-- Y axis -->
+  <line x1="120" y1="50" x2="120" y2="270" stroke="#999" stroke-width="1"/>
+  <!-- X axis -->
+  <line x1="120" y1="270" x2="650" y2="270" stroke="#999" stroke-width="1"/>
+
+  <!-- Y axis labels (multiples of parameter count) -->
+  <text x="115" y="270" fill="#666" font-size="10" text-anchor="end">0×</text>
+  <line x1="117" y1="270" x2="120" y2="270" stroke="#999" stroke-width="1"/>
+  <text x="115" y="215" fill="#666" font-size="10" text-anchor="end">1×</text>
+  <line x1="117" y1="215" x2="650" y2="215" stroke="#eee" stroke-width="1"/>
+  <text x="115" y="160" fill="#666" font-size="10" text-anchor="end">2×</text>
+  <line x1="117" y1="160" x2="650" y2="160" stroke="#eee" stroke-width="1"/>
+  <text x="115" y="105" fill="#666" font-size="10" text-anchor="end">3×</text>
+  <line x1="117" y1="105" x2="650" y2="105" stroke="#eee" stroke-width="1"/>
+
+  <text x="30" y="160" fill="#666" font-size="11" text-anchor="middle" transform="rotate(-90,30,160)">extra memory (× params)</text>
+
+  <!-- Bar width: 60, gap: 20 -->
+
+  <!-- SGD+M: 1 buffer (momentum) -->
+  <rect x="145" y="215" width="60" height="55" fill="#3498db" rx="3"/>
+  <text x="175" y="207" fill="#3498db" font-size="10" font-weight="bold" text-anchor="middle">1×</text>
+  <text x="175" y="288" fill="#333" font-size="11" text-anchor="middle">SGD+M</text>
+  <text x="175" y="242" fill="white" font-size="9" text-anchor="middle">v</text>
+
+  <!-- Adagrad: 1 buffer (accumulated squared grads) -->
+  <rect x="225" y="215" width="60" height="55" fill="#9b59b6" rx="3"/>
+  <text x="255" y="207" fill="#9b59b6" font-size="10" font-weight="bold" text-anchor="middle">1×</text>
+  <text x="255" y="288" fill="#333" font-size="11" text-anchor="middle">Adagrad</text>
+  <text x="255" y="242" fill="white" font-size="9" text-anchor="middle">G</text>
+
+  <!-- RMSprop: 1 buffer (EMA of squared grads) -->
+  <rect x="305" y="215" width="60" height="55" fill="#e67e22" rx="3"/>
+  <text x="335" y="207" fill="#e67e22" font-size="10" font-weight="bold" text-anchor="middle">1×</text>
+  <text x="335" y="288" fill="#333" font-size="11" text-anchor="middle">RMSprop</text>
+  <text x="335" y="242" fill="white" font-size="9" text-anchor="middle">s</text>
+
+  <!-- Adam/AdamW: 2 buffers (m + v) -->
+  <rect x="385" y="160" width="60" height="110" fill="#e74c3c" rx="3"/>
+  <text x="415" y="152" fill="#e74c3c" font-size="10" font-weight="bold" text-anchor="middle">2×</text>
+  <text x="415" y="288" fill="#333" font-size="11" text-anchor="middle">Adam(W)</text>
+  <text x="415" y="210" fill="white" font-size="9" text-anchor="middle">m</text>
+  <line x1="385" y1="215" x2="445" y2="215" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+  <text x="415" y="248" fill="white" font-size="9" text-anchor="middle">v</text>
+
+  <!-- LION: 1 buffer (momentum only, no v) -->
+  <rect x="465" y="215" width="60" height="55" fill="#f39c12" rx="3"/>
+  <text x="495" y="207" fill="#f39c12" font-size="10" font-weight="bold" text-anchor="middle">1×</text>
+  <text x="495" y="288" fill="#333" font-size="11" text-anchor="middle">LION</text>
+  <text x="495" y="242" fill="white" font-size="9" text-anchor="middle">m</text>
+
+  <!-- Muon: 1 buffer (momentum only, orthogonalisation is in-place) -->
+  <rect x="545" y="215" width="60" height="55" fill="#27ae60" rx="3"/>
+  <text x="575" y="207" fill="#27ae60" font-size="10" font-weight="bold" text-anchor="middle">1×</text>
+  <text x="575" y="288" fill="#333" font-size="11" text-anchor="middle">Muon</text>
+  <text x="575" y="242" fill="white" font-size="9" text-anchor="middle">v</text>
+
+  <!-- Caption -->
+  <text x="385" y="312" fill="#666" font-size="11" text-anchor="middle">Adam stores 2 buffers per parameter; LION and Muon need only 1</text>
+</svg>

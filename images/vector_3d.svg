@@ -1,0 +1,34 @@
+<svg width="300" height="280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow-ax" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#999"/>
+    </marker>
+    <marker id="arrow-vec" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#e74c3c"/>
+    </marker>
+  </defs>
+  <!-- x-axis -->
+  <line x1="140" y1="200" x2="40" y2="250" stroke="#999" stroke-width="1.5" marker-end="url(#arrow-ax)"/>
+  <text x="25" y="265" fill="#999" font-size="13" font-style="italic">x</text>
+  <!-- y-axis -->
+  <line x1="140" y1="200" x2="280" y2="200" stroke="#999" stroke-width="1.5" marker-end="url(#arrow-ax)"/>
+  <text x="285" y="205" fill="#999" font-size="13" font-style="italic">y</text>
+  <!-- z-axis -->
+  <line x1="140" y1="200" x2="140" y2="40" stroke="#999" stroke-width="1.5" marker-end="url(#arrow-ax)"/>
+  <text x="145" y="35" fill="#999" font-size="13" font-style="italic">z</text>
+  <!-- dashed projections -->
+  <line x1="140" y1="200" x2="100" y2="220" stroke="#ccc" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="100" y1="220" x2="190" y2="220" stroke="#ccc" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="140" y1="200" x2="230" y2="200" stroke="#ccc" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="230" y1="200" x2="190" y2="220" stroke="#ccc" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="190" y1="220" x2="190" y2="100" stroke="#ccc" stroke-width="1" stroke-dasharray="4,3"/>
+  <!-- vector a -->
+  <line x1="140" y1="200" x2="190" y2="100" stroke="#e74c3c" stroke-width="2.5" marker-end="url(#arrow-vec)"/>
+  <!-- point -->
+  <circle cx="190" cy="100" r="4" fill="#e74c3c"/>
+  <!-- label -->
+  <text x="198" y="95" fill="#e74c3c" font-size="14" font-weight="bold">a = (3, 2, 4)</text>
+  <!-- origin -->
+  <circle cx="140" cy="200" r="3" fill="#333"/>
+  <text x="145" y="215" fill="#333" font-size="12">O</text>
+</svg>

@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 200" width="700" height="200">
+  <defs>
+    <marker id="em-arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#f39c12"/>
+    </marker>
+    <marker id="em-arr-b" markerWidth="8" markerHeight="6" refX="0" refY="3" orient="auto">
+      <path d="M8,0 L0,3 L8,6 Z" fill="#3498db"/>
+    </marker>
+  </defs>
+  <text x="350" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">Earth-Mars Communication Delay</text>
+
+  <!-- Earth -->
+  <circle cx="100" cy="110" r="40" fill="#3498db" fill-opacity="0.2" stroke="#3498db" stroke-width="2"/>
+  <text x="100" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#3498db">Earth</text>
+
+  <!-- Mars -->
+  <circle cx="600" cy="110" r="30" fill="#e74c3c" fill-opacity="0.2" stroke="#e74c3c" stroke-width="2"/>
+  <text x="600" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#e74c3c">Mars</text>
+
+  <!-- Signal out -->
+  <line x1="145" y1="95" x2="565" y2="95" stroke="#f39c12" stroke-width="1.5" stroke-dasharray="8,4" marker-end="url(#em-arr)"/>
+  <text x="355" y="88" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#f39c12">command signal → 4-24 min</text>
+
+  <!-- Signal back -->
+  <line x1="565" y1="125" x2="145" y2="125" stroke="#3498db" stroke-width="1.5" stroke-dasharray="8,4" marker-end="url(#em-arr-b)"/>
+  <text x="355" y="142" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#3498db">← telemetry response 4-24 min</text>
+
+  <!-- Round trip -->
+  <rect x="250" y="155" width="200" height="28" rx="6" fill="#9b59b6" fill-opacity="0.12" stroke="#9b59b6" stroke-width="1.5"/>
+  <text x="350" y="174" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#9b59b6">Round trip: 8-48 minutes</text>
+
+  <!-- Implication -->
+  <text x="350" y="198" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">No real-time joysticking — the rover must decide for itself</text>
+</svg>

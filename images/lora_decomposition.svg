@@ -1,0 +1,73 @@
+<svg width="700" height="260" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="lora-arrow" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#555"/>
+    </marker>
+  </defs>
+  <text x="350" y="22" fill="#333" font-size="14" font-weight="bold" text-anchor="middle">LoRA: Low-Rank Adaptation</text>
+
+  <!-- Input x -->
+  <rect x="30" y="100" width="50" height="60" rx="5" fill="#95a5a6" opacity="0.2" stroke="#333" stroke-width="1.5"/>
+  <text x="55" y="135" fill="#333" font-size="13" text-anchor="middle" font-weight="bold">x</text>
+  <text x="55" y="90" fill="#666" font-size="9" text-anchor="middle">Input</text>
+
+  <!-- Two paths -->
+
+  <!-- Top path: frozen W (large) -->
+  <line x1="80" y1="115" x2="150" y2="75" stroke="#3498db" stroke-width="1.5" marker-end="url(#lora-arrow)"/>
+
+  <rect x="155" y="45" width="120" height="60" rx="6" fill="#3498db" opacity="0.1" stroke="#3498db" stroke-width="2"/>
+  <text x="215" y="72" fill="#3498db" font-size="13" text-anchor="middle" font-weight="bold">W</text>
+  <text x="215" y="88" fill="#3498db" font-size="9" text-anchor="middle">d × d (frozen)</text>
+  <!-- Lock icon -->
+  <text x="260" y="60" fill="#3498db" font-size="14">&#x1F512;</text>
+
+  <line x1="275" y1="75" x2="440" y2="115" stroke="#3498db" stroke-width="1.5" marker-end="url(#lora-arrow)"/>
+
+  <!-- Bottom path: LoRA B*A (small) -->
+  <line x1="80" y1="145" x2="130" y2="185" stroke="#e74c3c" stroke-width="1.5" marker-end="url(#lora-arrow)"/>
+
+  <!-- A matrix (down-project) -->
+  <rect x="135" y="170" width="70" height="40" rx="5" fill="#e74c3c" opacity="0.15" stroke="#e74c3c" stroke-width="2"/>
+  <text x="170" y="188" fill="#e74c3c" font-size="11" text-anchor="middle" font-weight="bold">A</text>
+  <text x="170" y="203" fill="#e74c3c" font-size="8" text-anchor="middle">r × d</text>
+
+  <line x1="205" y1="190" x2="235" y2="190" stroke="#e74c3c" stroke-width="1.5" marker-end="url(#lora-arrow)"/>
+
+  <!-- Bottleneck indicator -->
+  <rect x="240" y="180" width="25" height="20" rx="4" fill="#f39c12" opacity="0.2" stroke="#f39c12" stroke-width="1.5"/>
+  <text x="252" y="194" fill="#f39c12" font-size="9" text-anchor="middle" font-weight="bold">r</text>
+
+  <line x1="265" y1="190" x2="295" y2="190" stroke="#e74c3c" stroke-width="1.5" marker-end="url(#lora-arrow)"/>
+
+  <!-- B matrix (up-project) -->
+  <rect x="300" y="170" width="70" height="40" rx="5" fill="#e74c3c" opacity="0.15" stroke="#e74c3c" stroke-width="2"/>
+  <text x="335" y="188" fill="#e74c3c" font-size="11" text-anchor="middle" font-weight="bold">B</text>
+  <text x="335" y="203" fill="#e74c3c" font-size="8" text-anchor="middle">d × r</text>
+
+  <line x1="370" y1="185" x2="440" y2="145" stroke="#e74c3c" stroke-width="1.5" marker-end="url(#lora-arrow)"/>
+
+  <!-- Trainable badge -->
+  <text x="252" y="228" fill="#e74c3c" font-size="9" text-anchor="middle" font-weight="bold">trainable</text>
+
+  <!-- Addition node -->
+  <circle cx="455" cy="130" r="18" fill="#27ae60" opacity="0.15" stroke="#27ae60" stroke-width="2"/>
+  <text x="455" y="136" fill="#27ae60" font-size="16" text-anchor="middle" font-weight="bold">+</text>
+
+  <!-- Output -->
+  <line x1="473" y1="130" x2="530" y2="130" stroke="#555" stroke-width="1.5" marker-end="url(#lora-arrow)"/>
+  <rect x="535" y="100" width="55" height="60" rx="5" fill="#27ae60" opacity="0.12" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="562" y="128" fill="#27ae60" font-size="11" text-anchor="middle" font-weight="bold">h =</text>
+  <text x="562" y="145" fill="#27ae60" font-size="10" text-anchor="middle">(W+BA)x</text>
+
+  <!-- Parameter comparison -->
+  <rect x="610" y="60" width="78" height="100" rx="6" fill="#f5f5f5" stroke="#ddd" stroke-width="1"/>
+  <text x="649" y="80" fill="#333" font-size="9" text-anchor="middle" font-weight="bold">Parameters</text>
+  <text x="649" y="100" fill="#3498db" font-size="9" text-anchor="middle">W: d² = 65K</text>
+  <text x="649" y="118" fill="#e74c3c" font-size="9" text-anchor="middle">A+B: 2dr</text>
+  <text x="649" y="133" fill="#e74c3c" font-size="9" text-anchor="middle">= 2K</text>
+  <text x="649" y="152" fill="#27ae60" font-size="9" text-anchor="middle" font-weight="bold">32× fewer</text>
+
+  <!-- Bottom note -->
+  <text x="350" y="252" fill="#666" font-size="10" text-anchor="middle">W is frozen (no gradients). Only the small matrices A and B are trained. At inference, merge: W' = W + BA.</text>
+</svg>

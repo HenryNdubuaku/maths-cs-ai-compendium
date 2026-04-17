@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 280" width="800" height="280">
+  <defs>
+    <marker id="arr-blue" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#3498db"/>
+    </marker>
+    <marker id="arr-red" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#e74c3c"/>
+    </marker>
+    <marker id="arr-green" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#27ae60"/>
+    </marker>
+    <marker id="arr-gray" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="400" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">Fusion Strategies for Multimodal Learning</text>
+
+  <!-- Divider lines -->
+  <line x1="267" y1="32" x2="267" y2="275" stroke="#ccc" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="533" y1="32" x2="533" y2="275" stroke="#ccc" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- ====== EARLY FUSION (left panel) ====== -->
+  <text x="134" y="48" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#3498db">Early Fusion</text>
+
+  <!-- Raw inputs -->
+  <rect x="64" y="230" width="58" height="30" rx="6" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <text x="93" y="249" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3498db">Image</text>
+
+  <rect x="146" y="230" width="58" height="30" rx="6" fill="#e74c3c" fill-opacity="0.12" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="175" y="249" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e74c3c">Text</text>
+
+  <!-- Concat box -->
+  <rect x="74" y="190" width="120" height="26" rx="6" fill="#f39c12" fill-opacity="0.12" stroke="#f39c12" stroke-width="1.5"/>
+  <text x="134" y="207" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#f39c12">Concatenate</text>
+
+  <!-- Arrows from inputs to concat -->
+  <line x1="93" y1="230" x2="110" y2="216" stroke="#666" stroke-width="1.2" marker-end="url(#arr-gray)"/>
+  <line x1="175" y1="230" x2="158" y2="216" stroke="#666" stroke-width="1.2" marker-end="url(#arr-gray)"/>
+
+  <!-- Shared model -->
+  <rect x="84" y="126" width="100" height="46" rx="8" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <text x="134" y="148" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#3498db">Shared</text>
+  <text x="134" y="162" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#3498db">Model</text>
+
+  <!-- Arrow concat to model -->
+  <line x1="134" y1="190" x2="134" y2="172" stroke="#3498db" stroke-width="1.5" marker-end="url(#arr-blue)"/>
+
+  <!-- Output -->
+  <rect x="99" y="72" width="70" height="30" rx="8" fill="#3498db" fill-opacity="0.25" stroke="#3498db" stroke-width="1.5"/>
+  <text x="134" y="91" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#3498db">Output</text>
+
+  <!-- Arrow model to output -->
+  <line x1="134" y1="126" x2="134" y2="102" stroke="#3498db" stroke-width="1.5" marker-end="url(#arr-blue)"/>
+
+  <!-- ====== MIDDLE FUSION (center panel) ====== -->
+  <text x="400" y="48" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#e74c3c">Middle Fusion</text>
+
+  <!-- Two encoder boxes -->
+  <rect x="305" y="210" width="80" height="46" rx="8" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <text x="345" y="231" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#3498db">Image</text>
+  <text x="345" y="244" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#3498db">Encoder</text>
+
+  <rect x="415" y="210" width="80" height="46" rx="8" fill="#e74c3c" fill-opacity="0.12" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="455" y="231" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#e74c3c">Text</text>
+  <text x="455" y="244" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#e74c3c">Encoder</text>
+
+  <!-- Cross-Attention box -->
+  <rect x="350" y="142" width="100" height="40" rx="8" fill="#f39c12" fill-opacity="0.15" stroke="#f39c12" stroke-width="1.5"/>
+  <text x="400" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#f39c12">Cross-</text>
+  <text x="400" y="173" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#f39c12">Attention</text>
+
+  <!-- Arrows from encoders to cross-attention -->
+  <line x1="345" y1="210" x2="375" y2="182" stroke="#666" stroke-width="1.2" marker-end="url(#arr-gray)"/>
+  <line x1="455" y1="210" x2="425" y2="182" stroke="#666" stroke-width="1.2" marker-end="url(#arr-gray)"/>
+
+  <!-- Output -->
+  <rect x="365" y="72" width="70" height="30" rx="8" fill="#e74c3c" fill-opacity="0.25" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="400" y="91" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#e74c3c">Output</text>
+
+  <!-- Arrow cross-attention to output -->
+  <line x1="400" y1="142" x2="400" y2="102" stroke="#e74c3c" stroke-width="1.5" marker-end="url(#arr-red)"/>
+
+  <!-- ====== LATE FUSION (right panel) ====== -->
+  <text x="666" y="48" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#27ae60">Late Fusion</text>
+
+  <!-- Pipeline 1: Image -->
+  <rect x="575" y="220" width="70" height="36" rx="8" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <text x="610" y="236" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#3498db">Image</text>
+  <text x="610" y="248" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#3498db">Encoder</text>
+
+  <rect x="575" y="160" width="70" height="36" rx="8" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <text x="610" y="176" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#3498db">Image</text>
+  <text x="610" y="188" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#3498db">Predictor</text>
+
+  <line x1="610" y1="220" x2="610" y2="196" stroke="#3498db" stroke-width="1.2" marker-end="url(#arr-blue)"/>
+
+  <!-- Pipeline 2: Text -->
+  <rect x="690" y="220" width="70" height="36" rx="8" fill="#e74c3c" fill-opacity="0.12" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="725" y="236" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#e74c3c">Text</text>
+  <text x="725" y="248" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#e74c3c">Encoder</text>
+
+  <rect x="690" y="160" width="70" height="36" rx="8" fill="#e74c3c" fill-opacity="0.12" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="725" y="176" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#e74c3c">Text</text>
+  <text x="725" y="188" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#e74c3c">Predictor</text>
+
+  <line x1="725" y1="220" x2="725" y2="196" stroke="#e74c3c" stroke-width="1.2" marker-end="url(#arr-red)"/>
+
+  <!-- Combine box -->
+  <rect x="626" y="106" width="80" height="32" rx="8" fill="#27ae60" fill-opacity="0.15" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="666" y="126" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#27ae60">Combine</text>
+
+  <!-- Arrows to combine -->
+  <line x1="610" y1="160" x2="642" y2="138" stroke="#666" stroke-width="1.2" marker-end="url(#arr-gray)"/>
+  <line x1="725" y1="160" x2="692" y2="138" stroke="#666" stroke-width="1.2" marker-end="url(#arr-gray)"/>
+
+  <!-- Final output -->
+  <rect x="631" y="60" width="70" height="30" rx="8" fill="#27ae60" fill-opacity="0.25" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="666" y="79" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#27ae60">Output</text>
+
+  <!-- Arrow combine to output -->
+  <line x1="666" y1="106" x2="666" y2="90" stroke="#27ae60" stroke-width="1.5" marker-end="url(#arr-green)"/>
+</svg>

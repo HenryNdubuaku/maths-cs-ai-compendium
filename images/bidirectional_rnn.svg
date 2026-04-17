@@ -1,0 +1,91 @@
+<svg width="700" height="280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="birnn-arrow" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#555"/>
+    </marker>
+    <marker id="birnn-arrow-blue" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#3498db"/>
+    </marker>
+    <marker id="birnn-arrow-red" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#e74c3c"/>
+    </marker>
+  </defs>
+  <text x="350" y="22" fill="#333" font-size="14" font-weight="bold" text-anchor="middle">Bidirectional RNN</text>
+
+  <!-- Input tokens -->
+  <text x="120" y="250" fill="#333" font-size="13" text-anchor="middle" font-weight="bold">x₁</text>
+  <text x="260" y="250" fill="#333" font-size="13" text-anchor="middle" font-weight="bold">x₂</text>
+  <text x="400" y="250" fill="#333" font-size="13" text-anchor="middle" font-weight="bold">x₃</text>
+  <text x="540" y="250" fill="#333" font-size="13" text-anchor="middle" font-weight="bold">x₄</text>
+
+  <!-- Input arrows up -->
+  <line x1="120" y1="238" x2="120" y2="195" stroke="#555" stroke-width="1" marker-end="url(#birnn-arrow)"/>
+  <line x1="260" y1="238" x2="260" y2="195" stroke="#555" stroke-width="1" marker-end="url(#birnn-arrow)"/>
+  <line x1="400" y1="238" x2="400" y2="195" stroke="#555" stroke-width="1" marker-end="url(#birnn-arrow)"/>
+  <line x1="540" y1="238" x2="540" y2="195" stroke="#555" stroke-width="1" marker-end="url(#birnn-arrow)"/>
+
+  <!-- Forward RNN (blue, top-ish) -->
+  <text x="30" y="180" fill="#3498db" font-size="11" font-weight="bold">Forward:</text>
+  <rect x="90" y="165" width="60" height="30" rx="6" fill="#3498db" opacity="0.15" stroke="#3498db" stroke-width="2"/>
+  <text x="120" y="185" fill="#3498db" font-size="11" text-anchor="middle">h→₁</text>
+
+  <rect x="230" y="165" width="60" height="30" rx="6" fill="#3498db" opacity="0.15" stroke="#3498db" stroke-width="2"/>
+  <text x="260" y="185" fill="#3498db" font-size="11" text-anchor="middle">h→₂</text>
+
+  <rect x="370" y="165" width="60" height="30" rx="6" fill="#3498db" opacity="0.15" stroke="#3498db" stroke-width="2"/>
+  <text x="400" y="185" fill="#3498db" font-size="11" text-anchor="middle">h→₃</text>
+
+  <rect x="510" y="165" width="60" height="30" rx="6" fill="#3498db" opacity="0.15" stroke="#3498db" stroke-width="2"/>
+  <text x="540" y="185" fill="#3498db" font-size="11" text-anchor="middle">h→₄</text>
+
+  <!-- Forward arrows -->
+  <line x1="150" y1="180" x2="225" y2="180" stroke="#3498db" stroke-width="1.5" marker-end="url(#birnn-arrow-blue)"/>
+  <line x1="290" y1="180" x2="365" y2="180" stroke="#3498db" stroke-width="1.5" marker-end="url(#birnn-arrow-blue)"/>
+  <line x1="430" y1="180" x2="505" y2="180" stroke="#3498db" stroke-width="1.5" marker-end="url(#birnn-arrow-blue)"/>
+
+  <!-- Backward RNN (red, lower) -->
+  <text x="30" y="140" fill="#e74c3c" font-size="11" font-weight="bold">Backward:</text>
+  <rect x="90" y="120" width="60" height="30" rx="6" fill="#e74c3c" opacity="0.15" stroke="#e74c3c" stroke-width="2"/>
+  <text x="120" y="140" fill="#e74c3c" font-size="11" text-anchor="middle">h←₁</text>
+
+  <rect x="230" y="120" width="60" height="30" rx="6" fill="#e74c3c" opacity="0.15" stroke="#e74c3c" stroke-width="2"/>
+  <text x="260" y="140" fill="#e74c3c" font-size="11" text-anchor="middle">h←₂</text>
+
+  <rect x="370" y="120" width="60" height="30" rx="6" fill="#e74c3c" opacity="0.15" stroke="#e74c3c" stroke-width="2"/>
+  <text x="400" y="140" fill="#e74c3c" font-size="11" text-anchor="middle">h←₃</text>
+
+  <rect x="510" y="120" width="60" height="30" rx="6" fill="#e74c3c" opacity="0.15" stroke="#e74c3c" stroke-width="2"/>
+  <text x="540" y="140" fill="#e74c3c" font-size="11" text-anchor="middle">h←₄</text>
+
+  <!-- Backward arrows (right to left) -->
+  <line x1="230" y1="135" x2="155" y2="135" stroke="#e74c3c" stroke-width="1.5" marker-end="url(#birnn-arrow-red)"/>
+  <line x1="370" y1="135" x2="295" y2="135" stroke="#e74c3c" stroke-width="1.5" marker-end="url(#birnn-arrow-red)"/>
+  <line x1="510" y1="135" x2="435" y2="135" stroke="#e74c3c" stroke-width="1.5" marker-end="url(#birnn-arrow-red)"/>
+
+  <!-- Concatenation outputs -->
+  <text x="30" y="75" fill="#27ae60" font-size="11" font-weight="bold">Output:</text>
+  <rect x="85" y="55" width="70" height="30" rx="6" fill="#27ae60" opacity="0.12" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="120" y="75" fill="#27ae60" font-size="10" text-anchor="middle" font-weight="bold">[h→;h←]₁</text>
+
+  <rect x="225" y="55" width="70" height="30" rx="6" fill="#27ae60" opacity="0.12" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="260" y="75" fill="#27ae60" font-size="10" text-anchor="middle" font-weight="bold">[h→;h←]₂</text>
+
+  <rect x="365" y="55" width="70" height="30" rx="6" fill="#27ae60" opacity="0.12" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="400" y="75" fill="#27ae60" font-size="10" text-anchor="middle" font-weight="bold">[h→;h←]₃</text>
+
+  <rect x="505" y="55" width="70" height="30" rx="6" fill="#27ae60" opacity="0.12" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="540" y="75" fill="#27ae60" font-size="10" text-anchor="middle" font-weight="bold">[h→;h←]₄</text>
+
+  <!-- Arrows from both to output -->
+  <line x1="120" y1="120" x2="120" y2="88" stroke="#27ae60" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="120" y1="165" x2="120" y2="88" stroke="#27ae60" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="260" y1="120" x2="260" y2="88" stroke="#27ae60" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="260" y1="165" x2="260" y2="88" stroke="#27ae60" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="400" y1="120" x2="400" y2="88" stroke="#27ae60" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="400" y1="165" x2="400" y2="88" stroke="#27ae60" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="540" y1="120" x2="540" y2="88" stroke="#27ae60" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="540" y1="165" x2="540" y2="88" stroke="#27ae60" stroke-width="1" stroke-dasharray="3,2"/>
+
+  <!-- Legend -->
+  <text x="350" y="275" fill="#666" font-size="10" text-anchor="middle">Forward and backward hidden states are concatenated at each position, giving access to full context.</text>
+</svg>

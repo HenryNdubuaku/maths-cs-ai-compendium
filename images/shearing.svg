@@ -1,0 +1,23 @@
+<svg width="280" height="160" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="sh-arr" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto">
+      <path d="M0,0 L7,2.5 L0,5" fill="#999"/>
+    </marker>
+  </defs>
+  <!-- axes -->
+  <line x1="20" y1="140" x2="270" y2="140" stroke="#ccc" stroke-width="1" marker-end="url(#sh-arr)"/>
+  <line x1="20" y1="140" x2="20" y2="10" stroke="#ccc" stroke-width="1" marker-end="url(#sh-arr)"/>
+  <circle cx="20" cy="140" r="3" fill="#333"/>
+  <!-- original square -->
+  <polygon points="20,140 100,140 100,60 20,60" fill="#e74c3c" fill-opacity="0.15" stroke="#e74c3c" stroke-width="2"/>
+  <text x="60" y="105" text-anchor="middle" fill="#e74c3c" font-size="10">original</text>
+  <!-- sheared parallelogram (k=0.5, top shifts right by 40px) -->
+  <polygon points="20,140 100,140 140,60 60,60" fill="#3498db" fill-opacity="0.1" stroke="#3498db" stroke-width="2" stroke-dasharray="5"/>
+  <text x="110" y="50" fill="#3498db" font-size="10">sheared</text>
+  <!-- horizontal arrow showing the slide -->
+  <line x1="100" y1="55" x2="135" y2="55" stroke="#27ae60" stroke-width="1.5" marker-end="url(#sh-arr)"/>
+  <text x="115" y="45" fill="#27ae60" font-size="9">slide</text>
+  <line x1="20" y1="55" x2="55" y2="55" stroke="#27ae60" stroke-width="1.5" marker-end="url(#sh-arr)"/>
+  <!-- bottom stays fixed -->
+  <text x="140" y="155" fill="#666" font-size="10">bottom fixed, top slides right</text>
+</svg>

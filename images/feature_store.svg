@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 260" width="700" height="260">
+  <defs>
+    <marker id="fs-arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#666"/>
+    </marker>
+  </defs>
+  <text x="350" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">Feature Store: Same Features for Training and Serving</text>
+
+  <!-- Feature computation -->
+  <rect x="30" y="60" width="120" height="50" rx="8" fill="#555" fill-opacity="0.1" stroke="#555" stroke-width="1.5"/>
+  <text x="90" y="82" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#555">Raw Data</text>
+  <text x="90" y="96" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#555">events, logs, DBs</text>
+
+  <line x1="150" y1="85" x2="185" y2="85" stroke="#666" stroke-width="1.5" marker-end="url(#fs-arr)"/>
+
+  <!-- Feature engineering -->
+  <rect x="193" y="52" width="130" height="65" rx="10" fill="#f39c12" fill-opacity="0.1" stroke="#f39c12" stroke-width="1.5"/>
+  <text x="258" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#f39c12">Feature</text>
+  <text x="258" y="86" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#f39c12">Engineering</text>
+  <text x="258" y="102" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#f39c12">same code for both paths</text>
+
+  <!-- Split to offline and online -->
+  <line x1="323" y1="70" x2="398" y2="55" stroke="#3498db" stroke-width="1.5" marker-end="url(#fs-arr)"/>
+  <line x1="323" y1="100" x2="398" y2="135" stroke="#e74c3c" stroke-width="1.5" marker-end="url(#fs-arr)"/>
+
+  <!-- Offline store -->
+  <rect x="406" y="35" width="130" height="50" rx="8" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <text x="471" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#3498db">Offline Store</text>
+  <text x="471" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#3498db">data warehouse (batch)</text>
+
+  <!-- Online store -->
+  <rect x="406" y="115" width="130" height="50" rx="8" fill="#e74c3c" fill-opacity="0.12" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="471" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#e74c3c">Online Store</text>
+  <text x="471" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#e74c3c">Redis/DynamoDB (<5ms)</text>
+
+  <!-- Training reads from offline -->
+  <line x1="536" y1="55" x2="575" y2="55" stroke="#3498db" stroke-width="1.5" marker-end="url(#fs-arr)"/>
+  <rect x="583" y="35" width="90" height="45" rx="8" fill="#3498db" fill-opacity="0.08" stroke="#3498db" stroke-width="1.5"/>
+  <text x="628" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#3498db">Training</text>
+  <text x="628" y="69" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#3498db">batch read</text>
+
+  <!-- Serving reads from online -->
+  <line x1="536" y1="140" x2="575" y2="140" stroke="#e74c3c" stroke-width="1.5" marker-end="url(#fs-arr)"/>
+  <rect x="583" y="120" width="90" height="45" rx="8" fill="#e74c3c" fill-opacity="0.08" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="628" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#e74c3c">Serving</text>
+  <text x="628" y="154" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#e74c3c">real-time lookup</text>
+
+  <!-- Key insight box -->
+  <rect x="100" y="190" width="500" height="55" rx="8" fill="#27ae60" fill-opacity="0.06" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="350" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#27ae60">Key: Same feature computation → No training-serving skew</text>
+  <text x="350" y="228" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27ae60">Without a feature store: training computes user_age one way, serving computes it differently</text>
+  <text x="350" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27ae60">→ model sees different features at inference → silently wrong predictions</text>
+</svg>

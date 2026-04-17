@@ -1,0 +1,48 @@
+<svg width="400" height="200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="pb-arr" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto">
+      <path d="M0,0 L7,2.5 L0,5" fill="#ccc"/>
+    </marker>
+  </defs>
+
+  <text x="200" y="14" text-anchor="middle" fill="#333" font-size="12" font-weight="bold">Each term adds detail</text>
+
+  <!-- Axes -->
+  <line x1="40" y1="150" x2="370" y2="150" stroke="#ccc" stroke-width="1" marker-end="url(#pb-arr)"/>
+  <line x1="40" y1="185" x2="40" y2="18" stroke="#ccc" stroke-width="1" marker-end="url(#pb-arr)"/>
+  <text x="374" y="153" fill="#999" font-size="9">x</text>
+  <text x="36" y="15" fill="#999" font-size="9">y</text>
+
+  <!-- a₀: constant (flat line) -->
+  <line x1="45" y1="110" x2="360" y2="110" stroke="#e74c3c" stroke-width="2" stroke-dasharray="6,4"/>
+  <text x="362" y="107" fill="#e74c3c" font-size="9">a₀</text>
+
+  <!-- a₀ + a₁x: line (tilted) -->
+  <line x1="45" y1="140" x2="360" y2="55" stroke="#3498db" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="362" y="52" fill="#3498db" font-size="9">+ a₁x</text>
+
+  <!-- a₀ + a₁x + a₂x²: parabola -->
+  <path d="M 45,125 Q 120,155 200,110 Q 280,65 360,35"
+        fill="none" stroke="#27ae60" stroke-width="2" stroke-dasharray="4,3"/>
+  <text x="362" y="32" fill="#27ae60" font-size="9">+ a₂x²</text>
+
+  <!-- a₀ + a₁x + a₂x² + a₃x³: cubic -->
+  <path d="M 45,135 Q 100,155 150,120 Q 200,85 250,90 Q 300,95 340,40 L 360,25"
+        fill="none" stroke="#9b59b6" stroke-width="2.5"/>
+  <text x="362" y="22" fill="#9b59b6" font-size="9">+ a₃x³</text>
+
+  <!-- Legend -->
+  <line x1="55" y1="172" x2="75" y2="172" stroke="#e74c3c" stroke-width="2" stroke-dasharray="6,4"/>
+  <text x="78" y="175" fill="#e74c3c" font-size="9">value</text>
+
+  <line x1="120" y1="172" x2="140" y2="172" stroke="#3498db" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="143" y="175" fill="#3498db" font-size="9">+ slope</text>
+
+  <line x1="190" y1="172" x2="210" y2="172" stroke="#27ae60" stroke-width="2" stroke-dasharray="4,3"/>
+  <text x="213" y="175" fill="#27ae60" font-size="9">+ curvature</text>
+
+  <line x1="280" y1="172" x2="300" y2="172" stroke="#9b59b6" stroke-width="2.5"/>
+  <text x="303" y="175" fill="#9b59b6" font-size="9">+ finer shape</text>
+
+  <text x="200" y="195" text-anchor="middle" fill="#666" font-size="10">more terms → richer shape → better approximation</text>
+</svg>

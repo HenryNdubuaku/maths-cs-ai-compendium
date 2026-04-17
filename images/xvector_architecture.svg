@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="300" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <marker id="arrow-xv" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0,0 8,3 0,6" fill="#333"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="350" y="22" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">x-vector TDNN Architecture</text>
+
+  <!-- Frame-level bracket -->
+  <line x1="45" y1="38" x2="45" y2="163" stroke="#3498db" stroke-width="1.5"/>
+  <line x1="45" y1="38" x2="55" y2="38" stroke="#3498db" stroke-width="1.5"/>
+  <line x1="45" y1="163" x2="55" y2="163" stroke="#3498db" stroke-width="1.5"/>
+  <text x="30" y="105" text-anchor="middle" font-size="8" fill="#3498db" transform="rotate(-90,30,105)">Frame-level</text>
+
+  <!-- Input features -->
+  <rect x="70" y="38" width="130" height="28" rx="6" fill="rgba(52,152,219,0.1)" stroke="#3498db" stroke-width="1.5"/>
+  <text x="135" y="56" text-anchor="middle" font-size="9" fill="#333">Input Features (MFCCs)</text>
+
+  <line x1="135" y1="66" x2="135" y2="78" stroke="#333" stroke-width="1.2" marker-end="url(#arrow-xv)"/>
+
+  <!-- TDNN Layer 1 -->
+  <rect x="70" y="80" width="130" height="24" rx="6" fill="rgba(52,152,219,0.15)" stroke="#3498db" stroke-width="1.5"/>
+  <text x="135" y="96" text-anchor="middle" font-size="9" fill="#333">TDNN Layer 1</text>
+  <text x="210" y="96" font-size="7" fill="#666">ctx=[-2,2]</text>
+
+  <line x1="135" y1="104" x2="135" y2="112" stroke="#333" stroke-width="1.2" marker-end="url(#arrow-xv)"/>
+
+  <!-- TDNN Layer 2 -->
+  <rect x="70" y="114" width="130" height="24" rx="6" fill="rgba(52,152,219,0.15)" stroke="#3498db" stroke-width="1.5"/>
+  <text x="135" y="130" text-anchor="middle" font-size="9" fill="#333">TDNN Layer 2</text>
+  <text x="210" y="130" font-size="7" fill="#666">ctx=[-2,0,2]</text>
+
+  <line x1="135" y1="138" x2="135" y2="146" stroke="#333" stroke-width="1.2" marker-end="url(#arrow-xv)"/>
+
+  <!-- Dots -->
+  <text x="135" y="157" text-anchor="middle" font-size="11" fill="#666">...</text>
+
+  <!-- TDNN Layer 5 -->
+  <rect x="70" y="160" width="130" height="24" rx="6" fill="rgba(52,152,219,0.15)" stroke="#3498db" stroke-width="1.5"/>
+  <text x="135" y="176" text-anchor="middle" font-size="9" fill="#333">TDNN Layer 5</text>
+
+  <!-- Arrow to stats pooling -->
+  <line x1="200" y1="172" x2="275" y2="172" stroke="#333" stroke-width="1.2" marker-end="url(#arrow-xv)"/>
+
+  <!-- Boundary line -->
+  <line x1="260" y1="38" x2="260" y2="200" stroke="#e74c3c" stroke-width="1" stroke-dasharray="5,4"/>
+  <text x="265" y="48" font-size="7" fill="#e74c3c">boundary</text>
+
+  <!-- Segment-level bracket -->
+  <line x1="605" y1="130" x2="605" y2="200" stroke="#e74c3c" stroke-width="1.5"/>
+  <line x1="595" y1="130" x2="605" y2="130" stroke="#e74c3c" stroke-width="1.5"/>
+  <line x1="595" y1="200" x2="605" y2="200" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="625" y="170" text-anchor="middle" font-size="8" fill="#e74c3c" transform="rotate(-90,625,170)">Segment-level</text>
+
+  <!-- Statistics Pooling -->
+  <rect x="278" y="150" width="130" height="44" rx="6" fill="rgba(243,156,18,0.15)" stroke="#f39c12" stroke-width="1.5"/>
+  <text x="343" y="168" text-anchor="middle" font-size="9" font-weight="bold" fill="#333">Statistics Pooling</text>
+  <text x="343" y="182" text-anchor="middle" font-size="8" fill="#666">mean + std over frames</text>
+
+  <line x1="408" y1="172" x2="430" y2="172" stroke="#333" stroke-width="1.2" marker-end="url(#arrow-xv)"/>
+
+  <!-- FC 1 -->
+  <rect x="433" y="158" width="70" height="28" rx="6" fill="rgba(155,89,182,0.12)" stroke="#9b59b6" stroke-width="1.5"/>
+  <text x="468" y="176" text-anchor="middle" font-size="9" fill="#333">FC Layer</text>
+
+  <line x1="503" y1="172" x2="520" y2="172" stroke="#333" stroke-width="1.2" marker-end="url(#arrow-xv)"/>
+
+  <!-- FC 2 -->
+  <rect x="523" y="158" width="70" height="28" rx="6" fill="rgba(155,89,182,0.12)" stroke="#9b59b6" stroke-width="1.5"/>
+  <text x="558" y="176" text-anchor="middle" font-size="9" fill="#333">FC Layer</text>
+
+  <!-- Arrow down to embedding -->
+  <line x1="558" y1="186" x2="558" y2="205" stroke="#333" stroke-width="1.2" marker-end="url(#arrow-xv)"/>
+
+  <!-- Speaker Embedding -->
+  <rect x="490" y="207" width="136" height="28" rx="6" fill="rgba(39,174,96,0.15)" stroke="#27ae60" stroke-width="1.8"/>
+  <text x="558" y="225" text-anchor="middle" font-size="10" font-weight="bold" fill="#27ae60">x-vector (512-d)</text>
+
+  <!-- Temporal context illustration -->
+  <rect x="290" y="60" width="140" height="66" rx="6" fill="rgba(52,152,219,0.06)" stroke="#3498db" stroke-width="0.8" stroke-dasharray="3,3"/>
+  <text x="360" y="76" text-anchor="middle" font-size="8" font-weight="bold" fill="#3498db">Temporal Context</text>
+  <!-- Small frame boxes -->
+  <rect x="305" y="84" width="12" height="12" rx="1" fill="rgba(52,152,219,0.15)" stroke="#3498db" stroke-width="0.7"/>
+  <rect x="322" y="84" width="12" height="12" rx="1" fill="rgba(52,152,219,0.15)" stroke="#3498db" stroke-width="0.7"/>
+  <rect x="339" y="84" width="12" height="12" rx="1" fill="rgba(52,152,219,0.3)" stroke="#3498db" stroke-width="1.2"/>
+  <rect x="356" y="84" width="12" height="12" rx="1" fill="rgba(52,152,219,0.15)" stroke="#3498db" stroke-width="0.7"/>
+  <rect x="373" y="84" width="12" height="12" rx="1" fill="rgba(52,152,219,0.15)" stroke="#3498db" stroke-width="0.7"/>
+  <text x="360" y="112" text-anchor="middle" font-size="7" fill="#666">Each TDNN sees a context window</text>
+
+  <!-- Note box -->
+  <rect x="30" y="250" width="640" height="36" rx="6" fill="#f5f5f5" stroke="#333" stroke-width="1"/>
+  <text x="50" y="273" font-size="9" fill="#666">Statistics pooling converts variable-length frame-level features into a fixed-size segment-level embedding.</text>
+</svg>

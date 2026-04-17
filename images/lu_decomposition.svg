@@ -1,0 +1,37 @@
+<svg width="380" height="100" xmlns="http://www.w3.org/2000/svg">
+  <!-- A -->
+  <path d="M 10,8 L 5,8 L 5,92 L 10,92" fill="none" stroke="#333" stroke-width="2"/>
+  <path d="M 70,8 L 75,8 L 75,92 L 70,92" fill="none" stroke="#333" stroke-width="2"/>
+  <rect x="8" y="10" width="65" height="80" rx="2" fill="#9b59b6" fill-opacity="0.08"/>
+  <text x="40" y="55" text-anchor="middle" fill="#9b59b6" font-size="18" font-weight="bold">A</text>
+
+  <!-- = -->
+  <text x="95" y="55" text-anchor="middle" fill="#333" font-size="18">=</text>
+
+  <!-- L (lower triangular) -->
+  <path d="M 115,8 L 110,8 L 110,92 L 115,92" fill="none" stroke="#333" stroke-width="2"/>
+  <path d="M 175,8 L 180,8 L 180,92 L 175,92" fill="none" stroke="#333" stroke-width="2"/>
+  <!-- lower triangle shading -->
+  <polygon points="112,10 112,90 172,90" fill="#3498db" fill-opacity="0.1"/>
+  <!-- diagonal -->
+  <line x1="112" y1="10" x2="172" y2="90" stroke="#3498db" stroke-width="1" stroke-dasharray="3"/>
+  <text x="135" y="65" text-anchor="middle" fill="#3498db" font-size="14" font-weight="bold">L</text>
+  <!-- zeros label -->
+  <text x="158" y="35" fill="#ccc" font-size="10">0s</text>
+
+  <!-- × -->
+  <text x="200" y="55" text-anchor="middle" fill="#333" font-size="14">×</text>
+
+  <!-- U (upper triangular) -->
+  <path d="M 220,8 L 215,8 L 215,92 L 220,92" fill="none" stroke="#333" stroke-width="2"/>
+  <path d="M 280,8 L 285,8 L 285,92 L 280,92" fill="none" stroke="#333" stroke-width="2"/>
+  <!-- upper triangle shading -->
+  <polygon points="217,10 277,10 277,90" fill="#e74c3c" fill-opacity="0.1"/>
+  <line x1="217" y1="90" x2="277" y2="10" stroke="#e74c3c" stroke-width="1" stroke-dasharray="3"/>
+  <text x="258" y="40" text-anchor="middle" fill="#e74c3c" font-size="14" font-weight="bold">U</text>
+  <text x="235" y="75" fill="#ccc" font-size="10">0s</text>
+
+  <text x="340" y="50" fill="#666" font-size="10">two easy</text>
+  <text x="340" y="65" fill="#666" font-size="10">triangular</text>
+  <text x="340" y="80" fill="#666" font-size="10">solves</text>
+</svg>

@@ -1,0 +1,48 @@
+<svg width="380" height="180" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="pca-r" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto">
+      <path d="M0,0 L7,2.5 L0,5" fill="#e74c3c"/>
+    </marker>
+    <marker id="pca-b" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto">
+      <path d="M0,0 L7,2.5 L0,5" fill="#3498db"/>
+    </marker>
+  </defs>
+
+  <text x="190" y="14" text-anchor="middle" fill="#333" font-size="12" font-weight="bold">PCA finds the directions of greatest variance</text>
+
+  <!-- Scattered data points (elongated cloud) -->
+  <circle cx="80" cy="120" r="3" fill="#999" fill-opacity="0.5"/>
+  <circle cx="100" cy="108" r="3" fill="#999" fill-opacity="0.5"/>
+  <circle cx="115" cy="105" r="3" fill="#999" fill-opacity="0.5"/>
+  <circle cx="130" cy="95" r="3" fill="#999" fill-opacity="0.5"/>
+  <circle cx="145" cy="92" r="3" fill="#999" fill-opacity="0.5"/>
+  <circle cx="160" cy="85" r="3" fill="#999" fill-opacity="0.5"/>
+  <circle cx="170" cy="80" r="3" fill="#999" fill-opacity="0.5"/>
+  <circle cx="185" cy="75" r="3" fill="#999" fill-opacity="0.5"/>
+  <circle cx="200" cy="68" r="3" fill="#999" fill-opacity="0.5"/>
+  <circle cx="215" cy="62" r="3" fill="#999" fill-opacity="0.5"/>
+  <circle cx="230" cy="55" r="3" fill="#999" fill-opacity="0.5"/>
+  <circle cx="250" cy="48" r="3" fill="#999" fill-opacity="0.5"/>
+  <circle cx="265" cy="42" r="3" fill="#999" fill-opacity="0.5"/>
+  <!-- some scatter -->
+  <circle cx="120" cy="115" r="3" fill="#999" fill-opacity="0.5"/>
+  <circle cx="150" cy="82" r="3" fill="#999" fill-opacity="0.5"/>
+  <circle cx="175" cy="90" r="3" fill="#999" fill-opacity="0.5"/>
+  <circle cx="195" cy="60" r="3" fill="#999" fill-opacity="0.5"/>
+  <circle cx="210" cy="72" r="3" fill="#999" fill-opacity="0.5"/>
+  <circle cx="140" cy="102" r="3" fill="#999" fill-opacity="0.5"/>
+  <circle cx="235" cy="50" r="3" fill="#999" fill-opacity="0.5"/>
+  <circle cx="165" cy="78" r="3" fill="#999" fill-opacity="0.5"/>
+
+  <!-- PC1: main direction (longest variance) -->
+  <line x1="65" y1="130" x2="278" y2="35" stroke="#e74c3c" stroke-width="2.5" marker-end="url(#pca-r)"/>
+  <text x="285" y="35" fill="#e74c3c" font-size="11" font-weight="bold">PC1</text>
+  <text x="290" y="50" fill="#e74c3c" font-size="9">most variance</text>
+
+  <!-- PC2: perpendicular direction -->
+  <line x1="200" y1="30" x2="145" y2="125" stroke="#3498db" stroke-width="2" marker-end="url(#pca-b)"/>
+  <text x="138" y="138" fill="#3498db" font-size="11" font-weight="bold">PC2</text>
+  <text x="128" y="152" fill="#3498db" font-size="9">remaining</text>
+
+  <text x="190" y="175" text-anchor="middle" fill="#666" font-size="10">project onto PC1 to reduce from 2D to 1D</text>
+</svg>

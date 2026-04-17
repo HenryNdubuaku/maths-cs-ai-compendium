@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 220" width="800" height="220">
+  <text x="400" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">The Five Geometric Domains</text>
+
+  <!-- 1. Grids -->
+  <rect x="20" y="45" width="140" height="155" rx="10" fill="#3498db" fill-opacity="0.06" stroke="#3498db" stroke-width="1.5"/>
+  <text x="90" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#3498db">Grids</text>
+  <!-- Grid drawing -->
+  <g transform="translate(45, 78)">
+    <rect x="0" y="0" width="15" height="15" fill="#3498db" fill-opacity="0.2" stroke="#3498db" stroke-width="0.5"/>
+    <rect x="15" y="0" width="15" height="15" fill="#3498db" fill-opacity="0.3" stroke="#3498db" stroke-width="0.5"/>
+    <rect x="30" y="0" width="15" height="15" fill="#3498db" fill-opacity="0.2" stroke="#3498db" stroke-width="0.5"/>
+    <rect x="45" y="0" width="15" height="15" fill="#3498db" fill-opacity="0.1" stroke="#3498db" stroke-width="0.5"/>
+    <rect x="0" y="15" width="15" height="15" fill="#3498db" fill-opacity="0.1" stroke="#3498db" stroke-width="0.5"/>
+    <rect x="15" y="15" width="15" height="15" fill="#3498db" fill-opacity="0.4" stroke="#3498db" stroke-width="0.5"/>
+    <rect x="30" y="15" width="15" height="15" fill="#3498db" fill-opacity="0.5" stroke="#3498db" stroke-width="0.5"/>
+    <rect x="45" y="15" width="15" height="15" fill="#3498db" fill-opacity="0.2" stroke="#3498db" stroke-width="0.5"/>
+    <rect x="0" y="30" width="15" height="15" fill="#3498db" fill-opacity="0.3" stroke="#3498db" stroke-width="0.5"/>
+    <rect x="15" y="30" width="15" height="15" fill="#3498db" fill-opacity="0.1" stroke="#3498db" stroke-width="0.5"/>
+    <rect x="30" y="30" width="15" height="15" fill="#3498db" fill-opacity="0.2" stroke="#3498db" stroke-width="0.5"/>
+    <rect x="45" y="30" width="15" height="15" fill="#3498db" fill-opacity="0.4" stroke="#3498db" stroke-width="0.5"/>
+  </g>
+  <text x="90" y="142" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3498db">images, audio</text>
+  <text x="90" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">symmetry: translation</text>
+  <text x="90" y="168" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">arch: CNN</text>
+
+  <!-- 2. Sets -->
+  <rect x="175" y="45" width="140" height="155" rx="10" fill="#e74c3c" fill-opacity="0.06" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="245" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#e74c3c">Sets</text>
+  <circle cx="215" cy="92" r="5" fill="#e74c3c" fill-opacity="0.4"/>
+  <circle cx="255" cy="85" r="5" fill="#e74c3c" fill-opacity="0.4"/>
+  <circle cx="235" cy="108" r="5" fill="#e74c3c" fill-opacity="0.4"/>
+  <circle cx="270" cy="105" r="5" fill="#e74c3c" fill-opacity="0.4"/>
+  <circle cx="220" cy="122" r="5" fill="#e74c3c" fill-opacity="0.4"/>
+  <circle cx="260" cy="120" r="5" fill="#e74c3c" fill-opacity="0.4"/>
+  <text x="245" y="142" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e74c3c">point clouds</text>
+  <text x="245" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">symmetry: permutation</text>
+  <text x="245" y="168" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">arch: DeepSets</text>
+
+  <!-- 3. Sequences -->
+  <rect x="330" y="45" width="140" height="155" rx="10" fill="#27ae60" fill-opacity="0.06" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="400" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#27ae60">Sequences</text>
+  <g transform="translate(355, 95)">
+    <rect x="0" y="0" width="18" height="18" rx="3" fill="#27ae60" fill-opacity="0.3" stroke="#27ae60" stroke-width="0.8"/>
+    <line x1="18" y1="9" x2="24" y2="9" stroke="#27ae60" stroke-width="1"/>
+    <rect x="24" y="0" width="18" height="18" rx="3" fill="#27ae60" fill-opacity="0.3" stroke="#27ae60" stroke-width="0.8"/>
+    <line x1="42" y1="9" x2="48" y2="9" stroke="#27ae60" stroke-width="1"/>
+    <rect x="48" y="0" width="18" height="18" rx="3" fill="#27ae60" fill-opacity="0.3" stroke="#27ae60" stroke-width="0.8"/>
+    <line x1="66" y1="9" x2="72" y2="9" stroke="#27ae60" stroke-width="1"/>
+    <rect x="72" y="0" width="18" height="18" rx="3" fill="#27ae60" fill-opacity="0.3" stroke="#27ae60" stroke-width="0.8"/>
+  </g>
+  <text x="400" y="142" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27ae60">text, time series</text>
+  <text x="400" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">symmetry: (time) translation</text>
+  <text x="400" y="168" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">arch: RNN, Transformer</text>
+
+  <!-- 4. Graphs -->
+  <rect x="485" y="45" width="140" height="155" rx="10" fill="#f39c12" fill-opacity="0.06" stroke="#f39c12" stroke-width="1.5"/>
+  <text x="555" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#f39c12">Graphs</text>
+  <circle cx="535" cy="90" r="5" fill="#f39c12" stroke="#f39c12" stroke-width="1"/>
+  <circle cx="565" cy="82" r="5" fill="#f39c12" stroke="#f39c12" stroke-width="1"/>
+  <circle cx="580" cy="105" r="5" fill="#f39c12" stroke="#f39c12" stroke-width="1"/>
+  <circle cx="545" cy="115" r="5" fill="#f39c12" stroke="#f39c12" stroke-width="1"/>
+  <circle cx="560" cy="100" r="5" fill="#f39c12" stroke="#f39c12" stroke-width="1"/>
+  <line x1="535" y1="90" x2="565" y2="82" stroke="#f39c12" stroke-width="1" stroke-opacity="0.5"/>
+  <line x1="565" y1="82" x2="560" y2="100" stroke="#f39c12" stroke-width="1" stroke-opacity="0.5"/>
+  <line x1="560" y1="100" x2="580" y2="105" stroke="#f39c12" stroke-width="1" stroke-opacity="0.5"/>
+  <line x1="560" y1="100" x2="545" y2="115" stroke="#f39c12" stroke-width="1" stroke-opacity="0.5"/>
+  <line x1="535" y1="90" x2="545" y2="115" stroke="#f39c12" stroke-width="1" stroke-opacity="0.5"/>
+  <text x="555" y="142" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#f39c12">molecules, social</text>
+  <text x="555" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">symmetry: node perm.</text>
+  <text x="555" y="168" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">arch: GNN</text>
+
+  <!-- 5. Manifolds -->
+  <rect x="640" y="45" width="140" height="155" rx="10" fill="#9b59b6" fill-opacity="0.06" stroke="#9b59b6" stroke-width="1.5"/>
+  <text x="710" y="68" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#9b59b6">Manifolds</text>
+  <ellipse cx="710" cy="100" rx="35" ry="22" fill="none" stroke="#9b59b6" stroke-width="1.5"/>
+  <path d="M 678,94 Q 710,82 742,94" fill="none" stroke="#9b59b6" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <path d="M 685,108 Q 710,120 735,108" fill="none" stroke="#9b59b6" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <text x="710" y="142" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#9b59b6">surfaces, meshes</text>
+  <text x="710" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">symmetry: gauge/diffeo.</text>
+  <text x="710" y="168" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">arch: mesh CNN</text>
+
+  <text x="400" y="212" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">Every neural architecture exploits the symmetry of one of these five domains</text>
+</svg>

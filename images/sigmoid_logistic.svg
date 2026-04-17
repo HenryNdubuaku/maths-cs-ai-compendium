@@ -1,0 +1,40 @@
+<svg width="700" height="300" xmlns="http://www.w3.org/2000/svg">
+  <text x="350" y="22" fill="#333" font-size="14" font-weight="bold" text-anchor="middle">Sigmoid Function and Logistic Regression</text>
+
+  <!-- Axes -->
+  <line x1="60" y1="255" x2="640" y2="255" stroke="#333" stroke-width="1.5"/>
+  <line x1="350" y1="270" x2="350" y2="35" stroke="#333" stroke-width="1.5"/>
+  <text x="630" y="272" fill="#666" font-size="11">z</text>
+  <text x="360" y="48" fill="#666" font-size="11">σ(z)</text>
+
+  <!-- y-axis labels -->
+  <text x="48" y="260" fill="#666" font-size="10" text-anchor="end">0</text>
+  <line x1="55" y1="255" x2="65" y2="255" stroke="#999" stroke-width="0.5"/>
+  <text x="48" y="148" fill="#666" font-size="10" text-anchor="end">0.5</text>
+  <line x1="55" y1="145" x2="645" y2="145" stroke="#999" stroke-width="0.5" stroke-dasharray="3,3"/>
+  <text x="48" y="48" fill="#666" font-size="10" text-anchor="end">1</text>
+  <line x1="55" y1="45" x2="65" y2="45" stroke="#999" stroke-width="0.5"/>
+
+  <!-- x-axis labels -->
+  <text x="170" y="272" fill="#666" font-size="10" text-anchor="middle">-4</text>
+  <text x="260" y="272" fill="#666" font-size="10" text-anchor="middle">-2</text>
+  <text x="440" y="272" fill="#666" font-size="10" text-anchor="middle">2</text>
+  <text x="530" y="272" fill="#666" font-size="10" text-anchor="middle">4</text>
+
+  <!-- Classification regions -->
+  <rect x="350" y="35" width="290" height="220" fill="#3498db" opacity="0.05"/>
+  <rect x="60" y="35" width="290" height="220" fill="#e74c3c" opacity="0.05"/>
+  <text x="500" y="80" fill="#3498db" font-size="11" font-weight="bold" text-anchor="middle">predict 1</text>
+  <text x="200" y="80" fill="#e74c3c" font-size="11" font-weight="bold" text-anchor="middle">predict 0</text>
+
+  <!-- Sigmoid curve -->
+  <path d="M 80,252 C 100,252 130,251 160,250 C 190,247 220,240 250,225 C 270,215 290,200 310,180 C 325,163 340,150 350,145 C 360,140 375,127 390,110 C 410,90 430,75 450,65 C 480,55 510,50 540,47 C 570,45 600,44 620,43" fill="none" stroke="#e74c3c" stroke-width="2.5"/>
+
+  <!-- 0.5 threshold point -->
+  <circle cx="350" cy="145" r="5" fill="white" stroke="#9b59b6" stroke-width="2"/>
+  <text x="370" y="138" fill="#9b59b6" font-size="10" font-weight="bold">threshold = 0.5</text>
+
+  <!-- Formula -->
+  <rect x="200" y="278" width="300" height="22" rx="6" fill="#f5f5f5" stroke="#333" stroke-width="1"/>
+  <text x="350" y="294" fill="#333" font-size="11" text-anchor="middle">σ(z) = 1 / (1 + e⁻ᶻ), where z = w·x + b</text>
+</svg>

@@ -1,0 +1,216 @@
+<svg width="700" height="260" xmlns="http://www.w3.org/2000/svg">
+  <text x="350" y="22" fill="#333" font-size="14" font-weight="bold" text-anchor="middle">Attention Patterns: Dense vs Sparse</text>
+
+  <!-- Grid size -->
+  <!-- 8x8 grids, cell size 18px -->
+
+  <!-- Dense (full) attention -->
+  <text x="85" y="52" fill="#3498db" font-size="11" font-weight="bold" text-anchor="middle">Dense (Full)</text>
+  <text x="85" y="66" fill="#666" font-size="9" text-anchor="middle">O(n²)</text>
+  <g transform="translate(13, 75)">
+    <rect x="0" y="0" width="144" height="144" rx="3" fill="white" stroke="#ccc" stroke-width="1"/>
+    <!-- All cells filled -->
+    <g opacity="0.35">
+      <rect x="2" y="2" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="20" y="2" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="38" y="2" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="56" y="2" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="74" y="2" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="92" y="2" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="110" y="2" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="128" y="2" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="2" y="20" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="20" y="20" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="38" y="20" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="56" y="20" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="74" y="20" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="92" y="20" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="110" y="20" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="128" y="20" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="2" y="38" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="20" y="38" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="38" y="38" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="56" y="38" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="74" y="38" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="92" y="38" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="110" y="38" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="128" y="38" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="2" y="56" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="20" y="56" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="38" y="56" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="56" y="56" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="74" y="56" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="92" y="56" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="110" y="56" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="128" y="56" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="2" y="74" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="20" y="74" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="38" y="74" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="56" y="74" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="74" y="74" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="92" y="74" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="110" y="74" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="128" y="74" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="2" y="92" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="20" y="92" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="38" y="92" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="56" y="92" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="74" y="92" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="92" y="92" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="110" y="92" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="128" y="92" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="2" y="110" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="20" y="110" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="38" y="110" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="56" y="110" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="74" y="110" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="92" y="110" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="110" y="110" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="128" y="110" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="2" y="128" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="20" y="128" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="38" y="128" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="56" y="128" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="74" y="128" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="92" y="128" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="110" y="128" width="16" height="16" rx="1" fill="#3498db"/>
+      <rect x="128" y="128" width="16" height="16" rx="1" fill="#3498db"/>
+    </g>
+  </g>
+
+  <!-- Sliding window attention -->
+  <text x="265" y="52" fill="#e74c3c" font-size="11" font-weight="bold" text-anchor="middle">Sliding Window</text>
+  <text x="265" y="66" fill="#666" font-size="9" text-anchor="middle">O(nw)</text>
+  <g transform="translate(193, 75)">
+    <rect x="0" y="0" width="144" height="144" rx="3" fill="white" stroke="#ccc" stroke-width="1"/>
+    <!-- Band diagonal pattern (window=3) -->
+    <g opacity="0.4">
+      <rect x="2" y="2" width="16" height="16" rx="1" fill="#e74c3c"/>
+      <rect x="20" y="2" width="16" height="16" rx="1" fill="#e74c3c"/>
+      <rect x="38" y="2" width="16" height="16" rx="1" fill="#e74c3c"/>
+      <rect x="2" y="20" width="16" height="16" rx="1" fill="#e74c3c"/>
+      <rect x="20" y="20" width="16" height="16" rx="1" fill="#e74c3c"/>
+      <rect x="38" y="20" width="16" height="16" rx="1" fill="#e74c3c"/>
+      <rect x="56" y="20" width="16" height="16" rx="1" fill="#e74c3c"/>
+      <rect x="20" y="38" width="16" height="16" rx="1" fill="#e74c3c"/>
+      <rect x="38" y="38" width="16" height="16" rx="1" fill="#e74c3c"/>
+      <rect x="56" y="38" width="16" height="16" rx="1" fill="#e74c3c"/>
+      <rect x="74" y="38" width="16" height="16" rx="1" fill="#e74c3c"/>
+      <rect x="38" y="56" width="16" height="16" rx="1" fill="#e74c3c"/>
+      <rect x="56" y="56" width="16" height="16" rx="1" fill="#e74c3c"/>
+      <rect x="74" y="56" width="16" height="16" rx="1" fill="#e74c3c"/>
+      <rect x="92" y="56" width="16" height="16" rx="1" fill="#e74c3c"/>
+      <rect x="56" y="74" width="16" height="16" rx="1" fill="#e74c3c"/>
+      <rect x="74" y="74" width="16" height="16" rx="1" fill="#e74c3c"/>
+      <rect x="92" y="74" width="16" height="16" rx="1" fill="#e74c3c"/>
+      <rect x="110" y="74" width="16" height="16" rx="1" fill="#e74c3c"/>
+      <rect x="74" y="92" width="16" height="16" rx="1" fill="#e74c3c"/>
+      <rect x="92" y="92" width="16" height="16" rx="1" fill="#e74c3c"/>
+      <rect x="110" y="92" width="16" height="16" rx="1" fill="#e74c3c"/>
+      <rect x="128" y="92" width="16" height="16" rx="1" fill="#e74c3c"/>
+      <rect x="92" y="110" width="16" height="16" rx="1" fill="#e74c3c"/>
+      <rect x="110" y="110" width="16" height="16" rx="1" fill="#e74c3c"/>
+      <rect x="128" y="110" width="16" height="16" rx="1" fill="#e74c3c"/>
+      <rect x="110" y="128" width="16" height="16" rx="1" fill="#e74c3c"/>
+      <rect x="128" y="128" width="16" height="16" rx="1" fill="#e74c3c"/>
+    </g>
+  </g>
+
+  <!-- Strided attention -->
+  <text x="445" y="52" fill="#27ae60" font-size="11" font-weight="bold" text-anchor="middle">Strided</text>
+  <text x="445" y="66" fill="#666" font-size="9" text-anchor="middle">O(n√n)</text>
+  <g transform="translate(373, 75)">
+    <rect x="0" y="0" width="144" height="144" rx="3" fill="white" stroke="#ccc" stroke-width="1"/>
+    <!-- Every 2nd position -->
+    <g opacity="0.4">
+      <rect x="2" y="2" width="16" height="16" rx="1" fill="#27ae60"/>
+      <rect x="38" y="2" width="16" height="16" rx="1" fill="#27ae60"/>
+      <rect x="74" y="2" width="16" height="16" rx="1" fill="#27ae60"/>
+      <rect x="110" y="2" width="16" height="16" rx="1" fill="#27ae60"/>
+      <rect x="20" y="20" width="16" height="16" rx="1" fill="#27ae60"/>
+      <rect x="56" y="20" width="16" height="16" rx="1" fill="#27ae60"/>
+      <rect x="92" y="20" width="16" height="16" rx="1" fill="#27ae60"/>
+      <rect x="128" y="20" width="16" height="16" rx="1" fill="#27ae60"/>
+      <rect x="2" y="38" width="16" height="16" rx="1" fill="#27ae60"/>
+      <rect x="38" y="38" width="16" height="16" rx="1" fill="#27ae60"/>
+      <rect x="74" y="38" width="16" height="16" rx="1" fill="#27ae60"/>
+      <rect x="110" y="38" width="16" height="16" rx="1" fill="#27ae60"/>
+      <rect x="20" y="56" width="16" height="16" rx="1" fill="#27ae60"/>
+      <rect x="56" y="56" width="16" height="16" rx="1" fill="#27ae60"/>
+      <rect x="92" y="56" width="16" height="16" rx="1" fill="#27ae60"/>
+      <rect x="128" y="56" width="16" height="16" rx="1" fill="#27ae60"/>
+      <rect x="2" y="74" width="16" height="16" rx="1" fill="#27ae60"/>
+      <rect x="38" y="74" width="16" height="16" rx="1" fill="#27ae60"/>
+      <rect x="74" y="74" width="16" height="16" rx="1" fill="#27ae60"/>
+      <rect x="110" y="74" width="16" height="16" rx="1" fill="#27ae60"/>
+      <rect x="20" y="92" width="16" height="16" rx="1" fill="#27ae60"/>
+      <rect x="56" y="92" width="16" height="16" rx="1" fill="#27ae60"/>
+      <rect x="92" y="92" width="16" height="16" rx="1" fill="#27ae60"/>
+      <rect x="128" y="92" width="16" height="16" rx="1" fill="#27ae60"/>
+      <rect x="2" y="110" width="16" height="16" rx="1" fill="#27ae60"/>
+      <rect x="38" y="110" width="16" height="16" rx="1" fill="#27ae60"/>
+      <rect x="74" y="110" width="16" height="16" rx="1" fill="#27ae60"/>
+      <rect x="110" y="110" width="16" height="16" rx="1" fill="#27ae60"/>
+      <rect x="20" y="128" width="16" height="16" rx="1" fill="#27ae60"/>
+      <rect x="56" y="128" width="16" height="16" rx="1" fill="#27ae60"/>
+      <rect x="92" y="128" width="16" height="16" rx="1" fill="#27ae60"/>
+      <rect x="128" y="128" width="16" height="16" rx="1" fill="#27ae60"/>
+    </g>
+  </g>
+
+  <!-- Combined (Longformer/BigBird) -->
+  <text x="625" y="52" fill="#9b59b6" font-size="11" font-weight="bold" text-anchor="middle">Combined</text>
+  <text x="625" y="66" fill="#666" font-size="9" text-anchor="middle">O(n) BigBird</text>
+  <g transform="translate(553, 75)">
+    <rect x="0" y="0" width="144" height="144" rx="3" fill="white" stroke="#ccc" stroke-width="1"/>
+    <!-- Local window (band) + global tokens (first row/col) + random -->
+    <g opacity="0.4">
+      <!-- Global: first token attends to all -->
+      <rect x="2" y="2" width="16" height="16" rx="1" fill="#9b59b6"/>
+      <rect x="20" y="2" width="16" height="16" rx="1" fill="#9b59b6"/>
+      <rect x="38" y="2" width="16" height="16" rx="1" fill="#9b59b6"/>
+      <rect x="56" y="2" width="16" height="16" rx="1" fill="#9b59b6"/>
+      <rect x="74" y="2" width="16" height="16" rx="1" fill="#9b59b6"/>
+      <rect x="92" y="2" width="16" height="16" rx="1" fill="#9b59b6"/>
+      <rect x="110" y="2" width="16" height="16" rx="1" fill="#9b59b6"/>
+      <rect x="128" y="2" width="16" height="16" rx="1" fill="#9b59b6"/>
+      <!-- All attend to first token -->
+      <rect x="2" y="20" width="16" height="16" rx="1" fill="#9b59b6"/>
+      <rect x="2" y="38" width="16" height="16" rx="1" fill="#9b59b6"/>
+      <rect x="2" y="56" width="16" height="16" rx="1" fill="#9b59b6"/>
+      <rect x="2" y="74" width="16" height="16" rx="1" fill="#9b59b6"/>
+      <rect x="2" y="92" width="16" height="16" rx="1" fill="#9b59b6"/>
+      <rect x="2" y="110" width="16" height="16" rx="1" fill="#9b59b6"/>
+      <rect x="2" y="128" width="16" height="16" rx="1" fill="#9b59b6"/>
+      <!-- Local band -->
+      <rect x="20" y="20" width="16" height="16" rx="1" fill="#e74c3c" opacity="0.8"/>
+      <rect x="38" y="20" width="16" height="16" rx="1" fill="#e74c3c" opacity="0.8"/>
+      <rect x="20" y="38" width="16" height="16" rx="1" fill="#e74c3c" opacity="0.8"/>
+      <rect x="38" y="38" width="16" height="16" rx="1" fill="#e74c3c" opacity="0.8"/>
+      <rect x="56" y="38" width="16" height="16" rx="1" fill="#e74c3c" opacity="0.8"/>
+      <rect x="38" y="56" width="16" height="16" rx="1" fill="#e74c3c" opacity="0.8"/>
+      <rect x="56" y="56" width="16" height="16" rx="1" fill="#e74c3c" opacity="0.8"/>
+      <rect x="74" y="56" width="16" height="16" rx="1" fill="#e74c3c" opacity="0.8"/>
+      <rect x="56" y="74" width="16" height="16" rx="1" fill="#e74c3c" opacity="0.8"/>
+      <rect x="74" y="74" width="16" height="16" rx="1" fill="#e74c3c" opacity="0.8"/>
+      <rect x="92" y="74" width="16" height="16" rx="1" fill="#e74c3c" opacity="0.8"/>
+      <rect x="74" y="92" width="16" height="16" rx="1" fill="#e74c3c" opacity="0.8"/>
+      <rect x="92" y="92" width="16" height="16" rx="1" fill="#e74c3c" opacity="0.8"/>
+      <rect x="110" y="92" width="16" height="16" rx="1" fill="#e74c3c" opacity="0.8"/>
+      <rect x="92" y="110" width="16" height="16" rx="1" fill="#e74c3c" opacity="0.8"/>
+      <rect x="110" y="110" width="16" height="16" rx="1" fill="#e74c3c" opacity="0.8"/>
+      <rect x="128" y="110" width="16" height="16" rx="1" fill="#e74c3c" opacity="0.8"/>
+      <rect x="110" y="128" width="16" height="16" rx="1" fill="#e74c3c" opacity="0.8"/>
+      <rect x="128" y="128" width="16" height="16" rx="1" fill="#e74c3c" opacity="0.8"/>
+      <!-- Random (a few scattered) -->
+      <rect x="92" y="20" width="16" height="16" rx="1" fill="#27ae60" opacity="0.7"/>
+      <rect x="110" y="56" width="16" height="16" rx="1" fill="#27ae60" opacity="0.7"/>
+      <rect x="38" y="92" width="16" height="16" rx="1" fill="#27ae60" opacity="0.7"/>
+      <rect x="56" y="128" width="16" height="16" rx="1" fill="#27ae60" opacity="0.7"/>
+    </g>
+  </g>
+
+  <!-- Legend -->
+  <text x="350" y="240" fill="#666" font-size="10" text-anchor="middle">Coloured cells = positions that attend to each other. Sparse patterns reduce O(n²) to O(n) or O(n√n).</text>
+  <text x="625" y="253" fill="#666" font-size="8" text-anchor="middle">purple=global, red=local, green=random</text>
+</svg>

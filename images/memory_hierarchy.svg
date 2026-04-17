@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 300" width="650" height="300">
+  <text x="325" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">Memory Hierarchy: Speed vs Size Tradeoff</text>
+
+  <!-- Pyramid layers (top = fast+small, bottom = slow+large) -->
+  <polygon points="325,45 280,95 370,95" fill="#e74c3c" fill-opacity="0.2" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="325" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#e74c3c">Registers</text>
+
+  <polygon points="280,100 240,145 410,145 370,100" fill="#f39c12" fill-opacity="0.2" stroke="#f39c12" stroke-width="1.5"/>
+  <text x="325" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#f39c12">L1 Cache</text>
+
+  <polygon points="240,150 200,195 450,195 410,150" fill="#f1c40f" fill-opacity="0.2" stroke="#f1c40f" stroke-width="1.5"/>
+  <text x="325" y="178" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#d4ac0d">L2 / L3 Cache</text>
+
+  <polygon points="200,200 155,245 495,245 450,200" fill="#27ae60" fill-opacity="0.2" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="325" y="228" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#27ae60">RAM (DRAM)</text>
+
+  <polygon points="155,250 115,290 535,290 495,250" fill="#3498db" fill-opacity="0.2" stroke="#3498db" stroke-width="1.5"/>
+  <text x="325" y="276" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#3498db">SSD / HDD</text>
+
+  <!-- Speed labels (left) -->
+  <text x="25" y="52" text-anchor="start" font-family="Arial, sans-serif" font-size="9" fill="#e74c3c">~0.3 ns</text>
+  <text x="25" y="130" text-anchor="start" font-family="Arial, sans-serif" font-size="9" fill="#f39c12">~1 ns</text>
+  <text x="25" y="178" text-anchor="start" font-family="Arial, sans-serif" font-size="9" fill="#d4ac0d">~4-10 ns</text>
+  <text x="25" y="228" text-anchor="start" font-family="Arial, sans-serif" font-size="9" fill="#27ae60">~50-100 ns</text>
+  <text x="25" y="276" text-anchor="start" font-family="Arial, sans-serif" font-size="9" fill="#3498db">~10 μs - 10 ms</text>
+
+  <!-- Size labels (right) -->
+  <text x="560" y="80" text-anchor="start" font-family="Arial, sans-serif" font-size="9" fill="#e74c3c">~KB</text>
+  <text x="560" y="130" text-anchor="start" font-family="Arial, sans-serif" font-size="9" fill="#f39c12">32-64 KB</text>
+  <text x="560" y="178" text-anchor="start" font-family="Arial, sans-serif" font-size="9" fill="#d4ac0d">256 KB-64 MB</text>
+  <text x="560" y="228" text-anchor="start" font-family="Arial, sans-serif" font-size="9" fill="#27ae60">8-512 GB</text>
+  <text x="560" y="276" text-anchor="start" font-family="Arial, sans-serif" font-size="9" fill="#3498db">256 GB - 20 TB</text>
+
+  <!-- Arrows -->
+  <text x="25" y="38" text-anchor="start" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#666">← faster</text>
+  <text x="560" y="38" text-anchor="start" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#666">larger →</text>
+</svg>

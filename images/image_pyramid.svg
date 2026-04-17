@@ -1,0 +1,65 @@
+<svg width="700" height="250" xmlns="http://www.w3.org/2000/svg">
+  <text x="350" y="22" fill="#333" font-size="14" font-weight="bold" text-anchor="middle">Gaussian Image Pyramid</text>
+
+  <!-- Level 0: full resolution -->
+  <rect x="40" y="50" width="160" height="160" rx="4" fill="#3498db" opacity="0.12" stroke="#3498db" stroke-width="2"/>
+  <text x="120" y="135" fill="#3498db" font-size="12" text-anchor="middle" font-weight="bold">Level 0</text>
+  <text x="120" y="150" fill="#666" font-size="10" text-anchor="middle">256 × 256</text>
+  <text x="120" y="165" fill="#666" font-size="9" text-anchor="middle">(original)</text>
+  <!-- Grid lines to suggest detail -->
+  <line x1="80" y1="70" x2="160" y2="70" stroke="#3498db" stroke-width="0.5" opacity="0.3"/>
+  <line x1="80" y1="80" x2="160" y2="80" stroke="#3498db" stroke-width="0.5" opacity="0.3"/>
+  <line x1="80" y1="90" x2="160" y2="90" stroke="#3498db" stroke-width="0.5" opacity="0.3"/>
+  <line x1="100" y1="55" x2="100" y2="120" stroke="#3498db" stroke-width="0.5" opacity="0.3"/>
+  <line x1="120" y1="55" x2="120" y2="120" stroke="#3498db" stroke-width="0.5" opacity="0.3"/>
+  <line x1="140" y1="55" x2="140" y2="120" stroke="#3498db" stroke-width="0.5" opacity="0.3"/>
+
+  <!-- Arrow: blur + downsample -->
+  <line x1="210" y1="130" x2="245" y2="130" stroke="#666" stroke-width="1.2"/>
+  <polygon points="245,127 252,130 245,133" fill="#666"/>
+  <text x="228" y="120" fill="#666" font-size="8" text-anchor="middle">blur +</text>
+  <text x="228" y="145" fill="#666" font-size="8" text-anchor="middle">↓ 2×</text>
+
+  <!-- Level 1: half resolution -->
+  <rect x="260" y="90" width="110" height="110" rx="4" fill="#27ae60" opacity="0.12" stroke="#27ae60" stroke-width="2"/>
+  <text x="315" y="150" fill="#27ae60" font-size="12" text-anchor="middle" font-weight="bold">Level 1</text>
+  <text x="315" y="165" fill="#666" font-size="10" text-anchor="middle">128 × 128</text>
+  <line x1="290" y1="105" x2="340" y2="105" stroke="#27ae60" stroke-width="0.5" opacity="0.3"/>
+  <line x1="290" y1="120" x2="340" y2="120" stroke="#27ae60" stroke-width="0.5" opacity="0.3"/>
+  <line x1="300" y1="95" x2="300" y2="140" stroke="#27ae60" stroke-width="0.5" opacity="0.3"/>
+  <line x1="320" y1="95" x2="320" y2="140" stroke="#27ae60" stroke-width="0.5" opacity="0.3"/>
+
+  <!-- Arrow -->
+  <line x1="380" y1="145" x2="415" y2="145" stroke="#666" stroke-width="1.2"/>
+  <polygon points="415,142 422,145 415,148" fill="#666"/>
+  <text x="398" y="135" fill="#666" font-size="8" text-anchor="middle">blur +</text>
+  <text x="398" y="160" fill="#666" font-size="8" text-anchor="middle">↓ 2×</text>
+
+  <!-- Level 2: quarter resolution -->
+  <rect x="430" y="115" width="80" height="80" rx="4" fill="#f39c12" opacity="0.15" stroke="#f39c12" stroke-width="2"/>
+  <text x="470" y="158" fill="#f39c12" font-size="12" text-anchor="middle" font-weight="bold">Level 2</text>
+  <text x="470" y="173" fill="#666" font-size="10" text-anchor="middle">64 × 64</text>
+  <line x1="450" y1="130" x2="490" y2="130" stroke="#f39c12" stroke-width="0.5" opacity="0.3"/>
+  <line x1="460" y1="120" x2="460" y2="150" stroke="#f39c12" stroke-width="0.5" opacity="0.3"/>
+
+  <!-- Arrow -->
+  <line x1="520" y1="155" x2="555" y2="155" stroke="#666" stroke-width="1.2"/>
+  <polygon points="555,152 562,155 555,158" fill="#666"/>
+  <text x="538" y="145" fill="#666" font-size="8" text-anchor="middle">blur +</text>
+  <text x="538" y="170" fill="#666" font-size="8" text-anchor="middle">↓ 2×</text>
+
+  <!-- Level 3: eighth resolution -->
+  <rect x="570" y="130" width="55" height="55" rx="4" fill="#e74c3c" opacity="0.12" stroke="#e74c3c" stroke-width="2"/>
+  <text x="597" y="160" fill="#e74c3c" font-size="11" text-anchor="middle" font-weight="bold">Level 3</text>
+  <text x="597" y="174" fill="#666" font-size="9" text-anchor="middle">32 × 32</text>
+
+  <!-- Level 4 (tiny) -->
+  <line x1="635" y1="158" x2="660" y2="158" stroke="#666" stroke-width="1"/>
+  <polygon points="660,155 667,158 660,161" fill="#666"/>
+  <rect x="670" y="145" width="25" height="25" rx="3" fill="#9b59b6" opacity="0.15" stroke="#9b59b6" stroke-width="1.5"/>
+  <text x="683" y="162" fill="#9b59b6" font-size="7" text-anchor="middle">L4</text>
+
+  <!-- Bottom labels -->
+  <rect x="130" y="222" width="440" height="24" rx="6" fill="#f5f5f5" stroke="#333" stroke-width="1"/>
+  <text x="350" y="239" fill="#333" font-size="10" text-anchor="middle">Each level: Gaussian blur then subsample by 2 — captures coarser features at each scale</text>
+</svg>

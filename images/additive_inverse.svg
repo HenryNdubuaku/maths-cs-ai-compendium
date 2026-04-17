@@ -1,0 +1,21 @@
+<svg width="320" height="100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow-inv-v" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#e74c3c"/>
+    </marker>
+    <marker id="arrow-inv-neg" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#3498db"/>
+    </marker>
+  </defs>
+  <!-- v going right -->
+  <line x1="30" y1="45" x2="118" y2="45" stroke="#e74c3c" stroke-width="2.5" marker-end="url(#arrow-inv-v)"/>
+  <text x="75" y="35" fill="#e74c3c" font-size="14" font-weight="bold" text-anchor="middle">v</text>
+  <!-- -v going back left from tip of v -->
+  <line x1="126" y1="45" x2="38" y2="45" stroke="#3498db" stroke-width="2.5" marker-end="url(#arrow-inv-neg)"/>
+  <text x="85" y="70" fill="#3498db" font-size="14" font-weight="bold" text-anchor="middle">-v</text>
+  <circle cx="30" cy="45" r="3" fill="#333"/>
+  <!-- equals zero -->
+  <text x="155" y="50" fill="#333" font-size="18">=</text>
+  <circle cx="195" cy="45" r="5" fill="#999"/>
+  <text x="195" y="75" fill="#999" font-size="14" font-weight="bold" text-anchor="middle">0</text>
+</svg>

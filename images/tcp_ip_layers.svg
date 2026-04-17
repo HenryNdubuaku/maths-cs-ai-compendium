@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 260" width="550" height="260">
+  <text x="275" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">TCP/IP Network Stack</text>
+
+  <!-- Application layer -->
+  <rect x="100" y="45" width="250" height="42" rx="8" fill="#9b59b6" fill-opacity="0.15" stroke="#9b59b6" stroke-width="2"/>
+  <text x="225" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#9b59b6">Application</text>
+  <text x="225" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#9b59b6">HTTP, gRPC, DNS, SSH</text>
+  <text x="400" y="70" text-anchor="start" font-family="Arial, sans-serif" font-size="9" fill="#666">your code talks here</text>
+
+  <!-- Transport layer -->
+  <rect x="100" y="95" width="250" height="42" rx="8" fill="#3498db" fill-opacity="0.15" stroke="#3498db" stroke-width="2"/>
+  <text x="225" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#3498db">Transport</text>
+  <text x="225" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3498db">TCP (reliable) / UDP (fast)</text>
+  <text x="400" y="120" text-anchor="start" font-family="Arial, sans-serif" font-size="9" fill="#666">end-to-end delivery</text>
+
+  <!-- Network layer -->
+  <rect x="100" y="145" width="250" height="42" rx="8" fill="#27ae60" fill-opacity="0.15" stroke="#27ae60" stroke-width="2"/>
+  <text x="225" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#27ae60">Network (IP)</text>
+  <text x="225" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27ae60">routing, IP addresses</text>
+  <text x="400" y="170" text-anchor="start" font-family="Arial, sans-serif" font-size="9" fill="#666">packet routing</text>
+
+  <!-- Link layer -->
+  <rect x="100" y="195" width="250" height="42" rx="8" fill="#e74c3c" fill-opacity="0.15" stroke="#e74c3c" stroke-width="2"/>
+  <text x="225" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#e74c3c">Link</text>
+  <text x="225" y="230" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e74c3c">Ethernet, Wi-Fi, MAC</text>
+  <text x="400" y="220" text-anchor="start" font-family="Arial, sans-serif" font-size="9" fill="#666">physical transmission</text>
+
+  <text x="275" y="255" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">Each layer adds a header and passes down; receiving side strips headers going up</text>
+</svg>

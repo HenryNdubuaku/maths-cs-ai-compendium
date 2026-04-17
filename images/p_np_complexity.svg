@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 280" width="600" height="280">
+  <text x="300" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">Complexity Classes: P, NP, and NP-Complete</text>
+
+  <!-- NP outer ellipse -->
+  <ellipse cx="300" cy="155" rx="250" ry="110" fill="#3498db" fill-opacity="0.08" stroke="#3498db" stroke-width="2"/>
+  <text x="510" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#3498db">NP</text>
+  <text x="510" y="76" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3498db">verifiable in</text>
+  <text x="510" y="88" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3498db">poly time</text>
+
+  <!-- P inner ellipse -->
+  <ellipse cx="220" cy="155" rx="140" ry="80" fill="#27ae60" fill-opacity="0.12" stroke="#27ae60" stroke-width="2"/>
+  <text x="160" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#27ae60">P</text>
+  <text x="160" y="166" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27ae60">solvable in</text>
+  <text x="160" y="178" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27ae60">poly time</text>
+
+  <!-- NP-complete region -->
+  <ellipse cx="420" cy="155" rx="80" ry="65" fill="#e74c3c" fill-opacity="0.12" stroke="#e74c3c" stroke-width="2"/>
+  <text x="420" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#e74c3c">NP-Complete</text>
+  <text x="420" y="156" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e74c3c">hardest in NP</text>
+
+  <!-- Example problems -->
+  <text x="190" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#27ae60">sorting</text>
+  <text x="240" y="195" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#27ae60">shortest path</text>
+  <text x="270" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#27ae60">primality</text>
+
+  <text x="420" y="172" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#e74c3c">SAT, TSP</text>
+  <text x="420" y="185" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#e74c3c">graph colouring</text>
+
+  <!-- Question mark -->
+  <text x="330" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#f39c12">?</text>
+  <text x="330" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#f39c12">P = NP?</text>
+
+  <text x="300" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">If P = NP, the green circle expands to fill the blue one (most experts believe P ≠ NP)</text>
+</svg>

@@ -1,0 +1,43 @@
+<svg width="500" height="220" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr-red" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#e74c3c"/>
+    </marker>
+    <marker id="arr-blue" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#3498db"/>
+    </marker>
+    <marker id="arr-green" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#27ae60"/>
+    </marker>
+    <marker id="arr-purple" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#9b59b6"/>
+    </marker>
+  </defs>
+
+  <!-- Left group: same direction, different magnitudes -->
+  <text x="80" y="20" fill="#333" font-size="13" font-weight="bold" text-anchor="middle">Same direction, different magnitude</text>
+  <circle cx="30" cy="100" r="3" fill="#333"/>
+  <!-- v (short) -->
+  <line x1="30" y1="100" x2="108" y2="60" stroke="#e74c3c" stroke-width="2.5" marker-end="url(#arr-red)"/>
+  <text x="60" y="68" fill="#e74c3c" font-size="14" font-weight="bold">v</text>
+  <!-- 2v (long, same direction) -->
+  <line x1="30" y1="100" x2="190" y2="18" stroke="#3498db" stroke-width="2.5" marker-end="url(#arr-blue)"/>
+  <text x="120" y="40" fill="#3498db" font-size="14" font-weight="bold">2v</text>
+  <text x="80" y="145" fill="#666" font-size="11" text-anchor="middle">same direction (same angle)</text>
+  <text x="80" y="160" fill="#666" font-size="11" text-anchor="middle">||2v|| = 2 ||v||</text>
+
+  <!-- Divider -->
+  <line x1="250" y1="10" x2="250" y2="200" stroke="#ccc" stroke-width="1" stroke-dasharray="4"/>
+
+  <!-- Right group: same magnitude, different directions -->
+  <text x="375" y="20" fill="#333" font-size="13" font-weight="bold" text-anchor="middle">Same magnitude, different direction</text>
+  <circle cx="300" cy="120" r="3" fill="#333"/>
+  <!-- u (up-right) -->
+  <line x1="300" y1="120" x2="388" y2="62" stroke="#27ae60" stroke-width="2.5" marker-end="url(#arr-green)"/>
+  <text x="355" y="75" fill="#27ae60" font-size="14" font-weight="bold">u</text>
+  <!-- w (right-down) -->
+  <line x1="300" y1="120" x2="400" y2="148" stroke="#9b59b6" stroke-width="2.5" marker-end="url(#arr-purple)"/>
+  <text x="360" y="148" fill="#9b59b6" font-size="14" font-weight="bold">w</text>
+  <text x="375" y="185" fill="#666" font-size="11" text-anchor="middle">different directions</text>
+  <text x="375" y="200" fill="#666" font-size="11" text-anchor="middle">||u|| = ||w||</text>
+</svg>

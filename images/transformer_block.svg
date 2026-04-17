@@ -1,0 +1,68 @@
+<svg width="700" height="320" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="tf-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="none" stroke="#555" stroke-width="1"/>
+    </marker>
+  </defs>
+  <text x="350" y="22" fill="#333" font-size="14" font-weight="bold" text-anchor="middle">Transformer Encoder Block</text>
+
+  <!-- Input at bottom -->
+  <text x="250" y="305" fill="#666" font-size="11" text-anchor="middle">Input embeddings + positional encoding</text>
+  <line x1="250" y1="293" x2="250" y2="275" stroke="#555" stroke-width="1.5" marker-end="url(#tf-arrow)"/>
+
+  <!-- Multi-Head Attention -->
+  <rect x="170" y="240" width="160" height="35" rx="6" fill="#3498db" opacity="0.15" stroke="#3498db" stroke-width="1.5"/>
+  <text x="250" y="262" fill="#3498db" font-size="11" font-weight="bold" text-anchor="middle">Multi-Head Attention</text>
+
+  <!-- Q K V arrows into attention -->
+  <text x="190" y="238" fill="#3498db" font-size="9" text-anchor="middle">Q</text>
+  <text x="250" y="238" fill="#3498db" font-size="9" text-anchor="middle">K</text>
+  <text x="310" y="238" fill="#3498db" font-size="9" text-anchor="middle">V</text>
+
+  <!-- Add & Norm 1 -->
+  <line x1="250" y1="240" x2="250" y2="218" stroke="#555" stroke-width="1.5" marker-end="url(#tf-arrow)"/>
+  <rect x="185" y="193" width="130" height="25" rx="6" fill="#9b59b6" opacity="0.15" stroke="#9b59b6" stroke-width="1.5"/>
+  <text x="250" y="210" fill="#9b59b6" font-size="10" font-weight="bold" text-anchor="middle">Add &amp; LayerNorm</text>
+
+  <!-- Residual connection 1 -->
+  <line x1="350" y1="258" x2="350" y2="206" stroke="#999" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="350" y1="206" x2="315" y2="206" stroke="#999" stroke-width="1" marker-end="url(#tf-arrow)"/>
+  <text x="365" y="235" fill="#999" font-size="9">residual</text>
+
+  <!-- Feed-Forward Network -->
+  <line x1="250" y1="193" x2="250" y2="170" stroke="#555" stroke-width="1.5" marker-end="url(#tf-arrow)"/>
+  <rect x="175" y="137" width="150" height="33" rx="6" fill="#e74c3c" opacity="0.15" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="250" y="153" fill="#e74c3c" font-size="10" font-weight="bold" text-anchor="middle">Feed-Forward Network</text>
+  <text x="250" y="165" fill="#e74c3c" font-size="9" text-anchor="middle">(Linear, ReLU, Linear)</text>
+
+  <!-- Add & Norm 2 -->
+  <line x1="250" y1="137" x2="250" y2="118" stroke="#555" stroke-width="1.5" marker-end="url(#tf-arrow)"/>
+  <rect x="185" y="93" width="130" height="25" rx="6" fill="#9b59b6" opacity="0.15" stroke="#9b59b6" stroke-width="1.5"/>
+  <text x="250" y="110" fill="#9b59b6" font-size="10" font-weight="bold" text-anchor="middle">Add &amp; LayerNorm</text>
+
+  <!-- Residual connection 2 -->
+  <line x1="350" y1="153" x2="350" y2="106" stroke="#999" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="350" y1="106" x2="315" y2="106" stroke="#999" stroke-width="1" marker-end="url(#tf-arrow)"/>
+  <text x="365" y="132" fill="#999" font-size="9">residual</text>
+
+  <!-- Output -->
+  <line x1="250" y1="93" x2="250" y2="68" stroke="#555" stroke-width="1.5" marker-end="url(#tf-arrow)"/>
+  <text x="250" y="58" fill="#666" font-size="11" text-anchor="middle">Output (to next block or head)</text>
+
+  <!-- Attention detail (right side) -->
+  <rect x="430" y="55" width="240" height="130" rx="6" fill="#f5f5f5" stroke="#ddd" stroke-width="1"/>
+  <text x="550" y="75" fill="#333" font-size="11" font-weight="bold" text-anchor="middle">Scaled Dot-Product Attention</text>
+
+  <text x="445" y="98" fill="#333" font-size="10">1. Score = Q · K^T / sqrt(d_k)</text>
+  <text x="445" y="118" fill="#333" font-size="10">2. Weights = softmax(Score)</text>
+  <text x="445" y="138" fill="#333" font-size="10">3. Output = Weights · V</text>
+  <text x="445" y="162" fill="#666" font-size="9">Multi-head: h parallel attentions,</text>
+  <text x="445" y="175" fill="#666" font-size="9">concatenated and projected</text>
+
+  <!-- Key insight box -->
+  <rect x="430" y="200" width="240" height="65" rx="6" fill="#f5f5f5" stroke="#ddd" stroke-width="1"/>
+  <text x="550" y="220" fill="#333" font-size="10" font-weight="bold" text-anchor="middle">Why Transformers Work</text>
+  <text x="445" y="238" fill="#666" font-size="9">Every token attends to every other</text>
+  <text x="445" y="252" fill="#666" font-size="9">token in parallel (no sequential</text>
+  <text x="445" y="266" fill="#666" font-size="9">bottleneck like RNNs)</text>
+</svg>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" width="600" height="300">
+  <text x="300" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">PID Controller: Effect of Gain Tuning</text>
+
+  <!-- Axes -->
+  <line x1="60" y1="260" x2="570" y2="260" stroke="#333" stroke-width="1.5"/>
+  <line x1="60" y1="260" x2="60" y2="40" stroke="#333" stroke-width="1.5"/>
+  <text x="315" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#666">Time</text>
+  <text x="30" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#666" transform="rotate(-90, 30, 150)">Position</text>
+
+  <!-- Desired (setpoint) -->
+  <line x1="60" y1="100" x2="570" y2="100" stroke="#333" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <text x="575" y="104" text-anchor="start" font-family="Arial, sans-serif" font-size="9" fill="#333">target</text>
+
+  <!-- Underdamped (oscillating) - high Kp, low Kd -->
+  <path d="M 60,260 C 100,260 130,30 180,50 C 210,62 220,130 260,115 C 290,104 300,85 340,90 C 370,93 380,105 420,102 C 450,100 470,98 570,100" fill="none" stroke="#e74c3c" stroke-width="2"/>
+  <text x="185" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#e74c3c">High Kp, Low Kd</text>
+  <text x="185" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e74c3c">(oscillates)</text>
+
+  <!-- Well-tuned -->
+  <path d="M 60,260 C 120,260 170,95 230,98 C 280,100 350,100 570,100" fill="none" stroke="#27ae60" stroke-width="2.5"/>
+  <text x="250" y="78" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#27ae60">Well-tuned PID</text>
+  <text x="250" y="91" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27ae60">(fast, no overshoot)</text>
+
+  <!-- Overdamped (sluggish) - high Kd -->
+  <path d="M 60,260 C 150,258 250,200 320,155 C 380,125 440,108 500,103 C 540,101 560,100 570,100" fill="none" stroke="#3498db" stroke-width="2"/>
+  <text x="380" y="145" text-anchor="start" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#3498db">High Kd</text>
+  <text x="380" y="158" text-anchor="start" font-family="Arial, sans-serif" font-size="9" fill="#3498db">(sluggish)</text>
+</svg>

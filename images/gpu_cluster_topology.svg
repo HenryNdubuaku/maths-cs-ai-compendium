@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 320" width="750" height="320">
+  <text x="375" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">GPU Cluster: Node Architecture and Network Topology</text>
+
+  <!-- Single node detail -->
+  <rect x="30" y="45" width="320" height="130" rx="10" fill="#3498db" fill-opacity="0.04" stroke="#3498db" stroke-width="2"/>
+  <text x="190" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#3498db">GPU Server Node</text>
+
+  <!-- GPUs inside node -->
+  <rect x="45" y="78" width="36" height="28" rx="4" fill="#27ae60" fill-opacity="0.25" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="63" y="96" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" font-weight="bold" fill="#27ae60">H100</text>
+
+  <rect x="85" y="78" width="36" height="28" rx="4" fill="#27ae60" fill-opacity="0.25" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="103" y="96" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" font-weight="bold" fill="#27ae60">H100</text>
+
+  <rect x="125" y="78" width="36" height="28" rx="4" fill="#27ae60" fill-opacity="0.25" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="143" y="96" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" font-weight="bold" fill="#27ae60">H100</text>
+
+  <rect x="165" y="78" width="36" height="28" rx="4" fill="#27ae60" fill-opacity="0.25" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="183" y="96" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" font-weight="bold" fill="#27ae60">H100</text>
+
+  <rect x="215" y="78" width="36" height="28" rx="4" fill="#27ae60" fill-opacity="0.25" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="233" y="96" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" font-weight="bold" fill="#27ae60">H100</text>
+
+  <rect x="255" y="78" width="36" height="28" rx="4" fill="#27ae60" fill-opacity="0.25" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="273" y="96" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" font-weight="bold" fill="#27ae60">H100</text>
+
+  <rect x="295" y="78" width="36" height="28" rx="4" fill="#27ae60" fill-opacity="0.25" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="313" y="96" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" font-weight="bold" fill="#27ae60">H100</text>
+
+  <!-- Hidden 8th GPU -->
+  <rect x="45" y="110" width="36" height="28" rx="4" fill="#27ae60" fill-opacity="0.25" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="63" y="128" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" font-weight="bold" fill="#27ae60">H100</text>
+
+  <!-- NVLink label -->
+  <line x1="81" y1="92" x2="85" y2="92" stroke="#f39c12" stroke-width="2"/>
+  <line x1="121" y1="92" x2="125" y2="92" stroke="#f39c12" stroke-width="2"/>
+  <line x1="161" y1="92" x2="165" y2="92" stroke="#f39c12" stroke-width="2"/>
+  <line x1="201" y1="92" x2="215" y2="92" stroke="#f39c12" stroke-width="2"/>
+  <line x1="251" y1="92" x2="255" y2="92" stroke="#f39c12" stroke-width="2"/>
+  <line x1="291" y1="92" x2="295" y2="92" stroke="#f39c12" stroke-width="2"/>
+
+  <text x="190" y="152" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#f39c12">NVLink: 900 GB/s per GPU (intra-node)</text>
+  <text x="190" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#3498db">8 × InfiniBand ports: 400 Gb/s each (inter-node)</text>
+
+  <!-- Cluster view (right) -->
+  <text x="560" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#333">Fat Tree Network (Cluster)</text>
+
+  <!-- Spine switches -->
+  <rect x="480" y="65" width="40" height="20" rx="4" fill="#9b59b6" fill-opacity="0.2" stroke="#9b59b6" stroke-width="1.5"/>
+  <rect x="530" y="65" width="40" height="20" rx="4" fill="#9b59b6" fill-opacity="0.2" stroke="#9b59b6" stroke-width="1.5"/>
+  <rect x="580" y="65" width="40" height="20" rx="4" fill="#9b59b6" fill-opacity="0.2" stroke="#9b59b6" stroke-width="1.5"/>
+  <rect x="630" y="65" width="40" height="20" rx="4" fill="#9b59b6" fill-opacity="0.2" stroke="#9b59b6" stroke-width="1.5"/>
+  <text x="560" y="58" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#9b59b6">spine switches</text>
+
+  <!-- Leaf switches -->
+  <rect x="450" y="120" width="35" height="18" rx="3" fill="#e74c3c" fill-opacity="0.2" stroke="#e74c3c" stroke-width="1"/>
+  <rect x="495" y="120" width="35" height="18" rx="3" fill="#e74c3c" fill-opacity="0.2" stroke="#e74c3c" stroke-width="1"/>
+  <rect x="540" y="120" width="35" height="18" rx="3" fill="#e74c3c" fill-opacity="0.2" stroke="#e74c3c" stroke-width="1"/>
+  <rect x="585" y="120" width="35" height="18" rx="3" fill="#e74c3c" fill-opacity="0.2" stroke="#e74c3c" stroke-width="1"/>
+  <rect x="630" y="120" width="35" height="18" rx="3" fill="#e74c3c" fill-opacity="0.2" stroke="#e74c3c" stroke-width="1"/>
+  <rect x="675" y="120" width="35" height="18" rx="3" fill="#e74c3c" fill-opacity="0.2" stroke="#e74c3c" stroke-width="1"/>
+  <text x="560" y="112" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#e74c3c">leaf switches</text>
+
+  <!-- Connections spine to leaf -->
+  <line x1="500" y1="85" x2="467" y2="120" stroke="#ccc" stroke-width="0.7"/>
+  <line x1="500" y1="85" x2="512" y2="120" stroke="#ccc" stroke-width="0.7"/>
+  <line x1="550" y1="85" x2="512" y2="120" stroke="#ccc" stroke-width="0.7"/>
+  <line x1="550" y1="85" x2="557" y2="120" stroke="#ccc" stroke-width="0.7"/>
+  <line x1="600" y1="85" x2="557" y2="120" stroke="#ccc" stroke-width="0.7"/>
+  <line x1="600" y1="85" x2="602" y2="120" stroke="#ccc" stroke-width="0.7"/>
+  <line x1="650" y1="85" x2="602" y2="120" stroke="#ccc" stroke-width="0.7"/>
+  <line x1="650" y1="85" x2="647" y2="120" stroke="#ccc" stroke-width="0.7"/>
+  <line x1="500" y1="85" x2="557" y2="120" stroke="#ccc" stroke-width="0.7"/>
+  <line x1="650" y1="85" x2="692" y2="120" stroke="#ccc" stroke-width="0.7"/>
+
+  <!-- GPU nodes -->
+  <rect x="445" y="155" width="25" height="18" rx="3" fill="#27ae60" fill-opacity="0.3" stroke="#27ae60" stroke-width="0.8"/>
+  <rect x="472" y="155" width="25" height="18" rx="3" fill="#27ae60" fill-opacity="0.3" stroke="#27ae60" stroke-width="0.8"/>
+  <rect x="502" y="155" width="25" height="18" rx="3" fill="#27ae60" fill-opacity="0.3" stroke="#27ae60" stroke-width="0.8"/>
+  <rect x="532" y="155" width="25" height="18" rx="3" fill="#27ae60" fill-opacity="0.3" stroke="#27ae60" stroke-width="0.8"/>
+  <rect x="562" y="155" width="25" height="18" rx="3" fill="#27ae60" fill-opacity="0.3" stroke="#27ae60" stroke-width="0.8"/>
+  <rect x="592" y="155" width="25" height="18" rx="3" fill="#27ae60" fill-opacity="0.3" stroke="#27ae60" stroke-width="0.8"/>
+  <rect x="622" y="155" width="25" height="18" rx="3" fill="#27ae60" fill-opacity="0.3" stroke="#27ae60" stroke-width="0.8"/>
+  <rect x="652" y="155" width="25" height="18" rx="3" fill="#27ae60" fill-opacity="0.3" stroke="#27ae60" stroke-width="0.8"/>
+  <rect x="682" y="155" width="25" height="18" rx="3" fill="#27ae60" fill-opacity="0.3" stroke="#27ae60" stroke-width="0.8"/>
+
+  <line x1="457" y1="155" x2="457" y2="138" stroke="#ccc" stroke-width="0.7"/>
+  <line x1="484" y1="155" x2="484" y2="138" stroke="#ccc" stroke-width="0.7"/>
+  <line x1="514" y1="155" x2="514" y2="138" stroke="#ccc" stroke-width="0.7"/>
+  <line x1="544" y1="155" x2="544" y2="138" stroke="#ccc" stroke-width="0.7"/>
+  <line x1="574" y1="155" x2="574" y2="138" stroke="#ccc" stroke-width="0.7"/>
+  <line x1="604" y1="155" x2="604" y2="138" stroke="#ccc" stroke-width="0.7"/>
+  <line x1="634" y1="155" x2="634" y2="138" stroke="#ccc" stroke-width="0.7"/>
+  <line x1="664" y1="155" x2="664" y2="138" stroke="#ccc" stroke-width="0.7"/>
+  <line x1="694" y1="155" x2="694" y2="138" stroke="#ccc" stroke-width="0.7"/>
+
+  <text x="560" y="188" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#27ae60">GPU nodes (8 GPUs each)</text>
+
+  <!-- Scale label -->
+  <rect x="50" y="210" width="650" height="90" rx="8" fill="#f5f5f5" stroke="#ddd" stroke-width="1"/>
+  <text x="375" y="232" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#333">Scale Examples</text>
+  <text x="170" y="252" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3498db">Research: 64 GPUs (8 nodes)</text>
+  <text x="170" y="266" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#3498db">fine-tune 7B models</text>
+  <text x="375" y="252" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#f39c12">Production: 256-1024 GPUs</text>
+  <text x="375" y="266" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#f39c12">train 70B models</text>
+  <text x="580" y="252" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e74c3c">Frontier: 16,000+ GPUs</text>
+  <text x="580" y="266" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#e74c3c">Llama 3, GPT-4 class</text>
+  <text x="375" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">MTBF at 16K GPUs: ~hours. Checkpointing + elastic training = survival.</text>
+</svg>

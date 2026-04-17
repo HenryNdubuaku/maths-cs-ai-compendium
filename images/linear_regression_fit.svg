@@ -1,0 +1,52 @@
+<svg width="700" height="300" xmlns="http://www.w3.org/2000/svg">
+  <text x="350" y="22" fill="#333" font-size="14" font-weight="bold" text-anchor="middle">Linear Regression: Best-Fit Line and Residuals</text>
+
+  <!-- Axes -->
+  <line x1="60" y1="250" x2="640" y2="250" stroke="#333" stroke-width="1.5"/>
+  <line x1="60" y1="250" x2="60" y2="40" stroke="#333" stroke-width="1.5"/>
+  <text x="350" y="275" fill="#666" font-size="11" text-anchor="middle">x</text>
+  <text x="35" y="145" fill="#666" font-size="11" text-anchor="middle" transform="rotate(-90,35,145)">y</text>
+
+  <!-- Best-fit line -->
+  <line x1="80" y1="220" x2="620" y2="65" stroke="#3498db" stroke-width="2.5"/>
+  <text x="600" y="55" fill="#3498db" font-size="11" font-weight="bold">y = wx + b</text>
+
+  <!-- Data points and residual lines -->
+  <circle cx="120" cy="195" r="4.5" fill="#e74c3c" opacity="0.8"/>
+  <line x1="120" y1="195" x2="120" y2="209" stroke="#9b59b6" stroke-width="1.2" stroke-dasharray="3,2"/>
+
+  <circle cx="170" cy="175" r="4.5" fill="#e74c3c" opacity="0.8"/>
+  <line x1="170" y1="175" x2="170" y2="195" stroke="#9b59b6" stroke-width="1.2" stroke-dasharray="3,2"/>
+
+  <circle cx="220" cy="195" r="4.5" fill="#e74c3c" opacity="0.8"/>
+  <line x1="220" y1="195" x2="220" y2="181" stroke="#9b59b6" stroke-width="1.2" stroke-dasharray="3,2"/>
+
+  <circle cx="270" cy="145" r="4.5" fill="#e74c3c" opacity="0.8"/>
+  <line x1="270" y1="145" x2="270" y2="167" stroke="#9b59b6" stroke-width="1.2" stroke-dasharray="3,2"/>
+
+  <circle cx="320" cy="170" r="4.5" fill="#e74c3c" opacity="0.8"/>
+  <line x1="320" y1="170" x2="320" y2="152" stroke="#9b59b6" stroke-width="1.2" stroke-dasharray="3,2"/>
+
+  <circle cx="370" cy="120" r="4.5" fill="#e74c3c" opacity="0.8"/>
+  <line x1="370" y1="120" x2="370" y2="138" stroke="#9b59b6" stroke-width="1.2" stroke-dasharray="3,2"/>
+
+  <circle cx="420" cy="135" r="4.5" fill="#e74c3c" opacity="0.8"/>
+  <line x1="420" y1="135" x2="420" y2="124" stroke="#9b59b6" stroke-width="1.2" stroke-dasharray="3,2"/>
+
+  <circle cx="470" cy="85" r="4.5" fill="#e74c3c" opacity="0.8"/>
+  <line x1="470" y1="85" x2="470" y2="110" stroke="#9b59b6" stroke-width="1.2" stroke-dasharray="3,2"/>
+
+  <circle cx="520" cy="105" r="4.5" fill="#e74c3c" opacity="0.8"/>
+  <line x1="520" y1="105" x2="520" y2="95" stroke="#9b59b6" stroke-width="1.2" stroke-dasharray="3,2"/>
+
+  <circle cx="570" cy="70" r="4.5" fill="#e74c3c" opacity="0.8"/>
+  <line x1="570" y1="70" x2="570" y2="81" stroke="#9b59b6" stroke-width="1.2" stroke-dasharray="3,2"/>
+
+  <!-- Legend -->
+  <circle cx="180" cy="292" r="4" fill="#e74c3c"/>
+  <text x="195" y="296" fill="#666" font-size="10">data points</text>
+  <line x1="270" y1="292" x2="290" y2="292" stroke="#3498db" stroke-width="2"/>
+  <text x="300" y="296" fill="#666" font-size="10">best-fit line</text>
+  <line x1="390" y1="292" x2="410" y2="292" stroke="#9b59b6" stroke-width="1.2" stroke-dasharray="3,2"/>
+  <text x="420" y="296" fill="#666" font-size="10">residuals (errors)</text>
+</svg>

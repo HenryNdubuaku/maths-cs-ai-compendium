@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 300" width="700" height="300" font-family="Arial, sans-serif">
+  <defs>
+    <marker id="ac-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#666"/>
+    </marker>
+    <marker id="ac-arrow-strong" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#e74c3c"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="350" y="24" font-size="14" font-weight="bold" fill="#333" text-anchor="middle">Attention-Based Image Captioning</text>
+
+  <!-- Image patch grid (3x3) -->
+  <text x="100" y="52" font-size="11" fill="#666" text-anchor="middle">Image Patches</text>
+
+  <!-- Row 1 -->
+  <rect x="35" y="60" width="42" height="42" rx="3" fill="#3498db" fill-opacity="0.08" stroke="#ccc" stroke-width="1"/>
+  <text x="56" y="85" font-size="8" fill="#999" text-anchor="middle">sky</text>
+
+  <rect x="79" y="60" width="42" height="42" rx="3" fill="#3498db" fill-opacity="0.08" stroke="#ccc" stroke-width="1"/>
+  <text x="100" y="85" font-size="8" fill="#999" text-anchor="middle">tree</text>
+
+  <rect x="123" y="60" width="42" height="42" rx="3" fill="#3498db" fill-opacity="0.08" stroke="#ccc" stroke-width="1"/>
+  <text x="144" y="85" font-size="8" fill="#999" text-anchor="middle">sky</text>
+
+  <!-- Row 2 -->
+  <rect x="35" y="104" width="42" height="42" rx="3" fill="#3498db" fill-opacity="0.08" stroke="#ccc" stroke-width="1"/>
+  <text x="56" y="129" font-size="8" fill="#999" text-anchor="middle">grass</text>
+
+  <rect x="79" y="104" width="42" height="42" rx="3" fill="#e74c3c" fill-opacity="0.2" stroke="#e74c3c" stroke-width="2"/>
+  <text x="100" y="126" font-size="8" fill="#e74c3c" text-anchor="middle" font-weight="bold">dog</text>
+
+  <rect x="123" y="104" width="42" height="42" rx="3" fill="#3498db" fill-opacity="0.08" stroke="#ccc" stroke-width="1"/>
+  <text x="144" y="129" font-size="8" fill="#999" text-anchor="middle">fence</text>
+
+  <!-- Row 3 -->
+  <rect x="35" y="148" width="42" height="42" rx="3" fill="#f39c12" fill-opacity="0.12" stroke="#f39c12" stroke-width="1"/>
+  <text x="56" y="173" font-size="8" fill="#999" text-anchor="middle">ball</text>
+
+  <rect x="79" y="148" width="42" height="42" rx="3" fill="#3498db" fill-opacity="0.08" stroke="#ccc" stroke-width="1"/>
+  <text x="100" y="173" font-size="8" fill="#999" text-anchor="middle">grass</text>
+
+  <rect x="123" y="148" width="42" height="42" rx="3" fill="#3498db" fill-opacity="0.08" stroke="#ccc" stroke-width="1"/>
+  <text x="144" y="173" font-size="8" fill="#999" text-anchor="middle">grass</text>
+
+  <!-- Attention arrows from patches to decoder word "dog" -->
+  <!-- Strong attention from dog patch -->
+  <line x1="121" y1="125" x2="315" y2="131" stroke="#e74c3c" stroke-width="2.5" stroke-opacity="0.8" marker-end="url(#ac-arrow-strong)"/>
+
+  <!-- Weak attention from other patches -->
+  <line x1="121" y1="81" x2="315" y2="128" stroke="#ccc" stroke-width="0.8" stroke-opacity="0.5"/>
+  <line x1="165" y1="125" x2="315" y2="131" stroke="#ccc" stroke-width="1" stroke-opacity="0.4"/>
+  <line x1="77" y1="169" x2="315" y2="134" stroke="#f39c12" stroke-width="1.2" stroke-opacity="0.5"/>
+  <line x1="56" y1="146" x2="315" y2="132" stroke="#ccc" stroke-width="0.7" stroke-opacity="0.3"/>
+
+  <!-- Attention weights label -->
+  <text x="220" y="110" font-size="9" fill="#e74c3c" text-anchor="middle" font-style="italic">strong attention</text>
+  <text x="220" y="175" font-size="9" fill="#ccc" text-anchor="middle" font-style="italic">weak attention</text>
+
+  <!-- Decoder generating words -->
+  <text x="460" y="52" font-size="11" fill="#666" text-anchor="middle">Decoder Output</text>
+
+  <!-- Word boxes -->
+  <rect x="320" y="65" width="50" height="28" rx="5" fill="#9b59b6" fill-opacity="0.12" stroke="#9b59b6" stroke-width="1.2"/>
+  <text x="345" y="84" font-size="11" fill="#9b59b6" text-anchor="middle" font-weight="bold">"A"</text>
+
+  <rect x="320" y="118" width="50" height="28" rx="5" fill="#e74c3c" fill-opacity="0.15" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="345" y="137" font-size="11" fill="#e74c3c" text-anchor="middle" font-weight="bold">"dog"</text>
+
+  <rect x="320" y="170" width="60" height="28" rx="5" fill="#9b59b6" fill-opacity="0.12" stroke="#9b59b6" stroke-width="1.2"/>
+  <text x="350" y="189" font-size="11" fill="#9b59b6" text-anchor="middle" font-weight="bold">"plays"</text>
+
+  <!-- Arrows between words (autoregressive) -->
+  <line x1="345" y1="93" x2="345" y2="116" stroke="#666" stroke-width="1" marker-end="url(#ac-arrow)"/>
+  <line x1="345" y1="146" x2="350" y2="168" stroke="#666" stroke-width="1" marker-end="url(#ac-arrow)"/>
+
+  <!-- Attention heatmap visualization -->
+  <text x="560" y="52" font-size="11" fill="#666" text-anchor="middle">Attention Map</text>
+  <text x="560" y="65" font-size="9" fill="#999" text-anchor="middle">(for "dog")</text>
+
+  <!-- Heatmap grid 3x3 -->
+  <rect x="510" y="75" width="32" height="32" rx="2" fill="#e74c3c" fill-opacity="0.05" stroke="#ddd" stroke-width="0.5"/>
+  <text x="526" y="95" font-size="7" fill="#999" text-anchor="middle">0.02</text>
+
+  <rect x="544" y="75" width="32" height="32" rx="2" fill="#e74c3c" fill-opacity="0.1" stroke="#ddd" stroke-width="0.5"/>
+  <text x="560" y="95" font-size="7" fill="#999" text-anchor="middle">0.05</text>
+
+  <rect x="578" y="75" width="32" height="32" rx="2" fill="#e74c3c" fill-opacity="0.05" stroke="#ddd" stroke-width="0.5"/>
+  <text x="594" y="95" font-size="7" fill="#999" text-anchor="middle">0.02</text>
+
+  <rect x="510" y="109" width="32" height="32" rx="2" fill="#e74c3c" fill-opacity="0.1" stroke="#ddd" stroke-width="0.5"/>
+  <text x="526" y="129" font-size="7" fill="#999" text-anchor="middle">0.06</text>
+
+  <rect x="544" y="109" width="32" height="32" rx="2" fill="#e74c3c" fill-opacity="0.7" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="560" y="129" font-size="8" fill="white" text-anchor="middle" font-weight="bold">0.65</text>
+
+  <rect x="578" y="109" width="32" height="32" rx="2" fill="#e74c3c" fill-opacity="0.08" stroke="#ddd" stroke-width="0.5"/>
+  <text x="594" y="129" font-size="7" fill="#999" text-anchor="middle">0.04</text>
+
+  <rect x="510" y="143" width="32" height="32" rx="2" fill="#e74c3c" fill-opacity="0.15" stroke="#ddd" stroke-width="0.5"/>
+  <text x="526" y="163" font-size="7" fill="#999" text-anchor="middle">0.08</text>
+
+  <rect x="544" y="143" width="32" height="32" rx="2" fill="#e74c3c" fill-opacity="0.08" stroke="#ddd" stroke-width="0.5"/>
+  <text x="560" y="163" font-size="7" fill="#999" text-anchor="middle">0.04</text>
+
+  <rect x="578" y="143" width="32" height="32" rx="2" fill="#e74c3c" fill-opacity="0.08" stroke="#ddd" stroke-width="0.5"/>
+  <text x="594" y="163" font-size="7" fill="#999" text-anchor="middle">0.04</text>
+
+  <!-- Caption sentence at bottom -->
+  <text x="350" y="230" font-size="11" fill="#333" text-anchor="middle">Generated Caption: </text>
+  <text x="350" y="248" font-size="12" fill="#9b59b6" text-anchor="middle" font-weight="bold">"A dog plays with a ball on the grass"</text>
+
+  <!-- Note -->
+  <text x="350" y="280" font-size="9" fill="#999" text-anchor="middle">At each decoding step, the model attends to different spatial regions of the image</text>
+</svg>

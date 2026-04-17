@@ -1,0 +1,68 @@
+<svg width="700" height="320" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="mc-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#333"/>
+    </marker>
+  </defs>
+
+  <text x="350" y="25" fill="#333" font-size="14" font-weight="bold" text-anchor="middle">Markov Chain: Weather Model</text>
+
+  <!-- Rainy state -->
+  <circle cx="150" cy="150" r="50" fill="#3498db" opacity="0.2" stroke="#3498db" stroke-width="2"/>
+  <text x="150" y="145" fill="#3498db" font-size="16" text-anchor="middle" font-weight="bold">R</text>
+  <text x="150" y="165" fill="#3498db" font-size="11" text-anchor="middle">Rainy</text>
+
+  <!-- Sunny state -->
+  <circle cx="400" cy="150" r="50" fill="#f39c12" opacity="0.2" stroke="#f39c12" stroke-width="2"/>
+  <text x="400" y="145" fill="#f39c12" font-size="16" text-anchor="middle" font-weight="bold">S</text>
+  <text x="400" y="165" fill="#f39c12" font-size="11" text-anchor="middle">Sunny</text>
+
+  <!-- Cloudy state -->
+  <circle cx="275" cy="270" r="50" fill="#95a5a6" opacity="0.3" stroke="#7f8c8d" stroke-width="2"/>
+  <text x="275" y="265" fill="#7f8c8d" font-size="16" text-anchor="middle" font-weight="bold">C</text>
+  <text x="275" y="285" fill="#7f8c8d" font-size="11" text-anchor="middle">Cloudy</text>
+
+  <!-- R self-loop -->
+  <path d="M 115,115 C 90,70 130,50 155,100" fill="none" stroke="#3498db" stroke-width="1.5" marker-end="url(#mc-arrow)"/>
+  <text x="105" y="72" fill="#3498db" font-size="11" text-anchor="middle">0.3</text>
+
+  <!-- R → S -->
+  <line x1="200" y1="140" x2="345" y2="140" stroke="#333" stroke-width="1.5" marker-end="url(#mc-arrow)"/>
+  <text x="275" y="132" fill="#333" font-size="11" text-anchor="middle">0.4</text>
+
+  <!-- R → C -->
+  <line x1="170" y1="195" x2="240" y2="240" stroke="#333" stroke-width="1.5" marker-end="url(#mc-arrow)"/>
+  <text x="185" y="230" fill="#333" font-size="11" text-anchor="middle">0.3</text>
+
+  <!-- S self-loop -->
+  <path d="M 435,115 C 460,70 420,50 395,100" fill="none" stroke="#f39c12" stroke-width="1.5" marker-end="url(#mc-arrow)"/>
+  <text x="450" y="72" fill="#f39c12" font-size="11" text-anchor="middle">0.5</text>
+
+  <!-- S → R -->
+  <line x1="350" y1="158" x2="205" y2="158" stroke="#333" stroke-width="1.5" marker-end="url(#mc-arrow)"/>
+  <text x="275" y="175" fill="#333" font-size="11" text-anchor="middle">0.2</text>
+
+  <!-- S → C -->
+  <line x1="380" y1="195" x2="310" y2="240" stroke="#333" stroke-width="1.5" marker-end="url(#mc-arrow)"/>
+  <text x="365" y="230" fill="#333" font-size="11" text-anchor="middle">0.3</text>
+
+  <!-- C → R -->
+  <line x1="235" y1="245" x2="175" y2="198" stroke="#333" stroke-width="1.5" marker-end="url(#mc-arrow)"/>
+  <text x="190" y="255" fill="#333" font-size="11" text-anchor="middle">0.4</text>
+
+  <!-- C → S -->
+  <line x1="315" y1="245" x2="380" y2="198" stroke="#333" stroke-width="1.5" marker-end="url(#mc-arrow)"/>
+  <text x="365" y="255" fill="#333" font-size="11" text-anchor="middle">0.3</text>
+
+  <!-- C self-loop -->
+  <path d="M 260,318 C 250,350 300,350 290,318" fill="none" stroke="#7f8c8d" stroke-width="1.5" marker-end="url(#mc-arrow)"/>
+  <text x="275" y="310" fill="#7f8c8d" font-size="11" text-anchor="middle">0.3</text>
+
+  <!-- Transition matrix -->
+  <text x="600" y="100" fill="#333" font-size="11" text-anchor="middle" font-weight="bold">Transition matrix:</text>
+  <text x="600" y="125" fill="#333" font-size="11" text-anchor="middle" font-family="monospace">R   S   C</text>
+  <text x="600" y="145" fill="#3498db" font-size="11" text-anchor="middle" font-family="monospace">R [0.3 0.4 0.3]</text>
+  <text x="600" y="165" fill="#f39c12" font-size="11" text-anchor="middle" font-family="monospace">S [0.2 0.5 0.3]</text>
+  <text x="600" y="185" fill="#7f8c8d" font-size="11" text-anchor="middle" font-family="monospace">C [0.4 0.3 0.3]</text>
+  <text x="600" y="210" fill="#666" font-size="10" text-anchor="middle">Each row sums to 1</text>
+</svg>

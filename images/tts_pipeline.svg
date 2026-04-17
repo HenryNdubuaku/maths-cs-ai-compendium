@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="280">
+  <defs>
+    <marker id="arrow1" viewBox="0 0 10 6" refX="10" refY="3" markerWidth="8" markerHeight="6" orient="auto">
+      <polygon points="0,0 10,3 0,6" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="350" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">TTS Pipeline: Text to Waveform</text>
+
+  <!-- Step 1: Text -->
+  <rect x="10" y="55" width="68" height="40" rx="8" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <text x="44" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#3498db">Text</text>
+  <text x="44" y="84" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">"Hello world"</text>
+
+  <!-- Arrow 1→2 -->
+  <line x1="78" y1="75" x2="93" y2="75" stroke="#666" stroke-width="1.2" marker-end="url(#arrow1)"/>
+
+  <!-- Step 2: Text Normalisation -->
+  <rect x="95" y="55" width="80" height="40" rx="8" fill="#e74c3c" fill-opacity="0.12" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="135" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#e74c3c">Text</text>
+  <text x="135" y="84" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#e74c3c">Normalisation</text>
+
+  <!-- Arrow 2→3 -->
+  <line x1="175" y1="75" x2="190" y2="75" stroke="#666" stroke-width="1.2" marker-end="url(#arrow1)"/>
+
+  <!-- Step 3: G2P -->
+  <rect x="192" y="55" width="80" height="40" rx="8" fill="#27ae60" fill-opacity="0.12" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="232" y="69" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#27ae60">G2P</text>
+  <text x="232" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">Grapheme-to-</text>
+  <text x="232" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">Phoneme</text>
+
+  <!-- Arrow 3→4 -->
+  <line x1="272" y1="75" x2="287" y2="75" stroke="#666" stroke-width="1.2" marker-end="url(#arrow1)"/>
+
+  <!-- Step 4: Acoustic Model -->
+  <rect x="289" y="55" width="80" height="40" rx="8" fill="#f39c12" fill-opacity="0.12" stroke="#f39c12" stroke-width="1.5"/>
+  <text x="329" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#f39c12">Acoustic</text>
+  <text x="329" y="84" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#f39c12">Model</text>
+
+  <!-- Arrow 4→5 -->
+  <line x1="369" y1="75" x2="384" y2="75" stroke="#666" stroke-width="1.2" marker-end="url(#arrow1)"/>
+
+  <!-- Step 5: Mel Spectrogram -->
+  <rect x="386" y="55" width="80" height="40" rx="8" fill="#9b59b6" fill-opacity="0.12" stroke="#9b59b6" stroke-width="1.5"/>
+  <text x="426" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#9b59b6">Mel</text>
+  <text x="426" y="84" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#9b59b6">Spectrogram</text>
+
+  <!-- Arrow 5→6 -->
+  <line x1="466" y1="75" x2="481" y2="75" stroke="#666" stroke-width="1.2" marker-end="url(#arrow1)"/>
+
+  <!-- Step 6: Vocoder -->
+  <rect x="483" y="55" width="74" height="40" rx="8" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <text x="520" y="78" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#3498db">Vocoder</text>
+
+  <!-- Arrow 6→7 -->
+  <line x1="557" y1="75" x2="572" y2="75" stroke="#666" stroke-width="1.2" marker-end="url(#arrow1)"/>
+
+  <!-- Step 7: Waveform -->
+  <rect x="574" y="55" width="80" height="40" rx="8" fill="#27ae60" fill-opacity="0.12" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="614" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#27ae60">Waveform</text>
+  <text x="614" y="84" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">audio signal</text>
+
+  <!-- Bracket showing what Acoustic Model + Vocoder covers -->
+  <rect x="289" y="105" width="268" height="2" rx="1" fill="#e74c3c" fill-opacity="0.5"/>
+  <line x1="289" y1="100" x2="289" y2="107" stroke="#e74c3c" stroke-opacity="0.5" stroke-width="1.5"/>
+  <line x1="557" y1="100" x2="557" y2="107" stroke="#e74c3c" stroke-opacity="0.5" stroke-width="1.5"/>
+
+  <!-- Label for bracket -->
+  <text x="423" y="122" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e74c3c" font-style="italic">End-to-end models (e.g. VITS) merge these stages</text>
+
+  <!-- Detail boxes row -->
+  <!-- Text Norm details -->
+  <rect x="20" y="145" width="130" height="50" rx="6" fill="#e74c3c" fill-opacity="0.06" stroke="#e74c3c" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="85" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">Abbreviations → words</text>
+  <text x="85" y="172" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">Numbers → spoken form</text>
+  <text x="85" y="184" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">"$5" → "five dollars"</text>
+
+  <!-- G2P details -->
+  <rect x="165" y="145" width="130" height="50" rx="6" fill="#27ae60" fill-opacity="0.06" stroke="#27ae60" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="230" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">Letters → phonemes</text>
+  <text x="230" y="172" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">"hello" → /h ə l oʊ/</text>
+  <text x="230" y="184" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">Handles heteronyms</text>
+
+  <!-- Acoustic Model details -->
+  <rect x="310" y="145" width="130" height="50" rx="6" fill="#f39c12" fill-opacity="0.06" stroke="#f39c12" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="375" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">Phonemes → mel frames</text>
+  <text x="375" y="172" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">Duration, pitch, energy</text>
+  <text x="375" y="184" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">Tacotron 2 / FastSpeech 2</text>
+
+  <!-- Vocoder details -->
+  <rect x="455" y="145" width="130" height="50" rx="6" fill="#3498db" fill-opacity="0.06" stroke="#3498db" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="520" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">Mel → raw audio samples</text>
+  <text x="520" y="172" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">WaveNet / WaveRNN /</text>
+  <text x="520" y="184" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">HiFi-GAN / WaveGlow</text>
+
+  <!-- Note box -->
+  <rect x="40" y="215" width="620" height="45" rx="6" fill="#f5f5f5" stroke="#333" stroke-width="1"/>
+  <text x="55" y="233" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#333">Note:</text>
+  <text x="90" y="233" font-family="Arial, sans-serif" font-size="9" fill="#666">Modern end-to-end models (VITS) merge the acoustic model + vocoder into one network, directly mapping</text>
+  <text x="55" y="248" font-family="Arial, sans-serif" font-size="9" fill="#666">phonemes/text to raw waveforms. This eliminates the mel spectrogram bottleneck and enables joint optimisation.</text>
+</svg>

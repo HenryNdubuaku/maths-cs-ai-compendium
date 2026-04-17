@@ -1,0 +1,45 @@
+<svg width="420" height="160" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="rk-arr" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto">
+      <path d="M0,0 L7,2.5 L0,5" fill="#999"/>
+    </marker>
+    <marker id="rk-r" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto">
+      <path d="M0,0 L7,2.5 L0,5" fill="#e74c3c"/>
+    </marker>
+    <marker id="rk-b" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto">
+      <path d="M0,0 L7,2.5 L0,5" fill="#3498db"/>
+    </marker>
+    <marker id="rk-g" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto">
+      <path d="M0,0 L7,2.5 L0,5" fill="#27ae60"/>
+    </marker>
+  </defs>
+
+  <!-- Left: full rank (2 independent rows span 2D) -->
+  <text x="90" y="14" text-anchor="middle" fill="#333" font-size="12" font-weight="bold">Rank 2 (full rank)</text>
+  <line x1="20" y1="140" x2="180" y2="140" stroke="#ccc" stroke-width="1" marker-end="url(#rk-arr)"/>
+  <line x1="20" y1="140" x2="20" y2="25" stroke="#ccc" stroke-width="1" marker-end="url(#rk-arr)"/>
+  <circle cx="20" cy="140" r="3" fill="#333"/>
+  <!-- row 1 vector -->
+  <line x1="20" y1="140" x2="138" y2="80" stroke="#e74c3c" stroke-width="2.5" marker-end="url(#rk-r)"/>
+  <text x="90" y="95" fill="#e74c3c" font-size="12">row 1</text>
+  <!-- row 2 vector -->
+  <line x1="20" y1="140" x2="80" y2="38" stroke="#3498db" stroke-width="2.5" marker-end="url(#rk-b)"/>
+  <text x="38" y="75" fill="#3498db" font-size="12">row 2</text>
+  <text x="90" y="155" fill="#666" font-size="10">span the full plane</text>
+
+  <!-- Divider -->
+  <line x1="210" y1="10" x2="210" y2="155" stroke="#ddd" stroke-width="1" stroke-dasharray="4"/>
+
+  <!-- Right: rank deficient (rows are parallel) -->
+  <text x="320" y="14" text-anchor="middle" fill="#333" font-size="12" font-weight="bold">Rank 1 (deficient)</text>
+  <line x1="240" y1="140" x2="400" y2="140" stroke="#ccc" stroke-width="1" marker-end="url(#rk-arr)"/>
+  <line x1="240" y1="140" x2="240" y2="25" stroke="#ccc" stroke-width="1" marker-end="url(#rk-arr)"/>
+  <circle cx="240" cy="140" r="3" fill="#333"/>
+  <!-- row 1 vector -->
+  <line x1="240" y1="140" x2="358" y2="80" stroke="#e74c3c" stroke-width="2.5" marker-end="url(#rk-r)"/>
+  <text x="310" y="95" fill="#e74c3c" font-size="12">row 1</text>
+  <!-- row 2 vector (same direction, shorter) -->
+  <line x1="240" y1="140" x2="298" y2="110" stroke="#27ae60" stroke-width="2.5" marker-end="url(#rk-g)"/>
+  <text x="282" y="118" fill="#27ae60" font-size="12">row 2</text>
+  <text x="320" y="155" fill="#666" font-size="10">span only a line</text>
+</svg>

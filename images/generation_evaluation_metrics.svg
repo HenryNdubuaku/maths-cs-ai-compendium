@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 280" width="800" height="280">
+  <defs>
+    <marker id="em-arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#333"/>
+    </marker>
+    <marker id="em-arr-both" markerWidth="8" markerHeight="6" refX="4" refY="3" orient="auto">
+      <path d="M0,3 L4,0 L8,3 L4,6 Z" fill="#333"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="400" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">Evaluation Metrics for Generative Models</text>
+
+  <!-- Dividers -->
+  <line x1="267" y1="38" x2="267" y2="260" stroke="#ccc" stroke-width="0.8" stroke-dasharray="4,3"/>
+  <line x1="533" y1="38" x2="533" y2="260" stroke="#ccc" stroke-width="0.8" stroke-dasharray="4,3"/>
+
+  <!-- ==================== FID Panel (Left) ==================== -->
+  <text x="133" y="52" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#333">FID</text>
+  <text x="133" y="64" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">Frechet Inception Distance</text>
+
+  <!-- Real distribution (blue blob) -->
+  <ellipse cx="90" cy="145" rx="55" ry="38" fill="#3498db" fill-opacity="0.15" stroke="#3498db" stroke-width="1.2"/>
+  <text x="90" y="142" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#3498db">Real</text>
+  <text x="90" y="154" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#3498db">Distribution</text>
+
+  <!-- Generated distribution (red blob) -->
+  <ellipse cx="180" cy="145" rx="55" ry="38" fill="#e74c3c" fill-opacity="0.15" stroke="#e74c3c" stroke-width="1.2"/>
+  <text x="180" y="142" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#e74c3c">Generated</text>
+  <text x="180" y="154" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#e74c3c">Distribution</text>
+
+  <!-- Double-headed Frechet distance arrow -->
+  <line x1="90" y1="183" x2="180" y2="183" stroke="#333" stroke-width="1.5"/>
+  <polygon points="90,179 82,183 90,187" fill="#333"/>
+  <polygon points="180,179 188,183 180,187" fill="#333"/>
+  <text x="135" y="198" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#333">d_F</text>
+
+  <!-- Formulation -->
+  <text x="133" y="222" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">Compares mean + covariance</text>
+  <text x="133" y="234" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">of Inception features</text>
+
+  <!-- Good/Bad indicator -->
+  <rect x="55" y="244" width="155" height="18" rx="4" fill="#27ae60" fill-opacity="0.08" stroke="#27ae60" stroke-width="0.8"/>
+  <text x="133" y="257" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#27ae60">Lower FID = better quality + diversity</text>
+
+  <!-- ==================== IS Panel (Middle) ==================== -->
+  <text x="400" y="52" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#333">IS</text>
+  <text x="400" y="64" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">Inception Score</text>
+
+  <!-- Generated distribution blob -->
+  <ellipse cx="400" cy="125" rx="65" ry="30" fill="#9b59b6" fill-opacity="0.12" stroke="#9b59b6" stroke-width="1.2"/>
+  <text x="400" y="122" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#9b59b6">Generated</text>
+  <text x="400" y="134" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#9b59b6">Images</text>
+
+  <!-- Split arrow -->
+  <line x1="400" y1="155" x2="400" y2="168" stroke="#333" stroke-width="1.2"/>
+  <!-- Fork -->
+  <line x1="400" y1="168" x2="340" y2="185" stroke="#333" stroke-width="1.2" marker-end="url(#em-arr)"/>
+  <line x1="400" y1="168" x2="460" y2="185" stroke="#333" stroke-width="1.2" marker-end="url(#em-arr)"/>
+
+  <!-- Quality branch -->
+  <rect x="290" y="188" width="100" height="36" rx="6" fill="#3498db" fill-opacity="0.1" stroke="#3498db" stroke-width="1"/>
+  <text x="340" y="204" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#3498db">Quality</text>
+  <text x="340" y="216" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#666">p(y|x) is peaked</text>
+
+  <!-- Peaked distribution mini-chart -->
+  <line x1="305" y1="230" x2="375" y2="230" stroke="#ccc" stroke-width="0.5"/>
+  <path d="M325,230 Q330,230 335,225 Q340,210 345,225 Q350,230 355,230" fill="none" stroke="#3498db" stroke-width="1.2"/>
+  <text x="340" y="242" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#999">confident class</text>
+
+  <!-- Diversity branch -->
+  <rect x="410" y="188" width="100" height="36" rx="6" fill="#27ae60" fill-opacity="0.1" stroke="#27ae60" stroke-width="1"/>
+  <text x="460" y="204" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#27ae60">Diversity</text>
+  <text x="460" y="216" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#666">p(y) is uniform</text>
+
+  <!-- Flat distribution mini-chart -->
+  <line x1="425" y1="230" x2="495" y2="230" stroke="#ccc" stroke-width="0.5"/>
+  <line x1="430" y1="220" x2="430" y2="230" stroke="#27ae60" stroke-width="3" opacity="0.5"/>
+  <line x1="440" y1="220" x2="440" y2="230" stroke="#27ae60" stroke-width="3" opacity="0.5"/>
+  <line x1="450" y1="220" x2="450" y2="230" stroke="#27ae60" stroke-width="3" opacity="0.5"/>
+  <line x1="460" y1="220" x2="460" y2="230" stroke="#27ae60" stroke-width="3" opacity="0.5"/>
+  <line x1="470" y1="220" x2="470" y2="230" stroke="#27ae60" stroke-width="3" opacity="0.5"/>
+  <line x1="480" y1="220" x2="480" y2="230" stroke="#27ae60" stroke-width="3" opacity="0.5"/>
+  <line x1="490" y1="220" x2="490" y2="230" stroke="#27ae60" stroke-width="3" opacity="0.5"/>
+  <text x="460" y="242" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#999">many classes</text>
+
+  <!-- IS score note -->
+  <rect x="320" y="250" width="160" height="18" rx="4" fill="#f39c12" fill-opacity="0.08" stroke="#f39c12" stroke-width="0.8"/>
+  <text x="400" y="263" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#f39c12">Higher IS = better (quality x diversity)</text>
+
+  <!-- ==================== CLIPScore Panel (Right) ==================== -->
+  <text x="667" y="52" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#333">CLIPScore</text>
+  <text x="667" y="64" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">Text-Image Alignment</text>
+
+  <!-- Shared embedding space -->
+  <rect x="567" y="78" width="200" height="130" rx="8" fill="#1abc9c" fill-opacity="0.05" stroke="#1abc9c" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="667" y="94" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#1abc9c">Shared CLIP Embedding Space</text>
+
+  <!-- Image embedding point -->
+  <circle cx="620" cy="140" r="18" fill="#3498db" fill-opacity="0.15" stroke="#3498db" stroke-width="1.2"/>
+  <text x="620" y="137" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#3498db">Image</text>
+  <text x="620" y="148" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#3498db">embed</text>
+
+  <!-- Text embedding point -->
+  <circle cx="715" cy="140" r="18" fill="#e74c3c" fill-opacity="0.15" stroke="#e74c3c" stroke-width="1.2"/>
+  <text x="715" y="137" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#e74c3c">Text</text>
+  <text x="715" y="148" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#e74c3c">embed</text>
+
+  <!-- Cosine similarity arrow -->
+  <line x1="638" y1="140" x2="697" y2="140" stroke="#333" stroke-width="1.5"/>
+  <polygon points="638,136 630,140 638,144" fill="#333"/>
+  <polygon points="697,136 705,140 697,144" fill="#333"/>
+  <text x="667" y="133" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#333">cos(v, w)</text>
+
+  <!-- Small diagram showing alignment -->
+  <text x="667" y="178" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">Measures semantic alignment</text>
+  <text x="667" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">between generated image and prompt</text>
+
+  <!-- CLIPScore note -->
+  <rect x="587" y="244" width="160" height="18" rx="4" fill="#1abc9c" fill-opacity="0.08" stroke="#1abc9c" stroke-width="0.8"/>
+  <text x="667" y="257" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#1abc9c">Higher CLIPScore = better alignment</text>
+
+  <!-- Input labels under CLIPScore -->
+  <!-- Image input -->
+  <rect x="590" y="210" width="60" height="22" rx="4" fill="#3498db" fill-opacity="0.08" stroke="#3498db" stroke-width="0.8"/>
+  <text x="620" y="224" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#3498db">Gen. Image</text>
+
+  <!-- Text input -->
+  <rect x="685" y="210" width="60" height="22" rx="4" fill="#e74c3c" fill-opacity="0.08" stroke="#e74c3c" stroke-width="0.8"/>
+  <text x="715" y="224" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#e74c3c">Text Prompt</text>
+
+  <!-- Arrows from inputs to embeddings -->
+  <line x1="620" y1="210" x2="620" y2="158" stroke="#3498db" stroke-width="0.8" marker-end="url(#em-arr)"/>
+  <line x1="715" y1="210" x2="715" y2="158" stroke="#e74c3c" stroke-width="0.8" marker-end="url(#em-arr)"/>
+</svg>

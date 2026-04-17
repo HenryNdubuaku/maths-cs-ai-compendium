@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 200" width="750" height="200">
+  <text x="375" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">Over-Smoothing: Node Features Converge with Depth</text>
+
+  <line x1="250" y1="35" x2="250" y2="190" stroke="#ccc" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="500" y1="35" x2="500" y2="190" stroke="#ccc" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- Layer 1: distinct colours -->
+  <text x="125" y="52" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#333">Layer 1 (distinct)</text>
+  <circle cx="80" cy="100" r="16" fill="#e74c3c" fill-opacity="0.7" stroke="#c0392b" stroke-width="1.5"/>
+  <circle cx="130" cy="80" r="16" fill="#3498db" fill-opacity="0.7" stroke="#2980b9" stroke-width="1.5"/>
+  <circle cx="170" cy="110" r="16" fill="#27ae60" fill-opacity="0.7" stroke="#1e8449" stroke-width="1.5"/>
+  <circle cx="105" cy="145" r="16" fill="#f39c12" fill-opacity="0.7" stroke="#e67e22" stroke-width="1.5"/>
+  <circle cx="155" cy="155" r="16" fill="#9b59b6" fill-opacity="0.7" stroke="#8e44ad" stroke-width="1.5"/>
+  <line x1="95" y1="95" x2="115" y2="85" stroke="#666" stroke-width="1"/>
+  <line x1="145" y1="85" x2="155" y2="100" stroke="#666" stroke-width="1"/>
+  <line x1="118" y1="140" x2="143" y2="148" stroke="#666" stroke-width="1"/>
+  <line x1="92" y1="112" x2="100" y2="130" stroke="#666" stroke-width="1"/>
+  <line x1="160" y1="125" x2="155" y2="140" stroke="#666" stroke-width="1"/>
+
+  <!-- Layer 4: blending -->
+  <text x="375" y="52" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#333">Layer 4 (blending)</text>
+  <circle cx="330" cy="100" r="16" fill="#8e7c5a" fill-opacity="0.5" stroke="#8e7c5a" stroke-width="1.5"/>
+  <circle cx="380" cy="80" r="16" fill="#7a8866" fill-opacity="0.5" stroke="#7a8866" stroke-width="1.5"/>
+  <circle cx="420" cy="110" r="16" fill="#6d8a72" fill-opacity="0.5" stroke="#6d8a72" stroke-width="1.5"/>
+  <circle cx="355" cy="145" r="16" fill="#8a7e60" fill-opacity="0.5" stroke="#8a7e60" stroke-width="1.5"/>
+  <circle cx="405" cy="155" r="16" fill="#7b856a" fill-opacity="0.5" stroke="#7b856a" stroke-width="1.5"/>
+  <line x1="345" y1="95" x2="365" y2="85" stroke="#666" stroke-width="1"/>
+  <line x1="395" y1="85" x2="405" y2="100" stroke="#666" stroke-width="1"/>
+  <line x1="368" y1="140" x2="393" y2="148" stroke="#666" stroke-width="1"/>
+  <line x1="342" y1="112" x2="350" y2="130" stroke="#666" stroke-width="1"/>
+  <line x1="410" y1="125" x2="405" y2="140" stroke="#666" stroke-width="1"/>
+
+  <!-- Layer 16: uniform -->
+  <text x="625" y="52" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#e74c3c">Layer 16 (uniform!)</text>
+  <circle cx="580" cy="100" r="16" fill="#888" fill-opacity="0.4" stroke="#888" stroke-width="1.5"/>
+  <circle cx="630" cy="80" r="16" fill="#888" fill-opacity="0.4" stroke="#888" stroke-width="1.5"/>
+  <circle cx="670" cy="110" r="16" fill="#888" fill-opacity="0.4" stroke="#888" stroke-width="1.5"/>
+  <circle cx="605" cy="145" r="16" fill="#888" fill-opacity="0.4" stroke="#888" stroke-width="1.5"/>
+  <circle cx="655" cy="155" r="16" fill="#888" fill-opacity="0.4" stroke="#888" stroke-width="1.5"/>
+  <line x1="595" y1="95" x2="615" y2="85" stroke="#666" stroke-width="1"/>
+  <line x1="645" y1="85" x2="655" y2="100" stroke="#666" stroke-width="1"/>
+  <line x1="618" y1="140" x2="643" y2="148" stroke="#666" stroke-width="1"/>
+  <line x1="592" y1="112" x2="600" y2="130" stroke="#666" stroke-width="1"/>
+  <line x1="660" y1="125" x2="655" y2="140" stroke="#666" stroke-width="1"/>
+
+  <text x="375" y="192" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">Repeated averaging makes all node representations converge → cannot distinguish nodes</text>
+</svg>

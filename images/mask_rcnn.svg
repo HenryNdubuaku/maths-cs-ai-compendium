@@ -1,0 +1,106 @@
+<svg width="700" height="260" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="mrcnn-arrow" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#555"/>
+    </marker>
+  </defs>
+  <text x="350" y="22" fill="#333" font-size="14" font-weight="bold" text-anchor="middle">Mask R-CNN: Instance Segmentation</text>
+
+  <!-- Input image -->
+  <rect x="15" y="50" width="70" height="70" rx="4" fill="#ecf0f1" stroke="#999" stroke-width="1.5"/>
+  <rect x="28" y="62" width="30" height="22" rx="2" fill="#3498db" opacity="0.3" stroke="#3498db" stroke-width="1"/>
+  <rect x="42" y="88" width="25" height="18" rx="2" fill="#e74c3c" opacity="0.3" stroke="#e74c3c" stroke-width="1"/>
+  <text x="50" y="135" fill="#333" font-size="8" text-anchor="middle">Image</text>
+
+  <!-- Arrow -->
+  <line x1="90" y1="85" x2="115" y2="85" stroke="#555" stroke-width="1.2" marker-end="url(#mrcnn-arrow)"/>
+
+  <!-- Backbone + FPN -->
+  <rect x="120" y="55" width="80" height="60" rx="6" fill="#3498db" opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <text x="160" y="80" fill="#3498db" font-size="9" text-anchor="middle" font-weight="bold">Backbone</text>
+  <text x="160" y="93" fill="#3498db" font-size="8" text-anchor="middle">+ FPN</text>
+
+  <!-- Arrow -->
+  <line x1="200" y1="85" x2="225" y2="85" stroke="#555" stroke-width="1.2" marker-end="url(#mrcnn-arrow)"/>
+
+  <!-- RPN -->
+  <rect x="230" y="55" width="60" height="60" rx="6" fill="#f39c12" opacity="0.12" stroke="#f39c12" stroke-width="1.5"/>
+  <text x="260" y="80" fill="#f39c12" font-size="9" text-anchor="middle" font-weight="bold">RPN</text>
+  <text x="260" y="93" fill="#f39c12" font-size="8" text-anchor="middle">proposals</text>
+
+  <!-- Arrow -->
+  <line x1="290" y1="85" x2="315" y2="85" stroke="#555" stroke-width="1.2" marker-end="url(#mrcnn-arrow)"/>
+
+  <!-- RoIAlign -->
+  <rect x="320" y="50" width="80" height="70" rx="6" fill="#9b59b6" opacity="0.12" stroke="#9b59b6" stroke-width="2"/>
+  <text x="360" y="78" fill="#9b59b6" font-size="9" text-anchor="middle" font-weight="bold">RoIAlign</text>
+  <text x="360" y="93" fill="#9b59b6" font-size="8" text-anchor="middle">(no quantisation)</text>
+  <text x="360" y="106" fill="#9b59b6" font-size="7" text-anchor="middle">bilinear interp</text>
+
+  <!-- Three output branches -->
+  <!-- Branch 1: Classification (top) -->
+  <line x1="400" y1="70" x2="450" y2="45" stroke="#555" stroke-width="1.2" marker-end="url(#mrcnn-arrow)"/>
+  <rect x="455" y="30" width="100" height="35" rx="6" fill="#3498db" opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <text x="505" y="48" fill="#3498db" font-size="9" text-anchor="middle" font-weight="bold">Classification</text>
+  <text x="505" y="60" fill="#3498db" font-size="8" text-anchor="middle">class label</text>
+
+  <!-- Arrow to output -->
+  <line x1="555" y1="47" x2="590" y2="47" stroke="#555" stroke-width="1" marker-end="url(#mrcnn-arrow)"/>
+  <text x="625" y="42" fill="#333" font-size="8" text-anchor="middle" font-weight="bold">cat: 0.97</text>
+  <text x="625" y="55" fill="#333" font-size="8" text-anchor="middle" font-weight="bold">dog: 0.95</text>
+
+  <!-- Branch 2: Box regression (middle) -->
+  <line x1="400" y1="85" x2="450" y2="85" stroke="#555" stroke-width="1.2" marker-end="url(#mrcnn-arrow)"/>
+  <rect x="455" y="70" width="100" height="35" rx="6" fill="#27ae60" opacity="0.12" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="505" y="88" fill="#27ae60" font-size="9" text-anchor="middle" font-weight="bold">Box Regression</text>
+  <text x="505" y="100" fill="#27ae60" font-size="8" text-anchor="middle">Δx, Δy, Δw, Δh</text>
+
+  <!-- Arrow to output -->
+  <line x1="555" y1="87" x2="590" y2="87" stroke="#555" stroke-width="1" marker-end="url(#mrcnn-arrow)"/>
+  <rect x="595" y="72" width="40" height="30" rx="2" fill="none" stroke="#27ae60" stroke-width="1.5"/>
+
+  <!-- Branch 3: Mask (bottom) — the new part -->
+  <line x1="400" y1="100" x2="450" y2="130" stroke="#555" stroke-width="1.2" marker-end="url(#mrcnn-arrow)"/>
+  <rect x="455" y="115" width="100" height="40" rx="6" fill="#e74c3c" opacity="0.15" stroke="#e74c3c" stroke-width="2"/>
+  <text x="505" y="133" fill="#e74c3c" font-size="9" text-anchor="middle" font-weight="bold">Mask Head</text>
+  <text x="505" y="148" fill="#e74c3c" font-size="8" text-anchor="middle">m×m per class</text>
+
+  <!-- Arrow to mask output -->
+  <line x1="555" y1="135" x2="590" y2="135" stroke="#555" stroke-width="1" marker-end="url(#mrcnn-arrow)"/>
+  <!-- Small mask grid -->
+  <rect x="595" y="118" width="34" height="34" rx="2" fill="#eee" stroke="#e74c3c" stroke-width="1"/>
+  <!-- Mask pixels -->
+  <rect x="597" y="120" width="6" height="6" fill="#e74c3c" opacity="0.6"/>
+  <rect x="603" y="120" width="6" height="6" fill="#e74c3c" opacity="0.7"/>
+  <rect x="609" y="120" width="6" height="6" fill="#e74c3c" opacity="0.5"/>
+  <rect x="597" y="126" width="6" height="6" fill="#e74c3c" opacity="0.8"/>
+  <rect x="603" y="126" width="6" height="6" fill="#e74c3c" opacity="0.9"/>
+  <rect x="609" y="126" width="6" height="6" fill="#e74c3c" opacity="0.7"/>
+  <rect x="615" y="126" width="6" height="6" fill="#e74c3c" opacity="0.4"/>
+  <rect x="597" y="132" width="6" height="6" fill="#e74c3c" opacity="0.5"/>
+  <rect x="603" y="132" width="6" height="6" fill="#e74c3c" opacity="0.8"/>
+  <rect x="609" y="132" width="6" height="6" fill="#e74c3c" opacity="0.9"/>
+  <rect x="615" y="132" width="6" height="6" fill="#e74c3c" opacity="0.6"/>
+  <rect x="603" y="138" width="6" height="6" fill="#e74c3c" opacity="0.5"/>
+  <rect x="609" y="138" width="6" height="6" fill="#e74c3c" opacity="0.7"/>
+  <rect x="615" y="138" width="6" height="6" fill="#e74c3c" opacity="0.4"/>
+  <rect x="621" y="138" width="6" height="6" fill="#e74c3c" opacity="0.3"/>
+  <text x="640" y="138" fill="#e74c3c" font-size="7" text-anchor="start">28×28</text>
+
+  <!-- Highlight: this is the extension from Faster R-CNN -->
+  <rect x="440" y="110" width="130" height="50" rx="8" fill="none" stroke="#e74c3c" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="505" y="172" fill="#e74c3c" font-size="8" text-anchor="middle" font-style="italic">← Added to Faster R-CNN</text>
+
+  <!-- Bottom note boxes -->
+  <rect x="30" y="190" width="310" height="60" rx="6" fill="#f5f5f5" stroke="#333" stroke-width="1"/>
+  <text x="185" y="208" fill="#333" font-size="9" text-anchor="middle" font-weight="bold">RoIAlign vs RoI Pooling</text>
+  <text x="185" y="222" fill="#666" font-size="8" text-anchor="middle">RoI Pooling quantises to grid → misalignment</text>
+  <text x="185" y="235" fill="#666" font-size="8" text-anchor="middle">RoIAlign uses bilinear interpolation at exact</text>
+  <text x="185" y="246" fill="#666" font-size="8" text-anchor="middle">positions → precise spatial features for masks</text>
+
+  <rect x="355" y="190" width="330" height="60" rx="6" fill="#f5f5f5" stroke="#333" stroke-width="1"/>
+  <text x="520" y="208" fill="#333" font-size="9" text-anchor="middle" font-weight="bold">Multi-task Loss</text>
+  <text x="520" y="222" fill="#666" font-size="8" text-anchor="middle">L = L_cls + L_box + L_mask</text>
+  <text x="520" y="236" fill="#666" font-size="8" text-anchor="middle">Mask branch predicts per-class binary masks.</text>
+  <text x="520" y="248" fill="#666" font-size="8" text-anchor="middle">Only the mask for the predicted class is used.</text>
+</svg>

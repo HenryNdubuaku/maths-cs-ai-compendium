@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 250" width="700" height="250">
+  <defs>
+    <marker id="mp-arr" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto">
+      <path d="M0,0 L7,2.5 L0,5 Z" fill="#f39c12"/>
+    </marker>
+    <marker id="mp-arr2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#666"/>
+    </marker>
+  </defs>
+  <text x="350" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">Message Passing: Aggregate Neighbours → Update</text>
+
+  <!-- Step 1: Messages from neighbours -->
+  <text x="160" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#f39c12">1. Neighbours send messages</text>
+
+  <!-- Central node -->
+  <circle cx="160" cy="140" r="20" fill="#e74c3c" fill-opacity="0.2" stroke="#e74c3c" stroke-width="2"/>
+  <text x="160" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#e74c3c">i</text>
+
+  <!-- Neighbour nodes -->
+  <circle cx="80" cy="80" r="14" fill="#3498db" fill-opacity="0.2" stroke="#3498db" stroke-width="1.5"/>
+  <text x="80" y="84" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#3498db">j₁</text>
+
+  <circle cx="240" cy="80" r="14" fill="#3498db" fill-opacity="0.2" stroke="#3498db" stroke-width="1.5"/>
+  <text x="240" y="84" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#3498db">j₂</text>
+
+  <circle cx="80" cy="200" r="14" fill="#3498db" fill-opacity="0.2" stroke="#3498db" stroke-width="1.5"/>
+  <text x="80" y="204" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#3498db">j₃</text>
+
+  <circle cx="250" cy="190" r="14" fill="#3498db" fill-opacity="0.2" stroke="#3498db" stroke-width="1.5"/>
+  <text x="250" y="194" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#3498db">j₄</text>
+
+  <!-- Message arrows -->
+  <line x1="92" y1="90" x2="142" y2="128" stroke="#f39c12" stroke-width="2" marker-end="url(#mp-arr)"/>
+  <line x1="228" y1="90" x2="178" y2="128" stroke="#f39c12" stroke-width="2" marker-end="url(#mp-arr)"/>
+  <line x1="92" y1="192" x2="142" y2="152" stroke="#f39c12" stroke-width="2" marker-end="url(#mp-arr)"/>
+  <line x1="238" y1="182" x2="178" y2="152" stroke="#f39c12" stroke-width="2" marker-end="url(#mp-arr)"/>
+
+  <!-- Step 2: Aggregate -->
+  <text x="400" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#27ae60">2. Aggregate (sum/mean/max)</text>
+
+  <line x1="300" y1="140" x2="340" y2="140" stroke="#666" stroke-width="2" marker-end="url(#mp-arr2)"/>
+
+  <rect x="348" y="115" width="105" height="50" rx="10" fill="#27ae60" fill-opacity="0.1" stroke="#27ae60" stroke-width="2"/>
+  <text x="400" y="138" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#27ae60">⊕</text>
+  <text x="400" y="156" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27ae60">permutation-invariant</text>
+
+  <!-- Step 3: Update -->
+  <text x="600" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#9b59b6">3. Update node i</text>
+
+  <line x1="453" y1="140" x2="508" y2="140" stroke="#666" stroke-width="2" marker-end="url(#mp-arr2)"/>
+
+  <rect x="516" y="115" width="70" height="50" rx="10" fill="#9b59b6" fill-opacity="0.1" stroke="#9b59b6" stroke-width="2"/>
+  <text x="551" y="138" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#9b59b6">MLP /</text>
+  <text x="551" y="154" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#9b59b6">linear</text>
+
+  <line x1="586" y1="140" x2="618" y2="140" stroke="#666" stroke-width="2" marker-end="url(#mp-arr2)"/>
+
+  <!-- Updated node -->
+  <circle cx="645" cy="140" r="20" fill="#e74c3c" fill-opacity="0.3" stroke="#e74c3c" stroke-width="2.5"/>
+  <text x="645" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#e74c3c">i'</text>
+
+  <text x="350" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">After k layers, node i encodes information from its k-hop neighbourhood</text>
+</svg>

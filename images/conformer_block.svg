@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 300" width="700" height="300">
+  <defs>
+    <marker id="arrow3" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="350" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">Conformer Block (Macaron-Style Sandwich)</text>
+
+  <!-- Central column x=260..440, blocks stacked bottom to top -->
+  <!-- Input label at bottom -->
+  <text x="350" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">Input</text>
+  <line x1="350" y1="283" x2="350" y2="272" stroke="#333" stroke-width="1.3" marker-end="url(#arrow3)"/>
+
+  <!-- Block 1: Feed-Forward (1/2 step) - orange - bottom -->
+  <rect x="260" y="240" width="180" height="30" rx="6" fill="#f39c12" fill-opacity="0.12" stroke="#f39c12" stroke-width="1.5"/>
+  <text x="350" y="258" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#f39c12">Feed-Forward (1/2 step)</text>
+
+  <!-- Arrow up -->
+  <line x1="350" y1="238" x2="350" y2="222" stroke="#333" stroke-width="1.3" marker-end="url(#arrow3)"/>
+
+  <!-- Block 2: Multi-Head Self-Attention - blue -->
+  <rect x="260" y="190" width="180" height="30" rx="6" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="1.5"/>
+  <text x="350" y="209" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#3498db">Multi-Head Self-Attention</text>
+
+  <!-- Arrow up -->
+  <line x1="350" y1="188" x2="350" y2="172" stroke="#333" stroke-width="1.3" marker-end="url(#arrow3)"/>
+
+  <!-- Block 3: Convolution Module - green -->
+  <rect x="260" y="140" width="180" height="30" rx="6" fill="#27ae60" fill-opacity="0.12" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="350" y="159" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#27ae60">Convolution Module</text>
+
+  <!-- Arrow up -->
+  <line x1="350" y1="138" x2="350" y2="122" stroke="#333" stroke-width="1.3" marker-end="url(#arrow3)"/>
+
+  <!-- Block 4: Feed-Forward (1/2 step) - orange -->
+  <rect x="260" y="90" width="180" height="30" rx="6" fill="#f39c12" fill-opacity="0.12" stroke="#f39c12" stroke-width="1.5"/>
+  <text x="350" y="109" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#f39c12">Feed-Forward (1/2 step)</text>
+
+  <!-- Arrow up -->
+  <line x1="350" y1="88" x2="350" y2="72" stroke="#333" stroke-width="1.3" marker-end="url(#arrow3)"/>
+
+  <!-- Block 5: LayerNorm - grey -->
+  <rect x="260" y="40" width="180" height="30" rx="6" fill="#999" fill-opacity="0.12" stroke="#999" stroke-width="1.5"/>
+  <text x="350" y="59" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#666">LayerNorm</text>
+
+  <!-- Output label at top -->
+  <line x1="350" y1="38" x2="350" y2="30" stroke="#333" stroke-width="1.3" marker-end="url(#arrow3)"/>
+
+  <!-- Residual connections on the right side -->
+  <!-- Residual for FF 1/2 (bottom) -->
+  <path d="M 442,270 L 465,270 L 465,242 L 442,242" fill="none" stroke="#f39c12" stroke-width="1.2" stroke-dasharray="4,2"/>
+  <text x="475" y="258" text-anchor="start" font-family="Arial, sans-serif" font-size="7" fill="#f39c12">+</text>
+  <circle cx="475" cy="255" r="6" fill="none" stroke="#f39c12" stroke-width="1"/>
+
+  <!-- Residual for MHSA -->
+  <path d="M 442,220 L 488,220 L 488,192 L 442,192" fill="none" stroke="#3498db" stroke-width="1.2" stroke-dasharray="4,2"/>
+  <text x="498" y="209" text-anchor="start" font-family="Arial, sans-serif" font-size="7" fill="#3498db">+</text>
+  <circle cx="498" cy="206" r="6" fill="none" stroke="#3498db" stroke-width="1"/>
+
+  <!-- Residual for Conv -->
+  <path d="M 442,170 L 511,170 L 511,142 L 442,142" fill="none" stroke="#27ae60" stroke-width="1.2" stroke-dasharray="4,2"/>
+  <text x="521" y="159" text-anchor="start" font-family="Arial, sans-serif" font-size="7" fill="#27ae60">+</text>
+  <circle cx="521" cy="156" r="6" fill="none" stroke="#27ae60" stroke-width="1"/>
+
+  <!-- Residual for FF 1/2 (top) -->
+  <path d="M 442,120 L 534,120 L 534,92 L 442,92" fill="none" stroke="#f39c12" stroke-width="1.2" stroke-dasharray="4,2"/>
+  <text x="544" y="109" text-anchor="start" font-family="Arial, sans-serif" font-size="7" fill="#f39c12">+</text>
+  <circle cx="544" cy="106" r="6" fill="none" stroke="#f39c12" stroke-width="1"/>
+
+  <!-- Residual label -->
+  <text x="550" y="160" text-anchor="start" font-family="Arial, sans-serif" font-size="8" fill="#666">Residual</text>
+  <text x="550" y="170" text-anchor="start" font-family="Arial, sans-serif" font-size="8" fill="#666">connections</text>
+
+  <!-- Left side annotations -->
+  <text x="245" y="160" text-anchor="end" font-family="Arial, sans-serif" font-size="8" fill="#27ae60">local context</text>
+  <line x1="248" y1="155" x2="258" y2="155" stroke="#27ae60" stroke-width="0.8"/>
+
+  <text x="245" y="210" text-anchor="end" font-family="Arial, sans-serif" font-size="8" fill="#3498db">global context</text>
+  <line x1="248" y1="205" x2="258" y2="205" stroke="#3498db" stroke-width="0.8"/>
+
+  <!-- Note box at bottom left -->
+  <rect x="20" y="245" width="215" height="42" rx="6" fill="#f5f5f5" stroke="#333" stroke-width="1"/>
+  <text x="127" y="261" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#333">Conformer combines local (conv)</text>
+  <text x="127" y="272" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#333">and global (attention) context</text>
+  <text x="127" y="283" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#333">for speech recognition.</text>
+</svg>

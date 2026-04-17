@@ -1,0 +1,45 @@
+<svg width="440" height="120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="svd-arr" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto">
+      <path d="M0,0 L7,2.5 L0,5" fill="#999"/>
+    </marker>
+  </defs>
+
+  <!-- Step 1: circle -->
+  <text x="40" y="14" text-anchor="middle" fill="#333" font-size="10" font-weight="bold">Input</text>
+  <circle cx="40" cy="60" r="30" fill="#3498db" fill-opacity="0.15" stroke="#3498db" stroke-width="1.5"/>
+
+  <!-- Arrow + V^T -->
+  <line x1="78" y1="60" x2="105" y2="60" stroke="#999" stroke-width="1.2" marker-end="url(#svd-arr)"/>
+  <text x="92" y="52" fill="#9b59b6" font-size="10" font-weight="bold">V&#x1D40;</text>
+
+  <!-- Step 2: rotated circle (still circle) -->
+  <text x="140" y="14" text-anchor="middle" fill="#333" font-size="10" font-weight="bold">Rotate</text>
+  <circle cx="140" cy="60" r="30" fill="#9b59b6" fill-opacity="0.1" stroke="#9b59b6" stroke-width="1.5"/>
+  <!-- axis indicators rotated -->
+  <line x1="140" y1="60" x2="165" y2="45" stroke="#9b59b6" stroke-width="1" stroke-dasharray="3"/>
+  <line x1="140" y1="60" x2="125" y2="40" stroke="#9b59b6" stroke-width="1" stroke-dasharray="3"/>
+
+  <!-- Arrow + Sigma -->
+  <line x1="178" y1="60" x2="205" y2="60" stroke="#999" stroke-width="1.2" marker-end="url(#svd-arr)"/>
+  <text x="192" y="52" fill="#e74c3c" font-size="10" font-weight="bold">Σ</text>
+
+  <!-- Step 3: ellipse (stretched) -->
+  <text x="260" y="14" text-anchor="middle" fill="#333" font-size="10" font-weight="bold">Scale</text>
+  <ellipse cx="260" cy="60" rx="45" ry="20" fill="#e74c3c" fill-opacity="0.1" stroke="#e74c3c" stroke-width="1.5"/>
+  <!-- axis lines -->
+  <line x1="215" y1="60" x2="305" y2="60" stroke="#e74c3c" stroke-width="0.8" stroke-dasharray="3"/>
+  <line x1="260" y1="40" x2="260" y2="80" stroke="#e74c3c" stroke-width="0.8" stroke-dasharray="3"/>
+  <text x="285" y="53" fill="#e74c3c" font-size="9">σ₁</text>
+  <text x="264" y="47" fill="#e74c3c" font-size="9">σ₂</text>
+
+  <!-- Arrow + U -->
+  <line x1="310" y1="60" x2="337" y2="60" stroke="#999" stroke-width="1.2" marker-end="url(#svd-arr)"/>
+  <text x="324" y="52" fill="#27ae60" font-size="10" font-weight="bold">U</text>
+
+  <!-- Step 4: rotated ellipse -->
+  <text x="395" y="14" text-anchor="middle" fill="#333" font-size="10" font-weight="bold">Rotate</text>
+  <ellipse cx="395" cy="60" rx="42" ry="20" fill="#27ae60" fill-opacity="0.1" stroke="#27ae60" stroke-width="1.5" transform="rotate(-30,395,60)"/>
+
+  <text x="220" y="108" text-anchor="middle" fill="#666" font-size="10">A = UΣV&#x1D40;: rotate → scale → rotate</text>
+</svg>

@@ -1,0 +1,109 @@
+<svg width="700" height="280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="diff-arrow" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#555"/>
+    </marker>
+    <marker id="diff-arrow-green" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#27ae60"/>
+    </marker>
+  </defs>
+  <text x="350" y="22" fill="#333" font-size="14" font-weight="bold" text-anchor="middle">Diffusion: Forward and Reverse Processes</text>
+
+  <!-- Forward process (top row) -->
+  <text x="350" y="48" fill="#e74c3c" font-size="11" font-weight="bold" text-anchor="middle">Forward Process: Gradually Add Noise (q)</text>
+
+  <!-- x0: clean image -->
+  <rect x="30" y="60" width="70" height="70" rx="4" fill="#ddd" stroke="#999" stroke-width="1.5"/>
+  <rect x="45" y="70" width="25" height="25" fill="#3498db" opacity="0.4"/>
+  <rect x="50" y="95" width="15" height="15" fill="#e74c3c" opacity="0.3"/>
+  <text x="65" y="145" fill="#333" font-size="10" text-anchor="middle" font-weight="bold">x₀</text>
+  <text x="65" y="157" fill="#666" font-size="8" text-anchor="middle">clean</text>
+
+  <!-- Arrow + noise -->
+  <line x1="105" y1="95" x2="140" y2="95" stroke="#e74c3c" stroke-width="1.2" marker-end="url(#diff-arrow)"/>
+  <text x="122" y="88" fill="#e74c3c" font-size="8" text-anchor="middle">+ε</text>
+
+  <!-- x1: slightly noisy -->
+  <rect x="145" y="60" width="70" height="70" rx="4" fill="#ddd" stroke="#999" stroke-width="1.5"/>
+  <rect x="160" y="70" width="25" height="25" fill="#3498db" opacity="0.3"/>
+  <rect x="165" y="95" width="15" height="15" fill="#e74c3c" opacity="0.2"/>
+  <!-- Noise dots -->
+  <circle cx="155" cy="75" r="2" fill="#999" opacity="0.5"/>
+  <circle cx="195" cy="85" r="2" fill="#999" opacity="0.4"/>
+  <circle cx="175" cy="115" r="2" fill="#999" opacity="0.5"/>
+  <text x="180" y="145" fill="#333" font-size="10" text-anchor="middle">x₁</text>
+
+  <line x1="220" y1="95" x2="255" y2="95" stroke="#e74c3c" stroke-width="1.2" marker-end="url(#diff-arrow)"/>
+  <text x="237" y="88" fill="#e74c3c" font-size="8" text-anchor="middle">+ε</text>
+
+  <!-- xt: more noisy -->
+  <rect x="260" y="60" width="70" height="70" rx="4" fill="#ccc" stroke="#999" stroke-width="1.5"/>
+  <circle cx="280" cy="80" r="3" fill="#999" opacity="0.6"/>
+  <circle cx="300" cy="75" r="2" fill="#aaa" opacity="0.7"/>
+  <circle cx="275" cy="100" r="3" fill="#888" opacity="0.5"/>
+  <circle cx="310" cy="95" r="2" fill="#999" opacity="0.6"/>
+  <circle cx="290" cy="110" r="3" fill="#aaa" opacity="0.4"/>
+  <circle cx="270" cy="115" r="2" fill="#bbb" opacity="0.5"/>
+  <circle cx="305" cy="110" r="2" fill="#999" opacity="0.5"/>
+  <text x="295" y="145" fill="#333" font-size="10" text-anchor="middle">x_t</text>
+
+  <!-- Dots (ellipsis) -->
+  <text x="365" y="100" fill="#666" font-size="14" text-anchor="middle">···</text>
+
+  <line x1="385" y1="95" x2="420" y2="95" stroke="#e74c3c" stroke-width="1.2" marker-end="url(#diff-arrow)"/>
+  <text x="402" y="88" fill="#e74c3c" font-size="8" text-anchor="middle">+ε</text>
+
+  <!-- xT-1 -->
+  <rect x="425" y="60" width="70" height="70" rx="4" fill="#bbb" stroke="#999" stroke-width="1.5"/>
+  <circle cx="445" cy="80" r="3" fill="#999"/>
+  <circle cx="465" cy="75" r="3" fill="#aaa"/>
+  <circle cx="440" cy="95" r="2" fill="#888"/>
+  <circle cx="475" cy="90" r="3" fill="#999"/>
+  <circle cx="450" cy="110" r="3" fill="#aaa"/>
+  <circle cx="470" cy="105" r="2" fill="#bbb"/>
+  <circle cx="455" cy="120" r="2" fill="#999"/>
+  <circle cx="480" cy="115" r="3" fill="#888"/>
+  <text x="460" y="145" fill="#333" font-size="10" text-anchor="middle">x_{T-1}</text>
+
+  <line x1="500" y1="95" x2="535" y2="95" stroke="#e74c3c" stroke-width="1.2" marker-end="url(#diff-arrow)"/>
+  <text x="517" y="88" fill="#e74c3c" font-size="8" text-anchor="middle">+ε</text>
+
+  <!-- xT: pure noise -->
+  <rect x="540" y="60" width="70" height="70" rx="4" fill="#aaa" stroke="#999" stroke-width="1.5"/>
+  <!-- Dense noise -->
+  <circle cx="555" cy="75" r="2" fill="#888"/>
+  <circle cx="570" cy="70" r="3" fill="#999"/>
+  <circle cx="585" cy="78" r="2" fill="#777"/>
+  <circle cx="550" cy="90" r="3" fill="#aaa"/>
+  <circle cx="565" cy="88" r="2" fill="#888"/>
+  <circle cx="580" cy="93" r="3" fill="#999"/>
+  <circle cx="598" cy="85" r="2" fill="#777"/>
+  <circle cx="555" cy="105" r="2" fill="#999"/>
+  <circle cx="572" cy="100" r="3" fill="#888"/>
+  <circle cx="590" cy="108" r="2" fill="#aaa"/>
+  <circle cx="560" cy="118" r="3" fill="#777"/>
+  <circle cx="578" cy="115" r="2" fill="#999"/>
+  <circle cx="595" cy="120" r="3" fill="#888"/>
+  <text x="575" y="145" fill="#333" font-size="10" text-anchor="middle" font-weight="bold">x_T</text>
+  <text x="575" y="157" fill="#666" font-size="8" text-anchor="middle">≈ N(0,I)</text>
+
+  <!-- Reverse process (bottom) -->
+  <text x="350" y="185" fill="#27ae60" font-size="11" font-weight="bold" text-anchor="middle">Reverse Process: Learn to Denoise (p_θ)</text>
+
+  <!-- Reverse arrows -->
+  <line x1="535" y1="200" x2="502" y2="200" stroke="#27ae60" stroke-width="1.5" marker-end="url(#diff-arrow-green)"/>
+  <line x1="420" y1="200" x2="387" y2="200" stroke="#27ae60" stroke-width="1.5" marker-end="url(#diff-arrow-green)"/>
+  <text x="350" y="205" fill="#666" font-size="14" text-anchor="middle">···</text>
+  <line x1="310" y1="200" x2="277" y2="200" stroke="#27ae60" stroke-width="1.5" marker-end="url(#diff-arrow-green)"/>
+  <line x1="220" y1="200" x2="187" y2="200" stroke="#27ae60" stroke-width="1.5" marker-end="url(#diff-arrow-green)"/>
+  <line x1="140" y1="200" x2="107" y2="200" stroke="#27ae60" stroke-width="1.5" marker-end="url(#diff-arrow-green)"/>
+
+  <text x="120" y="215" fill="#27ae60" font-size="7" text-anchor="middle">−ε_θ</text>
+  <text x="235" y="215" fill="#27ae60" font-size="7" text-anchor="middle">−ε_θ</text>
+  <text x="465" y="215" fill="#27ae60" font-size="7" text-anchor="middle">−ε_θ</text>
+
+  <!-- Neural network label -->
+  <rect x="160" y="225" width="380" height="40" rx="6" fill="#f5f5f5" stroke="#333" stroke-width="1"/>
+  <text x="350" y="242" fill="#333" font-size="9" text-anchor="middle">Neural network ε_θ(x_t, t) predicts the noise added at each step.</text>
+  <text x="350" y="256" fill="#666" font-size="9" text-anchor="middle">Training loss: L = E[ ‖ε − ε_θ(x_t, t)‖² ]. Simple MSE on noise prediction.</text>
+</svg>

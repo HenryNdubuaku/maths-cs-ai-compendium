@@ -1,0 +1,57 @@
+<svg width="700" height="280" xmlns="http://www.w3.org/2000/svg">
+  <text x="350" y="22" fill="#333" font-size="14" font-weight="bold" text-anchor="middle">YOLO: Grid-Based Single-Shot Detection</text>
+
+  <!-- Input image with grid -->
+  <text x="135" y="48" fill="#666" font-size="11" text-anchor="middle">Input Image with S×S Grid</text>
+  <rect x="30" y="55" width="210" height="210" rx="4" fill="#ecf0f1" stroke="#999" stroke-width="1.5"/>
+
+  <!-- 7x7 grid lines -->
+  <line x1="60" y1="55" x2="60" y2="265" stroke="#ccc" stroke-width="0.5"/>
+  <line x1="90" y1="55" x2="90" y2="265" stroke="#ccc" stroke-width="0.5"/>
+  <line x1="120" y1="55" x2="120" y2="265" stroke="#ccc" stroke-width="0.5"/>
+  <line x1="150" y1="55" x2="150" y2="265" stroke="#ccc" stroke-width="0.5"/>
+  <line x1="180" y1="55" x2="180" y2="265" stroke="#ccc" stroke-width="0.5"/>
+  <line x1="210" y1="55" x2="210" y2="265" stroke="#ccc" stroke-width="0.5"/>
+  <line x1="30" y1="85" x2="240" y2="85" stroke="#ccc" stroke-width="0.5"/>
+  <line x1="30" y1="115" x2="240" y2="115" stroke="#ccc" stroke-width="0.5"/>
+  <line x1="30" y1="145" x2="240" y2="145" stroke="#ccc" stroke-width="0.5"/>
+  <line x1="30" y1="175" x2="240" y2="175" stroke="#ccc" stroke-width="0.5"/>
+  <line x1="30" y1="205" x2="240" y2="205" stroke="#ccc" stroke-width="0.5"/>
+  <line x1="30" y1="235" x2="240" y2="235" stroke="#ccc" stroke-width="0.5"/>
+
+  <!-- Object 1: car (blue bounding box) -->
+  <rect x="55" y="110" width="90" height="55" rx="2" fill="none" stroke="#3498db" stroke-width="2"/>
+  <!-- Centre point of car in a grid cell -->
+  <circle cx="100" cy="137" r="4" fill="#3498db"/>
+  <!-- Highlight responsible cell -->
+  <rect x="90" y="115" width="30" height="30" fill="#3498db" opacity="0.15"/>
+
+  <!-- Object 2: person (red bounding box) -->
+  <rect x="155" y="80" width="45" height="95" rx="2" fill="none" stroke="#e74c3c" stroke-width="2"/>
+  <circle cx="177" cy="127" r="4" fill="#e74c3c"/>
+  <!-- Highlight responsible cell -->
+  <rect x="150" y="115" width="30" height="30" fill="#e74c3c" opacity="0.15"/>
+
+  <!-- Arrow to output -->
+  <text x="300" y="160" fill="#333" font-size="20" text-anchor="middle">→</text>
+
+  <!-- Per-cell prediction detail -->
+  <text x="510" y="48" fill="#666" font-size="11" text-anchor="middle">Each Grid Cell Predicts</text>
+
+  <!-- Box predictions -->
+  <rect x="350" y="60" width="320" height="80" rx="6" fill="#3498db" opacity="0.08" stroke="#3498db" stroke-width="1.5"/>
+  <text x="510" y="80" fill="#3498db" font-size="10" text-anchor="middle" font-weight="bold">B Bounding Boxes (B=2)</text>
+  <text x="425" y="100" fill="#555" font-size="9" text-anchor="middle">Box 1: (x, y, w, h, conf)</text>
+  <text x="595" y="100" fill="#555" font-size="9" text-anchor="middle">Box 2: (x, y, w, h, conf)</text>
+  <text x="510" y="125" fill="#666" font-size="8" text-anchor="middle">(x,y) = centre offset within cell, (w,h) = size relative to image, conf = P(obj)·IoU</text>
+
+  <!-- Class probabilities -->
+  <rect x="350" y="150" width="320" height="50" rx="6" fill="#27ae60" opacity="0.08" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="510" y="170" fill="#27ae60" font-size="10" text-anchor="middle" font-weight="bold">C Class Probabilities</text>
+  <text x="510" y="188" fill="#666" font-size="9" text-anchor="middle">P(class_1 | obj), P(class_2 | obj), ..., P(class_C | obj)</text>
+
+  <!-- Output tensor -->
+  <rect x="370" y="215" width="280" height="50" rx="6" fill="#f5f5f5" stroke="#333" stroke-width="1"/>
+  <text x="510" y="235" fill="#333" font-size="10" text-anchor="middle" font-weight="bold">Output tensor: S × S × (B·5 + C)</text>
+  <text x="510" y="252" fill="#666" font-size="9" text-anchor="middle">e.g. 7 × 7 × 30 for S=7, B=2, C=20 (VOC)</text>
+</svg>

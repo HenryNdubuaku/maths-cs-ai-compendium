@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 220" width="650" height="220">
+  <defs>
+    <marker id="ab-arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#666"/>
+    </marker>
+  </defs>
+  <text x="325" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">A/B Testing: Measuring Model Impact</text>
+
+  <!-- Users -->
+  <rect x="30" y="70" width="80" height="80" rx="10" fill="#555" fill-opacity="0.1" stroke="#555" stroke-width="1.5"/>
+  <text x="70" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#555">All Users</text>
+  <text x="70" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#555">100%</text>
+
+  <!-- Random split -->
+  <line x1="110" y1="90" x2="175" y2="75" stroke="#3498db" stroke-width="2" marker-end="url(#ab-arr)"/>
+  <line x1="110" y1="130" x2="175" y2="145" stroke="#e74c3c" stroke-width="2" marker-end="url(#ab-arr)"/>
+
+  <text x="148" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">random</text>
+  <text x="148" y="112" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">split</text>
+
+  <!-- Control group -->
+  <rect x="183" y="50" width="130" height="55" rx="8" fill="#3498db" fill-opacity="0.12" stroke="#3498db" stroke-width="2"/>
+  <text x="248" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#3498db">Control (50%)</text>
+  <text x="248" y="88" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3498db">Old Model v1</text>
+  <text x="248" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#3498db">CTR = 4.2%</text>
+
+  <!-- Treatment group -->
+  <rect x="183" y="115" width="130" height="55" rx="8" fill="#e74c3c" fill-opacity="0.12" stroke="#e74c3c" stroke-width="2"/>
+  <text x="248" y="137" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#e74c3c">Treatment (50%)</text>
+  <text x="248" y="153" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e74c3c">New Model v2</text>
+  <text x="248" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#e74c3c">CTR = 4.5%</text>
+
+  <!-- Results -->
+  <line x1="313" y1="77" x2="370" y2="110" stroke="#3498db" stroke-width="1.2" marker-end="url(#ab-arr)"/>
+  <line x1="313" y1="142" x2="370" y2="115" stroke="#e74c3c" stroke-width="1.2" marker-end="url(#ab-arr)"/>
+
+  <rect x="378" y="80" width="240" height="65" rx="10" fill="#27ae60" fill-opacity="0.06" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="498" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#27ae60">Statistical Analysis</text>
+  <text x="498" y="118" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27ae60">Δ CTR = +0.3% (p = 0.02, significant)</text>
+  <text x="498" y="133" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#27ae60">Guardrails: latency OK, errors OK</text>
+
+  <!-- Decision -->
+  <text x="498" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#27ae60">→ Ship v2 to 100%</text>
+
+  <text x="325" y="205" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">Run for 1-2 weeks to capture day-of-week effects and reach statistical significance</text>
+</svg>

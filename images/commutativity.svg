@@ -1,0 +1,29 @@
+<svg width="300" height="220" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow-cu" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#e74c3c"/>
+    </marker>
+    <marker id="arrow-cv" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#3498db"/>
+    </marker>
+    <marker id="arrow-cs" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#2ecc71"/>
+    </marker>
+  </defs>
+  <!-- u from origin -->
+  <line x1="30" y1="180" x2="198" y2="180" stroke="#e74c3c" stroke-width="2.5" marker-end="url(#arrow-cu)"/>
+  <text x="110" y="200" fill="#e74c3c" font-size="14" font-weight="bold" text-anchor="middle">u</text>
+  <!-- v from origin -->
+  <line x1="30" y1="180" x2="110" y2="60" stroke="#3498db" stroke-width="2.5" marker-end="url(#arrow-cv)"/>
+  <text x="55" y="115" fill="#3498db" font-size="14" font-weight="bold">v</text>
+  <!-- v from tip of u (dashed) -->
+  <line x1="206" y1="180" x2="270" y2="60" stroke="#3498db" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-cv)"/>
+  <!-- u from tip of v (dashed) -->
+  <line x1="118" y1="60" x2="270" y2="60" stroke="#e74c3c" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-cu)"/>
+  <!-- resultant diagonal -->
+  <line x1="30" y1="180" x2="270" y2="60" stroke="#2ecc71" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrow-cs)"/>
+  <text x="165" y="105" fill="#2ecc71" font-size="14" font-weight="bold">u + v</text>
+  <!-- origin -->
+  <circle cx="30" cy="180" r="3" fill="#333"/>
+  <text x="18" y="198" fill="#333" font-size="12">O</text>
+</svg>

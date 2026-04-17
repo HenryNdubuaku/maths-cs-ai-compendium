@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 260" width="750" height="260">
+  <defs>
+    <marker id="ive-arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#666"/>
+    </marker>
+  </defs>
+  <text x="375" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">Invariance vs Equivariance</text>
+
+  <!-- Divider -->
+  <line x1="375" y1="35" x2="375" y2="250" stroke="#ccc" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- INVARIANCE (left) -->
+  <text x="188" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#3498db">Invariance</text>
+  <text x="188" y="66" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#3498db">output stays the same</text>
+
+  <!-- Input image with cat top-left -->
+  <rect x="40" y="80" width="70" height="55" rx="6" fill="#eee" stroke="#ccc" stroke-width="1"/>
+  <text x="58" y="105" font-family="Arial, sans-serif" font-size="18">🐱</text>
+  <text x="75" y="148" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">input</text>
+
+  <line x1="110" y1="107" x2="138" y2="107" stroke="#666" stroke-width="1.5" marker-end="url(#ive-arr)"/>
+
+  <rect x="146" y="90" width="50" height="35" rx="6" fill="#3498db" fill-opacity="0.15" stroke="#3498db" stroke-width="1.5"/>
+  <text x="171" y="112" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#3498db">f</text>
+
+  <line x1="196" y1="107" x2="224" y2="107" stroke="#666" stroke-width="1.5" marker-end="url(#ive-arr)"/>
+
+  <rect x="232" y="92" width="65" height="30" rx="6" fill="#27ae60" fill-opacity="0.15" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="264" y="112" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#27ae60">"cat"</text>
+
+  <!-- Shifted input with cat bottom-right -->
+  <rect x="40" y="165" width="70" height="55" rx="6" fill="#eee" stroke="#ccc" stroke-width="1"/>
+  <text x="78" y="205" font-family="Arial, sans-serif" font-size="18">🐱</text>
+  <text x="75" y="233" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">shifted</text>
+
+  <line x1="110" y1="192" x2="138" y2="192" stroke="#666" stroke-width="1.5" marker-end="url(#ive-arr)"/>
+
+  <rect x="146" y="175" width="50" height="35" rx="6" fill="#3498db" fill-opacity="0.15" stroke="#3498db" stroke-width="1.5"/>
+  <text x="171" y="197" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#3498db">f</text>
+
+  <line x1="196" y1="192" x2="224" y2="192" stroke="#666" stroke-width="1.5" marker-end="url(#ive-arr)"/>
+
+  <rect x="232" y="177" width="65" height="30" rx="6" fill="#27ae60" fill-opacity="0.15" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="264" y="197" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#27ae60">"cat"</text>
+
+  <!-- Same output arrow -->
+  <text x="300" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#27ae60">}</text>
+  <text x="335" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#27ae60">same</text>
+
+  <!-- EQUIVARIANCE (right) -->
+  <text x="562" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#e74c3c">Equivariance</text>
+  <text x="562" y="66" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#e74c3c">output transforms correspondingly</text>
+
+  <!-- Input with feature map top-left -->
+  <rect x="410" y="80" width="70" height="55" rx="6" fill="#eee" stroke="#ccc" stroke-width="1"/>
+  <rect x="418" y="86" width="18" height="14" rx="2" fill="#e74c3c" fill-opacity="0.4"/>
+  <text x="445" y="148" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">input</text>
+
+  <line x1="480" y1="107" x2="508" y2="107" stroke="#666" stroke-width="1.5" marker-end="url(#ive-arr)"/>
+
+  <rect x="516" y="90" width="50" height="35" rx="6" fill="#e74c3c" fill-opacity="0.15" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="541" y="112" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#e74c3c">f</text>
+
+  <line x1="566" y1="107" x2="594" y2="107" stroke="#666" stroke-width="1.5" marker-end="url(#ive-arr)"/>
+
+  <rect x="602" y="80" width="70" height="55" rx="6" fill="#f39c12" fill-opacity="0.1" stroke="#f39c12" stroke-width="1.5"/>
+  <rect x="610" y="86" width="18" height="14" rx="2" fill="#f39c12" fill-opacity="0.5"/>
+  <text x="637" y="148" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">features (top-left)</text>
+
+  <!-- Shifted input, shifted output -->
+  <rect x="410" y="165" width="70" height="55" rx="6" fill="#eee" stroke="#ccc" stroke-width="1"/>
+  <rect x="448" y="200" width="18" height="14" rx="2" fill="#e74c3c" fill-opacity="0.4"/>
+  <text x="445" y="233" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">shifted</text>
+
+  <line x1="480" y1="192" x2="508" y2="192" stroke="#666" stroke-width="1.5" marker-end="url(#ive-arr)"/>
+
+  <rect x="516" y="175" width="50" height="35" rx="6" fill="#e74c3c" fill-opacity="0.15" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="541" y="197" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#e74c3c">f</text>
+
+  <line x1="566" y1="192" x2="594" y2="192" stroke="#666" stroke-width="1.5" marker-end="url(#ive-arr)"/>
+
+  <rect x="602" y="165" width="70" height="55" rx="6" fill="#f39c12" fill-opacity="0.1" stroke="#f39c12" stroke-width="1.5"/>
+  <rect x="640" y="200" width="18" height="14" rx="2" fill="#f39c12" fill-opacity="0.5"/>
+  <text x="637" y="233" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">features (shifted too)</text>
+</svg>
