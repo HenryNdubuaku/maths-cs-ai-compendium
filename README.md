@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/henryndubuaku-maths-cs-ai-compendium-badge.png)](https://mseep.ai/app/henryndubuaku-maths-cs-ai-compendium)
+
 # Maths, CS & AI Compendium
 
 <img src="images/logo.png" alt="Logo" style="border-radius: 30px; width: 100%;">
