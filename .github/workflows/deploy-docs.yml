@@ -26,6 +26,7 @@ jobs:
           cp README.md docs/index.md
           ln -s ../images docs/images
           ln -s ../javascripts docs/javascripts
+          ln -s ../stylesheets docs/stylesheets
           find . -maxdepth 1 -type d -name 'chapter *' | while IFS= read -r dir; do
             dir="${dir#./}"
             ln -s "../$dir" "docs/$dir"
