@@ -1,4 +1,7 @@
 site/
 docs/
+.venv/
+mkdocs-local.yml
 mcp/node_modules/
 mcp/package-lock.json
+.cache/

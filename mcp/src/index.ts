@@ -8,7 +8,7 @@ import { fileURLToPath } from "node:url";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = process.env.COMPENDIUM_ROOT || join(__dirname, "..", "..");
 
-const CHAPTER_RE = /^chapter (\d{2}): (.+)$/;
+const CHAPTER_RE = /^chapter (\d{2})(?::| -) (.+)$/;
 const SECTION_RE = /^(\d{2})\. (.+)\.md$/;
 
 interface Chapter {
