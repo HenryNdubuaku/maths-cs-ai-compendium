@@ -192,11 +192,10 @@ def diff_tokens(src: dict, dst: dict) -> list[str]:
 # Разбивка на чанки (не рвём код и display-математику)                        #
 # --------------------------------------------------------------------------- #
 def split_chunks(text: str, max_chars: int) -> list[str]:
-    if len(text) <= max_chars:
-        return [text]
     lines = text.splitlines(keepends=True)
     chunks: list[str] = []
-    cur: list[str] = []
+    cur: list[str] = []          # текущий прозаический чанк
+    code: list[str] = []         # текущий блок кода (изолируется в отдельный чанк)
     fence: str | None = None
     in_display = False
     cur_len = 0
@@ -210,23 +209,35 @@ def split_chunks(text: str, max_chars: int) -> list[str]:
     for line in lines:
         stripped = line.strip()
         m = FENCE_RE.match(line.rstrip("\n"))
+
         if fence is None and m:
+            # начало блока кода: закрываем прозаический чанк, копим код отдельно
             fence = m.group(2)[0]
-        elif fence is not None and m and m.group(2)[0] == fence and not m.group(3).strip():
-            fence = None
+            flush()
+            code = [line]
+            continue
+        if fence is not None:
+            code.append(line)
+            if m and m.group(2)[0] == fence and not m.group(3).strip():
+                # конец блока кода -> отдельный чанк (LLM его не трогает)
+                chunks.append("".join(code))
+                code, fence = [], None
+            continue
+
         # display-математика на отдельных строках ($$ ... $$)
-        if fence is None and stripped == "$$":
+        if stripped == "$$":
             in_display = not in_display
-        elif fence is None and stripped.startswith("$$") and stripped.endswith("$$") and len(stripped) > 3:
-            pass  # однострочный $$...$$ — не переключаем
 
         cur.append(line)
         cur_len += len(line)
-        safe_boundary = fence is None and not in_display and stripped == ""
+        safe_boundary = not in_display and stripped == ""
         if safe_boundary and cur_len >= max_chars:
             flush()
+
+    if code:            # незакрытый блок кода — сохраняем как есть
+        chunks.append("".join(code))
     flush()
-    return chunks
+    return chunks if chunks else [text]
 
 
 def has_translatable_prose(chunk: str) -> bool:
@@ -446,7 +457,7 @@ def collect_files(root: Path, patterns: list[str]) -> list[Path]:
     seen = set()
     for pat in patterns:
         for p in sorted(root.glob(pat)):
-            if p.is_file() and p.suffix == ".md" and p not in seen and ".git" not in p.parts:
+            if p.is_file() and p.suffix in (".md", ".txt") and p not in seen and ".git" not in p.parts:
                 seen.add(p)
                 result.append(p)
     return result
