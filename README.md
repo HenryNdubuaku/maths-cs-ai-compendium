@@ -1,72 +1,72 @@
-# Maths, CS & AI Compendium
+# Сборник по математике, CS и ИИ
 
-<img src="images/logo.png" alt="Logo" style="border-radius: 30px; width: 100%;">
+<img src="images/logo.png" alt="Логотип" style="border-radius: 30px; width: 100%;">
 
-**Read online**: [henryndubuaku.github.io/maths-cs-ai-compendium](https://henryndubuaku.github.io/maths-cs-ai-compendium/)
+**Читать онлайн**: [henryndubuaku.github.io/maths-cs-ai-compendium](https://henryndubuaku.github.io/maths-cs-ai-compendium/)
 
 <a href="https://trendshift.io/repositories/21344?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-21344" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/repositories/21344" alt="HenryNdubuaku%2Fmaths-cs-ai-compendium | Trendshift" width="250" height="55"/></a>
 
-## Overview
-Most textbooks bury good ideas under dense notation, skip the intuition, assume you already know half the material, and quickly get outdated in fast-moving fields like AI. This is an open, unconventional textbook covering maths, computing, and artificial intelligence from the ground up. Written for curious practitioners looking to deeply understand the stuff, not just survive an exam/interview. 
+## Обзор
+Большинство учебников скрывают хорошие идеи за плотными формулами, опускают интуитивное понимание, предполагают, что вы уже знаете половину материала, и быстро устаревают в таких динамичных областях, как ИИ. Это открытый, нетрадиционный учебник, охватывающий математику, вычислительную технику и искусственный интеллект с самых основ. Он написан для любознательных практиков, которые стремятся глубоко понять суть вещей, а не просто сдать экзамен или пройти собеседование.
 
-## Background
-Over the past years working in AI/ML, I filled notebooks with intuition first, real-world context, no hand-waving explanations of maths, computing and AI concepts. In 2025, a few friends used these notes to prep for interviews at DeepMind, OpenAI, Nvidia etc. They all got in and currently perform well in their roles. Meanwhile I got in Y Combinator last year. So I'm sharing to everyone.
+## Предыстория
+За последние годы работы в сфере ИИ/ML я заполнял блокноты, опираясь прежде всего на интуицию, реальный контекст и избегая поверхностных объяснений концепций математики, вычислений и ИИ. В 2025 году несколько моих друзей использовали эти заметки для подготовки к собеседованиям в DeepMind, OpenAI, Nvidia и другие компании. Все они успешно прошли отбор и сейчас показывают отличные результаты в своей работе. Тем временем я в прошлом году попал в Y Combinator. Поэтому я делюсь этими материалами со всеми.
 
-## MCP Server
-This repo includes an MCP server that lets any AI assistant (Claude Code, Cursor, VS Code, etc.) use the compendium as a knowledge base. It requires a local clone of the repo. Comes with tools for educational purposes and example implementations.
+## MCP-сервер
+Этот репозиторий включает MCP-сервер, который позволяет любому ИИ-ассистенту (Claude Code, Cursor, VS Code и т. д.) использовать данный сборник в качестве базы знаний. Для этого требуется локальная копия репозитория. В комплекте идут инструменты для образовательных целей и примеры реализации.
 
-## Outline 
+## Содержание
 
-| # | Chapter | Summary | Status |
+| № | Глава | Краткое содержание | Статус |
 |---|---------|---------|--------|
-| 01 | [Vectors](chapter%2001%20-%20vectors/01.%20vector%20spaces.md) | Spaces, magnitude, direction, norms, metrics, dot/cross/outer products, basis, duality | Available |
-| 02 | [Matrices](chapter%2002%20-%20matrices/01.%20matrix%20properties.md) | Properties, special types, operations, linear transformations, decompositions (LU, QR, SVD) | Available |
-| 03 | [Calculus](chapter%2003%20-%20calculus/01.%20differential%20calculus.md) | Derivatives, integrals, multivariate calculus, Taylor approximation, optimisation and gradient descent | Available |
-| 04 | [Statistics](chapter%2004%20-%20statistics/01.%20fundamentals.md) | Descriptive measures, sampling, central limit theorem, hypothesis testing, confidence intervals | Available |
-| 05 | [Probability](chapter%2005%20-%20probability/01.%20counting.md) | Counting, conditional probability, distributions, Bayesian methods, information theory | Available |
-| 06 | [Machine Learning](chapter%2006%20-%20machine%20learning/01.%20classical%20machine%20learning.md) | Classical ML, gradient methods, deep learning, reinforcement learning, distributed training | Available |
-| 07 | [Computational Linguistics](chapter%2007%20-%20computational%20linguistics/01.%20linguistic%20foundations.md) | syntax, semantics, pragmatics, NLP, language models, RNNs, CNNs, attention, transformers, text diffusion, text OCR, MoE, SSMs, modern LLM architectures, NLP evaluation | Available |
-| 08 | [Computer Vision](chapter%2008%20-%20computer%20vision/01.%20image%20fundamentals.md) | image processing, object detection, segmentation, video processing, SLAM, CNNs, vision transformers, diffusion, flow matching, VR/AR | Available |
-| 09 | [Audio & Speech](chapter%2009%20-%20audio%20and%20speech/01.%20digital%20signal%20processing.md) | DSP, ASR, TTS, voice & acoustic activity detection, diarisation, source separation, active noise cancellation, wavenet, conformer | Available |
-| 10 | [Multimodal Learning](chapter%2010%20-%20multimodal%20learning/01.%20multimodal%20representations.md) | fusion strategies, contrastive learning, CLIP, VLMs, image/video tokenisation, cross-modal generation, unified architectures, world models | Available |
-| 11 | [Autonomous Systems](chapter%2011%20-%20autonomous%20systems/01.%20perception.md) | perception, robot learning, VLAs, self-driving cars, space robots | Available |
-| 12 | [Graph Neural Networks](chapter%2012%20-%20graph%20neural%20networks/01.%20geometric%20deep%20learning.md) | geometric deep learning, graph theory, GNNs, graph attention, Graph Transformers, 3D equivariant networks | Available |
-| 13 | [Computing & OS](chapter%2013%20-%20computing%20and%20OS/01.%20discrete%20maths.md) | discrete maths, computer architecture, operating systems, concurrency, parallelism, programming languages | Available |
-| 14 | [Data Structures & Algorithms](chapter%2014%20-%20data%20structures%20and%20algorithms/00.%20foundations.md) | Big O, recursion, backtracking, DP, arrays, hashing, linked lists, stacks, trees, graphs, sorting, binary search | Available |
-| 15 | [Production Software Engineering](chapter%2015%20-%20production%20software%20engineering/01.%20linux%20and%20CMD.md) | Linux, Git, codebase design, testing, CI/CD, Docker, model serving, MLOps, monitoring, best way to use coding agents | Available |
-| 16 | [SIMD & GPU Programming](chapter%2016%20-%20SIMD%20and%20GPU%20programming/00.%20why%20C%2B%2B%20and%20how%20ML%20frameworks%20work.md) | C++ for ML, how frameworks work, hardware fundamentals, ARM NEON/I8MM/SME2, x86 AVX, GPU/CUDA, Triton, TPUs, RISC-V, Vulkan, WebGPU | Available |
-| 17 | [AI Inference](chapter%2017%20-%20AI%20inference/01.%20quantisation.md) | quantisation, efficient architectures, serving and batching, edge inference, speculative decoding, cost optimisation | Available |
-| 18 | [ML Systems Design](chapter%2018%20-%20ML%20systems%20design/01.%20systems%20design%20fundamentals.md) | systems fundamentals, cloud computing, distributed systems, ML lifecycle, feature stores, A/B testing, recommendation/search/ads/fraud design examples | Available |
+| 01 | [Векторы](chapter%2001%20-%20vectors/01.%20vector%20spaces.md) | Векторные пространства, величина, направление, нормы, метрики, скалярное и векторное произведения, внешнее произведение, базис, двойственность | Доступно |
+| 02 | [Матрицы](chapter%2002%20-%20matrices/01.%20matrix%20properties.md) | Свойства, специальные типы, операции, линейные преобразования, разложения (LU, QR, SVD) | Доступно |
+| 03 | [Математический анализ](chapter%2003%20-%20calculus/01.%20differential%20calculus.md) | Производные, интегралы, многомерный математический анализ, аппроксимация Тейлора, оптимизация и градиентный спуск | Доступно |
+| 04 | [Статистика](chapter%2004%20-%20statistics/01.%20fundamentals.md) | Описательные меры, выборка, центральная предельная теорема, проверка гипотез, доверительные интервалы | Доступно |
+| 05 | [Вероятность](chapter%2005%20-%20probability/01.%20counting.md) | Комбинаторика, условная вероятность, распределения, байесовские методы, теория информации | Доступно |
+| 06 | [Машинное обучение](chapter%2006%20-%20machine%20learning/01.%20classical%20machine%20learning.md) | Классическое машинное обучение, градиентные методы, глубокое обучение, обучение с подкреплением, распределенное обучение | Доступно |
+| 07 | [Компьютерная лингвистика](chapter%2007%20-%20computational%20linguistics/01.%20linguistic%20foundations.md) | Синтаксис, семантика, прагматика, NLP, языковые модели, рекуррентные нейронные сети, свёрточные нейронные сети, внимание, трансформеры, диффузия текста, распознавание текста (OCR), MoE, SSM, современные архитектуры LLM, оценка качества NLP | Доступно |
+| 08 | [Компьютерное зрение](chapter%2008%20-%20computer%20vision/01.%20image%20fundamentals.md) | Обработка изображений, детекция объектов, сегментация, обработка видео, SLAM, свёрточные нейронные сети, vision-трансформеры, диффузия, flow matching, VR/AR | Доступно |
+| 09 | [Аудио и речь](chapter%2009%20-%20audio%20and%20speech/01.%20digital%20signal%20processing.md) | Цифровая обработка сигналов (DSP), автоматическое распознавание речи (ASR), синтез речи (TTS), обнаружение голоса и акустической активности, диаризация, разделение источников, активное шумоподавление, WaveNet, Conformer | Доступно |
+| 10 | [Мультимодальное обучение](chapter%2010%20-%20multimodal%20learning/01.%20multimodal%20representations.md) | Стратегии слияния, контрастивное обучение, CLIP, VLM, токенизация изображений/видео, кросс-модальная генерация, унифицированные архитектуры, мировые модели | Доступно |
+| 11 | [Автономные системы](chapter%2011%20-%20autonomous%20systems/01.%20perception.md) | Восприятие, обучение роботов, VLA, беспилотные автомобили, космические роботы | Доступно |
+| 12 | [Графовые нейронные сети](chapter%2012%20-%20graph%20neural%20networks/01.%20geometric%20deep%20learning.md) | Геометрическое глубокое обучение, теория графов, графовые нейронные сети, графовое внимание, графовые трансформеры, 3D эквивариантные сети | Доступно |
+| 13 | [Вычисления и ОС](chapter%2013%20-%20computing%20and%20OS/01.%20discrete%20maths.md) | Дискретная математика, архитектура компьютеров, операционные системы, конкурентность, параллелизм, языки программирования | Доступно |
+| 14 | [Структуры данных и алгоритмы](chapter%2014%20-%20data%20structures%20and%20algorithms/00.%20foundations.md) | Нотация Big O, рекурсия, поиск с возвратом, динамическое программирование, массивы, хеширование, связные списки, стеки, деревья, графы, сортировка, бинарный поиск | Доступно |
+| 15 | [Промышленная разработка ПО](chapter%2015%20-%20production%20software%20engineering/01.%20linux%20and%20CMD.md) | Linux, Git, проектирование кодовой базы, тестирование, CI/CD, Docker, инференс моделей, MLOps, мониторинг, лучшие практики использования ИИ-агентов для кодинга | Доступно |
+| 16 | [SIMD и GPU-программирование](chapter%2016%20-%20SIMD%20and%20GPU%20programming/00.%20why%20C%2B%2B%20and%20how%20ML%20frameworks%20work.md) | C++ для ML, принципы работы фреймворков, основы аппаратного обеспечения, ARM NEON/I8MM/SME2, x86 AVX, GPU/CUDA, Triton, TPU, RISC-V, Vulkan, WebGPU | Доступно |
+| 17 | [ИИ-инференс](chapter%2017%20-%20AI%20inference/01.%20quantisation.md) | Квантование, эффективные архитектуры, обслуживание и батчинг, инференс на периферийных устройствах, спекулятивное декодирование, оптимизация затрат | Доступно |
+| 18 | [Проектирование ML-систем](chapter%2018%20-%20ML%20systems%20design/01.%20systems%20design%20fundamentals.md) | Основы систем, облачные вычисления, распределенные системы, жизненный цикл ML, хранилища признаков, A/B-тестирование, примеры проектирования рекомендательных систем, поиска, рекламы и систем обнаружения мошенничества | Доступно |
 
-## Foreword
+## Предисловие
 
-A newborn's brain is a newly initialised neural network, which trains from realworld data and experience into adulthood...until forever. Exceptional understanding of French with the flawless accent implies correct exposure to exceptional French and flawless accent. Similarly, great AI Researchers & engineers with excellent problem-skills imply quality knowledge consumed and exposure rich experience. 
+Мозг новорожденного — это только что инициализированная нейронная сеть, которая обучается на данных из реального мира и опыте вплоть до взрослой жизни... и так бесконечно. Исключительное знание французского языка с безупречным акцентом подразумевает правильное погружение в исключительную французскую среду и безупречный акцент. Точно так же выдающиеся исследователи и инженеры в области ИИ с отличными навыками решения задач — это результат усвоения качественных знаний и богатого опыта.
 
-Now Kvashchev's experiment was a long-term Serbian study demonstrating that intensive, three-year training in creative problem-solving can significantly boost intelligence, particularly fluid intelligence, adding 10-15 IQ points. There is such a thing as having a naturally high IQ, similar to how quality weight initialisations yield better training, evidenced by nature-vs-nurture experimental findings. 
+Эксперимент Кващева был долгосрочным сербским исследованием, показавшим, что интенсивное трехлетнее обучение творческому решению задач может значительно повысить интеллект, особенно подвижный интеллект, добавив 10–15 баллов IQ. Существует понятие естественного высокого IQ, подобно тому как качественная инициализация весов обеспечивает лучшее обучение, что подтверждается экспериментальными данными о влиянии природы и воспитания.
 
-However, the only advantage a high-IQ individual really has is the ability to learn/recognise patterns faster. But using a repeated pattern makes any concept absolutely learnable. Charles Darwin was considered a very average, if not below-average, student by his teachers and father. He described himself as not being quick-witted, feeling like a "slow processor" who needed time to soak in data.
+Однако единственное реальное преимущество человека с высоким IQ — это способность быстрее изучать и распознавать закономерности. Но использование повторяющихся паттернов делает абсолютно любую концепцию доступной для изучения. Чарльз Дарвин считался учителями и отцом очень средним, если не посредственным учеником. Он сам описывал себя как не слишком сообразительного, чувствуя себя «медленным процессором», которому требовалось время, чтобы усвоить данные.
 
-Between 3-10yrs, I performed well academically, naturally grasping concepts without ever taking notes or revising. I got a bit cocky between 11-13 and dropped to the bottom half of an 80-student class with this technique. Now between 14-15, I began reading like a normal student, finishing 1st in my final secondary school semester. Early school curriculum works well with natural IQ but real-world talents are powered by quality knowledge consumption and execution intensity. 
+В возрасте от 3 до 10 лет я хорошо учился, естественным образом схватывая концепции, не делая заметок и не повторяя материал. В период с 11 до 13 лет я стал самоуверенным и с таким подходом скатился в нижнюю половину класса из 80 человек. В 14–15 лет я начал учиться как обычный прилежный студент и закончил последний семестр средней школы первым. Ранняя школьная программа хорошо работает при естественном IQ, но реальные таланты подпитываются качественным потреблением знаний и интенсивностью их применения.
 
-In fact, most students who perform well academically are just more studious, but the academic system is designed for fast learners. This compendium provides a rounded and well-connected flow of knowledge to facilitate better learning for the Darwins of the world. You only need elementary maths and basic python programming, everything else is picked up, just read and trust the process! 
+На самом деле большинство студентов, которые хорошо учатся, просто более прилежны, но академическая система спроектирована для тех, кто быстро усваивает материал. Этот сборник обеспечивает целостный и логически связанный поток знаний, чтобы облегчить обучение для «Дарвинов» нашего мира. Вам понадобятся только элементарная математика и основы программирования на Python, всё остальное придет в процессе — просто читайте и доверяйтесь методике!
 
-## How To Study Better 
+## Как учиться лучше
 
-First semester at university, I took 17 modules at once, grades were not great for it, so I used a technique:
+В первом семестре университета я взял сразу 17 модулей, оценки были не самыми лучшими, поэтому я применил следующую технику:
 
-**Phase 1**: Cumulative reading after classes 
-Read each material after class, before bed. The next lecture, start all over until the current end, then fill knowledge gaps with additional research. This allows your brain to connect the patterns. 
+**Фаза 1**: Кумулятивное чтение после занятий
+Читайте каждый материал после лекции, перед сном. На следующей лекции начинайте всё сначала до текущего момента, а затем заполняйте пробелы в знаниях дополнительными исследованиями. Это позволяет вашему мозгу связать закономерности воедино.
 
-**Phase 2**: Shadow reading before exams 
-Read each slide/note subtitle, close the book, then visualise and write an explanation for that concept. Only re-read what you missed, similar to masked-language modelling in machine learning. After the re-read, ultimately implement the concept in code after. You develop muscle memory for each concept. 
+**Фаза 2**: «Теневое» чтение перед экзаменами
+Прочитайте каждый подзаголовок слайда или конспекта, закройте книгу, а затем визуализируйте и письменно объясните эту концепцию. Перечитывайте только то, что упустили, — это похоже на маскированное языковое моделирование (masked-language modelling) в машинном обучении. После повторного прочтения обязательно реализуйте концепцию в коде. Так вы развиваете мышечную память для каждой концепции.
 
-This worked really well for my friends who were not very confident. In fact, one of these friends beat me in advanced engineering mathematics module, where we covered Hessians and Optimisation. She works at a big oil & gas firm today. The willingness of the soul matters more than the body we are working with (Rosenthal experiment).
+Это отлично сработало для моих друзей, которые были не очень уверены в своих силах. Более того, одна из моих подруг обошла меня в модуле по продвинутой инженерной математике, где мы изучали матрицы Гессе (Hessians) и оптимизацию. Сегодня она работает в крупной нефтегазовой компании. Стремление души важнее, чем возможности тела, с которым мы работаем (эксперимент Розенталя).
 
-## Who is Henry Ndubuaku?
+## Кто такой Генри Ндубуаку?
 
-Read the GitHub profile! 
+Читайте профиль на GitHub!
 
-## Citation
+## Цитирование
 ```bibtex
 @book{ndubuaku2025compendium,
   title     = {Maths, CS & AI Compendium},
