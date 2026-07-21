@@ -5,3 +5,13 @@ mkdocs-local.yml
 mcp/node_modules/
 mcp/package-lock.json
 .cache/
+
+# translation progress state
+.translate_state.json
+translate/translation_report.txt
+
+# credentials
+.env
+
+# macOS
+.DS_Store
