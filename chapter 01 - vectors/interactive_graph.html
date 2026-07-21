@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basis & Duality: Interactive Café Map</title>
+    <style>
+        :root {
+            --bg: #f8f9fa;
+            --text: #212529;
+            --primary: #0d6efd;
+            --danger: #dc3545;
+            --success: #198754;
+            --border: #dee2e6;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+        }
+        .sidebar {
+            width: 350px;
+            background: white;
+            padding: 20px;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            overflow-y: auto;
+            z-index: 10;
+        }
+        .main {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        canvas {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            cursor: crosshair;
+        }
+        h2 { margin-top: 0; font-size: 1.4rem; }
+        .control-group {
+            background: #f1f3f5;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+        .control-group.basis2 { border-left-color: var(--danger); }
+        .control-group h3 { margin: 0 0 10px 0; font-size: 1.1rem; }
+        .slider-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        .slider-row label { font-weight: bold; font-size: 0.9rem; width: 30px;}
+        input[type=range] { flex-grow: 1; margin: 0 10px; }
+        .val-display { width: 40px; text-align: right; font-family: monospace; font-size: 1.1rem; }
+        .stats {
+            background: #e9ecef;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .stats strong { color: var(--success); font-size: 1.1rem; }
+        .error { color: var(--danger); font-weight: bold; }
+        .legend {
+            position: absolute;
+            top: 20px; right: 20px;
+            background: rgba(255,255,255,0.9);
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .legend-item { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; }
+        .legend-color { width: 16px; height: 16px; border-radius: 4px; }
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>The Café Map Translator</h2>
+    <p>Adjust your friend's basis vectors (their diagonal streets) to see how the café's coordinates change.</p>
+    
+    <div class="control-group">
+        <h3 style="color: var(--primary)">Basis Vector 1 (Blue)</h3>
+        <div class="slider-row">
+            <label>X:</label>
+            <input type="range" id="b1x" min="-3" max="3" step="0.1" value="1">
+            <span class="val-display" id="b1x-val">1.0</span>
+        </div>
+        <div class="slider-row">
+            <label>Y:</label>
+            <input type="range" id="b1y" min="-3" max="3" step="0.1" value="1">
+            <span class="val-display" id="b1y-val">1.0</span>
+        </div>
+    </div>
+
+    <div class="control-group basis2">
+        <h3 style="color: var(--danger)">Basis Vector 2 (Red)</h3>
+        <div class="slider-row">
+            <label>X:</label>
+            <input type="range" id="b2x" min="-3" max="3" step="0.1" value="-1">
+            <span class="val-display" id="b2x-val">-1.0</span>
+        </div>
+        <div class="slider-row">
+            <label>Y:</label>
+            <input type="range" id="b2y" min="-3" max="3" step="0.1" value="1">
+            <span class="val-display" id="b2y-val">1.0</span>
+        </div>
+    </div>
+
+    <div class="stats" id="stats">
+        Loading math...
+    </div>
+</div>
+
+<div class="main">
+    <canvas id="graph" width="700" height="700"></canvas>
+    <div class="legend">
+        <div class="legend-item"><div class="legend-color" style="background: #28a745;"></div> Café Location (3,2)</div>
+        <div class="legend-item"><div class="legend-color" style="background: rgba(13, 110, 253, 0.5);"></div> New Grid Lines</div>
+    </div>
+</div>
+
+<script>
+    const canvas = document.getElementById('graph');
+    const ctx = canvas.getContext('2d');
+    
+    // Sliders
+    const els = {
+        b1x: document.getElementById('b1x'),
+        b1y: document.getElementById('b1y'),
+        b2x: document.getElementById('b2x'),
+        b2y: document.getElementById('b2y'),
+    };
+    
+    // Fixed point (The Café)
+    const cafe = { x: 3, y: 2 };
+    
+    // Config
+    const scale = 50; // pixels per unit
+    const cx = canvas.width / 2;
+    const cy = canvas.height / 2;
+
+    function toScreen(x, y) {
+        return { px: cx + x * scale, py: cy - y * scale }; // Flip Y for standard Cartesian
+    }
+
+    function drawLine(x1, y1, x2, y2, color, width, dash = []) {
+        const p1 = toScreen(x1, y1);
+        const p2 = toScreen(x2, y2);
+        ctx.beginPath();
+        ctx.setLineDash(dash);
+        ctx.strokeStyle = color;
+        ctx.lineWidth = width;
+        ctx.moveTo(p1.px, p1.py);
+        ctx.lineTo(p2.px, p2.py);
+        ctx.stroke();
+        ctx.setLineDash([]);
+    }
+
+    function drawArrow(x, y, color, width) {
+        const p = toScreen(x, y);
+        const origin = toScreen(0, 0);
+        
+        ctx.beginPath();
+        ctx.strokeStyle = color;
+        ctx.lineWidth = width;
+        ctx.moveTo(origin.px, origin.py);
+        ctx.lineTo(p.px, p.py);
+        ctx.stroke();
+        
+        // Arrowhead
+        const angle = Math.atan2(origin.py - p.py, origin.px - p.px);
+        ctx.beginPath();
+        ctx.fillStyle = color;
+        ctx.moveTo(p.px, p.py);
+        ctx.lineTo(p.px + 12 * Math.cos(angle - Math.PI / 6), p.py + 12 * Math.sin(angle - Math.PI / 6));
+        ctx.lineTo(p.px + 12 * Math.cos(angle + Math.PI / 6), p.py + 12 * Math.sin(angle + Math.PI / 6));
+        ctx.fill();
+    }
+
+    function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        const b1x = parseFloat(els.b1x.value);
+        const b1y = parseFloat(els.b1y.value);
+        const b2x = parseFloat(els.b2x.value);
+        const b2y = parseFloat(els.b2y.value);
+
+        // Update displays
+        document.getElementById('b1x-val').innerText = b1x.toFixed(1);
+        document.getElementById('b1y-val').innerText = b1y.toFixed(1);
+        document.getElementById('b2x-val').innerText = b2x.toFixed(1);
+        document.getElementById('b2y-val').innerText = b2y.toFixed(1);
+
+        // Math: Determinant
+        const det = (b1x * b2y) - (b2x * b1y);
+        const statsEl = document.getElementById('stats');
+
+        // Draw Standard Grid
+        for(let i = -10; i <= 10; i++) {
+            drawLine(i, -10, i, 10, '#e9ecef', 1);
+            drawLine(-10, i, 10, i, '#e9ecef', 1);
+        }
+
+        // Draw Axes
+        drawLine(0, -10, 0, 10, '#adb5bd', 2);
+        drawLine(-10, 0, 10, 0, '#adb5bd', 2);
+
+        if (Math.abs(det) < 0.01) {
+            statsEl.innerHTML = `<span class="error">Error: Basis vectors are parallel! (Determinant is 0)</span><br><br>They do not form a valid 2D grid. The café cannot be reached.`;
+        } else {
+            // Calculate New Coordinates (Inverse Matrix * Cafe Vector)
+            // Inverse of [[b1x, b2x], [b1y, b2y]] = (1/det) * [[b2y, -b2x], [-b1y, b1x]]
+            const new_x = (b2y * cafe.x - b2x * cafe.y) / det;
+            const new_y = (-b1y * cafe.x + b1x * cafe.y) / det;
+
+            statsEl.innerHTML = `
+                Standard Coords: [3.00, 2.00]<br><br>
+                New Coordinates:<br>
+                <strong>[ ${new_x.toFixed(2)}, ${new_y.toFixed(2)} ]</strong><br><br>
+                <em>Recipe: Walk ${new_x.toFixed(2)} blocks Blue, and ${new_y.toFixed(2)} blocks Red.</em>
+            `;
+
+            // Draw Custom Grid
+            for(let i = -10; i <= 10; i++) {
+                // Lines parallel to b2 (spaced along b1)
+                drawLine(i*b1x - 10*b2x, i*b1y - 10*b2y, i*b1x + 10*b2x, i*b1y + 10*b2y, 'rgba(13, 110, 253, 0.2)', 1);
+                // Lines parallel to b1 (spaced along b2)
+                drawLine(i*b2x - 10*b1x, i*b2y - 10*b1y, i*b2x + 10*b1x, i*b2y + 10*b1y, 'rgba(220, 53, 69, 0.2)', 1);
+            }
+            
+            // Draw walk paths to coordinate
+            drawLine(0, 0, new_x*b1x, new_x*b1y, '#0d6efd', 3, [5, 5]); // Walk along b1
+            drawLine(new_x*b1x, new_x*b1y, cafe.x, cafe.y, '#dc3545', 3, [5, 5]); // Walk along b2 from b1 end
+        }
+
+        // Draw Basis Vectors
+        drawArrow(b1x, b1y, '#0d6efd', 3);
+        drawArrow(b2x, b2y, '#dc3545', 3);
+
+        // Draw Cafe Point
+        const cafePx = toScreen(cafe.x, cafe.y);
+        ctx.beginPath();
+        ctx.fillStyle = '#28a745'; // Green dot
+        ctx.arc(cafePx.px, cafePx.py, 8, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.strokeStyle = 'white';
+        ctx.lineWidth = 2;
+        ctx.stroke();
+    }
+
+    // Event Listeners
+    Object.values(els).forEach(el => el.addEventListener('input', draw));
+    
+    // Initial Draw
+    draw();
+</script>
+</body>
+</html>
